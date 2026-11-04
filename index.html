@@ -2,8 +2,8 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026 U.S. Election Results — Live Interactive Map & 2024 Shift Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>2026 U.S. Election Results — Live Map, 20-Year History (2004–2026) &amp; Demographics</title>
   <script>
     (function () {
       try {
@@ -22,21 +22,21 @@
   <header class="top-header">
     <div class="header-inner">
       <div class="brand-group">
-        <div class="live-dot-wrap" title="Live 2026 election results feed">
+        <div class="live-dot-wrap" title="Live 2026 election results feed + 2004–2024 normalized historical archive">
           <span class="live-dot"></span>
-          <span class="live-label">LIVE 2026 RESULTS</span>
+          <span class="live-label">LIVE 2026 RESULTS · 2004–2026 ARCHIVE</span>
         </div>
-        <h1 class="site-title">2026 U.S. Election Results &amp; 2024 Shift Explorer</h1>
-        <p class="site-subtitle" id="last-updated-text">Loading latest snapshot across 39,474 races…</p>
+        <h1 class="site-title">2026 U.S. Election Results, 20-Year Shift &amp; Demographics Explorer</h1>
+        <p class="site-subtitle" id="last-updated-text">Loading latest snapshot across 39,472 races &amp; 3,152 counties…</p>
       </div>
       <div class="header-actions">
-        <div class="stat-pill" id="global-races-pill">39,474 Races Tracked</div>
+        <div class="stat-pill" id="global-races-pill">39,472 Races · 2004–2026</div>
         <button id="btn-theme-toggle" class="btn-theme-toggle" type="button" title="Toggle Dark / Light Mode">
           <span id="theme-toggle-icon">☀️</span>
           <span id="theme-toggle-label">Light Mode</span>
         </button>
         <button id="btn-live-refresh" class="btn-refresh" type="button" title="Fetch latest live results">
-          <span class="refresh-icon">↻</span> Refresh Live Feed
+          <span class="refresh-icon">↻</span> <span class="refresh-btn-text">Refresh Live Feed</span>
         </button>
       </div>
     </div>
@@ -55,6 +55,10 @@
         <span class="tab-title">Governors</span>
         <span class="tab-badge" id="tab-badge-governor">36 races</span>
       </button>
+      <button class="office-tab" data-office="demographics" type="button">
+        <span class="tab-title">Demographics &amp; 20-Yr History</span>
+        <span class="tab-badge" id="tab-badge-demographics">2004–2026</span>
+      </button>
       <button class="office-tab" data-office="close" type="button">
         <span class="tab-title">Too Close to Call</span>
         <span class="tab-badge badge-alert" id="tab-badge-close">Uncalled</span>
@@ -68,14 +72,14 @@
         <span class="tab-badge" id="tab-badge-legislatures">90 chambers</span>
       </button>
       <button class="office-tab" data-office="all-local" type="button">
-        <span class="tab-title">All 39,474 Races</span>
+        <span class="tab-title">All 39,472 Races</span>
         <span class="tab-badge" id="tab-badge-all">Every Ballot Item</span>
       </button>
     </nav>
   </header>
 
   <main class="main-container">
-    <!-- Chamber Balance of Power Card (Shown for Senate, House, Governor, State Legislatures, Ballot Measures, or Close Races) -->
+    <!-- Chamber Balance of Power Card -->
     <section class="balance-card" id="balance-section">
       <div class="balance-header">
         <div class="balance-party-col dem-col">
@@ -127,25 +131,120 @@
       <!-- Top Control Strip above Map -->
       <div class="map-top-controls">
         <div class="map-title-block">
-          <h2 class="map-heading" id="map-heading-text">Shift from 2024 Presidential Election to 2026 U.S. Senate</h2>
+          <h2 class="map-heading" id="map-heading-text">Shift in Margin: 2020 U.S. Senate (Class II) → 2026 U.S. Senate</h2>
           <p class="map-subheading" id="map-subheading-text">
-            County-by-county margin shift compared with the 2024 presidential vote. Click any state or county to inspect detailed race tallies.
+            Apples-to-apples county margin shift compared with the prior election. Tap or hover any county or state to inspect 2004–2026 history &amp; demographics.
           </p>
         </div>
 
         <div class="map-filter-controls" id="map-filter-controls">
+          <!-- Target Election Cycle (2004–2026) -->
+          <label class="ctrl-group" id="ctrl-target-cycle-wrap">
+            <span class="ctrl-label">Target Election:</span>
+            <select id="select-target-cycle" class="ctrl-select">
+              <optgroup label="Live 2026 Elections">
+                <option value="s26" selected>2026 U.S. Senate (Live)</option>
+                <option value="h26">2026 U.S. House (Live)</option>
+                <option value="g26">2026 Governors (Live)</option>
+                <option value="ag26">2026 Attorneys General (Live)</option>
+              </optgroup>
+              <optgroup label="Presidential Elections (2004–2024)">
+                <option value="p24">2024 President (Harris vs. Trump)</option>
+                <option value="p20">2020 President (Biden vs. Trump)</option>
+                <option value="p16">2016 President (Clinton vs. Trump)</option>
+                <option value="p12">2012 President (Obama vs. Romney)</option>
+                <option value="p08">2008 President (Obama vs. McCain)</option>
+                <option value="p04">2004 President (Kerry vs. Bush)</option>
+              </optgroup>
+              <optgroup label="U.S. Senate Archive (2004–2024)">
+                <option value="s24">2024 U.S. Senate (Class I)</option>
+                <option value="s22">2022 U.S. Senate (Class III)</option>
+                <option value="s20">2020 U.S. Senate (Class II)</option>
+                <option value="s18">2018 U.S. Senate (Class I)</option>
+                <option value="s16">2016 U.S. Senate (Class III)</option>
+                <option value="s14">2014 U.S. Senate (Class II)</option>
+                <option value="s12">2012 U.S. Senate (Class I)</option>
+                <option value="s10">2010 U.S. Senate (Class III)</option>
+                <option value="s08">2008 U.S. Senate (Class II)</option>
+                <option value="s06">2006 U.S. Senate (Class I)</option>
+                <option value="s04">2004 U.S. Senate (Class III)</option>
+              </optgroup>
+              <optgroup label="U.S. House Archive (2004–2024)">
+                <option value="h24">2024 U.S. House</option>
+                <option value="h22">2022 U.S. House (Midterm)</option>
+                <option value="h20">2020 U.S. House</option>
+                <option value="h18">2018 U.S. House (Midterm)</option>
+                <option value="h16">2016 U.S. House</option>
+                <option value="h14">2014 U.S. House (Midterm)</option>
+                <option value="h12">2012 U.S. House</option>
+                <option value="h10">2010 U.S. House (Midterm)</option>
+                <option value="h08">2008 U.S. House</option>
+                <option value="h06">2006 U.S. House (Midterm)</option>
+                <option value="h04">2004 U.S. House</option>
+              </optgroup>
+            </select>
+          </label>
+
+          <!-- Baseline Comparison Cycle (Apples-to-Apples 2004–2024) -->
+          <label class="ctrl-group" id="ctrl-baseline-cycle-wrap">
+            <span class="ctrl-label">Compare Against (Baseline):</span>
+            <select id="select-baseline-cycle" class="ctrl-select">
+              <optgroup label="Recommended Apples-to-Apples Baselines">
+                <option value="AUTO_APPLES" selected>Apples-to-Apples: Last Same-Office Election</option>
+                <option value="AUTO_MIDTERM">Last Midterm Cycle (2022 Senate / House)</option>
+                <option value="p24">2024 Presidential Election (Harris vs. Trump)</option>
+              </optgroup>
+              <optgroup label="Presidential Baselines (2004–2024)">
+                <option value="p24">2024 President (Harris vs. Trump)</option>
+                <option value="p20">2020 President (Biden vs. Trump)</option>
+                <option value="p16">2016 President (Clinton vs. Trump)</option>
+                <option value="p12">2012 President (Obama vs. Romney)</option>
+                <option value="p08">2008 President (Obama vs. McCain)</option>
+                <option value="p04">2004 President (Kerry vs. Bush)</option>
+              </optgroup>
+              <optgroup label="Same-Class II Senate Baselines (2020 / 2014 / 2008)">
+                <option value="s20">2020 U.S. Senate (Class II — Same Seats as 2026)</option>
+                <option value="s14">2014 U.S. Senate (Class II — Same Seats as 2026)</option>
+                <option value="s08">2008 U.S. Senate (Class II — Same Seats as 2026)</option>
+              </optgroup>
+              <optgroup label="All U.S. Senate Baselines (2004–2024)">
+                <option value="s24">2024 U.S. Senate (Class I)</option>
+                <option value="s22">2022 U.S. Senate (Class III)</option>
+                <option value="s18">2018 U.S. Senate (Class I)</option>
+                <option value="s16">2016 U.S. Senate (Class III)</option>
+                <option value="s12">2012 U.S. Senate (Class I)</option>
+                <option value="s10">2010 U.S. Senate (Class III)</option>
+                <option value="s06">2006 U.S. Senate (Class I)</option>
+                <option value="s04">2004 U.S. Senate (Class III)</option>
+              </optgroup>
+              <optgroup label="U.S. House Baselines (2004–2024)">
+                <option value="h24">2024 U.S. House</option>
+                <option value="h22">2022 U.S. House (Midterm)</option>
+                <option value="h20">2020 U.S. House</option>
+                <option value="h18">2018 U.S. House (Midterm)</option>
+                <option value="h16">2016 U.S. House</option>
+                <option value="h14">2014 U.S. House (Midterm)</option>
+                <option value="h12">2012 U.S. House</option>
+                <option value="h10">2010 U.S. House (Midterm)</option>
+                <option value="h08">2008 U.S. House</option>
+                <option value="h06">2006 U.S. House (Midterm)</option>
+                <option value="h04">2004 U.S. House</option>
+              </optgroup>
+            </select>
+          </label>
+
           <!-- Winner Granularity Toggle (State vs County) -->
           <label class="ctrl-group" id="ctrl-winner-level-wrap" style="display:none;">
             <span class="ctrl-label">Geography:</span>
             <select id="select-winner-level" class="ctrl-select">
               <option value="state">By State / Seat</option>
-              <option value="county">By County (3,112 Counties)</option>
+              <option value="county">By County (3,152 Counties)</option>
             </select>
           </label>
 
-          <!-- Reporting Threshold Filter (Shift Mode Only) -->
+          <!-- Reporting Threshold Filter (2026 Shift Mode Only) -->
           <label class="ctrl-group" id="ctrl-eevp-wrap">
-            <span class="ctrl-label">Min County Reporting:</span>
+            <span class="ctrl-label">Min Reporting:</span>
             <select id="select-min-eevp" class="ctrl-select">
               <option value="95" selected>Almost all votes (≥ 95% EEVP)</option>
               <option value="80">Mostly reported (≥ 80% EEVP)</option>
@@ -169,7 +268,7 @@
         <!-- Left Sidebar Overlay: Mode Cards + Zoom + Legend -->
         <aside class="map-left-overlay" id="map-left-overlay">
           <div class="mode-cards-And-zoom">
-            <!-- 3 Visual Mode Switcher Cards (Only shown for Senate, House, Governor tabs!) -->
+            <!-- 3 Visual Mode Switcher Cards (Shown for Partisan Office & Historical Tabs) -->
             <div class="view-mode-cards" id="view-mode-cards" role="tablist" aria-label="Map View Mode">
               <button class="mode-card" data-mode="winner" type="button" role="tab" aria-selected="false">
                 <div class="mode-thumb thumb-winner">
@@ -187,15 +286,13 @@
                 <div class="mode-thumb thumb-shift">
                   <svg viewBox="0 0 80 50" aria-hidden="true">
                     <rect x="6" y="6" width="68" height="38" rx="4" fill="currentColor" opacity="0.12"/>
-                    <!-- Blue arrow up-left -->
                     <line x1="42" y1="30" x2="18" y2="14" stroke="#3b82f6" stroke-width="3.2" stroke-linecap="round"/>
                     <polygon points="15,12 24,13 19,20" fill="#3b82f6"/>
-                    <!-- Red arrow up-right -->
                     <line x1="36" y1="36" x2="62" y2="18" stroke="#ef4444" stroke-width="3.2" stroke-linecap="round"/>
                     <polygon points="65,16 60,24 56,17" fill="#ef4444"/>
                   </svg>
                 </div>
-                <span class="mode-card-label">Shift from 2024</span>
+                <span class="mode-card-label" id="mode-shift-card-label">Shift arrow map</span>
               </button>
 
               <button class="mode-card" data-mode="forecast" type="button" role="tab" aria-selected="false">
@@ -234,7 +331,7 @@
                 <span>More Rep.</span>
               </div>
               <p class="legend-note" id="legend-shift-note">
-                Compared with the 2024 presidential vote in counties that have reported almost all of their votes.
+                Compared with prior election baseline in reporting counties.
               </p>
             </div>
 
@@ -253,7 +350,7 @@
                 <span>Rep.</span>
               </div>
               <p class="legend-note" id="legend-winner-note">
-                Solid fill indicates called race or county margin; click any state or county for candidate vote shares.
+                Solid fill indicates called race or county margin; tap or click any state or county to inspect.
               </p>
             </div>
 
@@ -273,6 +370,9 @@
         </div>
       </div>
 
+      <!-- Touch / Click County & State Inspector Drawer (Mobile-Friendly Tap-to-Inspect + 20-Yr County Trajectory) -->
+      <div id="county-inspector-drawer" class="county-inspector-drawer" style="display:none;"></div>
+
       <!-- Summary KPI Strip Under Map -->
       <div class="map-kpi-strip" id="map-kpi-strip">
         <div class="kpi-item">
@@ -284,21 +384,21 @@
           <span class="kpi-val gop-text" id="kpi-gop-counties">—</span>
         </div>
         <div class="kpi-item">
-          <span class="kpi-label" id="kpi-label-3">Median County Shift vs. 2024 Pres</span>
+          <span class="kpi-label" id="kpi-label-3">Median County Shift</span>
           <span class="kpi-val" id="kpi-median-shift">—</span>
         </div>
         <div class="kpi-item">
-          <span class="kpi-label" id="kpi-label-4">Mean County Shift vs. 2024 Pres</span>
+          <span class="kpi-label" id="kpi-label-4">Vote-Weighted Shift</span>
           <span class="kpi-val" id="kpi-mean-shift">—</span>
         </div>
         <div class="kpi-item">
-          <span class="kpi-label" id="kpi-label-5">Est. Remaining Votes in View</span>
+          <span class="kpi-label" id="kpi-label-5">Total Votes in View</span>
           <span class="kpi-val" id="kpi-rem-votes">—</span>
         </div>
       </div>
 
       <p class="map-footnote" id="map-footnote">
-        Note: Republicans can win Senate control with only 50 seats, as Vice President JD Vance can vote to break ties. Party seat totals include third-party candidates who caucus with Democrats.
+        Note: Republicans can win Senate control with only 50 seats, as Vice President JD Vance can vote to break ties. Party seat totals include third-party candidates who caucus with Democrats. Single-party/uncontested general elections are excluded from two-party shift arrows to prevent distortion.
       </p>
     </section>
 
@@ -309,6 +409,24 @@
         <p class="section-sub">Real-time chamber projections, popular vote estimates, and flipped seats compared with 2024.</p>
       </div>
       <div class="forecast-grid" id="forecast-grid"></div>
+    </section>
+
+    <!-- Demographic Breakdowns & 20-Year Historical Coalition Analyzer -->
+    <section class="demographics-section" id="demographics-section">
+      <div class="demographics-header">
+        <div>
+          <h2 id="demographics-heading">Demographic &amp; Community Breakdown: 2026 U.S. Senate</h2>
+          <p class="section-sub" id="demographics-subheading">
+            Vote-weighted two-party margins, vote shares, and shifts across U.S. Census county demographic tiers (Urbanicity, College Education, Household Income, and Race/Ethnicity). Click any county on the map above to inspect its individual Census profile &amp; 2004–2026 voting history.
+          </p>
+        </div>
+        <div class="demographics-meta-badges">
+          <span class="stat-pill" id="demographics-scope-pill">Scope: All Reporting States</span>
+          <span class="stat-pill" id="demographics-baseline-pill">Baseline: Last Same-Office Election</span>
+        </div>
+      </div>
+
+      <div class="demographics-grid" id="demographics-grid"></div>
     </section>
 
     <!-- Google Search-Style Race Results Cards & Search/Filter Section -->
@@ -336,13 +454,14 @@
             <option value="UNCALLED">Uncalled / Too Close to Call</option>
             <option value="CLOSE_2">Razor-Thin Margin (≤ 2.0%)</option>
             <option value="CALLED">Called Winners Only</option>
-            <option value="FLIPPED">Flipped Seats Only (2024 → 2026)</option>
+            <option value="FLIPPED">Flipped Seats Only</option>
           </select>
 
           <select id="filter-sort-by" class="ctrl-select">
             <option value="uncalled-first" selected>Sort: Uncalled &amp; Battlegrounds First</option>
             <option value="margin-asc">Sort: Closest Margin First</option>
-            <option value="shift-desc">Sort: Largest Shift vs. 2024</option>
+            <option value="shift-apples-desc">Sort: Largest Shift vs. Last Same-Office</option>
+            <option value="shift-desc">Sort: Largest Shift vs. 2024 Pres</option>
             <option value="votes-desc">Sort: Most Votes Cast</option>
             <option value="state-asc">Sort: State (A–Z)</option>
           </select>
@@ -372,21 +491,51 @@
       <!-- Race Cards Grid (Google Search Election Results Card Layout) -->
       <div id="races-grid" class="races-grid"></div>
 
-      <!-- Pagination Controls for Large Lists (House 435 / All 39,474 Races) -->
+      <!-- Pagination Controls for Large Lists (House 435 / All 39,472 Races) -->
       <div id="pagination-bar" class="pagination-bar" style="display:none;">
         <button id="page-prev" class="btn-page" type="button">← Previous</button>
         <span id="page-info" class="page-info">Page 1 of 1</span>
         <button id="page-next" class="btn-page" type="button">Next →</button>
       </div>
     </section>
+
+    <!-- Data Rectification & Normalization Audit Card -->
+    <section class="audit-card" id="audit-section">
+      <details class="audit-details">
+        <summary class="audit-summary">
+          <span><strong>✓ Data Normalization &amp; Zero Double-Counting Verification</strong> — 22 Years (2004–2026) Rectified Across 5 Disparate Sources</span>
+          <span class="audit-expand-hint">Click to view normalization rules ▾</span>
+        </summary>
+        <div class="audit-body">
+          <div class="audit-grid">
+            <div class="audit-item">
+              <h4>1. Concurrent Regular + Special Senate Deduplication</h4>
+              <p>States holding simultaneous regular and special U.S. Senate elections on the same ballot (CA &amp; NE in 2024; OK in 2022; GA in 2020) are strictly separated so county votes are never summed across two Senate races.</p>
+            </div>
+            <div class="audit-item">
+              <h4>2. ME &amp; NE Presidential CD Sub-Race Filtering</h4>
+              <p>Maine and Nebraska Congressional District electoral-vote sub-races (ME-CD1/2, NE-CD1/2/3) are excluded from statewide and county Presidential aggregations so they never overwrite statewide margins or double-count counties.</p>
+            </div>
+            <div class="audit-item">
+              <h4>3. Ranked-Choice (AK, ME) &amp; Fusion-Ticket (NY, CT) Rectification</h4>
+              <p>Historical feeds filter strictly to RCV Round 1 (preventing multi-round vote multiplication) and sum candidate fusion ballot lines (e.g., DEM + WFP, REP + CON) by unique candidate before computing two-party margins.</p>
+            </div>
+            <div class="audit-item">
+              <h4>4. Split-County EEVP &amp; Single-Party General Election Hygiene</h4>
+              <p>Split-county U.S. House reporting percentages are weighted by expected vote, and Top-Two single-party general elections (Dem-vs-Dem or Rep-vs-Rep) and uncontested seats are flagged (`op=1`) so they never skew shift arrows or demographic shift averages.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <p>
-        <strong>2026 Election Results &amp; 2024 Comparison Explorer</strong> · Powered by live 5-minute data feeds from
-        <a href="https://civicapi.org" target="_blank" rel="noopener">civicAPI</a> (39,474 races) &amp;
-        NYT 2024/2026 county returns (3,121 counties).
+        <strong>2026 Election Results, 20-Year Archive (2004–2026) &amp; Demographics Explorer</strong> · Powered by live 5-minute data feeds from
+        <a href="https://civicapi.org" target="_blank" rel="noopener">civicAPI</a> (39,472 races), NYT 2024/2026 county returns,
+        MIT/Heideman 2004–2024 County Returns, FiveThirtyEight 2004–2024 Statewide/District Archive, &amp; U.S. Census Bureau County Demographics.
       </p>
     </div>
   </footer>
