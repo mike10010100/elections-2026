@@ -143,9 +143,10 @@
             <span class="ctrl-label">Target Election:</span>
             <select id="select-target-cycle" class="ctrl-select">
               <optgroup label="Live 2026 Elections">
-                <option value="s26" selected>2026 U.S. Senate (Live)</option>
-                <option value="h26">2026 U.S. House (Live)</option>
-                <option value="g26">2026 Governors (Live)</option>
+                <option value="s26" selected>2026 U.S. Senate (35 States on Ballot)</option>
+                <option value="top26">2026 All-50-State Top Ticket (Senate / Gov / House)</option>
+                <option value="h26">2026 U.S. House (All 50 States)</option>
+                <option value="g26">2026 Governors (36 States on Ballot)</option>
                 <option value="ag26">2026 Attorneys General (Live)</option>
               </optgroup>
               <optgroup label="Presidential Elections (2004–2024)">
@@ -246,9 +247,9 @@
           <label class="ctrl-group" id="ctrl-eevp-wrap">
             <span class="ctrl-label">Min Reporting:</span>
             <select id="select-min-eevp" class="ctrl-select">
-              <option value="95" selected>Almost all votes (≥ 95% EEVP)</option>
+              <option value="50" selected>Majority reported (≥ 50% EEVP)</option>
               <option value="80">Mostly reported (≥ 80% EEVP)</option>
-              <option value="50">Half reported (≥ 50% EEVP)</option>
+              <option value="95">Almost all votes (≥ 95% EEVP)</option>
               <option value="1">All reporting counties (≥ 1%)</option>
             </select>
           </label>

@@ -300,6 +300,16 @@ def extract_county_office_data(races: list[dict], target_office: str) -> dict[st
     allowed_senate_ids = filter_primary_senate_races_for_counties(races) if target_office == "U.S. Senate" else None
     counties = {}
 
+    # Build Connecticut town -> traditional county FIPS (001..015) lookup so CT House races
+    # (which use 2024+ planning region codes 110..190) map cleanly onto the 8 CT counties
+    ct_town_to_fc = {}
+    for r in races:
+        for u in r.get("reporting_units") or []:
+            if u.get("fips_state") == "09" and u.get("level") == "township":
+                fc = u.get("fips_county") or ""
+                if fc in ("001", "003", "005", "007", "009", "011", "013", "015") and u.get("name"):
+                    ct_town_to_fc[u["name"]] = fc
+
     for r in races:
         if r.get("office") != target_office:
             continue
@@ -320,17 +330,26 @@ def extract_county_office_data(races: list[dict], target_office: str) -> dict[st
             name_map[cid] = full_n
 
         units = r.get("reporting_units") or []
-        has_county = any(u.get("level") == "county" for u in units)
+        has_valid_county = any(
+            u.get("level") == "county"
+            and not (u.get("fips_state") == "09" and (u.get("fips_county") or "") not in ("001", "003", "005", "007", "009", "011", "013", "015"))
+            for u in units
+        )
         for u in units:
             lvl = u.get("level")
-            if has_county and lvl != "county":
+            if has_valid_county and lvl != "county":
                 continue
-            if not has_county and lvl not in ("county", "township"):
+            if not has_valid_county and lvl not in ("county", "township"):
                 continue
             fs = u.get("fips_state")
             fc = u.get("fips_county")
             if not fs or not fc:
                 continue
+            if fs == "09" and fc not in ("001", "003", "005", "007", "009", "011", "013", "015"):
+                mapped_fc = ct_town_to_fc.get(u.get("name") or "")
+                if not mapped_fc:
+                    continue
+                fc = mapped_fc
             fips = f"{fs}{fc}"
             tv = u.get("total_votes") or 0
             ev = u.get("total_expected_vote") or tv
@@ -1089,6 +1108,11 @@ def build_all():
                 if rec["one_party"]:
                     obj["op"] = 1
                 entry[key] = obj
+
+        # Also create `top26` (2026 All-50-State Top-of-Ticket: Senate -> Governor -> House)
+        top_rec = entry.get("s26") or entry.get("g26") or entry.get("h26")
+        if top_rec:
+            entry["top26"] = top_rec
 
         counties_payload[fips] = entry
 

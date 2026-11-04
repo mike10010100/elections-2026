@@ -18,6 +18,7 @@
 
   const CYCLE_LABELS = {
     s26: "2026 U.S. Senate",
+    top26: "2026 All-50-State Top Ticket (Sen/Gov/House)",
     h26: "2026 U.S. House",
     g26: "2026 Governors",
     ag26: "2026 Attorneys General",
@@ -60,6 +61,7 @@
     p08: ["p04"],
     p04: ["p04"],
     s26: ["s20", "s22"],
+    top26: ["s20", "s22", "h24", "p24"],
     s24: ["s18", "s20"],
     s22: ["s16", "s18"],
     s20: ["s14", "s16"],
@@ -104,7 +106,7 @@
     mapDataset: "s26",              // s26 | h26 | g26 | ag26 | p24..p04 | s24..s04 | h24..h04
     baselineCycle: "AUTO_APPLES",   // AUTO_APPLES | AUTO_MIDTERM | p24..p04 | s24..s04 | h24..h04
     winnerLevel: "state",           // state | county
-    minEevp: 95,
+    minEevp: 50,
     selectedState: "ALL",
     inspectedCountyFips: null,
     searchQuery: "",
@@ -138,7 +140,7 @@
   }
 
   function isLive2026Dataset(ds) {
-    return ds === "s26" || ds === "h26" || ds === "g26" || ds === "ag26";
+    return ds === "s26" || ds === "top26" || ds === "h26" || ds === "g26" || ds === "ag26";
   }
 
   function isPartisanTab(tab) {
@@ -1315,7 +1317,14 @@
       return;
     }
 
-    const eevpText = rec && rec.eevp !== undefined ? `${rec.eevp}% reported` : CYCLE_LABELS[state.mapDataset] || "";
+    const eevpText =
+      rec && rec.eevp !== undefined
+        ? `${rec.eevp}% reported`
+        : !rec && state.mapDataset === "s26"
+        ? `No 2026 Senate race in ${cData.state}`
+        : !rec && state.mapDataset === "g26"
+        ? `No 2026 Gov race in ${cData.state}`
+        : CYCLE_LABELS[state.mapDataset] || "";
     const shift = computeCountyShift(cData, state.mapDataset, state.baselineCycle);
     let shiftBannerHtml = "";
     if (shift !== null) {
@@ -1324,6 +1333,12 @@
         <div class="tt-shift-banner ${isDem ? "tt-shift-dem" : "tt-shift-gop"}">
           <span>Shift vs. ${baseLabel.split("(")[0].trim()}:</span>
           <span>${isDem ? "↖ Dem +" + shift.toFixed(1) : "↗ Rep +" + Math.abs(shift).toFixed(1)} pts</span>
+        </div>
+      `;
+    } else if (!rec && (state.mapDataset === "s26" || state.mapDataset === "g26")) {
+      shiftBannerHtml = `
+        <div style="font-size:11px;color:#fbbf24;margin-bottom:6px;line-height:1.35;">
+          ${cData.state} has no ${state.mapDataset === "s26" ? "U.S. Senate" : "Governor"} race on the 2026 ballot. Switch tab to <strong>U.S. House</strong> or <strong>Governors</strong> (or select <em>2026 All-50-State Top Ticket</em>) for ${cData.state} arrows.
         </div>
       `;
     }
@@ -1358,6 +1373,26 @@
                   <td class="num">${rec.d.toFixed(1)}%</td>
                   <td class="num">${rec.r.toFixed(1)}%</td>
                   <td class="num"><strong>${fmtMargin(rec.m)}</strong></td>
+                </tr>`
+              : ""
+          }
+          ${
+            !rec && cData.g26
+              ? `<tr>
+                  <td><strong>2026 Governor (${cData.g26.eevp}% rep)</strong></td>
+                  <td class="num">${cData.g26.d.toFixed(1)}%</td>
+                  <td class="num">${cData.g26.r.toFixed(1)}%</td>
+                  <td class="num"><strong>${fmtMargin(cData.g26.m)}</strong></td>
+                </tr>`
+              : ""
+          }
+          ${
+            !rec && cData.h26
+              ? `<tr>
+                  <td><strong>2026 U.S. House (${cData.h26.eevp}% rep)</strong></td>
+                  <td class="num">${cData.h26.d.toFixed(1)}%</td>
+                  <td class="num">${cData.h26.r.toFixed(1)}%</td>
+                  <td class="num"><strong>${fmtMargin(cData.h26.m)}</strong></td>
                 </tr>`
               : ""
           }
