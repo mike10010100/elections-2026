@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 U.S. Election Results — Live Interactive Map & 2024 Shift Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="assets/d3.min.js"></script>
+  <script src="assets/topojson-client.min.js"></script>
+</head>
+<body>
+  <!-- Top Header Bar (Google Search Election Results Style) -->
+  <header class="top-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="live-dot-wrap" title="Live 2026 election results feed">
+          <span class="live-dot"></span>
+          <span class="live-label">LIVE 2026 RESULTS</span>
+        </div>
+        <h1 class="site-title">2026 U.S. Election Results &amp; 2024 Shift Explorer</h1>
+        <p class="site-subtitle" id="last-updated-text">Loading latest snapshot across 39,474 races…</p>
+      </div>
+      <div class="header-actions">
+        <div class="stat-pill" id="global-races-pill">39,474 Races Tracked</div>
+        <button id="btn-live-refresh" class="btn-refresh" type="button" title="Fetch latest live results">
+          <span class="refresh-icon">↻</span> Refresh Live Feed
+        </button>
+      </div>
+    </div>
+
+    <!-- Google Search-Style Office Navigation Tabs -->
+    <nav class="office-tabs-bar" aria-label="Election Office Categories">
+      <button class="office-tab active" data-office="senate" type="button">
+        <span class="tab-title">U.S. Senate</span>
+        <span class="tab-badge" id="tab-badge-senate">35 races</span>
+      </button>
+      <button class="office-tab" data-office="house" type="button">
+        <span class="tab-title">U.S. House</span>
+        <span class="tab-badge" id="tab-badge-house">435 races</span>
+      </button>
+      <button class="office-tab" data-office="governor" type="button">
+        <span class="tab-title">Governors</span>
+        <span class="tab-badge" id="tab-badge-governor">36 races</span>
+      </button>
+      <button class="office-tab" data-office="close" type="button">
+        <span class="tab-title">Too Close to Call</span>
+        <span class="tab-badge badge-alert" id="tab-badge-close">Uncalled</span>
+      </button>
+      <button class="office-tab" data-office="measures" type="button">
+        <span class="tab-title">Ballot Measures</span>
+        <span class="tab-badge" id="tab-badge-measures">169</span>
+      </button>
+      <button class="office-tab" data-office="legislatures" type="button">
+        <span class="tab-title">State Legislatures</span>
+        <span class="tab-badge" id="tab-badge-legislatures">90 chambers</span>
+      </button>
+      <button class="office-tab" data-office="all-local" type="button">
+        <span class="tab-title">All 39,474 Races</span>
+        <span class="tab-badge" id="tab-badge-all">Every Ballot Item</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- Chamber Balance of Power Card (Google Search Top Bar) -->
+    <section class="balance-card" id="balance-section">
+      <div class="balance-header">
+        <div class="balance-party-col dem-col">
+          <div class="party-name-row">
+            <span class="party-dot dem-bg"></span>
+            <span class="party-title" id="balance-dem-label">Democrats</span>
+            <span class="flip-pill dem-flip-pill" id="balance-dem-flips">+7 flips</span>
+          </div>
+          <div class="seat-big-num dem-text" id="balance-dem-seats">54</div>
+          <div class="seat-sub-detail" id="balance-dem-sub">34 not up · 20 called · 2 leading</div>
+        </div>
+
+        <div class="balance-center-info">
+          <div class="chamber-label" id="balance-chamber-title">U.S. SENATE BALANCE OF POWER</div>
+          <div class="majority-target" id="balance-majority-label">51 seats for majority (50 for GOP with VP tiebreaker)</div>
+          <div class="nat-pop-vote" id="balance-pop-vote"></div>
+        </div>
+
+        <div class="balance-party-col gop-col">
+          <div class="party-name-row right">
+            <span class="flip-pill gop-flip-pill" id="balance-gop-flips">0 flips</span>
+            <span class="party-title" id="balance-gop-label">Republicans</span>
+            <span class="party-dot gop-bg"></span>
+          </div>
+          <div class="seat-big-num gop-text" id="balance-gop-seats">44</div>
+          <div class="seat-sub-detail" id="balance-gop-sub">31 not up · 13 called · 0 leading</div>
+        </div>
+      </div>
+
+      <!-- Segmented Seat Bar -->
+      <div class="seat-bar-outer">
+        <div class="seat-bar-track" id="seat-bar-track"></div>
+        <div class="majority-line" id="majority-line" style="left: 50%;">
+          <span class="majority-tick">▲</span>
+        </div>
+      </div>
+
+      <div class="seat-bar-legend">
+        <span class="leg-item"><i class="swatch dem-solid"></i> Dem. Called / Held</span>
+        <span class="leg-item"><i class="swatch dem-lead"></i> Dem. Leading</span>
+        <span class="leg-item"><i class="swatch tossup-swatch"></i> Uncalled / Other</span>
+        <span class="leg-item"><i class="swatch gop-lead"></i> Rep. Leading</span>
+        <span class="leg-item"><i class="swatch gop-solid"></i> Rep. Called / Held</span>
+      </div>
+    </section>
+
+    <!-- Interactive Map Card (Recreating NYT / Google Search Map with Left View Switcher) -->
+    <section class="map-card" id="map-section">
+      <!-- Top Control Strip above Map -->
+      <div class="map-top-controls">
+        <div class="map-title-block">
+          <h2 class="map-heading" id="map-heading-text">Shift from 2024 Presidential Election to 2026 U.S. Senate</h2>
+          <p class="map-subheading" id="map-subheading-text">
+            County-by-county margin shift compared with the 2024 presidential vote. Click any state or county to inspect detailed race tallies.
+          </p>
+        </div>
+
+        <div class="map-filter-controls" id="map-filter-controls">
+          <!-- Shift Office Selector -->
+          <label class="ctrl-group" id="ctrl-shift-office-wrap">
+            <span class="ctrl-label">2026 Map Dataset:</span>
+            <select id="select-map-dataset" class="ctrl-select">
+              <option value="s26">2026 U.S. Senate (35 States)</option>
+              <option value="h26">2026 U.S. House (All 50 States by County)</option>
+              <option value="g26">2026 Governor (36 States)</option>
+              <option value="ag26">2026 Attorney General (31 States)</option>
+            </select>
+          </label>
+
+          <!-- Winner Granularity Toggle (State vs County) -->
+          <label class="ctrl-group" id="ctrl-winner-level-wrap" style="display:none;">
+            <span class="ctrl-label">Geography:</span>
+            <select id="select-winner-level" class="ctrl-select">
+              <option value="state">By State / Seat</option>
+              <option value="county">By County (3,112 Counties)</option>
+            </select>
+          </label>
+
+          <!-- Reporting Threshold Filter -->
+          <label class="ctrl-group" id="ctrl-eevp-wrap">
+            <span class="ctrl-label">Min County Reporting:</span>
+            <select id="select-min-eevp" class="ctrl-select">
+              <option value="95" selected>Almost all votes (≥ 95% EEVP)</option>
+              <option value="80">Mostly reported (≥ 80% EEVP)</option>
+              <option value="50">Half reported (≥ 50% EEVP)</option>
+              <option value="1">All reporting counties (≥ 1%)</option>
+            </select>
+          </label>
+
+          <!-- State Filter Quick Jump -->
+          <label class="ctrl-group">
+            <span class="ctrl-label">Focus State:</span>
+            <select id="select-state-filter" class="ctrl-select">
+              <option value="ALL">All 50 States + D.C.</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- Main Map Stage (Matches Screenshot Layout) -->
+      <div class="map-stage-wrapper">
+        <!-- Left Sidebar Overlay: Mode Cards + Zoom + Shift Legend (Exact Screenshot Match) -->
+        <aside class="map-left-overlay">
+          <div class="mode-cards-And-zoom">
+            <!-- 3 Visual Mode Switcher Cards -->
+            <div class="view-mode-cards" role="tablist" aria-label="Map View Mode">
+              <button class="mode-card" data-mode="winner" type="button" role="tab" aria-selected="false">
+                <div class="mode-thumb thumb-winner">
+                  <svg viewBox="0 0 80 50" aria-hidden="true">
+                    <rect x="6" y="8" width="22" height="16" rx="2" fill="#2b6cb0" opacity="0.85"/>
+                    <rect x="30" y="10" width="20" height="18" rx="2" fill="#c53030" opacity="0.85"/>
+                    <rect x="16" y="26" width="26" height="16" rx="2" fill="#e5a3a3"/>
+                    <rect x="44" y="24" width="26" height="18" rx="2" fill="#2b6cb0"/>
+                  </svg>
+                </div>
+                <span class="mode-card-label">By winner</span>
+              </button>
+
+              <button class="mode-card active" data-mode="shift" type="button" role="tab" aria-selected="true">
+                <div class="mode-thumb thumb-shift">
+                  <svg viewBox="0 0 80 50" aria-hidden="true">
+                    <rect x="6" y="6" width="68" height="38" rx="4" fill="#e9ecef"/>
+                    <!-- Blue arrow up-left -->
+                    <line x1="42" y1="30" x2="18" y2="14" stroke="#1b6ec2" stroke-width="3.2" stroke-linecap="round"/>
+                    <polygon points="15,12 24,13 19,20" fill="#1b6ec2"/>
+                    <!-- Red arrow up-right -->
+                    <line x1="36" y1="36" x2="62" y2="18" stroke="#c9312b" stroke-width="3.2" stroke-linecap="round"/>
+                    <polygon points="65,16 60,24 56,17" fill="#c9312b"/>
+                  </svg>
+                </div>
+                <span class="mode-card-label">Shift from 2024</span>
+              </button>
+
+              <button class="mode-card" data-mode="forecast" type="button" role="tab" aria-selected="false">
+                <div class="mode-thumb thumb-forecast">
+                  <svg viewBox="0 0 80 50" aria-hidden="true">
+                    <path d="M 18 38 A 22 22 0 0 1 62 38" fill="none" stroke="#cbd5e1" stroke-width="5"/>
+                    <path d="M 18 38 A 22 22 0 0 1 46 17" fill="none" stroke="#1b6ec2" stroke-width="5"/>
+                    <line x1="40" y1="38" x2="32" y2="20" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="40" cy="38" r="3.5" fill="#334155"/>
+                  </svg>
+                </div>
+                <span class="mode-card-label">Live forecast</span>
+              </button>
+            </div>
+
+            <!-- Zoom Controls (+ / - / ×) -->
+            <div class="map-zoom-controls" aria-label="Map Zoom Controls">
+              <button id="zoom-in" class="zoom-btn" type="button" title="Zoom in">+</button>
+              <button id="zoom-out" class="zoom-btn" type="button" title="Zoom out">−</button>
+              <button id="zoom-reset" class="zoom-btn" type="button" title="Reset map view">×</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Legend Box (Matches Screenshot SHIFT IN MARGIN) -->
+          <div class="map-legend-box" id="map-legend-box">
+            <div id="legend-shift-content">
+              <div class="legend-heading">SHIFT IN MARGIN</div>
+              <svg class="legend-arrows-svg" viewBox="0 0 150 38" aria-hidden="true">
+                <!-- Blue up-left arrow -->
+                <line x1="68" y1="22" x2="26" y2="7" stroke="#1b6ec2" stroke-width="2.6" stroke-linecap="round"/>
+                <polygon points="20,5 30,4 27,12" fill="#1b6ec2"/>
+                <!-- Red up-right arrow -->
+                <line x1="80" y1="22" x2="122" y2="7" stroke="#c9312b" stroke-width="2.6" stroke-linecap="round"/>
+                <polygon points="128,5 121,12 118,4" fill="#c9312b"/>
+              </svg>
+              <div class="legend-arrows-labels">
+                <span>More Dem.</span>
+                <span>More Rep.</span>
+              </div>
+              <p class="legend-note" id="legend-shift-note">
+                Compared with the 2024 presidential vote in counties that have reported almost all of their votes.
+              </p>
+            </div>
+
+            <div id="legend-winner-content" style="display:none;">
+              <div class="legend-heading">MARGIN / CALL STATUS</div>
+              <div class="winner-scale-row">
+                <span class="scale-chip" style="background:#134e9b" title="Dem Called / +20%"></span>
+                <span class="scale-chip" style="background:#3b82f6" title="Dem +5 to +20%"></span>
+                <span class="scale-chip" style="background:#93c5fd" title="Dem Leading / <5%"></span>
+                <span class="scale-chip" style="background:#fca5a5" title="Rep Leading / <5%"></span>
+                <span class="scale-chip" style="background:#ef4444" title="Rep +5 to +20%"></span>
+                <span class="scale-chip" style="background:#991b1b" title="Rep Called / +20%"></span>
+              </div>
+              <div class="legend-arrows-labels">
+                <span>Dem.</span>
+                <span>Rep.</span>
+              </div>
+              <p class="legend-note">
+                Solid fill indicates called race or county margin; click any state or county for candidate vote shares.
+              </p>
+            </div>
+
+            <div id="legend-forecast-content" style="display:none;">
+              <div class="legend-heading">UNCOUNTED VOTES &amp; SWING</div>
+              <p class="legend-note">
+                Circle size shows estimated remaining uncounted votes in each county, colored by current 2026 party margin.
+              </p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- SVG Map Container -->
+        <div class="map-svg-container" id="map-svg-container">
+          <svg id="us-election-map" viewBox="0 0 975 610" preserveAspectRatio="xMidYMid meet"></svg>
+          <div id="map-tooltip" class="map-tooltip" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Summary KPI Strip Under Map -->
+      <div class="map-kpi-strip" id="map-kpi-strip">
+        <div class="kpi-item">
+          <span class="kpi-label">Counties Shifting Dem. (↖)</span>
+          <span class="kpi-val dem-text" id="kpi-dem-counties">—</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-label">Counties Shifting Rep. (↗)</span>
+          <span class="kpi-val gop-text" id="kpi-gop-counties">—</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-label">Median County Shift vs. 2024 Pres</span>
+          <span class="kpi-val" id="kpi-median-shift">—</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-label">Mean County Shift vs. 2024 Pres</span>
+          <span class="kpi-val" id="kpi-mean-shift">—</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-label">Est. Remaining Votes in View</span>
+          <span class="kpi-val" id="kpi-rem-votes">—</span>
+        </div>
+      </div>
+
+      <p class="map-footnote">
+        Note: Republicans can win Senate control with only 50 seats, as Vice President JD Vance can vote to break ties. Party seat totals include third-party candidates who caucus with Democrats.
+      </p>
+    </section>
+
+    <!-- Live Forecast & Seat Probabilities Panel (Shown when Live Forecast mode or toggled) -->
+    <section class="forecast-panel" id="forecast-panel" style="display:none;">
+      <div class="section-header-row">
+        <h2>2026 Live Model Estimates &amp; Seat Flips</h2>
+        <p class="section-sub">Real-time chamber projections, popular vote estimates, and flipped seats compared with 2024.</p>
+      </div>
+      <div class="forecast-grid" id="forecast-grid"></div>
+    </section>
+
+    <!-- Google Search-Style Race Results Cards & Search/Filter Section -->
+    <section class="results-explorer-section" id="results-explorer-section">
+      <div class="explorer-toolbar">
+        <div class="explorer-title-wrap">
+          <h2 id="explorer-heading">U.S. Senate Races (35 Seats)</h2>
+          <span class="explorer-count-badge" id="explorer-count-badge">35 races</span>
+        </div>
+
+        <div class="explorer-filters">
+          <input
+            type="search"
+            id="race-search-input"
+            class="search-input"
+            placeholder="Search state, candidate, district, city, or ballot measure…"
+          />
+
+          <select id="filter-call-status" class="ctrl-select">
+            <option value="ALL">All Call Statuses</option>
+            <option value="UNCALLED">Uncalled / Too Close to Call</option>
+            <option value="CLOSE_2">Razor-Thin Margin (≤ 2.0%)</option>
+            <option value="CALLED">Called Winners Only</option>
+            <option value="FLIPPED">Flipped Seats Only (2024 → 2026)</option>
+          </select>
+
+          <select id="filter-sort-by" class="ctrl-select">
+            <option value="margin-asc">Sort: Closest Margin First</option>
+            <option value="uncalled-first" selected>Sort: Uncalled &amp; Battlegrounds First</option>
+            <option value="shift-desc">Sort: Largest Shift vs. 2024</option>
+            <option value="votes-desc">Sort: Most Votes Cast</option>
+            <option value="state-asc">Sort: State (A–Z)</option>
+          </select>
+
+          <select id="filter-civic-type" class="ctrl-select" style="display:none;">
+            <option value="ALL">All Office / Ballot Types</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Selected State Banner (when user clicks a state on the map) -->
+      <div id="selected-state-banner" class="selected-state-banner" style="display:none;">
+        <div class="state-banner-info">
+          <strong id="banner-state-name">Selected State</strong>
+          <span id="banner-state-summary">Showing races for this state</span>
+        </div>
+        <div class="state-banner-actions">
+          <button id="btn-load-all-state-local" class="btn-secondary" type="button">
+            View All Local &amp; Down-Ballot Races in State
+          </button>
+          <button id="btn-clear-state-filter" class="btn-clear" type="button">
+            × Show All 50 States
+          </button>
+        </div>
+      </div>
+
+      <!-- Race Cards Grid (Google Search Election Results Card Layout) -->
+      <div id="races-grid" class="races-grid"></div>
+
+      <!-- Pagination Controls for Large Lists (House 435 / All 39,474 Races) -->
+      <div id="pagination-bar" class="pagination-bar" style="display:none;">
+        <button id="page-prev" class="btn-page" type="button">← Previous</button>
+        <span id="page-info" class="page-info">Page 1 of 1</span>
+        <button id="page-next" class="btn-page" type="button">Next →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        <strong>2026 Election Results &amp; 2024 Comparison Explorer</strong> · Powered by live 5-minute data feeds from
+        <a href="https://civicapi.org" target="_blank" rel="noopener">civicAPI</a> (39,474 races) &amp;
+        NYT 2024/2026 county returns (3,121 counties).
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
