@@ -90,7 +90,7 @@ if __name__ == "__main__":
     try:
         import subprocess
         subprocess.run(
-            ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states", "data/latest.json"],
+            ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states", "data/latest.json", "data/nyt_2026"],
             check=False,
         )
         diff_res = subprocess.run(
