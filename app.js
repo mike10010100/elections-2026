@@ -27,9 +27,10 @@
     stateCentroids: {},
     loadedStateCivicRaces: {},
 
+    theme: document.documentElement.getAttribute("data-theme") || "dark",
     activeOfficeTab: "senate",      // senate | house | governor | close | measures | legislatures | all-local
-    mapMode: "shift",               // shift | winner | forecast
-    mapDataset: "s26",              // s26 | h26 | g26 | ag26
+    mapMode: "shift",               // shift | winner | forecast (used for senate/house/governor)
+    mapDataset: "s26",              // s26 | h26 | g26
     winnerLevel: "state",           // state | county
     minEevp: 95,
     selectedState: "ALL",
@@ -47,32 +48,42 @@
   let svg, gMap, zoomBehavior;
 
   async function init() {
+    syncThemeButtonUI();
     setupMapSvg();
     bindEvents();
     await loadAllData();
+  }
+
+  function isDark() {
+    return (document.documentElement.getAttribute("data-theme") || "dark") === "dark";
+  }
+
+  function syncThemeButtonUI() {
+    const dark = isDark();
+    state.theme = dark ? "dark" : "light";
+    const iconEl = document.getElementById("theme-toggle-icon");
+    const labelEl = document.getElementById("theme-toggle-label");
+    if (iconEl) iconEl.textContent = dark ? "☀️" : "🌙";
+    if (labelEl) labelEl.textContent = dark ? "Light Mode" : "Dark Mode";
+  }
+
+  function toggleTheme() {
+    const next = isDark() ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("elections2026-theme", next);
+    } catch (e) {}
+    syncThemeButtonUI();
+    updateHatchPatterns();
+    renderMap();
   }
 
   function setupMapSvg() {
     svg = d3.select("#us-election-map");
     svg.selectAll("*").remove();
 
-    // Define diagonal hatch patterns for leading/uncalled states
-    const defs = svg.append("defs");
-
-    const mkPattern = (id, bg, stripe) => {
-      const p = defs.append("pattern")
-        .attr("id", id)
-        .attr("patternUnits", "userSpaceOnUse")
-        .attr("width", 8)
-        .attr("height", 8)
-        .attr("patternTransform", "rotate(45)");
-      p.append("rect").attr("width", 8).attr("height", 8).attr("fill", bg);
-      p.append("line")
-        .attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 8)
-        .attr("stroke", stripe).attr("stroke-width", 4);
-    };
-    mkPattern("pat-dem-lead", "#dbeafe", "#3b82f6");
-    mkPattern("pat-gop-lead", "#fee2e2", "#ef4444");
+    svg.append("defs");
+    updateHatchPatterns();
 
     gMap = svg.append("g").attr("class", "map-root-g");
     gMap.append("g").attr("class", "layer-states");
@@ -89,6 +100,28 @@
       });
 
     svg.call(zoomBehavior);
+  }
+
+  function updateHatchPatterns() {
+    if (!svg) return;
+    const defs = svg.select("defs");
+    defs.selectAll("*").remove();
+
+    const dark = isDark();
+    const mkPattern = (id, bg, stripe) => {
+      const p = defs.append("pattern")
+        .attr("id", id)
+        .attr("patternUnits", "userSpaceOnUse")
+        .attr("width", 8)
+        .attr("height", 8)
+        .attr("patternTransform", "rotate(45)");
+      p.append("rect").attr("width", 8).attr("height", 8).attr("fill", bg);
+      p.append("line")
+        .attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 8)
+        .attr("stroke", stripe).attr("stroke-width", 4);
+    };
+    mkPattern("pat-dem-lead", dark ? "#172554" : "#dbeafe", dark ? "#3b82f6" : "#2563eb");
+    mkPattern("pat-gop-lead", dark ? "#450a0a" : "#fee2e2", dark ? "#ef4444" : "#dc2626");
   }
 
   async function loadAllData(bustCache = false) {
@@ -111,15 +144,12 @@
       if (!state.topo) {
         state.topo = topo;
         prepareGeometries(topo, countyShifts);
-        populateStateDropdown(overview);
+        populateStateDropdowns(overview);
         populateCivicTypesDropdown(overview);
       }
 
       updateHeaderMeta();
-      renderBalanceOfPower();
-      renderMap();
-      renderForecastPanel();
-      await renderRaceExplorer();
+      await syncActiveView();
     } catch (err) {
       console.error("Failed loading election data:", err);
       document.getElementById("last-updated-text").textContent =
@@ -127,6 +157,30 @@
     } finally {
       if (btn) btn.disabled = false;
     }
+  }
+
+  async function syncActiveView() {
+    const tab = state.activeOfficeTab;
+    const balanceSec = document.getElementById("balance-section");
+    const mapSec = document.getElementById("map-section");
+    const forecastSec = document.getElementById("forecast-panel");
+
+    if (tab === "all-local") {
+      // Hide partisan balance bar and map so all-races explorer is right at the top
+      balanceSec.style.display = "none";
+      mapSec.style.display = "none";
+      forecastSec.style.display = "none";
+      await renderRaceExplorer();
+      return;
+    }
+
+    balanceSec.style.display = "block";
+    mapSec.style.display = "block";
+
+    renderBalanceOfPower();
+    renderMap();
+    renderForecastPanel();
+    await renderRaceExplorer();
   }
 
   function prepareGeometries(topo, countyShifts) {
@@ -154,19 +208,23 @@
     }
   }
 
-  function populateStateDropdown(overview) {
-    const sel = document.getElementById("select-state-filter");
+  function populateStateDropdowns(overview) {
     const statesIdx = (overview.summary_counts && overview.summary_counts.states_index) || {};
     const codes = Object.keys(STATE_NAMES).sort((a, b) =>
       STATE_NAMES[a].localeCompare(STATE_NAMES[b])
     );
-    sel.innerHTML = `<option value="ALL">All 50 States + D.C.</option>`;
-    for (const code of codes) {
-      const cnt = statesIdx[code] ? ` (${fmtInt(statesIdx[code].total)} races)` : "";
-      const opt = document.createElement("option");
-      opt.value = code;
-      opt.textContent = `${STATE_NAMES[code]} (${code})${cnt}`;
-      sel.appendChild(opt);
+
+    for (const selId of ["select-state-filter", "filter-state-inline"]) {
+      const sel = document.getElementById(selId);
+      if (!sel) continue;
+      sel.innerHTML = `<option value="ALL">All 50 States + D.C.</option>`;
+      for (const code of codes) {
+        const cnt = statesIdx[code] ? ` (${fmtInt(statesIdx[code].total)} races)` : "";
+        const opt = document.createElement("option");
+        opt.value = code;
+        opt.textContent = `${STATE_NAMES[code]} (${code})${cnt}`;
+        sel.appendChild(opt);
+      }
     }
   }
 
@@ -213,7 +271,7 @@
     document.getElementById("tab-badge-governor").textContent =
       `36 (${govUncalled} uncalled)`;
     document.getElementById("tab-badge-close").textContent =
-      `${senUncalled + houseUncalled + govUncalled} federal/gov`;
+      `${senUncalled + houseUncalled + govUncalled} uncalled`;
     document.getElementById("tab-badge-measures").textContent =
       `${ov.measures_races.length} statewide`;
     document.getElementById("tab-badge-all").textContent =
@@ -221,23 +279,172 @@
   }
 
   // =========================================================================
-  // BALANCE OF POWER BAR (Google Search Top Card)
+  // BALANCE OF POWER / SUMMARY BAR (Tailored to Active Tab!)
   // =========================================================================
   function renderBalanceOfPower() {
     const ov = state.overview;
     const cc = ov.chamber_control;
+    const tab = state.activeOfficeTab;
 
-    let chamberKey = "senate";
-    if (state.activeOfficeTab === "house") chamberKey = "house";
-    else if (state.activeOfficeTab === "governor") chamberKey = "governor";
-    else if (state.mapDataset === "h26" && state.activeOfficeTab !== "senate") chamberKey = "house";
-    else if (state.mapDataset === "g26" && state.activeOfficeTab !== "senate") chamberKey = "governor";
+    const leftDot = document.getElementById("balance-left-dot");
+    const rightDot = document.getElementById("balance-right-dot");
+    const leftSeatsEl = document.getElementById("balance-dem-seats");
+    const rightSeatsEl = document.getElementById("balance-gop-seats");
+    const leftLabelEl = document.getElementById("balance-dem-label");
+    const rightLabelEl = document.getElementById("balance-gop-label");
+    const leftFlipsEl = document.getElementById("balance-dem-flips");
+    const rightFlipsEl = document.getElementById("balance-gop-flips");
+    const leftSubEl = document.getElementById("balance-dem-sub");
+    const rightSubEl = document.getElementById("balance-gop-sub");
+    const titleEl = document.getElementById("balance-chamber-title");
+    const majLabelEl = document.getElementById("balance-majority-label");
+    const popVoteEl = document.getElementById("balance-pop-vote");
+    const track = document.getElementById("seat-bar-track");
+    const legend = document.getElementById("seat-bar-legend");
+    const majLine = document.getElementById("majority-line");
 
+    // Reset default classes
+    leftDot.className = "party-dot dem-bg";
+    rightDot.className = "party-dot gop-bg";
+    leftSeatsEl.className = "seat-big-num dem-text";
+    rightSeatsEl.className = "seat-big-num gop-text";
+    majLine.style.display = "block";
+
+    // Case 1: Ballot Measures Tab (Yes vs. No summary bar)
+    if (tab === "measures") {
+      const measures = ov.measures_races || [];
+      let yesCalled = 0, yesLead = 0, noCalled = 0, noLead = 0;
+      for (const m of measures) {
+        const p = m.winner_party || m.leader_party;
+        if (m.called) {
+          if (p === "YES") yesCalled++;
+          else if (p === "NO") noCalled++;
+        } else {
+          if (p === "YES") yesLead++;
+          else if (p === "NO") noLead++;
+        }
+      }
+      const total = Math.max(1, measures.length);
+      const other = Math.max(0, total - (yesCalled + yesLead + noCalled + noLead));
+      const pct = (n) => `${((100 * n) / total).toFixed(2)}%`;
+
+      leftDot.className = "party-dot yes-bg";
+      rightDot.className = "party-dot no-bg";
+      leftSeatsEl.className = "seat-big-num yes-text";
+      rightSeatsEl.className = "seat-big-num no-text";
+
+      leftLabelEl.textContent = "Approved / Yes";
+      rightLabelEl.textContent = "Rejected / No";
+      leftFlipsEl.textContent = `${yesCalled} called`;
+      rightFlipsEl.textContent = `${noCalled} called`;
+      leftSeatsEl.textContent = yesCalled + yesLead;
+      rightSeatsEl.textContent = noCalled + noLead;
+      leftSubEl.textContent = `${yesCalled} approved · ${yesLead} leading Yes`;
+      rightSubEl.textContent = `${noCalled} rejected · ${noLead} leading No`;
+      titleEl.textContent = `2026 STATEWIDE BALLOT MEASURES (${measures.length} MEASURES)`;
+      majLabelEl.textContent = "Constitutional amendments, citizen initiatives, bond issues & referendums";
+      popVoteEl.textContent = "";
+      majLine.style.display = "none";
+
+      track.innerHTML = `
+        <div class="seat-seg seg-yes-solid" style="width:${pct(yesCalled + yesLead)}" title="Yes / Passing: ${yesCalled + yesLead}"></div>
+        <div class="seat-seg seg-tossup" style="width:${pct(other)}" title="Pending: ${other}"></div>
+        <div class="seat-seg seg-no-solid" style="width:${pct(noCalled + noLead)}" title="No / Failing: ${noCalled + noLead}"></div>
+      `;
+      legend.innerHTML = `
+        <span class="leg-item"><i class="swatch yes-solid"></i> Yes (Approved / Leading)</span>
+        <span class="leg-item"><i class="swatch tossup-swatch"></i> Unreported</span>
+        <span class="leg-item"><i class="swatch no-solid"></i> No (Rejected / Leading)</span>
+      `;
+      return;
+    }
+
+    // Case 2: State Legislatures Tab (90 Chambers Control)
+    if (tab === "legislatures") {
+      const chs = cc.state_chambers || [];
+      let demCtrl = 0, gopCtrl = 0, splitOrPending = 0, demSeatFlips = 0, gopSeatFlips = 0;
+      for (const c of chs) {
+        demSeatFlips += c.dem_flips || 0;
+        gopSeatFlips += c.gop_flips || 0;
+        if (c.dem_winner || c.dem_seats > c.gop_seats) demCtrl++;
+        else if (c.gop_winner || c.gop_seats > c.dem_seats) gopCtrl++;
+        else splitOrPending++;
+      }
+      const total = Math.max(1, chs.length);
+      const pct = (n) => `${((100 * n) / total).toFixed(2)}%`;
+
+      leftLabelEl.textContent = "Dem. Chambers";
+      rightLabelEl.textContent = "Rep. Chambers";
+      leftFlipsEl.textContent = demSeatFlips > 0 ? `+${demSeatFlips} seat flips` : "Chambers";
+      rightFlipsEl.textContent = gopSeatFlips > 0 ? `+${gopSeatFlips} seat flips` : "Chambers";
+      leftSeatsEl.textContent = demCtrl;
+      rightSeatsEl.textContent = gopCtrl;
+      leftSubEl.textContent = `Leading or called majority in ${demCtrl} chambers`;
+      rightSubEl.textContent = `Leading or called majority in ${gopCtrl} chambers`;
+      titleEl.textContent = "STATE LEGISLATIVE CHAMBERS (90 CHAMBERS ON 2026 BALLOT)";
+      majLabelEl.textContent = "State Senates & State Houses / Assemblies across the United States";
+      popVoteEl.textContent = "";
+
+      track.innerHTML = `
+        <div class="seat-seg seg-dem-solid" style="width:${pct(demCtrl)}"></div>
+        <div class="seat-seg seg-tossup" style="width:${pct(splitOrPending)}"></div>
+        <div class="seat-seg seg-gop-solid" style="width:${pct(gopCtrl)}"></div>
+      `;
+      legend.innerHTML = `
+        <span class="leg-item"><i class="swatch dem-solid"></i> Democratic Chamber Majority</span>
+        <span class="leg-item"><i class="swatch tossup-swatch"></i> Tied / Uncalled</span>
+        <span class="leg-item"><i class="swatch gop-solid"></i> Republican Chamber Majority</span>
+      `;
+      return;
+    }
+
+    // Case 3: Too Close to Call Tab (Uncalled Battlegrounds Summary)
+    if (tab === "close") {
+      const uncalledAll = [
+        ...ov.senate_races.filter((r) => !r.called),
+        ...ov.governor_races.filter((r) => !r.called),
+        ...ov.house_races.filter((r) => !r.called)
+      ];
+      const demLead = uncalledAll.filter((r) => r.leader_party === "DEM").length;
+      const gopLead = uncalledAll.filter((r) => r.leader_party === "GOP").length;
+      const othLead = Math.max(0, uncalledAll.length - demLead - gopLead);
+      const total = Math.max(1, uncalledAll.length);
+      const pct = (n) => `${((100 * n) / total).toFixed(2)}%`;
+
+      leftLabelEl.textContent = "Dem. Leading";
+      rightLabelEl.textContent = "Rep. Leading";
+      leftFlipsEl.textContent = "Uncalled";
+      rightFlipsEl.textContent = "Uncalled";
+      leftSeatsEl.textContent = demLead;
+      rightSeatsEl.textContent = gopLead;
+      leftSubEl.textContent = `Leading in ${demLead} uncalled federal/gov races`;
+      rightSubEl.textContent = `Leading in ${gopLead} uncalled federal/gov races`;
+      titleEl.textContent = `TOO CLOSE TO CALL (${uncalledAll.length} UNCALLED FEDERAL & GOVERNOR RACES)`;
+      majLabelEl.textContent = `2 U.S. Senate · 75 U.S. House · 2 Governor races still awaiting final race calls`;
+      popVoteEl.textContent = "Closest right now: MS Senate (43 votes, 0.01%) · AZ-02 (86 votes, 0.03%) · NC-05 (99 votes, 0.04%)";
+
+      track.innerHTML = `
+        <div class="seat-seg seg-dem-lead" style="width:${pct(demLead)}"></div>
+        <div class="seat-seg seg-tossup" style="width:${pct(othLead)}"></div>
+        <div class="seat-seg seg-gop-lead" style="width:${pct(gopLead)}"></div>
+      `;
+      legend.innerHTML = `
+        <span class="leg-item"><i class="swatch dem-lead"></i> Democrat Currently Leading</span>
+        <span class="leg-item"><i class="swatch gop-lead"></i> Republican Currently Leading</span>
+      `;
+      return;
+    }
+
+    // Case 4: Standard Senate, House, or Governor Balance of Power Bar
+    const chamberKey = tab === "house" ? "house" : tab === "governor" ? "governor" : "senate";
     const data = cc[chamberKey];
     const total = data.total;
 
     let demSolid = 0, demLead = 0, gopSolid = 0, gopLead = 0;
     let demSub = "", gopSub = "", title = "", majLabel = "", popVoteText = "";
+
+    leftLabelEl.textContent = "Democrats";
+    rightLabelEl.textContent = "Republicans";
 
     if (chamberKey === "senate") {
       demSolid = data.dem_total_called;
@@ -248,10 +455,8 @@
       gopSub = `${data.gop_no_election} not up · ${data.gop_called} called · ${data.gop_leading} leading`;
       title = "U.S. SENATE BALANCE OF POWER (100 SEATS)";
       majLabel = "51 for Democratic majority · 50 for Republican control (with VP tiebreaker)";
-      document.getElementById("balance-dem-flips").textContent =
-        data.dem_flips > 0 ? `+${data.dem_flips} flips` : "0 flips";
-      document.getElementById("balance-gop-flips").textContent =
-        data.gop_flips > 0 ? `+${data.gop_flips} flips` : "0 flips";
+      leftFlipsEl.textContent = data.dem_flips > 0 ? `+${data.dem_flips} flips` : "0 flips";
+      rightFlipsEl.textContent = data.gop_flips > 0 ? `+${data.gop_flips} flips` : "0 flips";
     } else if (chamberKey === "house") {
       demSolid = data.dem_called;
       demLead = data.dem_leading;
@@ -261,10 +466,8 @@
       gopSub = `${data.gop_called} called · ${data.gop_leading} leading (proj. ${data.gop_projected_total})`;
       title = "U.S. HOUSE BALANCE OF POWER (435 SEATS)";
       majLabel = "218 seats needed for majority";
-      document.getElementById("balance-dem-flips").textContent =
-        data.dem_flips > 0 ? `+${data.dem_flips} flips` : "0 flips";
-      document.getElementById("balance-gop-flips").textContent =
-        data.gop_flips > 0 ? `+${data.gop_flips} flips` : "0 flips";
+      leftFlipsEl.textContent = data.dem_flips > 0 ? `+${data.dem_flips} flips` : "0 flips";
+      rightFlipsEl.textContent = data.gop_flips > 0 ? `+${data.gop_flips} flips` : "0 flips";
     } else {
       demSolid = data.dem_total_called;
       demLead = data.dem_leading;
@@ -274,11 +477,10 @@
       gopSub = `${data.gop_no_election} not up · ${data.gop_called} called · ${data.gop_leading} leading`;
       title = "STATE GOVERNORS BALANCE OF POWER (50 STATES)";
       majLabel = "36 states holding gubernatorial elections in 2026";
-      document.getElementById("balance-dem-flips").textContent = `Proj: ${data.dem_projected_total}`;
-      document.getElementById("balance-gop-flips").textContent = `Proj: ${data.gop_projected_total}`;
+      leftFlipsEl.textContent = `Proj: ${data.dem_projected_total}`;
+      rightFlipsEl.textContent = `Proj: ${data.gop_projected_total}`;
     }
 
-    // Check popular vote from model_estimates if available
     if (data.model_estimates && data.model_estimates.length) {
       const demEst = data.model_estimates.find((e) => e.nyt_party_id === "DEM");
       const gopEst = data.model_estimates.find((e) => e.nyt_party_id === "GOP");
@@ -288,16 +490,15 @@
       }
     }
 
-    document.getElementById("balance-dem-seats").textContent = demSolid;
-    document.getElementById("balance-gop-seats").textContent = gopSolid;
-    document.getElementById("balance-dem-sub").textContent = demSub;
-    document.getElementById("balance-gop-sub").textContent = gopSub;
-    document.getElementById("balance-chamber-title").textContent = title;
-    document.getElementById("balance-majority-label").textContent = majLabel;
-    document.getElementById("balance-pop-vote").textContent = popVoteText;
+    leftSeatsEl.textContent = demSolid;
+    rightSeatsEl.textContent = gopSolid;
+    leftSubEl.textContent = demSub;
+    rightSubEl.textContent = gopSub;
+    titleEl.textContent = title;
+    majLabelEl.textContent = majLabel;
+    popVoteEl.textContent = popVoteText;
 
     const tossup = Math.max(0, total - (demSolid + demLead + gopSolid + gopLead));
-    const track = document.getElementById("seat-bar-track");
     const pct = (n) => `${((100 * n) / total).toFixed(2)}%`;
 
     track.innerHTML = `
@@ -307,60 +508,65 @@
       <div class="seat-seg seg-gop-lead" style="width:${pct(gopLead)}" title="Rep Leading: ${gopLead}"></div>
       <div class="seat-seg seg-gop-solid" style="width:${pct(gopSolid)}" title="Rep Called/Held: ${gopSolid}"></div>
     `;
+    legend.innerHTML = `
+      <span class="leg-item"><i class="swatch dem-solid"></i> Dem. Called / Held</span>
+      <span class="leg-item"><i class="swatch dem-lead"></i> Dem. Leading</span>
+      <span class="leg-item"><i class="swatch tossup-swatch"></i> Uncalled / Other</span>
+      <span class="leg-item"><i class="swatch gop-lead"></i> Rep. Leading</span>
+      <span class="leg-item"><i class="swatch gop-solid"></i> Rep. Called / Held</span>
+    `;
   }
 
   // =========================================================================
-  // INTERACTIVE MAP RENDERING (Shift Arrow Map, Winner Map, Forecast Map)
+  // INTERACTIVE MAP RENDERING (Context-Aware by Active Tab!)
   // =========================================================================
   function renderMap() {
-    if (!state.topo || !state.countyShifts) return;
+    if (!state.topo || !state.countyShifts || state.activeOfficeTab === "all-local") return;
 
-    const pathGen = d3.geoPath();
-    const apAbbr = state.countyShifts.ap_abbr || {};
+    const tab = state.activeOfficeTab;
+    const isPartisanOfficeTab = tab === "senate" || tab === "house" || tab === "governor";
+    const dark = isDark();
+    const neutralStateFill = dark ? "#1e293b" : "#efefef";
+    const selectedStateFill = dark ? "#334155" : "#e2e8f0";
 
-    // Update visibility of map controls & legend based on mode
+    // Sync mapDataset with active tab for senate/house/governor
+    if (tab === "senate") state.mapDataset = "s26";
+    else if (tab === "house") state.mapDataset = "h26";
+    else if (tab === "governor") state.mapDataset = "g26";
+
+    // Show/hide 3 mode cards ONLY on Senate, House, Governor tabs!
+    const modeCardsEl = document.getElementById("view-mode-cards");
+    modeCardsEl.style.display = isPartisanOfficeTab ? "flex" : "none";
+
+    // Determine effective map mode
+    const effectiveMode = isPartisanOfficeTab ? state.mapMode : tab; // 'close' | 'measures' | 'legislatures'
+
     document.getElementById("ctrl-winner-level-wrap").style.display =
-      state.mapMode === "winner" ? "flex" : "none";
+      isPartisanOfficeTab && effectiveMode === "winner" ? "flex" : "none";
     document.getElementById("ctrl-eevp-wrap").style.display =
-      state.mapMode === "shift" ? "flex" : "none";
+      isPartisanOfficeTab && effectiveMode === "shift" ? "flex" : "none";
 
     document.getElementById("legend-shift-content").style.display =
-      state.mapMode === "shift" ? "block" : "none";
+      effectiveMode === "shift" ? "block" : "none";
     document.getElementById("legend-winner-content").style.display =
-      state.mapMode === "winner" ? "block" : "none";
+      effectiveMode === "winner" || !isPartisanOfficeTab ? "block" : "none";
     document.getElementById("legend-forecast-content").style.display =
-      state.mapMode === "forecast" ? "block" : "none";
+      effectiveMode === "forecast" ? "block" : "none";
 
     const dsNames = {
       s26: "2026 U.S. Senate",
       h26: "2026 U.S. House",
-      g26: "2026 Governor",
-      ag26: "2026 Attorney General"
+      g26: "2026 Governor"
     };
     const dsLabel = dsNames[state.mapDataset] || "2026 Election";
 
-    if (state.mapMode === "shift") {
-      document.getElementById("map-heading-text").textContent =
-        `Shift in Margin: 2024 Presidential Vote → ${dsLabel}`;
-      document.getElementById("map-subheading-text").textContent =
-        `Blue arrows (↖) show counties shifting toward Democrats; red arrows (↗) show counties shifting toward Republicans compared with the 2024 presidential election.`;
-      document.getElementById("legend-shift-note").textContent =
-        state.minEevp >= 90
-          ? `Compared with the 2024 presidential vote in counties that have reported almost all (≥${state.minEevp}%) of their votes.`
-          : `Compared with the 2024 presidential vote in counties with ≥${state.minEevp}% estimated votes reported.`;
-    } else if (state.mapMode === "winner") {
-      document.getElementById("map-heading-text").textContent =
-        `${dsLabel} Results — By ${state.winnerLevel === "county" ? "County Margin" : "State Winner & Call Status"}`;
-      document.getElementById("map-subheading-text").textContent =
-        `Solid colors indicate called winners; striped patterns indicate current leader in uncalled races.`;
-    } else {
-      document.getElementById("map-heading-text").textContent =
-        `${dsLabel} — Live Remaining Uncounted Vote & Forecast`;
-      document.getElementById("map-subheading-text").textContent =
-        `Circle sizes show where uncounted ballots remain across counties, colored by current 2026 vote margin.`;
-    }
+    // Update map titles and legend text based on effectiveMode
+    configureMapHeaderAndLegend(effectiveMode, dsLabel);
 
-    // Build lookup of state-level race results for current dataset
+    const pathGen = d3.geoPath();
+    const apAbbr = state.countyShifts.ap_abbr || {};
+
+    // Precompute state-level lookups
     const stateRaceByPostal = {};
     const raceList =
       state.mapDataset === "g26"
@@ -372,36 +578,76 @@
       stateRaceByPostal[r.state] = r;
     }
 
+    // Group ballot measures by state
+    const measuresByState = {};
+    for (const m of state.overview.measures_races || []) {
+      if (!measuresByState[m.state]) measuresByState[m.state] = [];
+      measuresByState[m.state].push(m);
+    }
+
+    // Group state legislatures by state
+    const legByState = {};
+    for (const c of state.overview.chamber_control.state_chambers || []) {
+      if (!legByState[c.state]) legByState[c.state] = [];
+      legByState[c.state].push(c);
+    }
+
+    // Group uncalled federal/gov races by state
+    const uncalledByState = {};
+    for (const r of [
+      ...state.overview.senate_races,
+      ...state.overview.governor_races,
+      ...state.overview.house_races
+    ]) {
+      if (!r.called) {
+        if (!uncalledByState[r.state]) uncalledByState[r.state] = [];
+        uncalledByState[r.state].push(r);
+      }
+    }
+
     // 1. Render Base States Layer
     const gStates = gMap.select(".layer-states");
-    const statePaths = gStates
+    gStates
       .selectAll("path.state-fill")
-      .data(state.stateFeatures, (d) => d.id);
-
-    statePaths
+      .data(state.stateFeatures, (d) => d.id)
       .join("path")
       .attr("class", "state-fill")
       .attr("d", pathGen)
       .attr("fill", (d) => {
         const postal = d.properties.postal;
-        if (state.mapMode === "winner" && state.winnerLevel === "state") {
-          return getStateWinnerFill(postal, stateRaceByPostal[postal]);
+        if (effectiveMode === "winner" && state.winnerLevel === "state") {
+          return getStateWinnerFill(postal, stateRaceByPostal[postal], neutralStateFill);
+        }
+        if (effectiveMode === "measures") {
+          return getMeasuresStateFill(postal, measuresByState[postal], neutralStateFill);
+        }
+        if (effectiveMode === "legislatures") {
+          return getLegislatureStateFill(postal, legByState[postal], neutralStateFill);
+        }
+        if (effectiveMode === "close") {
+          return getCloseStateFill(postal, uncalledByState[postal], neutralStateFill);
         }
         if (state.selectedState !== "ALL" && postal === state.selectedState) {
-          return "#e2e8f0";
+          return selectedStateFill;
         }
-        return "#efefef";
+        return neutralStateFill;
       })
       .attr("opacity", (d) => {
         const postal = d.properties.postal;
         if (state.selectedState !== "ALL" && postal !== state.selectedState) {
-          return 0.45;
+          return 0.4;
         }
         return 1;
       })
       .on("mousemove", (event, d) => {
         const postal = d.properties.postal;
-        if (state.mapMode === "winner" && state.winnerLevel === "state") {
+        if (effectiveMode === "measures") {
+          showMeasuresStateTooltip(event, postal, measuresByState[postal]);
+        } else if (effectiveMode === "legislatures") {
+          showLegislaturesStateTooltip(event, postal, legByState[postal]);
+        } else if (effectiveMode === "close") {
+          showCloseStateTooltip(event, postal, uncalledByState[postal]);
+        } else if (effectiveMode === "winner" && state.winnerLevel === "state" && state.mapDataset !== "h26") {
           showStateTooltip(event, postal, stateRaceByPostal[postal]);
         }
       })
@@ -411,32 +657,39 @@
         if (postal) selectStateFilter(postal);
       });
 
-    // 2. Render Counties Layer (Visible in County Winner mode, or transparent hover targets in Shift/Forecast mode)
+    // 2. Render Counties Layer
     const gCounties = gMap.select(".layer-counties");
     const showCountyChoropleth =
-      state.mapMode === "winner" &&
+      effectiveMode === "winner" &&
       (state.winnerLevel === "county" || state.mapDataset === "h26");
 
-    const countyPaths = gCounties
+    gCounties
       .selectAll("path.county-path")
-      .data(state.countyFeatures, (d) => d.id);
-
-    countyPaths
+      .data(state.countyFeatures, (d) => d.id)
       .join("path")
       .attr("class", "county-path")
       .attr("d", pathGen)
+      .style("pointer-events", isPartisanOfficeTab ? "auto" : "none")
       .attr("fill", (d) => {
+        if (!showCountyChoropleth) return "transparent";
         const cData = state.countyShifts.counties[d.id];
         if (!cData) return "transparent";
-        if (showCountyChoropleth) {
-          const rec = cData[state.mapDataset];
-          if (!rec || !rec.v) return "#efefef";
-          return getMarginColor(rec.m);
-        }
-        return "transparent";
+        const rec = cData[state.mapDataset];
+        if (!rec || !rec.v) return neutralStateFill;
+        return getMarginColor(rec.m);
       })
-      .attr("stroke", showCountyChoropleth ? "rgba(255,255,255,0.28)" : "rgba(0,0,0,0.03)")
+      .attr(
+        "stroke",
+        showCountyChoropleth
+          ? dark
+            ? "rgba(15,23,42,0.45)"
+            : "rgba(255,255,255,0.28)"
+          : dark
+          ? "rgba(255,255,255,0.03)"
+          : "rgba(0,0,0,0.03)"
+      )
       .on("mousemove", (event, d) => {
+        if (!isPartisanOfficeTab) return;
         const cData = state.countyShifts.counties[d.id];
         if (cData) showCountyTooltip(event, cData);
       })
@@ -455,7 +708,7 @@
       .attr("class", "state-border-mesh")
       .attr("d", pathGen);
 
-    // 4. Render Shift Arrows Layer (Mode === 'shift') AND Compute KPIs
+    // 4. Render Shift Arrows OR Forecast Bubbles (Only when applicable!)
     const gArrows = gMap.select(".layer-arrows");
     gArrows.selectAll("*").remove();
 
@@ -469,41 +722,44 @@
     let gopShiftCount = 0;
     let totalRemVotes = 0;
 
-    for (const [fips, cData] of Object.entries(state.countyShifts.counties)) {
-      if (state.selectedState !== "ALL" && cData.state !== state.selectedState) {
-        continue;
-      }
-      const rec = cData[state.mapDataset];
-      if (!rec || !rec.v) continue;
+    if (isPartisanOfficeTab) {
+      for (const [fips, cData] of Object.entries(state.countyShifts.counties)) {
+        if (state.selectedState !== "ALL" && cData.state !== state.selectedState) {
+          continue;
+        }
+        const rec = cData[state.mapDataset];
+        if (!rec || !rec.v) continue;
 
-      totalRemVotes += rec.rem || 0;
-      const centroid = state.countyCentroids[fips];
-      if (!centroid) continue;
+        totalRemVotes += rec.rem || 0;
+        const centroid = state.countyCentroids[fips];
+        if (!centroid) continue;
 
-      if (rec.rem > 100) {
-        bubblesData.push({ fips, cData, rec, cx: centroid[0], cy: centroid[1] });
-      }
+        if (rec.rem > 100) {
+          bubblesData.push({ fips, cData, rec, cx: centroid[0], cy: centroid[1] });
+        }
 
-      if (rec.sp24 !== null && rec.sp24 !== undefined && rec.eevp >= state.minEevp) {
-        const shift = rec.sp24;
-        shiftsList.push(shift);
-        if (shift > 0) demShiftCount++;
-        else if (shift < 0) gopShiftCount++;
+        if (rec.sp24 !== null && rec.sp24 !== undefined && rec.eevp >= state.minEevp) {
+          const shift = rec.sp24;
+          shiftsList.push(shift);
+          if (shift > 0) demShiftCount++;
+          else if (shift < 0) gopShiftCount++;
 
-        arrowsData.push({
-          fips,
-          cData,
-          rec,
-          shift,
-          cx: centroid[0],
-          cy: centroid[1]
-        });
+          arrowsData.push({
+            fips,
+            cData,
+            rec,
+            shift,
+            cx: centroid[0],
+            cy: centroid[1]
+          });
+        }
       }
     }
 
-    if (state.mapMode === "shift") {
-      // Sort arrows so larger arrows render on top cleanly
+    if (effectiveMode === "shift") {
       arrowsData.sort((a, b) => Math.abs(a.shift) - Math.abs(b.shift));
+      const demArrowColor = dark ? "#38bdf8" : "#1b6ec2";
+      const gopArrowColor = dark ? "#f87171" : "#c9312b";
 
       gArrows
         .selectAll("path.shift-arrow")
@@ -511,14 +767,14 @@
         .join("path")
         .attr("class", "shift-arrow")
         .attr("d", (d) => buildArrowPath(d.cx, d.cy, d.shift))
-        .attr("fill", (d) => (d.shift >= 0 ? "#1b6ec2" : "#c9312b"))
-        .attr("opacity", 0.86)
+        .attr("fill", (d) => (d.shift >= 0 ? demArrowColor : gopArrowColor))
+        .attr("opacity", dark ? 0.9 : 0.86)
         .on("mousemove", (event, d) => showCountyTooltip(event, d.cData))
         .on("mouseleave", hideTooltip)
         .on("click", (event, d) => {
           if (d.cData && d.cData.state) selectStateFilter(d.cData.state);
         });
-    } else if (state.mapMode === "forecast") {
+    } else if (effectiveMode === "forecast") {
       bubblesData.sort((a, b) => b.rec.rem - a.rec.rem);
       const rScale = d3.scaleSqrt().domain([0, 150000]).range([1.5, 22]).clamp(true);
 
@@ -530,8 +786,10 @@
         .attr("cx", (d) => d.cx)
         .attr("cy", (d) => d.cy)
         .attr("r", (d) => rScale(d.rec.rem))
-        .attr("fill", (d) => (d.rec.m >= 0 ? "rgba(27,110,194,0.55)" : "rgba(201,49,43,0.55)"))
-        .attr("stroke", (d) => (d.rec.m >= 0 ? "#134e9b" : "#991b1b"))
+        .attr("fill", (d) =>
+          d.rec.m >= 0 ? "rgba(59,130,246,0.55)" : "rgba(239,68,68,0.55)"
+        )
+        .attr("stroke", (d) => (d.rec.m >= 0 ? "#60a5fa" : "#f87171"))
         .attr("stroke-width", 1)
         .style("cursor", "pointer")
         .on("mousemove", (event, d) => showCountyTooltip(event, d.cData))
@@ -541,7 +799,7 @@
         });
     }
 
-    // 5. Render State Labels Layer (Matches Screenshot AP State Labels)
+    // 5. Render State Labels Layer
     const gLabels = gMap.select(".layer-labels");
     const skipSmallLabels = new Set(["DC", "RI", "DE", "CT", "NJ", "MD", "MA", "NH", "VT", "HI"]);
     const labelFeatures = state.stateFeatures.filter((sf) => {
@@ -558,15 +816,70 @@
       .attr("y", (d) => state.stateCentroids[d.properties.postal][1])
       .text((d) => apAbbr[d.properties.postal] || d.properties.postal);
 
-    // Update KPI Strip under Map
-    updateMapKpis(shiftsList, demShiftCount, gopShiftCount, totalRemVotes);
+    // 6. Update KPI Strip under Map
+    updateMapKpis(
+      effectiveMode,
+      shiftsList,
+      demShiftCount,
+      gopShiftCount,
+      totalRemVotes,
+      measuresByState,
+      legByState,
+      uncalledByState
+    );
   }
 
-  /**
-   * Builds a single crisp SVG path (shaft + triangular arrowhead) for a county shift arrow.
-   * Positive shift (More Dem.) points up-left (-152 deg in SVG screen coords).
-   * Negative shift (More Rep.) points up-right (-28 deg in SVG screen coords).
-   */
+  function configureMapHeaderAndLegend(effectiveMode, dsLabel) {
+    const hEl = document.getElementById("map-heading-text");
+    const subEl = document.getElementById("map-subheading-text");
+    const wHead = document.getElementById("legend-winner-heading");
+    const wLabels = document.getElementById("legend-winner-labels");
+    const wNote = document.getElementById("legend-winner-note");
+
+    if (effectiveMode === "shift") {
+      hEl.textContent = `Shift in Margin: 2024 Presidential Vote → ${dsLabel}`;
+      subEl.textContent =
+        "Blue arrows (↖) show counties shifting toward Democrats; red arrows (↗) show counties shifting toward Republicans compared with the 2024 presidential election.";
+      document.getElementById("legend-shift-note").textContent =
+        state.minEevp >= 90
+          ? `Compared with the 2024 presidential vote in counties that have reported almost all (≥${state.minEevp}%) of their votes.`
+          : `Compared with the 2024 presidential vote in counties with ≥${state.minEevp}% estimated votes reported.`;
+    } else if (effectiveMode === "winner") {
+      const isCounty = state.winnerLevel === "county" || state.mapDataset === "h26";
+      hEl.textContent = `${dsLabel} Results — By ${isCounty ? "County Vote Margin" : "State Winner & Call Status"}`;
+      subEl.textContent =
+        "Solid colors indicate called winners or county margins; striped patterns indicate current leader in uncalled races.";
+      wHead.textContent = "MARGIN / CALL STATUS";
+      wLabels.innerHTML = "<span>Dem.</span><span>Rep.</span>";
+      wNote.textContent = "Click any state or county to filter race cards below.";
+    } else if (effectiveMode === "forecast") {
+      hEl.textContent = `${dsLabel} — Remaining Uncounted Votes & Live Forecast`;
+      subEl.textContent =
+        "Circle sizes show where uncounted ballots remain across counties, colored by current 2026 vote margin.";
+    } else if (effectiveMode === "close") {
+      hEl.textContent = "Too Close to Call — States with Uncalled Federal & Governor Races";
+      subEl.textContent =
+        "Highlighted states still have uncalled U.S. Senate, U.S. House, or Governor races. Click any state to inspect its razor-thin races.";
+      wHead.textContent = "UNCALLED RACES";
+      wLabels.innerHTML = "<span>Dem. Lead</span><span>Rep. Lead</span>";
+      wNote.textContent = "States shaded by party leading in their closest uncalled race.";
+    } else if (effectiveMode === "measures") {
+      hEl.textContent = "2026 Statewide Ballot Measures & Constitutional Amendments by State";
+      subEl.textContent =
+        "States colored by majority Yes (Approved) vs. No (Rejected) across their 2026 statewide ballot measures. Click any state to inspect its measures.";
+      wHead.textContent = "BALLOT MEASURES";
+      wLabels.innerHTML = "<span style='color:var(--yes-main)'>Yes Majority</span><span style='color:var(--no-main)'>No Majority</span>";
+      wNote.textContent = "Green states have a majority of 2026 measures passing (Yes); red/amber states have more failing (No).";
+    } else if (effectiveMode === "legislatures") {
+      hEl.textContent = "2026 State Legislative Chamber Control Map";
+      subEl.textContent =
+        "States colored by 2026 party control across their State Senate and State House/Assembly chambers. Click any state to view chamber tallies.";
+      wHead.textContent = "CHAMBER CONTROL";
+      wLabels.innerHTML = "<span>Dem. Control</span><span>Rep. Control</span>";
+      wNote.textContent = "Purple indicates split legislative chambers between parties.";
+    }
+  }
+
   function buildArrowPath(cx, cy, shift) {
     const absShift = Math.abs(shift);
     if (absShift < 0.15) return "";
@@ -605,32 +918,65 @@
     return `M${p1x.toFixed(1)},${p1y.toFixed(1)}L${p2x.toFixed(1)},${p2y.toFixed(1)}L${p3x.toFixed(1)},${p3y.toFixed(1)}L${tipX.toFixed(1)},${tipY.toFixed(1)}L${p4x.toFixed(1)},${p4y.toFixed(1)}L${p5x.toFixed(1)},${p5y.toFixed(1)}L${p6x.toFixed(1)},${p6y.toFixed(1)}Z`;
   }
 
-  function getStateWinnerFill(postal, race) {
-    if (state.mapDataset === "h26") {
-      return "#efefef";
-    }
+  function getStateWinnerFill(postal, race, neutralFill) {
+    if (state.mapDataset === "h26") return neutralFill;
+    const dark = isDark();
     if (!race) {
       if (state.mapDataset === "g26") {
         const noElMap = state.overview.chamber_control.governor.no_election_map || {};
-        if (noElMap[postal] === "DEM") return "#bfdbfe";
-        if (noElMap[postal] === "GOP") return "#fecaca";
+        if (noElMap[postal] === "DEM") return dark ? "#1e3a8a" : "#bfdbfe";
+        if (noElMap[postal] === "GOP") return dark ? "#7f1d1d" : "#fecaca";
       }
-      return "#e5e7eb";
+      return neutralFill;
     }
     const party = race.winner_party || race.leader_party;
     if (race.called) {
-      if (party === "DEM") return "#1b6ec2";
-      if (party === "GOP") return "#c9312b";
+      if (party === "DEM") return dark ? "#2563eb" : "#1b6ec2";
+      if (party === "GOP") return dark ? "#dc2626" : "#c9312b";
       return "#7c3aed";
     } else {
       if (party === "DEM") return "url(#pat-dem-lead)";
       if (party === "GOP") return "url(#pat-gop-lead)";
-      return "#fde68a";
+      return "#d97706";
     }
   }
 
+  function getMeasuresStateFill(postal, list, neutralFill) {
+    if (!list || !list.length) return neutralFill;
+    let yes = 0, no = 0;
+    for (const m of list) {
+      const p = m.winner_party || m.leader_party;
+      if (p === "YES") yes++;
+      else if (p === "NO") no++;
+    }
+    if (yes > no) return isDark() ? "#15803d" : "#22c55e";
+    if (no > yes) return isDark() ? "#b91c1c" : "#ef4444";
+    return "#d97706";
+  }
+
+  function getLegislatureStateFill(postal, list, neutralFill) {
+    if (!list || !list.length) return neutralFill;
+    let dem = 0, gop = 0;
+    for (const c of list) {
+      if (c.dem_winner || c.dem_seats > c.gop_seats) dem++;
+      else if (c.gop_winner || c.gop_seats > c.dem_seats) gop++;
+    }
+    if (dem > 0 && gop === 0) return isDark() ? "#2563eb" : "#1b6ec2";
+    if (gop > 0 && dem === 0) return isDark() ? "#dc2626" : "#c9312b";
+    return "#7c3aed";
+  }
+
+  function getCloseStateFill(postal, list, neutralFill) {
+    if (!list || !list.length) return neutralFill;
+    const sorted = [...list].sort((a, b) => a.top_margin_pct - b.top_margin_pct);
+    const closest = sorted[0];
+    if (closest.leader_party === "DEM") return "url(#pat-dem-lead)";
+    if (closest.leader_party === "GOP") return "url(#pat-gop-lead)";
+    return "#d97706";
+  }
+
   function getMarginColor(margin) {
-    if (margin >= 25) return "#134e9b";
+    if (margin >= 25) return "#1e40af";
     if (margin >= 10) return "#2563eb";
     if (margin >= 3) return "#60a5fa";
     if (margin > 0) return "#93c5fd";
@@ -640,15 +986,115 @@
     return "#fca5a5";
   }
 
-  function updateMapKpis(shiftsList, demCount, gopCount, totalRemVotes) {
+  function updateMapKpis(
+    effectiveMode,
+    shiftsList,
+    demCount,
+    gopCount,
+    totalRemVotes,
+    measuresByState,
+    legByState,
+    uncalledByState
+  ) {
+    const l1 = document.getElementById("kpi-label-1");
+    const l2 = document.getElementById("kpi-label-2");
+    const l3 = document.getElementById("kpi-label-3");
+    const l4 = document.getElementById("kpi-label-4");
+    const l5 = document.getElementById("kpi-label-5");
+
+    const v1 = document.getElementById("kpi-dem-counties");
+    const v2 = document.getElementById("kpi-gop-counties");
+    const v3 = document.getElementById("kpi-median-shift");
+    const v4 = document.getElementById("kpi-mean-shift");
+    const v5 = document.getElementById("kpi-rem-votes");
+
+    if (effectiveMode === "measures") {
+      const allM = state.overview.measures_races || [];
+      const statesWithM = Object.keys(measuresByState).length;
+      const yesCount = allM.filter((m) => (m.winner_party || m.leader_party) === "YES").length;
+      const noCount = allM.filter((m) => (m.winner_party || m.leader_party) === "NO").length;
+      const calledM = allM.filter((m) => m.called).length;
+      l1.textContent = "Measures Passing (Yes)";
+      v1.textContent = `${yesCount} (${((100 * yesCount) / Math.max(1, allM.length)).toFixed(1)}%)`;
+      v1.className = "kpi-val yes-text";
+      l2.textContent = "Measures Failing (No)";
+      v2.textContent = `${noCount} (${((100 * noCount) / Math.max(1, allM.length)).toFixed(1)}%)`;
+      v2.className = "kpi-val no-text";
+      l3.textContent = "States with 2026 Measures";
+      v3.textContent = `${statesWithM} states`;
+      v3.className = "kpi-val";
+      l4.textContent = "Called Measures";
+      v4.textContent = `${calledM} of ${allM.length}`;
+      v4.className = "kpi-val";
+      l5.textContent = "Local Referendums (civicAPI)";
+      v5.textContent = "2,322";
+      return;
+    }
+
+    if (effectiveMode === "legislatures") {
+      const chs = state.overview.chamber_control.state_chambers || [];
+      let demBoth = 0, gopBoth = 0, splitSt = 0;
+      for (const list of Object.values(legByState)) {
+        const d = list.filter((c) => c.dem_winner || c.dem_seats > c.gop_seats).length;
+        const r = list.filter((c) => c.gop_winner || c.gop_seats > c.dem_seats).length;
+        if (d > 0 && r === 0) demBoth++;
+        else if (r > 0 && d === 0) gopBoth++;
+        else if (d > 0 && r > 0) splitSt++;
+      }
+      l1.textContent = "Dem-Controlled States";
+      v1.textContent = `${demBoth} states`;
+      v1.className = "kpi-val dem-text";
+      l2.textContent = "Rep-Controlled States";
+      v2.textContent = `${gopBoth} states`;
+      v2.className = "kpi-val gop-text";
+      l3.textContent = "Split-Chamber States";
+      v3.textContent = `${splitSt} states`;
+      v3.className = "kpi-val";
+      l4.textContent = "Total Chambers Tracked";
+      v4.textContent = `${chs.length} chambers`;
+      v4.className = "kpi-val";
+      l5.textContent = "Total State Leg. Races";
+      v5.textContent = "5,758";
+      return;
+    }
+
+    if (effectiveMode === "close") {
+      const statesCnt = Object.keys(uncalledByState).length;
+      const senU = state.overview.senate_races.filter((r) => !r.called).length;
+      const houseU = state.overview.house_races.filter((r) => !r.called).length;
+      const govU = state.overview.governor_races.filter((r) => !r.called).length;
+      l1.textContent = "Uncalled U.S. Senate";
+      v1.textContent = `${senU} (MS, AK)`;
+      v1.className = "kpi-val dem-text";
+      l2.textContent = "Uncalled U.S. House";
+      v2.textContent = `${houseU} districts`;
+      v2.className = "kpi-val gop-text";
+      l3.textContent = "Uncalled Governors";
+      v3.textContent = `${govU} states`;
+      v3.className = "kpi-val";
+      l4.textContent = "States with Uncalled Races";
+      v4.textContent = `${statesCnt} states`;
+      v4.className = "kpi-val";
+      l5.textContent = "Razor-Thin (≤0.5% margin)";
+      v5.textContent = "12 federal races";
+      return;
+    }
+
+    // Default Partisan KPIs
+    l1.textContent = "Counties Shifting Dem. (↖)";
+    l2.textContent = "Counties Shifting Rep. (↗)";
+    l3.textContent = "Median County Shift vs. 2024 Pres";
+    l4.textContent = "Mean County Shift vs. 2024 Pres";
+    l5.textContent = "Est. Remaining Votes in View";
+
     const totalShiftCounties = demCount + gopCount;
     const demPct = totalShiftCounties > 0 ? ((100 * demCount) / totalShiftCounties).toFixed(1) : "0.0";
     const gopPct = totalShiftCounties > 0 ? ((100 * gopCount) / totalShiftCounties).toFixed(1) : "0.0";
 
-    document.getElementById("kpi-dem-counties").textContent =
-      `${fmtInt(demCount)} (${demPct}%)`;
-    document.getElementById("kpi-gop-counties").textContent =
-      `${fmtInt(gopCount)} (${gopPct}%)`;
+    v1.textContent = `${fmtInt(demCount)} (${demPct}%)`;
+    v1.className = "kpi-val dem-text";
+    v2.textContent = `${fmtInt(gopCount)} (${gopPct}%)`;
+    v2.className = "kpi-val gop-text";
 
     if (shiftsList.length > 0) {
       const sorted = [...shiftsList].sort((a, b) => a - b);
@@ -657,21 +1103,19 @@
         sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
       const mean = sorted.reduce((acc, v) => acc + v, 0) / sorted.length;
 
-      const medEl = document.getElementById("kpi-median-shift");
-      medEl.textContent =
+      v3.textContent =
         median >= 0 ? `↖ Dem +${median.toFixed(1)} pts` : `↗ Rep +${Math.abs(median).toFixed(1)} pts`;
-      medEl.className = `kpi-val ${median >= 0 ? "dem-text" : "gop-text"}`;
+      v3.className = `kpi-val ${median >= 0 ? "dem-text" : "gop-text"}`;
 
-      const meanEl = document.getElementById("kpi-mean-shift");
-      meanEl.textContent =
+      v4.textContent =
         mean >= 0 ? `↖ Dem +${mean.toFixed(1)} pts` : `↗ Rep +${Math.abs(mean).toFixed(1)} pts`;
-      meanEl.className = `kpi-val ${mean >= 0 ? "dem-text" : "gop-text"}`;
+      v4.className = `kpi-val ${mean >= 0 ? "dem-text" : "gop-text"}`;
     } else {
-      document.getElementById("kpi-median-shift").textContent = "—";
-      document.getElementById("kpi-mean-shift").textContent = "—";
+      v3.textContent = "—";
+      v4.textContent = "—";
     }
 
-    document.getElementById("kpi-rem-votes").textContent = fmtInt(totalRemVotes);
+    v5.textContent = fmtInt(totalRemVotes);
   }
 
   // =========================================================================
@@ -743,7 +1187,7 @@
       </table>
       ${
         rec
-          ? `<div style="margin-top:6px;font-size:11px;color:#5f6368;">
+          ? `<div style="margin-top:6px;font-size:11px;color:var(--text-secondary);">
                2026 Votes: ${fmtInt(rec.v)} ${rec.rem > 0 ? `· Est. remaining: ${fmtInt(rec.rem)}` : ""}
              </div>`
           : ""
@@ -762,7 +1206,7 @@
           <span class="tt-title">${stName}</span>
           <span class="tt-rep">No race on 2026 ballot</span>
         </div>
-        <div style="font-size:12px;color:#5f6368;">Click to inspect U.S. House &amp; local races in ${stName}.</div>
+        <div style="font-size:12px;color:var(--text-secondary);">Click to inspect U.S. House &amp; local races in ${stName}.</div>
       `;
       positionTooltip(event, tt);
       return;
@@ -775,7 +1219,7 @@
         <span class="tt-title">${stName} — ${race.office}</span>
         <span class="tt-rep">${race.eevp}% rep</span>
       </div>
-      <div style="font-size:12px;margin-bottom:6px;font-weight:700;color:${race.called ? "#15803d" : "#b45309"}">
+      <div style="font-size:12px;margin-bottom:6px;font-weight:700;color:${race.called ? "var(--yes-main)" : "#f59e0b"}">
         ${race.called ? `✓ Called for ${c1.name} (${c1.party})` : `Too Close to Call · ${c1.name} leads by ${race.top_margin_pct.toFixed(2)}%`}
       </div>
       <table class="tt-table">
@@ -800,13 +1244,88 @@
     positionTooltip(event, tt);
   }
 
+  function showMeasuresStateTooltip(event, postal, list) {
+    const tt = document.getElementById("map-tooltip");
+    const stName = STATE_NAMES[postal] || postal;
+    if (!list || !list.length) {
+      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">0 statewide measures</span></div>`;
+      positionTooltip(event, tt);
+      return;
+    }
+    const rows = list
+      .slice(0, 5)
+      .map((m) => {
+        const c1 = m.candidates[0] || {};
+        return `<tr><td>${m.seat || m.office}</td><td class="num"><strong>${c1.name || ""} (${fmtPct(c1.percent)})</strong></td></tr>`;
+      })
+      .join("");
+    tt.innerHTML = `
+      <div class="tt-header">
+        <span class="tt-title">${stName} Ballot Measures</span>
+        <span class="tt-rep">${list.length} measures</span>
+      </div>
+      <table class="tt-table"><tbody>${rows}</tbody></table>
+      <div style="margin-top:6px;font-size:11px;color:var(--text-secondary);">Click state to filter ballot measure cards below.</div>
+    `;
+    positionTooltip(event, tt);
+  }
+
+  function showLegislaturesStateTooltip(event, postal, list) {
+    const tt = document.getElementById("map-tooltip");
+    const stName = STATE_NAMES[postal] || postal;
+    if (!list || !list.length) {
+      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">No chamber election</span></div>`;
+      positionTooltip(event, tt);
+      return;
+    }
+    const rows = list
+      .map(
+        (c) =>
+          `<tr><td><strong>${c.office}</strong></td><td class="num dem-text">Dem: ${c.dem_seats}</td><td class="num gop-text">Rep: ${c.gop_seats}</td></tr>`
+      )
+      .join("");
+    tt.innerHTML = `
+      <div class="tt-header">
+        <span class="tt-title">${stName} Legislature</span>
+        <span class="tt-rep">${list.length} chambers</span>
+      </div>
+      <table class="tt-table"><tbody>${rows}</tbody></table>
+    `;
+    positionTooltip(event, tt);
+  }
+
+  function showCloseStateTooltip(event, postal, list) {
+    const tt = document.getElementById("map-tooltip");
+    const stName = STATE_NAMES[postal] || postal;
+    if (!list || !list.length) {
+      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">All federal races called</span></div>`;
+      positionTooltip(event, tt);
+      return;
+    }
+    const rows = list
+      .slice(0, 5)
+      .map((r) => {
+        const c1 = r.candidates[0] || {};
+        return `<tr><td><strong>${r.office === "U.S. House" ? r.seat : r.office}</strong></td><td class="num">${c1.last_name || c1.name} (${c1.party})</td><td class="num">+${r.top_margin_pct.toFixed(2)}%</td></tr>`;
+      })
+      .join("");
+    tt.innerHTML = `
+      <div class="tt-header">
+        <span class="tt-title">${stName} Uncalled Races</span>
+        <span class="tt-rep">${list.length} uncalled</span>
+      </div>
+      <table class="tt-table"><tbody>${rows}</tbody></table>
+    `;
+    positionTooltip(event, tt);
+  }
+
   function positionTooltip(event, tt) {
     tt.style.display = "block";
     const container = document.getElementById("map-svg-container");
     const rect = container.getBoundingClientRect();
     let x = event.clientX - rect.left + 16;
     let y = event.clientY - rect.top + 16;
-    if (x + 280 > rect.width) x = Math.max(10, event.clientX - rect.left - 285);
+    if (x + 290 > rect.width) x = Math.max(10, event.clientX - rect.left - 295);
     if (y + 160 > rect.height) y = Math.max(10, event.clientY - rect.top - 165);
     tt.style.left = `${x}px`;
     tt.style.top = `${y}px`;
@@ -822,14 +1341,19 @@
   // =========================================================================
   function renderForecastPanel() {
     const panel = document.getElementById("forecast-panel");
-    panel.style.display = state.mapMode === "forecast" ? "block" : "none";
-    if (state.mapMode !== "forecast") return;
+    const isPartisan =
+      state.activeOfficeTab === "senate" ||
+      state.activeOfficeTab === "house" ||
+      state.activeOfficeTab === "governor";
+    const show = isPartisan && state.mapMode === "forecast";
+    panel.style.display = show ? "block" : "none";
+    if (!show) return;
 
     const cc = state.overview.chamber_control;
     const senProbs = (cc.senate.seat_probabilities || [])
       .map(
         (p) =>
-          `<div style="display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0;border-bottom:1px solid #f1f3f4;">
+          `<div style="display:flex;justify-content:space-between;font-size:12.5px;padding:3px 0;border-bottom:1px solid var(--border-light);">
              <span><strong>${p.DEM} Dem. / ${p.GOP} Rep.</strong></span>
              <span>${(p.prop_sims * 100).toFixed(1)}% probability</span>
            </div>`
@@ -934,9 +1458,8 @@
         items = await ensureStateCivicRacesLoaded(state.selectedState);
         heading = `All 2026 Ballot Races in ${STATE_NAMES[state.selectedState] || state.selectedState}`;
       } else {
-        // Load top close races + allow loading any state
         items = [...(ov.close_races_all_levels || [])];
-        heading = "Closest Uncalled Federal, State & Local Races Nationwide (Select a State for All 39,474 Races)";
+        heading = "Closest Uncalled Federal, State & Local Races Nationwide (Select Any State for All 39,474 Races)";
       }
     }
 
@@ -1003,7 +1526,6 @@
         const sB = Math.abs(b.shift_vs_house_2024 ?? b.shift_vs_pres_2024 ?? 0);
         return sB - sA;
       }
-      // default: uncalled-first, then closest margin
       if (a.called !== b.called) return a.called ? 1 : -1;
       return mA - mB;
     });
@@ -1019,7 +1541,7 @@
 
     const grid = document.getElementById("races-grid");
     if (pageItems.length === 0) {
-      grid.innerHTML = `<div style="grid-column:1/-1;padding:28px;text-align:center;color:#5f6368;">No races match the current filters. Try clearing your search or selecting "All 50 States".</div>`;
+      grid.innerHTML = `<div style="grid-column:1/-1;padding:28px;text-align:center;color:var(--text-secondary);">No races match the current filters. Try clearing your search or selecting "All 50 States".</div>`;
     } else {
       grid.innerHTML = pageItems
         .map((r) => (isCivicFormat ? renderCivicRaceCard(r) : renderNytRaceCard(r)))
@@ -1040,6 +1562,7 @@
 
   function renderNytRaceCard(r) {
     const stName = STATE_NAMES[r.state] || r.state;
+    const isMeasure = state.activeOfficeTab === "measures" || r.ballot_measure_text;
     const title =
       r.office === "U.S. House"
         ? `${stName} ${r.seat || `District ${r.seat_number}`}`
@@ -1054,13 +1577,18 @@
       ? "called-dem-card"
       : winParty === "GOP"
       ? "called-gop-card"
+      : winParty === "YES"
+      ? "called-yes-card"
+      : winParty === "NO"
+      ? "called-no-card"
       : "";
 
     const isFlipped =
-      r.party_flip ||
-      (r.incumbent_party in { DEM: 1, GOP: 1 } &&
-        winParty in { DEM: 1, GOP: 1 } &&
-        winParty !== r.incumbent_party);
+      !isMeasure &&
+      (r.party_flip ||
+        (r.incumbent_party in { DEM: 1, GOP: 1 } &&
+          winParty in { DEM: 1, GOP: 1 } &&
+          winParty !== r.incumbent_party));
 
     let badgesHtml = "";
     if (isFlipped) {
@@ -1071,9 +1599,17 @@
     if (!r.called) {
       badgesHtml += `<span class="rc-badge badge-tctc">Too Close · ±${r.top_margin_pct.toFixed(2)}% (${fmtInt(r.top_margin_votes)}v)</span>`;
     } else {
-      badgesHtml += `<span class="rc-badge ${
-        winParty === "DEM" ? "badge-called-dem" : winParty === "GOP" ? "badge-called-gop" : ""
-      }">✓ Called</span>`;
+      const bCls =
+        winParty === "DEM"
+          ? "badge-called-dem"
+          : winParty === "GOP"
+          ? "badge-called-gop"
+          : winParty === "YES"
+          ? "badge-called-yes"
+          : winParty === "NO"
+          ? "badge-called-no"
+          : "";
+      badgesHtml += `<span class="rc-badge ${bCls}">✓ Called</span>`;
     }
 
     const candsHtml = (r.candidates || [])
@@ -1085,7 +1621,7 @@
         const checkHtml = c.winner
           ? `<span class="win-check ${c.party}" title="Called Winner">✓</span>`
           : "";
-        const incText = c.incumbent ? ` <span title="Incumbent" style="color:#70757a;font-size:11px;">(i)</span>` : "";
+        const incText = c.incumbent ? ` <span title="Incumbent" style="color:var(--text-muted);font-size:11px;">(i)</span>` : "";
 
         return `
           <div class="cand-row ${c.winner ? "cand-winner-winner" : ""}">
@@ -1109,15 +1645,19 @@
       })
       .join("");
 
-    // Shift vs 2024 footer
-    const shiftVal = r.shift_vs_house_2024 ?? r.shift_vs_pres_2024;
-    const shiftType = r.shift_vs_house_2024 !== null && r.shift_vs_house_2024 !== undefined ? "vs. '24 House" : "vs. '24 Pres";
     let shiftHtml = "";
-    if (shiftVal !== null && shiftVal !== undefined) {
-      const isDem = shiftVal >= 0;
-      shiftHtml = `<span class="shift-chip ${isDem ? "dem" : "gop"}">${
-        isDem ? "↖ Dem +" + shiftVal.toFixed(1) : "↗ Rep +" + Math.abs(shiftVal).toFixed(1)
-      } pts ${shiftType}</span>`;
+    if (!isMeasure) {
+      const shiftVal = r.shift_vs_house_2024 ?? r.shift_vs_pres_2024;
+      const shiftType =
+        r.shift_vs_house_2024 !== null && r.shift_vs_house_2024 !== undefined
+          ? "vs. '24 House"
+          : "vs. '24 Pres";
+      if (shiftVal !== null && shiftVal !== undefined) {
+        const isDem = shiftVal >= 0;
+        shiftHtml = `<span class="shift-chip ${isDem ? "dem" : "gop"}">${
+          isDem ? "↖ Dem +" + shiftVal.toFixed(1) : "↗ Rep +" + Math.abs(shiftVal).toFixed(1)
+        } pts ${shiftType}</span>`;
+      }
     }
 
     return `
@@ -1134,7 +1674,7 @@
           </div>
           ${
             r.ballot_measure_text
-              ? `<p style="font-size:12px;color:#5f6368;margin:6px 0 8px;">${r.ballot_measure_text}</p>`
+              ? `<p style="font-size:12px;color:var(--text-secondary);margin:6px 0 8px;">${r.ballot_measure_text}</p>`
               : `<div style="height:8px"></div>`
           }
           <div class="rc-candidates">${candsHtml}</div>
@@ -1278,7 +1818,10 @@
   function selectStateFilter(postal) {
     state.selectedState = postal;
     state.page = 1;
-    document.getElementById("select-state-filter").value = postal;
+    const s1 = document.getElementById("select-state-filter");
+    const s2 = document.getElementById("filter-state-inline");
+    if (s1) s1.value = postal;
+    if (s2) s2.value = postal;
     renderMap();
     renderRaceExplorer();
   }
@@ -1287,6 +1830,12 @@
   // EVENT BINDINGS
   // =========================================================================
   function bindEvents() {
+    // Dark / Light Mode Toggle
+    const themeBtn = document.getElementById("btn-theme-toggle");
+    if (themeBtn) {
+      themeBtn.addEventListener("click", toggleTheme);
+    }
+
     // Top Office Tabs
     document.querySelectorAll(".office-tab").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -1296,20 +1845,7 @@
         state.activeOfficeTab = off;
         state.page = 1;
 
-        if (off === "senate") {
-          state.mapDataset = "s26";
-          document.getElementById("select-map-dataset").value = "s26";
-        } else if (off === "house") {
-          state.mapDataset = "h26";
-          document.getElementById("select-map-dataset").value = "h26";
-        } else if (off === "governor") {
-          state.mapDataset = "g26";
-          document.getElementById("select-map-dataset").value = "g26";
-        }
-
-        renderBalanceOfPower();
-        renderMap();
-        renderRaceExplorer();
+        syncActiveView();
       });
     });
 
@@ -1328,13 +1864,6 @@
       });
     });
 
-    // Map dataset selector
-    document.getElementById("select-map-dataset").addEventListener("change", (e) => {
-      state.mapDataset = e.target.value;
-      renderBalanceOfPower();
-      renderMap();
-    });
-
     // Winner level selector
     document.getElementById("select-winner-level").addEventListener("change", (e) => {
       state.winnerLevel = e.target.value;
@@ -1347,8 +1876,11 @@
       renderMap();
     });
 
-    // State focus selector
+    // State focus selectors (both map & toolbar)
     document.getElementById("select-state-filter").addEventListener("change", (e) => {
+      selectStateFilter(e.target.value);
+    });
+    document.getElementById("filter-state-inline").addEventListener("change", (e) => {
       selectStateFilter(e.target.value);
     });
 
@@ -1399,7 +1931,7 @@
       if (allTab) allTab.classList.add("active");
       state.activeOfficeTab = "all-local";
       state.page = 1;
-      renderRaceExplorer();
+      syncActiveView();
     });
 
     // Pagination buttons
