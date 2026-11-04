@@ -119,6 +119,14 @@ if __name__ == "__main__":
                     ["git", "-C", str(BASE_DIR), "commit", "-m", "chore(data): auto-update live 2026 election results snapshot"],
                     check=False,
                 )
+                env_with_gh = dict(os.environ, PATH=f"/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:{os.environ.get('PATH', '')}")
+                subprocess.run(
+                    ["gh", "api", "-X", "DELETE", "repos/mike10010100/elections-2026/environments/github-pages"],
+                    env=env_with_gh,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
                 subprocess.run(
                     ["git", "-C", str(BASE_DIR), "push", "origin", "main"],
                     check=False,
