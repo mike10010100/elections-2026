@@ -8,6 +8,8 @@ and builds unified race catalogs for 2024 vs 2026 comparisons.
 import concurrent.futures
 import gzip
 import json
+import os
+import tempfile
 import urllib.request
 from pathlib import Path
 
@@ -45,8 +47,11 @@ def fetch_url(url: str, dest: Path) -> tuple[str, bool, int]:
                 raw = gzip.decompress(raw)
         data = json.loads(raw.decode("utf-8"))
         dest.parent.mkdir(parents=True, exist_ok=True)
-        with open(dest, "w", encoding="utf-8") as f:
+        fd, tmp_path = tempfile.mkstemp(dir=str(dest.parent), prefix=f".{dest.name}.", suffix=".tmp")
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             json.dump(data, f)
+        os.chmod(tmp_path, 0o644)
+        os.replace(tmp_path, dest)
         return (dest.name, True, len(data.get("races", [])))
     except Exception as e:
         return (dest.name, False, 0)

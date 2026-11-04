@@ -98,6 +98,7 @@
     countyFeatures: [],
     countyCentroids: {},
     stateCentroids: {},
+    stateRelevanceMap: {},
     loadedStateCivicRaces: {},
 
     theme: document.documentElement.getAttribute("data-theme") || "dark",
@@ -197,7 +198,7 @@
     defs.selectAll("*").remove();
 
     const dark = isDark();
-    const mkPattern = (id, bg, stripe) => {
+    const mkPattern = (id, bg, stripe, sw = 4) => {
       const p = defs.append("pattern")
         .attr("id", id)
         .attr("patternUnits", "userSpaceOnUse")
@@ -207,14 +208,15 @@
       p.append("rect").attr("width", 8).attr("height", 8).attr("fill", bg);
       p.append("line")
         .attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 8)
-        .attr("stroke", stripe).attr("stroke-width", 4);
+        .attr("stroke", stripe).attr("stroke-width", sw);
     };
-    mkPattern("pat-dem-lead", dark ? "#172554" : "#dbeafe", dark ? "#3b82f6" : "#2563eb");
-    mkPattern("pat-gop-lead", dark ? "#450a0a" : "#fee2e2", dark ? "#ef4444" : "#dc2626");
+    mkPattern("pat-dem-lead", dark ? "#172554" : "#dbeafe", dark ? "#3b82f6" : "#2563eb", 4);
+    mkPattern("pat-gop-lead", dark ? "#450a0a" : "#fee2e2", dark ? "#ef4444" : "#dc2626", 4);
+    mkPattern("pat-inactive-state", dark ? "#0f1521" : "#d4dce4", dark ? "#182234" : "#bcc6d2", 2.2);
   }
 
   async function loadAllData(bustCache = false) {
-    const qs = bustCache ? `?t=${Date.now()}` : "?v=20261104d";
+    const qs = bustCache ? `?t=${Date.now()}` : "?v=20261104e";
     const btn = document.getElementById("btn-live-refresh");
     if (btn) btn.disabled = true;
 
@@ -367,6 +369,12 @@
       if (c && !Number.isNaN(c[0]) && !Number.isNaN(c[1])) {
         state.countyCentroids[cf.id] = c;
       }
+    }
+    if (!state.countyCentroids["02020"] && state.stateCentroids["AK"]) {
+      state.countyCentroids["02020"] = state.stateCentroids["AK"];
+    }
+    if (!state.countyCentroids["02000"] && state.stateCentroids["AK"]) {
+      state.countyCentroids["02000"] = state.stateCentroids["AK"];
     }
   }
 
@@ -686,13 +694,177 @@
   // =========================================================================
   // INTERACTIVE MAP RENDERING (Context-Aware + 2004–2026 Historical Support!)
   // =========================================================================
+  function computeStateRelevanceMap(
+    effectiveMode,
+    stateRaceByPostal,
+    measuresByState,
+    legByState,
+    uncalledByState
+  ) {
+    const relMap = {};
+    const ds = state.mapDataset;
+    const isLive26 = isLive2026Dataset(ds);
+
+    // Precompute county-level presence and shift availability by state for current dataset
+    const stateHasVotes = {};
+    const stateHasShift = {};
+    const stateOnlyOneParty = {};
+    for (const cData of Object.values(state.countyShifts.counties || {})) {
+      const st = cData.state;
+      if (!st) continue;
+      const rec = cData[ds];
+      if (rec && rec.v > 0) {
+        stateHasVotes[st] = true;
+        if (!rec.op) {
+          stateOnlyOneParty[st] = false;
+        } else if (stateOnlyOneParty[st] === undefined) {
+          stateOnlyOneParty[st] = true;
+        }
+        const eevpOk = !isLive26 || (rec.eevp !== undefined ? rec.eevp >= state.minEevp : true);
+        if (eevpOk && computeCountyShift(cData, ds, state.baselineCycle) !== null) {
+          stateHasShift[st] = true;
+        }
+      }
+    }
+
+    let inactiveStatesCount = 0;
+    let hasDCInactive = false;
+
+    for (const postal of Object.keys(STATE_NAMES)) {
+      let relevant = true;
+      let shortTag = "";
+      let reason = "";
+
+      if (effectiveMode === "measures") {
+        if (!measuresByState[postal] || !measuresByState[postal].length) {
+          relevant = false;
+          shortTag = "No 2026 Ballot Measures";
+          reason = `${STATE_NAMES[postal]} has no statewide ballot measures on the 2026 ballot.`;
+        }
+      } else if (effectiveMode === "legislatures") {
+        if (!legByState[postal] || !legByState[postal].length) {
+          relevant = false;
+          shortTag = "No 2026 Chamber Election";
+          reason = `${STATE_NAMES[postal]} does not hold regular partisan state legislative chamber elections in 2026.`;
+        }
+      } else if (effectiveMode === "close") {
+        if (!uncalledByState[postal] || !uncalledByState[postal].length) {
+          relevant = false;
+          shortTag = "All Races Called";
+          reason = `All 2026 U.S. Senate, U.S. House, and Governor races in ${STATE_NAMES[postal]} have already been called.`;
+        }
+      } else {
+        // Partisan / Historical Modes (shift | winner | forecast)
+        if (ds === "s26") {
+          if (!stateRaceByPostal[postal]) {
+            relevant = false;
+            shortTag = "No 2026 U.S. Senate Election";
+            reason = `${STATE_NAMES[postal]} does not have a U.S. Senate seat on the 2026 ballot (Class I & III seats are not up in 2026).`;
+          } else if (effectiveMode === "shift" && !stateHasShift[postal]) {
+            relevant = false;
+            shortTag = stateRaceByPostal[postal].one_party
+              ? "No Dem. vs. Rep. Contest"
+              : "No County Shift Data";
+            reason = stateRaceByPostal[postal].one_party
+              ? `${STATE_NAMES[postal]}'s 2026 U.S. Senate race is GOP vs. Independent (no Democratic candidate on ballot), so two-party Dem/Rep margin shift is not applicable.`
+              : `Sub-state county shift data is not reported for ${STATE_NAMES[postal]}.`;
+          }
+        } else if (ds === "g26") {
+          if (!stateRaceByPostal[postal]) {
+            relevant = false;
+            shortTag = "No 2026 Governor Election";
+            reason = `${STATE_NAMES[postal]} is not holding a gubernatorial election in 2026.`;
+          } else if (effectiveMode === "shift" && !stateHasShift[postal]) {
+            relevant = false;
+            shortTag = "No Two-Party Shift Data";
+            reason = `Two-party county shift data is not applicable for ${STATE_NAMES[postal]}.`;
+          }
+        } else if (ds === "ag26") {
+          if (!stateHasVotes[postal]) {
+            relevant = false;
+            shortTag = "No 2026 Attorney General Race";
+            reason = `${STATE_NAMES[postal]} does not have an Attorney General election on the 2026 ballot.`;
+          } else if (effectiveMode === "shift" && !stateHasShift[postal]) {
+            relevant = false;
+            shortTag = "Single-Party / Uncontested Race";
+            reason = `${STATE_NAMES[postal]}'s 2026 Attorney General race had no two-party competition.`;
+          }
+        } else {
+          // Historical Senate (s24..s04), House (h26, h24..h04), President (p24..p04), or top26
+          if (!stateHasVotes[postal]) {
+            relevant = false;
+            if (ds.startsWith("s")) {
+              shortTag = "No Senate Race in Cycle";
+              reason = `${STATE_NAMES[postal]} did not have a U.S. Senate seat on the ballot in this election cycle.`;
+            } else if (postal === "DC") {
+              shortTag = "Non-Voting Delegate Only";
+              reason = `Washington, D.C. does not elect voting members of the U.S. Senate or U.S. House.`;
+            } else {
+              shortTag = "No Race Data in Cycle";
+              reason = `No county returns for this office/cycle in ${STATE_NAMES[postal]}.`;
+            }
+          } else if (effectiveMode === "shift" && !stateHasShift[postal]) {
+            relevant = false;
+            shortTag = stateOnlyOneParty[postal]
+              ? "Single-Party / Uncontested"
+              : "No Two-Party Shift";
+            reason = stateOnlyOneParty[postal]
+              ? `${STATE_NAMES[postal]} had an uncontested or single-party general election in this cycle, so two-party Dem/Rep shift is not applicable.`
+              : `No comparable two-party baseline shift available for ${STATE_NAMES[postal]} in this cycle.`;
+          }
+        }
+      }
+
+      if (!relevant) {
+        if (postal === "DC") hasDCInactive = true;
+        else inactiveStatesCount++;
+      }
+      relMap[postal] = { relevant, shortTag, reason };
+    }
+
+    const legendInactiveRow = document.getElementById("legend-inactive-row");
+    const legendInactiveText = document.getElementById("legend-inactive-text");
+    if (legendInactiveRow && legendInactiveText) {
+      const totalInactive = inactiveStatesCount + (hasDCInactive ? 1 : 0);
+      if (totalInactive === 0) {
+        legendInactiveRow.style.display = "none";
+      } else {
+        legendInactiveRow.style.display = "flex";
+        const countLabel =
+          inactiveStatesCount > 0 && hasDCInactive
+            ? `${inactiveStatesCount} state${inactiveStatesCount === 1 ? "" : "s"} + D.C.`
+            : inactiveStatesCount > 0
+            ? `${inactiveStatesCount} state${inactiveStatesCount === 1 ? "" : "s"}`
+            : "D.C.";
+
+        let whyText = "not on ballot / N/A for map";
+        if (effectiveMode === "measures") whyText = "no 2026 statewide ballot measures";
+        else if (effectiveMode === "legislatures") whyText = "no 2026 partisan chamber election";
+        else if (effectiveMode === "close") whyText = "all federal & gov races called";
+        else if (ds === "s26") {
+          whyText =
+            effectiveMode === "shift"
+              ? "no 2026 Senate race (15) or no Dem/Rep contest (3)"
+              : "no 2026 U.S. Senate election on ballot";
+        } else if (ds === "g26") whyText = "no 2026 Governor election on ballot";
+        else if (ds === "ag26") whyText = "no 2026 Attorney General election";
+        else if (ds.startsWith("s")) whyText = "no U.S. Senate race in this cycle";
+
+        legendInactiveText.textContent = `Greyed out (${countLabel}): ${whyText}.`;
+      }
+    }
+
+    return relMap;
+  }
+
   function renderMap() {
     if (!state.topo || !state.countyShifts || state.activeOfficeTab === "all-local") return;
 
     const tab = state.activeOfficeTab;
     const isPartisan = isPartisanTab(tab);
     const dark = isDark();
-    const neutralStateFill = dark ? "#1e293b" : "#efefef";
+    const neutralStateFill = dark ? "#243247" : "#f1f5f9";
+    const inactiveStateFill = "url(#pat-inactive-state)";
     const selectedStateFill = dark ? "#334155" : "#e2e8f0";
 
     const modeCardsEl = document.getElementById("view-mode-cards");
@@ -760,6 +932,14 @@
       }
     }
 
+    state.stateRelevanceMap = computeStateRelevanceMap(
+      effectiveMode,
+      stateRaceByPostal,
+      measuresByState,
+      legByState,
+      uncalledByState
+    );
+
     const isHistoricalCountyWinner =
       effectiveMode === "winner" &&
       (state.winnerLevel === "county" || !isLive26 || state.mapDataset === "h26" || state.mapDataset === "ag26");
@@ -770,21 +950,29 @@
       .selectAll("path.state-fill")
       .data(state.stateFeatures, (d) => d.id)
       .join("path")
-      .attr("class", "state-fill")
+      .attr("class", (d) => {
+        const postal = d.properties.postal;
+        const rel = state.stateRelevanceMap[postal];
+        return rel && !rel.relevant ? "state-fill state-inactive" : "state-fill";
+      })
       .attr("d", pathGen)
       .attr("fill", (d) => {
         const postal = d.properties.postal;
+        const rel = state.stateRelevanceMap[postal];
+        if (rel && !rel.relevant) {
+          return inactiveStateFill;
+        }
         if (effectiveMode === "winner" && !isHistoricalCountyWinner) {
-          return getStateWinnerFill(postal, stateRaceByPostal[postal], neutralStateFill);
+          return getStateWinnerFill(postal, stateRaceByPostal[postal], inactiveStateFill);
         }
         if (effectiveMode === "measures") {
-          return getMeasuresStateFill(postal, measuresByState[postal], neutralStateFill);
+          return getMeasuresStateFill(postal, measuresByState[postal], inactiveStateFill);
         }
         if (effectiveMode === "legislatures") {
-          return getLegislatureStateFill(postal, legByState[postal], neutralStateFill);
+          return getLegislatureStateFill(postal, legByState[postal], inactiveStateFill);
         }
         if (effectiveMode === "close") {
-          return getCloseStateFill(postal, uncalledByState[postal], neutralStateFill);
+          return getCloseStateFill(postal, uncalledByState[postal], inactiveStateFill);
         }
         if (state.selectedState !== "ALL" && postal === state.selectedState) {
           return selectedStateFill;
@@ -829,8 +1017,10 @@
         if (!isHistoricalCountyWinner) return "transparent";
         const cData = state.countyShifts.counties[d.id];
         if (!cData) return "transparent";
+        const rel = state.stateRelevanceMap[cData.state];
+        if (rel && !rel.relevant) return "transparent";
         const rec = cData[state.mapDataset];
-        if (!rec || !rec.v) return neutralStateFill;
+        if (!rec || !rec.v) return "transparent";
         return getMarginColor(rec.m);
       })
       .attr(
@@ -984,7 +1174,10 @@
       .selectAll("text.state-label")
       .data(labelFeatures, (d) => d.properties.postal)
       .join("text")
-      .attr("class", "state-label")
+      .attr("class", (d) => {
+        const rel = state.stateRelevanceMap[d.properties.postal];
+        return rel && !rel.relevant ? "state-label state-label-inactive" : "state-label";
+      })
       .attr("x", (d) => state.stateCentroids[d.properties.postal][0])
       .attr("y", (d) => state.stateCentroids[d.properties.postal][1])
       .text((d) => apAbbr[d.properties.postal] || d.properties.postal);
@@ -1100,11 +1293,6 @@
     if (state.mapDataset === "h26") return neutralFill;
     const dark = isDark();
     if (!race) {
-      if (state.mapDataset === "g26") {
-        const noElMap = state.overview.chamber_control.governor.no_election_map || {};
-        if (noElMap[postal] === "DEM") return dark ? "#1e3a8a" : "#bfdbfe";
-        if (noElMap[postal] === "GOP") return dark ? "#7f1d1d" : "#fecaca";
-      }
       return neutralFill;
     }
     const party = race.winner_party || race.leader_party;
@@ -1317,13 +1505,12 @@
       return;
     }
 
+    const rel = state.stateRelevanceMap[cData.state];
     const eevpText =
       rec && rec.eevp !== undefined
         ? `${rec.eevp}% reported`
-        : !rec && state.mapDataset === "s26"
-        ? `No 2026 Senate race in ${cData.state}`
-        : !rec && state.mapDataset === "g26"
-        ? `No 2026 Gov race in ${cData.state}`
+        : rel && !rel.relevant
+        ? rel.shortTag
         : CYCLE_LABELS[state.mapDataset] || "";
     const shift = computeCountyShift(cData, state.mapDataset, state.baselineCycle);
     let shiftBannerHtml = "";
@@ -1335,10 +1522,11 @@
           <span>${isDem ? "↖ Dem +" + shift.toFixed(1) : "↗ Rep +" + Math.abs(shift).toFixed(1)} pts</span>
         </div>
       `;
-    } else if (!rec && (state.mapDataset === "s26" || state.mapDataset === "g26")) {
+    } else if (rel && !rel.relevant) {
       shiftBannerHtml = `
-        <div style="font-size:11px;color:#fbbf24;margin-bottom:6px;line-height:1.35;">
-          ${cData.state} has no ${state.mapDataset === "s26" ? "U.S. Senate" : "Governor"} race on the 2026 ballot. Switch tab to <strong>U.S. House</strong> or <strong>Governors</strong> (or select <em>2026 All-50-State Top Ticket</em>) for ${cData.state} arrows.
+        <div class="tt-inactive-badge">
+          <strong>Greyed Out — ${rel.shortTag}</strong>
+          ${rel.reason}
         </div>
       `;
     }
@@ -1744,13 +1932,18 @@
   function showStateTooltip(event, postal, race) {
     const tt = document.getElementById("map-tooltip");
     const stName = STATE_NAMES[postal] || postal;
+    const rel = state.stateRelevanceMap[postal];
     if (!race) {
       tt.innerHTML = `
         <div class="tt-header">
           <span class="tt-title">${stName}</span>
-          <span class="tt-rep">No race on 2026 ballot</span>
+          <span class="tt-rep">${rel && rel.shortTag ? rel.shortTag : "Not on ballot"}</span>
         </div>
-        <div style="font-size:12px;color:var(--text-secondary);">Click to inspect U.S. House &amp; local races in ${stName}.</div>
+        <div class="tt-inactive-badge">
+          <strong>Greyed Out — ${rel && rel.shortTag ? rel.shortTag : "No Race on Ballot"}</strong>
+          ${rel && rel.reason ? rel.reason : `No race in ${stName} for this map view.`}
+        </div>
+        <div style="font-size:11.5px;color:var(--text-secondary);">Click state to inspect U.S. House &amp; local races in ${stName}.</div>
       `;
       positionTooltip(event, tt);
       return;
@@ -1792,7 +1985,10 @@
     const tt = document.getElementById("map-tooltip");
     const stName = STATE_NAMES[postal] || postal;
     if (!list || !list.length) {
-      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">0 statewide measures</span></div>`;
+      tt.innerHTML = `
+        <div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">No 2026 Measures</span></div>
+        <div class="tt-inactive-badge"><strong>Greyed Out — No Statewide Ballot Measures</strong>${stName} has no statewide ballot measures on the 2026 ballot.</div>
+      `;
       positionTooltip(event, tt);
       return;
     }
@@ -1818,7 +2014,10 @@
     const tt = document.getElementById("map-tooltip");
     const stName = STATE_NAMES[postal] || postal;
     if (!list || !list.length) {
-      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">No chamber election</span></div>`;
+      tt.innerHTML = `
+        <div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">No Chamber Election</span></div>
+        <div class="tt-inactive-badge"><strong>Greyed Out — No 2026 Chamber Election</strong>${stName} does not hold regular partisan state legislative chamber elections in 2026.</div>
+      `;
       positionTooltip(event, tt);
       return;
     }
@@ -1842,7 +2041,10 @@
     const tt = document.getElementById("map-tooltip");
     const stName = STATE_NAMES[postal] || postal;
     if (!list || !list.length) {
-      tt.innerHTML = `<div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">All federal races called</span></div>`;
+      tt.innerHTML = `
+        <div class="tt-header"><span class="tt-title">${stName}</span><span class="tt-rep">All Races Called</span></div>
+        <div class="tt-inactive-badge"><strong>Greyed Out — All Races Called</strong>All 2026 U.S. Senate, U.S. House, and Governor races in ${stName} have been called.</div>
+      `;
       positionTooltip(event, tt);
       return;
     }

@@ -6,10 +6,13 @@ html[data-theme="light"] {
   --bg-pill: #f1f3f4;
   --bg-input: #ffffff;
   --bg-map-canvas: #ffffff;
-  --map-state-neutral: #efefef;
+  --map-state-neutral: #f1f5f9;
   --map-state-selected: #e2e8f0;
+  --map-state-inactive-bg: #d4dce4;
+  --map-state-inactive-stripe: #bcc6d2;
   --map-state-border: #ffffff;
-  --map-label-fill: #3c4043;
+  --map-label-fill: #334155;
+  --map-label-inactive: #7c8796;
   --map-label-halo: rgba(242, 243, 245, 0.92);
   --border-subtle: #dadce0;
   --border-light: #e8eaed;
@@ -40,12 +43,15 @@ html[data-theme="dark"] {
   --bg-elevated: #1a2333;
   --bg-pill: #1f2937;
   --bg-input: #0f172a;
-  --bg-map-canvas: #0d1524;
-  --map-state-neutral: #1e293b;
+  --bg-map-canvas: #0b111e;
+  --map-state-neutral: #243247;
   --map-state-selected: #334155;
-  --map-state-border: #0d1524;
+  --map-state-inactive-bg: #0f1521;
+  --map-state-inactive-stripe: #182234;
+  --map-state-border: #0b111e;
   --map-label-fill: #e2e8f0;
-  --map-label-halo: rgba(13, 21, 36, 0.92);
+  --map-label-inactive: #475569;
+  --map-label-halo: rgba(11, 17, 30, 0.92);
   --border-subtle: #263248;
   --border-light: #1e293b;
   --text-primary: #f3f4f6;
@@ -724,6 +730,37 @@ html[data-theme="light"] .badge-alert {
   border-radius: 1px;
 }
 
+.legend-inactive-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+
+.inactive-state-swatch {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  border-radius: 3px;
+  margin-top: 1px;
+  border: 1px solid var(--border-subtle);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--map-state-inactive-bg),
+    var(--map-state-inactive-bg) 3px,
+    var(--map-state-inactive-stripe) 3px,
+    var(--map-state-inactive-stripe) 6px
+  );
+}
+
+.legend-inactive-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
 /* SVG Map Canvas */
 .map-svg-container {
   position: relative;
@@ -801,6 +838,12 @@ html[data-theme="light"] .badge-alert {
   stroke-linejoin: round;
 }
 
+.state-label.state-label-inactive {
+  fill: var(--map-label-inactive);
+  font-weight: 500;
+  opacity: 0.55;
+}
+
 /* Tooltip */
 .map-tooltip {
   position: absolute;
@@ -851,6 +894,23 @@ html[data-theme="light"] .badge-alert {
 .tt-shift-dem {
   background: var(--dem-bg-soft);
   color: var(--dem-dark);
+}
+
+.tt-inactive-badge {
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  margin-bottom: 7px;
+  background: var(--bg-pill);
+  border: 1px dashed var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.tt-inactive-badge strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 2px;
 }
 
 .tt-shift-gop {

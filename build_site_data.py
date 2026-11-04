@@ -330,27 +330,50 @@ def extract_county_office_data(races: list[dict], target_office: str) -> dict[st
             name_map[cid] = full_n
 
         units = r.get("reporting_units") or []
+        ct_cog_to_fc = {
+            "110": ["003", "013"],
+            "120": ["001"],
+            "130": ["007"],
+            "140": ["009"],
+            "150": ["015"],
+            "160": ["005"],
+            "170": ["009"],
+            "180": ["011"],
+            "190": ["001"],
+        }
         has_valid_county = any(
             u.get("level") == "county"
-            and not (u.get("fips_state") == "09" and (u.get("fips_county") or "") not in ("001", "003", "005", "007", "009", "011", "013", "015"))
+            and (
+                u.get("fips_state") != "09"
+                or (u.get("fips_county") or "") in ("001", "003", "005", "007", "009", "011", "013", "015")
+                or (u.get("fips_county") or "") in ct_cog_to_fc
+            )
             for u in units
         )
         for u in units:
             lvl = u.get("level")
-            if has_valid_county and lvl != "county":
-                continue
-            if not has_valid_county and lvl not in ("county", "township"):
-                continue
             fs = u.get("fips_state")
             fc = u.get("fips_county")
-            if not fs or not fc:
-                continue
-            if fs == "09" and fc not in ("001", "003", "005", "007", "009", "011", "013", "015"):
-                mapped_fc = ct_town_to_fc.get(u.get("name") or "")
-                if not mapped_fc:
+            if fs == "02" and lvl == "state" and not has_valid_county:
+                target_fcs = ["020"]
+            else:
+                if has_valid_county and lvl != "county":
                     continue
-                fc = mapped_fc
-            fips = f"{fs}{fc}"
+                if not has_valid_county and lvl not in ("county", "township"):
+                    continue
+                if not fs or not fc:
+                    continue
+                if fs == "09" and fc not in ("001", "003", "005", "007", "009", "011", "013", "015"):
+                    if fc in ct_cog_to_fc:
+                        target_fcs = ct_cog_to_fc[fc]
+                    else:
+                        mapped_fc = ct_town_to_fc.get(u.get("name") or "")
+                        if not mapped_fc:
+                            continue
+                        target_fcs = [mapped_fc]
+                else:
+                    target_fcs = [fc]
+
             tv = u.get("total_votes") or 0
             ev = u.get("total_expected_vote") or tv
             eevp = u.get("eevp")
@@ -382,37 +405,39 @@ def extract_county_office_data(races: list[dict], target_office: str) -> dict[st
                         ind_n = name_map[cid]
                     ind_v += v
 
-            if fips not in counties:
-                counties[fips] = {
-                    "state": u.get("state_postal"),
-                    "name": u.get("name") if lvl == "county" else "",
-                    "dem_v": 0,
-                    "gop_v": 0,
-                    "ind_v": 0,
-                    "tot_v": 0,
-                    "exp_v": 0,
-                    "eevp_sum": 0,
-                    "eevp_cnt": 0,
-                    "dem_n": dem_n,
-                    "gop_n": gop_n,
-                    "ind_n": ind_n,
-                }
-            rec = counties[fips]
-            if lvl == "county" and u.get("name"):
-                rec["name"] = u["name"]
-            if dem_n and not rec["dem_n"]:
-                rec["dem_n"] = dem_n
-            if gop_n and not rec["gop_n"]:
-                rec["gop_n"] = gop_n
-            if ind_n and not rec["ind_n"]:
-                rec["ind_n"] = ind_n
-            rec["dem_v"] += dem_v
-            rec["gop_v"] += gop_v
-            rec["ind_v"] += ind_v
-            rec["tot_v"] += tv
-            rec["exp_v"] += ev
-            rec["eevp_sum"] += eevp
-            rec["eevp_cnt"] += 1
+            for mapped_fc in target_fcs:
+                fips = f"{fs}{mapped_fc}"
+                if fips not in counties:
+                    counties[fips] = {
+                        "state": u.get("state_postal"),
+                        "name": u.get("name") if (lvl == "county" and fs != "09") else "",
+                        "dem_v": 0,
+                        "gop_v": 0,
+                        "ind_v": 0,
+                        "tot_v": 0,
+                        "exp_v": 0,
+                        "eevp_sum": 0,
+                        "eevp_cnt": 0,
+                        "dem_n": dem_n,
+                        "gop_n": gop_n,
+                        "ind_n": ind_n,
+                    }
+                rec = counties[fips]
+                if lvl == "county" and fs != "09" and u.get("name"):
+                    rec["name"] = u["name"]
+                if dem_n and not rec["dem_n"]:
+                    rec["dem_n"] = dem_n
+                if gop_n and not rec["gop_n"]:
+                    rec["gop_n"] = gop_n
+                if ind_n and not rec["ind_n"]:
+                    rec["ind_n"] = ind_n
+                rec["dem_v"] += dem_v
+                rec["gop_v"] += gop_v
+                rec["ind_v"] += ind_v
+                rec["tot_v"] += tv
+                rec["exp_v"] += ev
+                rec["eevp_sum"] += eevp
+                rec["eevp_cnt"] += 1
 
     out = {}
     for fips, rec in counties.items():
@@ -477,6 +502,8 @@ def load_historical_county_results() -> dict[str, dict[str, dict]]:
             if not pref:
                 continue
             fips = row["county_fips"].zfill(5)
+            if fips == "02000":
+                fips = "02020"
             tot_v = int(float(row["total_votes"] or 0))
             if tot_v <= 0:
                 continue
@@ -1068,6 +1095,15 @@ def build_all():
         for cyc_key, cyc_val in h_rec.items():
             entry[cyc_key] = cyc_val
 
+        # For Alaska statewide hub (02020), backfill 2004–2024 statewide historical cycles from 538 archive
+        if fips == "02020":
+            for yr, s_rec in hist_538["president"].get("AK", {}).items():
+                entry.setdefault(f"p{str(yr)[2:]}", {"d": s_rec["d"], "r": s_rec["r"], "m": s_rec["m"], "v": s_rec["v"]})
+            for yr, s_rec in hist_538["senate"].get("AK", {}).items():
+                entry.setdefault(f"s{str(yr)[2:]}", {"d": s_rec["d"], "r": s_rec["r"], "m": s_rec["m"], "v": s_rec["v"]})
+            for yr, s_rec in hist_538["house"].get("AK-1", {}).items():
+                entry.setdefault(f"h{str(yr)[2:]}", {"d": s_rec["d"], "r": s_rec["r"], "m": s_rec["m"], "v": s_rec["v"]})
+
         # Override/enrich 2024 cycles with NYT 2024 county returns where available
         for key, rec in [("p24", p24), ("s24", s24), ("h24", h24), ("g24", g24)]:
             if rec and rec["tot_v"] > 0:
@@ -1109,8 +1145,15 @@ def build_all():
                     obj["op"] = 1
                 entry[key] = obj
 
-        # Also create `top26` (2026 All-50-State Top-of-Ticket: Senate -> Governor -> House)
-        top_rec = entry.get("s26") or entry.get("g26") or entry.get("h26")
+        # Also create `top26` (2026 All-50-State Top-of-Ticket: highest two-party Senate -> Governor -> House)
+        top_rec = (
+            (entry.get("s26") if entry.get("s26") and not entry["s26"].get("op") else None)
+            or (entry.get("g26") if entry.get("g26") and not entry["g26"].get("op") else None)
+            or (entry.get("h26") if entry.get("h26") and not entry["h26"].get("op") else None)
+            or entry.get("s26")
+            or entry.get("g26")
+            or entry.get("h26")
+        )
         if top_rec:
             entry["top26"] = top_rec
 
