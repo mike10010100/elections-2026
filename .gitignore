@@ -1,8 +1,4 @@
 __pycache__/
 *.pyc
-data/snapshots/
-data/cron.log
-data/fetch.log
-data/.latest_*.json
-data/nyt_2024_all_races.json
-data/nyt_2026_all_races.json
+data/
+

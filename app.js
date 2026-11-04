@@ -106,7 +106,7 @@
     mapDataset: "s26",              // s26 | h26 | g26 | ag26 | p24..p04 | s24..s04 | h24..h04
     baselineCycle: "AUTO_APPLES",   // AUTO_APPLES | AUTO_MIDTERM | p24..p04 | s24..s04 | h24..h04
     winnerLevel: "state",           // state | county
-    minEevp: 50,
+    minEevp: 1,
     selectedState: "ALL",
     inspectedCountyFips: null,
     searchQuery: "",
@@ -214,7 +214,7 @@
   }
 
   async function loadAllData(bustCache = false) {
-    const qs = bustCache ? `?t=${Date.now()}` : "";
+    const qs = bustCache ? `?t=${Date.now()}` : "?v=20261104d";
     const btn = document.getElementById("btn-live-refresh");
     if (btn) btn.disabled = true;
 

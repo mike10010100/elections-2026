@@ -86,24 +86,48 @@ if __name__ == "__main__":
         build_all()
     except Exception as e:
         print(f"Warning: build_site_data failed: {e}")
-    # Auto-commit and push updated site_data to GitHub Pages if remote exists
+    # Auto-commit and push updated site_data to GitHub Pages ONLY if actual election results changed
     try:
         import subprocess
-        subprocess.run(
-            ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states", "data/latest.json", "data/nyt_2026"],
+        # Check if county_shifts.json or states/ changed, or if overview.json changed outside fetched_at
+        shifts_diff = subprocess.run(
+            ["git", "-C", str(BASE_DIR), "diff", "--quiet", "site_data/county_shifts.json", "site_data/states"],
             check=False,
         )
-        diff_res = subprocess.run(
-            ["git", "-C", str(BASE_DIR), "diff", "--cached", "--quiet"],
+        ov_diff_lines = subprocess.run(
+            ["git", "-C", str(BASE_DIR), "diff", "-U0", "site_data/overview.json"],
+            capture_output=True,
+            text=True,
             check=False,
+        ).stdout.splitlines()
+        meaningful_ov_diff = any(
+            line.startswith(("+", "-"))
+            and not line.startswith(("+++", "---"))
+            and '"fetched_at"' not in line
+            for line in ov_diff_lines
         )
-        if diff_res.returncode != 0:
+        if shifts_diff.returncode != 0 or meaningful_ov_diff:
             subprocess.run(
-                ["git", "-C", str(BASE_DIR), "commit", "-m", "chore(data): auto-update live 2026 election results snapshot"],
+                ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states"],
                 check=False,
             )
+            diff_res = subprocess.run(
+                ["git", "-C", str(BASE_DIR), "diff", "--cached", "--quiet"],
+                check=False,
+            )
+            if diff_res.returncode != 0:
+                subprocess.run(
+                    ["git", "-C", str(BASE_DIR), "commit", "-m", "chore(data): auto-update live 2026 election results snapshot"],
+                    check=False,
+                )
+                subprocess.run(
+                    ["git", "-C", str(BASE_DIR), "push", "origin", "main"],
+                    check=False,
+                )
+        else:
+            # Revert timestamp-only change in overview.json so working tree stays clean
             subprocess.run(
-                ["git", "-C", str(BASE_DIR), "push", "origin", "main"],
+                ["git", "-C", str(BASE_DIR), "checkout", "--", "site_data/overview.json"],
                 check=False,
             )
     except Exception as e:

@@ -13,7 +13,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20261104d" />
   <script src="assets/d3.min.js"></script>
   <script src="assets/topojson-client.min.js"></script>
 </head>
@@ -247,10 +247,10 @@
           <label class="ctrl-group" id="ctrl-eevp-wrap">
             <span class="ctrl-label">Min Reporting:</span>
             <select id="select-min-eevp" class="ctrl-select">
-              <option value="50" selected>Majority reported (≥ 50% EEVP)</option>
+              <option value="1" selected>All reporting counties (≥ 1% EEVP)</option>
+              <option value="50">Majority reported (≥ 50% EEVP)</option>
               <option value="80">Mostly reported (≥ 80% EEVP)</option>
               <option value="95">Almost all votes (≥ 95% EEVP)</option>
-              <option value="1">All reporting counties (≥ 1%)</option>
             </select>
           </label>
 
@@ -541,6 +541,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20261104d"></script>
 </body>
 </html>
