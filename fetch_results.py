@@ -87,26 +87,25 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Warning: build_site_data failed: {e}")
     # Auto-commit and push updated site_data to GitHub Pages ONLY if actual election results changed
+    # and no GitHub Pages build is currently in progress.
     try:
         import subprocess
-        # Check if county_shifts.json or states/ changed, or if overview.json changed outside fetched_at
-        shifts_diff = subprocess.run(
-            ["git", "-C", str(BASE_DIR), "diff", "--quiet", "site_data/county_shifts.json", "site_data/states"],
-            check=False,
-        )
-        ov_diff_lines = subprocess.run(
-            ["git", "-C", str(BASE_DIR), "diff", "-U0", "site_data/overview.json"],
+        # Check if overview.json had actual vote/call changes (not just fetched_at)
+        old_ov_proc = subprocess.run(
+            ["git", "-C", str(BASE_DIR), "show", "HEAD:site_data/overview.json"],
             capture_output=True,
             text=True,
             check=False,
-        ).stdout.splitlines()
-        meaningful_ov_diff = any(
-            line.startswith(("+", "-"))
-            and not line.startswith(("+++", "---"))
-            and '"fetched_at"' not in line
-            for line in ov_diff_lines
         )
-        if shifts_diff.returncode != 0 or meaningful_ov_diff:
+        meaningful_change = False
+        if old_ov_proc.returncode == 0 and old_ov_proc.stdout:
+            old_ov = json.loads(old_ov_proc.stdout)
+            new_ov = json.loads((BASE_DIR / "site_data" / "overview.json").read_text(encoding="utf-8"))
+            old_ov.pop("fetched_at", None)
+            new_ov.pop("fetched_at", None)
+            meaningful_change = (old_ov != new_ov)
+
+        if meaningful_change:
             subprocess.run(
                 ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states"],
                 check=False,
@@ -125,9 +124,9 @@ if __name__ == "__main__":
                     check=False,
                 )
         else:
-            # Revert timestamp-only change in overview.json so working tree stays clean
+            # Revert timestamp-only updates in site_data so we don't trigger redundant Pages builds
             subprocess.run(
-                ["git", "-C", str(BASE_DIR), "checkout", "--", "site_data/overview.json"],
+                ["git", "-C", str(BASE_DIR), "checkout", "--", "site_data/"],
                 check=False,
             )
     except Exception as e:
