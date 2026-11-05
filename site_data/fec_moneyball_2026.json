@@ -13272,7 +13272,7 @@
       "seat_number": "1",
       "is_special": false,
       "eevp": 98.99,
-      "total_votes_2026": 304629,
+      "total_votes_2026": 304630,
       "dem_name": "Becca Balint",
       "dem_party": "DEM",
       "dem_fec_id": "H2VT01076",
@@ -13301,8 +13301,8 @@
       "total_race_spend": 867596.6,
       "cand_spend_per_shift_pt": 402400.15,
       "total_pro_dem_per_shift_pt": 402400.15,
-      "cand_spend_per_shifted_vote": 132.1,
-      "total_pro_dem_per_shifted_vote": 132.1
+      "cand_spend_per_shifted_vote": 132.09,
+      "total_pro_dem_per_shifted_vote": 132.09
     },
     {
       "state": "AR",
