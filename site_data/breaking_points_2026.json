@@ -1,15 +1,15 @@
 {
-  "fetched_at": "2026-11-05T18:05:01.280794-05:00",
+  "fetched_at": "2026-11-05T18:10:01.593630-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1566,
+      "n_counties": 1565,
       "variance_explained_pct": {
-        "PC1": 35.02,
-        "PC2": 29.85,
+        "PC1": 35.0,
+        "PC2": 29.87,
         "PC3": 21.89,
-        "PC4": 7.73,
+        "PC4": 7.74,
         "PC5": 4.82,
         "PC6": 0.69
       }
@@ -180,9 +180,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.2,
-          "median": 14.05,
-          "stdev": 8.89,
+          "mean": 13.19,
+          "median": 14.04,
+          "stdev": 8.9,
           "pct_shifting_dem": 94.4
         },
         "us_senate_2024_to_2026": {
@@ -481,7 +481,7 @@
           "n": 179,
           "mean": 12.35,
           "median": 11.62,
-          "stdev": 7.93,
+          "stdev": 7.94,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -580,7 +580,7 @@
         "top_of_ticket_2024_to_2026": {
           "n": 1626,
           "mean": 13.81,
-          "median": 14.45,
+          "median": 14.43,
           "stdev": 6.89,
           "pct_shifting_dem": 96.2
         },
@@ -623,7 +623,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.7007
+        "pearson_r": 0.6997
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -647,7 +647,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.01,
+        "mean": 10.0,
         "median": 10.12,
         "stdev": 5.29,
         "pct_shifting_dem": 95.2
@@ -668,7 +668,7 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 11.9,
+        "mean": 11.89,
         "median": 14.12,
         "stdev": 8.8,
         "pct_shifting_dem": 88.9
