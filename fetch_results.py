@@ -106,8 +106,39 @@ if __name__ == "__main__":
             meaningful_change = (old_ov != new_ov)
 
         if meaningful_change:
+            try:
+                from build_fec_moneyball import main as build_fec_main
+                build_fec_main()
+            except Exception as e:
+                print(f"Warning: build_fec_moneyball failed: {e}")
+            try:
+                subprocess.run(
+                    [
+                        "/home/mike10010100/git/synology-drive-trays/.venv/bin/python",
+                        str(BASE_DIR / "build_analysis_charts.py"),
+                    ],
+                    check=False,
+                )
+            except Exception as e:
+                print(f"Warning: build_analysis_charts failed: {e}")
+
             subprocess.run(
-                ["git", "-C", str(BASE_DIR), "add", "site_data/overview.json", "site_data/county_shifts.json", "site_data/states"],
+                [
+                    "git",
+                    "-C",
+                    str(BASE_DIR),
+                    "add",
+                    "site_data/overview.json",
+                    "site_data/county_shifts.json",
+                    "site_data/states",
+                    "site_data/fec_moneyball_2026.json",
+                    "site_data/fec_moneyball_senate_2026.csv",
+                    "site_data/fec_moneyball_house_2026.csv",
+                    "site_data/faction_analysis_2026.json",
+                    "assets/chart1_house_carveout.png",
+                    "assets/chart2_senate_0for6.png",
+                    "assets/chart3_same_ballot_natural_experiment.png",
+                ],
                 check=False,
             )
             diff_res = subprocess.run(
@@ -116,15 +147,7 @@ if __name__ == "__main__":
             )
             if diff_res.returncode != 0:
                 subprocess.run(
-                    ["git", "-C", str(BASE_DIR), "commit", "-m", "chore(data): auto-update live 2026 election results snapshot"],
-                    check=False,
-                )
-                env_with_gh = dict(os.environ, PATH=f"/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:{os.environ.get('PATH', '')}")
-                subprocess.run(
-                    ["gh", "api", "-X", "DELETE", "repos/mike10010100/elections-2026/environments/github-pages"],
-                    env=env_with_gh,
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL,
+                    ["git", "-C", str(BASE_DIR), "commit", "-m", "chore(data): auto-update live 2026 election results & analysis charts"],
                     check=False,
                 )
                 subprocess.run(
