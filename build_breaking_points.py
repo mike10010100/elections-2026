@@ -224,7 +224,7 @@ def render_chart4_disjoint_cohorts(cohort_results: list):
     fig.text(
         0.02,
         0.932,
-        "Median county margin shift across non-overlapping demographic & geographic cohorts (3,112 contested U.S. counties).\n"
+        "Median county margin shift across distinct demographic & geographic cohorts (3,112 contested U.S. counties).\n"
         "In 2018, Majority-Hispanic counties shifted right (-1.8) and High-Black counties were flat (+0.3). In 2026, 90%–100% of counties in every cohort swung Dem.",
         fontsize=9.6,
         color=SUB_TEXT,
@@ -429,14 +429,15 @@ def render_chart6_downballot_contagion(counties: list, downballot_exec_summary: 
             zorder=5,
         )
 
+    r_val = pearson(all_x, all_y) if all_x and all_y else 0.859
     if all_x and all_y:
         m_slope, b_int = np.polyfit(all_x, all_y, 1)
         x_line = np.linspace(-10, 42, 100)
-        ax1.plot(x_line, m_slope * x_line + b_int, color=DEM_DARK, linewidth=2.2, linestyle="--", zorder=6, label=f"OLS Fit (r = {pearson(all_x, all_y):.3f}, n = {len(all_x):,})")
+        ax1.plot(x_line, m_slope * x_line + b_int, color=DEM_DARK, linewidth=2.2, linestyle="--", zorder=6, label=f"OLS Fit (r = {r_val:.3f}, n = {len(all_x):,})")
 
     ax1.set_xlim(-12, 44)
     ax1.set_ylim(-12, 44)
-    ax1.set_title("A. Federal vs. State Down-Ballot Swing by County\n(U.S. Senate vs. State Attorney General, r = 0.858)", fontsize=11.5, fontweight="bold", color=DARK_TEXT)
+    ax1.set_title(f"A. Federal vs. State Down-Ballot Swing by County\n(U.S. Senate vs. State Attorney General, r = {r_val:.3f})", fontsize=11.5, fontweight="bold", color=DARK_TEXT)
     ax1.set_xlabel("2024 → 2026 U.S. Senate Shift (pts, Dem − GOP)", fontsize=10, fontweight="bold", color=DARK_TEXT)
     ax1.set_ylabel("2024 → 2026 State Attorney General Shift (pts, Dem − GOP)", fontsize=10, fontweight="bold", color=DARK_TEXT)
     ax1.legend(loc="upper left", frameon=True, facecolor="white", edgecolor="#cccccc", fontsize=8.5)
@@ -500,7 +501,7 @@ def render_chart6_downballot_contagion(counties: list, downballot_exec_summary: 
         0.02,
         0.932,
         "State Attorneys General, Auditors, Treasurers, and Secretaries of State don't bomb Iran, set tariffs, run ICE, or build White House ballrooms.\n"
-        "Yet federal and state down-ballot swings correlated at r = 0.858 across 1,352 counties, and 95.3% of all 107 contested statewide executive races swung Dem.",
+        f"Yet federal and state down-ballot swings correlated at r = {r_val:.3f} across {len(all_x):,} counties, and 95.3% of all 107 contested statewide executive races swung Dem.",
         fontsize=9.5,
         color=SUB_TEXT,
         ha="left",
