@@ -112,8 +112,13 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f"Warning: build_fec_moneyball failed: {e}")
             try:
-                from build_breaking_points import build_breaking_points
-                build_breaking_points()
+                subprocess.run(
+                    [
+                        "/home/mike10010100/git/synology-drive-trays/.venv/bin/python",
+                        str(BASE_DIR / "build_breaking_points.py"),
+                    ],
+                    check=False,
+                )
             except Exception as e:
                 print(f"Warning: build_breaking_points failed: {e}")
             try:
@@ -144,6 +149,9 @@ if __name__ == "__main__":
                     "assets/chart1_house_carveout.png",
                     "assets/chart2_senate_0for6.png",
                     "assets/chart3_same_ballot_natural_experiment.png",
+                    "assets/chart4_disjoint_cohorts_2018_vs_2026.png",
+                    "assets/chart5_60pct_convergence_ceiling.png",
+                    "assets/chart6_downballot_contagion.png",
                 ],
                 check=False,
             )
