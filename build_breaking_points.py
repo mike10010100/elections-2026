@@ -649,6 +649,37 @@ def build_breaking_points() -> dict:
         if shift(c, "s26") is not None and shift(c, "h26") is not None
     ]
 
+    # PCA Decomposition:
+    # 1) Cross-ballot shift PCA (Senate, House, Governor, Attorney General shifts vs 2024 Pres)
+    ballot_rows = []
+    for c in counties:
+        if all(valid_race(c, k) for k in ["p24", "s26", "h26", "g26", "ag26"]):
+            ballot_rows.append(
+                [
+                    c["s26"]["m"] - c["p24"]["m"],
+                    c["h26"]["m"] - c["p24"]["m"],
+                    c["g26"]["m"] - c["p24"]["m"],
+                    c["ag26"]["m"] - c["p24"]["m"],
+                ]
+            )
+    X_b = np.array(ballot_rows)
+    X_b_std = (X_b - X_b.mean(axis=0)) / X_b.std(axis=0)
+    eig_b, _ = np.linalg.eigh(np.cov(X_b_std.T))
+    var_b = [round(float(v), 2) for v in (eig_b[::-1] / eig_b.sum() * 100)]
+
+    # 2) Demographic PCA among high-swing counties (top26 - p24 >= +14.0 pts)
+    dem_rows = []
+    for c in counties:
+        if valid_race(c, "top26") and valid_race(c, "p24"):
+            sh = c["top26"]["m"] - c["p24"]["m"]
+            d = c.get("dem", {})
+            if sh >= 14.0 and all(d.get(k) is not None for k in ["wnh", "blk", "hisp", "ba", "inc", "dens"]):
+                dem_rows.append([d["wnh"], d["blk"], d["hisp"], d["ba"], d["inc"], math.log1p(d["dens"])])
+    X_d = np.array(dem_rows)
+    X_d_std = (X_d - X_d.mean(axis=0)) / X_d.std(axis=0)
+    eig_d, _ = np.linalg.eigh(np.cov(X_d_std.T))
+    var_d = [round(float(v), 2) for v in (eig_d[::-1] / eig_d.sum() * 100)]
+
     output = {
         "fetched_at": ov.get("fetched_at"),
         "description": (
@@ -656,6 +687,18 @@ def build_breaking_points() -> dict:
             "hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with "
             "3,143-county cross-ballot shift data."
         ),
+        "pca_decomposition": {
+            "high_swing_counties_demographic_pca": {
+                "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
+                "n_counties": len(dem_rows),
+                "variance_explained_pct": {f"PC{i+1}": v for i, v in enumerate(var_d)},
+            },
+            "cross_ballot_shift_pca": {
+                "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
+                "n_counties": len(ballot_rows),
+                "variance_explained_pct": {f"PC{i+1}": v for i, v in enumerate(var_b)},
+            },
+        },
         "exit_and_issue_polling": exit_polls,
         "disjoint_county_cohorts": cohort_results,
         "downballot_contagion": {
