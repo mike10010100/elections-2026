@@ -5667,7 +5667,7 @@
       "seat_number": "2",
       "is_special": false,
       "eevp": 97.66,
-      "total_votes_2026": 336856,
+      "total_votes_2026": 336873,
       "dem_name": "Elaine Luria",
       "dem_party": "DEM",
       "dem_fec_id": "H6VA02198",
@@ -5678,7 +5678,7 @@
       "margin_2026": 8.5,
       "pres_2024_margin": 5.81,
       "shift_vs_pres_2024": 12.35,
-      "net_votes_shifted_vs_2024": 41602,
+      "net_votes_shifted_vs_2024": 41604,
       "dem_receipts": 8044063.94,
       "dem_disbursements": 7565201.72,
       "gop_receipts": 7589812.06,
@@ -5696,8 +5696,8 @@
       "total_race_spend": 27685289.99,
       "cand_spend_per_shift_pt": 612566.94,
       "total_pro_dem_per_shift_pt": 1315299.26,
-      "cand_spend_per_shifted_vote": 181.85,
-      "total_pro_dem_per_shifted_vote": 390.46
+      "cand_spend_per_shifted_vote": 181.84,
+      "total_pro_dem_per_shifted_vote": 390.44
     },
     {
       "state": "FL",
