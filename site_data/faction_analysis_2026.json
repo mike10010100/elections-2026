@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T11:35:01.612791-05:00",
+  "fetched_at": "2026-11-05T11:40:02.055137-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -146,9 +146,9 @@
       "senate_margin": 6.65,
       "pres_2024_margin": 6.94,
       "senate_shift_vs_2024": -0.29,
-      "state_house_mean_shift": 8.85,
-      "senate_minus_house_shift": -9.13,
-      "eevp": 91.83
+      "state_house_mean_shift": 8.88,
+      "senate_minus_house_shift": -9.17,
+      "eevp": 92.08
     },
     "MI": {
       "senate_margin": 7.01,
@@ -390,12 +390,12 @@
       "senate": {
         "margin": 6.65,
         "shift_24": -0.29,
-        "eevp": 91.83
+        "eevp": 92.08
       },
       "governor": {
-        "margin": 17.32,
-        "shift_24": 10.38,
-        "eevp": 91.85
+        "margin": 17.33,
+        "shift_24": 10.39,
+        "eevp": 92.09
       },
       "attorney_general": null,
       "secretary_of_state": null,
