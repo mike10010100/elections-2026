@@ -1,17 +1,17 @@
 {
-  "fetched_at": "2026-11-05T18:45:01.552680-05:00",
+  "fetched_at": "2026-11-05T18:50:01.913758-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1565,
+      "n_counties": 1566,
       "variance_explained_pct": {
         "PC1": 35.0,
-        "PC2": 29.87,
-        "PC3": 21.89,
+        "PC2": 29.84,
+        "PC3": 21.91,
         "PC4": 7.74,
         "PC5": 4.82,
-        "PC6": 0.69
+        "PC6": 0.68
       }
     },
     "cross_ballot_shift_pca": {
@@ -181,7 +181,7 @@
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
           "mean": 13.2,
-          "median": 14.04,
+          "median": 14.05,
           "stdev": 8.89,
           "pct_shifting_dem": 94.4
         },
@@ -237,9 +237,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.37,
+          "mean": 27.42,
           "median": 25.57,
-          "stdev": 11.44,
+          "stdev": 11.39,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -251,23 +251,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 22.82,
+          "mean": 22.83,
           "median": 19.76,
-          "stdev": 12.41,
+          "stdev": 12.4,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 22.89,
+          "mean": 22.94,
           "median": 21.18,
-          "stdev": 10.93,
+          "stdev": 10.89,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.15,
+          "mean": 24.2,
           "median": 21.86,
-          "stdev": 11.05,
+          "stdev": 11.01,
           "pct_shifting_dem": 100.0
         }
       }
@@ -647,7 +647,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.02,
+        "mean": 10.01,
         "median": 10.12,
         "stdev": 5.3,
         "pct_shifting_dem": 95.2
@@ -675,8 +675,8 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 8.66,
-        "median": 8.22,
+        "mean": 8.65,
+        "median": 8.2,
         "stdev": 4.83,
         "pct_shifting_dem": 100.0
       },
