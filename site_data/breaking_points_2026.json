@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T17:15:02.004764-05:00",
+  "fetched_at": "2026-11-05T17:20:01.127037-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,9 +18,9 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1344,
       "variance_explained_pct": {
-        "PC1": 82.15,
-        "PC2": 8.3,
-        "PC3": 6.8,
+        "PC1": 82.12,
+        "PC2": 8.31,
+        "PC3": 6.81,
         "PC4": 2.75
       }
     }
@@ -183,7 +183,7 @@
           "mean": 13.19,
           "median": 14.05,
           "stdev": 8.9,
-          "pct_shifting_dem": 94.3
+          "pct_shifting_dem": 94.4
         },
         "us_senate_2024_to_2026": {
           "n": 2240,
@@ -210,7 +210,7 @@
           "n": 1812,
           "mean": 10.19,
           "median": 9.38,
-          "stdev": 7.24,
+          "stdev": 7.23,
           "pct_shifting_dem": 96.4
         }
       }
@@ -415,7 +415,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 697,
-          "mean": 12.87,
+          "mean": 12.86,
           "median": 14.03,
           "stdev": 6.86,
           "pct_shifting_dem": 97.3
@@ -623,11 +623,11 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.7037
+        "pearson_r": 0.7031
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6443
+        "pearson_r": 0.6439
       }
     },
     "statewide_downballot_executive_races": {
