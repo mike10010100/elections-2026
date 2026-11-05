@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T11:55:01.869114-05:00",
+  "fetched_at": "2026-11-05T12:00:01.432970-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -180,7 +180,7 @@
       "senate_shift_vs_2024": -16.24,
       "state_house_mean_shift": 8.71,
       "senate_minus_house_shift": -24.95,
-      "eevp": 96.72
+      "eevp": 96.71
     },
     "AR": {
       "senate_margin": -11.85,
@@ -268,7 +268,7 @@
       "senate_shift_vs_2024": 16.78,
       "state_house_mean_shift": 13.96,
       "senate_minus_house_shift": 2.82,
-      "eevp": 97.5
+      "eevp": 97.51
     },
     "IL": {
       "senate_margin": 23.33,
@@ -319,12 +319,12 @@
       "eevp": 96.95
     },
     "MA": {
-      "senate_margin": 30.99,
+      "senate_margin": 30.66,
       "pres_2024_margin": 25.35,
-      "senate_shift_vs_2024": 5.64,
-      "state_house_mean_shift": 5.88,
-      "senate_minus_house_shift": -0.24,
-      "eevp": 96.4
+      "senate_shift_vs_2024": 5.31,
+      "state_house_mean_shift": 6.71,
+      "senate_minus_house_shift": -1.4,
+      "eevp": 96.7
     },
     "RI": {
       "senate_margin": 37.48,
