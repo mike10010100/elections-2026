@@ -29,6 +29,7 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 * **[`site_data/county_shifts.json`](site_data/county_shifts.json):** County-by-county 2004–2026 vote margins and shifts across 3,121 counties (`s26`, `g26`, `h26`, `ag26`, `p24`, etc.).
 * **[`site_data/faction_analysis_2026.json`](site_data/faction_analysis_2026.json):** Live-computed Senate-minus-House shifts, same-ballot statewide executive comparisons (`MI, MN, ME, NM, FL`), and county head-to-head tallies (`276/286 counties`).
 * **[`site_data/fec_moneyball_2026.json`](site_data/fec_moneyball_2026.json) / [`fec_moneyball_senate_2026.csv`](site_data/fec_moneyball_senate_2026.csv) / [`fec_moneyball_house_2026.csv`](site_data/fec_moneyball_house_2026.csv):** Complete 2026 FEC candidate disbursements + Super PAC / Independent Expenditures (`support Dem + oppose GOP` vs. `support GOP + oppose Dem` counter-spend) joined with 2026 vote shifts and net votes shifted per dollar.
+* **[`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json) & [`site_data/exit_polls_2026.json`](site_data/exit_polls_2026.json):** 2026 Exit Poll / AP Voter Poll / WaPo-Ipsos issue disapproval compilation (Iran war, tariffs, ICE/deportation overreach, White House East Wing ballroom, government corruption) joined with live 3,143-county disjoint-cohort shift comparisons (`2016→2018` vs. `2020→2024` vs. `2024→2026`) and federal-to-state down-ballot contagion metrics.
 
 ---
 
@@ -38,5 +39,6 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 * [`fetch_2024_and_2026_nyt.py`](fetch_2024_and_2026_nyt.py): Downloads 2024-11-05 and 2026-11-03 national and 50-state+DC JSON feeds.
 * [`build_site_data.py`](build_site_data.py): Compiles `site_data/overview.json`, `site_data/county_shifts.json`, and `site_data/states/*.json`.
 * [`build_fec_moneyball.py`](build_fec_moneyball.py): Joins FEC `weball26.txt`, `cn.txt`, and `independent_expenditure_2026.csv` with 2026 election returns and computes candidate + Super PAC spend and counter-spend per point of swing.
+* [`build_breaking_points.py`](build_breaking_points.py): Combines [`data/exit_polls_2026.json`](data/exit_polls_2026.json) with live county-cohort shifts and down-ballot contagion correlations into [`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json).
 * [`build_analysis_charts.py`](build_analysis_charts.py): Computes live same-ballot and Senate-vs-House metrics from `overview.json` / `county_shifts.json`, writes `site_data/faction_analysis_2026.json`, and renders the three charts in `assets/`.
 * [`analyze_federal.py`](analyze_federal.py): CLI report of called and uncalled U.S. Senate and U.S. House races sorted by margin.

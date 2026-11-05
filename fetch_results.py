@@ -112,6 +112,11 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f"Warning: build_fec_moneyball failed: {e}")
             try:
+                from build_breaking_points import build_breaking_points
+                build_breaking_points()
+            except Exception as e:
+                print(f"Warning: build_breaking_points failed: {e}")
+            try:
                 subprocess.run(
                     [
                         "/home/mike10010100/git/synology-drive-trays/.venv/bin/python",
@@ -135,6 +140,7 @@ if __name__ == "__main__":
                     "site_data/fec_moneyball_senate_2026.csv",
                     "site_data/fec_moneyball_house_2026.csv",
                     "site_data/faction_analysis_2026.json",
+                    "site_data/breaking_points_2026.json",
                     "assets/chart1_house_carveout.png",
                     "assets/chart2_senate_0for6.png",
                     "assets/chart3_same_ballot_natural_experiment.png",
