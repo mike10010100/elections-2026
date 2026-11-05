@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T18:00:01.234890-05:00",
+  "fetched_at": "2026-11-05T18:05:01.280794-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -239,7 +239,7 @@
           "n": 104,
           "mean": 27.36,
           "median": 25.57,
-          "stdev": 11.46,
+          "stdev": 11.45,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -253,19 +253,19 @@
           "n": 103,
           "mean": 22.81,
           "median": 19.76,
-          "stdev": 12.42,
+          "stdev": 12.41,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 22.88,
+          "mean": 22.89,
           "median": 21.18,
-          "stdev": 10.94,
+          "stdev": 10.93,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.14,
+          "mean": 24.15,
           "median": 21.86,
           "stdev": 11.05,
           "pct_shifting_dem": 100.0
@@ -294,9 +294,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.46,
+          "mean": 17.47,
           "median": 17.5,
-          "stdev": 6.54,
+          "stdev": 6.53,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -322,9 +322,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 13.81,
+          "mean": 13.82,
           "median": 13.5,
-          "stdev": 6.08,
+          "stdev": 6.07,
           "pct_shifting_dem": 100.0
         }
       }
@@ -623,7 +623,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.7006
+        "pearson_r": 0.7007
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -647,7 +647,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.0,
+        "mean": 10.01,
         "median": 10.12,
         "stdev": 5.29,
         "pct_shifting_dem": 95.2
