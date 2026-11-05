@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T11:50:01.476626-05:00",
+  "fetched_at": "2026-11-05T11:55:01.869114-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -82,8 +82,8 @@
       "senate_margin": 0.18,
       "pres_2024_margin": -22.89,
       "senate_shift_vs_2024": 23.07,
-      "state_house_mean_shift": 17.25,
-      "senate_minus_house_shift": 5.82,
+      "state_house_mean_shift": 17.32,
+      "senate_minus_house_shift": 5.75,
       "eevp": 95.77
     },
     "AK": {
@@ -287,12 +287,12 @@
       "eevp": 87.78
     },
     "NM": {
-      "senate_margin": 26.3,
+      "senate_margin": 26.38,
       "pres_2024_margin": 6.0,
-      "senate_shift_vs_2024": 20.3,
-      "state_house_mean_shift": 16.48,
-      "senate_minus_house_shift": 3.82,
-      "eevp": 98
+      "senate_shift_vs_2024": 20.38,
+      "state_house_mean_shift": 16.54,
+      "senate_minus_house_shift": 3.84,
+      "eevp": 98.24
     },
     "NJ": {
       "senate_margin": 26.83,
@@ -403,29 +403,29 @@
     },
     "NM": {
       "senate": {
-        "margin": 26.3,
-        "shift_24": 20.3,
-        "eevp": 98
+        "margin": 26.38,
+        "shift_24": 20.38,
+        "eevp": 98.24
       },
       "governor": {
-        "margin": 14.5,
-        "shift_24": 8.5,
-        "eevp": 98
+        "margin": 14.56,
+        "shift_24": 8.56,
+        "eevp": 98.24
       },
       "attorney_general": {
-        "margin": 25.82,
-        "shift_24": 19.82,
-        "eevp": 98
+        "margin": 25.9,
+        "shift_24": 19.9,
+        "eevp": 98.24
       },
       "secretary_of_state": {
-        "margin": 21.64,
-        "shift_24": 15.64,
-        "eevp": 98
+        "margin": 21.72,
+        "shift_24": 15.72,
+        "eevp": 98.24
       },
       "auditor": {
-        "margin": 20.82,
-        "shift_24": 14.82,
-        "eevp": 98
+        "margin": 20.9,
+        "shift_24": 14.9,
+        "eevp": 98.24
       }
     },
     "FL": {
