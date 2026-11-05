@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T16:55:01.616476-05:00",
+  "fetched_at": "2026-11-05T17:00:01.933524-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,9 +18,9 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1344,
       "variance_explained_pct": {
-        "PC1": 82.28,
-        "PC2": 8.23,
-        "PC3": 6.73,
+        "PC1": 82.27,
+        "PC2": 8.24,
+        "PC3": 6.74,
         "PC4": 2.75
       }
     }
@@ -182,7 +182,7 @@
           "n": 3112,
           "mean": 13.19,
           "median": 14.05,
-          "stdev": 8.91,
+          "stdev": 8.9,
           "pct_shifting_dem": 94.3
         },
         "us_senate_2024_to_2026": {
@@ -197,13 +197,13 @@
           "mean": 11.75,
           "median": 11.3,
           "stdev": 7.65,
-          "pct_shifting_dem": 96.0
+          "pct_shifting_dem": 96.1
         },
         "governor_2024_to_2026": {
           "n": 2149,
           "mean": 12.08,
           "median": 11.41,
-          "stdev": 10.69,
+          "stdev": 10.68,
           "pct_shifting_dem": 90.2
         },
         "attorney_general_2024_to_2026": {
@@ -211,7 +211,7 @@
           "mean": 10.19,
           "median": 9.38,
           "stdev": 7.24,
-          "pct_shifting_dem": 96.3
+          "pct_shifting_dem": 96.4
         }
       }
     },
@@ -317,7 +317,7 @@
           "n": 127,
           "mean": 14.41,
           "median": 14.78,
-          "stdev": 7.22,
+          "stdev": 7.21,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
@@ -623,11 +623,11 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.7062
+        "pearson_r": 0.7055
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6462
+        "pearson_r": 0.6459
       }
     },
     "statewide_downballot_executive_races": {
