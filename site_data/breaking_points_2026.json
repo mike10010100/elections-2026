@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T15:25:02.064053-05:00",
+  "fetched_at": "2026-11-05T15:30:01.161385-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "exit_and_issue_polling": {
     "dataset": "2026 U.S. Midterm Election Exit Polls, AP Voter Poll & Issue Survey Compilation",
@@ -599,11 +599,11 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.7095
+        "pearson_r": 0.7096
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6496
+        "pearson_r": 0.6497
       }
     },
     "statewide_downballot_executive_races": {
