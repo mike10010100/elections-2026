@@ -267,7 +267,161 @@ def main():
     write_csv(os.path.join(FEC_DIR, "fec_moneyball_house_2026.csv"), house_rows)
     write_csv(os.path.join(BASE_DIR, "site_data", "fec_moneyball_senate_2026.csv"), senate_rows)
     write_csv(os.path.join(BASE_DIR, "site_data", "fec_moneyball_house_2026.csv"), house_rows)
-    print(f"Saved {len(senate_rows)} Senate races and {len(house_rows)} House races.")
+    generate_moneyball_counterspend_chart(senate_rows)
+    print(f"Saved {len(senate_rows)} Senate races, {len(house_rows)} House races, and assets/chart7_senate_moneyball_counterspend.png.")
+
+
+def generate_moneyball_counterspend_chart(senate_rows=None):
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as mpatches
+    import numpy as np
+
+    plt.rcParams["font.sans-serif"] = ["DejaVu Sans", "Arial", "Helvetica"]
+    plt.rcParams["axes.edgecolor"] = "#cccccc"
+    plt.rcParams["axes.linewidth"] = 0.8
+    plt.rcParams["text.parse_math"] = False
+
+    BG_COLOR = "#f4f3ef"
+    DARK_TEXT = "#1a1a1a"
+    SUB_TEXT = "#4a4a4a"
+    MUTED_TEXT = "#6e6e6e"
+    GRID_COLOR = "#dedcd6"
+    BLUE_DOG = "#1b4f72"
+    NORMIE_TEAL = "#117864"
+    PROG_ORANGE = "#d35400"
+    CRIMSON = "#c0392b"
+    GOP_FILL = "#e6b0aa"
+
+    fig = plt.figure(figsize=(16.4, 9.0), dpi=200, facecolor=BG_COLOR)
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.16, 1.04], left=0.165, right=0.97, top=0.76, bottom=0.14, wspace=0.21)
+
+    fig.text(0.03, 0.925, "2026 Senate 'Moneyball': Diminishing Returns & Endogenous GOP Counterspend",
+             fontsize=19.5, fontweight="bold", color=DARK_TEXT)
+    fig.text(0.03, 0.88, "Michigan ($370.8M total; $146.3M Dem vs. $224.4M GOP) ranked #1 most expensive per point of positive swing ($17.4M/pt Dem; $44.1M/pt total).",
+             fontsize=12.1, color=SUB_TEXT)
+    fig.text(0.03, 0.842, "Polling lag after a $70M primary drew $171M in GOP general-election IEs, forcing SMP to triple MI from $20M to $67M while starving low-saturation Southern TV markets.",
+             fontsize=11.1, color=MUTED_TEXT, style="italic")
+
+    ax1 = fig.add_subplot(gs[0], facecolor=BG_COLOR)
+    ax1.set_title("A. Spend per Point of 2024->2026 Swing: Pro-Dem + GOP Counterspend\n(Solid = Pro-Dem $/pt | Shaded Red = Pro-GOP Counterspend $/pt)",
+                  fontsize=11.0, fontweight="bold", color=DARK_TEXT, loc="left", pad=12)
+
+    races = [
+        ("MI: Abdul El-Sayed (+7.0%)", 17.40, 26.68, "prog", "$17.4M/pt ($146M D | $224M R | $67M SMP)"),
+        ("OH: Sherrod Brown (+4.9%)", 13.73, 17.13, "main", "$13.7M/pt ($220M D | $275M R | $150M SMP)"),
+        ("TX: James Talarico (+12.1%)", 10.73, 12.97, "main", "$10.7M/pt ($277M D | $334M R | $40M SMP)"),
+        ("IA: Josh Turek (+4.1%)", 7.75, 6.37, "main", "$7.8M/pt ($135M D | $111M R | $67M SMP)"),
+        ("AK: Mary Peltola (+0.3%)", 6.22, 4.83, "main", "$6.2M/pt ($84M D | $65M R)"),
+        ("GA: Jon Ossoff (+18.1%)", 6.12, 1.43, "main", "$6.1M/pt ($124M D | $29M R | $18M Gen R IE)"),
+        ("NH: Chris Pappas (+13.8%)", 4.30, 4.31, "main", "$4.3M/pt ($47M D | $47M R)"),
+        ("KS: Adam Hamilton (+5.0%)", 3.39, 1.96, "main", "$3.4M/pt ($72M D | $41M R | $14M SMP)"),
+        ("NC: Roy Cooper (+19.6%)", 3.01, 2.69, "main", "$3.0M/pt ($69M D | $62M R)"),
+        ("MN: Peggy Flanagan (+10.2%)", 2.57, 3.31, "prog", "$2.6M/pt ($15M D | $20M R)"),
+        ("SC: Annie Andrews (+4.5%)", 2.08, 1.43, "main", "$2.1M/pt ($46M D | $32M R | $750K SMP)"),
+        ("FL: Angie Nixon (-2.9%)", 1.85, 2.76, "prog", "$1.9M/pt ($19M D | $28M R | $0 SMP)"),
+        ("MS: Scott Colom (+0.19%)", 0.84, 0.27, "south", "$840K/pt ($19.4M D | $2.4M Gen R IE | $2.2M SMP)"),
+        ("LA: Jamie Davis (-1.76%)", 0.72, 1.01, "south", "$722K/pt ($14.6M D | $20.5M R [$2.5M Gen IE])"),
+    ]
+
+    y_pos = np.arange(len(races))[::-1]
+    for y, (label, d_val, r_val, cat, txt) in zip(y_pos, races):
+        if cat == "prog":
+            col = PROG_ORANGE
+        elif cat == "south":
+            col = NORMIE_TEAL
+        else:
+            col = BLUE_DOG
+        ax1.barh(y, d_val, height=0.62, color=col, alpha=0.90, zorder=3)
+        ax1.barh(y, r_val, left=d_val, height=0.62, color=GOP_FILL, edgecolor=CRIMSON, linewidth=0.9, alpha=0.75, zorder=3)
+        tot_val = d_val + r_val
+        ax1.text(tot_val + 0.6, y, txt, fontsize=8.1, fontweight="bold", color=col, va="center", ha="left")
+
+    ax1.axhspan(-0.5, 1.5, color="#e8f8f5", alpha=0.65, zorder=1)
+    ax1.annotate("Low-saturation & 21x-24x cheaper per point:\nLA (-1.76%, 25,857 votes) & MS (+0.19%) had\njust $2.5M & $2.4M in GOP general-election IEs!",
+                 xy=(43.5, 0.95), xytext=(40.5, 2.2),
+                 arrowprops=dict(arrowstyle="->", color=NORMIE_TEAL, lw=1.8, connectionstyle="arc3,rad=-0.15"),
+                 fontsize=8.1, fontweight="bold", color=NORMIE_TEAL,
+                 bbox=dict(boxstyle="round,pad=0.35", facecolor="#e8f8f5", edgecolor=NORMIE_TEAL, lw=1.2))
+
+    dem_patch = mpatches.Patch(color=BLUE_DOG, alpha=0.9, label="Pro-Dem $/pt (Blue=Mainstream, Orange=Prog, Teal=South)")
+    gop_patch = mpatches.Patch(facecolor=GOP_FILL, edgecolor=CRIMSON, label="Pro-GOP Counterspend $/pt (Cand. + Pro-GOP IEs)")
+    ax1.legend(handles=[dem_patch, gop_patch], loc="center right", bbox_to_anchor=(0.99, 0.37), fontsize=7.8, framealpha=0.94, facecolor="white")
+
+    ax1.set_yticks(y_pos)
+    ax1.set_yticklabels([r[0] for r in races], fontsize=9.4, fontweight="bold", color=DARK_TEXT)
+    ax1.set_xlim(0, 82.0)
+    ax1.set_ylim(-0.6, len(races) - 0.3)
+    ax1.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax1.spines["top"].set_visible(False)
+    ax1.spines["right"].set_visible(False)
+    ax1.set_xlabel("Spend per Point of 2024->2026 Dem Swing ($ Millions / pt: Dem + GOP Counterspend)", fontsize=10.0, color=SUB_TEXT)
+
+    ax2 = fig.add_subplot(gs[1], facecolor=BG_COLOR)
+    ax2.set_title("B. Diminishing Returns Curve & Why MI Drew $171M in GOP Gen. IEs\n(Total Pro-Dem Spend vs. 2024->2026 Swing, Annotated with GOP IEs)",
+                  fontsize=10.8, fontweight="bold", color=DARK_TEXT, loc="left", pad=12)
+
+    pts = [
+        ("LA: Davis -1.8% ($2.5M R IE)", 14.63, 20.25, "south", 5, -0.55, "left"),
+        ("MS: Colom +0.2% ($2.4M R IE)", 19.39, 23.08, "south", -3, 1.35, "left"),
+        ("SC (Andrews +4.5%)", 46.36, 22.34, "main", -8, -1.0, "center"),
+        ("NC (Cooper +19.6%)", 68.75, 22.85, "main", 6, 0.9, "left"),
+        ("KS (Hamilton +5%)", 71.58, 21.12, "main", 5, 0.5, "left"),
+        ("GA: Ossoff +18.1% ($18M R IE)", 123.97, 20.25, "main", 6, 0.8, "left"),
+        ("IA: Turek +4.1% ($96M R IE)", 134.62, 17.37, "main", 5, 0.35, "left"),
+        ("OH: Brown +4.9% ($222M R IE)", 220.49, 16.06, "main", -6, -1.1, "center"),
+        ("TX: Talarico +12.1% ($315M R IE)", 276.51, 25.78, "main", -6, -0.4, "right"),
+        ("NH: Pappas +13.8% ($39M R)", 47.21, 10.99, "main", 5, 0.55, "left"),
+        ("FL (Nixon -2.9%)", 18.94, 10.22, "prog", 5, -0.85, "left"),
+        ("MN (Flanagan +10.2%)", 15.12, 5.89, "prog", 5, -0.25, "left"),
+        ("ME: Jackson +6.4% ($81M R IE)", 77.54, -0.55, "prog", 5, -0.95, "left"),
+        ("MI: El-Sayed +7.0% ($171M R IE)", 146.33, 8.41, "prog", 6, -0.35, "left"),
+    ]
+
+    x_curve = np.linspace(10, 285, 200)
+    y_curve = 14.0 + 2.1 * np.log(x_curve / 10.0)
+    ax2.plot(x_curve, y_curve, color="#7f8c8d", ls="--", lw=1.8, alpha=0.7, label="Mainstream Battleground Benchmark")
+
+    ax2.scatter([146.33], [12.16], color=BLUE_DOG, marker="s", s=95, zorder=5)
+    ax2.plot([146.33, 146.33], [8.41, 12.16], color=CRIMSON, lw=2.2, ls=":", zorder=4)
+    ax2.text(153, 12.45, "MI Gov: Benson (+12.2 pt shift)\nBeat El-Sayed in 83/83 counties!",
+             fontsize=8.4, fontweight="bold", color=BLUE_DOG, va="center")
+
+    for lbl, xm, ym, cat, dx, dy, ha in pts:
+        if cat == "prog":
+            col = PROG_ORANGE
+            sz = 125 if "MI:" in lbl else 90
+        elif cat == "south":
+            col = NORMIE_TEAL
+            sz = 115
+        else:
+            col = BLUE_DOG
+            sz = 90
+        ax2.scatter([xm], [ym], color=col, s=sz, zorder=5, edgecolor="white", linewidth=1.2)
+        fw = "bold" if ("MI:" in lbl or cat == "south") else "normal"
+        ax2.text(xm + dx, ym + dy, lbl, fontsize=8.0, fontweight=fw, color=col if fw == "bold" else DARK_TEXT, ha=ha, va="center")
+
+    ax2.annotate("Endogenous Counterspend: Polling lag after a $70M primary\ndrew $171M in GOP Gen. IEs (SLF $46M, No Going Back $36M,\nGLCF $26M, AFP $22M), forcing SMP from $20M to $67M.\nEven vs. OH ($222M R IE) & TX ($315M R IE), MI lagged badly.",
+                 xy=(146.33, 7.9), xytext=(104, 1.3),
+                 arrowprops=dict(arrowstyle="->", color=PROG_ORANGE, lw=1.8),
+                 fontsize=7.8, fontweight="bold", color=PROG_ORANGE,
+                 bbox=dict(boxstyle="round,pad=0.35", facecolor="#fdf2e9", edgecolor=PROG_ORANGE, lw=1.2))
+
+    ax2.axhline(0.0, color="#333333", lw=1.0, ls="-", alpha=0.5)
+    ax2.set_xlim(0, 305)
+    ax2.set_ylim(-3.0, 28.0)
+    ax2.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax2.yaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax2.spines["top"].set_visible(False)
+    ax2.spines["right"].set_visible(False)
+    ax2.set_xlabel("Total Pro-Dem FEC Spending ($ Millions: Candidate + Super PAC IEs)", fontsize=10.0, color=SUB_TEXT)
+    ax2.set_ylabel("2024 Pres -> 2026 Senate Dem Shift (margin pts)", fontsize=10.0, color=SUB_TEXT)
+
+    fig.text(0.03, 0.024, "Source: 2026 FEC Candidate Disbursements (weball26.txt), Independent Expenditures (independent_expenditure_2026.csv), SMP Memo & Live NYT Returns (elections-2026).\nNote: 'R IE' = general-election pro-GOP/anti-Dem IEs. In MI, UDP spent $20.1M opposing El-Sayed in the primary; SLF ($46.2M), No Going Back ($35.6M), GLCF ($25.6M) & AFP ($22.3M) led the $170.9M general-election blitz.",
+             fontsize=8.5, color=MUTED_TEXT)
+
+    out_path = os.path.join(BASE_DIR, "assets", "chart7_senate_moneyball_counterspend.png")
+    plt.savefig(out_path, dpi=200)
+    plt.close(fig)
 
 
 if __name__ == "__main__":

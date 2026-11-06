@@ -106,27 +106,24 @@ if __name__ == "__main__":
             meaningful_change = (old_ov != new_ov)
 
         if meaningful_change:
+            venv_python = "/home/mike10010100/git/synology-drive-trays/.venv/bin/python"
             try:
-                from build_fec_moneyball import main as build_fec_main
-                build_fec_main()
+                subprocess.run(
+                    [venv_python, str(BASE_DIR / "build_fec_moneyball.py")],
+                    check=False,
+                )
             except Exception as e:
                 print(f"Warning: build_fec_moneyball failed: {e}")
             try:
                 subprocess.run(
-                    [
-                        "/home/mike10010100/git/synology-drive-trays/.venv/bin/python",
-                        str(BASE_DIR / "build_breaking_points.py"),
-                    ],
+                    [venv_python, str(BASE_DIR / "build_breaking_points.py")],
                     check=False,
                 )
             except Exception as e:
                 print(f"Warning: build_breaking_points failed: {e}")
             try:
                 subprocess.run(
-                    [
-                        "/home/mike10010100/git/synology-drive-trays/.venv/bin/python",
-                        str(BASE_DIR / "build_analysis_charts.py"),
-                    ],
+                    [venv_python, str(BASE_DIR / "build_analysis_charts.py")],
                     check=False,
                 )
             except Exception as e:
@@ -152,6 +149,7 @@ if __name__ == "__main__":
                     "assets/chart4_disjoint_cohorts_2018_vs_2026.png",
                     "assets/chart5_60pct_convergence_ceiling.png",
                     "assets/chart6_downballot_contagion.png",
+                    "assets/chart7_senate_moneyball_counterspend.png",
                 ],
                 check=False,
             )
