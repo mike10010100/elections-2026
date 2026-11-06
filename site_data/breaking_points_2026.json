@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T17:45:01.204843-05:00",
+  "fetched_at": "2026-11-06T18:00:01.101335-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -258,7 +258,7 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.75,
+    "mean_residual_pts": 1.74,
     "median_residual_pts": 1.59,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
@@ -287,8 +287,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.7,
-        "residual_overperformance_pts": 6.95,
+        "expected_demographic_state_shift_pts": 19.71,
+        "residual_overperformance_pts": 6.94,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -313,8 +313,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.47,
-        "residual_overperformance_pts": 5.0,
+        "expected_demographic_state_shift_pts": 16.48,
+        "residual_overperformance_pts": 4.99,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.03,
-        "residual_overperformance_pts": 3.06,
+        "expected_demographic_state_shift_pts": 17.04,
+        "residual_overperformance_pts": 3.05,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -352,8 +352,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 14.96,
-        "residual_overperformance_pts": 1.94,
+        "expected_demographic_state_shift_pts": 14.97,
+        "residual_overperformance_pts": 1.93,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -502,7 +502,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.21,
+          "mean": 13.2,
           "median": 14.02,
           "stdev": 8.87,
           "pct_shifting_dem": 94.6
@@ -694,14 +694,14 @@
         },
         "governor_2024_to_2026": {
           "n": 315,
-          "mean": 12.44,
+          "mean": 12.43,
           "median": 11.41,
           "stdev": 9.67,
           "pct_shifting_dem": 88.9
         },
         "attorney_general_2024_to_2026": {
           "n": 302,
-          "mean": 9.41,
+          "mean": 9.4,
           "median": 9.5,
           "stdev": 6.63,
           "pct_shifting_dem": 95.0
@@ -787,7 +787,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 10.98,
+          "mean": 10.99,
           "median": 12.37,
           "stdev": 10.86,
           "pct_shifting_dem": 92.8
@@ -945,7 +945,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6967
+        "pearson_r": 0.6968
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -955,23 +955,23 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.18,
+        "mean": 12.17,
         "median": 11.83,
         "stdev": 5.8,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.01,
+        "mean": 12.09,
         "median": 12.45,
-        "stdev": 6.96,
+        "stdev": 6.99,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.1,
+        "mean": 10.19,
         "median": 10.12,
-        "stdev": 5.29,
+        "stdev": 5.26,
         "pct_shifting_dem": 95.2
       },
       "Auditor": {
@@ -983,14 +983,14 @@
       },
       "Supreme Court": {
         "n": 10,
-        "mean": 15.66,
-        "median": 18.4,
+        "mean": 15.65,
+        "median": 18.39,
         "stdev": 19.03,
         "pct_shifting_dem": 90.0
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.06,
+        "mean": 12.05,
         "median": 14.12,
         "stdev": 8.79,
         "pct_shifting_dem": 88.9
@@ -1004,7 +1004,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 11.94,
+        "mean": 11.98,
         "median": 12.5,
         "stdev": 8.22,
         "pct_shifting_dem": 95.3
