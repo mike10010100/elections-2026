@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T13:00:01.914535-05:00",
+  "fetched_at": "2026-11-06T13:15:02.069569-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -287,8 +287,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.69,
-        "residual_overperformance_pts": 6.96,
+        "expected_demographic_state_shift_pts": 19.7,
+        "residual_overperformance_pts": 6.95,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.72,
-        "expected_demographic_state_shift_pts": 21.04,
-        "residual_overperformance_pts": 3.68,
+        "expected_demographic_state_shift_pts": 21.05,
+        "residual_overperformance_pts": 3.67,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 19.95,
-        "expected_demographic_state_shift_pts": 16.96,
-        "residual_overperformance_pts": 2.99,
+        "expected_demographic_state_shift_pts": 16.97,
+        "residual_overperformance_pts": 2.98,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -456,8 +456,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.03,
-        "expected_demographic_state_shift_pts": 15.43,
-        "residual_overperformance_pts": -2.4,
+        "expected_demographic_state_shift_pts": 15.44,
+        "residual_overperformance_pts": -2.41,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -949,7 +949,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6418
+        "pearson_r": 0.6419
       }
     },
     "statewide_downballot_executive_races": {
@@ -983,7 +983,7 @@
       },
       "Supreme Court": {
         "n": 10,
-        "mean": 15.65,
+        "mean": 15.66,
         "median": 18.4,
         "stdev": 19.03,
         "pct_shifting_dem": 90.0
@@ -1006,7 +1006,7 @@
         "n": 107,
         "mean": 11.94,
         "median": 12.5,
-        "stdev": 8.23,
+        "stdev": 8.24,
         "pct_shifting_dem": 95.3
       }
     }
