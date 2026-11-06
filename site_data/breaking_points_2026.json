@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T18:00:01.101335-05:00",
+  "fetched_at": "2026-11-06T18:15:01.625921-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -300,8 +300,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.68,
-        "expected_demographic_state_shift_pts": 16.58,
-        "residual_overperformance_pts": 5.1,
+        "expected_demographic_state_shift_pts": 16.59,
+        "residual_overperformance_pts": 5.09,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.12,
-        "residual_overperformance_pts": 3.78,
+        "expected_demographic_state_shift_pts": 21.13,
+        "residual_overperformance_pts": 3.77,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -502,7 +502,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.2,
+          "mean": 13.21,
           "median": 14.02,
           "stdev": 8.87,
           "pct_shifting_dem": 94.6
@@ -687,8 +687,8 @@
         },
         "us_house_2024_to_2026": {
           "n": 364,
-          "mean": 6.39,
-          "median": 5.88,
+          "mean": 6.38,
+          "median": 5.84,
           "stdev": 7.22,
           "pct_shifting_dem": 81.6
         },
@@ -816,7 +816,7 @@
         "attorney_general_2024_to_2026": {
           "n": 108,
           "mean": 7.66,
-          "median": 6.46,
+          "median": 6.47,
           "stdev": 5.82,
           "pct_shifting_dem": 93.5
         }
@@ -853,7 +853,7 @@
           "n": 316,
           "mean": 15.8,
           "median": 15.51,
-          "stdev": 4.9,
+          "stdev": 4.89,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
@@ -955,14 +955,14 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.17,
+        "mean": 12.18,
         "median": 11.83,
-        "stdev": 5.8,
+        "stdev": 5.79,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.09,
+        "mean": 12.08,
         "median": 12.45,
         "stdev": 6.99,
         "pct_shifting_dem": 96.0
