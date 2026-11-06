@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T17:30:01.169153-05:00",
+  "fetched_at": "2026-11-06T17:45:01.204843-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -313,8 +313,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.48,
-        "residual_overperformance_pts": 4.99,
+        "expected_demographic_state_shift_pts": 16.47,
+        "residual_overperformance_pts": 5.0,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -502,10 +502,10 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.2,
+          "mean": 13.21,
           "median": 14.02,
           "stdev": 8.87,
-          "pct_shifting_dem": 94.5
+          "pct_shifting_dem": 94.6
         },
         "us_senate_2024_to_2026": {
           "n": 2240,
@@ -694,7 +694,7 @@
         },
         "governor_2024_to_2026": {
           "n": 315,
-          "mean": 12.43,
+          "mean": 12.44,
           "median": 11.41,
           "stdev": 9.67,
           "pct_shifting_dem": 88.9
@@ -733,7 +733,7 @@
           "mean": 12.64,
           "median": 13.6,
           "stdev": 7.32,
-          "pct_shifting_dem": 96.1
+          "pct_shifting_dem": 96.2
         },
         "us_senate_2024_to_2026": {
           "n": 697,
@@ -751,10 +751,10 @@
         },
         "governor_2024_to_2026": {
           "n": 648,
-          "mean": 12.56,
+          "mean": 12.57,
           "median": 11.3,
-          "stdev": 10.67,
-          "pct_shifting_dem": 89.4
+          "stdev": 10.66,
+          "pct_shifting_dem": 89.5
         },
         "attorney_general_2024_to_2026": {
           "n": 492,
@@ -808,14 +808,14 @@
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.72,
+          "mean": 7.73,
           "median": 7.94,
-          "stdev": 13.03,
+          "stdev": 13.02,
           "pct_shifting_dem": 84.7
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.65,
+          "mean": 7.66,
           "median": 6.46,
           "stdev": 5.82,
           "pct_shifting_dem": 93.5
@@ -962,16 +962,16 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.09,
-        "median": 12.41,
-        "stdev": 6.99,
+        "mean": 12.01,
+        "median": 12.45,
+        "stdev": 6.96,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.19,
+        "mean": 10.1,
         "median": 10.12,
-        "stdev": 5.26,
+        "stdev": 5.29,
         "pct_shifting_dem": 95.2
       },
       "Auditor": {
@@ -1004,7 +1004,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 11.98,
+        "mean": 11.94,
         "median": 12.5,
         "stdev": 8.22,
         "pct_shifting_dem": 95.3
