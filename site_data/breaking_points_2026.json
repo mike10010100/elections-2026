@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T14:30:01.415337-05:00",
+  "fetched_at": "2026-11-06T14:45:01.488163-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.72,
-        "expected_demographic_state_shift_pts": 21.07,
-        "residual_overperformance_pts": 3.65,
+        "expected_demographic_state_shift_pts": 21.08,
+        "residual_overperformance_pts": 3.64,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -416,9 +416,9 @@
         "fips": "51047",
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
-        "actual_top26_shift_pts": 16.35,
+        "actual_top26_shift_pts": 16.41,
         "expected_demographic_state_shift_pts": 16.85,
-        "residual_overperformance_pts": -0.5,
+        "residual_overperformance_pts": -0.44,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -430,8 +430,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.37,
-        "expected_demographic_state_shift_pts": 20.0,
-        "residual_overperformance_pts": -0.63,
+        "expected_demographic_state_shift_pts": 19.99,
+        "residual_overperformance_pts": -0.62,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -456,8 +456,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.03,
-        "expected_demographic_state_shift_pts": 15.46,
-        "residual_overperformance_pts": -2.43,
+        "expected_demographic_state_shift_pts": 15.47,
+        "residual_overperformance_pts": -2.44,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -908,7 +908,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 1180,
-          "mean": 14.36,
+          "mean": 14.37,
           "median": 14.96,
           "stdev": 6.68,
           "pct_shifting_dem": 97.2
