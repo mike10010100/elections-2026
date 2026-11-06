@@ -1,15 +1,15 @@
 {
-  "fetched_at": "2026-11-06T11:00:01.487675-05:00",
+  "fetched_at": "2026-11-06T11:15:02.048444-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1563,
+      "n_counties": 1562,
       "variance_explained_pct": {
-        "PC1": 34.97,
-        "PC2": 29.86,
-        "PC3": 21.92,
-        "PC4": 7.75,
+        "PC1": 35.0,
+        "PC2": 29.84,
+        "PC3": 21.89,
+        "PC4": 7.76,
         "PC5": 4.83,
         "PC6": 0.68
       }
@@ -27,11 +27,12 @@
   },
   "exit_and_issue_polling": {
     "dataset": "2026 U.S. Midterm Election Exit Polls, AP Voter Poll & Issue Survey Compilation",
-    "compiled_at": "2026-11-05",
+    "compiled_at": "2026-11-06",
     "sources": [
       "SSRS / Edison Research 2026 National Network Exit & Voter Polls (NBC News, CBS News, CNN)",
       "The AP Voter Poll / AP-NORC 2026 Midterm Voter Survey",
       "Washington Post-Ipsos 2026 National Polls (White House East Wing Ballroom & D.C. Projects)",
+      "Pew Research Center, Gallup & Ohio Northern University (ICAPP) 2026 Data Center & Energy Surveys",
       "The Guardian / Harris Poll & KFF 2026 Pre-Election Voter Surveys"
     ],
     "overall_referendum_metrics": {
@@ -59,6 +60,94 @@
       "congress_not_doing_enough_to_check_trump_pct": 70,
       "cast_ballot_explicitly_to_oppose_trump_pct": 40
     },
+    "crucial_vs_major_vote_factor_ranking": [
+      {
+        "issue": "Government Corruption & Ethics",
+        "crucial_factor_pct": 54,
+        "crucial_range_pct": [
+          50,
+          54
+        ],
+        "major_factor_pct": 36,
+        "combined_crucial_or_major_pct": 90,
+        "source": "The AP Voter Poll / SSRS Network Exit Polls 2026"
+      },
+      {
+        "issue": "Cost of Living / High Prices",
+        "crucial_factor_pct": 50,
+        "crucial_range_pct": [
+          49,
+          52
+        ],
+        "major_factor_pct": 40,
+        "combined_crucial_or_major_pct": 90,
+        "source": "The AP Voter Poll / SSRS Network Exit Polls 2026"
+      },
+      {
+        "issue": "Immigration Enforcement & Deportations",
+        "crucial_factor_pct": 40,
+        "crucial_range_pct": [
+          38,
+          42
+        ],
+        "major_factor_pct": 30,
+        "combined_crucial_or_major_pct": 70,
+        "source": "The AP Voter Poll 2026"
+      },
+      {
+        "issue": "Military Action / War in Iran",
+        "crucial_factor_pct": 33,
+        "crucial_range_pct": [
+          32,
+          34
+        ],
+        "major_factor_pct": 41,
+        "combined_crucial_or_major_pct": 74,
+        "source": "NBC News / CBS News / AP Voter Poll 2026"
+      },
+      {
+        "issue": "AI & Data Centers",
+        "crucial_factor_pct": 23,
+        "crucial_range_pct": [
+          22,
+          24
+        ],
+        "major_factor_pct": 33,
+        "combined_crucial_or_major_pct": 56,
+        "source": "SSRS Network Exit Polls (NBC News, CNN) / Time 2026"
+      }
+    ],
+    "ai_datacenter_public_opinion_drivers": {
+      "oppose_new_local_datacenter_exit_poll_pct": 76,
+      "oppose_new_local_datacenter_gallup_quinnipiac_range_pct": [
+        70,
+        72
+      ],
+      "crucial_factor_for_congress_vote_pct": 23,
+      "major_factor_for_congress_vote_pct": 33,
+      "combined_crucial_or_major_factor_pct": 56,
+      "specific_grievance_drivers": {
+        "oppose_corporate_tax_breaks_and_subsidies_pct": {
+          "pct": 65,
+          "source": "Ohio Northern University ICAPP Poll (65% oppose tax breaks/abatements for data centers)"
+        },
+        "mostly_bad_for_environment_and_water_depletion_pct": {
+          "pct": 54,
+          "source": "Pew Research Center / AP-NORC 2026 (water table depletion & backup diesel emissions)"
+        },
+        "mostly_bad_for_residential_electricity_costs_pct": {
+          "pct": 50,
+          "prior_baseline_pct": 38,
+          "source": "Pew Research Center 2026 (up from 38%; driven by $15-$18+/mo grid capacity auction spikes)"
+        },
+        "negatively_impacts_local_quality_of_life_and_zoning_pct": {
+          "pct": 49,
+          "prior_baseline_pct": 30,
+          "source": "Pew Research Center 2026 (up from ~30%; tied to NDAs, fast-tracked rezoning, and rural/suburban land conversion)"
+        }
+      },
+      "analytical_summary": "While 70%-76% of voters oppose building a new data center in their own community, only 23% rated AI/data centers a 'crucial' factor in their federal congressional vote (less than half the ~50%-54% who rated corruption and cost of living as crucial). Moreover, polling shows local opposition is overwhelmingly driven by pocketbook utility rate hikes (50%), corporate tax giveaways (65%), water usage (54%), and secretive local zoning/NDA bypasses (49%), rather than ideological opposition to AI technology itself."
+    },
     "issue_breaking_points_convergence": [
       {
         "issue_id": "tariffs_economy",
@@ -66,13 +155,15 @@
         "question_summary": "Trump administration tariffs hurt vs. helped the U.S. economy",
         "disapprove_or_hurt_pct": 66,
         "approve_or_helped_pct": 21,
-        "salience_notes": "39%-40% named the economy/cost of living the #1 issue; ~50% called high prices a 'crucial' voting factor.",
+        "crucial_factor_pct": 50,
+        "crucial_or_major_factor_pct": 90,
+        "salience_notes": "39%-40% named the economy/cost of living the #1 issue; ~50% called high prices a 'crucial' voting factor (90% crucial or major).",
         "primary_exposed_cohorts": [
           "Plains & Midwest Rural Farm Belt (IA, KS, NE, ND, SD, OH)",
           "Working-Class Non-College Voters",
           "Lower- and Middle-Income Households"
         ],
-        "source": "NBC News / CBS News 2026 Exit Polls (65%-66% hurt economy)"
+        "source": "NBC News / CBS News / AP Voter Poll 2026 (65%-66% hurt economy)"
       },
       {
         "issue_id": "iran_war",
@@ -81,6 +172,7 @@
         "disapprove_or_hurt_pct": 63,
         "crucial_or_major_factor_pct": 74,
         "crucial_factor_pct": 33,
+        "major_factor_pct": 41,
         "prioritize_ending_war_pct": 70,
         "salience_notes": "Spiked global oil, domestic gasoline, and agricultural diesel prices; alienated anti-interventionist working-class and young voters.",
         "primary_exposed_cohorts": [
@@ -96,6 +188,8 @@
         "question_summary": "Trump administration immigration enforcement and deportation efforts went too far",
         "disapprove_or_hurt_pct": 60,
         "alt_estimate_pct": 57,
+        "crucial_factor_pct": 40,
+        "crucial_or_major_factor_pct": 70,
         "gop_abstract_issue_trust_edge": "44% GOP vs. 41% DEM on abstract immigration handling, but only ~10% of voters named immigration their #1 issue",
         "salience_notes": "Triggered a historic snapback in Hispanic and immigrant-heavy communities that had swung toward Trump in 2024.",
         "primary_exposed_cohorts": [
@@ -132,7 +226,8 @@
         "issue_label": "Government Corruption, Donor Self-Dealing & Checks on Power",
         "question_summary": "Government corruption as a crucial or major factor in 2026 congressional vote",
         "crucial_or_major_factor_pct": 90,
-        "crucial_factor_pct": 50,
+        "crucial_factor_pct": 54,
+        "major_factor_pct": 36,
         "top_issue_share_pct": 32,
         "dem_vote_share_among_top_issue_pct": 80,
         "salience_notes": "Encompassed crypto/business conflicts, billionaire donor influence, federal agency hollowing, and executive overreach.",
@@ -141,19 +236,22 @@
           "Federal Workforce & Institutionalist Voters",
           "Anti-Establishment Independents"
         ],
-        "source": "AP Voter Poll / Guardian-Harris / Network Exit Polls 2026"
+        "source": "AP Voter Poll (50%-54% crucial, 36%-40% major) / Guardian-Harris / Network Exit Polls 2026"
       },
       {
         "issue_id": "healthcare_and_ai_datacenters",
         "issue_label": "Healthcare Costs & Local AI/Data-Center Infrastructure Backlash",
-        "question_summary": "Very concerned about healthcare costs (60%); AI & data center expansion a crucial/major factor (56%)",
+        "question_summary": "Very concerned about healthcare costs (60%); AI & data center expansion a crucial (23%) or major (33%) factor (56% combined; 76% oppose local siting)",
         "disapprove_or_hurt_pct": 60,
+        "ai_datacenter_crucial_factor_pct": 23,
+        "ai_datacenter_major_only_factor_pct": 33,
         "ai_datacenter_major_factor_pct": 56,
+        "ai_datacenter_local_siting_oppose_pct": 76,
         "primary_exposed_cohorts": [
-          "Exurban & Rural Data-Center Corridor Counties (VA, GA, PA, OH, AZ)",
+          "Exurban & Rural Data-Center Corridor Counties (VA, GA, PA, OH, AZ, TX)",
           "Older & Working-Class Voters"
         ],
-        "source": "KFF 2026 Voter Poll & Time / Network Exit Polls"
+        "source": "KFF 2026 Voter Poll & SSRS Network Exit Polls (23% crucial + 33% major = 56%; 76% oppose local siting)"
       }
     ]
   },
@@ -552,7 +650,7 @@
           "n": 144,
           "mean": 10.67,
           "median": 10.48,
-          "stdev": 5.21,
+          "stdev": 5.2,
           "pct_shifting_dem": 97.9
         }
       }
@@ -640,7 +738,7 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.02,
+        "mean": 12.03,
         "median": 12.12,
         "stdev": 7.01,
         "pct_shifting_dem": 96.0
@@ -656,7 +754,7 @@
         "n": 10,
         "mean": 12.0,
         "median": 12.32,
-        "stdev": 6.05,
+        "stdev": 6.06,
         "pct_shifting_dem": 100.0
       },
       "Supreme Court": {
