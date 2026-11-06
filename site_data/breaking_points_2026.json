@@ -1,15 +1,15 @@
 {
-  "fetched_at": "2026-11-05T22:00:01.701406-05:00",
+  "fetched_at": "2026-11-05T22:05:01.751667-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1565,
+      "n_counties": 1564,
       "variance_explained_pct": {
         "PC1": 34.97,
         "PC2": 29.85,
         "PC3": 21.92,
-        "PC4": 7.74,
+        "PC4": 7.75,
         "PC5": 4.83,
         "PC6": 0.68
       }
@@ -195,7 +195,7 @@
         "us_house_2024_to_2026": {
           "n": 3099,
           "mean": 11.75,
-          "median": 11.26,
+          "median": 11.24,
           "stdev": 7.67,
           "pct_shifting_dem": 96.0
         },
@@ -208,7 +208,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1812,
-          "mean": 10.21,
+          "mean": 10.2,
           "median": 9.38,
           "stdev": 7.23,
           "pct_shifting_dem": 96.4
@@ -635,7 +635,7 @@
         "n": 29,
         "mean": 12.03,
         "median": 11.74,
-        "stdev": 5.87,
+        "stdev": 5.86,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
@@ -647,7 +647,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.08,
+        "mean": 10.07,
         "median": 10.12,
         "stdev": 5.28,
         "pct_shifting_dem": 95.2
@@ -675,14 +675,14 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 8.84,
+        "mean": 8.83,
         "median": 8.78,
-        "stdev": 4.81,
+        "stdev": 4.8,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 11.88,
+        "mean": 11.87,
         "median": 12.5,
         "stdev": 8.23,
         "pct_shifting_dem": 95.3
