@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T14:45:01.488163-05:00",
+  "fetched_at": "2026-11-06T15:00:01.884264-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 16.99,
-        "residual_overperformance_pts": 3.1,
+        "expected_demographic_state_shift_pts": 17.0,
+        "residual_overperformance_pts": 3.09,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
