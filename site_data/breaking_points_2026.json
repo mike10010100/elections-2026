@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T14:00:02.027284-05:00",
+  "fetched_at": "2026-11-06T14:15:01.865993-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -287,8 +287,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.7,
-        "residual_overperformance_pts": 6.95,
+        "expected_demographic_state_shift_pts": 19.69,
+        "residual_overperformance_pts": 6.96,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 19.95,
-        "expected_demographic_state_shift_pts": 16.98,
-        "residual_overperformance_pts": 2.97,
+        "expected_demographic_state_shift_pts": 16.99,
+        "residual_overperformance_pts": 2.96,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -443,8 +443,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.6,
-        "residual_overperformance_pts": -1.99,
+        "expected_demographic_state_shift_pts": 15.59,
+        "residual_overperformance_pts": -1.98,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -456,8 +456,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.03,
-        "expected_demographic_state_shift_pts": 15.45,
-        "residual_overperformance_pts": -2.42,
+        "expected_demographic_state_shift_pts": 15.46,
+        "residual_overperformance_pts": -2.43,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -504,7 +504,7 @@
           "n": 3112,
           "mean": 13.2,
           "median": 14.02,
-          "stdev": 8.88,
+          "stdev": 8.87,
           "pct_shifting_dem": 94.5
         },
         "us_senate_2024_to_2026": {
@@ -525,7 +525,7 @@
           "n": 2150,
           "mean": 12.1,
           "median": 11.43,
-          "stdev": 10.66,
+          "stdev": 10.65,
           "pct_shifting_dem": 90.5
         },
         "attorney_general_2024_to_2026": {
