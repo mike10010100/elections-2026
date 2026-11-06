@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T19:35:01.508614-05:00",
+  "fetched_at": "2026-11-05T19:40:01.843616-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -252,7 +252,7 @@
         "us_house_2024_to_2026": {
           "n": 103,
           "mean": 22.83,
-          "median": 19.76,
+          "median": 19.88,
           "stdev": 12.4,
           "pct_shifting_dem": 100.0
         },
@@ -308,23 +308,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.53,
+          "mean": 13.54,
           "median": 12.28,
           "stdev": 8.14,
           "pct_shifting_dem": 99.2
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.42,
+          "mean": 14.43,
           "median": 14.78,
           "stdev": 7.21,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 13.83,
+          "mean": 13.84,
           "median": 13.52,
-          "stdev": 6.08,
+          "stdev": 6.07,
           "pct_shifting_dem": 100.0
         }
       }
@@ -633,14 +633,14 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.02,
+        "mean": 12.04,
         "median": 11.74,
-        "stdev": 5.87,
+        "stdev": 5.86,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 11.97,
+        "mean": 11.99,
         "median": 12.11,
         "stdev": 6.97,
         "pct_shifting_dem": 96.0
@@ -682,7 +682,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 11.86,
+        "mean": 11.87,
         "median": 12.49,
         "stdev": 8.23,
         "pct_shifting_dem": 95.3
