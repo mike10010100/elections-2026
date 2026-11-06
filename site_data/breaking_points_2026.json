@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T19:40:01.843616-05:00",
+  "fetched_at": "2026-11-05T19:45:01.483817-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -237,9 +237,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.41,
+          "mean": 27.42,
           "median": 25.57,
-          "stdev": 11.39,
+          "stdev": 11.38,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -258,14 +258,14 @@
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 22.93,
+          "mean": 22.94,
           "median": 21.18,
           "stdev": 10.89,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.19,
+          "mean": 24.2,
           "median": 21.86,
           "stdev": 11.0,
           "pct_shifting_dem": 100.0
@@ -422,7 +422,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 1050,
-          "mean": 11.43,
+          "mean": 11.42,
           "median": 11.11,
           "stdev": 6.95,
           "pct_shifting_dem": 96.3
@@ -623,7 +623,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.6998
+        "pearson_r": 0.6999
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -640,7 +640,7 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 11.99,
+        "mean": 11.98,
         "median": 12.11,
         "stdev": 6.97,
         "pct_shifting_dem": 96.0
@@ -668,9 +668,9 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 11.92,
+        "mean": 11.97,
         "median": 14.12,
-        "stdev": 8.79,
+        "stdev": 8.77,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
