@@ -115,7 +115,13 @@
     sortBy: "uncalled-first",
     civicTypeFilter: "ALL",
     page: 1,
-    pageSize: 48
+    pageSize: 48,
+    fecMoneyball: null,
+    factionAnalysis: null,
+    breakingPoints: null,
+    moneyballOffice: "senate",
+    moneyballSort: "spend-desc",
+    moneyballSearch: ""
   };
 
   const fmtInt = d3.format(",");
@@ -216,7 +222,7 @@
   }
 
   async function loadAllData(bustCache = false) {
-    const qs = bustCache ? `?t=${Date.now()}` : "?v=20261104e";
+    const qs = bustCache ? `?t=${Date.now()}` : "?v=20261106a";
     const btn = document.getElementById("btn-live-refresh");
     if (btn) btn.disabled = true;
 
@@ -231,6 +237,11 @@
 
       state.overview = overview;
       state.countyShifts = countyShifts;
+      if (bustCache) {
+        state.fecMoneyball = null;
+        state.factionAnalysis = null;
+        state.breakingPoints = null;
+      }
 
       if (!state.topo) {
         state.topo = topo;
@@ -320,6 +331,24 @@
     const mapSec = document.getElementById("map-section");
     const forecastSec = document.getElementById("forecast-panel");
     const demSec = document.getElementById("demographics-section");
+    const analysisSec = document.getElementById("analysis-section");
+    const explorerSec = document.getElementById("results-explorer-section");
+
+    if (tab === "analysis") {
+      if (balanceSec) balanceSec.style.display = "none";
+      if (mapSec) mapSec.style.display = "none";
+      if (forecastSec) forecastSec.style.display = "none";
+      if (demSec) demSec.style.display = "none";
+      if (explorerSec) explorerSec.style.display = "none";
+      if (analysisSec) {
+        analysisSec.style.display = "flex";
+        await renderAnalysisSection();
+      }
+      return;
+    }
+
+    if (analysisSec) analysisSec.style.display = "none";
+    if (explorerSec) explorerSec.style.display = "block";
 
     if (tab === "all-local") {
       balanceSec.style.display = "none";
@@ -2613,6 +2642,476 @@
       renderDemographicsSection();
     }
     renderRaceExplorer();
+  }
+
+  // =========================================================================
+  // DEEP-DIVE ANALYSIS & MONEYBALL VIEW (MS PLURALITY / AK RCV / FEC / COHORTS)
+  // =========================================================================
+  async function ensureAnalysisDataLoaded() {
+    if (state.fecMoneyball && state.factionAnalysis && state.breakingPoints) return;
+    const qs = `?t=${Date.now()}`;
+    const [fec, fac, bp] = await Promise.all([
+      fetch(`site_data/fec_moneyball_2026.json${qs}`).then((r) => r.json()),
+      fetch(`site_data/faction_analysis_2026.json${qs}`).then((r) => r.json()),
+      fetch(`site_data/breaking_points_2026.json${qs}`).then((r) => r.json()),
+    ]);
+    state.fecMoneyball = fec;
+    state.factionAnalysis = fac;
+    state.breakingPoints = bp;
+  }
+
+  function fmtDollarsM(v) {
+    if (v === null || v === undefined || Number.isNaN(Number(v))) return "—";
+    const n = Number(v);
+    if (Math.abs(n) >= 1e6) return `$${(n / 1e6).toFixed(2)}M`;
+    if (Math.abs(n) >= 1e3) return `$${(n / 1e3).toFixed(0)}K`;
+    return `$${n.toFixed(0)}`;
+  }
+
+  async function renderAnalysisSection() {
+    const container = document.getElementById("analysis-section");
+    if (!container) return;
+    if (!state.fecMoneyball) {
+      container.innerHTML = `<div class="analysis-block"><p>Loading FEC Moneyball, RCV/Plurality simulations, and county cohort data…</p></div>`;
+    }
+    try {
+      await ensureAnalysisDataLoaded();
+    } catch (e) {
+      console.error("Failed loading analysis JSONs:", e);
+      container.innerHTML = `<div class="analysis-block"><p>Error loading analysis datasets.</p></div>`;
+      return;
+    }
+
+    const ov = state.overview || {};
+    const msSen = (ov.senate_races || []).find((r) => r.state === "MS") || {};
+    const akSen = (ov.senate_races || []).find((r) => r.state === "AK") || {};
+    const akGov = (ov.governor_races || []).find((r) => r.state === "AK") || {};
+    const ksGov = (ov.governor_races || []).find((r) => r.state === "KS") || {};
+
+    const msCands = msSen.candidates || [];
+    const msColom = msCands.find((c) => c.party === "DEM") || { votes: 466959, percent: 49.05 };
+    const msHyde = msCands.find((c) => c.party === "GOP") || { votes: 465023, percent: 48.85 };
+    const msPink = msCands.find((c) => c.party !== "DEM" && c.party !== "GOP") || { votes: 20010, percent: 2.10 };
+    const msLead = (msColom.votes || 0) - (msHyde.votes || 0);
+
+    const akCands = akSen.candidates || [];
+    const akPeltola = akCands.find((c) => c.party === "DEM") || { votes: 102962, percent: 48.17 };
+    const akSullivan = akCands.find((c) => c.party === "GOP") || { votes: 102325, percent: 47.88 };
+    const akLead = (akPeltola.votes || 0) - (akSullivan.votes || 0);
+
+    const fac = state.factionAnalysis || {};
+    const caucusGroups = (fac.house_caucus_comparison_morris_benchmark && fac.house_caucus_comparison_morris_benchmark.groups) || [];
+    const h2h = fac.county_head_to_head_live || {};
+    const sameBallot = fac.same_ballot_statewide_live || {};
+
+    const bp = state.breakingPoints || {};
+    const cohorts = bp.disjoint_county_cohorts || [];
+    const pcaDem = (bp.pca_decomposition && bp.pca_decomposition.high_swing_counties_demographic_pca && bp.pca_decomposition.high_swing_counties_demographic_pca.variance_explained_pct) || {};
+    const pcaCross = (bp.pca_decomposition && bp.pca_decomposition.cross_ballot_shift_pca && bp.pca_decomposition.cross_ballot_shift_pca.variance_explained_pct) || {};
+
+    container.innerHTML = `
+      <!-- 1. MS Plurality Law & Late-Ballot Math + AK Ranked-Choice Voting Simulator -->
+      <div class="analysis-block">
+        <div class="analysis-block-header">
+          <div>
+            <h2>1. Uncalled Statewide Legal &amp; Ballot-Math Tracker: Mississippi Plurality vs. Alaska RCV</h2>
+            <p class="section-sub">Statutory election rules, late-arriving absentee/affidavit ballot splits, and RCV second-choice transfer thresholds.</p>
+          </div>
+          <span class="stat-pill">Live Updated · 15-Min Feed</span>
+        </div>
+
+        <div class="analysis-grid-2">
+          <div class="analysis-subcard">
+            <h3>
+              <span>Mississippi U.S. Senate (${fmtPct(msSen.eevp || 95.8)} EEVP)</span>
+              <span class="rc-badge badge-tctc">Colom +${fmtInt(msLead)} votes</span>
+            </h3>
+            <div class="analysis-law-callout">
+              <strong>Statutory Rule — No General Election Runoff (<code>Miss. Code Ann. § 23-15-605</code>):</strong>
+              While Mississippi requires a 50%+1 majority (or runoff) for <em>state executive</em> offices under Miss. Const. § 140 (amended 2020) and for <em>nonpartisan special elections</em> (such as the 2018 Senate special under § 23-15-833), <strong>regularly scheduled U.S. Senate and U.S. House general elections are decided by simple plurality</strong> ("the person having the largest number of votes"). Mississippi also has <strong>no statutory statewide recount mechanism</strong>—meaning whoever leads after timely postmarked absentee ballots (5 business days) and cured affidavit ballots are canvassed wins outright, even under 50%.
+            </div>
+            <div class="analysis-table-wrap">
+              <table class="analysis-table">
+                <thead>
+                  <tr>
+                    <th>Candidate</th>
+                    <th class="num">Counted Votes</th>
+                    <th class="num">Share</th>
+                    <th class="num">Wed–Fri Late Split</th>
+                    <th class="num">County-Wtd Rem. (+41.7K)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong class="dem-text">Scott Colom (DEM)</strong></td>
+                    <td class="num"><strong>${fmtInt(msColom.votes)}</strong></td>
+                    <td class="num"><strong>${Number(msColom.percent).toFixed(2)}%</strong></td>
+                    <td class="num dem-text">+4,138 (64.1%)</td>
+                    <td class="num dem-text">+22,173 (~489.1K final)</td>
+                  </tr>
+                  <tr>
+                    <td><strong class="gop-text">Cindy Hyde-Smith (GOP)</strong></td>
+                    <td class="num">${fmtInt(msHyde.votes)}</td>
+                    <td class="num">${Number(msHyde.percent).toFixed(2)}%</td>
+                    <td class="num gop-text">+2,245 (34.8%)</td>
+                    <td class="num gop-text">+18,744 (~483.8K final)</td>
+                  </tr>
+                  <tr>
+                    <td>Ty Pinkins (IND)</td>
+                    <td class="num">${fmtInt(msPink.votes)}</td>
+                    <td class="num">${Number(msPink.percent).toFixed(2)}%</td>
+                    <td class="num">+75 (1.2%)</td>
+                    <td class="num">+808 (80.2% from GOP cos.)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="analysis-subcard">
+            <h3>
+              <span>Alaska U.S. Senate &amp; Governor RCV (${fmtPct(akSen.eevp || 74.1)} EEVP)</span>
+              <span class="rc-badge badge-tctc">Peltola +${fmtInt(akLead)} votes</span>
+            </h3>
+            <div class="analysis-law-callout">
+              <strong>Alaska Top-Four RCV Dynamics &amp; Same-Name Spoiler Effect:</strong>
+              In Round 1 (${fmtPct(akSen.eevp || 74.1)} reporting, ~74.7K late mail/rural bush ballots remaining), <strong>Mary Peltola (DEM, 48.17%)</strong> leads <strong>Sen. Dan Sullivan (GOP, 47.88%)</strong> by <strong>+${fmtInt(akLead)} votes</strong>. The NYT model projects remaining first-choice ballots to expand Peltola's lead to <strong>~+8,042 votes (137.3K vs. 129.2K, 83% win prob)</strong> before RCV transfers. Crucially, the 3.95% third-party pool is split between Republican <strong>Gerald Heikes (2.27%, 4,846v)</strong> and Undeclared candidate <strong>Daniel Sullivan (1.68%, 3,600v)</strong>—whose shared name with incumbent Dan Sullivan created a 3,600-vote ballot confusion pool.
+            </div>
+            <div class="analysis-table-wrap">
+              <table class="analysis-table">
+                <thead>
+                  <tr>
+                    <th>Alaska Race / Candidate</th>
+                    <th class="num">Round 1 Votes</th>
+                    <th class="num">Round 1 %</th>
+                    <th>RCV / Late-Ballot Outlook</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong class="dem-text">Sen: Mary Peltola (DEM)</strong></td>
+                    <td class="num"><strong>${fmtInt(akPeltola.votes)}</strong></td>
+                    <td class="num"><strong>${Number(akPeltola.percent).toFixed(2)}%</strong></td>
+                    <td>NYT Est: ~137.3K (+8.0K pre-RCV lead)</td>
+                  </tr>
+                  <tr>
+                    <td><strong class="gop-text">Sen: Dan Sullivan (GOP)</strong></td>
+                    <td class="num">${fmtInt(akSullivan.votes)}</td>
+                    <td class="num">${Number(akSullivan.percent).toFixed(2)}%</td>
+                    <td>Needs >75% of net RCV transfers if trailing by 5K+</td>
+                  </tr>
+                  <tr>
+                    <td>Sen: Gerald Heikes (GOP) &amp; Daniel Sullivan (UDC)</td>
+                    <td class="num">8,446</td>
+                    <td class="num">3.95%</td>
+                    <td>4,846 Heikes (GOP) + 3,600 Daniel Sullivan (UDC)</td>
+                  </tr>
+                  <tr>
+                    <td><strong class="dem-text">Gov: Jonathan Kreiss-Tomkins (DEM)</strong></td>
+                    <td class="num"><strong>103,837</strong></td>
+                    <td class="num"><strong>49.13%</strong></td>
+                    <td>Vs. 3 split GOPs: Wilson 29.2%, Bronson 14.2%, Taylor 7.5%</td>
+                  </tr>
+                  <tr>
+                    <td><strong class="dem-text">KS Gov: Cindy Holscher (DEM)</strong></td>
+                    <td class="num"><strong>${fmtInt((ksGov.candidates && ksGov.candidates[0] && ksGov.candidates[0].votes) || 547198)}</strong></td>
+                    <td class="num"><strong>50.32%</strong></td>
+                    <td>Leads Ty Masterson (GOP, 49.68%) by +7,045v at 98.7% EEVP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Interactive FEC Moneyball Explorer (Senate & House) -->
+      <div class="analysis-block">
+        <div class="analysis-block-header">
+          <div>
+            <h2>2. 2026 FEC 'Moneyball' &amp; Counterspend Explorer (Candidate + Super PAC IEs)</h2>
+            <p class="section-sub">Compare total Pro-Dem and Pro-GOP spending (Candidate Disbursements + Independent Expenditures) against actual 2024→2026 vote shifts and marginal cost per point of swing.</p>
+          </div>
+          <div class="moneyball-controls">
+            <select id="mb-office-select" class="ctrl-select">
+              <option value="senate" ${state.moneyballOffice === "senate" ? "selected" : ""}>U.S. Senate (35 Races)</option>
+              <option value="house-close" ${state.moneyballOffice === "house-close" ? "selected" : ""}>U.S. House — Closest &amp; Shock Upsets (≤ 3% Margin)</option>
+              <option value="house-all" ${state.moneyballOffice === "house-all" ? "selected" : ""}>U.S. House — All 418 Tracked Races</option>
+            </select>
+            <select id="mb-sort-select" class="ctrl-select">
+              <option value="spend-desc" ${state.moneyballSort === "spend-desc" ? "selected" : ""}>Sort: Total Race Spend (High → Low)</option>
+              <option value="cost-pt-desc" ${state.moneyballSort === "cost-pt-desc" ? "selected" : ""}>Sort: Pro-Dem $/Pt of Shift (Most Expensive)</option>
+              <option value="cost-pt-asc" ${state.moneyballSort === "cost-pt-asc" ? "selected" : ""}>Sort: Pro-Dem $/Pt of Shift (Best Value ROI)</option>
+              <option value="margin-asc" ${state.moneyballSort === "margin-asc" ? "selected" : ""}>Sort: Closest 2026 Margin First</option>
+              <option value="shift-desc" ${state.moneyballSort === "shift-desc" ? "selected" : ""}>Sort: Largest Pro-Dem Shift vs. 2024</option>
+            </select>
+            <input type="search" id="mb-search-input" class="search-input" style="min-width:210px;" placeholder="Filter state or candidate…" value="${state.moneyballSearch || ""}" />
+          </div>
+        </div>
+        <div id="moneyball-table-container" class="analysis-table-wrap"></div>
+      </div>
+
+      <!-- 3. Ideological Factions & 5-State Same-Ballot Natural Experiments -->
+      <div class="analysis-block">
+        <div class="analysis-block-header">
+          <div>
+            <h2>3. Ideological Factions &amp; Same-Ballot Natural Experiments</h2>
+            <p class="section-sub">Empirical test of candidate moderation across U.S. House caucuses (controlling for district baseline &amp; spending) and 5 states with simultaneous Governor &amp; Senate races on the same ballot.</p>
+          </div>
+          <span class="stat-pill">276 / 286 Counties (${h2h.all_5_states_total ? h2h.all_5_states_total.pct : 96.5}%) Won by Mainstream Ticket-Mate</span>
+        </div>
+
+        <div class="analysis-grid-2">
+          <div class="analysis-subcard">
+            <h3>U.S. House Swing vs. 2024 by Caucus (Morris Benchmark)</h3>
+            <div class="analysis-table-wrap">
+              <table class="analysis-table">
+                <thead>
+                  <tr>
+                    <th>Caucus / Faction</th>
+                    <th class="num">N</th>
+                    <th class="num">Raw Mean Swing</th>
+                    <th class="num">Adjusted Mean (95% CI)</th>
+                    <th class="num">Adj. Median Overperf.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${caucusGroups
+                    .map(
+                      (g) => `
+                    <tr>
+                      <td><strong>${g.group}</strong></td>
+                      <td class="num">${g.n}</td>
+                      <td class="num dem-text">+${g.raw_mean.toFixed(1)}%</td>
+                      <td class="num"><strong>+${g.adjusted_mean.toFixed(1)}%</strong> <span class="rc-sub">[+${g.adj_ci_95[0].toFixed(1)}, +${g.adj_ci_95[1].toFixed(1)}]</span></td>
+                      <td class="num ${g.adj_median_overperf >= 0 ? "dem-text" : "gop-text"}"><strong>${g.adj_median_overperf >= 0 ? "+" : ""}${g.adj_median_overperf.toFixed(1)} pts</strong></td>
+                    </tr>`
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="analysis-subcard">
+            <h3>5-State Same-Ballot Natural Experiment (Gov vs. Senate)</h3>
+            <div class="analysis-table-wrap">
+              <table class="analysis-table">
+                <thead>
+                  <tr>
+                    <th>State</th>
+                    <th class="num">Gov 2026 Margin (Shift)</th>
+                    <th class="num">Sen 2026 Margin (Shift)</th>
+                    <th class="num">Ticket Split</th>
+                    <th class="num">County Head-to-Head</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${["MI", "MN", "ME", "NM", "FL"]
+                    .map((st) => {
+                      const sb = sameBallot[st] || {};
+                      const g = sb.governor || {};
+                      const s = sb.senate || {};
+                      const diff = st === "NM" ? (s.margin || 0) - (g.margin || 0) : (g.margin || 0) - (s.margin || 0);
+                      const hKey = st === "NM" ? "NM_sen_vs_gov" : `${st}_gov_vs_sen`;
+                      const hh = h2h[hKey] || { wins: 0, total: 0, pct: 0 };
+                      return `
+                      <tr>
+                        <td><strong>${st}</strong></td>
+                        <td class="num">${fmtMargin(g.margin)} <span class="rc-sub">(+${(g.shift_24 || 0).toFixed(1)})</span></td>
+                        <td class="num">${fmtMargin(s.margin)} <span class="rc-sub">(${(s.shift_24 || 0) >= 0 ? "+" : ""}${(s.shift_24 || 0).toFixed(1)})</span></td>
+                        <td class="num dem-text"><strong>+${diff.toFixed(2)} pts</strong></td>
+                        <td class="num"><strong>${hh.wins}/${hh.total} cos. (${hh.pct}%)</strong></td>
+                      </tr>`;
+                    })
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Disjoint Breaking Points & County Cohort Analysis -->
+      <div class="analysis-block">
+        <div class="analysis-block-header">
+          <div>
+            <h2>4. Disjoint Breaking Points &amp; Cross-Ballot Contagion (3,143 Counties)</h2>
+            <p class="section-sub">Demographic PCA shows high-swing counties are split across 3 orthogonal demographic dimensions (PC1=${pcaDem.PC1 || 35.0}%, PC2=${pcaDem.PC2 || 29.9}%, PC3=${pcaDem.PC3 || 21.9}%), yet Cross-Ballot Shift PCA loads ${pcaCross.PC1 || 82.0}% onto a single unified wave.</p>
+          </div>
+          <span class="stat-pill">Sen↔AG Shift r = +0.862 (1,352 counties)</span>
+        </div>
+
+        <div class="analysis-table-wrap">
+          <table class="analysis-table">
+            <thead>
+              <tr>
+                <th>County Cohort</th>
+                <th>Primary Issue Trigger</th>
+                <th class="num">Counties</th>
+                <th class="num">2020→2024 Pres</th>
+                <th class="num">2016→2018 Midterm</th>
+                <th class="num">2024→2026 Top Ticket</th>
+                <th class="num">2024→2026 Senate</th>
+                <th class="num">2024→2026 State AG</th>
+                <th class="num">% Shifting Dem (2026)</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${cohorts
+                .map((c) => {
+                  const sh = c.shifts || {};
+                  const p24 = sh.pres_2020_to_2024 || {};
+                  const h18 = sh.first_term_midterm_2016_to_2018_house || {};
+                  const top26 = sh.top_of_ticket_2024_to_2026 || {};
+                  const s26 = sh.us_senate_2024_to_2026 || {};
+                  const ag26 = sh.attorney_general_2024_to_2026 || {};
+                  return `
+                  <tr>
+                    <td><strong>${c.cohort_label}</strong></td>
+                    <td>${c.primary_issue_trigger}</td>
+                    <td class="num">${fmtInt(c.total_counties_in_cohort)}</td>
+                    <td class="num ${(p24.mean || 0) >= 0 ? "dem-text" : "gop-text"}">${(p24.mean || 0) >= 0 ? "+" : ""}${(p24.mean || 0).toFixed(2)} pts</td>
+                    <td class="num ${(h18.mean || 0) >= 0 ? "dem-text" : "gop-text"}">${(h18.mean || 0) >= 0 ? "+" : ""}${(h18.mean || 0).toFixed(2)} pts</td>
+                    <td class="num dem-text"><strong>+${(top26.mean || 0).toFixed(2)} pts</strong></td>
+                    <td class="num dem-text">${s26.mean !== undefined ? `+${s26.mean.toFixed(2)} pts` : "—"}</td>
+                    <td class="num dem-text">${ag26.mean !== undefined ? `+${ag26.mean.toFixed(2)} pts` : "—"}</td>
+                    <td class="num"><strong>${(top26.pct_shifting_dem || 0).toFixed(1)}%</strong></td>
+                  </tr>`;
+                })
+                .join("")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5. High-Resolution Live-Updating Research Charts Gallery -->
+      <div class="analysis-block">
+        <div class="analysis-block-header">
+          <div>
+            <h2>5. Live-Regenerated Research Charts Gallery (Charts 1–7)</h2>
+            <p class="section-sub">Automatically regenerated by the live pipeline as county and statewide vote totals update. Click any chart to open full-resolution PNG in a new tab.</p>
+          </div>
+        </div>
+        <div class="analysis-charts-grid">
+          ${[
+            ["chart7_senate_moneyball_counterspend.png", "Chart 7: 2026 Senate 'Moneyball' — Diminishing Returns & Endogenous GOP Counterspend"],
+            ["chart1_house_carveout.png", "Chart 1: U.S. House 2024→2026 Swing by Ideological Faction (Blue Dogs vs. New Dems vs. CPC)"],
+            ["chart2_senate_0for6.png", "Chart 2: U.S. Senate Swing vs. State House Baseline Across Competitive States"],
+            ["chart3_same_ballot_natural_experiment.png", "Chart 3: 5-State Same-Ballot Natural Experiment (MI, MN, ME, NM, FL County Head-to-Head)"],
+            ["chart4_disjoint_cohorts_2018_vs_2026.png", "Chart 4: Disjoint Breaking Points — 2018 Midterm vs. 2026 Midterm Shifts Across 8 Cohorts"],
+            ["chart5_60pct_convergence_ceiling.png", "Chart 5: The 60% Disapproval Convergence — Issue Breaking Points vs. 2026 Electoral Swing"],
+            ["chart6_downballot_contagion.png", "Chart 6: Down-Ballot Contagion — U.S. Senate vs. State Attorney General County Shift (r = 0.86)"],
+          ]
+            .map(
+              ([file, title]) => `
+            <div class="chart-card">
+              <div class="chart-card-title">${title}</div>
+              <a href="assets/${file}" target="_blank" rel="noopener">
+                <img src="assets/${file}?v=20261106a" alt="${title}" loading="lazy" />
+              </a>
+            </div>`
+            )
+            .join("")}
+        </div>
+      </div>
+    `;
+
+    renderMoneyballTable();
+
+    document.getElementById("mb-office-select").addEventListener("change", (e) => {
+      state.moneyballOffice = e.target.value;
+      renderMoneyballTable();
+    });
+    document.getElementById("mb-sort-select").addEventListener("change", (e) => {
+      state.moneyballSort = e.target.value;
+      renderMoneyballTable();
+    });
+    document.getElementById("mb-search-input").addEventListener("input", (e) => {
+      state.moneyballSearch = e.target.value.trim();
+      renderMoneyballTable();
+    });
+  }
+
+  function renderMoneyballTable() {
+    const wrap = document.getElementById("moneyball-table-container");
+    if (!wrap || !state.fecMoneyball) return;
+
+    let rows = [];
+    if (state.moneyballOffice === "senate") {
+      rows = (state.fecMoneyball.senate_races || []).slice();
+    } else if (state.moneyballOffice === "house-close") {
+      rows = (state.fecMoneyball.house_races || []).filter(
+        (r) => Math.abs(r.margin_2026 ?? 999) <= 3.0 || ((r.pres_2024_margin ?? 0) <= -15 && (r.margin_2026 ?? -99) > 0)
+      );
+    } else {
+      rows = (state.fecMoneyball.house_races || []).slice();
+    }
+
+    const q = (state.moneyballSearch || "").toLowerCase();
+    if (q) {
+      rows = rows.filter(
+        (r) =>
+          (r.state || "").toLowerCase().includes(q) ||
+          (r.seat || "").toLowerCase().includes(q) ||
+          (r.dem_name || "").toLowerCase().includes(q) ||
+          (r.gop_name || "").toLowerCase().includes(q)
+      );
+    }
+
+    const sort = state.moneyballSort;
+    rows.sort((a, b) => {
+      if (sort === "spend-desc") return (b.total_race_spend || 0) - (a.total_race_spend || 0);
+      if (sort === "cost-pt-desc") return (b.total_pro_dem_per_shift_pt || -1) - (a.total_pro_dem_per_shift_pt || -1);
+      if (sort === "cost-pt-asc") {
+        const av = a.total_pro_dem_per_shift_pt > 0 ? a.total_pro_dem_per_shift_pt : 1e18;
+        const bv = b.total_pro_dem_per_shift_pt > 0 ? b.total_pro_dem_per_shift_pt : 1e18;
+        return av - bv;
+      }
+      if (sort === "margin-asc") return Math.abs(a.margin_2026 ?? 999) - Math.abs(b.margin_2026 ?? 999);
+      if (sort === "shift-desc") return (b.shift_vs_pres_2024 ?? -999) - (a.shift_vs_pres_2024 ?? -999);
+      return 0;
+    });
+
+    const displayRows = rows.slice(0, 75);
+    wrap.innerHTML = `
+      <table class="analysis-table">
+        <thead>
+          <tr>
+            <th>Race</th>
+            <th>Dem Candidate vs. GOP Candidate</th>
+            <th class="num">2026 Margin</th>
+            <th class="num">2024 Pres</th>
+            <th class="num">2024→2026 Shift</th>
+            <th class="num">Pro-Dem Spend (Cand + IE)</th>
+            <th class="num">Pro-GOP Spend (Cand + IE)</th>
+            <th class="num">Total Race Spend</th>
+            <th class="num">Pro-Dem $/Shift Pt</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${displayRows
+            .map((r) => {
+              const vdiff = (r.dem_votes || 0) - (r.gop_votes || 0);
+              const m26 = r.margin_2026;
+              const sh = r.shift_vs_pres_2024;
+              return `
+              <tr>
+                <td><strong>${r.state}${r.seat ? " " + r.seat : ""}</strong></td>
+                <td><span class="dem-text">${r.dem_name || "—"}</span> vs. <span class="gop-text">${r.gop_name || "—"}</span></td>
+                <td class="num ${(m26 || 0) >= 0 ? "dem-text" : "gop-text"}"><strong>${fmtMargin(m26)}</strong> <span class="rc-sub">(${vdiff >= 0 ? "+" : ""}${fmtInt(vdiff)}v)</span></td>
+                <td class="num">${fmtMargin(r.pres_2024_margin)}</td>
+                <td class="num ${(sh || 0) >= 0 ? "dem-text" : "gop-text"}"><strong>${sh !== null && sh !== undefined ? (sh >= 0 ? "+" : "") + sh.toFixed(2) + " pts" : "—"}</strong></td>
+                <td class="num">${fmtDollarsM(r.total_pro_dem_spend)} <span class="rc-sub">(${fmtDollarsM(r.ie_pro_dem_total)} IE)</span></td>
+                <td class="num">${fmtDollarsM(r.total_pro_gop_spend)} <span class="rc-sub">(${fmtDollarsM(r.ie_pro_gop_total)} IE)</span></td>
+                <td class="num"><strong>${fmtDollarsM(r.total_race_spend)}</strong></td>
+                <td class="num"><strong>${r.total_pro_dem_per_shift_pt ? fmtDollarsM(r.total_pro_dem_per_shift_pt) + "/pt" : "—"}</strong></td>
+              </tr>`;
+            })
+            .join("")}
+        </tbody>
+      </table>
+    `;
   }
 
   // =========================================================================

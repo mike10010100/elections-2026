@@ -13,7 +13,7 @@
       } catch (e) {}
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261104e" />
+  <link rel="stylesheet" href="styles.css?v=20261106a" />
   <script src="assets/d3.min.js"></script>
   <script src="assets/topojson-client.min.js"></script>
 </head>
@@ -62,6 +62,10 @@
       <button class="office-tab" data-office="close" type="button">
         <span class="tab-title">Too Close to Call</span>
         <span class="tab-badge badge-alert" id="tab-badge-close">Uncalled</span>
+      </button>
+      <button class="office-tab" data-office="analysis" type="button">
+        <span class="tab-title">Analysis &amp; Moneyball</span>
+        <span class="tab-badge" id="tab-badge-analysis">FEC · RCV · Cohorts</span>
       </button>
       <button class="office-tab" data-office="measures" type="button">
         <span class="tab-title">Ballot Measures</span>
@@ -435,6 +439,9 @@
       <div class="demographics-grid" id="demographics-grid"></div>
     </section>
 
+    <!-- Deep-Dive Analysis: MS Plurality / AK RCV, FEC Moneyball, Factions & Disjoint Breaking Points -->
+    <section class="analysis-section" id="analysis-section" style="display:none;"></section>
+
     <!-- Google Search-Style Race Results Cards & Search/Filter Section -->
     <section class="results-explorer-section" id="results-explorer-section">
       <div class="explorer-toolbar">
@@ -546,6 +553,6 @@
     </div>
   </footer>
 
-  <script src="app.js?v=20261104e"></script>
+  <script src="app.js?v=20261106a"></script>
 </body>
 </html>
