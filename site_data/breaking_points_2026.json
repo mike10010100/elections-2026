@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T20:15:01.504934-05:00",
+  "fetched_at": "2026-11-05T20:20:01.448616-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -204,7 +204,7 @@
           "mean": 12.09,
           "median": 11.41,
           "stdev": 10.67,
-          "pct_shifting_dem": 90.3
+          "pct_shifting_dem": 90.4
         },
         "attorney_general_2024_to_2026": {
           "n": 1812,
@@ -237,9 +237,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.42,
+          "mean": 27.43,
           "median": 25.57,
-          "stdev": 11.38,
+          "stdev": 11.37,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -251,23 +251,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 22.83,
+          "mean": 22.85,
           "median": 19.88,
-          "stdev": 12.4,
+          "stdev": 12.39,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 22.94,
+          "mean": 22.96,
           "median": 21.18,
-          "stdev": 10.89,
+          "stdev": 10.88,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.2,
+          "mean": 24.21,
           "median": 21.86,
-          "stdev": 11.0,
+          "stdev": 10.99,
           "pct_shifting_dem": 100.0
         }
       }
@@ -467,8 +467,8 @@
           "n": 181,
           "mean": 10.92,
           "median": 12.31,
-          "stdev": 10.98,
-          "pct_shifting_dem": 91.7
+          "stdev": 10.97,
+          "pct_shifting_dem": 92.3
         },
         "us_senate_2024_to_2026": {
           "n": 130,
@@ -488,14 +488,14 @@
           "n": 124,
           "mean": 7.63,
           "median": 8.04,
-          "stdev": 13.14,
-          "pct_shifting_dem": 83.1
+          "stdev": 13.13,
+          "pct_shifting_dem": 83.9
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.55,
+          "mean": 7.56,
           "median": 6.42,
-          "stdev": 5.88,
+          "stdev": 5.87,
           "pct_shifting_dem": 92.6
         }
       }
@@ -668,15 +668,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 11.96,
+        "mean": 11.97,
         "median": 14.12,
         "stdev": 8.77,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 8.88,
-        "median": 8.88,
+        "mean": 8.86,
+        "median": 8.84,
         "stdev": 4.82,
         "pct_shifting_dem": 100.0
       },
