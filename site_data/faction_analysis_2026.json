@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T11:45:01.419616-05:00",
+  "fetched_at": "2026-11-06T12:00:01.304593-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -84,7 +84,7 @@
       "senate_shift_vs_2024": 23.09,
       "state_house_mean_shift": 17.34,
       "senate_minus_house_shift": 5.75,
-      "eevp": 95.89
+      "eevp": 96.23
     },
     "AK": {
       "senate_margin": -1.98,
@@ -151,12 +151,12 @@
       "eevp": 93.3
     },
     "MI": {
-      "senate_margin": 7.1,
+      "senate_margin": 7.08,
       "pres_2024_margin": -1.41,
-      "senate_shift_vs_2024": 8.51,
+      "senate_shift_vs_2024": 8.49,
       "state_house_mean_shift": 11.54,
-      "senate_minus_house_shift": -3.03,
-      "eevp": 98.08
+      "senate_minus_house_shift": -3.05,
+      "eevp": 98.13
     },
     "AL": {
       "senate_margin": -9.42,
@@ -290,9 +290,9 @@
       "senate_margin": 26.48,
       "pres_2024_margin": 6.0,
       "senate_shift_vs_2024": 20.48,
-      "state_house_mean_shift": 16.65,
-      "senate_minus_house_shift": 3.83,
-      "eevp": 98.36
+      "state_house_mean_shift": 16.66,
+      "senate_minus_house_shift": 3.82,
+      "eevp": 98.39
     },
     "NJ": {
       "senate_margin": 27.13,
@@ -338,24 +338,24 @@
   "same_ballot_statewide_live": {
     "MI": {
       "senate": {
-        "margin": 7.1,
-        "shift_24": 8.51,
-        "eevp": 98.08
+        "margin": 7.08,
+        "shift_24": 8.49,
+        "eevp": 98.13
       },
       "governor": {
         "margin": 10.84,
         "shift_24": 12.25,
-        "eevp": 98.09
+        "eevp": 98.14
       },
       "attorney_general": {
-        "margin": 7.82,
-        "shift_24": 9.23,
-        "eevp": 97.92
+        "margin": 7.81,
+        "shift_24": 9.22,
+        "eevp": 97.97
       },
       "secretary_of_state": {
-        "margin": 10.25,
-        "shift_24": 11.66,
-        "eevp": 98
+        "margin": 10.24,
+        "shift_24": 11.65,
+        "eevp": 98.04
       },
       "auditor": null
     },
@@ -405,27 +405,27 @@
       "senate": {
         "margin": 26.48,
         "shift_24": 20.48,
-        "eevp": 98.36
+        "eevp": 98.39
       },
       "governor": {
-        "margin": 14.66,
-        "shift_24": 8.66,
-        "eevp": 98.36
+        "margin": 14.68,
+        "shift_24": 8.68,
+        "eevp": 98.39
       },
       "attorney_general": {
         "margin": 26.0,
         "shift_24": 20.0,
-        "eevp": 98.36
+        "eevp": 98.39
       },
       "secretary_of_state": {
-        "margin": 21.82,
-        "shift_24": 15.82,
-        "eevp": 98.36
+        "margin": 21.84,
+        "shift_24": 15.84,
+        "eevp": 98.39
       },
       "auditor": {
-        "margin": 21.0,
-        "shift_24": 15.0,
-        "eevp": 98.36
+        "margin": 21.02,
+        "shift_24": 15.02,
+        "eevp": 98.39
       }
     },
     "FL": {
