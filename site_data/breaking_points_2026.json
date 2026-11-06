@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T20:10:01.805685-05:00",
+  "fetched_at": "2026-11-05T20:15:01.504934-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -308,14 +308,14 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.55,
+          "mean": 13.54,
           "median": 12.28,
           "stdev": 8.13,
           "pct_shifting_dem": 99.2
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.44,
+          "mean": 14.43,
           "median": 14.78,
           "stdev": 7.19,
           "pct_shifting_dem": 96.9
@@ -323,7 +323,7 @@
         "attorney_general_2024_to_2026": {
           "n": 123,
           "mean": 13.84,
-          "median": 13.52,
+          "median": 13.5,
           "stdev": 6.06,
           "pct_shifting_dem": 100.0
         }
@@ -640,7 +640,7 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 11.98,
+        "mean": 11.99,
         "median": 12.11,
         "stdev": 6.97,
         "pct_shifting_dem": 96.0
@@ -668,7 +668,7 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 11.97,
+        "mean": 11.96,
         "median": 14.12,
         "stdev": 8.77,
         "pct_shifting_dem": 88.9
