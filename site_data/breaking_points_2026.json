@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T15:45:01.589715-05:00",
+  "fetched_at": "2026-11-06T16:00:01.877840-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -313,8 +313,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.45,
-        "residual_overperformance_pts": 5.02,
+        "expected_demographic_state_shift_pts": 16.44,
+        "residual_overperformance_pts": 5.03,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.02,
-        "residual_overperformance_pts": 3.07,
+        "expected_demographic_state_shift_pts": 17.01,
+        "residual_overperformance_pts": 3.08,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -630,7 +630,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.56,
+          "mean": 13.57,
           "median": 12.3,
           "stdev": 8.15,
           "pct_shifting_dem": 99.2
@@ -810,7 +810,7 @@
           "n": 124,
           "mean": 7.72,
           "median": 7.94,
-          "stdev": 13.03,
+          "stdev": 13.02,
           "pct_shifting_dem": 84.7
         },
         "attorney_general_2024_to_2026": {
@@ -851,7 +851,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.81,
+          "mean": 15.82,
           "median": 15.53,
           "stdev": 4.88,
           "pct_shifting_dem": 100.0
@@ -955,9 +955,9 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.15,
+        "mean": 12.16,
         "median": 11.83,
-        "stdev": 5.82,
+        "stdev": 5.81,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
@@ -969,7 +969,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.17,
+        "mean": 10.18,
         "median": 10.12,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
@@ -1006,7 +1006,7 @@
         "n": 107,
         "mean": 11.97,
         "median": 12.5,
-        "stdev": 8.23,
+        "stdev": 8.22,
         "pct_shifting_dem": 95.3
       }
     }
