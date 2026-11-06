@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T09:30:01.158385-05:00",
+  "fetched_at": "2026-11-06T09:35:01.482635-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -180,7 +180,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.19,
+          "mean": 13.18,
           "median": 14.04,
           "stdev": 8.89,
           "pct_shifting_dem": 94.4
@@ -194,8 +194,8 @@
         },
         "us_house_2024_to_2026": {
           "n": 3099,
-          "mean": 11.75,
-          "median": 11.24,
+          "mean": 11.74,
+          "median": 11.23,
           "stdev": 7.67,
           "pct_shifting_dem": 96.0
         },
@@ -408,7 +408,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1051,
-          "mean": 12.64,
+          "mean": 12.63,
           "median": 13.6,
           "stdev": 7.32,
           "pct_shifting_dem": 96.1
@@ -423,7 +423,7 @@
         "us_house_2024_to_2026": {
           "n": 1050,
           "mean": 11.42,
-          "median": 11.11,
+          "median": 11.1,
           "stdev": 6.95,
           "pct_shifting_dem": 96.2
         },
@@ -581,7 +581,7 @@
           "n": 1626,
           "mean": 13.81,
           "median": 14.43,
-          "stdev": 6.88,
+          "stdev": 6.89,
           "pct_shifting_dem": 96.2
         },
         "us_senate_2024_to_2026": {
@@ -641,7 +641,7 @@
       "Secretary of State": {
         "n": 25,
         "mean": 12.01,
-        "median": 12.11,
+        "median": 12.12,
         "stdev": 6.99,
         "pct_shifting_dem": 96.0
       },
@@ -654,9 +654,9 @@
       },
       "Auditor": {
         "n": 10,
-        "mean": 12.01,
+        "mean": 12.0,
         "median": 12.32,
-        "stdev": 6.06,
+        "stdev": 6.05,
         "pct_shifting_dem": 100.0
       },
       "Supreme Court": {
