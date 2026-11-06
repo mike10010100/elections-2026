@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-05T19:25:01.114502-05:00",
+  "fetched_at": "2026-11-05T19:30:01.871901-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -294,9 +294,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.48,
+          "mean": 17.47,
           "median": 17.5,
-          "stdev": 6.52,
+          "stdev": 6.54,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -308,16 +308,16 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.54,
+          "mean": 13.53,
           "median": 12.28,
-          "stdev": 8.12,
+          "stdev": 8.14,
           "pct_shifting_dem": 99.2
         },
         "governor_2024_to_2026": {
           "n": 127,
           "mean": 14.42,
           "median": 14.78,
-          "stdev": 7.2,
+          "stdev": 7.21,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
@@ -588,7 +588,7 @@
           "n": 1180,
           "mean": 14.36,
           "median": 14.96,
-          "stdev": 6.67,
+          "stdev": 6.68,
           "pct_shifting_dem": 97.2
         },
         "us_house_2024_to_2026": {
@@ -623,7 +623,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1799,
-        "pearson_r": 0.6997
+        "pearson_r": 0.6998
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -633,9 +633,9 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.03,
+        "mean": 12.02,
         "median": 11.74,
-        "stdev": 5.86,
+        "stdev": 5.87,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
@@ -647,7 +647,7 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.07,
+        "mean": 10.06,
         "median": 10.12,
         "stdev": 5.28,
         "pct_shifting_dem": 95.2
@@ -668,21 +668,21 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 11.93,
+        "mean": 11.92,
         "median": 14.12,
-        "stdev": 8.78,
+        "stdev": 8.79,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 8.73,
-        "median": 8.44,
+        "mean": 8.72,
+        "median": 8.42,
         "stdev": 4.82,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 11.87,
+        "mean": 11.86,
         "median": 12.5,
         "stdev": 8.23,
         "pct_shifting_dem": 95.3
