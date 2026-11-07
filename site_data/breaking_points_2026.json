@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T21:15:01.099713-05:00",
+  "fetched_at": "2026-11-06T21:30:01.334309-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -300,8 +300,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.68,
-        "expected_demographic_state_shift_pts": 16.61,
-        "residual_overperformance_pts": 5.07,
+        "expected_demographic_state_shift_pts": 16.62,
+        "residual_overperformance_pts": 5.06,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -517,7 +517,7 @@
         "us_house_2024_to_2026": {
           "n": 3099,
           "mean": 11.76,
-          "median": 11.29,
+          "median": 11.3,
           "stdev": 7.67,
           "pct_shifting_dem": 96.0
         },
