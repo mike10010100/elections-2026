@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T23:30:01.392629-05:00",
+  "fetched_at": "2026-11-06T23:45:01.247779-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -430,8 +430,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 16.91,
-        "residual_overperformance_pts": -0.49,
+        "expected_demographic_state_shift_pts": 16.9,
+        "residual_overperformance_pts": -0.48,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -530,9 +530,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.22,
+          "mean": 10.23,
           "median": 9.4,
-          "stdev": 7.23,
+          "stdev": 7.22,
           "pct_shifting_dem": 96.5
         }
       }
@@ -846,7 +846,7 @@
           "n": 325,
           "mean": 15.59,
           "median": 15.46,
-          "stdev": 5.2,
+          "stdev": 5.19,
           "pct_shifting_dem": 99.4
         },
         "us_senate_2024_to_2026": {
@@ -865,16 +865,16 @@
         },
         "governor_2024_to_2026": {
           "n": 168,
-          "mean": 11.44,
+          "mean": 11.45,
           "median": 11.3,
-          "stdev": 7.74,
+          "stdev": 7.73,
           "pct_shifting_dem": 97.6
         },
         "attorney_general_2024_to_2026": {
           "n": 144,
-          "mean": 10.62,
+          "mean": 10.63,
           "median": 10.22,
-          "stdev": 5.21,
+          "stdev": 5.2,
           "pct_shifting_dem": 97.9
         }
       }
@@ -955,9 +955,9 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.26,
+        "mean": 12.27,
         "median": 11.97,
-        "stdev": 5.78,
+        "stdev": 5.77,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
