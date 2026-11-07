@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-07T11:15:01.355210-05:00",
+  "fetched_at": "2026-11-07T11:45:01.948149-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -413,7 +413,7 @@
           "n": 2240,
           "mean": 14.33,
           "median": 14.89,
-          "stdev": 8.0,
+          "stdev": 8.01,
           "pct_shifting_dem": 96.8
         },
         "us_house_2024_to_2026": {
@@ -426,7 +426,7 @@
         "governor_2024_to_2026": {
           "n": 2150,
           "mean": 12.11,
-          "median": 11.43,
+          "median": 11.42,
           "stdev": 10.66,
           "pct_shifting_dem": 90.4
         },
@@ -434,7 +434,7 @@
           "n": 1813,
           "mean": 10.23,
           "median": 9.4,
-          "stdev": 7.22,
+          "stdev": 7.23,
           "pct_shifting_dem": 96.5
         }
       }
@@ -696,7 +696,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 130,
-          "mean": 12.89,
+          "mean": 12.88,
           "median": 13.55,
           "stdev": 9.21,
           "pct_shifting_dem": 96.2
@@ -843,11 +843,11 @@
     "county_correlations": {
       "us_senate_vs_state_ag_shift": {
         "n_counties": 1353,
-        "pearson_r": 0.8625
+        "pearson_r": 0.8626
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6988
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -857,21 +857,21 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.27,
+        "mean": 12.28,
         "median": 11.97,
         "stdev": 5.76,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.16,
+        "mean": 12.17,
         "median": 12.45,
         "stdev": 7.01,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.29,
+        "mean": 10.3,
         "median": 10.48,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
@@ -906,7 +906,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.06,
+        "mean": 12.07,
         "median": 12.5,
         "stdev": 8.2,
         "pct_shifting_dem": 95.3
