@@ -135,6 +135,13 @@ if __name__ == "__main__":
                 )
             except Exception as e:
                 print(f"Warning: build_rhetoric_vs_record failed: {e}")
+            try:
+                subprocess.run(
+                    [venv_python, str(BASE_DIR / "build_texas_split_ticket.py")],
+                    check=False,
+                )
+            except Exception as e:
+                print(f"Warning: build_texas_split_ticket failed: {e}")
 
             subprocess.run(
                 [
@@ -152,6 +159,7 @@ if __name__ == "__main__":
                     "site_data/breaking_points_2026.json",
                     "site_data/rhetoric_vs_record_2026.json",
                     "site_data/rhetoric_vs_record_2026.csv",
+                    "site_data/texas_split_ticket_2026.json",
                     "assets/chart1_house_carveout.png",
                     "assets/chart2_senate_0for6.png",
                     "assets/chart3_same_ballot_natural_experiment.png",
@@ -160,6 +168,7 @@ if __name__ == "__main__":
                     "assets/chart6_downballot_contagion.png",
                     "assets/chart7_senate_moneyball_counterspend.png",
                     "assets/chart8_rhetoric_vs_record_2026.png",
+                    "assets/chart9_texas_split_ticket_2026.png",
                 ],
                 check=False,
             )

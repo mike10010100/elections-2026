@@ -17,7 +17,7 @@ Live interactive election results explorer, county-by-county **2004 → 2026** s
     2. **Interactive FEC Moneyball Explorer** (sortable/searchable Senate & House Candidate + Super PAC IE spend, counter-spend, and `$/pt` of shift)
     3. **Ideological Factions & 5-State Same-Ballot Natural Experiments** (`MI, MN, ME, NM, FL` — `276 of 286 counties`)
     4. **Disjoint Breaking Points & Cross-Ballot Contagion** (`3,143 counties`, demographic vs. cross-ballot PCA)
-    5. **Live-Regenerated Research Charts Gallery (Charts 1–7)**
+    5. **Live-Regenerated Research Charts Gallery (Charts 1–9)**
   * **Ballot Measures (169 statewide measures)** & **State Legislatures (90 chambers)**
   * **All 39,483 Races:** Searchable/filterable explorer across every federal, state, county, municipal, judicial, and school-board contest on the 2026 ballot.
 * **Smart Map Context & Data Hygiene:** Greys out irrelevant/off-cycle states with a diagonal hatch pattern and explanatory legend/tooltips on every view; enforces strict deduplication for concurrent regular+special Senate races, ME/NE Congressional Districts, RCV Round 1 normalization, and NY/CT fusion ballot lines.
@@ -26,7 +26,7 @@ Live interactive election results explorer, county-by-county **2004 → 2026** s
 
 ## Live-Updating Comparative Faction, Breaking-Points & Moneyball Charts (`assets/`)
 
-Every 15 minutes, when new election returns arrive, [`fetch_results.py`](fetch_results.py) rebuilds the site datasets and invokes [`build_fec_moneyball.py`](build_fec_moneyball.py), [`build_breaking_points.py`](build_breaking_points.py), and [`build_analysis_charts.py`](build_analysis_charts.py) to regenerate the open-source datasets and all 7 charts below:
+Every 15 minutes, when new election returns arrive, [`fetch_results.py`](fetch_results.py) rebuilds the site datasets and invokes [`build_fec_moneyball.py`](build_fec_moneyball.py), [`build_breaking_points.py`](build_breaking_points.py), [`build_analysis_charts.py`](build_analysis_charts.py), [`build_rhetoric_vs_record.py`](build_rhetoric_vs_record.py), and [`build_texas_split_ticket.py`](build_texas_split_ticket.py) to regenerate the open-source datasets and all 9 charts below:
 
 ### 1. U.S. House Caucus Performance & The `DSA (n=7)` Carveout
 ![How DSA Beat the Average Was Manufactured in the U.S. House](assets/chart1_house_carveout.png)
@@ -52,6 +52,9 @@ Every 15 minutes, when new election returns arrive, [`fetch_results.py`](fetch_r
 ### 8. Rhetoric vs. Record in 2026: Blinded LLM Campaign/Interview Rhetoric vs. Past Record (`N=49`)
 ![Rhetoric vs. Record in 2026](assets/chart8_rhetoric_vs_record_2026.png)
 
+### 9. Anatomy of a 490,000-Vote Split Ticket: Talarico (+12.1%) vs. Hinojosa (+7.1%) in Texas (`254 Counties`)
+![Anatomy of a 490,000-Vote Split Ticket in Texas](assets/chart9_texas_split_ticket_2026.png)
+
 ---
 
 ## Open-Source Data Files (`site_data/`)
@@ -63,6 +66,7 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 * **[`site_data/states/*.json`](site_data/states):** Per-state full race breakdowns across all 39,483 federal, state, and local contests.
 * **[`site_data/faction_analysis_2026.json`](site_data/faction_analysis_2026.json):** Live-computed House caucus benchmark comparisons, Senate-minus-State-House shifts, same-ballot statewide executive comparisons (`MI, MN, ME, NM, FL`), and county head-to-head tallies (`276/286 counties`).
 * **[`site_data/rhetoric_vs_record_2026.json`](site_data/rhetoric_vs_record_2026.json) / [`rhetoric_vs_record_2026.csv`](site_data/rhetoric_vs_record_2026.csv):** Multi-channel 2026 candidate campaign, interview, podcast, debate, and social rhetoric corpus scored blind via `opencode/deepseek-v4.1-flash-free` (`N=49` Senate, Governor, AG, and competitive House candidates), joined with Voteview DW-NOMINATE roll-call records, FEC ideological PAC IEs, and live 2026 vote returns across 4 Record × Rhetoric quadrants.
+* **[`site_data/texas_split_ticket_2026.json`](site_data/texas_split_ticket_2026.json):** Complete 18-race Texas 2026 statewide ballot comparison and 254-county ticket-splitting decomposition between U.S. Senate (`James Talarico +12.10%` vs. `Ken Paxton`), Governor (`Gina Hinojosa +7.13%` vs. `Greg Abbott`), Attorney General (`Nathan Johnson +6.44%`), and Lt. Governor (`Vikki Goodwin +6.10%`), joined with U.S. Census ACS county demographics (`% BA+`, `% Hispanic`, `% White`, `% Black`, median income) and regional cohort summaries.
 * **[`site_data/fec_moneyball_2026.json`](site_data/fec_moneyball_2026.json) / [`fec_moneyball_senate_2026.csv`](site_data/fec_moneyball_senate_2026.csv) / [`fec_moneyball_house_2026.csv`](site_data/fec_moneyball_house_2026.csv):** Complete 2026 FEC candidate disbursements + Super PAC / Independent Expenditures (`support Dem + oppose GOP` vs. `support GOP + oppose Dem` counter-spend) joined with 2026 vote shifts and marginal cost per shifted vote/point.
 * **[`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json) & [`site_data/exit_polls_2026.json`](site_data/exit_polls_2026.json):** 2026 Exit Poll / AP Voter Poll / WaPo-Ipsos issue disapproval compilation joined with live 3,143-county disjoint-cohort shift comparisons (`2016→2018` vs. `2020→2024` vs. `2024→2026`), demographic & cross-ballot PCA decompositions, and federal-to-state down-ballot contagion metrics.
 
@@ -70,11 +74,12 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 
 ## Pipeline Scripts
 
-* [`fetch_results.py`](fetch_results.py): Runs every 15 minutes via cron (`*/15 * * * *`), pulls the latest 39,483-race dataset from `civicapi.org` and NYT 2026 county feeds, rebuilds `site_data/` and `assets/chart1..chart8.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
+* [`fetch_results.py`](fetch_results.py): Runs every 15 minutes via cron (`*/15 * * * *`), pulls the latest 39,483-race dataset from `civicapi.org` and NYT 2026 county feeds, rebuilds `site_data/` and `assets/chart1..chart9.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
 * [`fetch_2024_and_2026_nyt.py`](fetch_2024_and_2026_nyt.py): Atomically downloads 2024-11-05 and 2026-11-03 national and 50-state+DC JSON feeds.
 * [`build_site_data.py`](build_site_data.py): Compiles and normalizes `site_data/overview.json`, `site_data/county_shifts.json`, and `site_data/states/*.json`.
 * [`build_fec_moneyball.py`](build_fec_moneyball.py): Joins FEC `weball26.txt`, `cn.txt`, and `independent_expenditure_2026.csv` with 2026 election returns, outputs `site_data/fec_moneyball_2026.json` + CSVs, and renders `assets/chart7_senate_moneyball_counterspend.png`.
 * [`build_rhetoric_vs_record.py`](build_rhetoric_vs_record.py): Scrapes multi-channel 2026 candidate campaign/interview/podcast/social rhetoric, scores blinded candidate dossiers via `opencode/deepseek-v4.1-flash-free`, joins with Voteview DW-NOMINATE and FEC PAC spending into `site_data/rhetoric_vs_record_2026.json` + `.csv`, and renders `assets/chart8_rhetoric_vs_record_2026.png`.
+* [`build_texas_split_ticket.py`](build_texas_split_ticket.py): Joins 2026 Texas statewide and 254-county returns (`data/nyt_2026/results-texas.json`) with U.S. Census ACS demographics (`site_data/county_shifts.json`), outputs `site_data/texas_split_ticket_2026.json`, and renders `assets/chart9_texas_split_ticket_2026.png`.
 * [`build_breaking_points.py`](build_breaking_points.py): Combines [`data/exit_polls_2026.json`](data/exit_polls_2026.json) with live county-cohort shifts, PCA decompositions, and down-ballot contagion correlations into [`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json), and renders `assets/chart4..chart6.png`.
 * [`build_analysis_charts.py`](build_analysis_charts.py): Computes live same-ballot and Senate-vs-House metrics from `overview.json` / `county_shifts.json`, writes `site_data/faction_analysis_2026.json`, and renders `assets/chart1..chart3.png`.
 * [`analyze_federal.py`](analyze_federal.py): CLI report of called and uncalled U.S. Senate and U.S. House races sorted by margin.
