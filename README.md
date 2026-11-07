@@ -49,6 +49,9 @@ Every 15 minutes, when new election returns arrive, [`fetch_results.py`](fetch_r
 ### 7. 2026 Senate 'Moneyball': Diminishing Returns & Endogenous GOP Counterspend
 ![2026 Senate Moneyball & Endogenous GOP Counterspend](assets/chart7_senate_moneyball_counterspend.png)
 
+### 8. Rhetoric vs. Record in 2026: Blinded LLM Campaign/Interview Rhetoric vs. Past Record (`N=49`)
+![Rhetoric vs. Record in 2026](assets/chart8_rhetoric_vs_record_2026.png)
+
 ---
 
 ## Open-Source Data Files (`site_data/`)
@@ -59,6 +62,7 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 * **[`site_data/county_shifts.json`](site_data/county_shifts.json):** County-by-county 2004–2026 vote margins, two-party shifts, and U.S. Census ACS demographics across 3,152 counties/equivalents (`s26`, `g26`, `h26`, `ag26`, `top26`, `p24..p04`, `s24..s04`, `h24..h04`).
 * **[`site_data/states/*.json`](site_data/states):** Per-state full race breakdowns across all 39,483 federal, state, and local contests.
 * **[`site_data/faction_analysis_2026.json`](site_data/faction_analysis_2026.json):** Live-computed House caucus benchmark comparisons, Senate-minus-State-House shifts, same-ballot statewide executive comparisons (`MI, MN, ME, NM, FL`), and county head-to-head tallies (`276/286 counties`).
+* **[`site_data/rhetoric_vs_record_2026.json`](site_data/rhetoric_vs_record_2026.json) / [`rhetoric_vs_record_2026.csv`](site_data/rhetoric_vs_record_2026.csv):** Multi-channel 2026 candidate campaign, interview, podcast, debate, and social rhetoric corpus scored blind via `opencode/deepseek-v4.1-flash-free` (`N=49` Senate, Governor, AG, and competitive House candidates), joined with Voteview DW-NOMINATE roll-call records, FEC ideological PAC IEs, and live 2026 vote returns across 4 Record × Rhetoric quadrants.
 * **[`site_data/fec_moneyball_2026.json`](site_data/fec_moneyball_2026.json) / [`fec_moneyball_senate_2026.csv`](site_data/fec_moneyball_senate_2026.csv) / [`fec_moneyball_house_2026.csv`](site_data/fec_moneyball_house_2026.csv):** Complete 2026 FEC candidate disbursements + Super PAC / Independent Expenditures (`support Dem + oppose GOP` vs. `support GOP + oppose Dem` counter-spend) joined with 2026 vote shifts and marginal cost per shifted vote/point.
 * **[`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json) & [`site_data/exit_polls_2026.json`](site_data/exit_polls_2026.json):** 2026 Exit Poll / AP Voter Poll / WaPo-Ipsos issue disapproval compilation joined with live 3,143-county disjoint-cohort shift comparisons (`2016→2018` vs. `2020→2024` vs. `2024→2026`), demographic & cross-ballot PCA decompositions, and federal-to-state down-ballot contagion metrics.
 
@@ -66,10 +70,11 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 
 ## Pipeline Scripts
 
-* [`fetch_results.py`](fetch_results.py): Runs every 15 minutes via cron (`*/15 * * * *`), pulls the latest 39,483-race dataset from `civicapi.org` and NYT 2026 county feeds, rebuilds `site_data/` and `assets/chart1..chart7.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
+* [`fetch_results.py`](fetch_results.py): Runs every 15 minutes via cron (`*/15 * * * *`), pulls the latest 39,483-race dataset from `civicapi.org` and NYT 2026 county feeds, rebuilds `site_data/` and `assets/chart1..chart8.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
 * [`fetch_2024_and_2026_nyt.py`](fetch_2024_and_2026_nyt.py): Atomically downloads 2024-11-05 and 2026-11-03 national and 50-state+DC JSON feeds.
 * [`build_site_data.py`](build_site_data.py): Compiles and normalizes `site_data/overview.json`, `site_data/county_shifts.json`, and `site_data/states/*.json`.
 * [`build_fec_moneyball.py`](build_fec_moneyball.py): Joins FEC `weball26.txt`, `cn.txt`, and `independent_expenditure_2026.csv` with 2026 election returns, outputs `site_data/fec_moneyball_2026.json` + CSVs, and renders `assets/chart7_senate_moneyball_counterspend.png`.
+* [`build_rhetoric_vs_record.py`](build_rhetoric_vs_record.py): Scrapes multi-channel 2026 candidate campaign/interview/podcast/social rhetoric, scores blinded candidate dossiers via `opencode/deepseek-v4.1-flash-free`, joins with Voteview DW-NOMINATE and FEC PAC spending into `site_data/rhetoric_vs_record_2026.json` + `.csv`, and renders `assets/chart8_rhetoric_vs_record_2026.png`.
 * [`build_breaking_points.py`](build_breaking_points.py): Combines [`data/exit_polls_2026.json`](data/exit_polls_2026.json) with live county-cohort shifts, PCA decompositions, and down-ballot contagion correlations into [`site_data/breaking_points_2026.json`](site_data/breaking_points_2026.json), and renders `assets/chart4..chart6.png`.
 * [`build_analysis_charts.py`](build_analysis_charts.py): Computes live same-ballot and Senate-vs-House metrics from `overview.json` / `county_shifts.json`, writes `site_data/faction_analysis_2026.json`, and renders `assets/chart1..chart3.png`.
 * [`analyze_federal.py`](analyze_federal.py): CLI report of called and uncalled U.S. Senate and U.S. House races sorted by margin.
