@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T22:00:01.760595-05:00",
+  "fetched_at": "2026-11-06T22:15:01.531081-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -352,8 +352,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.02,
-        "residual_overperformance_pts": 1.88,
+        "expected_demographic_state_shift_pts": 15.01,
+        "residual_overperformance_pts": 1.89,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -391,8 +391,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.21,
-        "expected_demographic_state_shift_pts": 19.26,
-        "residual_overperformance_pts": -0.05,
+        "expected_demographic_state_shift_pts": 19.25,
+        "residual_overperformance_pts": -0.04,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -530,7 +530,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.23,
+          "mean": 10.22,
           "median": 9.4,
           "stdev": 7.22,
           "pct_shifting_dem": 96.5
@@ -573,7 +573,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 22.95,
+          "mean": 22.96,
           "median": 19.94,
           "stdev": 12.34,
           "pct_shifting_dem": 100.0
@@ -630,14 +630,14 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.59,
+          "mean": 13.58,
           "median": 12.3,
           "stdev": 8.12,
           "pct_shifting_dem": 99.2
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.51,
+          "mean": 14.5,
           "median": 14.84,
           "stdev": 7.15,
           "pct_shifting_dem": 96.9
@@ -801,21 +801,21 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.41,
+          "mean": 12.42,
           "median": 11.72,
           "stdev": 7.81,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.79,
+          "mean": 7.78,
           "median": 8.04,
           "stdev": 13.02,
           "pct_shifting_dem": 84.7
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.74,
+          "mean": 7.73,
           "median": 6.61,
           "stdev": 5.8,
           "pct_shifting_dem": 94.4
@@ -945,7 +945,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6988
+        "pearson_r": 0.6987
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
