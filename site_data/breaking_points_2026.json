@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T20:15:01.791366-05:00",
+  "fetched_at": "2026-11-06T20:30:02.052074-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -274,8 +274,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.68,
-        "residual_overperformance_pts": 7.02,
+        "expected_demographic_state_shift_pts": 28.69,
+        "residual_overperformance_pts": 7.01,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -287,8 +287,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.7,
-        "residual_overperformance_pts": 6.95,
+        "expected_demographic_state_shift_pts": 19.71,
+        "residual_overperformance_pts": 6.94,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.18,
-        "residual_overperformance_pts": 3.72,
+        "expected_demographic_state_shift_pts": 21.19,
+        "residual_overperformance_pts": 3.71,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -469,8 +469,8 @@
         "county_label": "Delaware, OH (Columbus exurban DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 11.07,
-        "expected_demographic_state_shift_pts": 14.19,
-        "residual_overperformance_pts": -3.12,
+        "expected_demographic_state_shift_pts": 14.18,
+        "residual_overperformance_pts": -3.11,
         "demographics": {
           "hisp_pct": 2.8,
           "blk_pct": 3.9,
@@ -523,14 +523,14 @@
         },
         "governor_2024_to_2026": {
           "n": 2150,
-          "mean": 12.1,
+          "mean": 12.11,
           "median": 11.42,
           "stdev": 10.66,
           "pct_shifting_dem": 90.4
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.22,
+          "mean": 10.23,
           "median": 9.38,
           "stdev": 7.22,
           "pct_shifting_dem": 96.5
@@ -559,9 +559,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.53,
+          "mean": 27.54,
           "median": 25.58,
-          "stdev": 11.27,
+          "stdev": 11.26,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -616,7 +616,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.53,
+          "mean": 17.55,
           "median": 17.5,
           "stdev": 6.46,
           "pct_shifting_dem": 100.0
@@ -630,23 +630,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.57,
+          "mean": 13.58,
           "median": 12.3,
-          "stdev": 8.09,
+          "stdev": 8.12,
           "pct_shifting_dem": 99.2
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.48,
-          "median": 14.78,
+          "mean": 14.51,
+          "median": 14.84,
           "stdev": 7.16,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 13.9,
+          "mean": 13.92,
           "median": 13.5,
-          "stdev": 6.03,
+          "stdev": 6.04,
           "pct_shifting_dem": 100.0
         }
       }
@@ -945,7 +945,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6976
+        "pearson_r": 0.6979
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -990,21 +990,21 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.14,
+        "mean": 12.13,
         "median": 14.12,
         "stdev": 8.77,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.38,
-        "median": 9.76,
-        "stdev": 5.14,
+        "mean": 9.32,
+        "median": 9.58,
+        "stdev": 5.13,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.04,
+        "mean": 12.03,
         "median": 12.5,
         "stdev": 8.21,
         "pct_shifting_dem": 95.3
