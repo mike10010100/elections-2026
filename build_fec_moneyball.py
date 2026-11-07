@@ -142,10 +142,13 @@ def build_race_record(r, office_char, by_state_office, ie_by_cand):
         return None
 
     m26 = ((dem_c.get("votes") or 0) - (gop_c.get("votes") or 0)) / tot_v * 100.0
-    pres24 = r.get("pres_2024_margin")
+    pres24 = r.get("district_pres_2024_margin") if office_char == "H" and r.get("district_pres_2024_margin") is not None else r.get("pres_2024_margin")
     sh24_pres = (m26 - pres24) if pres24 is not None else None
 
-    if office_char == "H":
+    if sh24_pres is not None:
+        base24 = pres24
+        sh24 = sh24_pres
+    elif office_char == "H":
         base24 = r.get("margin_2024_house")
         sh24 = r.get("shift_vs_house_2024")
         if sh24 is None and base24 is not None:

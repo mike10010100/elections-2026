@@ -1,0 +1,779 @@
+{
+  "papers_evaluated": [
+    "Bonica & Grumbach (2026), 'The Electoral Effects of Candidate Ideology in the Trump Era' (Aug 3, 2026)",
+    "Bonica & Grumbach (2025), 'Do Moderates Do Better? Uncovering Bias in Split Ticket's WAR Scores' (Aug 14, 2025)",
+    "Bonica, Rhee & Studen (2025) / Caley & Wertheimer (2026), 'What Kinds of Candidates Win Elections?' (Nov 3, 2026)"
+  ],
+  "test1_grumbach_texas_panel_2006_2026": [
+    {
+      "year": 2006,
+      "office": "Governor",
+      "dem_candidate": "Chris Bell",
+      "gop_candidate": "Rick Perry",
+      "faction": "Moderate",
+      "d2p_share": 43.29,
+      "d2p_margin": -13.43,
+      "total_margin": -9.24,
+      "nat_house_d2p_share": 54.04,
+      "vs_nat_house_d2p_share": -10.75,
+      "vs_nat_house_d2p_margin": -21.51,
+      "tx_contested_house_d2p_share": 45.5,
+      "vs_tx_contested_house_d2p_share": -2.21,
+      "vs_tx_contested_house_d2p_margin": -4.44
+    },
+    {
+      "year": 2006,
+      "office": "U.S. Senate",
+      "dem_candidate": "Barbara Ann Radnofsky",
+      "gop_candidate": "Kay Bailey Hutchison",
+      "faction": "Mainstream",
+      "d2p_share": 36.88,
+      "d2p_margin": -26.23,
+      "total_margin": -25.64,
+      "nat_house_d2p_share": 54.04,
+      "vs_nat_house_d2p_share": -17.16,
+      "vs_nat_house_d2p_margin": -34.31,
+      "tx_contested_house_d2p_share": 45.5,
+      "vs_tx_contested_house_d2p_share": -8.62,
+      "vs_tx_contested_house_d2p_margin": -17.24
+    },
+    {
+      "year": 2008,
+      "office": "U.S. Senate",
+      "dem_candidate": "Rick Noriega",
+      "gop_candidate": "John Cornyn",
+      "faction": "Mainstream",
+      "d2p_share": 43.87,
+      "d2p_margin": -12.27,
+      "total_margin": -11.98,
+      "nat_house_d2p_share": 55.37,
+      "vs_nat_house_d2p_share": -11.5,
+      "vs_nat_house_d2p_margin": -23.0,
+      "tx_contested_house_d2p_share": 44.59,
+      "vs_tx_contested_house_d2p_share": -0.72,
+      "vs_tx_contested_house_d2p_margin": -1.45
+    },
+    {
+      "year": 2010,
+      "office": "Governor",
+      "dem_candidate": "Bill White",
+      "gop_candidate": "Rick Perry",
+      "faction": "Moderate",
+      "d2p_share": 43.49,
+      "d2p_margin": -13.03,
+      "total_margin": -12.67,
+      "nat_house_d2p_share": 46.4,
+      "vs_nat_house_d2p_share": -2.91,
+      "vs_nat_house_d2p_margin": -5.84,
+      "tx_contested_house_d2p_share": 35.36,
+      "vs_tx_contested_house_d2p_share": 8.13,
+      "vs_tx_contested_house_d2p_margin": 16.24
+    },
+    {
+      "year": 2012,
+      "office": "U.S. Senate",
+      "dem_candidate": "Paul Sadler",
+      "gop_candidate": "Ted Cruz",
+      "faction": "Mainstream",
+      "d2p_share": 41.84,
+      "d2p_margin": -16.32,
+      "total_margin": -15.85,
+      "nat_house_d2p_share": 50.53,
+      "vs_nat_house_d2p_share": -8.69,
+      "vs_nat_house_d2p_margin": -17.39,
+      "tx_contested_house_d2p_share": 43.88,
+      "vs_tx_contested_house_d2p_share": -2.04,
+      "vs_tx_contested_house_d2p_margin": -4.09
+    },
+    {
+      "year": 2014,
+      "office": "Governor",
+      "dem_candidate": "Wendy R. Davis",
+      "gop_candidate": "Greg Abbott",
+      "faction": "Progressive-Leaning",
+      "d2p_share": 39.63,
+      "d2p_margin": -20.75,
+      "total_margin": -20.37,
+      "nat_house_d2p_share": 46.96,
+      "vs_nat_house_d2p_share": -7.33,
+      "vs_nat_house_d2p_margin": -14.67,
+      "tx_contested_house_d2p_share": 40.17,
+      "vs_tx_contested_house_d2p_share": -0.54,
+      "vs_tx_contested_house_d2p_margin": -1.09
+    },
+    {
+      "year": 2014,
+      "office": "U.S. Senate",
+      "dem_candidate": "David Alameel",
+      "gop_candidate": "John Cornyn",
+      "faction": "Mainstream",
+      "d2p_share": 35.82,
+      "d2p_margin": -28.36,
+      "total_margin": -27.2,
+      "nat_house_d2p_share": 46.96,
+      "vs_nat_house_d2p_share": -11.14,
+      "vs_nat_house_d2p_margin": -22.28,
+      "tx_contested_house_d2p_share": 40.17,
+      "vs_tx_contested_house_d2p_share": -4.35,
+      "vs_tx_contested_house_d2p_margin": -8.7
+    },
+    {
+      "year": 2018,
+      "office": "Governor",
+      "dem_candidate": "Lupe Valdez",
+      "gop_candidate": "Greg Abbott",
+      "faction": "Progressive-Leaning",
+      "d2p_share": 43.24,
+      "d2p_margin": -13.53,
+      "total_margin": -13.3,
+      "nat_house_d2p_share": 54.21,
+      "vs_nat_house_d2p_share": -10.97,
+      "vs_nat_house_d2p_margin": -21.94,
+      "tx_contested_house_d2p_share": 47.84,
+      "vs_tx_contested_house_d2p_share": -4.6,
+      "vs_tx_contested_house_d2p_margin": -9.2
+    },
+    {
+      "year": 2018,
+      "office": "U.S. Senate",
+      "dem_candidate": "Beto O'Rourke",
+      "gop_candidate": "Ted Cruz",
+      "faction": "Progressive-Leaning",
+      "d2p_share": 48.7,
+      "d2p_margin": -2.59,
+      "total_margin": -2.57,
+      "nat_house_d2p_share": 54.21,
+      "vs_nat_house_d2p_share": -5.51,
+      "vs_nat_house_d2p_margin": -11.0,
+      "tx_contested_house_d2p_share": 47.84,
+      "vs_tx_contested_house_d2p_share": 0.86,
+      "vs_tx_contested_house_d2p_margin": 1.74
+    },
+    {
+      "year": 2020,
+      "office": "U.S. Senate",
+      "dem_candidate": "MJ Hegar",
+      "gop_candidate": "John Cornyn",
+      "faction": "Mainstream",
+      "d2p_share": 45.04,
+      "d2p_margin": -9.91,
+      "total_margin": -9.65,
+      "nat_house_d2p_share": 51.4,
+      "vs_nat_house_d2p_share": -6.36,
+      "vs_nat_house_d2p_margin": -12.71,
+      "tx_contested_house_d2p_share": 45.24,
+      "vs_tx_contested_house_d2p_share": -0.2,
+      "vs_tx_contested_house_d2p_margin": -0.39
+    },
+    {
+      "year": 2022,
+      "office": "Governor",
+      "dem_candidate": "Beto O'Rourke",
+      "gop_candidate": "Greg Abbott",
+      "faction": "Progressive-Leaning",
+      "d2p_share": 44.47,
+      "d2p_margin": -11.06,
+      "total_margin": -10.9,
+      "nat_house_d2p_share": 48.5,
+      "vs_nat_house_d2p_share": -4.03,
+      "vs_nat_house_d2p_margin": -8.06,
+      "tx_contested_house_d2p_share": 43.35,
+      "vs_tx_contested_house_d2p_share": 1.12,
+      "vs_tx_contested_house_d2p_margin": 2.25
+    },
+    {
+      "year": 2024,
+      "office": "U.S. Senate",
+      "dem_candidate": "Colin Allred",
+      "gop_candidate": "Ted Cruz",
+      "faction": "Committed Moderate",
+      "d2p_share": 45.65,
+      "d2p_margin": -8.7,
+      "total_margin": -8.49,
+      "nat_house_d2p_share": 48.55,
+      "vs_nat_house_d2p_share": -2.9,
+      "vs_nat_house_d2p_margin": -5.81,
+      "tx_contested_house_d2p_share": 44.38,
+      "vs_tx_contested_house_d2p_share": 1.27,
+      "vs_tx_contested_house_d2p_margin": 2.54
+    },
+    {
+      "year": 2026,
+      "office": "Attorney General",
+      "dem_candidate": "Nathan Johnson",
+      "gop_candidate": "Mayes Middleton",
+      "faction": "Mainstream Institutional Moderate",
+      "d2p_share": 53.28,
+      "d2p_margin": 6.55,
+      "total_margin": 6.44,
+      "nat_house_d2p_share": 56.57,
+      "vs_nat_house_d2p_share": -3.29,
+      "vs_nat_house_d2p_margin": -6.59,
+      "tx_contested_house_d2p_share": 52.86,
+      "vs_tx_contested_house_d2p_share": 0.42,
+      "vs_tx_contested_house_d2p_margin": 0.83
+    },
+    {
+      "year": 2026,
+      "office": "Governor",
+      "dem_candidate": "Gina Hinojosa",
+      "gop_candidate": "Greg Abbott",
+      "faction": "Austin Progressive -> Populist Pivot",
+      "d2p_share": 53.62,
+      "d2p_margin": 7.24,
+      "total_margin": 7.13,
+      "nat_house_d2p_share": 56.57,
+      "vs_nat_house_d2p_share": -2.95,
+      "vs_nat_house_d2p_margin": -5.9,
+      "tx_contested_house_d2p_share": 52.86,
+      "vs_tx_contested_house_d2p_share": 0.76,
+      "vs_tx_contested_house_d2p_margin": 1.52
+    },
+    {
+      "year": 2026,
+      "office": "U.S. Senate",
+      "dem_candidate": "James Talarico",
+      "gop_candidate": "Ken Paxton",
+      "faction": "Pragmatic Reformer (83rd–88th Centrist Pct)",
+      "d2p_share": 56.17,
+      "d2p_margin": 12.34,
+      "total_margin": 12.1,
+      "nat_house_d2p_share": 56.57,
+      "vs_nat_house_d2p_share": -0.4,
+      "vs_nat_house_d2p_margin": -0.8,
+      "tx_contested_house_d2p_share": 52.86,
+      "vs_tx_contested_house_d2p_share": 3.31,
+      "vs_tx_contested_house_d2p_margin": 6.62
+    }
+  ],
+  "test2_quadrant_summary_after_within_district_fix": [
+    {
+      "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
+      "n_total": 19,
+      "n_statewide": 10,
+      "mean_record_score": 0.66,
+      "mean_rhetoric_score": 0.44,
+      "mean_moderation_pivot": -0.22,
+      "mean_shift_vs_2024": 18.31,
+      "mean_overperf_all": 3.77,
+      "median_overperf_all": 3.36,
+      "ci95_overperf_all": [
+        0.85,
+        6.7
+      ],
+      "mean_overperf_statewide_vs_house": 2.48,
+      "median_overperf_statewide_vs_house": 2.05,
+      "pct_beating_benchmark_statewide": 70.0,
+      "notable_examples": [
+        "Scott Colom (MS Senate: +5.75 pts)",
+        "Adam Hamilton (KS Senate: +9.06 pts)",
+        "Mary Peltola (AK Senate: -3.67 pts)",
+        "Mark Warner (VA Senate: +2.82 pts)",
+        "John Hickenlooper (CO Senate: +1.28 pts)",
+        "Amy Klobuchar (MN Governor: +0.14 pts)"
+      ]
+    },
+    {
+      "quadrant": "Mainstream / Cross-Partisan Populist",
+      "n_total": 15,
+      "n_statewide": 15,
+      "mean_record_score": 0.13,
+      "mean_rhetoric_score": 0.24,
+      "mean_moderation_pivot": 0.11,
+      "mean_shift_vs_2024": 18.24,
+      "mean_overperf_all": 3.53,
+      "median_overperf_all": 3.83,
+      "ci95_overperf_all": [
+        1.84,
+        5.21
+      ],
+      "mean_overperf_statewide_vs_house": 3.53,
+      "median_overperf_statewide_vs_house": 3.83,
+      "pct_beating_benchmark_statewide": 86.7,
+      "notable_examples": [
+        "James Talarico (TX Senate: +3.65 pts)",
+        "Sherrod Brown (OH Senate: +1.48 pts)",
+        "Roy Cooper (NC Senate: +5.43 pts)",
+        "Jon Ossoff (GA Senate: +5.39 pts)",
+        "Josh Turek (IA Senate: +3.52 pts)",
+        "Annie Andrews (SC Senate: +6.73 pts)"
+      ]
+    },
+    {
+      "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
+      "n_total": 9,
+      "n_statewide": 7,
+      "mean_record_score": -1.27,
+      "mean_rhetoric_score": -0.31,
+      "mean_moderation_pivot": 0.96,
+      "mean_shift_vs_2024": 12.13,
+      "mean_overperf_all": -1.33,
+      "median_overperf_all": -3.05,
+      "ci95_overperf_all": [
+        -7.13,
+        4.48
+      ],
+      "mean_overperf_statewide_vs_house": -3.93,
+      "median_overperf_statewide_vs_house": -3.05,
+      "pct_beating_benchmark_statewide": 0.0,
+      "notable_examples": [
+        "Abdul El-Sayed (MI Senate: -3.05 pts)",
+        "Troy Jackson (ME Senate: -8.78 pts)",
+        "Charles Booker (KY Senate: -0.09 pts)",
+        "Gina Hinojosa (TX Governor: -1.32 pts)",
+        "Deb Haaland (NM Governor: -7.97 pts)",
+        "Eli Savit (MI Attorney General: -2.32 pts)"
+      ]
+    },
+    {
+      "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
+      "n_total": 6,
+      "n_statewide": 4,
+      "mean_record_score": -1.43,
+      "mean_rhetoric_score": -1.17,
+      "mean_moderation_pivot": 0.27,
+      "mean_shift_vs_2024": 11.11,
+      "mean_overperf_all": -1.87,
+      "median_overperf_all": -2.33,
+      "ci95_overperf_all": [
+        -2.93,
+        -0.81
+      ],
+      "mean_overperf_statewide_vs_house": -2.03,
+      "median_overperf_statewide_vs_house": -2.33,
+      "pct_beating_benchmark_statewide": 0.0,
+      "notable_examples": [
+        "Peggy Flanagan (MN Senate: -2.54 pts)",
+        "Angie Nixon (FL Senate: -2.34 pts)",
+        "Marquita Bradshaw (TN Senate: -2.33 pts)",
+        "Edward Markey (MA Senate: -0.90 pts)",
+        "Bob Brooks (PA-07 House: +0.29 pts)",
+        "Summer Lee (PA-12 House: -3.39 pts)"
+      ]
+    }
+  ],
+  "test3_multivariate_regression_models": {
+    "all49_record_bivariate": {
+      "n": 49,
+      "k": 2,
+      "r2": 0.173,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 2.404,
+          "se_hc1": 0.83,
+          "ci95_low": 0.733,
+          "ci95_high": 4.074,
+          "t_stat": 2.9,
+          "p_value": 0.0057
+        },
+        {
+          "term": "Past Record (+ = Moderate)",
+          "beta": 2.946,
+          "se_hc1": 1.014,
+          "ci95_low": 0.906,
+          "ci95_high": 4.986,
+          "t_stat": 2.9,
+          "p_value": 0.0056
+        }
+      ]
+    },
+    "all49_rhetoric_bivariate": {
+      "n": 49,
+      "k": 2,
+      "r2": 0.137,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.892,
+          "se_hc1": 0.82,
+          "ci95_low": 0.243,
+          "ci95_high": 3.542,
+          "t_stat": 2.31,
+          "p_value": 0.0255
+        },
+        {
+          "term": "2026 Rhetoric (+ = Moderate)",
+          "beta": 3.953,
+          "se_hc1": 1.253,
+          "ci95_low": 1.432,
+          "ci95_high": 6.475,
+          "t_stat": 3.15,
+          "p_value": 0.0028
+        }
+      ]
+    },
+    "all49_bonica_1d_composite": {
+      "n": 49,
+      "k": 2,
+      "r2": 0.165,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 2.07,
+          "se_hc1": 0.817,
+          "ci95_low": 0.426,
+          "ci95_high": 3.714,
+          "t_stat": 2.53,
+          "p_value": 0.0147
+        },
+        {
+          "term": "1D Composite PCA (+1 SD Mod)",
+          "beta": 2.487,
+          "se_hc1": 0.813,
+          "ci95_low": 0.852,
+          "ci95_high": 4.122,
+          "t_stat": 3.06,
+          "p_value": 0.0036
+        }
+      ]
+    },
+    "all49_full_covariate_model": {
+      "n": 49,
+      "k": 7,
+      "r2": 0.192,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.777,
+          "se_hc1": 1.042,
+          "ci95_low": -0.325,
+          "ci95_high": 3.879,
+          "t_stat": 1.71,
+          "p_value": 0.0954
+        },
+        {
+          "term": "Past Record (+ = Moderate)",
+          "beta": 2.944,
+          "se_hc1": 1.163,
+          "ci95_low": 0.598,
+          "ci95_high": 5.291,
+          "t_stat": 2.53,
+          "p_value": 0.0152
+        },
+        {
+          "term": "Rhetorical Moderation Pivot",
+          "beta": -0.104,
+          "se_hc1": 2.199,
+          "ci95_low": -4.543,
+          "ci95_high": 4.334,
+          "t_stat": -0.05,
+          "p_value": 0.9624
+        },
+        {
+          "term": "Democratic Incumbent",
+          "beta": -0.096,
+          "se_hc1": 1.509,
+          "ci95_low": -3.141,
+          "ci95_high": 2.95,
+          "t_stat": -0.06,
+          "p_value": 0.9498
+        },
+        {
+          "term": "Republican Incumbent",
+          "beta": 1.761,
+          "se_hc1": 2.395,
+          "ci95_low": -3.072,
+          "ci95_high": 6.593,
+          "t_stat": 0.74,
+          "p_value": 0.4662
+        },
+        {
+          "term": "Log(Dem/GOP Total Spend)",
+          "beta": 0.149,
+          "se_hc1": 0.506,
+          "ci95_low": -0.873,
+          "ci95_high": 1.17,
+          "t_stat": 0.29,
+          "p_value": 0.7704
+        },
+        {
+          "term": "GOP Scandal (Ken Paxton)",
+          "beta": 1.933,
+          "se_hc1": 0.985,
+          "ci95_low": -0.054,
+          "ci95_high": 3.92,
+          "t_stat": 1.96,
+          "p_value": 0.0563
+        }
+      ]
+    },
+    "statewide36_record_bivariate": {
+      "n": 36,
+      "k": 2,
+      "r2": 0.318,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.777,
+          "se_hc1": 0.718,
+          "ci95_low": 0.318,
+          "ci95_high": 3.236,
+          "t_stat": 2.48,
+          "p_value": 0.0184
+        },
+        {
+          "term": "Past Record (+ = Moderate)",
+          "beta": 3.155,
+          "se_hc1": 0.727,
+          "ci95_low": 1.678,
+          "ci95_high": 4.632,
+          "t_stat": 4.34,
+          "p_value": 0.0001
+        }
+      ]
+    },
+    "statewide36_rhetoric_bivariate": {
+      "n": 36,
+      "k": 2,
+      "r2": 0.204,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.104,
+          "se_hc1": 0.695,
+          "ci95_low": -0.309,
+          "ci95_high": 2.516,
+          "t_stat": 1.59,
+          "p_value": 0.1215
+        },
+        {
+          "term": "2026 Rhetoric (+ = Moderate)",
+          "beta": 3.871,
+          "se_hc1": 0.942,
+          "ci95_low": 1.956,
+          "ci95_high": 5.786,
+          "t_stat": 4.11,
+          "p_value": 0.0002
+        }
+      ]
+    },
+    "statewide36_bonica_1d_composite": {
+      "n": 36,
+      "k": 2,
+      "r2": 0.278,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.168,
+          "se_hc1": 0.667,
+          "ci95_low": -0.187,
+          "ci95_high": 2.524,
+          "t_stat": 1.75,
+          "p_value": 0.0889
+        },
+        {
+          "term": "1D Composite PCA (+1 SD Mod)",
+          "beta": 2.412,
+          "se_hc1": 0.564,
+          "ci95_low": 1.265,
+          "ci95_high": 3.559,
+          "t_stat": 4.27,
+          "p_value": 0.0001
+        }
+      ]
+    },
+    "statewide36_full_covariate_model": {
+      "n": 36,
+      "k": 7,
+      "r2": 0.342,
+      "coefficients": [
+        {
+          "term": "Intercept",
+          "beta": 1.857,
+          "se_hc1": 1.101,
+          "ci95_low": -0.396,
+          "ci95_high": 4.11,
+          "t_stat": 1.69,
+          "p_value": 0.1025
+        },
+        {
+          "term": "Past Record (+ = Moderate)",
+          "beta": 2.397,
+          "se_hc1": 1.105,
+          "ci95_low": 0.136,
+          "ci95_high": 4.658,
+          "t_stat": 2.17,
+          "p_value": 0.0385
+        },
+        {
+          "term": "Rhetorical Moderation Pivot",
+          "beta": -1.556,
+          "se_hc1": 1.976,
+          "ci95_low": -5.597,
+          "ci95_high": 2.486,
+          "t_stat": -0.79,
+          "p_value": 0.4376
+        },
+        {
+          "term": "Democratic Incumbent",
+          "beta": -1.083,
+          "se_hc1": 2.109,
+          "ci95_low": -5.396,
+          "ci95_high": 3.229,
+          "t_stat": -0.51,
+          "p_value": 0.6113
+        },
+        {
+          "term": "Republican Incumbent",
+          "beta": 0.818,
+          "se_hc1": 1.877,
+          "ci95_low": -3.021,
+          "ci95_high": 4.657,
+          "t_stat": 0.44,
+          "p_value": 0.6663
+        },
+        {
+          "term": "Log(Dem/GOP Total Spend)",
+          "beta": 0.295,
+          "se_hc1": 0.628,
+          "ci95_low": -0.989,
+          "ci95_high": 1.579,
+          "t_stat": 0.47,
+          "p_value": 0.6419
+        },
+        {
+          "term": "GOP Scandal (Ken Paxton)",
+          "beta": 2.316,
+          "se_hc1": 1.053,
+          "ci95_low": 0.162,
+          "ci95_high": 4.469,
+          "t_stat": 2.2,
+          "p_value": 0.036
+        }
+      ]
+    }
+  },
+  "test4_base_turnout_mobilization": {
+    "same_ballot_blue_base_by_state": [
+      {
+        "state": "TX",
+        "blue_counties": 5,
+        "mod_candidate": "James Talarico (Mod)",
+        "prog_candidate": "Gina Hinojosa (Prog)",
+        "mod_dem_votes": 1158016,
+        "prog_dem_votes": 1113124,
+        "mod_minus_prog_votes": 44892,
+        "mod_minus_prog_pct": 4.03
+      },
+      {
+        "state": "MI",
+        "blue_counties": 4,
+        "mod_candidate": "Jocelyn Benson (Mod)",
+        "prog_candidate": "Abdul El-Sayed (Prog)",
+        "mod_dem_votes": 849035,
+        "prog_dem_votes": 837110,
+        "mod_minus_prog_votes": 11925,
+        "mod_minus_prog_pct": 1.42
+      },
+      {
+        "state": "MN",
+        "blue_counties": 5,
+        "mod_candidate": "Amy Klobuchar (Mod)",
+        "prog_candidate": "Peggy Flanagan (Prog)",
+        "mod_dem_votes": 876052,
+        "prog_dem_votes": 858115,
+        "mod_minus_prog_votes": 17937,
+        "mod_minus_prog_pct": 2.09
+      },
+      {
+        "state": "ME",
+        "blue_counties": 3,
+        "mod_candidate": "Hannah Pingree (Mod)",
+        "prog_candidate": "Troy Jackson (Prog)",
+        "mod_dem_votes": 146300,
+        "prog_dem_votes": 143220,
+        "mod_minus_prog_votes": 3080,
+        "mod_minus_prog_pct": 2.15
+      },
+      {
+        "state": "NM",
+        "blue_counties": 8,
+        "mod_candidate": "Ben Luján (Mod)",
+        "prog_candidate": "Deb Haaland (Prog)",
+        "mod_dem_votes": 281723,
+        "prog_dem_votes": 257257,
+        "mod_minus_prog_votes": 24466,
+        "mod_minus_prog_pct": 9.51
+      },
+      {
+        "state": "FL",
+        "blue_counties": 5,
+        "mod_candidate": "David Jolly (Mod)",
+        "prog_candidate": "Angie Nixon (Prog)",
+        "mod_dem_votes": 901429,
+        "prog_dem_votes": 898262,
+        "mod_minus_prog_votes": 3166,
+        "mod_minus_prog_pct": 0.35
+      }
+    ],
+    "same_ballot_pooled_by_partisanship": [
+      {
+        "bucket": "Blue Base (Harris >= 55%)",
+        "counties": 30,
+        "mod_dem_votes": 4212554,
+        "prog_dem_votes": 4107089,
+        "mod_minus_prog_votes": 105466,
+        "mod_minus_prog_pct": 2.57,
+        "mod_share_pct": 70.41,
+        "prog_share_pct": 68.56
+      },
+      {
+        "bucket": "Swing (Harris 45–55%)",
+        "counties": 57,
+        "mod_dem_votes": 5317437,
+        "prog_dem_votes": 5144549,
+        "mod_minus_prog_votes": 172887,
+        "mod_minus_prog_pct": 3.36,
+        "mod_share_pct": 59.3,
+        "prog_share_pct": 57.34
+      },
+      {
+        "bucket": "Red (Harris < 45%)",
+        "counties": 453,
+        "mod_dem_votes": 4969283,
+        "prog_dem_votes": 4781296,
+        "mod_minus_prog_votes": 187987,
+        "mod_minus_prog_pct": 3.93,
+        "mod_share_pct": 40.55,
+        "prog_share_pct": 38.95
+      }
+    ],
+    "cross_state_senate_vote_retention": {
+      "progressive_senate_states": {
+        "Blue Base (Harris >= 55%)": {
+          "counties": 31,
+          "total_turnout_26_vs_24_pct": 80.9,
+          "dem_votes_26_vs_24_pct": 86.7
+        },
+        "Swing (Harris 45–55%)": {
+          "counties": 43,
+          "total_turnout_26_vs_24_pct": 80.1,
+          "dem_votes_26_vs_24_pct": 86.0
+        },
+        "Red (Harris < 45%)": {
+          "counties": 408,
+          "total_turnout_26_vs_24_pct": 74.6,
+          "dem_votes_26_vs_24_pct": 85.4
+        }
+      },
+      "moderate_senate_states": {
+        "Blue Base (Harris >= 55%)": {
+          "counties": 140,
+          "total_turnout_26_vs_24_pct": 83.3,
+          "dem_votes_26_vs_24_pct": 94.6
+        },
+        "Swing (Harris 45–55%)": {
+          "counties": 128,
+          "total_turnout_26_vs_24_pct": 84.3,
+          "dem_votes_26_vs_24_pct": 102.1
+        },
+        "Red (Harris < 45%)": {
+          "counties": 1045,
+          "total_turnout_26_vs_24_pct": 77.1,
+          "dem_votes_26_vs_24_pct": 99.8
+        }
+      }
+    }
+  }
+}

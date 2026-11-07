@@ -511,7 +511,9 @@ def compute_live_dataset(cache_obj: dict) -> dict:
 
     # Compute State House Democratic Mean Shift vs. 2024 Presidential baseline
     house_shifts_by_state = defaultdict(list)
+    dist_house_shifts_by_state = defaultdict(list)
     all_house_shifts = []
+    all_dist_house_shifts = []
     for h in ov.get("house_races", []):
         cands = h.get("candidates", [])
         parties = [c.get("party") for c in cands]
@@ -520,7 +522,12 @@ def compute_live_dataset(cache_obj: dict) -> dict:
             if sh is not None:
                 house_shifts_by_state[h["state"]].append(sh)
                 all_house_shifts.append(sh)
+            dsh = h.get("shift_vs_district_pres_2024")
+            if dsh is not None:
+                dist_house_shifts_by_state[h["state"]].append(dsh)
+                all_dist_house_shifts.append(dsh)
     nat_house_mean = statistics.mean(all_house_shifts) if all_house_shifts else 14.3
+    nat_dist_house_mean = statistics.mean(all_dist_house_shifts) if all_dist_house_shifts else 14.51
 
     def find_ov_race(spec):
         rtype = spec["office_type"]
@@ -560,12 +567,12 @@ def compute_live_dataset(cache_obj: dict) -> dict:
         pac_info = pac_by_cid.get(fec_id, {"prog_pac_support": 0.0, "mod_pac_support": 0.0, "pac_details": {}})
 
         if spec["office_type"] == "house_races":
-            # District-level 2024 House baseline from fec_moneyball / overview
-            shift_24 = mb_rec.get("shift_vs_pres_2024")
+            shift_24 = r.get("shift_vs_district_pres_2024")
             if shift_24 is None:
-                shift_24 = r.get("shift_vs_house_2024") or r.get("shift_vs_pres_2024") or 0.0
-            overperf_vs_benchmark = round(shift_24 - 14.3, 2)
-            benchmark_label = "Nat'l House Swing (+14.3)"
+                shift_24 = mb_rec.get("shift_vs_pres_2024") or r.get("shift_vs_house_2024") or 0.0
+            dist_st_mean = statistics.mean(dist_house_shifts_by_state[st]) if dist_house_shifts_by_state.get(st) else nat_dist_house_mean
+            overperf_vs_benchmark = round(shift_24 - dist_st_mean, 2)
+            benchmark_label = f"{st} Dist House Mean (+{dist_st_mean:.2f})"
         else:
             shift_24 = r.get("shift_vs_pres_2024")
             if shift_24 is None:

@@ -256,6 +256,14 @@ def extract_race_summary(r: dict) -> dict:
     seat = r.get("seat") or ""
     seat_num = r.get("seat_number")
 
+    # Extract exact within-jurisdiction 2024 Presidential margin from top_unit historical_comparison_race_data if present
+    hist_comp = top_unit.get("historical_comparison_race_data") or {}
+    dist_pres_24 = None
+    for hk, hv in hist_comp.items():
+        if "-G-P-2024" in hk and isinstance(hv, dict) and hv.get("margin") is not None:
+            dist_pres_24 = round(float(hv["margin"]), 2)
+            break
+
     return {
         "nyt_id": r.get("nyt_id"),
         "office": r.get("office"),
@@ -288,6 +296,7 @@ def extract_race_summary(r: dict) -> dict:
         "ballot_measure_text": r.get("ballot_measure_text"),
         "long_description": r.get("long_description"),
         "seat_description": r.get("seat_description"),
+        "district_pres_2024_margin": dist_pres_24,
     }
 
 
@@ -880,11 +889,16 @@ def build_all():
         off = s["office"]
         st = s["state"]
         p24 = pres_24_by_state.get(st)
-        s["pres_2024_margin"] = p24["dem_gop_margin"] if p24 else None
-        if p24 and not s["one_party"]:
-            s["shift_vs_pres_2024"] = round(s["dem_gop_margin"] - p24["dem_gop_margin"], 2)
+        dist_p24 = s.get("district_pres_2024_margin")
+        s["pres_2024_margin"] = p24["dem_gop_margin"] if p24 else dist_p24
+        if s["pres_2024_margin"] is not None and not s["one_party"]:
+            s["shift_vs_pres_2024"] = round(s["dem_gop_margin"] - s["pres_2024_margin"], 2)
         else:
             s["shift_vs_pres_2024"] = None
+        if dist_p24 is not None and not s["one_party"]:
+            s["shift_vs_district_pres_2024"] = round(s["dem_gop_margin"] - dist_p24, 2)
+        else:
+            s["shift_vs_district_pres_2024"] = s["shift_vs_pres_2024"]
 
         # Attach 2004–2024 Presidential state margins
         pres_hist = {}
