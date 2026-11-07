@@ -780,7 +780,7 @@ def render_chart8(data: dict):
 
     ax1.text(
         1.12, -1.15,
-        "QUADRANTS 1 & 2: COMMITTED MODERATES\n& MAINSTREAM CROSS-PARTISAN POPULISTS\n21 of 25 (84%) Statewide Beat Their State's House Dems!\n(Sand +10.4, Hamilton +9.1, Shoffner +8.3, Andrews +6.7,\nColom +5.8, Cooper +5.4, Ossoff +5.4, Luján +3.8, Talarico +3.7)",
+        "QUADRANTS 1 & 2: COMMITTED MODERATES\n& MAINSTREAM CROSS-PARTISAN POPULISTS\n20 of 25 (80%) Statewide Beat Their State's House Dems!\n(Sand +10.4, Hamilton +9.1, Shoffner +8.3, Andrews +6.7,\nColom +5.8, Cooper +5.4, Ossoff +5.4, Luján +3.8, Talarico +3.7)",
         fontsize=8.2, fontweight="bold", color=COL_MOD, va="top", ha="right",
         bbox=dict(boxstyle="round,pad=0.32", facecolor="#ebf5fb", edgecolor=COL_MOD, lw=1.1),
         zorder=6,
