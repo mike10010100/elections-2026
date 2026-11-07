@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T22:30:01.365367-05:00",
+  "fetched_at": "2026-11-06T22:45:01.258663-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -258,8 +258,8 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.66,
-    "median_residual_pts": 1.57,
+    "mean_residual_pts": 1.67,
+    "median_residual_pts": 1.58,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -274,8 +274,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.71,
-        "residual_overperformance_pts": 6.99,
+        "expected_demographic_state_shift_pts": 28.7,
+        "residual_overperformance_pts": 7.0,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -287,8 +287,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.7,
-        "residual_overperformance_pts": 6.95,
+        "expected_demographic_state_shift_pts": 19.69,
+        "residual_overperformance_pts": 6.96,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -300,8 +300,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.68,
-        "expected_demographic_state_shift_pts": 16.61,
-        "residual_overperformance_pts": 5.07,
+        "expected_demographic_state_shift_pts": 16.6,
+        "residual_overperformance_pts": 5.08,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -313,8 +313,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.57,
-        "residual_overperformance_pts": 4.9,
+        "expected_demographic_state_shift_pts": 16.56,
+        "residual_overperformance_pts": 4.91,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.22,
-        "residual_overperformance_pts": 3.68,
+        "expected_demographic_state_shift_pts": 21.21,
+        "residual_overperformance_pts": 3.69,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.07,
-        "residual_overperformance_pts": 3.02,
+        "expected_demographic_state_shift_pts": 17.06,
+        "residual_overperformance_pts": 3.03,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -352,8 +352,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.01,
-        "residual_overperformance_pts": 1.89,
+        "expected_demographic_state_shift_pts": 15.02,
+        "residual_overperformance_pts": 1.88,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -456,8 +456,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.03,
-        "expected_demographic_state_shift_pts": 15.55,
-        "residual_overperformance_pts": -2.52,
+        "expected_demographic_state_shift_pts": 15.54,
+        "residual_overperformance_pts": -2.51,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -469,8 +469,8 @@
         "county_label": "Delaware, OH (Columbus exurban DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 11.07,
-        "expected_demographic_state_shift_pts": 14.22,
-        "residual_overperformance_pts": -3.15,
+        "expected_demographic_state_shift_pts": 14.23,
+        "residual_overperformance_pts": -3.16,
         "demographics": {
           "hisp_pct": 2.8,
           "blk_pct": 3.9,
@@ -504,7 +504,7 @@
           "n": 3112,
           "mean": 13.2,
           "median": 14.02,
-          "stdev": 8.88,
+          "stdev": 8.87,
           "pct_shifting_dem": 94.5
         },
         "us_senate_2024_to_2026": {
@@ -787,9 +787,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.01,
+          "mean": 11.02,
           "median": 12.37,
-          "stdev": 10.82,
+          "stdev": 10.8,
           "pct_shifting_dem": 92.8
         },
         "us_senate_2024_to_2026": {
@@ -801,9 +801,9 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.42,
+          "mean": 12.44,
           "median": 11.72,
-          "stdev": 7.81,
+          "stdev": 7.79,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
