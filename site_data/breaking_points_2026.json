@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-07T15:45:01.438796-05:00",
+  "fetched_at": "2026-11-07T16:00:01.125868-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.06,
-        "residual_overperformance_pts": 3.03,
+        "expected_demographic_state_shift_pts": 17.05,
+        "residual_overperformance_pts": 3.04,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -769,7 +769,7 @@
           "n": 168,
           "mean": 11.45,
           "median": 11.3,
-          "stdev": 7.73,
+          "stdev": 7.72,
           "pct_shifting_dem": 97.6
         },
         "attorney_general_2024_to_2026": {
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6988
+        "pearson_r": 0.6987
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -859,7 +859,7 @@
         "n": 29,
         "mean": 12.28,
         "median": 11.97,
-        "stdev": 5.76,
+        "stdev": 5.75,
         "pct_shifting_dem": 96.6
       },
       "Secretary of State": {
