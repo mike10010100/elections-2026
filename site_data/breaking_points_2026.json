@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-06T20:45:01.805353-05:00",
+  "fetched_at": "2026-11-06T21:00:01.219373-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -259,7 +259,7 @@
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
     "mean_residual_pts": 1.7,
-    "median_residual_pts": 1.58,
+    "median_residual_pts": 1.57,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -274,8 +274,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.68,
-        "residual_overperformance_pts": 7.02,
+        "expected_demographic_state_shift_pts": 28.7,
+        "residual_overperformance_pts": 7.0,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -313,8 +313,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.54,
-        "residual_overperformance_pts": 4.93,
+        "expected_demographic_state_shift_pts": 16.56,
+        "residual_overperformance_pts": 4.91,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -326,8 +326,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.2,
-        "residual_overperformance_pts": 3.7,
+        "expected_demographic_state_shift_pts": 21.22,
+        "residual_overperformance_pts": 3.68,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -339,8 +339,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.06,
-        "residual_overperformance_pts": 3.03,
+        "expected_demographic_state_shift_pts": 17.07,
+        "residual_overperformance_pts": 3.02,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -352,8 +352,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.0,
-        "residual_overperformance_pts": 1.9,
+        "expected_demographic_state_shift_pts": 15.02,
+        "residual_overperformance_pts": 1.88,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -365,8 +365,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.1,
-        "expected_demographic_state_shift_pts": 16.31,
-        "residual_overperformance_pts": 1.79,
+        "expected_demographic_state_shift_pts": 16.32,
+        "residual_overperformance_pts": 1.78,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -391,8 +391,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.89,
-        "expected_demographic_state_shift_pts": 19.34,
-        "residual_overperformance_pts": 0.55,
+        "expected_demographic_state_shift_pts": 19.31,
+        "residual_overperformance_pts": 0.58,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -417,8 +417,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 16.9,
-        "residual_overperformance_pts": -0.48,
+        "expected_demographic_state_shift_pts": 16.91,
+        "residual_overperformance_pts": -0.49,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -430,8 +430,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.37,
-        "expected_demographic_state_shift_pts": 20.06,
-        "residual_overperformance_pts": -0.69,
+        "expected_demographic_state_shift_pts": 20.03,
+        "residual_overperformance_pts": -0.66,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -443,8 +443,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.58,
-        "residual_overperformance_pts": -1.97,
+        "expected_demographic_state_shift_pts": 15.57,
+        "residual_overperformance_pts": -1.96,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -456,8 +456,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.03,
-        "expected_demographic_state_shift_pts": 15.53,
-        "residual_overperformance_pts": -2.5,
+        "expected_demographic_state_shift_pts": 15.54,
+        "residual_overperformance_pts": -2.51,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -469,8 +469,8 @@
         "county_label": "Delaware, OH (Columbus exurban DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 11.07,
-        "expected_demographic_state_shift_pts": 14.2,
-        "residual_overperformance_pts": -3.13,
+        "expected_demographic_state_shift_pts": 14.22,
+        "residual_overperformance_pts": -3.15,
         "demographics": {
           "hisp_pct": 2.8,
           "blk_pct": 3.9,
@@ -517,21 +517,21 @@
         "us_house_2024_to_2026": {
           "n": 3099,
           "mean": 11.76,
-          "median": 11.29,
+          "median": 11.3,
           "stdev": 7.67,
           "pct_shifting_dem": 96.0
         },
         "governor_2024_to_2026": {
           "n": 2150,
-          "mean": 12.11,
+          "mean": 12.1,
           "median": 11.42,
-          "stdev": 10.65,
+          "stdev": 10.66,
           "pct_shifting_dem": 90.4
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
           "mean": 10.23,
-          "median": 9.38,
+          "median": 9.4,
           "stdev": 7.22,
           "pct_shifting_dem": 96.5
         }
@@ -616,9 +616,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.55,
+          "mean": 17.56,
           "median": 17.5,
-          "stdev": 6.46,
+          "stdev": 6.45,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -630,7 +630,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.58,
+          "mean": 13.59,
           "median": 12.3,
           "stdev": 8.12,
           "pct_shifting_dem": 99.2
@@ -644,9 +644,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 13.92,
+          "mean": 13.93,
           "median": 13.5,
-          "stdev": 6.04,
+          "stdev": 6.03,
           "pct_shifting_dem": 100.0
         }
       }
@@ -787,7 +787,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.01,
+          "mean": 11.03,
           "median": 12.37,
           "stdev": 10.83,
           "pct_shifting_dem": 92.8
@@ -801,23 +801,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.41,
-          "median": 11.62,
+          "mean": 12.43,
+          "median": 11.72,
           "stdev": 7.83,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.77,
-          "median": 7.94,
+          "mean": 7.79,
+          "median": 8.04,
           "stdev": 13.02,
           "pct_shifting_dem": 84.7
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.71,
+          "mean": 7.74,
           "median": 6.61,
-          "stdev": 5.79,
+          "stdev": 5.8,
           "pct_shifting_dem": 94.4
         }
       }
@@ -945,7 +945,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6989
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -962,15 +962,15 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.16,
+        "mean": 12.15,
         "median": 12.45,
         "stdev": 7.01,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.27,
-        "median": 10.12,
+        "mean": 10.28,
+        "median": 10.38,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
@@ -990,16 +990,16 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.19,
+        "mean": 12.17,
         "median": 14.12,
         "stdev": 8.75,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.32,
-        "median": 9.58,
-        "stdev": 5.13,
+        "mean": 9.44,
+        "median": 10.0,
+        "stdev": 5.12,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
