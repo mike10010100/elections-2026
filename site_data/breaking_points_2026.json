@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-08T12:15:01.217139-05:00",
+  "fetched_at": "2026-11-08T12:30:01.715976-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -254,8 +254,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.01,
-        "residual_overperformance_pts": 1.89,
+        "expected_demographic_state_shift_pts": 15.0,
+        "residual_overperformance_pts": 1.9,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
