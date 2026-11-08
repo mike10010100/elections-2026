@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-07T20:45:01.833478-05:00",
+  "fetched_at": "2026-11-07T21:00:01.805779-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -254,8 +254,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.0,
-        "residual_overperformance_pts": 1.9,
+        "expected_demographic_state_shift_pts": 15.01,
+        "residual_overperformance_pts": 1.89,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -865,14 +865,14 @@
       "Secretary of State": {
         "n": 25,
         "mean": 12.19,
-        "median": 12.54,
+        "median": 12.5,
         "stdev": 7.01,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.33,
-        "median": 10.96,
+        "mean": 10.32,
+        "median": 10.92,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
@@ -899,15 +899,15 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.6,
-        "median": 10.6,
-        "stdev": 5.11,
+        "mean": 9.58,
+        "median": 10.54,
+        "stdev": 5.1,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
         "mean": 12.09,
-        "median": 12.54,
+        "median": 12.5,
         "stdev": 8.2,
         "pct_shifting_dem": 95.3
       }
