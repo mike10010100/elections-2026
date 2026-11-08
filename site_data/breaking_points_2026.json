@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-07T21:00:01.805779-05:00",
+  "fetched_at": "2026-11-07T21:15:01.393907-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -254,8 +254,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.9,
-        "expected_demographic_state_shift_pts": 15.01,
-        "residual_overperformance_pts": 1.89,
+        "expected_demographic_state_shift_pts": 15.0,
+        "residual_overperformance_pts": 1.9,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -461,9 +461,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.58,
+          "mean": 27.59,
           "median": 25.58,
-          "stdev": 11.22,
+          "stdev": 11.21,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -475,21 +475,21 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 22.99,
+          "mean": 23.01,
           "median": 19.94,
           "stdev": 12.31,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 23.03,
+          "mean": 23.04,
           "median": 21.18,
           "stdev": 10.82,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.28,
+          "mean": 24.29,
           "median": 21.88,
           "stdev": 10.93,
           "pct_shifting_dem": 100.0
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6988
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -865,14 +865,14 @@
       "Secretary of State": {
         "n": 25,
         "mean": 12.19,
-        "median": 12.5,
+        "median": 12.45,
         "stdev": 7.01,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
         "mean": 10.32,
-        "median": 10.92,
+        "median": 10.88,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
@@ -892,15 +892,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.23,
+        "mean": 12.22,
         "median": 14.12,
         "stdev": 8.73,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.58,
-        "median": 10.54,
+        "mean": 9.56,
+        "median": 10.5,
         "stdev": 5.1,
         "pct_shifting_dem": 100.0
       },
