@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-07T19:00:01.749642-05:00",
+  "fetched_at": "2026-11-07T19:15:01.744841-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.47,
-        "expected_demographic_state_shift_pts": 16.53,
-        "residual_overperformance_pts": 4.94,
+        "expected_demographic_state_shift_pts": 16.54,
+        "residual_overperformance_pts": 4.93,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -267,8 +267,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.1,
-        "expected_demographic_state_shift_pts": 16.3,
-        "residual_overperformance_pts": 1.8,
+        "expected_demographic_state_shift_pts": 16.31,
+        "residual_overperformance_pts": 1.79,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -703,7 +703,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.42,
+          "mean": 12.43,
           "median": 11.72,
           "stdev": 7.78,
           "pct_shifting_dem": 97.2
@@ -717,7 +717,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.74,
+          "mean": 7.75,
           "median": 6.82,
           "stdev": 5.8,
           "pct_shifting_dem": 94.4
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6988
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -871,8 +871,8 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.3,
-        "median": 10.48,
+        "mean": 10.31,
+        "median": 10.56,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
@@ -892,16 +892,16 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.17,
+        "mean": 12.19,
         "median": 14.12,
         "stdev": 8.74,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.43,
-        "median": 10.1,
-        "stdev": 5.07,
+        "mean": 9.46,
+        "median": 10.2,
+        "stdev": 5.08,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
