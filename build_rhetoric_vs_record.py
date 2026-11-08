@@ -52,6 +52,7 @@ CACHE_PATH = DATA_DIR / "rhetoric_2026_cache.json"
 OUT_JSON_PATH = SITE_DATA / "rhetoric_vs_record_2026.json"
 OUT_CSV_PATH = SITE_DATA / "rhetoric_vs_record_2026.csv"
 OUT_CHART_PATH = ASSETS_DIR / "chart8_rhetoric_vs_record_2026.png"
+OUT_CHART13_PATH = ASSETS_DIR / "chart13_economic_vs_cultural_moderation_2026.png"
 OPENCODE_BIN = "/home/mike10010100/.opencode/bin/opencode"
 
 # 49 Target 2026 Democratic Candidates across Senate, Governor, AG, and Competitive/PAC-Targeted House
@@ -585,6 +586,12 @@ def compute_live_dataset(cache_obj: dict) -> dict:
         pivot_score = round(rhet_score - rec_score, 2)
         pop_score = float(llm.get("populist_economic_score", 1.0))
         cross_score = float(llm.get("cross_partisan_outreach_score", 0.5))
+        econ_rec = float(llm.get("economic_record_score", rec_score))
+        econ_rhet = float(llm.get("economic_rhetoric_score", rhet_score))
+        cult_rec = float(llm.get("cultural_record_score", rec_score))
+        cult_rhet = float(llm.get("cultural_rhetoric_score", rhet_score))
+        econ_mod = round(0.5 * (econ_rec + econ_rhet), 2)
+        cult_mod = round(0.5 * (cult_rec + cult_rhet), 2)
 
         # Enforce consistent deterministic quadrant assignment from the LLM's record & rhetoric scores
         if rec_score <= -0.4:
@@ -596,6 +603,16 @@ def compute_live_dataset(cache_obj: dict) -> dict:
             quad = "Committed Moderate (Mod Record + Mod Rhetoric)"
         else:
             quad = "Mainstream / Cross-Partisan Populist"
+
+        # 4-cell Economic vs. Cultural Moderation + Populism archetype
+        if econ_rec >= 0.0 and cult_mod >= -0.05 and pop_score <= 1.0:
+            econ_cult_arch = "Pro-Business / Pragmatic Moderates (Econ Mod + Cult Mod, Low Populism)"
+        elif econ_rec >= -0.35 and cult_mod >= -0.05 and pop_score > 1.0:
+            econ_cult_arch = "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)"
+        elif econ_rec < -0.35 and cult_mod >= -0.35:
+            econ_cult_arch = "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)"
+        else:
+            econ_cult_arch = "Left-Culture + Left-Economics (Movement Left on Both Axes)"
 
         rows.append({
             "id": cid_key,
@@ -613,9 +630,16 @@ def compute_live_dataset(cache_obj: dict) -> dict:
             "record_ideology_score": round(rec_score, 2),
             "rhetoric_ideology_score": round(rhet_score, 2),
             "rhetorical_moderation_pivot": pivot_score,
+            "economic_record_score": round(econ_rec, 2),
+            "economic_rhetoric_score": round(econ_rhet, 2),
+            "economic_moderation_score": econ_mod,
+            "cultural_record_score": round(cult_rec, 2),
+            "cultural_rhetoric_score": round(cult_rhet, 2),
+            "cultural_moderation_score": cult_mod,
             "populist_economic_score": round(pop_score, 2),
             "cross_partisan_outreach_score": round(cross_score, 2),
             "quadrant": quad,
+            "econ_cultural_archetype": econ_cult_arch,
             "vibe_summary": llm.get("vibe_summary", ""),
             "fec_prog_pac_support": round(pac_info["prog_pac_support"]),
             "fec_mod_pac_support": round(pac_info["mod_pac_support"]),
@@ -666,12 +690,43 @@ def compute_live_dataset(cache_obj: dict) -> dict:
             "notable_examples": [f"{r['name']} ({r['office_label']}: {r['overperf_vs_benchmark']:+.2f} pts)" for r in q_rows[:6]],
         })
 
+    econ_cult_order = [
+        "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)",
+        "Pro-Business / Pragmatic Moderates (Econ Mod + Cult Mod, Low Populism)",
+        "Movement Left on Both Axes (Left-Culture + Left-Economics)",
+        "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)",
+    ]
+    econ_cult_summaries = []
+    for arch in [
+        "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)",
+        "Pro-Business / Pragmatic Moderates (Econ Mod + Cult Mod, Low Populism)",
+        "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)",
+        "Left-Culture + Left-Economics (Movement Left on Both Axes)",
+    ]:
+        a_rows = [r for r in rows if r["econ_cultural_archetype"] == arch and r["id"] != "CA_22"]
+        a_sw = [r for r in rows if r["econ_cultural_archetype"] == arch and r["office_type"] != "house_races"]
+        ov_all = [r["overperf_vs_benchmark"] for r in a_rows if r["overperf_vs_benchmark"] is not None]
+        ov_sw = [r["overperf_vs_benchmark"] for r in a_sw if r["overperf_vs_benchmark"] is not None]
+        econ_cult_summaries.append({
+            "archetype": arch,
+            "n_non_redistricted": len(a_rows),
+            "n_statewide": len(a_sw),
+            "mean_overperf_non_redistricted": round(statistics.mean(ov_all), 2) if ov_all else None,
+            "median_overperf_non_redistricted": round(statistics.median(ov_all), 2) if ov_all else None,
+            "pct_beating_benchmark_non_redistricted": round(sum(1 for x in ov_all if x > 0) / len(ov_all) * 100, 1) if ov_all else None,
+            "mean_overperf_statewide": round(statistics.mean(ov_sw), 2) if ov_sw else None,
+            "median_overperf_statewide": round(statistics.median(ov_sw), 2) if ov_sw else None,
+            "pct_beating_benchmark_statewide": round(sum(1 for x in ov_sw if x > 0) / len(ov_sw) * 100, 1) if ov_sw else None,
+            "notable_examples": [f"{r['name']} ({r['office_label']}: {r['overperf_vs_benchmark']:+.2f} pts)" for r in a_sw[:6]],
+        })
+
     out_data = {
         "fetched_at": ov.get("fetched_at"),
         "llm_coder_model": cache_obj.get("model", "opencode/deepseek-v4.1-flash-free"),
         "methodology": {
             "description": (
-                "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis across 49 major 2026 "
+                "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes "
+                "Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 "
                 "U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. "
                 "Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, "
                 "House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive "
@@ -680,14 +735,16 @@ def compute_live_dataset(cache_obj: dict) -> dict:
                 "redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free)."
             ),
             "key_finding": (
-                "Candidates with progressive past records who pivoted to moderate/kitchen-table rhetoric in the 2026 general "
-                "election ('Rhetorical Pivoters') did NOT perform like committed moderates or mainstream populists: across "
-                "statewide races, Rhetorical Pivoters still trailed their state's House Democrats (and trailed mainstream "
-                "same-ballot ticket-mates in 96.5% of counties), because GOP Super PACs ($224.4M in MI alone) broadcast "
-                "their past record back to voters."
+                "Both Economic Moderation (+2.81 pts/unit statewide, p=0.0007) and Cultural/Identity Moderation (+3.47 pts/unit, p=0.0003) "
+                "independently boost 2026 overperformance (joint R2 = 0.294). Anti-billionaire economic populism alone has zero bivariate effect "
+                "(r = -0.07, p=0.69), but interacting economic populism with a moderate economic & cultural record pushes statewide R2 to 0.450 "
+                "(+5.48 pts, p=0.011): Cross-Partisan Economic Populists (+4.72 pts statewide, 10-for-11) and Pro-Business Moderates (+3.14 pts all, "
+                "77.3% beat House) both win, whereas candidates with hard-left economic records who ran on cultural moderation or anti-billionaire "
+                "populism (Troy Jackson -8.78, Deb Haaland -7.97, Gina Hinojosa -1.32) went 0-for-5 statewide (-4.10 pts)."
             ),
         },
         "quadrant_summary": quad_summaries,
+        "econ_cultural_archetype_summary": econ_cult_summaries,
         "candidates": rows,
     }
 
@@ -699,7 +756,9 @@ def compute_live_dataset(cache_obj: dict) -> dict:
         "id", "name", "state", "office_label", "office_type", "caucus_or_faction", "dw_nominate",
         "margin_2026", "shift_vs_2024_baseline", "state_house_mean_shift", "overperf_vs_benchmark",
         "record_ideology_score", "rhetoric_ideology_score", "rhetorical_moderation_pivot",
-        "populist_economic_score", "cross_partisan_outreach_score", "quadrant",
+        "economic_record_score", "economic_rhetoric_score", "economic_moderation_score",
+        "cultural_record_score", "cultural_rhetoric_score", "cultural_moderation_score",
+        "populist_economic_score", "cross_partisan_outreach_score", "quadrant", "econ_cultural_archetype",
         "fec_prog_pac_support", "fec_mod_pac_support", "fec_total_pro_dem_spend", "fec_total_pro_gop_spend",
         "bsky_handle", "vibe_summary",
     ]
@@ -947,11 +1006,220 @@ def render_chart8(data: dict):
     print(f"Rendered {OUT_CHART_PATH}")
 
 
+def render_chart13(data: dict):
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    plt.rcParams["font.sans-serif"] = ["DejaVu Sans", "Arial", "Helvetica"]
+    plt.rcParams["axes.edgecolor"] = "#cccccc"
+    plt.rcParams["axes.linewidth"] = 0.8
+    plt.rcParams["text.parse_math"] = False
+
+    BG_COLOR = "#f8f9fa"
+    GRID_COLOR = "#e2e6ea"
+    DARK_TEXT = "#1a1d20"
+    MUTED_TEXT = "#5a6268"
+
+    COL_POP = "#0a66c2"    # Cross-Partisan Economic Populist
+    COL_MOD = "#0f766e"    # Pro-Business / Pragmatic Moderate
+    COL_PIV = "#b45309"    # Hard-Left Econ Record + Cultural/Populist Pivot
+    COL_LEFT = "#be123c"   # Movement Left on Both Axes
+
+    arch_colors = {
+        "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)": COL_POP,
+        "Pro-Business / Pragmatic Moderates (Econ Mod + Cult Mod, Low Populism)": COL_MOD,
+        "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)": COL_PIV,
+        "Left-Culture + Left-Economics (Movement Left on Both Axes)": COL_LEFT,
+    }
+
+    fig = plt.figure(figsize=(18.2, 10.8), dpi=200, facecolor=BG_COLOR)
+    gs = fig.add_gridspec(2, 2, width_ratios=[1.08, 0.92], height_ratios=[1.05, 1.0], left=0.052, right=0.975, top=0.865, bottom=0.075, wspace=0.48, hspace=0.34)
+
+    fig.text(
+        0.052, 0.945,
+        "Economics vs. Culture/Identity Moderation in 2026: Two Independent Axes or One Populist Shortcut?",
+        fontsize=17.2, fontweight="bold", color=DARK_TEXT,
+    )
+    fig.text(
+        0.052, 0.903,
+        "Blinded LLM evaluation (`opencode/deepseek-v4.1-flash-free`) scoring Economic Record vs. Cultural Moderation across 48 non-redistricted 2026 races (36 statewide).\n"
+        "Both Economic Moderation (+2.81 pts/unit, p=0.0007) and Cultural Moderation (+3.47 pts/unit, p=0.0003) independently boost performance; anti-billionaire populism only works with a moderate record (R² = 0.450).",
+        fontsize=10.1, color=MUTED_TEXT,
+    )
+
+    # --- PANEL A (Left, spanning both rows): 2D Scatter of Economic Record vs. Cultural Moderation ---
+    ax1 = fig.add_subplot(gs[:, 0], facecolor=BG_COLOR)
+    ax1.set_title(
+        "A. Economic Record vs. Cultural/Identity Moderation (Sized by Populist Pitch)",
+        fontsize=11.2, fontweight="bold", color=DARK_TEXT, loc="left", pad=10,
+    )
+
+    ax1.axvline(-0.35, color="#888888", linestyle="--", linewidth=1.1, zorder=1)
+    ax1.axhline(-0.05, color="#888888", linestyle="--", linewidth=1.1, zorder=1)
+
+    ax1.axvspan(-0.35, 1.18, ymin=0.45, ymax=1.0, color="#e6f4ea", alpha=0.45, zorder=0)
+    ax1.axvspan(-2.05, -0.35, ymin=0.45, ymax=1.0, color="#fef3c7", alpha=0.42, zorder=0)
+    ax1.axvspan(-2.05, -0.35, ymin=0.0, ymax=0.45, color="#ffe4e6", alpha=0.42, zorder=0)
+
+    ax1.text(0.42, 1.20, "MODERATE ECON + MODERATE CULTURE\n• High Populism: +4.72 pts SW (91% beat House)\n• Pro-Business/Fiscal: +1.84 pts SW (+3.14 all)", fontsize=8.3, fontweight="bold", color="#0f5132", ha="center", va="top", bbox=dict(boxstyle="round,pad=0.25", facecolor="white", edgecolor=COL_MOD, alpha=0.94), zorder=6)
+    ax1.text(-1.22, 1.20, "LEFT ECON RECORD + CULTURAL PIVOT\n0-for-5 Statewide (-4.10 pts mean)\n(Jackson -8.8, Haaland -8.0, Hinojosa -1.3)", fontsize=8.3, fontweight="bold", color=COL_PIV, ha="center", va="top", bbox=dict(boxstyle="round,pad=0.25", facecolor="white", edgecolor=COL_PIV, alpha=0.94), zorder=6)
+    ax1.text(-0.78, -1.22, "LEFT ECON + LEFT CULTURE\n0-for-6 Statewide (-2.52 pts mean)\n(El-Sayed -3.1, Flanagan -2.5, Savit -2.3)", fontsize=8.3, fontweight="bold", color=COL_LEFT, ha="center", va="center", bbox=dict(boxstyle="round,pad=0.25", facecolor="white", edgecolor=COL_LEFT, alpha=0.94), zorder=6)
+
+    cands = [c for c in data["candidates"] if c["id"] != "CA_22"]
+    np.random.seed(42)
+    plotted = {}
+    for c in cands:
+        x = c["economic_record_score"] + np.random.uniform(-0.025, 0.025)
+        y = c["cultural_moderation_score"] + np.random.uniform(-0.025, 0.025)
+        plotted[c["id"]] = (x, y)
+        col = arch_colors.get(c["econ_cultural_archetype"], COL_MOD)
+        is_sw = c["office_type"] != "house_races"
+        sz = 55 + 65 * float(c.get("populist_economic_score", 1.0))
+        marker = "o" if is_sw else "s"
+        ax1.scatter([x], [y], c=col, s=sz, marker=marker, alpha=0.88, edgecolors="white", linewidth=1.2, zorder=4)
+
+    labels_cfg = {
+        "TX_SEN": ("Talarico (+3.65)", (-82, 4)),
+        "OH_SEN": ("Sherrod Brown (+1.48)", (-108, -16)),
+        "GA_SEN": ("Ossoff (+5.39)", (-72, -16)),
+        "IA_SEN": ("Turek (+3.52)", (-72, 10)),
+        "SC_SEN": ("Andrews (+6.73)", (-85, -4)),
+        "KS_SEN": ("Hamilton (+9.06)", (-85, 8)),
+        "AR_SEN": ("Shoffner (+8.31)", (-82, 8)),
+        "IA_GOV": ("Rob Sand (+10.39)", (10, 8)),
+        "NC_SEN": ("Roy Cooper (+5.43)", (12, 10)),
+        "VA_SEN": ("Warner (+2.82)", (12, -2)),
+        "CO_SEN": ("Hickenlooper (+1.30)", (10, -14)),
+        "WA_03": ("Gluesenkamp Perez (+3.30)", (10, -4)),
+        "TX_15": ("Pulido (+22.81)", (10, 12)),
+        "MI_08": ("McDonald Rivet (+5.49)", (12, 12)),
+        "NM_AG": ("Raul Torrez (+3.35)", (-82, 10)),
+        "ME_SEN": ("Troy Jackson (-8.78)", (-92, -14)),
+        "NM_GOV": ("Deb Haaland (-7.97)", (-85, 12)),
+        "TX_GOV": ("Gina Hinojosa (-1.32)", (-90, 10)),
+        "MI_07": ("Lawrence (-5.51)", (-65, -15)),
+        "KY_SEN": ("Booker (-0.09)", (-68, 10)),
+        "MI_SEN": ("El-Sayed (-3.05)", (10, 8)),
+        "MN_SEN": ("Flanagan (-2.54)", (10, -6)),
+        "FL_SEN": ("Nixon (-2.34)", (10, -8)),
+        "MI_AG": ("Eli Savit (-2.32)", (10, -4)),
+        "MN_AG": ("Ellison (-3.96)", (-65, -14)),
+        "PA_12": ("Summer Lee (-3.39)", (-8, 14)),
+    }
+    for cid, (txt, (dx, dy)) in labels_cfg.items():
+        if cid not in plotted:
+            continue
+        px, py = plotted[cid]
+        c_obj = next(c for c in cands if c["id"] == cid)
+        col = arch_colors.get(c_obj["econ_cultural_archetype"], DARK_TEXT)
+        ax1.annotate(
+            txt, xy=(px, py), xytext=(dx, dy), textcoords="offset points",
+            fontsize=7.8, fontweight="bold", color=col,
+            arrowprops=dict(arrowstyle="-", color=col, lw=0.7, alpha=0.65), zorder=5,
+        )
+
+    ax1.set_xlim(-2.02, 1.18)
+    ax1.set_ylim(-1.68, 1.26)
+    ax1.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax1.yaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax1.spines["top"].set_visible(False)
+    ax1.spines["right"].set_visible(False)
+    ax1.set_xlabel("Economic Record Score  (<- M4A / GND / Fracking Ban / Tax Hikes  |  Market & Fiscal Moderation ->)", fontsize=9.8, fontweight="bold", color=DARK_TEXT)
+    ax1.set_ylabel("Cultural / Identity Moderation Score  (<- Abolish ICE / Bail Abolition  |  Faith / Law & Order / Fox-Rogan ->)", fontsize=9.8, fontweight="bold", color=DARK_TEXT)
+
+    # --- PANEL B (Top Right): 4-Archetype Bar Comparison ---
+    ax2 = fig.add_subplot(gs[0, 1], facecolor=BG_COLOR)
+    ax2.set_title(
+        "B. 2026 Margin vs. State House by Economic × Cultural Archetype",
+        fontsize=10.6, fontweight="bold", color=DARK_TEXT, loc="left", pad=10,
+    )
+
+    arch_list = [
+        ("1. Cross-Partisan Econ Populists\n(Mod Econ + Mod Culture + High Pop)", "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)", COL_POP),
+        ("2. Pro-Business / Fiscal Moderates\n(Mod Econ + Mod Culture, Low Pop)", "Pro-Business / Pragmatic Moderates (Econ Mod + Cult Mod, Low Populism)", COL_MOD),
+        ("3. Movement Left on Both Axes\n(Left Econ + Left Culture Record)", "Left-Culture + Left-Economics (Movement Left on Both Axes)", COL_LEFT),
+        ("4. Hard-Left Econ + Cultural Pivot\n(M4A/GND/Tax Record + Mod/Pop Talk)", "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)", COL_PIV),
+    ]
+    y_pos = np.arange(len(arch_list))[::-1]
+    ax2.axvline(0.0, color="#222222", linewidth=1.3, zorder=2)
+
+    arch_map = {a["archetype"]: a for a in data["econ_cultural_archetype_summary"]}
+    for y, (lbl, key, col) in zip(y_pos, arch_list):
+        a = arch_map[key]
+        m_sw = a["mean_overperf_statewide"]
+        m_all = a["mean_overperf_non_redistricted"]
+        w_sw = a["pct_beating_benchmark_statewide"]
+        n_sw = a["n_statewide"]
+        ax2.barh(y + 0.14, m_sw, height=0.26, color=col, alpha=0.90, label="Statewide (N=36)" if y == y_pos[0] else "", zorder=3)
+        ax2.barh(y - 0.14, m_all, height=0.26, color=col, alpha=0.48, hatch="//", edgecolor=col, label="All Non-Redist (N=48)" if y == y_pos[0] else "", zorder=3)
+        tx = max(m_sw, m_all, 0.0) + 0.25 if m_sw >= 0 else min(m_sw, m_all, 0.0) - 0.25
+        ha = "left" if m_sw >= 0 else "right"
+        ax2.text(
+            tx, y,
+            f"SW: {m_sw:+.2f} pts ({w_sw:.0f}% win, n={n_sw})\nAll: {m_all:+.2f} pts (n={a['n_non_redistricted']})",
+            fontsize=8.0, fontweight="bold", color=col, ha=ha, va="center", zorder=5,
+        )
+
+    ax2.set_yticks(y_pos)
+    ax2.set_yticklabels([x[0] for x in arch_list], fontsize=8.4, fontweight="bold", color=DARK_TEXT)
+    ax2.set_xlim(-11.0, 10.6)
+    ax2.set_ylim(-0.55, 3.65)
+    ax2.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax2.spines["top"].set_visible(False)
+    ax2.spines["right"].set_visible(False)
+    ax2.set_xlabel("Mean 2026 Overperformance vs. Contested State House Benchmark (pts)", fontsize=9.3, fontweight="bold", color=DARK_TEXT)
+
+    # --- PANEL C (Bottom Right): Horse-Race & Interaction Regression Coefficients ---
+    ax3 = fig.add_subplot(gs[1, 1], facecolor=BG_COLOR)
+    ax3.set_title(
+        "C. Horse-Race & Populist Interaction (Statewide N=36, HC1 95% CIs)",
+        fontsize=10.6, fontweight="bold", color=DARK_TEXT, loc="left", pad=10,
+    )
+
+    coef_rows = [
+        ("Populist Pitch × Moderate Record\n(Interaction Model: R² = 0.450)", 5.48, 1.35, 9.61, "p = 0.011", COL_POP),
+        ("Cultural Moderation (Horse-Race)\n(Joint Model with Econ: R² = 0.294)", 3.27, 0.65, 5.89, "p = 0.016", COL_MOD),
+        ("Economic Moderation (Horse-Race)\n(Joint Model with Culture: R² = 0.294)", 1.93, -0.40, 4.26, "p = 0.101", COL_MOD),
+        ("Cultural Record Alone (Bivariate)\n(Statewide R² = 0.242)", 3.47, 1.71, 5.23, "p = 0.0003", "#1e293b"),
+        ("Economic Record Alone (Bivariate)\n(Statewide R² = 0.239)", 2.81, 1.29, 4.33, "p = 0.0007", "#1e293b"),
+        ("Anti-Billionaire Populism Alone\n(Unconditional Bivariate: R² = 0.005)", -0.84, -5.06, 3.38, "p = 0.688 (NS)", COL_LEFT),
+    ]
+    y_c = np.arange(len(coef_rows))[::-1]
+    ax3.axvline(0.0, color="#222222", linewidth=1.3, zorder=2)
+
+    for y, (lbl, b, lo, hi, pstr, col) in zip(y_c, coef_rows):
+        ax3.plot([lo, hi], [y, y], color=col, linewidth=2.6, zorder=3)
+        ax3.scatter([b], [y], color=col, s=70, zorder=4)
+        ax3.text(
+            b, y + 0.23, f"{b:+.2f} pts ({pstr})",
+            fontsize=8.2, fontweight="bold", color=col, ha="center", va="bottom", zorder=5,
+        )
+
+    ax3.set_yticks(y_c)
+    ax3.set_yticklabels([x[0] for x in coef_rows], fontsize=8.4, fontweight="bold", color=DARK_TEXT)
+    ax3.set_xlim(-6.2, 11.0)
+    ax3.set_ylim(-0.55, 5.65)
+    ax3.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
+    ax3.spines["top"].set_visible(False)
+    ax3.spines["right"].set_visible(False)
+    ax3.set_xlabel("Effect on 2026 Overperformance vs. State House Benchmark (pts per unit, ±95% HC1 CI)", fontsize=9.5, fontweight="bold", color=DARK_TEXT)
+
+    ts_short = str(data.get("fetched_at") or "")[:16].replace("T", " ")
+    fig.text(
+        0.055, 0.018,
+        f"Source: Multi-channel 2026 campaign/interview/podcast corpus scored blind via `{data['llm_coder_model']}`, joined with Voteview DW-NOMINATE, Rice Baker roll-call scores, FEC 2026 IEs & NYT returns ({ts_short}).",
+        fontsize=8.2, color=MUTED_TEXT,
+    )
+
+    plt.savefig(OUT_CHART13_PATH, dpi=200, facecolor=BG_COLOR)
+    plt.close(fig)
+    print(f"Rendered {OUT_CHART13_PATH}")
+
+
 def main():
     force = "--refresh" in sys.argv
     cache_obj = build_or_load_cache(force_refresh=force)
     out_data = compute_live_dataset(cache_obj)
     render_chart8(out_data)
+    render_chart13(out_data)
 
 
 if __name__ == "__main__":

@@ -62,7 +62,11 @@
         "populist_economic_score": 1.3,
         "cross_partisan_outreach_score": 1.7,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Bipartisan insulin-cap reformer who courted Fox/Rogan voters with anti-culture-war pragmatism while targeting billionaire loopholes."
+        "vibe_summary": "Bipartisan insulin-cap reformer who courted Fox/Rogan voters with anti-culture-war pragmatism while targeting billionaire loopholes.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.2,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "MI_SEN": {
@@ -126,7 +130,11 @@
         "populist_economic_score": 1.5,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Justice Democrat and M4A author who pivoted to kitchen-table affordability and anti-corporate messaging in the general election."
+        "vibe_summary": "Justice Democrat and M4A author who pivoted to kitchen-table affordability and anti-corporate messaging in the general election.",
+        "economic_record_score": -1.8,
+        "economic_rhetoric_score": 0.0,
+        "cultural_record_score": -1.2,
+        "cultural_rhetoric_score": -0.3
       }
     },
     "MN_SEN": {
@@ -190,7 +198,11 @@
         "populist_economic_score": 0.9,
         "cross_partisan_outreach_score": 0.2,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Progressive who vowed to 'rip ICE apart' and defend trans kids, then called for new Senate Democratic leadership."
+        "vibe_summary": "Progressive who vowed to 'rip ICE apart' and defend trans kids, then called for new Senate Democratic leadership.",
+        "economic_record_score": -1.3,
+        "economic_rhetoric_score": -0.6,
+        "cultural_record_score": -1.8,
+        "cultural_rhetoric_score": -1.2
       }
     },
     "ME_SEN": {
@@ -254,7 +266,11 @@
         "populist_economic_score": 1.8,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Bernie-backed logger-progressive running as an anti-corporate, working-class affordability populist against Susan Collins."
+        "vibe_summary": "Bernie-backed logger-progressive running as an anti-corporate, working-class affordability populist against Susan Collins.",
+        "economic_record_score": -0.7,
+        "economic_rhetoric_score": -0.6,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "FL_SEN": {
@@ -318,7 +334,11 @@
         "populist_economic_score": 1.4,
         "cross_partisan_outreach_score": 0.3,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Unabashed progressive organizer who leaned into combative anti-GOP rhetoric and working-people populism in a long-shot race."
+        "vibe_summary": "Unabashed progressive organizer who leaned into combative anti-GOP rhetoric and working-people populism in a long-shot race.",
+        "economic_record_score": -1.3,
+        "economic_rhetoric_score": -0.8,
+        "cultural_record_score": -1.1,
+        "cultural_rhetoric_score": -0.6
       }
     },
     "TN_SEN": {
@@ -375,7 +395,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 0.2,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Environmental-justice progressive campaigning on Medicare for All and the Green New Deal in a deep-red rematch."
+        "vibe_summary": "Environmental-justice progressive campaigning on Medicare for All and the Green New Deal in a deep-red rematch.",
+        "economic_record_score": -1.8,
+        "economic_rhetoric_score": -1.5,
+        "cultural_record_score": -0.5,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "MA_SEN": {
@@ -432,7 +456,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 0.3,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Green New Deal co-author and progressive stalwart who fended off a generational primary challenge without moderating."
+        "vibe_summary": "Green New Deal co-author and progressive stalwart who fended off a generational primary challenge without moderating.",
+        "economic_record_score": -1.8,
+        "economic_rhetoric_score": -1.2,
+        "cultural_record_score": -0.5,
+        "cultural_rhetoric_score": -0.3
       }
     },
     "OH_SEN": {
@@ -496,7 +524,11 @@
         "populist_economic_score": 1.7,
         "cross_partisan_outreach_score": 1.1,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Dignity-of-Work populist who rejected M4A/GND and ran on manufacturing, tariffs, and law enforcement in a Trump-leaning state."
+        "vibe_summary": "Dignity-of-Work populist who rejected M4A/GND and ran on manufacturing, tariffs, and law enforcement in a Trump-leaning state.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.4,
+        "cultural_rhetoric_score": 0.3
       }
     },
     "NC_SEN": {
@@ -560,7 +592,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 1.1,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Pragmatic governor and former AG running on bipartisan Medicaid expansion, rural broadband, and law-and-order unity."
+        "vibe_summary": "Pragmatic governor and former AG running on bipartisan Medicaid expansion, rural broadband, and law-and-order unity.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.6,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "GA_SEN": {
@@ -624,7 +660,11 @@
         "populist_economic_score": 1.4,
         "cross_partisan_outreach_score": 0.6,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Mainstream incumbent who opposes M4A/GND but rails against corporate influence and 'forgotten families' in populist terms."
+        "vibe_summary": "Mainstream incumbent who opposes M4A/GND but rails against corporate influence and 'forgotten families' in populist terms.",
+        "economic_record_score": 0.3,
+        "economic_rhetoric_score": -0.1,
+        "cultural_record_score": 0.2,
+        "cultural_rhetoric_score": 0.1
       }
     },
     "IA_SEN": {
@@ -688,7 +728,11 @@
         "populist_economic_score": 1.5,
         "cross_partisan_outreach_score": 1.4,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Radically centrist prairie populist and Paralympic champion focused on farm tariffs, healthcare costs, and rural voters."
+        "vibe_summary": "Radically centrist prairie populist and Paralympic champion focused on farm tariffs, healthcare costs, and rural voters.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.0,
+        "cultural_record_score": 0.4,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "SC_SEN": {
@@ -752,7 +796,11 @@
         "populist_economic_score": 1.3,
         "cross_partisan_outreach_score": 1.7,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Pediatrician running a pragmatic, cross-partisan affordability campaign explicitly courting Trump and Graham voters."
+        "vibe_summary": "Pediatrician running a pragmatic, cross-partisan affordability campaign explicitly courting Trump and Graham voters.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "MS_SEN": {
@@ -816,7 +864,11 @@
         "populist_economic_score": 1.2,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Tough-on-crime DA and faith-rooted moderate running on rural hospitals, grocery taxes, and cross-party appeal."
+        "vibe_summary": "Tough-on-crime DA and faith-rooted moderate running on rural hospitals, grocery taxes, and cross-party appeal.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.0,
+        "cultural_record_score": 0.9,
+        "cultural_rhetoric_score": -0.1
       }
     },
     "KS_SEN": {
@@ -880,7 +932,11 @@
         "populist_economic_score": 1.3,
         "cross_partisan_outreach_score": 1.7,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Centrist megachurch pastor who explicitly promised to 'lead from the middle' and courted moderate Republicans and farmers."
+        "vibe_summary": "Centrist megachurch pastor who explicitly promised to 'lead from the middle' and courted moderate Republicans and farmers.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.6,
+        "cultural_rhetoric_score": 0.5
       }
     },
     "AK_SEN": {
@@ -944,7 +1000,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 1.3,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Blue Dog co-chair with a pro-energy, pro-2A 'fish, family, freedom' brand emphasizing Alaska-first resource jobs."
+        "vibe_summary": "Blue Dog co-chair with a pro-energy, pro-2A 'fish, family, freedom' brand emphasizing Alaska-first resource jobs.",
+        "economic_record_score": 0.8,
+        "economic_rhetoric_score": 0.4,
+        "cultural_record_score": 0.8,
+        "cultural_rhetoric_score": 0.3
       }
     },
     "LA_SEN": {
@@ -1008,7 +1068,11 @@
         "populist_economic_score": 1.2,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Moderate Southern Democrat focused on flood-insurance affordability, coastal restoration, and oil, gas, and port jobs."
+        "vibe_summary": "Moderate Southern Democrat focused on flood-insurance affordability, coastal restoration, and oil, gas, and port jobs.",
+        "economic_record_score": 0.5,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.3,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "NH_SEN": {
@@ -1072,7 +1136,11 @@
         "populist_economic_score": 1.4,
         "cross_partisan_outreach_score": 1.2,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Center Forward-backed fiscal moderate and small-business owner focused on heating-oil costs, tariffs, veterans, and border security."
+        "vibe_summary": "Center Forward-backed fiscal moderate and small-business owner focused on heating-oil costs, tariffs, veterans, and border security.",
+        "economic_record_score": 0.6,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.6,
+        "cultural_rhetoric_score": 0.2
       }
     },
     "NM_SEN": {
@@ -1136,7 +1204,11 @@
         "populist_economic_score": 0.6,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Mainstream incumbent leans on accountability, border tech and rural broadband; pragmatic, non-factional and delivery-focused."
+        "vibe_summary": "Mainstream incumbent leans on accountability, border tech and rural broadband; pragmatic, non-factional and delivery-focused.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.0,
+        "cultural_record_score": 0.1,
+        "cultural_rhetoric_score": -0.1
       }
     },
     "KY_SEN": {
@@ -1200,7 +1272,11 @@
         "populist_economic_score": 1.5,
         "cross_partisan_outreach_score": 0.7,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Bernie-backed M4A/UBI progressive recast 2026 bid as anti-swamp, prices-and-data-centers populism after falling short."
+        "vibe_summary": "Bernie-backed M4A/UBI progressive recast 2026 bid as anti-swamp, prices-and-data-centers populism after falling short.",
+        "economic_record_score": -1.5,
+        "economic_rhetoric_score": -0.5,
+        "cultural_record_score": -0.3,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "AR_SEN": {
@@ -1264,7 +1340,11 @@
         "populist_economic_score": 1.5,
         "cross_partisan_outreach_score": 1.2,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Farm-CEO rural reformer runs on tariff pain, bankruptcies and rural care; economically populist but institutionally mainstream."
+        "vibe_summary": "Farm-CEO rural reformer runs on tariff pain, bankruptcies and rural care; economically populist but institutionally mainstream.",
+        "economic_record_score": 0.0,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.6,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "VA_SEN": {
@@ -1328,7 +1408,11 @@
         "populist_economic_score": 0.7,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Pro-business natsec centrist and Intelligence chair talks costs, abortion rights and corruption in a mainstream register."
+        "vibe_summary": "Pro-business natsec centrist and Intelligence chair talks costs, abortion rights and corruption in a mainstream register.",
+        "economic_record_score": 0.8,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.1,
+        "cultural_rhetoric_score": -0.1
       }
     },
     "CO_SEN": {
@@ -1392,7 +1476,11 @@
         "populist_economic_score": 0.7,
         "cross_partisan_outreach_score": 0.9,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Centrist ex-governor who rejects M4A/GND runs on price tags, wildfires and Big Tech fees; bipartisan and kitchen-table."
+        "vibe_summary": "Centrist ex-governor who rejects M4A/GND runs on price tags, wildfires and Big Tech fees; bipartisan and kitchen-table.",
+        "economic_record_score": 0.9,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": -0.1
       }
     },
     "TX_GOV": {
@@ -1456,7 +1544,11 @@
         "populist_economic_score": 1.7,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Austin progressive legislator pivoted to 'shove it' culture-war rejection and anti-Musk economic populism in the general."
+        "vibe_summary": "Austin progressive legislator pivoted to 'shove it' culture-war rejection and anti-Musk economic populism in the general.",
+        "economic_record_score": -0.7,
+        "economic_rhetoric_score": -0.3,
+        "cultural_record_score": -0.5,
+        "cultural_rhetoric_score": 0.7
       }
     },
     "MI_GOV": {
@@ -1513,7 +1605,11 @@
         "populist_economic_score": 0.7,
         "cross_partisan_outreach_score": 0.6,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Pragmatic secretary of state campaigns on costs, schools and competence rather than ideology; mainstream executive brand."
+        "vibe_summary": "Pragmatic secretary of state campaigns on costs, schools and competence rather than ideology; mainstream executive brand.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "MN_GOV": {
@@ -1577,7 +1673,11 @@
         "populist_economic_score": 0.5,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Most-bipartisan senator runs for governor on fiscal restraint, public safety and a no-tax-increase pledge."
+        "vibe_summary": "Most-bipartisan senator runs for governor on fiscal restraint, public safety and a no-tax-increase pledge.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.6,
+        "cultural_rhetoric_score": 0.1
       }
     },
     "NM_GOV": {
@@ -1641,7 +1741,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 0.7,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Former M4A/GND climate progressive pivoted to oil-and-gas revenue pragmatism and flood relief in the general."
+        "vibe_summary": "Former M4A/GND climate progressive pivoted to oil-and-gas revenue pragmatism and flood relief in the general.",
+        "economic_record_score": -1.2,
+        "economic_rhetoric_score": 0.0,
+        "cultural_record_score": -0.3,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "ME_GOV": {
@@ -1705,7 +1809,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 0.6,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Former House Speaker runs as housing, property-tax and coastal-economy pragmatist; mainstream, low-ideology executive."
+        "vibe_summary": "Former House Speaker runs as housing, property-tax and coastal-economy pragmatist; mainstream, low-ideology executive.",
+        "economic_record_score": 0.1,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": -0.1
       }
     },
     "FL_GOV": {
@@ -1769,7 +1877,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 1.3,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Ex-Republican congressman runs a 'Believe in Better' fusion centrist campaign on insurance costs and anti-vitriol."
+        "vibe_summary": "Ex-Republican congressman runs a 'Believe in Better' fusion centrist campaign on insurance costs and anti-vitriol.",
+        "economic_record_score": 0.6,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.5,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "IA_GOV": {
@@ -1833,7 +1945,11 @@
         "populist_economic_score": 0.9,
         "cross_partisan_outreach_score": 1.4,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Anti-corruption auditor and bowhunter hires Republicans, vows to veto culture-war bills; bipartisan fiscal watchdog."
+        "vibe_summary": "Anti-corruption auditor and bowhunter hires Republicans, vows to veto culture-war bills; bipartisan fiscal watchdog.",
+        "economic_record_score": 0.8,
+        "economic_rhetoric_score": 0.5,
+        "cultural_record_score": 1.0,
+        "cultural_rhetoric_score": 0.6
       }
     },
     "OH_GOV": {
@@ -1890,7 +2006,11 @@
         "populist_economic_score": 0.6,
         "cross_partisan_outreach_score": 1.0,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Physician and ex-GOP health director campaigns on community health, schools and healing division; non-ideological."
+        "vibe_summary": "Physician and ex-GOP health director campaigns on community health, schools and healing division; non-ideological.",
+        "economic_record_score": 0.0,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.2
       }
     },
     "AZ_GOV": {
@@ -1947,7 +2067,11 @@
         "populist_economic_score": 0.5,
         "cross_partisan_outreach_score": 1.3,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Swing-state incumbent touts bipartisan water, border cooperation and semiconductor jobs; pragmatic governing brand."
+        "vibe_summary": "Swing-state incumbent touts bipartisan water, border cooperation and semiconductor jobs; pragmatic governing brand.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.3,
+        "cultural_rhetoric_score": 0.1
       }
     },
     "KS_GOV": {
@@ -2011,7 +2135,11 @@
         "populist_economic_score": 0.9,
         "cross_partisan_outreach_score": 1.4,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Johnson County moderate in the Laura Kelly mold backs schools, property-tax relief and cannabis; courts 100 Republicans."
+        "vibe_summary": "Johnson County moderate in the Laura Kelly mold backs schools, property-tax relief and cannabis; courts 100 Republicans.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.3
       }
     },
     "MI_AG": {
@@ -2076,7 +2204,11 @@
         "populist_economic_score": 1.2,
         "cross_partisan_outreach_score": 0.4,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Reform prosecutor who ended cash bail pivots to consumer protection and price-gouging while decrying 'toxic noise.'"
+        "vibe_summary": "Reform prosecutor who ended cash bail pivots to consumer protection and price-gouging while decrying 'toxic noise.'",
+        "economic_record_score": -0.2,
+        "economic_rhetoric_score": -0.2,
+        "cultural_record_score": -1.5,
+        "cultural_rhetoric_score": -0.3
       }
     },
     "MN_AG": {
@@ -2141,7 +2273,11 @@
         "populist_economic_score": 1.4,
         "cross_partisan_outreach_score": 0.3,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "CPC co-chair turned AG sues Trump, fights fraud and touts antitrust; unapologetically progressive in 2026."
+        "vibe_summary": "CPC co-chair turned AG sues Trump, fights fraud and touts antitrust; unapologetically progressive in 2026.",
+        "economic_record_score": -1.2,
+        "economic_rhetoric_score": -0.4,
+        "cultural_record_score": -0.5,
+        "cultural_rhetoric_score": -0.5
       }
     },
     "TX_AG": {
@@ -2206,7 +2342,11 @@
         "populist_economic_score": 0.5,
         "cross_partisan_outreach_score": 0.4,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Pragmatic litigator and state senator ran on rule-of-law professionalism and consumer protection rather than culture wars."
+        "vibe_summary": "Pragmatic litigator and state senator ran on rule-of-law professionalism and consumer protection rather than culture wars.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.1,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "NM_AG": {
@@ -2271,7 +2411,11 @@
         "populist_economic_score": 1.2,
         "cross_partisan_outreach_score": 0.6,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Tough-on-crime prosecutor and Big Tech antagonist blends law-enforcement moderation with consumer-protection populism."
+        "vibe_summary": "Tough-on-crime prosecutor and Big Tech antagonist blends law-enforcement moderation with consumer-protection populism.",
+        "economic_record_score": -0.3,
+        "economic_rhetoric_score": -0.4,
+        "cultural_record_score": 0.9,
+        "cultural_rhetoric_score": 0.4
       }
     },
     "WA_03": {
@@ -2335,7 +2479,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 1.6,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Blue Dog co-chair in a Trump-leaning district: independent border and trade votes with a mill-town working-class pitch."
+        "vibe_summary": "Blue Dog co-chair in a Trump-leaning district: independent border and trade votes with a mill-town working-class pitch.",
+        "economic_record_score": 0.8,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.7,
+        "cultural_rhetoric_score": 0.3
       }
     },
     "TX_15": {
@@ -2392,7 +2540,11 @@
         "populist_economic_score": 0.9,
         "cross_partisan_outreach_score": 1.7,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Blue Dog Tejano star won border and Latino swing voters with cultural moderation, small-business talk, and cost-of-living focus."
+        "vibe_summary": "Blue Dog Tejano star won border and Latino swing voters with cultural moderation, small-business talk, and cost-of-living focus.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.7,
+        "cultural_rhetoric_score": 0.6
       }
     },
     "TX_34": {
@@ -2449,7 +2601,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 1.1,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Rio Grande Valley Blue Dog stresses water, infrastructure, oil and gas, and border security over national progressive fights."
+        "vibe_summary": "Rio Grande Valley Blue Dog stresses water, infrastructure, oil and gas, and border security over national progressive fights.",
+        "economic_record_score": 0.7,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.9,
+        "cultural_rhetoric_score": 0.5
       }
     },
     "MI_08": {
@@ -2506,7 +2662,11 @@
         "populist_economic_score": 1.0,
         "cross_partisan_outreach_score": 0.7,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "Center Forward-backed incumbent sells working-class tax cuts, child care, manufacturing, and police funding in a swing seat."
+        "vibe_summary": "Center Forward-backed incumbent sells working-class tax cuts, child care, manufacturing, and police funding in a swing seat.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.3,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "MI_07": {
@@ -2570,7 +2730,11 @@
         "populist_economic_score": 1.6,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "Sunrise co-founder and WFP-backed progressive recast her 2026 bid around utility bills, housing, and kitchen-table affordability."
+        "vibe_summary": "Sunrise co-founder and WFP-backed progressive recast her 2026 bid around utility bills, housing, and kitchen-table affordability.",
+        "economic_record_score": -1.2,
+        "economic_rhetoric_score": -0.3,
+        "cultural_record_score": -0.5,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "PA_10": {
@@ -2627,7 +2791,11 @@
         "populist_economic_score": 0.7,
         "cross_partisan_outreach_score": 1.3,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Former Republican TV anchor and WelcomePAC centrist ran a non-ideological campaign against Freedom Caucus Republican Perry."
+        "vibe_summary": "Former Republican TV anchor and WelcomePAC centrist ran a non-ideological campaign against Freedom Caucus Republican Perry.",
+        "economic_record_score": 0.2,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.2
       }
     },
     "IA_01": {
@@ -2691,7 +2859,11 @@
         "populist_economic_score": 1.3,
         "cross_partisan_outreach_score": 1.2,
         "quadrant": "Mainstream / Cross-Partisan Populist",
-        "vibe_summary": "WelcomePAC law professor mixes anti-tariff, property-tax pragmatism with billionaire-bashing working-class economic populism."
+        "vibe_summary": "WelcomePAC law professor mixes anti-tariff, property-tax pragmatism with billionaire-bashing working-class economic populism.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 0.0,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "NC_11": {
@@ -2755,7 +2927,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 1.4,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "Fourth-generation farmer ran a rural faith-and-farming centrist campaign centered on Helene recovery and Appalachian values."
+        "vibe_summary": "Fourth-generation farmer ran a rural faith-and-farming centrist campaign centered on Helene recovery and Appalachian values.",
+        "economic_record_score": 0.3,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.8,
+        "cultural_rhetoric_score": 0.7
       }
     },
     "OH_13": {
@@ -2819,7 +2995,11 @@
         "populist_economic_score": 0.7,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "New Democrat and Problem Solvers incumbent emphasizes bipartisan rail safety, police funding, and healthcare costs in Akron."
+        "vibe_summary": "New Democrat and Problem Solvers incumbent emphasizes bipartisan rail safety, police funding, and healthcare costs in Akron.",
+        "economic_record_score": 0.3,
+        "economic_rhetoric_score": 0.2,
+        "cultural_record_score": 0.3,
+        "cultural_rhetoric_score": 0.0
       }
     },
     "NY_17": {
@@ -2883,7 +3063,11 @@
         "populist_economic_score": 0.8,
         "cross_partisan_outreach_score": 0.8,
         "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
-        "vibe_summary": "West Point combat veteran and New Dem moderate leans on national security, border order, SALT relief, and cost-of-living fixes."
+        "vibe_summary": "West Point combat veteran and New Dem moderate leans on national security, border order, SALT relief, and cost-of-living fixes.",
+        "economic_record_score": 0.4,
+        "economic_rhetoric_score": 0.3,
+        "cultural_record_score": 1.0,
+        "cultural_rhetoric_score": 0.7
       }
     },
     "CA_22": {
@@ -2947,7 +3131,11 @@
         "populist_economic_score": 1.5,
         "cross_partisan_outreach_score": 0.7,
         "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
-        "vibe_summary": "WFP- and CPC-backed progressive populist pivoted to Central Valley water, hospital cuts, farmworker costs, and kitchen-table economics."
+        "vibe_summary": "WFP- and CPC-backed progressive populist pivoted to Central Valley water, hospital cuts, farmworker costs, and kitchen-table economics.",
+        "economic_record_score": -1.0,
+        "economic_rhetoric_score": -0.4,
+        "cultural_record_score": -0.7,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "PA_07": {
@@ -3011,7 +3199,11 @@
         "populist_economic_score": 1.6,
         "cross_partisan_outreach_score": 0.3,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Firefighter-union populist runs on healthcare, anti-corruption, and anti-Trump messaging while skipping the only district debate."
+        "vibe_summary": "Firefighter-union populist runs on healthcare, anti-corruption, and anti-Trump messaging while skipping the only district debate.",
+        "economic_record_score": -0.6,
+        "economic_rhetoric_score": -0.4,
+        "cultural_record_score": -0.2,
+        "cultural_rhetoric_score": -0.2
       }
     },
     "PA_12": {
@@ -3075,7 +3267,11 @@
         "populist_economic_score": 1.8,
         "cross_partisan_outreach_score": 0.2,
         "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
-        "vibe_summary": "Squad progressive stays unapologetically left on Medicare for All, Gaza, reparations, and abolishing super PACs."
+        "vibe_summary": "Squad progressive stays unapologetically left on Medicare for All, Gaza, reparations, and abolishing super PACs.",
+        "economic_record_score": -1.8,
+        "economic_rhetoric_score": -1.6,
+        "cultural_record_score": -1.4,
+        "cultural_rhetoric_score": -1.5
       }
     }
   }
