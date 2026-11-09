@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T15:15:01.147938-05:00",
+  "fetched_at": "2026-11-09T15:30:01.282769-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -14,7 +14,7 @@
       "mean_rhetoric_score": 0.44,
       "mean_moderation_pivot": -0.22,
       "mean_shift_vs_2024": 18.34,
-      "mean_overperf_all": 3.78,
+      "mean_overperf_all": 3.79,
       "median_overperf_all": 3.35,
       "ci95_overperf_all": [
         0.86,
@@ -106,8 +106,8 @@
         "Angie Nixon (FL Senate: -2.32 pts)",
         "Marquita Bradshaw (TN Senate: -2.33 pts)",
         "Edward Markey (MA Senate: -0.89 pts)",
-        "Bob Brooks (PA-07 House: +0.27 pts)",
-        "Summer Lee (PA-12 House: -3.41 pts)"
+        "Bob Brooks (PA-07 House: +0.26 pts)",
+        "Summer Lee (PA-12 House: -3.42 pts)"
       ]
     }
   ],
@@ -154,7 +154,7 @@
       "archetype": "Hard-Left Econ Record + Cultural/Populist Pivot (M4A/GND/Tax Record + Mod/Pop Talk)",
       "n_non_redistricted": 7,
       "n_statewide": 5,
-      "mean_overperf_non_redistricted": -3.68,
+      "mean_overperf_non_redistricted": -3.69,
       "median_overperf_non_redistricted": -2.33,
       "pct_beating_benchmark_non_redistricted": 14.3,
       "mean_overperf_statewide": -4.11,
@@ -2083,11 +2083,11 @@
       "office_type": "house_races",
       "caucus_or_faction": "WelcomePAC Moderate (Former Local TV Anchor)",
       "dw_nominate": null,
-      "margin_2026": 10.12,
-      "shift_vs_2024_baseline": 15.35,
+      "margin_2026": 10.16,
+      "shift_vs_2024_baseline": 15.39,
       "state_house_mean_shift": 10.62,
-      "overperf_vs_benchmark": 0.24,
-      "benchmark_label": "PA Dist House Mean (+15.11)",
+      "overperf_vs_benchmark": 0.27,
+      "benchmark_label": "PA Dist House Mean (+15.12)",
       "record_ideology_score": 0.7,
       "rhetoric_ideology_score": 0.5,
       "rhetorical_moderation_pivot": -0.2,
@@ -2362,8 +2362,8 @@
       "margin_2026": 12.2,
       "shift_vs_2024_baseline": 15.38,
       "state_house_mean_shift": 10.62,
-      "overperf_vs_benchmark": 0.27,
-      "benchmark_label": "PA Dist House Mean (+15.11)",
+      "overperf_vs_benchmark": 0.26,
+      "benchmark_label": "PA Dist House Mean (+15.12)",
       "record_ideology_score": -0.9,
       "rhetoric_ideology_score": -0.6,
       "rhetorical_moderation_pivot": 0.3,
@@ -2408,8 +2408,8 @@
       "margin_2026": 30.88,
       "shift_vs_2024_baseline": 11.7,
       "state_house_mean_shift": 10.62,
-      "overperf_vs_benchmark": -3.41,
-      "benchmark_label": "PA Dist House Mean (+15.11)",
+      "overperf_vs_benchmark": -3.42,
+      "benchmark_label": "PA Dist House Mean (+15.12)",
       "record_ideology_score": -1.8,
       "rhetoric_ideology_score": -1.7,
       "rhetorical_moderation_pivot": 0.1,
