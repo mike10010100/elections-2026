@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T13:30:01.677009-05:00",
+  "fetched_at": "2026-11-09T13:45:01.325975-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.71,
-        "residual_overperformance_pts": 6.99,
+        "expected_demographic_state_shift_pts": 28.72,
+        "residual_overperformance_pts": 6.98,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -319,8 +319,8 @@
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 15.88,
-        "expected_demographic_state_shift_pts": 16.16,
-        "residual_overperformance_pts": -0.28,
+        "expected_demographic_state_shift_pts": 16.15,
+        "residual_overperformance_pts": -0.27,
         "demographics": {
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
@@ -412,7 +412,7 @@
         "us_senate_2024_to_2026": {
           "n": 2240,
           "mean": 14.34,
-          "median": 14.91,
+          "median": 14.92,
           "stdev": 8.01,
           "pct_shifting_dem": 96.8
         },
@@ -906,7 +906,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.12,
+        "mean": 12.11,
         "median": 12.59,
         "stdev": 8.19,
         "pct_shifting_dem": 95.3
