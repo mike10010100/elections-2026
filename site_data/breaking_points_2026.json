@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T12:00:01.474239-05:00",
+  "fetched_at": "2026-11-09T12:15:01.570119-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.72,
-        "residual_overperformance_pts": 6.98,
+        "expected_demographic_state_shift_pts": 28.71,
+        "residual_overperformance_pts": 6.99,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -228,8 +228,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.26,
-        "residual_overperformance_pts": 3.64,
+        "expected_demographic_state_shift_pts": 21.27,
+        "residual_overperformance_pts": 3.63,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -306,8 +306,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.73,
-        "expected_demographic_state_shift_pts": 19.99,
-        "residual_overperformance_pts": -0.26,
+        "expected_demographic_state_shift_pts": 20.0,
+        "residual_overperformance_pts": -0.27,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -319,8 +319,8 @@
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 15.88,
-        "expected_demographic_state_shift_pts": 16.16,
-        "residual_overperformance_pts": -0.28,
+        "expected_demographic_state_shift_pts": 16.15,
+        "residual_overperformance_pts": -0.27,
         "demographics": {
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 16.95,
-        "residual_overperformance_pts": -0.53,
+        "expected_demographic_state_shift_pts": 16.96,
+        "residual_overperformance_pts": -0.54,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -371,8 +371,8 @@
         "county_label": "Delaware, OH (Columbus exurban DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 11.07,
-        "expected_demographic_state_shift_pts": 14.22,
-        "residual_overperformance_pts": -3.15,
+        "expected_demographic_state_shift_pts": 14.21,
+        "residual_overperformance_pts": -3.14,
         "demographics": {
           "hisp_pct": 2.8,
           "blk_pct": 3.9,
@@ -421,7 +421,7 @@
           "mean": 11.76,
           "median": 11.3,
           "stdev": 7.67,
-          "pct_shifting_dem": 96.1
+          "pct_shifting_dem": 96.0
         },
         "governor_2024_to_2026": {
           "n": 2150,
@@ -762,8 +762,8 @@
           "n": 324,
           "mean": 12.25,
           "median": 11.74,
-          "stdev": 5.08,
-          "pct_shifting_dem": 99.4
+          "stdev": 5.09,
+          "pct_shifting_dem": 99.1
         },
         "governor_2024_to_2026": {
           "n": 168,
@@ -818,7 +818,7 @@
         "us_house_2024_to_2026": {
           "n": 1626,
           "mean": 10.93,
-          "median": 10.5,
+          "median": 10.52,
           "stdev": 7.01,
           "pct_shifting_dem": 94.9
         },
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6422
+        "pearson_r": 0.6421
       }
     },
     "statewide_downballot_executive_races": {
