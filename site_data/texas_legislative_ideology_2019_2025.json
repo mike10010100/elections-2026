@@ -121,8 +121,8 @@
       "election_2026": {
         "office": "U.S. Senate",
         "margin_pct": 12.1,
-        "dem_votes": 5447069,
-        "gop_votes": 4250664,
+        "dem_votes": 5447080,
+        "gop_votes": 4250704,
         "dem_pct": 55.09,
         "gop_pct": 42.99,
         "gop_opponent": "Ken Paxton"
@@ -184,8 +184,8 @@
       "election_2026": {
         "office": "Governor",
         "margin_pct": 7.13,
-        "dem_votes": 5232679,
-        "gop_votes": 4525947,
+        "dem_votes": 5232690,
+        "gop_votes": 4525990,
         "dem_pct": 52.82,
         "gop_pct": 45.69,
         "gop_opponent": "Greg Abbott"
@@ -264,8 +264,8 @@
       "election_2026": {
         "office": "Lieutenant Governor",
         "margin_pct": 6.1,
-        "dem_votes": 5085417,
-        "gop_votes": 4486054,
+        "dem_votes": 5085428,
+        "gop_votes": 4486096,
         "dem_pct": 51.73,
         "gop_pct": 45.64,
         "gop_opponent": "Dan Patrick"
@@ -322,8 +322,8 @@
       "election_2026": {
         "office": "Railroad Commissioner (Term Exp 2032)",
         "margin_pct": 6.97,
-        "dem_votes": 5105054,
-        "gop_votes": 4427487,
+        "dem_votes": 5105065,
+        "gop_votes": 4427530,
         "dem_pct": 52.52,
         "gop_pct": 45.55,
         "gop_opponent": "Bo French"
@@ -347,8 +347,8 @@
       "election_2026": {
         "office": "Attorney General",
         "margin_pct": 6.44,
-        "dem_votes": 5135514,
-        "gop_votes": 4503813,
+        "dem_votes": 5135525,
+        "gop_votes": 4503855,
         "dem_pct": 52.38,
         "gop_pct": 45.93,
         "gop_opponent": "Mayes Middleton"
@@ -372,8 +372,8 @@
       "election_2026": {
         "office": "Comptroller",
         "margin_pct": 5.15,
-        "dem_votes": 5016319,
-        "gop_votes": 4512762,
+        "dem_votes": 5016329,
+        "gop_votes": 4512804,
         "dem_pct": 51.3,
         "gop_pct": 46.15,
         "gop_opponent": "Don Huffines"
