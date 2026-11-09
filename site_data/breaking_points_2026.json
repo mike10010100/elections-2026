@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-08T19:45:01.282531-05:00",
+  "fetched_at": "2026-11-08T20:15:01.114849-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -202,8 +202,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.68,
-        "expected_demographic_state_shift_pts": 16.6,
-        "residual_overperformance_pts": 5.08,
+        "expected_demographic_state_shift_pts": 16.61,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -427,14 +427,14 @@
           "n": 2150,
           "mean": 12.11,
           "median": 11.42,
-          "stdev": 10.66,
+          "stdev": 10.65,
           "pct_shifting_dem": 90.4
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
           "mean": 10.23,
           "median": 9.4,
-          "stdev": 7.23,
+          "stdev": 7.22,
           "pct_shifting_dem": 96.5
         }
       }
@@ -691,7 +691,7 @@
           "n": 181,
           "mean": 11.03,
           "median": 12.37,
-          "stdev": 10.79,
+          "stdev": 10.78,
           "pct_shifting_dem": 92.8
         },
         "us_senate_2024_to_2026": {
@@ -703,9 +703,9 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.44,
+          "mean": 12.45,
           "median": 11.72,
-          "stdev": 7.78,
+          "stdev": 7.77,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -717,9 +717,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.77,
+          "mean": 7.78,
           "median": 6.82,
-          "stdev": 5.8,
+          "stdev": 5.79,
           "pct_shifting_dem": 94.4
         }
       }
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.34,
-        "median": 11.14,
+        "median": 11.2,
         "stdev": 5.28,
         "pct_shifting_dem": 95.2
       },
@@ -892,15 +892,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.25,
+        "mean": 12.26,
         "median": 14.12,
-        "stdev": 8.73,
+        "stdev": 8.72,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.66,
-        "median": 10.78,
+        "mean": 9.68,
+        "median": 10.84,
         "stdev": 5.13,
         "pct_shifting_dem": 100.0
       },
@@ -908,7 +908,7 @@
         "n": 107,
         "mean": 12.11,
         "median": 12.59,
-        "stdev": 8.2,
+        "stdev": 8.19,
         "pct_shifting_dem": 95.3
       }
     }
