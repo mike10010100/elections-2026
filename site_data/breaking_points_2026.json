@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T11:45:01.803086-05:00",
+  "fetched_at": "2026-11-09T12:00:01.474239-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.71,
-        "residual_overperformance_pts": 6.99,
+        "expected_demographic_state_shift_pts": 28.72,
+        "residual_overperformance_pts": 6.98,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -421,7 +421,7 @@
           "mean": 11.76,
           "median": 11.3,
           "stdev": 7.67,
-          "pct_shifting_dem": 96.0
+          "pct_shifting_dem": 96.1
         },
         "governor_2024_to_2026": {
           "n": 2150,
@@ -762,8 +762,8 @@
           "n": 324,
           "mean": 12.25,
           "median": 11.74,
-          "stdev": 5.09,
-          "pct_shifting_dem": 99.1
+          "stdev": 5.08,
+          "pct_shifting_dem": 99.4
         },
         "governor_2024_to_2026": {
           "n": 168,
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6421
+        "pearson_r": 0.6422
       }
     },
     "statewide_downballot_executive_races": {
