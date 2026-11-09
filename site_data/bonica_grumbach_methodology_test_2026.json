@@ -262,13 +262,13 @@
         6.71
       ],
       "mean_overperf_statewide_vs_house": 2.48,
-      "median_overperf_statewide_vs_house": 2.11,
+      "median_overperf_statewide_vs_house": 2.1,
       "pct_beating_benchmark_statewide": 70.0,
       "notable_examples": [
         "Scott Colom (MS Senate: +5.75 pts)",
         "Adam Hamilton (KS Senate: +9.06 pts)",
         "Mary Peltola (AK Senate: -3.73 pts)",
-        "Mark Warner (VA Senate: +2.92 pts)",
+        "Mark Warner (VA Senate: +2.91 pts)",
         "John Hickenlooper (CO Senate: +1.30 pts)",
         "Amy Klobuchar (MN Governor: +0.14 pts)"
       ]
@@ -280,12 +280,12 @@
       "mean_record_score": 0.13,
       "mean_rhetoric_score": 0.24,
       "mean_moderation_pivot": 0.11,
-      "mean_shift_vs_2024": 18.24,
+      "mean_shift_vs_2024": 18.25,
       "mean_overperf_all": 3.52,
       "median_overperf_all": 3.83,
       "ci95_overperf_all": [
-        1.83,
-        5.2
+        1.84,
+        5.21
       ],
       "mean_overperf_statewide_vs_house": 3.52,
       "median_overperf_statewide_vs_house": 3.83,
@@ -294,7 +294,7 @@
         "James Talarico (TX Senate: +3.64 pts)",
         "Sherrod Brown (OH Senate: +1.48 pts)",
         "Roy Cooper (NC Senate: +5.43 pts)",
-        "Jon Ossoff (GA Senate: +5.39 pts)",
+        "Jon Ossoff (GA Senate: +5.41 pts)",
         "Josh Turek (IA Senate: +3.52 pts)",
         "Annie Andrews (SC Senate: +6.73 pts)"
       ]
@@ -363,13 +363,13 @@
           "beta": 2.397,
           "se_hc1": 0.827,
           "ci95_low": 0.733,
-          "ci95_high": 4.06,
+          "ci95_high": 4.061,
           "t_stat": 2.9,
           "p_value": 0.0057
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 2.964,
+          "beta": 2.963,
           "se_hc1": 1.007,
           "ci95_low": 0.937,
           "ci95_high": 4.99,
@@ -394,9 +394,9 @@
         },
         {
           "term": "2026 Rhetoric (+ = Moderate)",
-          "beta": 3.972,
+          "beta": 3.971,
           "se_hc1": 1.249,
-          "ci95_low": 1.46,
+          "ci95_low": 1.459,
           "ci95_high": 6.483,
           "t_stat": 3.18,
           "p_value": 0.0026
@@ -415,7 +415,7 @@
           "ci95_low": 0.427,
           "ci95_high": 3.696,
           "t_stat": 2.54,
-          "p_value": 0.0146
+          "p_value": 0.0145
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
@@ -455,19 +455,19 @@
           "term": "Rhetorical Moderation Pivot",
           "beta": -0.126,
           "se_hc1": 2.187,
-          "ci95_low": -4.54,
+          "ci95_low": -4.539,
           "ci95_high": 4.288,
           "t_stat": -0.06,
-          "p_value": 0.9544
+          "p_value": 0.9545
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -0.095,
+          "beta": -0.094,
           "se_hc1": 1.509,
-          "ci95_low": -3.14,
-          "ci95_high": 2.949,
+          "ci95_low": -3.139,
+          "ci95_high": 2.951,
           "t_stat": -0.06,
-          "p_value": 0.9498
+          "p_value": 0.9504
         },
         {
           "term": "Republican Incumbent",
@@ -482,10 +482,10 @@
           "term": "Log(Dem/GOP Total Spend)",
           "beta": 0.151,
           "se_hc1": 0.503,
-          "ci95_low": -0.864,
+          "ci95_low": -0.865,
           "ci95_high": 1.167,
           "t_stat": 0.3,
-          "p_value": 0.7653
+          "p_value": 0.7656
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
@@ -540,9 +540,9 @@
         {
           "term": "2026 Rhetoric (+ = Moderate)",
           "beta": 3.875,
-          "se_hc1": 0.945,
-          "ci95_low": 1.956,
-          "ci95_high": 5.795,
+          "se_hc1": 0.944,
+          "ci95_low": 1.955,
+          "ci95_high": 5.794,
           "t_stat": 4.1,
           "p_value": 0.0002
         }
@@ -558,7 +558,7 @@
           "beta": 1.166,
           "se_hc1": 0.668,
           "ci95_low": -0.191,
-          "ci95_high": 2.523,
+          "ci95_high": 2.524,
           "t_stat": 1.75,
           "p_value": 0.0898
         },
@@ -567,7 +567,7 @@
           "beta": 2.415,
           "se_hc1": 0.566,
           "ci95_low": 1.266,
-          "ci95_high": 3.565,
+          "ci95_high": 3.564,
           "t_stat": 4.27,
           "p_value": 0.0001
         }
@@ -598,39 +598,39 @@
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -1.557,
+          "beta": -1.556,
           "se_hc1": 1.977,
           "ci95_low": -5.6,
           "ci95_high": 2.487,
           "t_stat": -0.79,
-          "p_value": 0.4375
+          "p_value": 0.4376
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -1.066,
-          "se_hc1": 2.109,
+          "beta": -1.064,
+          "se_hc1": 2.11,
           "ci95_low": -5.379,
-          "ci95_high": 3.247,
-          "t_stat": -0.51,
-          "p_value": 0.617
+          "ci95_high": 3.251,
+          "t_stat": -0.5,
+          "p_value": 0.6179
         },
         {
           "term": "Republican Incumbent",
           "beta": 0.811,
           "se_hc1": 1.883,
-          "ci95_low": -3.04,
+          "ci95_low": -3.041,
           "ci95_high": 4.662,
           "t_stat": 0.43,
           "p_value": 0.67
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
-          "beta": 0.298,
+          "beta": 0.297,
           "se_hc1": 0.628,
-          "ci95_low": -0.986,
+          "ci95_low": -0.987,
           "ci95_high": 1.582,
           "t_stat": 0.47,
-          "p_value": 0.6387
+          "p_value": 0.6392
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
@@ -731,10 +731,10 @@
       {
         "bucket": "Red (Harris < 45%)",
         "counties": 453,
-        "mod_dem_votes": 4970404,
-        "prog_dem_votes": 4782400,
-        "mod_minus_prog_votes": 188004,
-        "mod_minus_prog_pct": 3.93,
+        "mod_dem_votes": 4970601,
+        "prog_dem_votes": 4782402,
+        "mod_minus_prog_votes": 188199,
+        "mod_minus_prog_pct": 3.94,
         "mod_share_pct": 40.55,
         "prog_share_pct": 38.95
       }
