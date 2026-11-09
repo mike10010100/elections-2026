@@ -365,13 +365,13 @@
           "ci95_low": 0.735,
           "ci95_high": 4.062,
           "t_stat": 2.9,
-          "p_value": 0.0056
+          "p_value": 0.0057
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 2.961,
+          "beta": 2.96,
           "se_hc1": 1.007,
-          "ci95_low": 0.935,
+          "ci95_low": 0.934,
           "ci95_high": 4.986,
           "t_stat": 2.94,
           "p_value": 0.0051
@@ -406,22 +406,22 @@
     "all49_bonica_1d_composite": {
       "n": 49,
       "k": 2,
-      "r2": 0.168,
+      "r2": 0.167,
       "coefficients": [
         {
           "term": "Intercept",
           "beta": 2.063,
           "se_hc1": 0.812,
           "ci95_low": 0.429,
-          "ci95_high": 3.698,
+          "ci95_high": 3.697,
           "t_stat": 2.54,
-          "p_value": 0.0144
+          "p_value": 0.0145
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
           "beta": 2.498,
           "se_hc1": 0.808,
-          "ci95_low": 0.873,
+          "ci95_low": 0.872,
           "ci95_high": 4.123,
           "t_stat": 3.09,
           "p_value": 0.0033
@@ -444,7 +444,7 @@
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 2.951,
+          "beta": 2.95,
           "se_hc1": 1.16,
           "ci95_low": 0.609,
           "ci95_high": 5.292,
@@ -453,12 +453,12 @@
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -0.125,
-          "se_hc1": 2.188,
+          "beta": -0.124,
+          "se_hc1": 2.189,
           "ci95_low": -4.541,
           "ci95_high": 4.292,
           "t_stat": -0.06,
-          "p_value": 0.9548
+          "p_value": 0.9549
         },
         {
           "term": "Democratic Incumbent",
@@ -472,11 +472,11 @@
         {
           "term": "Republican Incumbent",
           "beta": 1.745,
-          "se_hc1": 2.379,
-          "ci95_low": -3.057,
+          "se_hc1": 2.38,
+          "ci95_low": -3.058,
           "ci95_high": 6.547,
           "t_stat": 0.73,
-          "p_value": 0.4674
+          "p_value": 0.4676
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
