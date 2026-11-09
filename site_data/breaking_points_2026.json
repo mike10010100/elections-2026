@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T12:30:01.111948-05:00",
+  "fetched_at": "2026-11-09T12:45:01.407137-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -319,8 +319,8 @@
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 15.88,
-        "expected_demographic_state_shift_pts": 16.15,
-        "residual_overperformance_pts": -0.27,
+        "expected_demographic_state_shift_pts": 16.16,
+        "residual_overperformance_pts": -0.28,
         "demographics": {
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
@@ -634,7 +634,7 @@
           "n": 1051,
           "mean": 12.64,
           "median": 13.6,
-          "stdev": 7.32,
+          "stdev": 7.33,
           "pct_shifting_dem": 96.2
         },
         "us_senate_2024_to_2026": {
@@ -655,7 +655,7 @@
           "n": 648,
           "mean": 12.56,
           "median": 11.34,
-          "stdev": 10.67,
+          "stdev": 10.66,
           "pct_shifting_dem": 89.5
         },
         "attorney_general_2024_to_2026": {
@@ -705,7 +705,7 @@
           "n": 179,
           "mean": 12.45,
           "median": 11.72,
-          "stdev": 7.78,
+          "stdev": 7.77,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -774,9 +774,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 144,
-          "mean": 10.63,
+          "mean": 10.64,
           "median": 10.22,
-          "stdev": 5.19,
+          "stdev": 5.18,
           "pct_shifting_dem": 97.9
         }
       }
@@ -851,13 +851,13 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.642
+        "pearson_r": 0.6421
       }
     },
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.33,
+        "mean": 12.34,
         "median": 11.99,
         "stdev": 5.73,
         "pct_shifting_dem": 96.6
