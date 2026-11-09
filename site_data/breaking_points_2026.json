@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T15:00:01.829484-05:00",
+  "fetched_at": "2026-11-09T15:15:01.147938-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.71,
-        "residual_overperformance_pts": 6.99,
+        "expected_demographic_state_shift_pts": 28.7,
+        "residual_overperformance_pts": 7.0,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
