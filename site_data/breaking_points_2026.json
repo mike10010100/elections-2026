@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T16:00:01.091720-05:00",
+  "fetched_at": "2026-11-09T16:15:01.816270-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -214,9 +214,9 @@
         "fips": "13097",
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
-        "actual_top26_shift_pts": 21.68,
+        "actual_top26_shift_pts": 21.7,
         "expected_demographic_state_shift_pts": 16.61,
-        "residual_overperformance_pts": 5.07,
+        "residual_overperformance_pts": 5.09,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -293,8 +293,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.21,
-        "expected_demographic_state_shift_pts": 19.28,
-        "residual_overperformance_pts": -0.07,
+        "expected_demographic_state_shift_pts": 19.24,
+        "residual_overperformance_pts": -0.03,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -306,8 +306,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.73,
-        "expected_demographic_state_shift_pts": 20.0,
-        "residual_overperformance_pts": -0.27,
+        "expected_demographic_state_shift_pts": 19.96,
+        "residual_overperformance_pts": -0.23,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -461,7 +461,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.59,
+          "mean": 27.58,
           "median": 25.58,
           "stdev": 11.21,
           "pct_shifting_dem": 100.0
@@ -475,7 +475,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.01,
+          "mean": 23.0,
           "median": 19.94,
           "stdev": 12.31,
           "pct_shifting_dem": 100.0
@@ -484,7 +484,7 @@
           "n": 101,
           "mean": 23.04,
           "median": 21.18,
-          "stdev": 10.82,
+          "stdev": 10.81,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
@@ -847,11 +847,11 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1800,
-        "pearson_r": 0.6977
+        "pearson_r": 0.6976
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.641
+        "pearson_r": 0.6411
       }
     },
     "statewide_downballot_executive_races": {
@@ -893,7 +893,7 @@
       "Lieutenant Governor": {
         "n": 9,
         "mean": 12.26,
-        "median": 14.12,
+        "median": 14.14,
         "stdev": 8.72,
         "pct_shifting_dem": 88.9
       },
