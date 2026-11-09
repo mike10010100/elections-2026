@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T12:15:01.570119-05:00",
+  "fetched_at": "2026-11-09T12:30:01.111948-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -160,7 +160,7 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.71,
+    "mean_residual_pts": 1.7,
     "median_residual_pts": 1.58,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.74,
-        "expected_demographic_state_shift_pts": 16.6,
-        "residual_overperformance_pts": 5.14,
+        "expected_demographic_state_shift_pts": 16.61,
+        "residual_overperformance_pts": 5.13,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.09,
-        "expected_demographic_state_shift_pts": 17.11,
-        "residual_overperformance_pts": 2.98,
+        "expected_demographic_state_shift_pts": 17.12,
+        "residual_overperformance_pts": 2.97,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.27,
-        "expected_demographic_state_shift_pts": 15.58,
-        "residual_overperformance_pts": -2.31,
+        "expected_demographic_state_shift_pts": 15.59,
+        "residual_overperformance_pts": -2.32,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -747,14 +747,14 @@
         "top_of_ticket_2024_to_2026": {
           "n": 325,
           "mean": 15.6,
-          "median": 15.46,
+          "median": 15.48,
           "stdev": 5.17,
           "pct_shifting_dem": 99.4
         },
         "us_senate_2024_to_2026": {
           "n": 316,
           "mean": 15.8,
-          "median": 15.51,
+          "median": 15.52,
           "stdev": 4.89,
           "pct_shifting_dem": 100.0
         },
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
-        "pearson_r": 0.6421
+        "pearson_r": 0.642
       }
     },
     "statewide_downballot_executive_races": {
