@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T17:15:01.295343-05:00",
+  "fetched_at": "2026-11-10T17:30:01.722775-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -160,7 +160,7 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.72,
+    "mean_residual_pts": 1.71,
     "median_residual_pts": 1.58,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.72,
-        "residual_overperformance_pts": 5.2,
+        "expected_demographic_state_shift_pts": 16.73,
+        "residual_overperformance_pts": 5.19,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.69,
-        "residual_overperformance_pts": -2.22,
+        "expected_demographic_state_shift_pts": 15.7,
+        "residual_overperformance_pts": -2.23,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -689,14 +689,14 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.08,
+          "mean": 11.09,
           "median": 12.37,
           "stdev": 10.76,
           "pct_shifting_dem": 92.8
         },
         "us_senate_2024_to_2026": {
           "n": 130,
-          "mean": 12.93,
+          "mean": 12.94,
           "median": 13.57,
           "stdev": 9.18,
           "pct_shifting_dem": 96.2
@@ -717,9 +717,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.83,
+          "mean": 7.84,
           "median": 6.86,
-          "stdev": 5.76,
+          "stdev": 5.77,
           "pct_shifting_dem": 95.4
         }
       }
@@ -746,7 +746,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 325,
-          "mean": 15.62,
+          "mean": 15.61,
           "median": 15.51,
           "stdev": 5.17,
           "pct_shifting_dem": 99.7
@@ -767,16 +767,16 @@
         },
         "governor_2024_to_2026": {
           "n": 168,
-          "mean": 11.09,
+          "mean": 11.08,
           "median": 11.15,
           "stdev": 6.48,
           "pct_shifting_dem": 98.2
         },
         "attorney_general_2024_to_2026": {
           "n": 144,
-          "mean": 10.5,
+          "mean": 10.49,
           "median": 10.08,
-          "stdev": 5.0,
+          "stdev": 4.99,
           "pct_shifting_dem": 97.9
         }
       }
@@ -866,7 +866,7 @@
         "n": 25,
         "mean": 12.22,
         "median": 12.59,
-        "stdev": 7.0,
+        "stdev": 7.01,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
@@ -885,7 +885,7 @@
       },
       "Supreme Court": {
         "n": 10,
-        "mean": 15.65,
+        "mean": 15.66,
         "median": 18.39,
         "stdev": 19.03,
         "pct_shifting_dem": 90.0
