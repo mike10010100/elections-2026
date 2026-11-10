@@ -151,17 +151,17 @@ def build_all():
                 sv += v
 
         nat_house[yr] = {
-            "d2p_share": round(nd / (nd + nr) * 100.0, 2),
-            "d2p_margin": round((nd - nr) / (nd + nr) * 100.0, 2),
-            "total_margin": round((nd - nr) / nv * 100.0, 2),
+            "d2p_share": round(nd / (nd + nr) * 100.0, 2) if (nd + nr) > 0 else 0.0,
+            "d2p_margin": round((nd - nr) / (nd + nr) * 100.0, 2) if (nd + nr) > 0 else 0.0,
+            "total_margin": round((nd - nr) / nv * 100.0, 2) if nv > 0 else 0.0,
         }
         tx_house_all[yr] = {
-            "d2p_share": round(td_all / (td_all + tr_all) * 100.0, 2),
-            "d2p_margin": round((td_all - tr_all) / (td_all + tr_all) * 100.0, 2),
+            "d2p_share": round(td_all / (td_all + tr_all) * 100.0, 2) if (td_all + tr_all) > 0 else 0.0,
+            "d2p_margin": round((td_all - tr_all) / (td_all + tr_all) * 100.0, 2) if (td_all + tr_all) > 0 else 0.0,
         }
         tx_house_contested[yr] = {
-            "d2p_share": round(td_cont / (td_cont + tr_cont) * 100.0, 2),
-            "d2p_margin": round((td_cont - tr_cont) / (td_cont + tr_cont) * 100.0, 2),
+            "d2p_share": round(td_cont / (td_cont + tr_cont) * 100.0, 2) if (td_cont + tr_cont) > 0 else 0.0,
+            "d2p_margin": round((td_cont - tr_cont) / (td_cont + tr_cont) * 100.0, 2) if (td_cont + tr_cont) > 0 else 0.0,
             "contested_counties": n_cont,
         }
         if sv > 0:

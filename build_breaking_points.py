@@ -256,16 +256,17 @@ def render_chart5_convergence_ceiling(exit_polls: dict):
     ax.set_facecolor(BG_COLOR)
 
     items = [
-        ("Government Corruption a Major/Crucial Factor\n(AP Voter Poll / Guardian-Harris: 50% 'crucial')", 90, PURPLE, "Institutional / Ethics"),
+        ("Government Corruption a Major/Crucial Factor\n(AP Voter Poll / SSRS: 50%–54% 'crucial', 36%–40% 'major')", 90, PURPLE, "Institutional / Ethics"),
+        ("Cost of Living / High Prices a Major/Crucial Factor\n(AP Voter Poll / SSRS: ~50% 'crucial', ~40% 'major')", 90, AMBER, "Macro Mood"),
         ("Economy Rated 'Not So Good' or 'Poor'\n(AP Voter Poll / Network Exit Polls; 75% angry/dissatisfied)", 75, AMBER, "Macro Mood"),
-        ("Iran War a Crucial or Major Voting Factor\n(NBC Exit Poll; 70% want Congress to prioritize ending war)", 74, AMBER, "Macro Mood"),
+        ("Iran War a Crucial or Major Voting Factor\n(NBC Exit Poll: 33% 'crucial', 41% 'major'; 70% prioritize ending war)", 74, AMBER, "Macro Mood"),
         ("Congress Not Doing Enough to Check Trump\n(Network Exit Polls; >40% voted explicitly to oppose Trump)", 70, PURPLE, "Institutional / Ethics"),
         ("Trump's Tariffs Hurt the U.S. Economy\n(NBC / CBS Exit Polls: 66% hurt vs. only 21% helped)", 66, DEM_DARK, "60%–66% Convergence Zone"),
         ("Dissatisfied / Upset With Trump D.C. Projects\n(WaPo-Ipsos: Ballroom, Arch & Reflecting Pool; 56% oppose Ballroom 2:1)", 65, DEM_DARK, "60%–66% Convergence Zone"),
         ("Military Action in Iran Was the 'Wrong Decision'\n(NBC / CBS / AP Voter Poll: 60%–63% wrong decision)", 63, DEM_DARK, "60%–66% Convergence Zone"),
         ("Trump Overall Job Disapproval in Midterm Exit Polls\n(AP Voter Poll / SSRS Exit Polls: 60%–62% disapprove; 25% econ approval)", 61, GOP_RED, "Overall Approval Baseline"),
-        ("ICE / Deportation Efforts 'Went Too Far'\n(CBS / Network Exit Polls: 57%–60% went too far)", 60, DEM_DARK, "60%–66% Convergence Zone"),
-        ("Healthcare Costs 'Very Concerned' / AI Data Centers Major Factor\n(KFF Poll: 60% healthcare; Time/Exit Poll: 56% AI data centers)", 60, DEM_DARK, "60%–66% Convergence Zone"),
+        ("ICE / Deportation Efforts 'Went Too Far'\n(CBS / Network Exit Polls: 57%–60% went too far; 40% 'crucial')", 60, DEM_DARK, "60%–66% Convergence Zone"),
+        ("AI & Data Centers a Crucial/Major Factor\n(SSRS Exit Poll: only 23% 'crucial' + 33% 'major' = 56%; 76% oppose local siting)", 56, DEM_DARK, "60%–66% Convergence Zone"),
     ][::-1]
 
     y = np.arange(len(items))
@@ -662,10 +663,13 @@ def build_breaking_points() -> dict:
                     c["ag26"]["m"] - c["p24"]["m"],
                 ]
             )
-    X_b = np.array(ballot_rows)
-    X_b_std = (X_b - X_b.mean(axis=0)) / X_b.std(axis=0)
-    eig_b, _ = np.linalg.eigh(np.cov(X_b_std.T))
-    var_b = [round(float(v), 2) for v in (eig_b[::-1] / eig_b.sum() * 100)]
+    if len(ballot_rows) >= 2:
+        X_b = np.array(ballot_rows)
+        X_b_std = (X_b - X_b.mean(axis=0)) / np.where(X_b.std(axis=0) == 0, 1.0, X_b.std(axis=0))
+        eig_b, _ = np.linalg.eigh(np.cov(X_b_std.T))
+        var_b = [round(float(v), 2) for v in (eig_b[::-1] / eig_b.sum() * 100)]
+    else:
+        var_b = [0.0, 0.0, 0.0, 0.0]
 
     # 2) Demographic PCA among high-swing counties (top26 - p24 >= +14.0 pts)
     dem_rows = []
@@ -675,10 +679,92 @@ def build_breaking_points() -> dict:
             d = c.get("dem", {})
             if sh >= 14.0 and all(d.get(k) is not None for k in ["wnh", "blk", "hisp", "ba", "inc", "dens"]):
                 dem_rows.append([d["wnh"], d["blk"], d["hisp"], d["ba"], d["inc"], math.log1p(d["dens"])])
-    X_d = np.array(dem_rows)
-    X_d_std = (X_d - X_d.mean(axis=0)) / X_d.std(axis=0)
-    eig_d, _ = np.linalg.eigh(np.cov(X_d_std.T))
-    var_d = [round(float(v), 2) for v in (eig_d[::-1] / eig_d.sum() * 100)]
+    if len(dem_rows) >= 2:
+        X_d = np.array(dem_rows)
+        X_d_std = (X_d - X_d.mean(axis=0)) / np.where(X_d.std(axis=0) == 0, 1.0, X_d.std(axis=0))
+        eig_d, _ = np.linalg.eigh(np.cov(X_d_std.T))
+        var_d = [round(float(v), 2) for v in (eig_d[::-1] / eig_d.sum() * 100)]
+    else:
+        var_d = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    # 3) Data-Center Hotspot Counties OLS Demographic + State Fixed-Effect Residual Analysis
+    dc_fips_map = {
+        "51107": "Loudoun, VA (World #1 Data Center Hub)",
+        "51153": "Prince William, VA (PW Digital Gateway controversy)",
+        "51061": "Fauquier, VA (Exurban DC battles)",
+        "51047": "Culpeper, VA (Culpeper Tech Zone)",
+        "51177": "Spotsylvania, VA (Hyperscale zoning battles)",
+        "39089": "Licking, OH (New Albany hyperscale hub)",
+        "39041": "Delaware, OH (Columbus exurban DC corridor)",
+        "39097": "Madison, OH (West Jefferson DC corridor)",
+        "13097": "Douglas, GA (Atlanta West DC cluster)",
+        "13113": "Fayette, GA (QTS Fayetteville mega-site)",
+        "13077": "Coweta, GA (Project Sail / DC battles)",
+        "04013": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
+        "04021": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
+        "48221": "Hood, TX (Granbury Marathon/DC noise battle)",
+        "48371": "Pecos, TX (West TX data center/water battle)",
+        "48139": "Ellis, TX (DFW southern hyperscale hub)",
+    }
+    ols_rows = []
+    ols_meta = []
+    states_list = sorted(list({c.get("state") for c in counties if c.get("state")}))
+    for c in counties:
+        if not (valid_race(c, "top26") and valid_race(c, "p24")):
+            continue
+        d = c.get("dem", {})
+        if any(d.get(k) is None for k in ["wnh", "blk", "hisp", "ba", "inc", "dens"]):
+            continue
+        sh_val = c["top26"]["m"] - c["p24"]["m"]
+        x_vec = [1.0, d["hisp"], d["blk"], d["ba"], d["inc"] / 1000.0, math.log1p(d["dens"]), c["p24"]["m"]]
+        st_dummies = [1.0 if c.get("state") == s else 0.0 for s in states_list[1:]]
+        ols_rows.append(x_vec + st_dummies)
+        ols_meta.append((c.get("fips"), c.get("name"), c.get("state"), sh_val, d))
+
+    X_ols = np.array(ols_rows)
+    y_ols = np.array([m[3] for m in ols_meta])
+    beta_ols, _, _, _ = np.linalg.lstsq(X_ols, y_ols, rcond=None)
+    yhat_ols = X_ols @ beta_ols
+    resid_ols = y_ols - yhat_ols
+
+    dc_county_details = []
+    dc_resids = []
+    for (fips, cname, st, sh_val, d), yh_val, res_val in zip(ols_meta, yhat_ols, resid_ols):
+        if fips in dc_fips_map:
+            dc_resids.append(float(res_val))
+            dc_county_details.append({
+                "fips": fips,
+                "county_label": dc_fips_map[fips],
+                "state": st,
+                "actual_top26_shift_pts": round(float(sh_val), 2),
+                "expected_demographic_state_shift_pts": round(float(yh_val), 2),
+                "residual_overperformance_pts": round(float(res_val), 2),
+                "demographics": {
+                    "hisp_pct": d["hisp"],
+                    "blk_pct": d["blk"],
+                    "ba_pct": d["ba"],
+                },
+            })
+
+    datacenter_corridor_analysis = {
+        "description": (
+            "OLS regression across all contested U.S. counties controlling for state fixed effects and "
+            "Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). "
+            "Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline."
+        ),
+        "n_hotspot_counties": len(dc_county_details),
+        "mean_residual_pts": round(float(np.mean(dc_resids)), 2) if dc_resids else 0.0,
+        "median_residual_pts": round(float(np.median(dc_resids)), 2) if dc_resids else 0.0,
+        "local_referendum_benchmark": {
+            "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
+            "yes_pct": 66.43,
+            "no_pct": 33.57,
+            "yes_votes": 1565,
+            "no_votes": 791,
+            "note": "Demonstrates that voters channeled anti-data-center siting grievances into local zoning moratoriums while voting their federal ballots on macro affordability and corruption."
+        },
+        "counties": sorted(dc_county_details, key=lambda x: x["residual_overperformance_pts"], reverse=True),
+    }
 
     output = {
         "fetched_at": ov.get("fetched_at"),
@@ -700,6 +786,7 @@ def build_breaking_points() -> dict:
             },
         },
         "exit_and_issue_polling": exit_polls,
+        "datacenter_corridor_residual_analysis": datacenter_corridor_analysis,
         "disjoint_county_cohorts": cohort_results,
         "downballot_contagion": {
             "county_correlations": {

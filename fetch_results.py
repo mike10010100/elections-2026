@@ -44,8 +44,20 @@ def fetch_snapshot() -> dict:
             raw_bytes = gzip.decompress(raw_bytes)
 
     payload = json.loads(raw_bytes.decode("utf-8"))
-    races = payload.get("races", [])
+    races = sorted(payload.get("races", []), key=lambda r: r.get("id") or 0)
+    payload["races"] = races
     payload["fetched_at"] = iso_str
+
+    # Check if civicAPI races actually changed vs previous latest.json before writing another 3MB .json.gz snapshot
+    races_changed = True
+    if LATEST_FILE.exists():
+        try:
+            with open(LATEST_FILE, encoding="utf-8") as prev_f:
+                prev_payload = json.load(prev_f)
+            prev_sorted = sorted(prev_payload.get("races", []), key=lambda r: r.get("id") or 0)
+            races_changed = (prev_sorted != races)
+        except Exception:
+            races_changed = True
 
     # Write atomically to latest.json
     fd, tmp_path = tempfile.mkstemp(dir=str(DATA_DIR), prefix=".latest_", suffix=".json")
@@ -54,10 +66,12 @@ def fetch_snapshot() -> dict:
     os.chmod(tmp_path, 0o644)
     os.replace(tmp_path, LATEST_FILE)
 
-    # Save compressed snapshot to save disk space over 5-min intervals
-    snap_path = SNAPSHOT_DIR / f"races_{ts_str}.json.gz"
-    with gzip.open(snap_path, "wt", encoding="utf-8") as gz:
-        json.dump(payload, gz)
+    snap_note = "unchanged (skipped duplicate archive)"
+    if races_changed:
+        snap_path = SNAPSHOT_DIR / f"races_{ts_str}.json.gz"
+        with gzip.open(snap_path, "wt", encoding="utf-8") as gz:
+            json.dump(payload, gz)
+        snap_note = snap_path.name
 
     called_count = sum(
         1 for r in races if any(c.get("winner") for c in (r.get("candidates") or []))
@@ -65,7 +79,7 @@ def fetch_snapshot() -> dict:
     msg = (
         f"[{iso_str}] Fetched {len(races)} races "
         f"(called: {called_count}, uncalled: {len(races) - called_count}) "
-        f"-> {LATEST_FILE.name} & {snap_path.name}"
+        f"-> {LATEST_FILE.name} & {snap_note}"
     )
     print(msg)
     with open(LOG_FILE, "a", encoding="utf-8") as logf:
@@ -107,62 +121,28 @@ if __name__ == "__main__":
 
         if meaningful_change:
             venv_python = "/home/mike10010100/git/synology-drive-trays/.venv/bin/python"
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_fec_moneyball.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_fec_moneyball failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_breaking_points.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_breaking_points failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_analysis_charts.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_analysis_charts failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_rhetoric_vs_record.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_rhetoric_vs_record failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_texas_split_ticket.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_texas_split_ticket failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_texas_housing_edpol.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_texas_housing_edpol failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_talarico_record_verification.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_talarico_record_verification failed: {e}")
-            try:
-                subprocess.run(
-                    [venv_python, str(BASE_DIR / "build_bonica_grumbach_panel_test.py")],
-                    check=False,
-                )
-            except Exception as e:
-                print(f"Warning: build_bonica_grumbach_panel_test failed: {e}")
+            child_env = dict(
+                os.environ,
+                PATH=f"/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:{os.environ.get('PATH', '/usr/bin:/bin')}",
+            )
+            for script_name in [
+                "build_fec_moneyball.py",
+                "build_breaking_points.py",
+                "build_analysis_charts.py",
+                "build_rhetoric_vs_record.py",
+                "build_texas_split_ticket.py",
+                "build_texas_housing_edpol.py",
+                "build_talarico_record_verification.py",
+                "build_bonica_grumbach_panel_test.py",
+            ]:
+                try:
+                    subprocess.run(
+                        [venv_python, str(BASE_DIR / script_name)],
+                        env=child_env,
+                        check=False,
+                    )
+                except Exception as e:
+                    print(f"Warning: {script_name} failed: {e}")
 
             subprocess.run(
                 [
@@ -196,6 +176,7 @@ if __name__ == "__main__":
                     "assets/chart10_texas_housing_edpol_2026.png",
                     "assets/chart11_talarico_baker_rollcall_record_2026.png",
                     "assets/chart12_bonica_grumbach_panel_test_2026.png",
+                    "assets/chart13_economic_vs_cultural_moderation_2026.png",
                 ],
                 check=False,
             )

@@ -9,6 +9,7 @@ import concurrent.futures
 import gzip
 import json
 import os
+import re
 import tempfile
 import urllib.request
 from pathlib import Path
@@ -57,6 +58,86 @@ def fetch_url(url: str, dest: Path) -> tuple[str, bool, int]:
         return (dest.name, False, 0)
 
 
+def hydrate_house_district_counties(date_str: str, out_dir: Path) -> int:
+    """
+    Post-election week, NYT strips county-level reporting_units from national results-house.json
+    and serves them at per-district endpoints (e.g. results-alabama-us-house-1.json).
+    Caches per-district files in out_dir/house_districts/ (re-fetching only when updated_at changes)
+    and stitches full county reporting_units back into results-house.json atomically.
+    """
+    house_path = out_dir / "results-house.json"
+    if not house_path.exists():
+        return 0
+
+    with open(house_path, encoding="utf-8") as f:
+        house_doc = json.load(f)
+
+    races = house_doc.get("races", [])
+    dist_dir = out_dir / "house_districts"
+    dist_dir.mkdir(parents=True, exist_ok=True)
+
+    to_fetch = []
+    slug_by_idx = {}
+    for idx, r in enumerate(races):
+        if r.get("nyt_id", "").startswith("US-G-H-"):
+            continue
+        has_counties = any(u.get("level") == "county" for u in (r.get("reporting_units") or []))
+        if has_counties:
+            continue
+        u = r.get("url") or ""
+        m = re.search(r"/([^/]+)\.html$", u)
+        if not m:
+            continue
+        d_slug = m.group(1)
+        slug_by_idx[idx] = d_slug
+        cache_file = dist_dir / f"{d_slug}.json"
+        need_dl = True
+        if cache_file.exists():
+            try:
+                with open(cache_file, encoding="utf-8") as cf:
+                    cdoc = json.load(cf)
+                cr = (cdoc.get("races") or [{}])[0]
+                if cr.get("updated_at") == r.get("updated_at") and cr.get("reporting_units"):
+                    need_dl = False
+            except Exception:
+                need_dl = True
+        if need_dl:
+            url = f"https://static01.nyt.com/elections-assets/pages/data/{date_str}/{d_slug}.json"
+            to_fetch.append((url, cache_file))
+
+    if to_fetch:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:
+            futs = [pool.submit(fetch_url, u, dest) for u, dest in to_fetch]
+            for fut in concurrent.futures.as_completed(futs):
+                fut.result()
+
+    stitched = 0
+    for idx, d_slug in slug_by_idx.items():
+        cache_file = dist_dir / f"{d_slug}.json"
+        if not cache_file.exists():
+            continue
+        try:
+            with open(cache_file, encoding="utf-8") as cf:
+                cdoc = json.load(cf)
+            cr = (cdoc.get("races") or [None])[0]
+            if cr and cr.get("reporting_units"):
+                races[idx]["reporting_units"] = cr["reporting_units"]
+                if cr.get("top_reporting_unit"):
+                    races[idx]["top_reporting_unit"] = cr["top_reporting_unit"]
+                stitched += 1
+        except Exception:
+            pass
+
+    if stitched > 0:
+        fd, tmp_path = tempfile.mkstemp(dir=str(out_dir), prefix=".results-house.json.", suffix=".tmp")
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(house_doc, f)
+        os.chmod(tmp_path, 0o644)
+        os.replace(tmp_path, house_path)
+
+    return stitched
+
+
 def download_nyt_cycle(date_str: str, folder_name: str, extra_slugs: list[str]):
     out_dir = BASE_DIR / folder_name
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -68,21 +149,26 @@ def download_nyt_cycle(date_str: str, folder_name: str, extra_slugs: list[str]):
             url = f"https://static01.nyt.com/elections-assets/pages/data/{date_str}/{slug}.json"
             dest = out_dir / f"{slug}.json"
             tasks.append(pool.submit(fetch_url, url, dest))
+        for fut in concurrent.futures.as_completed(tasks):
+            fut.result()
+
+    stitched_house = hydrate_house_district_counties(date_str, out_dir)
 
     all_races_by_id = {}
     ok_files = 0
-    for fut in concurrent.futures.as_completed(tasks):
-        name, ok, count = fut.result()
-        if ok:
+    for slug in slugs:
+        fpath = out_dir / f"{slug}.json"
+        if fpath.exists():
             ok_files += 1
-            with open(out_dir / name, encoding="utf-8") as f:
+            with open(fpath, encoding="utf-8") as f:
                 d = json.load(f)
             for r in d.get("races", []):
                 nid = r.get("nyt_id")
                 if nid:
-                    # Keep the version with more reporting_units if duplicate across national/state files
                     existing = all_races_by_id.get(nid)
-                    if not existing or len(r.get("reporting_units", [])) >= len(existing.get("reporting_units", [])):
+                    new_key = (len(r.get("reporting_units", [])), bool(r.get("historical_comparison_race_data")))
+                    old_key = (len(existing.get("reporting_units", [])), bool(existing.get("historical_comparison_race_data"))) if existing else (-1, False)
+                    if new_key > old_key:
                         all_races_by_id[nid] = r
 
     combined_path = BASE_DIR / f"{folder_name}_all_races.json.gz"
@@ -96,7 +182,8 @@ def download_nyt_cycle(date_str: str, folder_name: str, extra_slugs: list[str]):
             f,
         )
     print(
-        f"[{folder_name}] Downloaded {ok_files}/{len(slugs)} files -> "
+        f"[{folder_name}] Downloaded {ok_files}/{len(slugs)} files "
+        f"(hydrated {stitched_house} House district county feeds) -> "
         f"{len(all_races_by_id):,} unique races saved to {combined_path.name}"
     )
 

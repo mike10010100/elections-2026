@@ -298,9 +298,41 @@ def generate_moneyball_counterspend_chart(senate_rows=None):
     fig = plt.figure(figsize=(16.4, 9.0), dpi=200, facecolor=BG_COLOR)
     gs = fig.add_gridspec(1, 2, width_ratios=[1.16, 1.04], left=0.165, right=0.97, top=0.76, bottom=0.14, wspace=0.21)
 
+    by_st = {r["state"]: r for r in (senate_rows or [])}
+
+    def _m_str(st, default_m, decimals=1):
+        m = by_st.get(st, {}).get("margin_2026", default_m)
+        return f"{m:+.{decimals}f}%"
+
+    def _bar(st, cand_lbl, default_m, default_d, default_r, cat, extra_note="", m_dec=1):
+        row = by_st.get(st)
+        if row and (row.get("shift_vs_pres_2024") or 0) > 0:
+            sh = row["shift_vs_pres_2024"]
+            d_m = row["total_pro_dem_spend"] / 1e6
+            r_m = row["total_pro_gop_spend"] / 1e6
+            d_pt = d_m / sh
+            r_pt = r_m / sh
+            m_val = row["margin_2026"]
+        else:
+            d_pt, r_pt = default_d, default_r
+            d_m = by_st.get(st, {}).get("total_pro_dem_spend", 0) / 1e6
+            r_m = by_st.get(st, {}).get("total_pro_gop_spend", 0) / 1e6
+            m_val = default_m
+        pt_lbl = f"${d_pt*1000:.0f}K/pt" if d_pt < 1.0 else f"${d_pt:.1f}M/pt"
+        d_str = f"${d_m:.1f}M D" if d_m < 20 else f"${d_m:.0f}M D"
+        if extra_note.startswith("RAW:"):
+            detail = extra_note[4:]
+        else:
+            r_str = f"${r_m:.1f}M R" if r_m < 20 else f"${r_m:.0f}M R"
+            detail = f"{d_str} | {r_str}" + (f" | {extra_note}" if extra_note else "")
+        return (f"{st}: {cand_lbl} ({m_val:+.{m_dec}f}%)", d_pt, r_pt, cat, f"{pt_lbl} ({detail})")
+
+    mi_d_pt = _bar("MI", "Abdul El-Sayed", 7.08, 17.23, 26.43, "prog")[1]
+    mi_tot_pt = mi_d_pt + _bar("MI", "Abdul El-Sayed", 7.08, 17.23, 26.43, "prog")[2]
+
     fig.text(0.03, 0.925, "2026 Senate 'Moneyball': Diminishing Returns & Endogenous GOP Counterspend",
              fontsize=19.5, fontweight="bold", color=DARK_TEXT)
-    fig.text(0.03, 0.88, "Michigan ($370.8M total; $146.3M Dem vs. $224.4M GOP) ranked #1 most expensive per point of positive swing ($17.4M/pt Dem; $44.1M/pt total).",
+    fig.text(0.03, 0.88, f"Michigan ($370.8M total; $146.3M Dem vs. $224.4M GOP) ranked #1 most expensive per point of positive swing (${mi_d_pt:.1f}M/pt Dem; ${mi_tot_pt:.1f}M/pt total).",
              fontsize=12.1, color=SUB_TEXT)
     fig.text(0.03, 0.842, "Polling lag after a $70M primary drew $171M in GOP general-election IEs, forcing SMP to triple MI from $20M to $67M while starving low-saturation Southern TV markets.",
              fontsize=11.1, color=MUTED_TEXT, style="italic")
@@ -310,21 +342,22 @@ def generate_moneyball_counterspend_chart(senate_rows=None):
                   fontsize=11.0, fontweight="bold", color=DARK_TEXT, loc="left", pad=12)
 
     races = [
-        ("MI: Abdul El-Sayed (+7.0%)", 17.40, 26.68, "prog", "$17.4M/pt ($146M D | $224M R | $67M SMP)"),
-        ("OH: Sherrod Brown (+4.9%)", 13.73, 17.13, "main", "$13.7M/pt ($220M D | $275M R | $150M SMP)"),
-        ("TX: James Talarico (+12.1%)", 10.73, 12.97, "main", "$10.7M/pt ($277M D | $334M R | $40M SMP)"),
-        ("IA: Josh Turek (+4.1%)", 7.75, 6.37, "main", "$7.8M/pt ($135M D | $111M R | $67M SMP)"),
-        ("AK: Mary Peltola (+0.3%)", 6.22, 4.83, "main", "$6.2M/pt ($84M D | $65M R)"),
-        ("GA: Jon Ossoff (+18.1%)", 6.12, 1.43, "main", "$6.1M/pt ($124M D | $29M R | $18M Gen R IE)"),
-        ("NH: Chris Pappas (+13.8%)", 4.30, 4.31, "main", "$4.3M/pt ($47M D | $47M R)"),
-        ("KS: Adam Hamilton (+5.0%)", 3.39, 1.96, "main", "$3.4M/pt ($72M D | $41M R | $14M SMP)"),
-        ("NC: Roy Cooper (+19.6%)", 3.01, 2.69, "main", "$3.0M/pt ($69M D | $62M R)"),
-        ("MN: Peggy Flanagan (+10.2%)", 2.57, 3.31, "prog", "$2.6M/pt ($15M D | $20M R)"),
-        ("SC: Annie Andrews (+4.5%)", 2.08, 1.43, "main", "$2.1M/pt ($46M D | $32M R | $750K SMP)"),
-        ("FL: Angie Nixon (-2.9%)", 1.85, 2.76, "prog", "$1.9M/pt ($19M D | $28M R | $0 SMP)"),
-        ("MS: Scott Colom (+0.19%)", 0.84, 0.27, "south", "$840K/pt ($19.4M D | $2.4M Gen R IE | $2.2M SMP)"),
-        ("LA: Jamie Davis (-1.76%)", 0.72, 1.01, "south", "$722K/pt ($14.6M D | $20.5M R [$2.5M Gen IE])"),
+        _bar("MI", "Abdul El-Sayed", 7.08, 17.23, 26.43, "prog", "$67M SMP"),
+        _bar("OH", "Sherrod Brown", 4.85, 13.73, 17.13, "main", "$150M SMP"),
+        _bar("TX", "James Talarico", 12.10, 10.72, 12.96, "main", "$40M SMP"),
+        _bar("IA", "Josh Turek", 4.20, 7.71, 6.33, "main", "$67M SMP"),
+        _bar("GA", "Jon Ossoff", 18.06, 6.12, 1.43, "main", "$18M Gen R IE"),
+        _bar("AK", "Mary Peltola", 1.15, 5.85, 4.54, "main", ""),
+        _bar("NH", "Chris Pappas", 13.76, 4.30, 4.32, "main", ""),
+        _bar("KS", "Adam Hamilton", 5.05, 3.38, 1.95, "main", "$14M SMP"),
+        _bar("NC", "Roy Cooper", 19.62, 3.01, 2.69, "main", ""),
+        _bar("MN", "Peggy Flanagan", 10.15, 2.57, 3.31, "prog", ""),
+        _bar("SC", "Annie Andrews", 4.50, 2.07, 1.43, "main", "$750K SMP"),
+        _bar("FL", "Angie Nixon", -2.87, 1.85, 2.76, "prog", "$0 SMP"),
+        _bar("MS", "Scott Colom", 0.28, 0.84, 0.27, "south", "RAW:$19.4M D | $2.4M Gen R IE | $2.2M SMP", m_dec=2),
+        _bar("LA", "Jamie Davis", -1.76, 0.72, 1.01, "south", "RAW:$14.6M D | $20.5M R [$2.5M Gen IE]", m_dec=2),
     ]
+    races.sort(key=lambda x: x[1], reverse=True)
 
     y_pos = np.arange(len(races))[::-1]
     for y, (label, d_val, r_val, cat, txt) in zip(y_pos, races):
@@ -339,8 +372,10 @@ def generate_moneyball_counterspend_chart(senate_rows=None):
         tot_val = d_val + r_val
         ax1.text(tot_val + 0.6, y, txt, fontsize=8.1, fontweight="bold", color=col, va="center", ha="left")
 
+    ms_m_str = _m_str("MS", 0.28, 2)
+    la_m_str = _m_str("LA", -1.76, 2)
     ax1.axhspan(-0.5, 1.5, color="#e8f8f5", alpha=0.65, zorder=1)
-    ax1.annotate("Low-saturation & 21x-24x cheaper per point:\nLA (-1.76%, 25,857 votes) & MS (+0.19%) had\njust $2.5M & $2.4M in GOP general-election IEs!",
+    ax1.annotate(f"Low-saturation & 21x-24x cheaper per point:\nLA ({la_m_str}, 25,857 votes) & MS ({ms_m_str}) had\njust $2.5M & $2.4M in GOP general-election IEs!",
                  xy=(43.5, 0.95), xytext=(40.5, 2.2),
                  arrowprops=dict(arrowstyle="->", color=NORMIE_TEAL, lw=1.8, connectionstyle="arc3,rad=-0.15"),
                  fontsize=8.1, fontweight="bold", color=NORMIE_TEAL,
@@ -363,29 +398,37 @@ def generate_moneyball_counterspend_chart(senate_rows=None):
     ax2.set_title("B. Diminishing Returns Curve & Why MI Drew $171M in GOP Gen. IEs\n(Total Pro-Dem Spend vs. 2024->2026 Swing, Annotated with GOP IEs)",
                   fontsize=10.8, fontweight="bold", color=DARK_TEXT, loc="left", pad=12)
 
+    def _pt(st, fmt_tpl, def_x, def_y, def_m, cat, dx, dy, ha):
+        row = by_st.get(st)
+        xm = row["total_pro_dem_spend"] / 1e6 if row else def_x
+        ym = row["shift_vs_pres_2024"] if (row and row.get("shift_vs_pres_2024") is not None) else def_y
+        mv = row["margin_2026"] if row else def_m
+        return (fmt_tpl.format(m=f"{mv:+.1f}%"), xm, ym, cat, dx, dy, ha)
+
     pts = [
-        ("LA: Davis -1.8% ($2.5M R IE)", 14.63, 20.25, "south", 5, -0.55, "left"),
-        ("MS: Colom +0.2% ($2.4M R IE)", 19.39, 23.08, "south", -3, 1.35, "left"),
-        ("SC (Andrews +4.5%)", 46.36, 22.34, "main", -8, -1.0, "center"),
-        ("NC (Cooper +19.6%)", 68.75, 22.85, "main", 6, 0.9, "left"),
-        ("KS (Hamilton +5%)", 71.58, 21.12, "main", 5, 0.5, "left"),
-        ("GA: Ossoff +18.1% ($18M R IE)", 123.97, 20.25, "main", 6, 0.8, "left"),
-        ("IA: Turek +4.1% ($96M R IE)", 134.62, 17.37, "main", 5, 0.35, "left"),
-        ("OH: Brown +4.9% ($222M R IE)", 220.49, 16.06, "main", -6, -1.1, "center"),
-        ("TX: Talarico +12.1% ($315M R IE)", 276.51, 25.78, "main", -6, -0.4, "right"),
-        ("NH: Pappas +13.8% ($39M R)", 47.21, 10.99, "main", 5, 0.55, "left"),
-        ("FL (Nixon -2.9%)", 18.94, 10.22, "prog", 5, -0.85, "left"),
-        ("MN (Flanagan +10.2%)", 15.12, 5.89, "prog", 5, -0.25, "left"),
-        ("ME: Jackson +6.4% ($81M R IE)", 77.54, -0.55, "prog", 5, -0.95, "left"),
-        ("MI: El-Sayed +7.0% ($171M R IE)", 146.33, 8.41, "prog", 6, -0.35, "left"),
+        _pt("LA", "LA: Davis {m} ($2.5M R IE)", 14.63, 20.25, -1.76, "south", 5, -0.55, "left"),
+        _pt("MS", "MS: Colom {m} ($2.4M R IE)", 19.39, 23.16, 0.28, "south", -3, 1.35, "left"),
+        _pt("SC", "SC (Andrews {m})", 46.36, 22.37, 4.50, "main", -8, -1.0, "center"),
+        _pt("NC", "NC (Cooper {m})", 68.75, 22.84, 19.62, "main", 6, 0.9, "left"),
+        _pt("KS", "KS (Hamilton {m})", 71.58, 21.17, 5.05, "main", 5, 0.5, "left"),
+        _pt("GA", "GA: Ossoff {m} ($18M R IE)", 123.97, 20.26, 18.06, "main", 6, 0.8, "left"),
+        _pt("IA", "IA: Turek {m} ($96M R IE)", 134.62, 17.46, 4.20, "main", 5, 0.35, "left"),
+        _pt("OH", "OH: Brown {m} ($222M R IE)", 220.49, 16.06, 4.85, "main", -6, -1.1, "center"),
+        _pt("TX", "TX: Talarico {m} ($315M R IE)", 276.51, 25.79, 12.10, "main", -6, -0.4, "right"),
+        _pt("NH", "NH: Pappas {m} ($39M R)", 47.21, 10.97, 13.76, "main", 5, 0.55, "left"),
+        _pt("FL", "FL (Nixon {m})", 18.94, 10.23, -2.87, "prog", 5, -0.85, "left"),
+        _pt("MN", "MN (Flanagan {m})", 15.12, 5.89, 10.15, "prog", 5, -0.25, "left"),
+        _pt("ME", "ME: Jackson {m} ($81M R IE)", 77.54, -0.74, 6.20, "prog", 5, -0.95, "left"),
+        _pt("MI", "MI: El-Sayed {m} ($171M R IE)", 146.33, 8.49, 7.08, "prog", 6, -0.35, "left"),
     ]
 
     x_curve = np.linspace(10, 285, 200)
     y_curve = 14.0 + 2.1 * np.log(x_curve / 10.0)
     ax2.plot(x_curve, y_curve, color="#7f8c8d", ls="--", lw=1.8, alpha=0.7, label="Mainstream Battleground Benchmark")
 
+    mi_ym = by_st.get("MI", {}).get("shift_vs_pres_2024", 8.49) or 8.49
     ax2.scatter([146.33], [12.16], color=BLUE_DOG, marker="s", s=95, zorder=5)
-    ax2.plot([146.33, 146.33], [8.41, 12.16], color=CRIMSON, lw=2.2, ls=":", zorder=4)
+    ax2.plot([146.33, 146.33], [mi_ym, 12.16], color=CRIMSON, lw=2.2, ls=":", zorder=4)
     ax2.text(153, 12.45, "MI Gov: Benson (+12.2 pt shift)\nBeat El-Sayed in 83/83 counties!",
              fontsize=8.4, fontweight="bold", color=BLUE_DOG, va="center")
 

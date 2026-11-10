@@ -117,7 +117,19 @@ def load_nyt_races(folder_name: str) -> tuple[list[dict], dict[str, str]]:
             if not nid:
                 continue
             existing = races_by_id.get(nid)
-            if not existing or len(r.get("reporting_units", [])) >= len(existing.get("reporting_units", [])):
+            r_score = (
+                len(r.get("reporting_units", [])),
+                1 if (r.get("top_reporting_unit") or {}).get("historical_comparison_race_data") else 0,
+            )
+            ex_score = (
+                (
+                    len(existing.get("reporting_units", [])),
+                    1 if (existing.get("top_reporting_unit") or {}).get("historical_comparison_race_data") else 0,
+                )
+                if existing
+                else (-1, -1)
+            )
+            if r_score >= ex_score:
                 races_by_id[nid] = r
     return list(races_by_id.values()), county_blurbs
 
@@ -890,7 +902,10 @@ def build_all():
         st = s["state"]
         p24 = pres_24_by_state.get(st)
         dist_p24 = s.get("district_pres_2024_margin")
-        s["pres_2024_margin"] = p24["dem_gop_margin"] if p24 else dist_p24
+        if off == "U.S. House" and dist_p24 is not None:
+            s["pres_2024_margin"] = dist_p24
+        else:
+            s["pres_2024_margin"] = p24["dem_gop_margin"] if p24 else dist_p24
         if s["pres_2024_margin"] is not None and not s["one_party"]:
             s["shift_vs_pres_2024"] = round(s["dem_gop_margin"] - s["pres_2024_margin"], 2)
         else:

@@ -529,12 +529,16 @@ def build_dataset_and_chart():
     plt.close(fig)
     import shutil
     import subprocess
-    tmp_pal = Path("/tmp/chart11_pal.png")
-    tmp_out = Path("/tmp/chart11_compressed.png")
-    subprocess.run(["ffmpeg", "-y", "-i", str(OUT_CHART), "-vf", "palettegen=max_colors=256", str(tmp_pal)], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    subprocess.run(["ffmpeg", "-y", "-i", str(OUT_CHART), "-i", str(tmp_pal), "-lavfi", "paletteuse=dither=bayer:bayer_scale=3", str(tmp_out)], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if tmp_out.exists() and tmp_out.stat().st_size < OUT_CHART.stat().st_size:
-        shutil.move(str(tmp_out), str(OUT_CHART))
+    ffmpeg_bin = shutil.which("ffmpeg") or (
+        "/home/linuxbrew/.linuxbrew/bin/ffmpeg" if Path("/home/linuxbrew/.linuxbrew/bin/ffmpeg").exists() else None
+    )
+    if ffmpeg_bin:
+        tmp_pal = Path("/tmp/chart11_pal.png")
+        tmp_out = Path("/tmp/chart11_compressed.png")
+        subprocess.run([ffmpeg_bin, "-y", "-i", str(OUT_CHART), "-vf", "palettegen=max_colors=256", str(tmp_pal)], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run([ffmpeg_bin, "-y", "-i", str(OUT_CHART), "-i", str(tmp_pal), "-lavfi", "paletteuse=dither=bayer:bayer_scale=3", str(tmp_out)], check=False, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if tmp_out.exists() and tmp_out.stat().st_size < OUT_CHART.stat().st_size:
+            shutil.move(str(tmp_out), str(OUT_CHART))
     print(f"Saved {OUT_CHART} ({OUT_CHART.stat().st_size / 1024:.1f} KB)")
 
 

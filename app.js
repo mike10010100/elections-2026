@@ -2689,15 +2689,44 @@
     const ksGov = (ov.governor_races || []).find((r) => r.state === "KS") || {};
 
     const msCands = msSen.candidates || [];
-    const msColom = msCands.find((c) => c.party === "DEM") || { votes: 466959, percent: 49.05 };
-    const msHyde = msCands.find((c) => c.party === "GOP") || { votes: 465023, percent: 48.85 };
-    const msPink = msCands.find((c) => c.party !== "DEM" && c.party !== "GOP") || { votes: 20010, percent: 2.10 };
+    const msColom = msCands.find((c) => c.party === "DEM") || { votes: 468060, percent: 49.09 };
+    const msHyde = msCands.find((c) => c.party === "GOP") || { votes: 465453, percent: 48.81 };
+    const msPink = msCands.find((c) => c.party !== "DEM" && c.party !== "GOP") || { votes: 20034, percent: 2.10 };
     const msLead = (msColom.votes || 0) - (msHyde.votes || 0);
+    const msCounted = msCands.reduce((s, c) => s + (c.votes || 0), 0);
+    const msEevp = Number(msSen.eevp || 97.4);
+    const msRemEst = msEevp > 0 && msEevp < 100 ? Math.max(0, Math.round(msCounted * (100 / msEevp - 1))) : 0;
+    const msColomRem = Math.round(msRemEst * 0.531);
+    const msHydeRem = Math.round(msRemEst * 0.449);
+    const msPinkRem = Math.max(0, msRemEst - msColomRem - msHydeRem);
+    const msBadgeCls = msSen.called ? (msLead >= 0 ? "badge-dem" : "badge-gop") : "badge-tctc";
+    const msBadgeTxt = `${msSen.called ? "Called · " : ""}${msLead >= 0 ? "Colom" : "Hyde-Smith"} +${fmtInt(Math.abs(msLead))} votes`;
 
     const akCands = akSen.candidates || [];
-    const akPeltola = akCands.find((c) => c.party === "DEM") || { votes: 102962, percent: 48.17 };
-    const akSullivan = akCands.find((c) => c.party === "GOP") || { votes: 102325, percent: 47.88 };
+    const akPeltola = akCands.find((c) => c.party === "DEM") || { votes: 106321, percent: 48.63 };
+    const akSullivan = akCands.find((c) => c.party === "GOP" && (c.name || "").includes("Sullivan")) || akCands.find((c) => c.party === "GOP") || { votes: 103804, percent: 47.48 };
+    const akHeikes = akCands.find((c) => (c.name || "").includes("Heikes")) || { votes: 4865, percent: 2.23 };
+    const akUdcSullivan = akCands.find((c) => c.party === "UDC" || (c.name || "").includes("Daniel")) || { votes: 3651, percent: 1.67 };
+    const akThirdVotes = (akHeikes.votes || 0) + (akUdcSullivan.votes || 0);
+    const akThirdPct = Number(akHeikes.percent || 0) + Number(akUdcSullivan.percent || 0);
     const akLead = (akPeltola.votes || 0) - (akSullivan.votes || 0);
+    const akCounted = akCands.reduce((s, c) => s + (c.votes || 0), 0);
+    const akEevp = Number(akSen.eevp || 75.9);
+    const akRemK = akEevp > 0 && akEevp < 100 ? ((akCounted * (100 / akEevp - 1)) / 1000).toFixed(1) : "0.0";
+    const akBadgeCls = akSen.called ? (akLead >= 0 ? "badge-dem" : "badge-gop") : "badge-tctc";
+    const akBadgeTxt = `${akSen.called ? "Called · " : ""}${akLead >= 0 ? "Peltola" : "Sullivan"} +${fmtInt(Math.abs(akLead))} votes`;
+
+    const akGovCands = akGov.candidates || [];
+    const akJkt = akGovCands.find((c) => c.party === "DEM") || { votes: 107166, percent: 49.56 };
+    const akGopSplitStr = akGovCands
+      .filter((c) => c.party === "GOP")
+      .map((c) => `${(c.name || "").split(" ").pop()} ${Number(c.percent || 0).toFixed(1)}%`)
+      .join(", ") || "Wilson 28.9%, Bronson 14.1%, Taylor 7.4%";
+
+    const ksCands = ksGov.candidates || [];
+    const ksHolscher = ksCands.find((c) => c.party === "DEM") || { votes: 551467, percent: 50.35 };
+    const ksMasterson = ksCands.find((c) => c.party === "GOP") || { votes: 543903, percent: 49.65 };
+    const ksLead = (ksHolscher.votes || 0) - (ksMasterson.votes || 0);
 
     const fac = state.factionAnalysis || {};
     const caucusGroups = (fac.house_caucus_comparison_morris_benchmark && fac.house_caucus_comparison_morris_benchmark.groups) || [];
@@ -2723,8 +2752,8 @@
         <div class="analysis-grid-2">
           <div class="analysis-subcard">
             <h3>
-              <span>Mississippi U.S. Senate (${fmtPct(msSen.eevp || 95.8)} EEVP)</span>
-              <span class="rc-badge badge-tctc">Colom +${fmtInt(msLead)} votes</span>
+              <span>Mississippi U.S. Senate (${fmtPct(msEevp)} EEVP)</span>
+              <span class="rc-badge ${msBadgeCls}">${msBadgeTxt}</span>
             </h3>
             <div class="analysis-law-callout">
               <strong>Statutory Rule — No General Election Runoff (<code>Miss. Code Ann. § 23-15-605</code>):</strong>
@@ -2737,8 +2766,8 @@
                     <th>Candidate</th>
                     <th class="num">Counted Votes</th>
                     <th class="num">Share</th>
-                    <th class="num">Wed–Fri Late Split</th>
-                    <th class="num">County-Wtd Rem. (+41.7K)</th>
+                    <th class="num">Late-Count Split</th>
+                    <th class="num">County-Wtd Rem. (~+${(msRemEst / 1000).toFixed(1)}K)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2746,22 +2775,22 @@
                     <td><strong class="dem-text">Scott Colom (DEM)</strong></td>
                     <td class="num"><strong>${fmtInt(msColom.votes)}</strong></td>
                     <td class="num"><strong>${Number(msColom.percent).toFixed(2)}%</strong></td>
-                    <td class="num dem-text">+4,138 (64.1%)</td>
-                    <td class="num dem-text">+22,173 (~489.1K final)</td>
+                    <td class="num dem-text">~62–64% late</td>
+                    <td class="num dem-text">${msRemEst > 0 ? `+${fmtInt(msColomRem)} (~${(((msColom.votes || 0) + msColomRem) / 1000).toFixed(1)}K est.)` : "Final canvas"}</td>
                   </tr>
                   <tr>
                     <td><strong class="gop-text">Cindy Hyde-Smith (GOP)</strong></td>
                     <td class="num">${fmtInt(msHyde.votes)}</td>
                     <td class="num">${Number(msHyde.percent).toFixed(2)}%</td>
-                    <td class="num gop-text">+2,245 (34.8%)</td>
-                    <td class="num gop-text">+18,744 (~483.8K final)</td>
+                    <td class="num gop-text">~35–36% late</td>
+                    <td class="num gop-text">${msRemEst > 0 ? `+${fmtInt(msHydeRem)} (~${(((msHyde.votes || 0) + msHydeRem) / 1000).toFixed(1)}K est.)` : "Final canvas"}</td>
                   </tr>
                   <tr>
                     <td>Ty Pinkins (IND)</td>
                     <td class="num">${fmtInt(msPink.votes)}</td>
                     <td class="num">${Number(msPink.percent).toFixed(2)}%</td>
-                    <td class="num">+75 (1.2%)</td>
-                    <td class="num">+808 (80.2% from GOP cos.)</td>
+                    <td class="num">~1.2% late</td>
+                    <td class="num">${msRemEst > 0 ? `+${fmtInt(msPinkRem)} (80.2% from GOP cos.)` : "80.2% from GOP cos."}</td>
                   </tr>
                 </tbody>
               </table>
@@ -2770,18 +2799,18 @@
 
           <div class="analysis-subcard">
             <h3>
-              <span>Alaska U.S. Senate &amp; Governor RCV (${fmtPct(akSen.eevp || 74.1)} EEVP)</span>
-              <span class="rc-badge badge-tctc">Peltola +${fmtInt(akLead)} votes</span>
+              <span>Alaska U.S. Senate &amp; Governor RCV (${fmtPct(akEevp)} EEVP)</span>
+              <span class="rc-badge ${akBadgeCls}">${akBadgeTxt}</span>
             </h3>
             <div class="analysis-law-callout">
               <strong>Alaska Top-Four RCV Dynamics &amp; Same-Name Spoiler Effect:</strong>
-              In Round 1 (${fmtPct(akSen.eevp || 74.1)} reporting, ~74.7K late mail/rural bush ballots remaining), <strong>Mary Peltola (DEM, 48.17%)</strong> leads <strong>Sen. Dan Sullivan (GOP, 47.88%)</strong> by <strong>+${fmtInt(akLead)} votes</strong>. The NYT model projects remaining first-choice ballots to expand Peltola's lead to <strong>~+8,042 votes (137.3K vs. 129.2K, 83% win prob)</strong> before RCV transfers. Crucially, the 3.95% third-party pool is split between Republican <strong>Gerald Heikes (2.27%, 4,846v)</strong> and Undeclared candidate <strong>Daniel Sullivan (1.68%, 3,600v)</strong>—whose shared name with incumbent Dan Sullivan created a 3,600-vote ballot confusion pool.
+              In Round 1 (${fmtPct(akEevp)} reporting, ~${akRemK}K late mail/rural bush ballots remaining), <strong>Mary Peltola (DEM, ${Number(akPeltola.percent).toFixed(2)}%)</strong> leads <strong>Sen. Dan Sullivan (GOP, ${Number(akSullivan.percent).toFixed(2)}%)</strong> by <strong>+${fmtInt(akLead)} votes</strong>. Remaining rural bush and late-mail ballots heavily favor Peltola ahead of RCV transfers. Crucially, the ${akThirdPct.toFixed(2)}% third-party pool is split between Republican <strong>Gerald Heikes (${Number(akHeikes.percent).toFixed(2)}%, ${fmtInt(akHeikes.votes)}v)</strong> and Undeclared candidate <strong>Daniel Sullivan (${Number(akUdcSullivan.percent).toFixed(2)}%, ${fmtInt(akUdcSullivan.votes)}v)</strong>—whose shared name with incumbent Dan Sullivan created a ${fmtInt(akUdcSullivan.votes)}-vote ballot confusion pool.
             </div>
             <div class="analysis-table-wrap">
               <table class="analysis-table">
                 <thead>
                   <tr>
-                    <th>Alaska Race / Candidate</th>
+                    <th>Alaska / Close Race</th>
                     <th class="num">Round 1 Votes</th>
                     <th class="num">Round 1 %</th>
                     <th>RCV / Late-Ballot Outlook</th>
@@ -2792,7 +2821,7 @@
                     <td><strong class="dem-text">Sen: Mary Peltola (DEM)</strong></td>
                     <td class="num"><strong>${fmtInt(akPeltola.votes)}</strong></td>
                     <td class="num"><strong>${Number(akPeltola.percent).toFixed(2)}%</strong></td>
-                    <td>NYT Est: ~137.3K (+8.0K pre-RCV lead)</td>
+                    <td>Leads Round 1 by +${fmtInt(akLead)}v (${(Number(akPeltola.percent) - Number(akSullivan.percent)).toFixed(2)} pts) pre-RCV</td>
                   </tr>
                   <tr>
                     <td><strong class="gop-text">Sen: Dan Sullivan (GOP)</strong></td>
@@ -2802,21 +2831,21 @@
                   </tr>
                   <tr>
                     <td>Sen: Gerald Heikes (GOP) &amp; Daniel Sullivan (UDC)</td>
-                    <td class="num">8,446</td>
-                    <td class="num">3.95%</td>
-                    <td>4,846 Heikes (GOP) + 3,600 Daniel Sullivan (UDC)</td>
+                    <td class="num">${fmtInt(akThirdVotes)}</td>
+                    <td class="num">${akThirdPct.toFixed(2)}%</td>
+                    <td>${fmtInt(akHeikes.votes)} Heikes (GOP) + ${fmtInt(akUdcSullivan.votes)} Daniel Sullivan (UDC)</td>
                   </tr>
                   <tr>
                     <td><strong class="dem-text">Gov: Jonathan Kreiss-Tomkins (DEM)</strong></td>
-                    <td class="num"><strong>103,837</strong></td>
-                    <td class="num"><strong>49.13%</strong></td>
-                    <td>Vs. 3 split GOPs: Wilson 29.2%, Bronson 14.2%, Taylor 7.5%</td>
+                    <td class="num"><strong>${fmtInt(akJkt.votes)}</strong></td>
+                    <td class="num"><strong>${Number(akJkt.percent).toFixed(2)}%</strong></td>
+                    <td>${Number(akJkt.percent) >= 50 ? "Above 50% Round 1 majority threshold!" : `${(50 - Number(akJkt.percent)).toFixed(2)}% shy of Round 1 win`} vs. ${akGopSplitStr}</td>
                   </tr>
                   <tr>
                     <td><strong class="dem-text">KS Gov: Cindy Holscher (DEM)</strong></td>
-                    <td class="num"><strong>${fmtInt((ksGov.candidates && ksGov.candidates[0] && ksGov.candidates[0].votes) || 547198)}</strong></td>
-                    <td class="num"><strong>50.32%</strong></td>
-                    <td>Leads Ty Masterson (GOP, 49.68%) by +7,045v at 98.7% EEVP</td>
+                    <td class="num"><strong>${fmtInt(ksHolscher.votes)}</strong></td>
+                    <td class="num"><strong>${Number(ksHolscher.percent).toFixed(2)}%</strong></td>
+                    <td>${ksGov.called ? "Called winner · " : ""}Leads Ty Masterson (GOP, ${Number(ksMasterson.percent).toFixed(2)}%) by +${fmtInt(ksLead)}v at ${fmtPct(ksGov.eevp || 98.6)} EEVP</td>
                   </tr>
                 </tbody>
               </table>
@@ -2858,7 +2887,7 @@
             <h2>3. Ideological Factions &amp; Same-Ballot Natural Experiments</h2>
             <p class="section-sub">Empirical test of candidate moderation across U.S. House caucuses (controlling for district baseline &amp; spending) and 5 states with simultaneous Governor &amp; Senate races on the same ballot.</p>
           </div>
-          <span class="stat-pill">276 / 286 Counties (${h2h.all_5_states_total ? h2h.all_5_states_total.pct : 96.5}%) Won by Mainstream Ticket-Mate</span>
+          <span class="stat-pill">${h2h.all_5_states_total ? `${h2h.all_5_states_total.wins} / ${h2h.all_5_states_total.total}` : "276 / 286"} Counties (${h2h.all_5_states_total ? h2h.all_5_states_total.pct : 96.5}%) Won by Mainstream Ticket-Mate</span>
         </div>
 
         <div class="analysis-grid-2">
@@ -2989,12 +3018,14 @@
       <div class="analysis-block">
         <div class="analysis-block-header">
           <div>
-            <h2>5. Live-Regenerated Research Charts Gallery (Charts 1–11)</h2>
+            <h2>5. Live-Regenerated Research Charts Gallery (Charts 1–13)</h2>
             <p class="section-sub">Automatically regenerated by the live pipeline as county and statewide vote totals update. Click any chart to open full-resolution PNG in a new tab.</p>
           </div>
         </div>
         <div class="analysis-charts-grid">
           ${[
+            ["chart13_economic_vs_cultural_moderation_2026.png", "Chart 13: Economic vs. Cultural Moderation in 2026 — 2D Record × Cultural/Populist Archetypes vs. State House Benchmark (N=49)"],
+            ["chart12_bonica_grumbach_panel_test_2026.png", "Chart 12: Bonica-Grumbach & Wertheimer-Caley Panel Test — Within-Texas TWFE (2006–2026), Within-District Baselines & Base Turnout"],
             ["chart11_talarico_baker_rollcall_record_2026.png", "Chart 11: Texas Legislature Roll-Call Audit (2019–2025) — James Talarico (#29/62 Caucus Median) vs. Gina Hinojosa (#1–#8) & Jasmine Crockett (#3/67)"],
             ["chart10_texas_housing_edpol_2026.png", "Chart 10: How YIMBY Texas Built Its Own Blue Wall — Housing Permits (2010–2024) × Educational Polarization (r = +0.993)"],
             ["chart9_texas_split_ticket_2026.png", "Chart 9: Anatomy of a 490,000-Vote Split Ticket — Talarico (+12.1%) vs. Hinojosa (+7.1%) in Texas (254 Counties)"],
@@ -3012,7 +3043,7 @@
             <div class="chart-card">
               <div class="chart-card-title">${title}</div>
               <a href="assets/${file}" target="_blank" rel="noopener">
-                <img src="assets/${file}?v=20261106a" alt="${title}" loading="lazy" />
+                <img src="assets/${file}?v=20261110a" alt="${title}" loading="lazy" />
               </a>
             </div>`
             )
