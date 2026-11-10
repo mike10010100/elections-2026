@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T18:15:01.663194-05:00",
+  "fetched_at": "2026-11-10T18:30:01.612045-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.56,
-        "residual_overperformance_pts": -1.95,
+        "expected_demographic_state_shift_pts": 15.55,
+        "residual_overperformance_pts": -1.94,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.7,
-        "residual_overperformance_pts": -2.23,
+        "expected_demographic_state_shift_pts": 15.71,
+        "residual_overperformance_pts": -2.24,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -843,7 +843,7 @@
     "county_correlations": {
       "us_senate_vs_state_ag_shift": {
         "n_counties": 1353,
-        "pearson_r": 0.8633
+        "pearson_r": 0.8632
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
