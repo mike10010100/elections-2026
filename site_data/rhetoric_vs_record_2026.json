@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T13:30:01.909730-05:00",
+  "fetched_at": "2026-11-10T13:45:01.308676-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -1117,11 +1117,11 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Committed Moderate (Pro-Business / NatSec Centrist)",
       "dw_nominate": -0.197,
-      "margin_2026": 22.91,
-      "shift_vs_2024_baseline": 17.1,
-      "state_house_mean_shift": 14.18,
+      "margin_2026": 22.92,
+      "shift_vs_2024_baseline": 17.11,
+      "state_house_mean_shift": 14.19,
       "overperf_vs_benchmark": 2.92,
-      "benchmark_label": "VA House Mean (+14.18)",
+      "benchmark_label": "VA House Mean (+14.19)",
       "record_ideology_score": 0.55,
       "rhetoric_ideology_score": 0.3,
       "rhetorical_moderation_pivot": -0.25,
