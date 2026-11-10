@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T13:00:01.313371-05:00",
+  "fetched_at": "2026-11-10T13:15:01.741202-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -17,7 +17,7 @@
       "mean_overperf_all": 2.16,
       "median_overperf_all": 2.92,
       "ci95_overperf_all": [
-        -2.33,
+        -2.34,
         6.66
       ],
       "mean_overperf_statewide_vs_house": 2.57,
@@ -26,7 +26,7 @@
       "notable_examples": [
         "Scott Colom (MS Senate: +5.75 pts)",
         "Adam Hamilton (KS Senate: +9.06 pts)",
-        "Mary Peltola (AK Senate: -2.90 pts)",
+        "Mary Peltola (AK Senate: -2.91 pts)",
         "Mark Warner (VA Senate: +2.92 pts)",
         "John Hickenlooper (CO Senate: +1.31 pts)",
         "Amy Klobuchar (MN Governor: +0.14 pts)"
@@ -136,14 +136,14 @@
       "n_non_redistricted": 22,
       "n_statewide": 14,
       "mean_overperf_non_redistricted": 1.51,
-      "median_overperf_non_redistricted": 1.75,
+      "median_overperf_non_redistricted": 1.74,
       "pct_beating_benchmark_non_redistricted": 72.7,
       "mean_overperf_statewide": 1.9,
       "median_overperf_statewide": 1.58,
       "pct_beating_benchmark_statewide": 71.4,
       "notable_examples": [
         "Roy Cooper (NC Senate: +5.43 pts)",
-        "Mary Peltola (AK Senate: -2.90 pts)",
+        "Mary Peltola (AK Senate: -2.91 pts)",
         "Ben Luján (NM Senate: +3.83 pts)",
         "Mark Warner (VA Senate: +2.92 pts)",
         "John Hickenlooper (CO Senate: +1.31 pts)",
@@ -843,9 +843,9 @@
       "dw_nominate": -0.158,
       "margin_2026": -1.08,
       "shift_vs_2024_baseline": 12.05,
-      "state_house_mean_shift": 14.95,
-      "overperf_vs_benchmark": -2.9,
-      "benchmark_label": "AK House Mean (+14.95)",
+      "state_house_mean_shift": 14.96,
+      "overperf_vs_benchmark": -2.91,
+      "benchmark_label": "AK House Mean (+14.96)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.2,
       "rhetorical_moderation_pivot": -0.3,
@@ -2175,10 +2175,10 @@
       "office_type": "house_races",
       "caucus_or_faction": "WelcomePAC Rural Moderate ($399K)",
       "dw_nominate": null,
-      "margin_2026": 15.83,
-      "shift_vs_2024_baseline": 19.05,
+      "margin_2026": 15.82,
+      "shift_vs_2024_baseline": 19.04,
       "state_house_mean_shift": 17.42,
-      "overperf_vs_benchmark": 1.63,
+      "overperf_vs_benchmark": 1.62,
       "benchmark_label": "NC Dist House Mean (+17.42)",
       "record_ideology_score": 0.9,
       "rhetoric_ideology_score": 0.7,
