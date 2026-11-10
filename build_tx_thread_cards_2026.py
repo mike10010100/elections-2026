@@ -15,7 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 BASE_DIR = Path("/home/mike10010100/git/elections-2026")
-OUT_DIR = Path("/home/mike10010100/.gemini/antigravity-cli/brain/821810fc-c219-407a-b65c-f867d30887f3/scratch/thread_cards")
+OUT_DIR = BASE_DIR / "assets" / "thread_tx_housing_edpol"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 with open(BASE_DIR / "site_data" / "texas_housing_edpol_2026.json") as f:
