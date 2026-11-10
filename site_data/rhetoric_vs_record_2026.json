@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T17:00:01.320638-05:00",
+  "fetched_at": "2026-11-10T17:15:01.295343-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -24,10 +24,10 @@
       "median_overperf_statewide_vs_house": 2.24,
       "pct_beating_benchmark_statewide": 80.0,
       "notable_examples": [
-        "Scott Colom (MS Senate: +6.54 pts)",
+        "Scott Colom (MS Senate: +6.55 pts)",
         "Adam Hamilton (KS Senate: +7.63 pts)",
         "Mary Peltola (AK Senate: -2.61 pts)",
-        "Mark Warner (VA Senate: +4.12 pts)",
+        "Mark Warner (VA Senate: +4.11 pts)",
         "John Hickenlooper (CO Senate: +1.79 pts)",
         "Amy Klobuchar (MN Governor: +1.16 pts)"
       ]
@@ -116,11 +116,11 @@
       "archetype": "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)",
       "n_non_redistricted": 12,
       "n_statewide": 11,
-      "mean_overperf_non_redistricted": 5.05,
-      "median_overperf_non_redistricted": 6.33,
+      "mean_overperf_non_redistricted": 5.06,
+      "median_overperf_non_redistricted": 6.34,
       "pct_beating_benchmark_non_redistricted": 91.7,
       "mean_overperf_statewide": 5.17,
-      "median_overperf_statewide": 6.54,
+      "median_overperf_statewide": 6.55,
       "pct_beating_benchmark_statewide": 90.9,
       "notable_examples": [
         "James Talarico (TX Senate: +6.13 pts)",
@@ -128,7 +128,7 @@
         "Jon Ossoff (GA Senate: +7.36 pts)",
         "Josh Turek (IA Senate: +3.18 pts)",
         "Annie Andrews (SC Senate: +7.46 pts)",
-        "Scott Colom (MS Senate: +6.54 pts)"
+        "Scott Colom (MS Senate: +6.55 pts)"
       ]
     },
     {
@@ -145,7 +145,7 @@
         "Roy Cooper (NC Senate: +5.57 pts)",
         "Mary Peltola (AK Senate: -2.61 pts)",
         "Ben Luján (NM Senate: +3.16 pts)",
-        "Mark Warner (VA Senate: +4.12 pts)",
+        "Mark Warner (VA Senate: +4.11 pts)",
         "John Hickenlooper (CO Senate: +1.79 pts)",
         "Jocelyn Benson (MI Governor: +2.13 pts)"
       ]
@@ -751,9 +751,9 @@
       "dw_nominate": null,
       "margin_2026": 0.28,
       "shift_vs_2024_baseline": 23.17,
-      "state_house_mean_shift": 16.63,
-      "overperf_vs_benchmark": 6.54,
-      "benchmark_label": "MS House Mean (+16.63)",
+      "state_house_mean_shift": 16.62,
+      "overperf_vs_benchmark": 6.55,
+      "benchmark_label": "MS House Mean (+16.62)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.1,
       "rhetorical_moderation_pivot": -0.4,
@@ -1119,9 +1119,9 @@
       "dw_nominate": -0.197,
       "margin_2026": 22.95,
       "shift_vs_2024_baseline": 17.14,
-      "state_house_mean_shift": 13.02,
-      "overperf_vs_benchmark": 4.12,
-      "benchmark_label": "VA House Mean (+13.02)",
+      "state_house_mean_shift": 13.03,
+      "overperf_vs_benchmark": 4.11,
+      "benchmark_label": "VA House Mean (+13.03)",
       "record_ideology_score": 0.55,
       "rhetoric_ideology_score": 0.3,
       "rhetorical_moderation_pivot": -0.25,
@@ -2175,10 +2175,10 @@
       "office_type": "house_races",
       "caucus_or_faction": "WelcomePAC Rural Moderate ($399K)",
       "dw_nominate": null,
-      "margin_2026": 15.8,
-      "shift_vs_2024_baseline": 25.31,
+      "margin_2026": 15.79,
+      "shift_vs_2024_baseline": 25.3,
       "state_house_mean_shift": 17.28,
-      "overperf_vs_benchmark": 8.03,
+      "overperf_vs_benchmark": 8.02,
       "benchmark_label": "NC Dist House Mean (+17.28)",
       "record_ideology_score": 0.9,
       "rhetoric_ideology_score": 0.7,
