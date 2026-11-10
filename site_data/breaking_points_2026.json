@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T18:00:01.363846-05:00",
+  "fetched_at": "2026-11-10T18:15:01.663194-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.7,
-        "expected_demographic_state_shift_pts": 16.64,
-        "residual_overperformance_pts": 5.06,
+        "expected_demographic_state_shift_pts": 16.63,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.26,
-        "residual_overperformance_pts": 3.23,
+        "expected_demographic_state_shift_pts": 17.25,
+        "residual_overperformance_pts": 3.24,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.71,
-        "residual_overperformance_pts": -2.24,
+        "expected_demographic_state_shift_pts": 15.7,
+        "residual_overperformance_pts": -2.23,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -421,19 +421,19 @@
           "mean": 11.78,
           "median": 11.3,
           "stdev": 7.66,
-          "pct_shifting_dem": 96.1
+          "pct_shifting_dem": 96.2
         },
         "governor_2024_to_2026": {
           "n": 2150,
           "mean": 12.1,
-          "median": 11.44,
+          "median": 11.43,
           "stdev": 10.58,
           "pct_shifting_dem": 90.6
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
           "mean": 10.24,
-          "median": 9.4,
+          "median": 9.38,
           "stdev": 7.2,
           "pct_shifting_dem": 96.6
         }
@@ -475,7 +475,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.05,
+          "mean": 23.06,
           "median": 19.94,
           "stdev": 12.3,
           "pct_shifting_dem": 100.0
@@ -518,9 +518,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.59,
+          "mean": 17.6,
           "median": 17.5,
-          "stdev": 6.4,
+          "stdev": 6.38,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -532,23 +532,23 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.65,
+          "mean": 13.66,
           "median": 12.3,
-          "stdev": 8.09,
+          "stdev": 8.08,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.55,
+          "mean": 14.56,
           "median": 14.84,
-          "stdev": 7.11,
+          "stdev": 7.09,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 13.97,
+          "mean": 13.99,
           "median": 13.7,
-          "stdev": 5.98,
+          "stdev": 5.95,
           "pct_shifting_dem": 100.0
         }
       }
@@ -698,14 +698,14 @@
           "n": 130,
           "mean": 12.94,
           "median": 13.57,
-          "stdev": 9.18,
+          "stdev": 9.19,
           "pct_shifting_dem": 96.2
         },
         "us_house_2024_to_2026": {
           "n": 179,
           "mean": 12.44,
           "median": 11.67,
-          "stdev": 7.67,
+          "stdev": 7.68,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -847,17 +847,17 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6985
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6407
+        "pearson_r": 0.6408
       }
     },
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.37,
+        "mean": 12.38,
         "median": 11.97,
         "stdev": 5.71,
         "pct_shifting_dem": 96.6
@@ -866,14 +866,14 @@
         "n": 25,
         "mean": 12.23,
         "median": 12.59,
-        "stdev": 7.01,
+        "stdev": 7.02,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.37,
-        "median": 11.52,
-        "stdev": 5.26,
+        "mean": 10.38,
+        "median": 11.4,
+        "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
       "Auditor": {
@@ -892,22 +892,22 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.3,
+        "mean": 12.29,
         "median": 14.14,
-        "stdev": 8.71,
+        "stdev": 8.72,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.77,
-        "median": 11.14,
-        "stdev": 5.17,
+        "mean": 9.74,
+        "median": 11.04,
+        "stdev": 5.15,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
         "mean": 12.14,
-        "median": 12.59,
+        "median": 12.64,
         "stdev": 8.19,
         "pct_shifting_dem": 95.3
       }
