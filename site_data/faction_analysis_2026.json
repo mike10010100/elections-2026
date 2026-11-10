@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T16:15:01.432092-05:00",
+  "fetched_at": "2026-11-10T16:30:01.411618-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -82,136 +82,136 @@
       "senate_margin": 0.28,
       "pres_2024_margin": -22.89,
       "senate_shift_vs_2024": 23.17,
-      "state_house_mean_shift": 17.41,
-      "senate_minus_house_shift": 5.76,
+      "state_house_mean_shift": 16.63,
+      "senate_minus_house_shift": 6.54,
       "eevp": 97.37
     },
     "AK": {
       "senate_margin": -1.08,
       "pres_2024_margin": -13.13,
       "senate_shift_vs_2024": 12.05,
-      "state_house_mean_shift": -28.73,
-      "senate_minus_house_shift": 40.78,
+      "state_house_mean_shift": -28.72,
+      "senate_minus_house_shift": 40.77,
       "eevp": 75.88
     },
     "LA": {
       "senate_margin": -1.76,
       "pres_2024_margin": -22.01,
       "senate_shift_vs_2024": 20.25,
-      "state_house_mean_shift": 12.27,
-      "senate_minus_house_shift": 7.98,
+      "state_house_mean_shift": 11.1,
+      "senate_minus_house_shift": 9.15,
       "eevp": 99
     },
     "FL": {
       "senate_margin": -2.86,
       "pres_2024_margin": -13.1,
       "senate_shift_vs_2024": 10.24,
-      "state_house_mean_shift": 12.56,
-      "senate_minus_house_shift": -2.32,
+      "state_house_mean_shift": 12.36,
+      "senate_minus_house_shift": -2.12,
       "eevp": 99
     },
     "IA": {
       "senate_margin": 4.19,
       "pres_2024_margin": -13.26,
       "senate_shift_vs_2024": 17.45,
-      "state_house_mean_shift": 13.94,
-      "senate_minus_house_shift": 3.51,
+      "state_house_mean_shift": 14.27,
+      "senate_minus_house_shift": 3.18,
       "eevp": 99
     },
     "SC": {
       "senate_margin": 4.5,
       "pres_2024_margin": -17.87,
       "senate_shift_vs_2024": 22.37,
-      "state_house_mean_shift": 15.64,
-      "senate_minus_house_shift": 6.73,
+      "state_house_mean_shift": 14.91,
+      "senate_minus_house_shift": 7.46,
       "eevp": 99
     },
     "OH": {
       "senate_margin": 4.85,
       "pres_2024_margin": -11.21,
       "senate_shift_vs_2024": 16.06,
-      "state_house_mean_shift": 14.59,
-      "senate_minus_house_shift": 1.47,
+      "state_house_mean_shift": 13.56,
+      "senate_minus_house_shift": 2.5,
       "eevp": 97.75
     },
     "KS": {
       "senate_margin": 5.04,
       "pres_2024_margin": -16.12,
       "senate_shift_vs_2024": 21.16,
-      "state_house_mean_shift": 12.11,
-      "senate_minus_house_shift": 9.05,
+      "state_house_mean_shift": 13.53,
+      "senate_minus_house_shift": 7.63,
       "eevp": 98.53
     },
     "ME": {
       "senate_margin": 6.22,
       "pres_2024_margin": 6.94,
       "senate_shift_vs_2024": -0.72,
-      "state_house_mean_shift": 8.17,
-      "senate_minus_house_shift": -8.89,
+      "state_house_mean_shift": 8.96,
+      "senate_minus_house_shift": -9.68,
       "eevp": 97.38
     },
     "MI": {
       "senate_margin": 7.08,
       "pres_2024_margin": -1.41,
       "senate_shift_vs_2024": 8.49,
-      "state_house_mean_shift": 11.54,
-      "senate_minus_house_shift": -3.05,
+      "state_house_mean_shift": 10.11,
+      "senate_minus_house_shift": -1.62,
       "eevp": 98.26
     },
     "AL": {
       "senate_margin": -9.42,
       "pres_2024_margin": -30.59,
       "senate_shift_vs_2024": 21.17,
-      "state_house_mean_shift": 20.45,
-      "senate_minus_house_shift": 0.72,
+      "state_house_mean_shift": 19.75,
+      "senate_minus_house_shift": 1.42,
       "eevp": 98.96
     },
     "MN": {
       "senate_margin": 10.15,
       "pres_2024_margin": 4.26,
       "senate_shift_vs_2024": 5.89,
-      "state_house_mean_shift": 8.43,
-      "senate_minus_house_shift": -2.54,
+      "state_house_mean_shift": 7.41,
+      "senate_minus_house_shift": -1.52,
       "eevp": 98.85
     },
     "MT": {
       "senate_margin": -35.9,
       "pres_2024_margin": -19.93,
       "senate_shift_vs_2024": -15.97,
-      "state_house_mean_shift": 8.95,
-      "senate_minus_house_shift": -24.92,
+      "state_house_mean_shift": 9.56,
+      "senate_minus_house_shift": -25.54,
       "eevp": 99
     },
     "AR": {
       "senate_margin": -11.85,
       "pres_2024_margin": -30.64,
       "senate_shift_vs_2024": 18.79,
-      "state_house_mean_shift": 10.49,
-      "senate_minus_house_shift": 8.3,
+      "state_house_mean_shift": 11.23,
+      "senate_minus_house_shift": 7.55,
       "eevp": 99
     },
     "KY": {
       "senate_margin": -12.09,
       "pres_2024_margin": -30.55,
       "senate_shift_vs_2024": 18.46,
-      "state_house_mean_shift": 18.55,
-      "senate_minus_house_shift": -0.09,
+      "state_house_mean_shift": 18.69,
+      "senate_minus_house_shift": -0.23,
       "eevp": 99
     },
     "TX": {
       "senate_margin": 12.1,
       "pres_2024_margin": -13.69,
       "senate_shift_vs_2024": 25.79,
-      "state_house_mean_shift": 22.14,
-      "senate_minus_house_shift": 3.65,
+      "state_house_mean_shift": 19.66,
+      "senate_minus_house_shift": 6.13,
       "eevp": 99
     },
     "TN": {
       "senate_margin": -12.17,
       "pres_2024_margin": -29.72,
       "senate_shift_vs_2024": 17.55,
-      "state_house_mean_shift": 19.88,
-      "senate_minus_house_shift": -2.33,
+      "state_house_mean_shift": 19.57,
+      "senate_minus_house_shift": -2.02,
       "eevp": 99
     },
     "NH": {
@@ -226,72 +226,72 @@
       "senate_margin": -17.92,
       "pres_2024_margin": -34.26,
       "senate_shift_vs_2024": 16.34,
-      "state_house_mean_shift": 16.07,
-      "senate_minus_house_shift": 0.27,
+      "state_house_mean_shift": 16.54,
+      "senate_minus_house_shift": -0.2,
       "eevp": 99
     },
     "GA": {
       "senate_margin": 18.06,
       "pres_2024_margin": -2.2,
       "senate_shift_vs_2024": 20.26,
-      "state_house_mean_shift": 14.86,
-      "senate_minus_house_shift": 5.4,
+      "state_house_mean_shift": 12.9,
+      "senate_minus_house_shift": 7.36,
       "eevp": 99
     },
     "OR": {
       "senate_margin": 19.28,
       "pres_2024_margin": 14.41,
       "senate_shift_vs_2024": 4.87,
-      "state_house_mean_shift": 4.1,
-      "senate_minus_house_shift": 0.77,
+      "state_house_mean_shift": 3.74,
+      "senate_minus_house_shift": 1.13,
       "eevp": 94.01
     },
     "NC": {
       "senate_margin": 19.62,
       "pres_2024_margin": -3.22,
       "senate_shift_vs_2024": 22.84,
-      "state_house_mean_shift": 17.44,
-      "senate_minus_house_shift": 5.4,
+      "state_house_mean_shift": 17.26,
+      "senate_minus_house_shift": 5.58,
       "eevp": 99
     },
     "WV": {
       "senate_margin": -20.35,
       "pres_2024_margin": -41.87,
       "senate_shift_vs_2024": 21.52,
-      "state_house_mean_shift": 23.79,
-      "senate_minus_house_shift": -2.27,
+      "state_house_mean_shift": 23.89,
+      "senate_minus_house_shift": -2.38,
       "eevp": 99
     },
     "VA": {
       "senate_margin": 22.95,
       "pres_2024_margin": 5.81,
       "senate_shift_vs_2024": 17.14,
-      "state_house_mean_shift": 14.23,
-      "senate_minus_house_shift": 2.91,
-      "eevp": 98.53
+      "state_house_mean_shift": 13.02,
+      "senate_minus_house_shift": 4.12,
+      "eevp": 98.57
     },
     "IL": {
       "senate_margin": 24.27,
       "pres_2024_margin": 10.98,
       "senate_shift_vs_2024": 13.29,
-      "state_house_mean_shift": 17.41,
-      "senate_minus_house_shift": -4.12,
+      "state_house_mean_shift": 15.21,
+      "senate_minus_house_shift": -1.92,
       "eevp": 96.1
     },
     "CO": {
       "senate_margin": 25.42,
       "pres_2024_margin": 10.99,
       "senate_shift_vs_2024": 14.43,
-      "state_house_mean_shift": 13.12,
-      "senate_minus_house_shift": 1.31,
+      "state_house_mean_shift": 12.64,
+      "senate_minus_house_shift": 1.79,
       "eevp": 98.05
     },
     "NM": {
       "senate_margin": 26.52,
       "pres_2024_margin": 6.0,
       "senate_shift_vs_2024": 20.52,
-      "state_house_mean_shift": 16.69,
-      "senate_minus_house_shift": 3.83,
+      "state_house_mean_shift": 17.36,
+      "senate_minus_house_shift": 3.16,
       "eevp": 98.47
     },
     "DE": {
@@ -306,8 +306,8 @@
       "senate_margin": 27.4,
       "pres_2024_margin": 5.91,
       "senate_shift_vs_2024": 21.49,
-      "state_house_mean_shift": 21.77,
-      "senate_minus_house_shift": -0.28,
+      "state_house_mean_shift": 21.03,
+      "senate_minus_house_shift": 0.46,
       "eevp": 97.03
     },
     "WY": {
@@ -322,16 +322,16 @@
       "senate_margin": 31.25,
       "pres_2024_margin": 25.35,
       "senate_shift_vs_2024": 5.9,
-      "state_house_mean_shift": 6.79,
-      "senate_minus_house_shift": -0.89,
+      "state_house_mean_shift": 12.82,
+      "senate_minus_house_shift": -6.92,
       "eevp": 99
     },
     "RI": {
       "senate_margin": 37.51,
       "pres_2024_margin": 13.85,
       "senate_shift_vs_2024": 23.66,
-      "state_house_mean_shift": 18.75,
-      "senate_minus_house_shift": 4.91,
+      "state_house_mean_shift": 18.45,
+      "senate_minus_house_shift": 5.21,
       "eevp": 98.34
     }
   },
@@ -355,7 +355,7 @@
       "secretary_of_state": {
         "margin": 10.24,
         "shift_24": 11.65,
-        "eevp": 98.17
+        "eevp": 98.18
       },
       "auditor": null
     },
