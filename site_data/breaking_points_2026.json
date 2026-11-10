@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T17:30:01.722775-05:00",
+  "fetched_at": "2026-11-10T17:45:02.028668-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -228,8 +228,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.41,
-        "residual_overperformance_pts": 3.49,
+        "expected_demographic_state_shift_pts": 21.42,
+        "residual_overperformance_pts": 3.48,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.24,
-        "residual_overperformance_pts": 3.25,
+        "expected_demographic_state_shift_pts": 17.25,
+        "residual_overperformance_pts": 3.24,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 17.08,
-        "residual_overperformance_pts": -0.66,
+        "expected_demographic_state_shift_pts": 17.09,
+        "residual_overperformance_pts": -0.67,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.56,
-        "residual_overperformance_pts": -1.95,
+        "expected_demographic_state_shift_pts": 15.55,
+        "residual_overperformance_pts": -1.94,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -899,8 +899,8 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.78,
-        "median": 11.16,
+        "mean": 9.77,
+        "median": 11.14,
         "stdev": 5.17,
         "pct_shifting_dem": 100.0
       },
