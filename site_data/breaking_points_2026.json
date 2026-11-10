@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T16:30:01.411618-05:00",
+  "fetched_at": "2026-11-10T16:45:01.379322-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.7,
-        "residual_overperformance_pts": 7.0,
+        "expected_demographic_state_shift_pts": 28.71,
+        "residual_overperformance_pts": 6.99,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.7,
-        "residual_overperformance_pts": 5.22,
+        "expected_demographic_state_shift_pts": 16.71,
+        "residual_overperformance_pts": 5.21,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -228,8 +228,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 24.9,
-        "expected_demographic_state_shift_pts": 21.39,
-        "residual_overperformance_pts": 3.51,
+        "expected_demographic_state_shift_pts": 21.4,
+        "residual_overperformance_pts": 3.5,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 17.06,
-        "residual_overperformance_pts": -0.64,
+        "expected_demographic_state_shift_pts": 17.07,
+        "residual_overperformance_pts": -0.65,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -404,7 +404,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.22,
+          "mean": 13.23,
           "median": 14.04,
           "stdev": 8.86,
           "pct_shifting_dem": 94.6
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6406
+        "pearson_r": 0.6407
       }
     },
     "statewide_downballot_executive_races": {
@@ -894,7 +894,7 @@
         "n": 9,
         "mean": 12.3,
         "median": 14.14,
-        "stdev": 8.72,
+        "stdev": 8.71,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
