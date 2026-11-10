@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T19:45:01.672892-05:00",
+  "fetched_at": "2026-11-09T20:00:01.376208-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -70,7 +70,7 @@
       "median_overperf_all": -3.05,
       "ci95_overperf_all": [
         -7.29,
-        4.19
+        4.18
       ],
       "mean_overperf_statewide_vs_house": -3.94,
       "median_overperf_statewide_vs_house": -3.05,
@@ -1853,11 +1853,11 @@
       "office_type": "house_races",
       "caucus_or_faction": "Blue Dog Co-Chair (WelcomePAC)",
       "dw_nominate": -0.105,
-      "margin_2026": 8.18,
-      "shift_vs_2024_baseline": -10.15,
-      "state_house_mean_shift": 7.87,
-      "overperf_vs_benchmark": -18.02,
-      "benchmark_label": "WA Dist House Mean (+7.87)",
+      "margin_2026": 8.14,
+      "shift_vs_2024_baseline": -10.19,
+      "state_house_mean_shift": 7.82,
+      "overperf_vs_benchmark": -18.01,
+      "benchmark_label": "WA Dist House Mean (+7.82)",
       "record_ideology_score": 0.7,
       "rhetoric_ideology_score": 0.5,
       "rhetorical_moderation_pivot": -0.2,
@@ -2315,9 +2315,9 @@
       "dw_nominate": null,
       "margin_2026": 33.22,
       "shift_vs_2024_baseline": 35.02,
-      "state_house_mean_shift": 11.02,
-      "overperf_vs_benchmark": 20.44,
-      "benchmark_label": "CA Dist House Mean (+14.58)",
+      "state_house_mean_shift": 11.04,
+      "overperf_vs_benchmark": 20.42,
+      "benchmark_label": "CA Dist House Mean (+14.60)",
       "record_ideology_score": -1.1,
       "rhetoric_ideology_score": -0.4,
       "rhetorical_moderation_pivot": 0.7,
