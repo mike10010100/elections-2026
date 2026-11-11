@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-11T12:00:01.450731-05:00",
+  "fetched_at": "2026-11-11T12:15:01.922647-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.77,
-        "residual_overperformance_pts": 5.15,
+        "expected_demographic_state_shift_pts": 16.76,
+        "residual_overperformance_pts": 5.16,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
