@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T20:15:01.123466-05:00",
+  "fetched_at": "2026-11-10T20:30:01.776687-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.7,
-        "expected_demographic_state_shift_pts": 16.64,
-        "residual_overperformance_pts": 5.06,
+        "expected_demographic_state_shift_pts": 16.63,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -461,9 +461,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.69,
+          "mean": 27.7,
           "median": 25.58,
-          "stdev": 11.08,
+          "stdev": 11.07,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -482,16 +482,16 @@
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 23.11,
+          "mean": 23.12,
           "median": 21.22,
           "stdev": 10.77,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.36,
+          "mean": 24.37,
           "median": 21.89,
-          "stdev": 10.88,
+          "stdev": 10.87,
           "pct_shifting_dem": 100.0
         }
       }
@@ -632,7 +632,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1051,
-          "mean": 12.65,
+          "mean": 12.66,
           "median": 13.63,
           "stdev": 7.33,
           "pct_shifting_dem": 96.2
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6986
+        "pearson_r": 0.6987
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
@@ -857,7 +857,7 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.37,
+        "mean": 12.38,
         "median": 11.97,
         "stdev": 5.71,
         "pct_shifting_dem": 96.6
