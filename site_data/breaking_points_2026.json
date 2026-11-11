@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T21:00:01.310742-05:00",
+  "fetched_at": "2026-11-10T21:15:01.060705-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -302,6 +302,19 @@
         }
       },
       {
+        "fips": "04013",
+        "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
+        "state": "AZ",
+        "actual_top26_shift_pts": 19.82,
+        "expected_demographic_state_shift_pts": 20.07,
+        "residual_overperformance_pts": -0.25,
+        "demographics": {
+          "hisp_pct": 31.4,
+          "blk_pct": 6.4,
+          "ba_pct": 32.7
+        }
+      },
+      {
         "fips": "39097",
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
@@ -312,19 +325,6 @@
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
           "ba_pct": 17.5
-        }
-      },
-      {
-        "fips": "04013",
-        "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
-        "state": "AZ",
-        "actual_top26_shift_pts": 19.77,
-        "expected_demographic_state_shift_pts": 20.07,
-        "residual_overperformance_pts": -0.3,
-        "demographics": {
-          "hisp_pct": 31.4,
-          "blk_pct": 6.4,
-          "ba_pct": 32.7
         }
       },
       {
