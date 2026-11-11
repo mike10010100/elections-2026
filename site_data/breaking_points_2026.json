@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-11T10:15:02.020212-05:00",
+  "fetched_at": "2026-11-11T10:30:01.959708-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.77,
-        "residual_overperformance_pts": 5.15,
+        "expected_demographic_state_shift_pts": 16.76,
+        "residual_overperformance_pts": 5.16,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -215,8 +215,8 @@
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
         "actual_top26_shift_pts": 21.7,
-        "expected_demographic_state_shift_pts": 16.64,
-        "residual_overperformance_pts": 5.06,
+        "expected_demographic_state_shift_pts": 16.63,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.42,
-        "expected_demographic_state_shift_pts": 17.11,
-        "residual_overperformance_pts": -0.69,
+        "expected_demographic_state_shift_pts": 17.1,
+        "residual_overperformance_pts": -0.68,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
