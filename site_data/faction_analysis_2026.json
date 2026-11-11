@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-11T18:00:01.511152-05:00",
+  "fetched_at": "2026-11-11T18:15:01.465875-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -92,7 +92,7 @@
       "senate_shift_vs_2024": 23.37,
       "state_house_mean_shift": 16.77,
       "senate_minus_house_shift": 6.61,
-      "eevp": 98.8
+      "eevp": 98.72
     },
     "LA": {
       "senate_margin": -1.76,
@@ -271,12 +271,12 @@
       "eevp": 99
     },
     "IL": {
-      "senate_margin": 24.64,
+      "senate_margin": 24.92,
       "pres_2024_margin": 10.98,
-      "senate_shift_vs_2024": 13.66,
-      "state_house_mean_shift": 15.39,
-      "senate_minus_house_shift": -1.73,
-      "eevp": 96.79
+      "senate_shift_vs_2024": 13.94,
+      "state_house_mean_shift": 15.52,
+      "senate_minus_house_shift": -1.58,
+      "eevp": 97.24
     },
     "CO": {
       "senate_margin": 25.42,
