@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-11T12:15:01.922647-05:00",
+  "fetched_at": "2026-11-11T12:30:01.830594-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,7 +18,7 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1346,
       "variance_explained_pct": {
-        "PC1": 81.89,
+        "PC1": 81.9,
         "PC2": 8.44,
         "PC3": 6.9,
         "PC4": 2.76
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.76,
-        "residual_overperformance_pts": 5.16,
+        "expected_demographic_state_shift_pts": 16.77,
+        "residual_overperformance_pts": 5.15,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -526,7 +526,7 @@
         "us_senate_2024_to_2026": {
           "n": 106,
           "mean": 18.45,
-          "median": 18.05,
+          "median": 18.07,
           "stdev": 5.98,
           "pct_shifting_dem": 100.0
         },
@@ -857,7 +857,7 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.37,
+        "mean": 12.38,
         "median": 11.97,
         "stdev": 5.71,
         "pct_shifting_dem": 96.6
