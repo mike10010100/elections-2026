@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T12:30:01.424939-05:00",
+  "fetched_at": "2026-11-12T12:45:01.913003-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -202,8 +202,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.8,
-        "residual_overperformance_pts": 5.12,
+        "expected_demographic_state_shift_pts": 16.79,
+        "residual_overperformance_pts": 5.13,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -655,14 +655,14 @@
           "n": 648,
           "mean": 12.58,
           "median": 11.36,
-          "stdev": 10.67,
+          "stdev": 10.66,
           "pct_shifting_dem": 89.5
         },
         "attorney_general_2024_to_2026": {
           "n": 492,
           "mean": 7.51,
           "median": 7.22,
-          "stdev": 5.19,
+          "stdev": 5.18,
           "pct_shifting_dem": 94.5
         }
       }
@@ -817,7 +817,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 1626,
-          "mean": 10.95,
+          "mean": 10.94,
           "median": 10.53,
           "stdev": 7.02,
           "pct_shifting_dem": 95.0
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6986
+        "pearson_r": 0.6985
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
