@@ -387,7 +387,7 @@
           "term": "Intercept",
           "beta": 2.206,
           "se_hc1": 0.827,
-          "ci95_low": 0.542,
+          "ci95_low": 0.543,
           "ci95_high": 3.869,
           "t_stat": 2.67,
           "p_value": 0.0104
@@ -396,8 +396,8 @@
           "term": "2026 Rhetoric (+ = Moderate)",
           "beta": 4.302,
           "se_hc1": 1.292,
-          "ci95_low": 1.702,
-          "ci95_high": 6.901,
+          "ci95_low": 1.703,
+          "ci95_high": 6.902,
           "t_stat": 3.33,
           "p_value": 0.0017
         }
@@ -406,7 +406,7 @@
     "all49_bonica_1d_composite": {
       "n": 49,
       "k": 2,
-      "r2": 0.184,
+      "r2": 0.185,
       "coefficients": [
         {
           "term": "Intercept",
@@ -422,7 +422,7 @@
           "beta": 2.666,
           "se_hc1": 0.83,
           "ci95_low": 0.997,
-          "ci95_high": 4.335,
+          "ci95_high": 4.336,
           "t_stat": 3.21,
           "p_value": 0.0024
         }
@@ -446,7 +446,7 @@
           "term": "Past Record (+ = Moderate)",
           "beta": 3.204,
           "se_hc1": 1.145,
-          "ci95_low": 0.892,
+          "ci95_low": 0.893,
           "ci95_high": 5.515,
           "t_stat": 2.8,
           "p_value": 0.0077
@@ -456,9 +456,9 @@
           "beta": 0.143,
           "se_hc1": 2.313,
           "ci95_low": -4.525,
-          "ci95_high": 4.811,
+          "ci95_high": 4.81,
           "t_stat": 0.06,
-          "p_value": 0.951
+          "p_value": 0.9511
         },
         {
           "term": "Democratic Incumbent",
@@ -467,16 +467,16 @@
           "ci95_low": -3.127,
           "ci95_high": 2.173,
           "t_stat": -0.36,
-          "p_value": 0.7183
+          "p_value": 0.7182
         },
         {
           "term": "Republican Incumbent",
           "beta": 1.69,
           "se_hc1": 2.398,
-          "ci95_low": -3.149,
+          "ci95_low": -3.148,
           "ci95_high": 6.529,
-          "t_stat": 0.7,
-          "p_value": 0.4849
+          "t_stat": 0.71,
+          "p_value": 0.4847
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
