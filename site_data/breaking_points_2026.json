@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T15:00:01.437803-05:00",
+  "fetched_at": "2026-11-12T15:15:01.324522-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -160,7 +160,7 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.7,
+    "mean_residual_pts": 1.71,
     "median_residual_pts": 1.56,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.87,
-        "residual_overperformance_pts": 5.05,
+        "expected_demographic_state_shift_pts": 16.88,
+        "residual_overperformance_pts": 5.04,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -331,9 +331,9 @@
         "fips": "51047",
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
-        "actual_top26_shift_pts": 16.49,
+        "actual_top26_shift_pts": 16.69,
         "expected_demographic_state_shift_pts": 17.2,
-        "residual_overperformance_pts": -0.71,
+        "residual_overperformance_pts": -0.51,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.81,
-        "residual_overperformance_pts": -2.34,
+        "expected_demographic_state_shift_pts": 15.82,
+        "residual_overperformance_pts": -2.35,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -604,7 +604,7 @@
         "attorney_general_2024_to_2026": {
           "n": 302,
           "mean": 9.41,
-          "median": 9.5,
+          "median": 9.57,
           "stdev": 6.64,
           "pct_shifting_dem": 95.0
         }
