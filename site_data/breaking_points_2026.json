@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-11-12T17:45:01.429629-05:00",
+  "fetched_at": "2026-11-12T18:00:01.754361-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1566,
+      "n_counties": 1565,
       "variance_explained_pct": {
-        "PC1": 35.04,
-        "PC2": 29.9,
+        "PC1": 35.06,
+        "PC2": 29.89,
         "PC3": 21.87,
         "PC4": 7.68,
         "PC5": 4.83,
@@ -319,8 +319,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.82,
-        "expected_demographic_state_shift_pts": 20.09,
-        "residual_overperformance_pts": -0.27,
+        "expected_demographic_state_shift_pts": 20.1,
+        "residual_overperformance_pts": -0.28,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -534,7 +534,7 @@
           "n": 133,
           "mean": 13.7,
           "median": 12.3,
-          "stdev": 8.07,
+          "stdev": 8.06,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
@@ -819,7 +819,7 @@
           "n": 1626,
           "mean": 10.95,
           "median": 10.53,
-          "stdev": 7.02,
+          "stdev": 7.03,
           "pct_shifting_dem": 95.0
         },
         "governor_2024_to_2026": {
