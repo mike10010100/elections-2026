@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T15:30:01.111537-05:00",
+  "fetched_at": "2026-11-12T15:45:01.973845-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -27,7 +27,7 @@
         "Scott Colom (MS Senate: +6.57 pts)",
         "Adam Hamilton (KS Senate: +7.64 pts)",
         "Mary Peltola (AK Senate: -2.20 pts)",
-        "Mark Warner (VA Senate: +4.03 pts)",
+        "Mark Warner (VA Senate: +4.04 pts)",
         "John Hickenlooper (CO Senate: +1.79 pts)",
         "Amy Klobuchar (MN Governor: +1.16 pts)"
       ]
@@ -145,7 +145,7 @@
         "Roy Cooper (NC Senate: +5.59 pts)",
         "Mary Peltola (AK Senate: -2.20 pts)",
         "Ben Luján (NM Senate: +3.16 pts)",
-        "Mark Warner (VA Senate: +4.03 pts)",
+        "Mark Warner (VA Senate: +4.04 pts)",
         "John Hickenlooper (CO Senate: +1.79 pts)",
         "Jocelyn Benson (MI Governor: +2.13 pts)"
       ]
@@ -1117,10 +1117,10 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Committed Moderate (Pro-Business / NatSec Centrist)",
       "dw_nominate": -0.197,
-      "margin_2026": 23.14,
-      "shift_vs_2024_baseline": 17.33,
+      "margin_2026": 23.15,
+      "shift_vs_2024_baseline": 17.34,
       "state_house_mean_shift": 13.3,
-      "overperf_vs_benchmark": 4.03,
+      "overperf_vs_benchmark": 4.04,
       "benchmark_label": "VA House Mean (+13.30)",
       "record_ideology_score": 0.55,
       "rhetoric_ideology_score": 0.3,

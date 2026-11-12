@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T15:30:01.111537-05:00",
+  "fetched_at": "2026-11-12T15:45:01.973845-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.37,
-        "residual_overperformance_pts": 3.12,
+        "expected_demographic_state_shift_pts": 17.38,
+        "residual_overperformance_pts": 3.11,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -331,9 +331,9 @@
         "fips": "51047",
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
-        "actual_top26_shift_pts": 16.82,
+        "actual_top26_shift_pts": 16.85,
         "expected_demographic_state_shift_pts": 17.21,
-        "residual_overperformance_pts": -0.39,
+        "residual_overperformance_pts": -0.36,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -432,7 +432,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.24,
+          "mean": 10.25,
           "median": 9.4,
           "stdev": 7.2,
           "pct_shifting_dem": 96.6
@@ -577,7 +577,7 @@
           "n": 364,
           "mean": 11.97,
           "median": 13.08,
-          "stdev": 7.91,
+          "stdev": 7.92,
           "pct_shifting_dem": 90.1
         },
         "us_senate_2024_to_2026": {
@@ -689,7 +689,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.14,
+          "mean": 11.15,
           "median": 12.37,
           "stdev": 10.78,
           "pct_shifting_dem": 92.8
