@@ -254,7 +254,7 @@
       "mean_record_score": 0.66,
       "mean_rhetoric_score": 0.44,
       "mean_moderation_pivot": -0.22,
-      "mean_shift_vs_2024": 18.44,
+      "mean_shift_vs_2024": 18.45,
       "mean_overperf_all": 4.11,
       "median_overperf_all": 3.76,
       "ci95_overperf_all": [
