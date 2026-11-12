@@ -208,7 +208,7 @@
       "total_margin": 6.44,
       "nat_house_d2p_share": 56.91,
       "vs_nat_house_d2p_share": -3.63,
-      "vs_nat_house_d2p_margin": -7.26,
+      "vs_nat_house_d2p_margin": -7.27,
       "tx_contested_house_d2p_share": 52.86,
       "vs_tx_contested_house_d2p_share": 0.42,
       "vs_tx_contested_house_d2p_margin": 0.84
@@ -224,7 +224,7 @@
       "total_margin": 7.13,
       "nat_house_d2p_share": 56.91,
       "vs_nat_house_d2p_share": -3.29,
-      "vs_nat_house_d2p_margin": -6.58,
+      "vs_nat_house_d2p_margin": -6.59,
       "tx_contested_house_d2p_share": 52.86,
       "vs_tx_contested_house_d2p_share": 0.76,
       "vs_tx_contested_house_d2p_margin": 1.52
@@ -240,7 +240,7 @@
       "total_margin": 12.1,
       "nat_house_d2p_share": 56.91,
       "vs_nat_house_d2p_share": -0.74,
-      "vs_nat_house_d2p_margin": -1.48,
+      "vs_nat_house_d2p_margin": -1.49,
       "tx_contested_house_d2p_share": 52.86,
       "vs_tx_contested_house_d2p_share": 3.31,
       "vs_tx_contested_house_d2p_margin": 6.62
