@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T11:30:01.987863-05:00",
+  "fetched_at": "2026-11-12T11:45:01.912038-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -161,7 +161,7 @@
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
     "mean_residual_pts": 1.69,
-    "median_residual_pts": 1.56,
+    "median_residual_pts": 1.57,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -589,7 +589,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 364,
-          "mean": 6.38,
+          "mean": 6.39,
           "median": 5.84,
           "stdev": 7.23,
           "pct_shifting_dem": 81.9
@@ -662,7 +662,7 @@
           "n": 492,
           "mean": 7.51,
           "median": 7.22,
-          "stdev": 5.18,
+          "stdev": 5.19,
           "pct_shifting_dem": 94.5
         }
       }
@@ -803,7 +803,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1626,
-          "mean": 13.82,
+          "mean": 13.83,
           "median": 14.43,
           "stdev": 6.9,
           "pct_shifting_dem": 96.2
