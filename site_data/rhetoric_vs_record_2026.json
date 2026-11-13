@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T12:45:01.986953-05:00",
+  "fetched_at": "2026-11-13T13:00:01.725341-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -24,7 +24,7 @@
       "median_overperf_statewide_vs_house": 2.23,
       "pct_beating_benchmark_statewide": 80.0,
       "notable_examples": [
-        "Scott Colom (MS Senate: +6.52 pts)",
+        "Scott Colom (MS Senate: +6.51 pts)",
         "Adam Hamilton (KS Senate: +7.62 pts)",
         "Mary Peltola (AK Senate: -1.52 pts)",
         "Mark Warner (VA Senate: +4.05 pts)",
@@ -120,7 +120,7 @@
       "median_overperf_non_redistricted": 6.32,
       "pct_beating_benchmark_non_redistricted": 91.7,
       "mean_overperf_statewide": 5.17,
-      "median_overperf_statewide": 6.52,
+      "median_overperf_statewide": 6.51,
       "pct_beating_benchmark_statewide": 90.9,
       "notable_examples": [
         "James Talarico (TX Senate: +6.13 pts)",
@@ -128,7 +128,7 @@
         "Jon Ossoff (GA Senate: +7.36 pts)",
         "Josh Turek (IA Senate: +3.19 pts)",
         "Annie Andrews (SC Senate: +7.47 pts)",
-        "Scott Colom (MS Senate: +6.52 pts)"
+        "Scott Colom (MS Senate: +6.51 pts)"
       ]
     },
     {
@@ -749,10 +749,10 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Committed Moderate (Prosecutor / DA)",
       "dw_nominate": null,
-      "margin_2026": 0.75,
-      "shift_vs_2024_baseline": 23.64,
+      "margin_2026": 0.74,
+      "shift_vs_2024_baseline": 23.63,
       "state_house_mean_shift": 17.12,
-      "overperf_vs_benchmark": 6.52,
+      "overperf_vs_benchmark": 6.51,
       "benchmark_label": "MS House Mean (+17.12)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.1,
@@ -2175,10 +2175,10 @@
       "office_type": "house_races",
       "caucus_or_faction": "WelcomePAC Rural Moderate ($399K)",
       "dw_nominate": null,
-      "margin_2026": 15.84,
-      "shift_vs_2024_baseline": 25.35,
+      "margin_2026": 15.82,
+      "shift_vs_2024_baseline": 25.33,
       "state_house_mean_shift": 17.33,
-      "overperf_vs_benchmark": 8.02,
+      "overperf_vs_benchmark": 8.0,
       "benchmark_label": "NC Dist House Mean (+17.33)",
       "record_ideology_score": 0.9,
       "rhetoric_ideology_score": 0.7,

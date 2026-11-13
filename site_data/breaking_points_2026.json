@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T12:45:01.986953-05:00",
+  "fetched_at": "2026-11-13T13:00:01.725341-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -293,8 +293,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.28,
-        "expected_demographic_state_shift_pts": 19.36,
-        "residual_overperformance_pts": -0.08,
+        "expected_demographic_state_shift_pts": 19.37,
+        "residual_overperformance_pts": -0.09,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -371,8 +371,8 @@
         "county_label": "Delaware, OH (Columbus exurban DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 11.07,
-        "expected_demographic_state_shift_pts": 14.25,
-        "residual_overperformance_pts": -3.18,
+        "expected_demographic_state_shift_pts": 14.24,
+        "residual_overperformance_pts": -3.17,
         "demographics": {
           "hisp_pct": 2.8,
           "blk_pct": 3.9,
@@ -518,7 +518,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.67,
+          "mean": 17.68,
           "median": 17.58,
           "stdev": 6.3,
           "pct_shifting_dem": 100.0
@@ -598,7 +598,7 @@
           "n": 315,
           "mean": 12.44,
           "median": 11.41,
-          "stdev": 9.69,
+          "stdev": 9.68,
           "pct_shifting_dem": 88.9
         },
         "attorney_general_2024_to_2026": {
@@ -689,14 +689,14 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.17,
+          "mean": 11.16,
           "median": 12.37,
           "stdev": 10.78,
           "pct_shifting_dem": 93.4
         },
         "us_senate_2024_to_2026": {
           "n": 130,
-          "mean": 13.01,
+          "mean": 13.0,
           "median": 13.57,
           "stdev": 9.23,
           "pct_shifting_dem": 96.2
@@ -719,7 +719,7 @@
           "n": 108,
           "mean": 7.89,
           "median": 7.02,
-          "stdev": 5.72,
+          "stdev": 5.73,
           "pct_shifting_dem": 95.4
         }
       }
