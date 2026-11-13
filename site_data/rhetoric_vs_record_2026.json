@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T10:45:02.036278-05:00",
+  "fetched_at": "2026-11-13T11:00:01.197787-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -749,11 +749,11 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Committed Moderate (Prosecutor / DA)",
       "dw_nominate": null,
-      "margin_2026": 0.72,
-      "shift_vs_2024_baseline": 23.61,
-      "state_house_mean_shift": 17.09,
+      "margin_2026": 0.74,
+      "shift_vs_2024_baseline": 23.63,
+      "state_house_mean_shift": 17.11,
       "overperf_vs_benchmark": 6.52,
-      "benchmark_label": "MS House Mean (+17.09)",
+      "benchmark_label": "MS House Mean (+17.11)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.1,
       "rhetorical_moderation_pivot": -0.4,
