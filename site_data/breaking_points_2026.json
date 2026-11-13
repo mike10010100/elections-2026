@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T19:15:01.781584-05:00",
+  "fetched_at": "2026-11-12T19:30:01.397114-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -418,7 +418,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 3100,
-          "mean": 11.81,
+          "mean": 11.8,
           "median": 11.3,
           "stdev": 7.67,
           "pct_shifting_dem": 96.2
@@ -432,7 +432,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.26,
+          "mean": 10.25,
           "median": 9.4,
           "stdev": 7.19,
           "pct_shifting_dem": 96.6
@@ -590,7 +590,7 @@
         "us_house_2024_to_2026": {
           "n": 364,
           "mean": 6.39,
-          "median": 5.84,
+          "median": 5.81,
           "stdev": 7.23,
           "pct_shifting_dem": 82.1
         },
@@ -598,7 +598,7 @@
           "n": 315,
           "mean": 12.44,
           "median": 11.41,
-          "stdev": 9.68,
+          "stdev": 9.69,
           "pct_shifting_dem": 88.9
         },
         "attorney_general_2024_to_2026": {
@@ -703,7 +703,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.53,
+          "mean": 12.52,
           "median": 11.74,
           "stdev": 7.67,
           "pct_shifting_dem": 97.2
@@ -871,8 +871,8 @@
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.43,
-        "median": 11.36,
+        "mean": 10.42,
+        "median": 11.3,
         "stdev": 5.28,
         "pct_shifting_dem": 95.2
       },
@@ -892,21 +892,21 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.3,
+        "mean": 12.29,
         "median": 14.14,
         "stdev": 8.71,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.78,
-        "median": 11.04,
+        "mean": 9.76,
+        "median": 10.98,
         "stdev": 5.08,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.18,
+        "mean": 12.17,
         "median": 12.66,
         "stdev": 8.19,
         "pct_shifting_dem": 95.3
