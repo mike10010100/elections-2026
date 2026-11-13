@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T12:15:01.207288-05:00",
+  "fetched_at": "2026-11-13T12:30:01.549630-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.38,
-        "residual_overperformance_pts": 3.11,
+        "expected_demographic_state_shift_pts": 17.37,
+        "residual_overperformance_pts": 3.12,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -525,7 +525,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 106,
-          "mean": 18.45,
+          "mean": 18.46,
           "median": 17.94,
           "stdev": 6.0,
           "pct_shifting_dem": 100.0
@@ -696,7 +696,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 130,
-          "mean": 12.99,
+          "mean": 13.0,
           "median": 13.57,
           "stdev": 9.23,
           "pct_shifting_dem": 96.2
@@ -705,7 +705,7 @@
           "n": 179,
           "mean": 12.52,
           "median": 11.74,
-          "stdev": 7.67,
+          "stdev": 7.68,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -899,7 +899,7 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.74,
+        "mean": 9.73,
         "median": 10.92,
         "stdev": 5.07,
         "pct_shifting_dem": 100.0
