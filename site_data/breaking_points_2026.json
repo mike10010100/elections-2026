@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T16:00:01.296808-05:00",
+  "fetched_at": "2026-11-13T16:15:01.482033-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -161,7 +161,7 @@
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
     "mean_residual_pts": 1.72,
-    "median_residual_pts": 1.56,
+    "median_residual_pts": 1.57,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -176,8 +176,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.68,
-        "residual_overperformance_pts": 6.97,
+        "expected_demographic_state_shift_pts": 19.67,
+        "residual_overperformance_pts": 6.98,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -468,7 +468,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 86,
-          "mean": 29.54,
+          "mean": 29.55,
           "median": 27.56,
           "stdev": 11.09,
           "pct_shifting_dem": 100.0
@@ -482,7 +482,7 @@
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 23.16,
+          "mean": 23.17,
           "median": 21.22,
           "stdev": 10.77,
           "pct_shifting_dem": 100.0
@@ -491,7 +491,7 @@
           "n": 101,
           "mean": 24.41,
           "median": 21.89,
-          "stdev": 10.86,
+          "stdev": 10.85,
           "pct_shifting_dem": 100.0
         }
       }
@@ -703,7 +703,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.56,
+          "mean": 12.55,
           "median": 11.75,
           "stdev": 7.68,
           "pct_shifting_dem": 97.2
@@ -747,14 +747,14 @@
         "top_of_ticket_2024_to_2026": {
           "n": 325,
           "mean": 15.72,
-          "median": 15.51,
+          "median": 15.54,
           "stdev": 5.16,
           "pct_shifting_dem": 99.7
         },
         "us_senate_2024_to_2026": {
           "n": 316,
           "mean": 15.9,
-          "median": 15.66,
+          "median": 15.68,
           "stdev": 4.97,
           "pct_shifting_dem": 100.0
         },
@@ -873,7 +873,7 @@
         "n": 21,
         "mean": 10.42,
         "median": 11.22,
-        "stdev": 5.28,
+        "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
       "Auditor": {
