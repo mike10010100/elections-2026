@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T16:15:01.482033-05:00",
+  "fetched_at": "2026-11-13T16:30:01.130231-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.67,
-        "residual_overperformance_pts": 6.98,
+        "expected_demographic_state_shift_pts": 19.68,
+        "residual_overperformance_pts": 6.97,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -746,7 +746,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 325,
-          "mean": 15.72,
+          "mean": 15.73,
           "median": 15.54,
           "stdev": 5.16,
           "pct_shifting_dem": 99.7
@@ -760,7 +760,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 325,
-          "mean": 12.35,
+          "mean": 12.36,
           "median": 11.82,
           "stdev": 5.15,
           "pct_shifting_dem": 99.1
@@ -803,7 +803,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1626,
-          "mean": 13.83,
+          "mean": 13.84,
           "median": 14.43,
           "stdev": 6.9,
           "pct_shifting_dem": 96.2
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6424
+        "pearson_r": 0.6425
       }
     },
     "statewide_downballot_executive_races": {
