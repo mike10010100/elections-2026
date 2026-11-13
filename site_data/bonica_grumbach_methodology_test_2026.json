@@ -360,7 +360,7 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.754,
+          "beta": 2.753,
           "se_hc1": 0.821,
           "ci95_low": 1.102,
           "ci95_high": 4.405,
@@ -387,7 +387,7 @@
           "term": "Intercept",
           "beta": 2.209,
           "se_hc1": 0.827,
-          "ci95_low": 0.546,
+          "ci95_low": 0.545,
           "ci95_high": 3.872,
           "t_stat": 2.67,
           "p_value": 0.0103
@@ -412,7 +412,7 @@
           "term": "Intercept",
           "beta": 2.401,
           "se_hc1": 0.818,
-          "ci95_low": 0.757,
+          "ci95_low": 0.756,
           "ci95_high": 4.046,
           "t_stat": 2.94,
           "p_value": 0.0051
@@ -455,19 +455,19 @@
           "term": "Rhetorical Moderation Pivot",
           "beta": 0.137,
           "se_hc1": 2.314,
-          "ci95_low": -4.532,
-          "ci95_high": 4.807,
+          "ci95_low": -4.533,
+          "ci95_high": 4.806,
           "t_stat": 0.06,
-          "p_value": 0.953
+          "p_value": 0.9532
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -0.456,
+          "beta": -0.457,
           "se_hc1": 1.312,
-          "ci95_low": -3.104,
-          "ci95_high": 2.192,
+          "ci95_low": -3.105,
+          "ci95_high": 2.191,
           "t_stat": -0.35,
-          "p_value": 0.7301
+          "p_value": 0.7295
         },
         {
           "term": "Republican Incumbent",
@@ -482,10 +482,10 @@
           "term": "Log(Dem/GOP Total Spend)",
           "beta": 0.205,
           "se_hc1": 0.427,
-          "ci95_low": -0.657,
-          "ci95_high": 1.066,
+          "ci95_low": -0.656,
+          "ci95_high": 1.067,
           "t_stat": 0.48,
-          "p_value": 0.6338
+          "p_value": 0.6333
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
