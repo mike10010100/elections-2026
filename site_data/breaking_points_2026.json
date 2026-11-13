@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T20:15:01.372739-05:00",
+  "fetched_at": "2026-11-12T20:30:01.619381-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -228,8 +228,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 25.34,
-        "expected_demographic_state_shift_pts": 21.59,
-        "residual_overperformance_pts": 3.75,
+        "expected_demographic_state_shift_pts": 21.6,
+        "residual_overperformance_pts": 3.74,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.37,
-        "residual_overperformance_pts": 3.12,
+        "expected_demographic_state_shift_pts": 17.38,
+        "residual_overperformance_pts": 3.11,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -418,7 +418,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 3100,
-          "mean": 11.81,
+          "mean": 11.8,
           "median": 11.3,
           "stdev": 7.67,
           "pct_shifting_dem": 96.2
@@ -491,7 +491,7 @@
           "n": 101,
           "mean": 24.4,
           "median": 21.89,
-          "stdev": 10.87,
+          "stdev": 10.86,
           "pct_shifting_dem": 100.0
         }
       }
@@ -899,9 +899,9 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.75,
-        "median": 10.96,
-        "stdev": 5.07,
+        "mean": 9.76,
+        "median": 10.98,
+        "stdev": 5.08,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
