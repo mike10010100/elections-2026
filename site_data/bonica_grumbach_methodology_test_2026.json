@@ -347,8 +347,8 @@
         "Angie Nixon (FL Senate: -2.12 pts)",
         "Marquita Bradshaw (TN Senate: -2.02 pts)",
         "Edward Markey (MA Senate: -6.92 pts)",
-        "Bob Brooks (PA-07 House: +0.34 pts)",
-        "Summer Lee (PA-12 House: -3.24 pts)"
+        "Bob Brooks (PA-07 House: +0.33 pts)",
+        "Summer Lee (PA-12 House: -3.25 pts)"
       ]
     }
   ],
@@ -362,8 +362,8 @@
           "term": "Intercept",
           "beta": 2.768,
           "se_hc1": 0.817,
-          "ci95_low": 1.125,
-          "ci95_high": 4.412,
+          "ci95_low": 1.124,
+          "ci95_high": 4.411,
           "t_stat": 3.39,
           "p_value": 0.0014
         },
@@ -372,7 +372,7 @@
           "beta": 3.127,
           "se_hc1": 1.035,
           "ci95_low": 1.044,
-          "ci95_high": 5.209,
+          "ci95_high": 5.21,
           "t_stat": 3.02,
           "p_value": 0.0041
         }
@@ -385,19 +385,19 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.221,
+          "beta": 2.22,
           "se_hc1": 0.823,
-          "ci95_low": 0.565,
-          "ci95_high": 3.877,
+          "ci95_low": 0.564,
+          "ci95_high": 3.876,
           "t_stat": 2.7,
           "p_value": 0.0097
         },
         {
           "term": "2026 Rhetoric (+ = Moderate)",
-          "beta": 4.302,
+          "beta": 4.303,
           "se_hc1": 1.291,
-          "ci95_low": 1.705,
-          "ci95_high": 6.9,
+          "ci95_low": 1.706,
+          "ci95_high": 6.901,
           "t_stat": 3.33,
           "p_value": 0.0017
         }
@@ -410,16 +410,16 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.414,
+          "beta": 2.413,
           "se_hc1": 0.814,
-          "ci95_low": 0.777,
+          "ci95_low": 0.776,
           "ci95_high": 4.051,
           "t_stat": 2.97,
           "p_value": 0.0047
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
-          "beta": 2.671,
+          "beta": 2.672,
           "se_hc1": 0.828,
           "ci95_low": 1.006,
           "ci95_high": 4.337,
@@ -437,28 +437,28 @@
           "term": "Intercept",
           "beta": 2.184,
           "se_hc1": 1.001,
-          "ci95_low": 0.164,
+          "ci95_low": 0.163,
           "ci95_high": 4.204,
           "t_stat": 2.18,
           "p_value": 0.0348
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.191,
+          "beta": 3.193,
           "se_hc1": 1.142,
-          "ci95_low": 0.886,
-          "ci95_high": 5.496,
-          "t_stat": 2.79,
+          "ci95_low": 0.888,
+          "ci95_high": 5.497,
+          "t_stat": 2.8,
           "p_value": 0.0078
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": 0.081,
+          "beta": 0.083,
           "se_hc1": 2.29,
-          "ci95_low": -4.54,
-          "ci95_high": 4.701,
+          "ci95_low": -4.537,
+          "ci95_high": 4.704,
           "t_stat": 0.04,
-          "p_value": 0.972
+          "p_value": 0.9711
         },
         {
           "term": "Democratic Incumbent",
@@ -467,16 +467,16 @@
           "ci95_low": -3.111,
           "ci95_high": 2.167,
           "t_stat": -0.36,
-          "p_value": 0.72
+          "p_value": 0.7199
         },
         {
           "term": "Republican Incumbent",
-          "beta": 1.721,
+          "beta": 1.72,
           "se_hc1": 2.384,
-          "ci95_low": -3.09,
-          "ci95_high": 6.533,
+          "ci95_low": -3.092,
+          "ci95_high": 6.532,
           "t_stat": 0.72,
-          "p_value": 0.4743
+          "p_value": 0.4746
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
@@ -485,13 +485,13 @@
           "ci95_low": -0.648,
           "ci95_high": 1.067,
           "t_stat": 0.49,
-          "p_value": 0.6243
+          "p_value": 0.6245
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
           "beta": 3.961,
           "se_hc1": 0.993,
-          "ci95_low": 1.958,
+          "ci95_low": 1.957,
           "ci95_high": 5.965,
           "t_stat": 3.99,
           "p_value": 0.0003
