@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T17:45:01.181841-05:00",
+  "fetched_at": "2026-11-13T18:00:01.853844-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.68,
-        "residual_overperformance_pts": 6.97,
+        "expected_demographic_state_shift_pts": 19.67,
+        "residual_overperformance_pts": 6.98,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.86,
-        "residual_overperformance_pts": 5.06,
+        "expected_demographic_state_shift_pts": 16.85,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -280,8 +280,8 @@
         "county_label": "Licking, OH (New Albany hyperscale hub)",
         "state": "OH",
         "actual_top26_shift_pts": 17.85,
-        "expected_demographic_state_shift_pts": 16.5,
-        "residual_overperformance_pts": 1.35,
+        "expected_demographic_state_shift_pts": 16.49,
+        "residual_overperformance_pts": 1.36,
         "demographics": {
           "hisp_pct": 2.1,
           "blk_pct": 4.2,
@@ -461,7 +461,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.74,
+          "mean": 27.75,
           "median": 25.58,
           "stdev": 11.05,
           "pct_shifting_dem": 100.0
@@ -477,7 +477,7 @@
           "n": 103,
           "mean": 23.18,
           "median": 20.2,
-          "stdev": 12.22,
+          "stdev": 12.21,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6985
+        "pearson_r": 0.6984
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
@@ -857,7 +857,7 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.44,
+        "mean": 12.45,
         "median": 11.97,
         "stdev": 5.69,
         "pct_shifting_dem": 96.6
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.42,
-        "median": 11.2,
+        "median": 11.24,
         "stdev": 5.28,
         "pct_shifting_dem": 95.2
       },
@@ -899,9 +899,9 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.73,
-        "median": 10.9,
-        "stdev": 5.06,
+        "mean": 9.74,
+        "median": 10.94,
+        "stdev": 5.07,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
