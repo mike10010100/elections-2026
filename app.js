@@ -455,7 +455,7 @@
         });
 
     document.getElementById("last-updated-text").textContent =
-      `Snapshot: ${timeStr} · Auto-updating every 5 min · ${fmtInt(sc.civic_called_races)} called / ${fmtInt(sc.civic_uncalled_races)} uncalled · 2004–2026 normalized archive`;
+      `Snapshot: ${timeStr} · Auto-updating every 15 min · ${fmtInt(sc.civic_called_races)} called / ${fmtInt(sc.civic_uncalled_races)} uncalled · 2004–2026 normalized archive`;
     document.getElementById("global-races-pill").textContent =
       `${fmtInt(sc.civic_total_races)} Races · ${fmtInt(sc.counties_tracked)} Counties · 2004–2026`;
 
@@ -2743,7 +2743,7 @@
       <div class="analysis-block">
         <div class="analysis-block-header">
           <div>
-            <h2>1. Uncalled Statewide Legal &amp; Ballot-Math Tracker: Mississippi Plurality vs. Alaska RCV</h2>
+            <h2>1. Late-Count Statewide Legal &amp; Ballot-Math Tracker: Mississippi Plurality Call vs. Alaska RCV</h2>
             <p class="section-sub">Statutory election rules, late-arriving absentee/affidavit ballot splits, and RCV second-choice transfer thresholds.</p>
           </div>
           <span class="stat-pill">Live Updated · 15-Min Feed</span>
@@ -2845,7 +2845,7 @@
                     <td><strong class="dem-text">KS Gov: Cindy Holscher (DEM)</strong></td>
                     <td class="num"><strong>${fmtInt(ksHolscher.votes)}</strong></td>
                     <td class="num"><strong>${Number(ksHolscher.percent).toFixed(2)}%</strong></td>
-                    <td>${ksGov.called ? "Called winner · " : ""}Leads Ty Masterson (GOP, ${Number(ksMasterson.percent).toFixed(2)}%) by +${fmtInt(ksLead)}v at ${fmtPct(ksGov.eevp || 98.6)} EEVP</td>
+                    <td>${ksGov.called ? "Called winner · Defeated" : "Leads"} Ty Masterson (GOP, ${Number(ksMasterson.percent).toFixed(2)}%) by +${fmtInt(ksLead)}v at ${fmtPct(ksGov.eevp || 98.6)} EEVP</td>
                   </tr>
                 </tbody>
               </table>
