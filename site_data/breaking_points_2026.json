@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T14:30:01.179835-05:00",
+  "fetched_at": "2026-11-13T14:45:01.273667-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,7 +18,7 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1346,
       "variance_explained_pct": {
-        "PC1": 81.92,
+        "PC1": 81.91,
         "PC2": 8.43,
         "PC3": 6.9,
         "PC4": 2.76
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.37,
-        "residual_overperformance_pts": 3.12,
+        "expected_demographic_state_shift_pts": 17.38,
+        "residual_overperformance_pts": 3.11,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -404,7 +404,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.25,
+          "mean": 13.26,
           "median": 14.05,
           "stdev": 8.87,
           "pct_shifting_dem": 94.7
@@ -575,14 +575,14 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 364,
-          "mean": 11.97,
+          "mean": 11.98,
           "median": 13.07,
           "stdev": 7.92,
           "pct_shifting_dem": 90.1
         },
         "us_senate_2024_to_2026": {
           "n": 169,
-          "mean": 17.3,
+          "mean": 17.31,
           "median": 16.69,
           "stdev": 4.97,
           "pct_shifting_dem": 100.0
@@ -655,7 +655,7 @@
           "n": 648,
           "mean": 12.59,
           "median": 11.36,
-          "stdev": 10.67,
+          "stdev": 10.66,
           "pct_shifting_dem": 89.5
         },
         "attorney_general_2024_to_2026": {
@@ -824,15 +824,15 @@
         },
         "governor_2024_to_2026": {
           "n": 1102,
-          "mean": 13.65,
-          "median": 12.81,
+          "mean": 13.66,
+          "median": 12.82,
           "stdev": 9.48,
           "pct_shifting_dem": 92.4
         },
         "attorney_general_2024_to_2026": {
           "n": 915,
           "mean": 10.05,
-          "median": 9.67,
+          "median": 9.69,
           "stdev": 6.42,
           "pct_shifting_dem": 96.6
         }
@@ -843,7 +843,7 @@
     "county_correlations": {
       "us_senate_vs_state_ag_shift": {
         "n_counties": 1353,
-        "pearson_r": 0.8634
+        "pearson_r": 0.8633
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
