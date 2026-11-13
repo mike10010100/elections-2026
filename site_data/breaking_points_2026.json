@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T19:00:01.098071-05:00",
+  "fetched_at": "2026-11-12T19:15:01.781584-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -254,8 +254,8 @@
         "county_label": "Fayette, GA (QTS Fayetteville mega-site)",
         "state": "GA",
         "actual_top26_shift_pts": 16.94,
-        "expected_demographic_state_shift_pts": 15.05,
-        "residual_overperformance_pts": 1.89,
+        "expected_demographic_state_shift_pts": 15.06,
+        "residual_overperformance_pts": 1.88,
         "demographics": {
           "hisp_pct": 7.5,
           "blk_pct": 25.3,
@@ -267,8 +267,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.12,
-        "expected_demographic_state_shift_pts": 16.34,
-        "residual_overperformance_pts": 1.78,
+        "expected_demographic_state_shift_pts": 16.35,
+        "residual_overperformance_pts": 1.77,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -662,7 +662,7 @@
           "n": 492,
           "mean": 7.52,
           "median": 7.22,
-          "stdev": 5.19,
+          "stdev": 5.18,
           "pct_shifting_dem": 94.5
         }
       }
@@ -717,7 +717,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.9,
+          "mean": 7.89,
           "median": 7.02,
           "stdev": 5.72,
           "pct_shifting_dem": 95.4
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6984
+        "pearson_r": 0.6985
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
@@ -864,16 +864,16 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.26,
+        "mean": 12.27,
         "median": 12.59,
-        "stdev": 7.03,
+        "stdev": 7.04,
         "pct_shifting_dem": 96.0
       },
       "Treasurer": {
         "n": 21,
-        "mean": 10.42,
+        "mean": 10.43,
         "median": 11.36,
-        "stdev": 5.27,
+        "stdev": 5.28,
         "pct_shifting_dem": 95.2
       },
       "Auditor": {
@@ -906,7 +906,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.17,
+        "mean": 12.18,
         "median": 12.66,
         "stdev": 8.19,
         "pct_shifting_dem": 95.3
