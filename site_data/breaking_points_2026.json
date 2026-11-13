@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T07:15:01.687442-05:00",
+  "fetched_at": "2026-11-13T07:30:01.372479-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -176,8 +176,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.67,
-        "residual_overperformance_pts": 6.98,
+        "expected_demographic_state_shift_pts": 19.68,
+        "residual_overperformance_pts": 6.97,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -413,7 +413,7 @@
           "n": 2240,
           "mean": 14.38,
           "median": 14.93,
-          "stdev": 8.0,
+          "stdev": 8.01,
           "pct_shifting_dem": 96.9
         },
         "us_house_2024_to_2026": {
@@ -746,23 +746,23 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 325,
-          "mean": 15.68,
+          "mean": 15.69,
           "median": 15.51,
-          "stdev": 5.14,
+          "stdev": 5.15,
           "pct_shifting_dem": 99.7
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.86,
+          "mean": 15.87,
           "median": 15.66,
-          "stdev": 4.94,
+          "stdev": 4.95,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
           "n": 325,
-          "mean": 12.31,
+          "mean": 12.32,
           "median": 11.82,
-          "stdev": 5.12,
+          "stdev": 5.13,
           "pct_shifting_dem": 99.1
         },
         "governor_2024_to_2026": {
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6419
+        "pearson_r": 0.642
       }
     },
     "statewide_downballot_executive_races": {
