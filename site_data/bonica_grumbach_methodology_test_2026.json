@@ -254,7 +254,7 @@
       "mean_record_score": 0.66,
       "mean_rhetoric_score": 0.44,
       "mean_moderation_pivot": -0.22,
-      "mean_shift_vs_2024": 18.46,
+      "mean_shift_vs_2024": 18.47,
       "mean_overperf_all": 4.11,
       "median_overperf_all": 3.76,
       "ci95_overperf_all": [
@@ -360,19 +360,19 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.752,
+          "beta": 2.754,
           "se_hc1": 0.821,
-          "ci95_low": 1.101,
-          "ci95_high": 4.404,
+          "ci95_low": 1.102,
+          "ci95_high": 4.405,
           "t_stat": 3.35,
           "p_value": 0.0016
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.108,
+          "beta": 3.11,
           "se_hc1": 1.039,
-          "ci95_low": 1.018,
-          "ci95_high": 5.199,
+          "ci95_low": 1.019,
+          "ci95_high": 5.2,
           "t_stat": 2.99,
           "p_value": 0.0044
         }
@@ -385,19 +385,19 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.208,
+          "beta": 2.209,
           "se_hc1": 0.827,
-          "ci95_low": 0.544,
-          "ci95_high": 3.871,
+          "ci95_low": 0.545,
+          "ci95_high": 3.872,
           "t_stat": 2.67,
-          "p_value": 0.0104
+          "p_value": 0.0103
         },
         {
           "term": "2026 Rhetoric (+ = Moderate)",
-          "beta": 4.288,
+          "beta": 4.29,
           "se_hc1": 1.294,
-          "ci95_low": 1.686,
-          "ci95_high": 6.891,
+          "ci95_low": 1.687,
+          "ci95_high": 6.892,
           "t_stat": 3.32,
           "p_value": 0.0018
         }
@@ -410,19 +410,19 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.4,
+          "beta": 2.401,
           "se_hc1": 0.818,
-          "ci95_low": 0.755,
+          "ci95_low": 0.756,
           "ci95_high": 4.046,
           "t_stat": 2.94,
           "p_value": 0.0051
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
-          "beta": 2.659,
+          "beta": 2.66,
           "se_hc1": 0.83,
-          "ci95_low": 0.989,
-          "ci95_high": 4.329,
+          "ci95_low": 0.99,
+          "ci95_high": 4.33,
           "t_stat": 3.2,
           "p_value": 0.0024
         }
@@ -437,37 +437,37 @@
           "term": "Intercept",
           "beta": 2.171,
           "se_hc1": 1.003,
-          "ci95_low": 0.147,
+          "ci95_low": 0.146,
           "ci95_high": 4.195,
           "t_stat": 2.16,
           "p_value": 0.0362
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.194,
+          "beta": 3.197,
           "se_hc1": 1.147,
-          "ci95_low": 0.88,
-          "ci95_high": 5.508,
+          "ci95_low": 0.883,
+          "ci95_high": 5.51,
           "t_stat": 2.79,
-          "p_value": 0.008
+          "p_value": 0.0079
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": 0.134,
+          "beta": 0.137,
           "se_hc1": 2.314,
-          "ci95_low": -4.536,
-          "ci95_high": 4.804,
+          "ci95_low": -4.533,
+          "ci95_high": 4.807,
           "t_stat": 0.06,
-          "p_value": 0.9541
+          "p_value": 0.9531
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -0.463,
-          "se_hc1": 1.313,
-          "ci95_low": -3.111,
-          "ci95_high": 2.186,
+          "beta": -0.457,
+          "se_hc1": 1.312,
+          "ci95_low": -3.105,
+          "ci95_high": 2.191,
           "t_stat": -0.35,
-          "p_value": 0.7263
+          "p_value": 0.7295
         },
         {
           "term": "Republican Incumbent",
@@ -476,23 +476,23 @@
           "ci95_low": -3.149,
           "ci95_high": 6.529,
           "t_stat": 0.7,
-          "p_value": 0.4849
+          "p_value": 0.4848
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
-          "beta": 0.207,
+          "beta": 0.205,
           "se_hc1": 0.427,
-          "ci95_low": -0.655,
-          "ci95_high": 1.068,
+          "ci95_low": -0.656,
+          "ci95_high": 1.067,
           "t_stat": 0.48,
-          "p_value": 0.6308
+          "p_value": 0.6332
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
-          "beta": 3.958,
+          "beta": 3.957,
           "se_hc1": 0.995,
-          "ci95_low": 1.949,
-          "ci95_high": 5.967,
+          "ci95_low": 1.948,
+          "ci95_high": 5.966,
           "t_stat": 3.98,
           "p_value": 0.0003
         }
