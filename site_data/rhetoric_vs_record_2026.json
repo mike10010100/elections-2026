@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T07:45:01.853718-05:00",
+  "fetched_at": "2026-11-13T08:00:02.075613-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -20,11 +20,11 @@
         1.41,
         6.89
       ],
-      "mean_overperf_statewide_vs_house": 3.18,
+      "mean_overperf_statewide_vs_house": 3.19,
       "median_overperf_statewide_vs_house": 2.24,
       "pct_beating_benchmark_statewide": 80.0,
       "notable_examples": [
-        "Scott Colom (MS Senate: +6.52 pts)",
+        "Scott Colom (MS Senate: +6.55 pts)",
         "Adam Hamilton (KS Senate: +7.62 pts)",
         "Mary Peltola (AK Senate: -1.52 pts)",
         "Mark Warner (VA Senate: +4.05 pts)",
@@ -116,11 +116,11 @@
       "archetype": "Cross-Partisan Economic Populists (Mainstream Econ + Cult Mod + High Populism)",
       "n_non_redistricted": 12,
       "n_statewide": 11,
-      "mean_overperf_non_redistricted": 5.05,
-      "median_overperf_non_redistricted": 6.32,
+      "mean_overperf_non_redistricted": 5.06,
+      "median_overperf_non_redistricted": 6.34,
       "pct_beating_benchmark_non_redistricted": 91.7,
       "mean_overperf_statewide": 5.17,
-      "median_overperf_statewide": 6.52,
+      "median_overperf_statewide": 6.55,
       "pct_beating_benchmark_statewide": 90.9,
       "notable_examples": [
         "James Talarico (TX Senate: +6.13 pts)",
@@ -128,7 +128,7 @@
         "Jon Ossoff (GA Senate: +7.36 pts)",
         "Josh Turek (IA Senate: +3.18 pts)",
         "Annie Andrews (SC Senate: +7.47 pts)",
-        "Scott Colom (MS Senate: +6.52 pts)"
+        "Scott Colom (MS Senate: +6.55 pts)"
       ]
     },
     {
@@ -749,11 +749,11 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Committed Moderate (Prosecutor / DA)",
       "dw_nominate": null,
-      "margin_2026": 0.64,
-      "shift_vs_2024_baseline": 23.53,
-      "state_house_mean_shift": 17.01,
-      "overperf_vs_benchmark": 6.52,
-      "benchmark_label": "MS House Mean (+17.01)",
+      "margin_2026": 0.68,
+      "shift_vs_2024_baseline": 23.57,
+      "state_house_mean_shift": 17.02,
+      "overperf_vs_benchmark": 6.55,
+      "benchmark_label": "MS House Mean (+17.02)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.1,
       "rhetorical_moderation_pivot": -0.4,
