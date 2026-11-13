@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T12:00:01.176635-05:00",
+  "fetched_at": "2026-11-13T12:15:01.207288-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.88,
-        "residual_overperformance_pts": 5.04,
+        "expected_demographic_state_shift_pts": 16.87,
+        "residual_overperformance_pts": 5.05,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -293,8 +293,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.28,
-        "expected_demographic_state_shift_pts": 19.37,
-        "residual_overperformance_pts": -0.09,
+        "expected_demographic_state_shift_pts": 19.36,
+        "residual_overperformance_pts": -0.08,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -646,7 +646,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 1050,
-          "mean": 11.44,
+          "mean": 11.45,
           "median": 11.11,
           "stdev": 6.96,
           "pct_shifting_dem": 96.3
@@ -753,7 +753,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.89,
+          "mean": 15.88,
           "median": 15.66,
           "stdev": 4.96,
           "pct_shifting_dem": 100.0
