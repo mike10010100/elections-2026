@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-12T20:00:01.516909-05:00",
+  "fetched_at": "2026-11-12T20:15:01.372739-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.87,
-        "residual_overperformance_pts": 5.05,
+        "expected_demographic_state_shift_pts": 16.88,
+        "residual_overperformance_pts": 5.04,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -319,8 +319,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.82,
-        "expected_demographic_state_shift_pts": 20.1,
-        "residual_overperformance_pts": -0.28,
+        "expected_demographic_state_shift_pts": 20.11,
+        "residual_overperformance_pts": -0.29,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -418,7 +418,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 3100,
-          "mean": 11.8,
+          "mean": 11.81,
           "median": 11.3,
           "stdev": 7.67,
           "pct_shifting_dem": 96.2
@@ -518,9 +518,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.66,
+          "mean": 17.67,
           "median": 17.5,
-          "stdev": 6.32,
+          "stdev": 6.31,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -534,7 +534,7 @@
           "n": 133,
           "mean": 13.72,
           "median": 12.3,
-          "stdev": 8.06,
+          "stdev": 8.05,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
@@ -717,7 +717,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.89,
+          "mean": 7.9,
           "median": 7.02,
           "stdev": 5.72,
           "pct_shifting_dem": 95.4
