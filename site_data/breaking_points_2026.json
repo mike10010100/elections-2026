@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T16:30:01.130231-05:00",
+  "fetched_at": "2026-11-13T16:45:01.262585-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -20,7 +20,7 @@
       "variance_explained_pct": {
         "PC1": 81.92,
         "PC2": 8.43,
-        "PC3": 6.9,
+        "PC3": 6.89,
         "PC4": 2.76
       }
     }
@@ -161,7 +161,7 @@
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
     "mean_residual_pts": 1.72,
-    "median_residual_pts": 1.57,
+    "median_residual_pts": 1.56,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -176,8 +176,8 @@
         "county_label": "Ellis, TX (DFW southern hyperscale hub)",
         "state": "TX",
         "actual_top26_shift_pts": 26.65,
-        "expected_demographic_state_shift_pts": 19.68,
-        "residual_overperformance_pts": 6.97,
+        "expected_demographic_state_shift_pts": 19.67,
+        "residual_overperformance_pts": 6.98,
         "demographics": {
           "hisp_pct": 26.9,
           "blk_pct": 12.2,
@@ -189,8 +189,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.75,
-        "residual_overperformance_pts": 6.95,
+        "expected_demographic_state_shift_pts": 28.76,
+        "residual_overperformance_pts": 6.94,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -228,8 +228,8 @@
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 25.34,
-        "expected_demographic_state_shift_pts": 21.59,
-        "residual_overperformance_pts": 3.75,
+        "expected_demographic_state_shift_pts": 21.6,
+        "residual_overperformance_pts": 3.74,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
@@ -280,8 +280,8 @@
         "county_label": "Licking, OH (New Albany hyperscale hub)",
         "state": "OH",
         "actual_top26_shift_pts": 17.85,
-        "expected_demographic_state_shift_pts": 16.49,
-        "residual_overperformance_pts": 1.36,
+        "expected_demographic_state_shift_pts": 16.5,
+        "residual_overperformance_pts": 1.35,
         "demographics": {
           "hisp_pct": 2.1,
           "blk_pct": 4.2,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.8,
-        "residual_overperformance_pts": -2.33,
+        "expected_demographic_state_shift_pts": 15.81,
+        "residual_overperformance_pts": -2.34,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -596,7 +596,7 @@
         },
         "governor_2024_to_2026": {
           "n": 315,
-          "mean": 12.44,
+          "mean": 12.45,
           "median": 11.41,
           "stdev": 9.69,
           "pct_shifting_dem": 88.9
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.42,
-        "median": 11.22,
+        "median": 11.2,
         "stdev": 5.27,
         "pct_shifting_dem": 95.2
       },
@@ -900,8 +900,8 @@
       "Controller": {
         "n": 3,
         "mean": 9.73,
-        "median": 10.92,
-        "stdev": 5.07,
+        "median": 10.9,
+        "stdev": 5.06,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
