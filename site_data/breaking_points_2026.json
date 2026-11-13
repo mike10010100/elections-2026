@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T09:15:01.920146-05:00",
+  "fetched_at": "2026-11-13T09:45:02.048210-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -160,7 +160,7 @@
   "datacenter_corridor_residual_analysis": {
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
-    "mean_residual_pts": 1.72,
+    "mean_residual_pts": 1.71,
     "median_residual_pts": 1.56,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
@@ -293,8 +293,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.28,
-        "expected_demographic_state_shift_pts": 19.34,
-        "residual_overperformance_pts": -0.06,
+        "expected_demographic_state_shift_pts": 19.36,
+        "residual_overperformance_pts": -0.08,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -319,8 +319,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.82,
-        "expected_demographic_state_shift_pts": 20.11,
-        "residual_overperformance_pts": -0.29,
+        "expected_demographic_state_shift_pts": 20.13,
+        "residual_overperformance_pts": -0.31,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -411,7 +411,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 2240,
-          "mean": 14.38,
+          "mean": 14.39,
           "median": 14.93,
           "stdev": 8.01,
           "pct_shifting_dem": 96.9
@@ -475,7 +475,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.17,
+          "mean": 23.18,
           "median": 20.2,
           "stdev": 12.22,
           "pct_shifting_dem": 100.0
