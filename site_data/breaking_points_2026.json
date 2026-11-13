@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T18:30:01.904804-05:00",
+  "fetched_at": "2026-11-13T18:45:01.710613-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -189,8 +189,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.76,
-        "residual_overperformance_pts": 6.94,
+        "expected_demographic_state_shift_pts": 28.77,
+        "residual_overperformance_pts": 6.93,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.8,
-        "residual_overperformance_pts": -2.33,
+        "expected_demographic_state_shift_pts": 15.81,
+        "residual_overperformance_pts": -2.34,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -817,7 +817,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 1626,
-          "mean": 10.95,
+          "mean": 10.96,
           "median": 10.54,
           "stdev": 7.03,
           "pct_shifting_dem": 95.0
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6984
+        "pearson_r": 0.6985
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
@@ -857,7 +857,7 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.46,
+        "mean": 12.45,
         "median": 11.97,
         "stdev": 5.68,
         "pct_shifting_dem": 96.6
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.44,
-        "median": 11.22,
+        "median": 11.2,
         "stdev": 5.26,
         "pct_shifting_dem": 95.2
       },
@@ -899,8 +899,8 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.73,
-        "median": 10.9,
+        "mean": 9.72,
+        "median": 10.88,
         "stdev": 5.06,
         "pct_shifting_dem": 100.0
       },
@@ -908,7 +908,7 @@
         "n": 107,
         "mean": 12.19,
         "median": 12.66,
-        "stdev": 8.18,
+        "stdev": 8.19,
         "pct_shifting_dem": 95.3
       }
     }
