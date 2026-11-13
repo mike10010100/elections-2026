@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T15:30:01.766067-05:00",
+  "fetched_at": "2026-11-13T15:45:01.400349-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -598,7 +598,7 @@
           "n": 315,
           "mean": 12.44,
           "median": 11.41,
-          "stdev": 9.69,
+          "stdev": 9.68,
           "pct_shifting_dem": 88.9
         },
         "attorney_general_2024_to_2026": {
@@ -639,7 +639,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 697,
-          "mean": 12.89,
+          "mean": 12.9,
           "median": 14.05,
           "stdev": 6.87,
           "pct_shifting_dem": 97.3
@@ -696,14 +696,14 @@
         },
         "us_senate_2024_to_2026": {
           "n": 130,
-          "mean": 13.0,
+          "mean": 13.01,
           "median": 13.59,
           "stdev": 9.23,
           "pct_shifting_dem": 96.2
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.53,
+          "mean": 12.54,
           "median": 11.75,
           "stdev": 7.68,
           "pct_shifting_dem": 97.2
@@ -717,7 +717,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.89,
+          "mean": 7.9,
           "median": 7.02,
           "stdev": 5.72,
           "pct_shifting_dem": 95.4
@@ -746,23 +746,23 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 325,
-          "mean": 15.71,
+          "mean": 15.72,
           "median": 15.51,
-          "stdev": 5.16,
+          "stdev": 5.17,
           "pct_shifting_dem": 99.7
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.89,
+          "mean": 15.9,
           "median": 15.66,
-          "stdev": 4.96,
+          "stdev": 4.97,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
           "n": 325,
           "mean": 12.34,
           "median": 11.82,
-          "stdev": 5.14,
+          "stdev": 5.15,
           "pct_shifting_dem": 99.1
         },
         "governor_2024_to_2026": {
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6423
+        "pearson_r": 0.6424
       }
     },
     "statewide_downballot_executive_races": {
@@ -864,7 +864,7 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.26,
+        "mean": 12.27,
         "median": 12.59,
         "stdev": 7.03,
         "pct_shifting_dem": 96.0
