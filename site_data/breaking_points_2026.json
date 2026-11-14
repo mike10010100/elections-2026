@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T20:15:01.546571-05:00",
+  "fetched_at": "2026-11-13T20:30:01.297834-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -518,9 +518,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.71,
+          "mean": 17.72,
           "median": 17.6,
-          "stdev": 6.29,
+          "stdev": 6.28,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -532,9 +532,9 @@
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.76,
+          "mean": 13.77,
           "median": 12.6,
-          "stdev": 8.08,
+          "stdev": 8.09,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
@@ -546,7 +546,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 14.07,
+          "mean": 14.08,
           "median": 13.68,
           "stdev": 5.9,
           "pct_shifting_dem": 100.0
@@ -753,7 +753,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.9,
+          "mean": 15.91,
           "median": 15.68,
           "stdev": 4.97,
           "pct_shifting_dem": 100.0
@@ -762,7 +762,7 @@
           "n": 325,
           "mean": 12.36,
           "median": 11.82,
-          "stdev": 5.15,
+          "stdev": 5.16,
           "pct_shifting_dem": 99.1
         },
         "governor_2024_to_2026": {
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.698
+        "pearson_r": 0.6981
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
@@ -892,15 +892,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.27,
+        "mean": 12.28,
         "median": 14.14,
         "stdev": 8.71,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.71,
-        "median": 10.86,
+        "mean": 9.72,
+        "median": 10.88,
         "stdev": 5.06,
         "pct_shifting_dem": 100.0
       },
