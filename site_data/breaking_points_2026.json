@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T21:15:01.314921-05:00",
+  "fetched_at": "2026-11-13T21:30:01.310612-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -267,8 +267,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.12,
-        "expected_demographic_state_shift_pts": 16.34,
-        "residual_overperformance_pts": 1.78,
+        "expected_demographic_state_shift_pts": 16.35,
+        "residual_overperformance_pts": 1.77,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.51,
-        "residual_overperformance_pts": -1.9,
+        "expected_demographic_state_shift_pts": 15.52,
+        "residual_overperformance_pts": -1.91,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -689,7 +689,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.18,
+          "mean": 11.19,
           "median": 12.37,
           "stdev": 10.77,
           "pct_shifting_dem": 93.4
@@ -710,8 +710,8 @@
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.94,
-          "median": 8.13,
+          "mean": 7.95,
+          "median": 8.27,
           "stdev": 12.98,
           "pct_shifting_dem": 85.5
         },
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.44,
-        "median": 11.18,
+        "median": 11.22,
         "stdev": 5.26,
         "pct_shifting_dem": 95.2
       },
@@ -892,15 +892,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.27,
+        "mean": 12.28,
         "median": 14.14,
         "stdev": 8.71,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.71,
-        "median": 10.86,
+        "mean": 9.73,
+        "median": 10.9,
         "stdev": 5.06,
         "pct_shifting_dem": 100.0
       },
