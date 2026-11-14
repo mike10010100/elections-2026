@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T20:30:01.297834-05:00",
+  "fetched_at": "2026-11-13T20:45:01.999190-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.52,
-        "residual_overperformance_pts": -1.91,
+        "expected_demographic_state_shift_pts": 15.51,
+        "residual_overperformance_pts": -1.9,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -418,7 +418,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 3100,
-          "mean": 11.82,
+          "mean": 11.83,
           "median": 11.34,
           "stdev": 7.68,
           "pct_shifting_dem": 96.2
@@ -461,9 +461,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.77,
+          "mean": 27.78,
           "median": 25.58,
-          "stdev": 11.03,
+          "stdev": 11.02,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -475,21 +475,21 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.21,
+          "mean": 23.22,
           "median": 20.54,
-          "stdev": 12.21,
+          "stdev": 12.2,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 23.19,
+          "mean": 23.2,
           "median": 21.94,
           "stdev": 10.76,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
           "n": 101,
-          "mean": 24.44,
+          "mean": 24.45,
           "median": 21.89,
           "stdev": 10.84,
           "pct_shifting_dem": 100.0
@@ -747,7 +747,7 @@
         "top_of_ticket_2024_to_2026": {
           "n": 325,
           "mean": 15.73,
-          "median": 15.54,
+          "median": 15.64,
           "stdev": 5.16,
           "pct_shifting_dem": 99.7
         },
@@ -762,7 +762,7 @@
           "n": 325,
           "mean": 12.36,
           "median": 11.82,
-          "stdev": 5.16,
+          "stdev": 5.15,
           "pct_shifting_dem": 99.1
         },
         "governor_2024_to_2026": {
@@ -818,7 +818,7 @@
         "us_house_2024_to_2026": {
           "n": 1626,
           "mean": 10.96,
-          "median": 10.54,
+          "median": 10.56,
           "stdev": 7.03,
           "pct_shifting_dem": 95.0
         },
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.44,
-        "median": 11.18,
+        "median": 11.16,
         "stdev": 5.26,
         "pct_shifting_dem": 95.2
       },
@@ -892,15 +892,15 @@
       },
       "Lieutenant Governor": {
         "n": 9,
-        "mean": 12.28,
+        "mean": 12.27,
         "median": 14.14,
         "stdev": 8.71,
         "pct_shifting_dem": 88.9
       },
       "Controller": {
         "n": 3,
-        "mean": 9.72,
-        "median": 10.88,
+        "mean": 9.71,
+        "median": 10.86,
         "stdev": 5.06,
         "pct_shifting_dem": 100.0
       },
