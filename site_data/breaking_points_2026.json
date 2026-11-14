@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-13T21:00:02.028325-05:00",
+  "fetched_at": "2026-11-13T21:15:01.314921-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.85,
-        "residual_overperformance_pts": 5.07,
+        "expected_demographic_state_shift_pts": 16.84,
+        "residual_overperformance_pts": 5.08,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -267,8 +267,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.12,
-        "expected_demographic_state_shift_pts": 16.35,
-        "residual_overperformance_pts": 1.77,
+        "expected_demographic_state_shift_pts": 16.34,
+        "residual_overperformance_pts": 1.78,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -419,14 +419,14 @@
         "us_house_2024_to_2026": {
           "n": 3100,
           "mean": 11.83,
-          "median": 11.34,
+          "median": 11.36,
           "stdev": 7.68,
           "pct_shifting_dem": 96.2
         },
         "governor_2024_to_2026": {
           "n": 2150,
           "mean": 12.14,
-          "median": 11.44,
+          "median": 11.45,
           "stdev": 10.56,
           "pct_shifting_dem": 90.7
         },
@@ -484,7 +484,7 @@
           "n": 101,
           "mean": 23.2,
           "median": 21.94,
-          "stdev": 10.76,
+          "stdev": 10.75,
           "pct_shifting_dem": 100.0
         },
         "attorney_general_2024_to_2026": {
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.44,
-        "median": 11.16,
+        "median": 11.18,
         "stdev": 5.26,
         "pct_shifting_dem": 95.2
       },
