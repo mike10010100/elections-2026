@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T15:15:01.707766-05:00",
+  "fetched_at": "2026-11-16T15:30:01.828850-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -198,6 +198,19 @@
         }
       },
       {
+        "fips": "51107",
+        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
+        "state": "VA",
+        "actual_top26_shift_pts": 21.92,
+        "expected_demographic_state_shift_pts": 16.84,
+        "residual_overperformance_pts": 5.08,
+        "demographics": {
+          "hisp_pct": 13.9,
+          "blk_pct": 8.1,
+          "ba_pct": 61.3
+        }
+      },
+      {
         "fips": "13097",
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
@@ -208,19 +221,6 @@
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
           "ba_pct": 28.2
-        }
-      },
-      {
-        "fips": "51107",
-        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
-        "state": "VA",
-        "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.85,
-        "residual_overperformance_pts": 5.07,
-        "demographics": {
-          "hisp_pct": 13.9,
-          "blk_pct": 8.1,
-          "ba_pct": 61.3
         }
       },
       {
@@ -691,7 +691,7 @@
           "n": 181,
           "mean": 11.19,
           "median": 12.37,
-          "stdev": 10.77,
+          "stdev": 10.78,
           "pct_shifting_dem": 93.4
         },
         "us_senate_2024_to_2026": {
@@ -705,7 +705,7 @@
           "n": 179,
           "mean": 12.57,
           "median": 11.75,
-          "stdev": 7.7,
+          "stdev": 7.71,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6424
+        "pearson_r": 0.6425
       }
     },
     "statewide_downballot_executive_races": {
