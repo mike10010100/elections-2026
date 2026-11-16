@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T15:30:01.828850-05:00",
+  "fetched_at": "2026-11-16T15:45:02.011718-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -189,8 +189,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.77,
-        "residual_overperformance_pts": 6.93,
+        "expected_demographic_state_shift_pts": 28.78,
+        "residual_overperformance_pts": 6.92,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -468,7 +468,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 86,
-          "mean": 29.57,
+          "mean": 29.58,
           "median": 27.56,
           "stdev": 11.11,
           "pct_shifting_dem": 100.0
@@ -518,23 +518,23 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.72,
+          "mean": 17.73,
           "median": 17.77,
-          "stdev": 6.28,
+          "stdev": 6.3,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
           "n": 106,
           "mean": 18.49,
           "median": 17.98,
-          "stdev": 5.98,
+          "stdev": 6.0,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
           "n": 133,
-          "mean": 13.77,
+          "mean": 13.78,
           "median": 12.6,
-          "stdev": 8.09,
+          "stdev": 8.11,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
@@ -689,7 +689,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.19,
+          "mean": 11.2,
           "median": 12.37,
           "stdev": 10.78,
           "pct_shifting_dem": 93.4
@@ -761,7 +761,7 @@
         "us_house_2024_to_2026": {
           "n": 325,
           "mean": 12.37,
-          "median": 11.82,
+          "median": 11.83,
           "stdev": 5.16,
           "pct_shifting_dem": 99.1
         },
@@ -851,7 +851,7 @@
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2236,
-        "pearson_r": 0.6425
+        "pearson_r": 0.6426
       }
     },
     "statewide_downballot_executive_races": {
