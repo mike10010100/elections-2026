@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T14:15:01.329159-05:00",
+  "fetched_at": "2026-11-16T14:30:01.899962-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -319,8 +319,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.82,
-        "expected_demographic_state_shift_pts": 20.14,
-        "residual_overperformance_pts": -0.32,
+        "expected_demographic_state_shift_pts": 20.15,
+        "residual_overperformance_pts": -0.33,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -698,7 +698,7 @@
           "n": 130,
           "mean": 13.01,
           "median": 13.59,
-          "stdev": 9.23,
+          "stdev": 9.24,
           "pct_shifting_dem": 96.2
         },
         "us_house_2024_to_2026": {
@@ -746,21 +746,21 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 325,
-          "mean": 15.73,
+          "mean": 15.74,
           "median": 15.64,
           "stdev": 5.16,
           "pct_shifting_dem": 99.7
         },
         "us_senate_2024_to_2026": {
           "n": 316,
-          "mean": 15.91,
+          "mean": 15.92,
           "median": 15.68,
           "stdev": 4.97,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
           "n": 325,
-          "mean": 12.36,
+          "mean": 12.37,
           "median": 11.82,
           "stdev": 5.16,
           "pct_shifting_dem": 99.1
@@ -864,7 +864,7 @@
       },
       "Secretary of State": {
         "n": 25,
-        "mean": 12.29,
+        "mean": 12.3,
         "median": 12.59,
         "stdev": 7.04,
         "pct_shifting_dem": 96.0
@@ -906,7 +906,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.19,
+        "mean": 12.2,
         "median": 12.66,
         "stdev": 8.19,
         "pct_shifting_dem": 95.3
