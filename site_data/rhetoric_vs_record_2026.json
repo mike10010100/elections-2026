@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T12:00:01.345275-05:00",
+  "fetched_at": "2026-11-16T12:15:01.488935-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -25,7 +25,7 @@
       "pct_beating_benchmark_statewide": 90.0,
       "notable_examples": [
         "Scott Colom (MS Senate: +6.51 pts)",
-        "Adam Hamilton (KS Senate: +7.74 pts)",
+        "Adam Hamilton (KS Senate: +7.73 pts)",
         "Mary Peltola (AK Senate: +0.16 pts)",
         "Mark Warner (VA Senate: +4.05 pts)",
         "John Hickenlooper (CO Senate: +1.77 pts)",
@@ -40,14 +40,14 @@
       "mean_rhetoric_score": 0.24,
       "mean_moderation_pivot": 0.11,
       "mean_shift_vs_2024": 18.26,
-      "mean_overperf_all": 4.1,
-      "median_overperf_all": 3.37,
+      "mean_overperf_all": 4.09,
+      "median_overperf_all": 3.36,
       "ci95_overperf_all": [
         2.42,
         5.77
       ],
-      "mean_overperf_statewide_vs_house": 4.1,
-      "median_overperf_statewide_vs_house": 3.37,
+      "mean_overperf_statewide_vs_house": 4.09,
+      "median_overperf_statewide_vs_house": 3.36,
       "pct_beating_benchmark_statewide": 93.3,
       "notable_examples": [
         "James Talarico (TX Senate: +6.13 pts)",
@@ -798,7 +798,7 @@
       "margin_2026": 5.23,
       "shift_vs_2024_baseline": 21.35,
       "state_house_mean_shift": 13.62,
-      "overperf_vs_benchmark": 7.74,
+      "overperf_vs_benchmark": 7.73,
       "benchmark_label": "KS House Mean (+13.62)",
       "record_ideology_score": 0.5,
       "rhetoric_ideology_score": 0.5,
@@ -1626,7 +1626,7 @@
       "margin_2026": 0.86,
       "shift_vs_2024_baseline": 16.98,
       "state_house_mean_shift": 13.62,
-      "overperf_vs_benchmark": 3.37,
+      "overperf_vs_benchmark": 3.36,
       "benchmark_label": "KS House Mean (+13.62)",
       "record_ideology_score": 0.3,
       "rhetoric_ideology_score": 0.4,
