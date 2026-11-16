@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T11:00:01.584997-05:00",
+  "fetched_at": "2026-11-16T11:15:01.826369-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -215,8 +215,8 @@
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
         "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.84,
-        "residual_overperformance_pts": 5.08,
+        "expected_demographic_state_shift_pts": 16.85,
+        "residual_overperformance_pts": 5.07,
         "demographics": {
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
@@ -267,8 +267,8 @@
         "county_label": "Coweta, GA (Project Sail / DC battles)",
         "state": "GA",
         "actual_top26_shift_pts": 18.12,
-        "expected_demographic_state_shift_pts": 16.34,
-        "residual_overperformance_pts": 1.78,
+        "expected_demographic_state_shift_pts": 16.35,
+        "residual_overperformance_pts": 1.77,
         "demographics": {
           "hisp_pct": 7.3,
           "blk_pct": 18.4,
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.51,
-        "residual_overperformance_pts": -1.9,
+        "expected_demographic_state_shift_pts": 15.52,
+        "residual_overperformance_pts": -1.91,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
