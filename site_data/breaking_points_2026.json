@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-17T15:15:01.202385-05:00",
+  "fetched_at": "2026-11-17T15:30:01.932858-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -319,8 +319,8 @@
         "county_label": "Maricopa, AZ (Phoenix/Mesa hyperscale hub)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.82,
-        "expected_demographic_state_shift_pts": 20.15,
-        "residual_overperformance_pts": -0.33,
+        "expected_demographic_state_shift_pts": 20.16,
+        "residual_overperformance_pts": -0.34,
         "demographics": {
           "hisp_pct": 31.4,
           "blk_pct": 6.4,
@@ -710,7 +710,7 @@
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.96,
+          "mean": 7.97,
           "median": 8.28,
           "stdev": 12.99,
           "pct_shifting_dem": 85.5
@@ -719,7 +719,7 @@
           "n": 108,
           "mean": 7.95,
           "median": 7.02,
-          "stdev": 5.73,
+          "stdev": 5.74,
           "pct_shifting_dem": 95.4
         }
       }
@@ -748,7 +748,7 @@
           "n": 325,
           "mean": 15.74,
           "median": 15.64,
-          "stdev": 5.16,
+          "stdev": 5.15,
           "pct_shifting_dem": 99.7
         },
         "us_senate_2024_to_2026": {
@@ -775,7 +775,7 @@
         "attorney_general_2024_to_2026": {
           "n": 144,
           "mean": 10.55,
-          "median": 10.45,
+          "median": 10.51,
           "stdev": 4.93,
           "pct_shifting_dem": 98.6
         }
@@ -857,7 +857,7 @@
     "statewide_downballot_executive_races": {
       "Attorney General": {
         "n": 29,
-        "mean": 12.5,
+        "mean": 12.51,
         "median": 11.99,
         "stdev": 5.68,
         "pct_shifting_dem": 96.6
