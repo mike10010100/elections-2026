@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-17T14:45:01.081682-05:00",
+  "fetched_at": "2026-11-17T15:00:02.019621-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -198,19 +198,6 @@
         }
       },
       {
-        "fips": "13097",
-        "county_label": "Douglas, GA (Atlanta West DC cluster)",
-        "state": "GA",
-        "actual_top26_shift_pts": 21.7,
-        "expected_demographic_state_shift_pts": 16.63,
-        "residual_overperformance_pts": 5.07,
-        "demographics": {
-          "hisp_pct": 10.2,
-          "blk_pct": 49.7,
-          "ba_pct": 28.2
-        }
-      },
-      {
         "fips": "51107",
         "county_label": "Loudoun, VA (World #1 Data Center Hub)",
         "state": "VA",
@@ -221,6 +208,19 @@
           "hisp_pct": 13.9,
           "blk_pct": 8.1,
           "ba_pct": 61.3
+        }
+      },
+      {
+        "fips": "13097",
+        "county_label": "Douglas, GA (Atlanta West DC cluster)",
+        "state": "GA",
+        "actual_top26_shift_pts": 21.7,
+        "expected_demographic_state_shift_pts": 16.64,
+        "residual_overperformance_pts": 5.06,
+        "demographics": {
+          "hisp_pct": 10.2,
+          "blk_pct": 49.7,
+          "ba_pct": 28.2
         }
       },
       {
@@ -280,8 +280,8 @@
         "county_label": "Licking, OH (New Albany hyperscale hub)",
         "state": "OH",
         "actual_top26_shift_pts": 17.85,
-        "expected_demographic_state_shift_pts": 16.45,
-        "residual_overperformance_pts": 1.4,
+        "expected_demographic_state_shift_pts": 16.46,
+        "residual_overperformance_pts": 1.39,
         "demographics": {
           "hisp_pct": 2.1,
           "blk_pct": 4.2,
@@ -306,8 +306,8 @@
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 15.95,
-        "expected_demographic_state_shift_pts": 16.1,
-        "residual_overperformance_pts": -0.15,
+        "expected_demographic_state_shift_pts": 16.11,
+        "residual_overperformance_pts": -0.16,
         "demographics": {
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
@@ -660,7 +660,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 492,
-          "mean": 7.52,
+          "mean": 7.53,
           "median": 7.22,
           "stdev": 5.19,
           "pct_shifting_dem": 94.5
