@@ -1,16 +1,16 @@
 {
-  "fetched_at": "2026-11-17T12:15:01.241707-05:00",
+  "fetched_at": "2026-11-17T12:30:01.848552-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
       "description": "PCA across 6 Census ACS features (wnh, blk, hisp, ba, inc, log_dens) for counties shifting >= +14 pts Dem",
-      "n_counties": 1566,
+      "n_counties": 1567,
       "variance_explained_pct": {
-        "PC1": 35.07,
-        "PC2": 29.88,
-        "PC3": 21.88,
-        "PC4": 7.67,
-        "PC5": 4.82,
+        "PC1": 35.13,
+        "PC2": 29.86,
+        "PC3": 21.87,
+        "PC4": 7.68,
+        "PC5": 4.77,
         "PC6": 0.68
       }
     },
@@ -198,19 +198,6 @@
         }
       },
       {
-        "fips": "51107",
-        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
-        "state": "VA",
-        "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.84,
-        "residual_overperformance_pts": 5.08,
-        "demographics": {
-          "hisp_pct": 13.9,
-          "blk_pct": 8.1,
-          "ba_pct": 61.3
-        }
-      },
-      {
         "fips": "13097",
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
@@ -221,6 +208,19 @@
           "hisp_pct": 10.2,
           "blk_pct": 49.7,
           "ba_pct": 28.2
+        }
+      },
+      {
+        "fips": "51107",
+        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
+        "state": "VA",
+        "actual_top26_shift_pts": 21.92,
+        "expected_demographic_state_shift_pts": 16.85,
+        "residual_overperformance_pts": 5.07,
+        "demographics": {
+          "hisp_pct": 13.9,
+          "blk_pct": 8.1,
+          "ba_pct": 61.3
         }
       },
       {
@@ -293,8 +293,8 @@
         "county_label": "Pinal, AZ (Casa Grande / Eloy mega-corridor)",
         "state": "AZ",
         "actual_top26_shift_pts": 19.28,
-        "expected_demographic_state_shift_pts": 19.38,
-        "residual_overperformance_pts": -0.1,
+        "expected_demographic_state_shift_pts": 19.37,
+        "residual_overperformance_pts": -0.09,
         "demographics": {
           "hisp_pct": 30.7,
           "blk_pct": 5.4,
@@ -405,7 +405,7 @@
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
           "mean": 13.28,
-          "median": 14.05,
+          "median": 14.06,
           "stdev": 8.87,
           "pct_shifting_dem": 94.8
         },
@@ -689,7 +689,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 181,
-          "mean": 11.2,
+          "mean": 11.21,
           "median": 12.37,
           "stdev": 10.78,
           "pct_shifting_dem": 93.4
