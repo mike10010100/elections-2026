@@ -285,14 +285,14 @@
       "median_overperf_all": 3.28,
       "ci95_overperf_all": [
         2.41,
-        5.77
+        5.76
       ],
       "mean_overperf_statewide_vs_house": 4.09,
       "median_overperf_statewide_vs_house": 3.28,
       "pct_beating_benchmark_statewide": 93.3,
       "notable_examples": [
         "James Talarico (TX Senate: +6.13 pts)",
-        "Sherrod Brown (OH Senate: +2.48 pts)",
+        "Sherrod Brown (OH Senate: +2.47 pts)",
         "Roy Cooper (NC Senate: +5.59 pts)",
         "Jon Ossoff (GA Senate: +7.36 pts)",
         "Josh Turek (IA Senate: +3.19 pts)",
@@ -412,8 +412,8 @@
           "term": "Intercept",
           "beta": 2.443,
           "se_hc1": 0.805,
-          "ci95_low": 0.824,
-          "ci95_high": 4.063,
+          "ci95_low": 0.823,
+          "ci95_high": 4.062,
           "t_stat": 3.03,
           "p_value": 0.0039
         },
@@ -447,7 +447,7 @@
           "beta": 3.157,
           "se_hc1": 1.132,
           "ci95_low": 0.872,
-          "ci95_high": 5.443,
+          "ci95_high": 5.442,
           "t_stat": 2.79,
           "p_value": 0.0079
         },
@@ -455,28 +455,28 @@
           "term": "Rhetorical Moderation Pivot",
           "beta": -0.082,
           "se_hc1": 2.233,
-          "ci95_low": -4.588,
-          "ci95_high": 4.425,
+          "ci95_low": -4.589,
+          "ci95_high": 4.424,
           "t_stat": -0.04,
-          "p_value": 0.971
+          "p_value": 0.9708
         },
         {
           "term": "Democratic Incumbent",
           "beta": -0.525,
           "se_hc1": 1.298,
-          "ci95_low": -3.144,
+          "ci95_low": -3.145,
           "ci95_high": 2.094,
           "t_stat": -0.4,
-          "p_value": 0.6877
+          "p_value": 0.6876
         },
         {
           "term": "Republican Incumbent",
           "beta": 1.794,
           "se_hc1": 2.351,
-          "ci95_low": -2.951,
-          "ci95_high": 6.54,
+          "ci95_low": -2.952,
+          "ci95_high": 6.539,
           "t_stat": 0.76,
-          "p_value": 0.4496
+          "p_value": 0.4498
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
@@ -485,7 +485,7 @@
           "ci95_low": -0.626,
           "ci95_high": 1.074,
           "t_stat": 0.53,
-          "p_value": 0.598
+          "p_value": 0.5979
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
@@ -508,13 +508,13 @@
           "beta": 2.344,
           "se_hc1": 0.652,
           "ci95_low": 1.019,
-          "ci95_high": 3.67,
+          "ci95_high": 3.669,
           "t_stat": 3.59,
           "p_value": 0.001
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.58,
+          "beta": 3.579,
           "se_hc1": 0.745,
           "ci95_low": 2.065,
           "ci95_high": 5.094,
@@ -532,14 +532,14 @@
           "term": "Intercept",
           "beta": 1.577,
           "se_hc1": 0.677,
-          "ci95_low": 0.202,
+          "ci95_low": 0.201,
           "ci95_high": 2.953,
           "t_stat": 2.33,
           "p_value": 0.0259
         },
         {
           "term": "2026 Rhetoric (+ = Moderate)",
-          "beta": 4.565,
+          "beta": 4.564,
           "se_hc1": 1.065,
           "ci95_low": 2.399,
           "ci95_high": 6.73,
@@ -557,7 +557,7 @@
           "term": "Intercept",
           "beta": 1.653,
           "se_hc1": 0.638,
-          "ci95_low": 0.358,
+          "ci95_low": 0.357,
           "ci95_high": 2.949,
           "t_stat": 2.59,
           "p_value": 0.0139
@@ -589,7 +589,7 @@
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 2.958,
+          "beta": 2.957,
           "se_hc1": 0.97,
           "ci95_low": 0.974,
           "ci95_high": 4.941,
@@ -598,12 +598,12 @@
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -1.269,
+          "beta": -1.27,
           "se_hc1": 2.091,
-          "ci95_low": -5.545,
-          "ci95_high": 3.007,
+          "ci95_low": -5.546,
+          "ci95_high": 3.006,
           "t_stat": -0.61,
-          "p_value": 0.5485
+          "p_value": 0.5483
         },
         {
           "term": "Democratic Incumbent",
@@ -612,16 +612,16 @@
           "ci95_low": -4.853,
           "ci95_high": 1.97,
           "t_stat": -0.86,
-          "p_value": 0.3947
+          "p_value": 0.3946
         },
         {
           "term": "Republican Incumbent",
-          "beta": 1.111,
+          "beta": 1.11,
           "se_hc1": 1.654,
-          "ci95_low": -2.272,
-          "ci95_high": 4.494,
+          "ci95_low": -2.273,
+          "ci95_high": 4.493,
           "t_stat": 0.67,
-          "p_value": 0.5072
+          "p_value": 0.5076
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
