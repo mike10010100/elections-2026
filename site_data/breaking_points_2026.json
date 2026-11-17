@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-17T17:15:01.910852-05:00",
+  "fetched_at": "2026-11-17T17:30:01.954577-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,7 +18,7 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1346,
       "variance_explained_pct": {
-        "PC1": 81.93,
+        "PC1": 81.94,
         "PC2": 8.43,
         "PC3": 6.89,
         "PC4": 2.75
@@ -241,8 +241,8 @@
         "county_label": "Spotsylvania, VA (Hyperscale zoning battles)",
         "state": "VA",
         "actual_top26_shift_pts": 20.49,
-        "expected_demographic_state_shift_pts": 17.37,
-        "residual_overperformance_pts": 3.12,
+        "expected_demographic_state_shift_pts": 17.38,
+        "residual_overperformance_pts": 3.11,
         "demographics": {
           "hisp_pct": 10.7,
           "blk_pct": 17.5,
@@ -358,8 +358,8 @@
         "county_label": "Fauquier, VA (Exurban DC battles)",
         "state": "VA",
         "actual_top26_shift_pts": 13.47,
-        "expected_demographic_state_shift_pts": 15.79,
-        "residual_overperformance_pts": -2.32,
+        "expected_demographic_state_shift_pts": 15.8,
+        "residual_overperformance_pts": -2.33,
         "demographics": {
           "hisp_pct": 9.2,
           "blk_pct": 7.8,
@@ -418,7 +418,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 3100,
-          "mean": 11.83,
+          "mean": 11.84,
           "median": 11.36,
           "stdev": 7.68,
           "pct_shifting_dem": 96.2
@@ -906,7 +906,7 @@
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
         "n": 107,
-        "mean": 12.21,
+        "mean": 12.22,
         "median": 12.66,
         "stdev": 8.18,
         "pct_shifting_dem": 95.3
