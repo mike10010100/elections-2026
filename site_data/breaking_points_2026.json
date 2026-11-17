@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-16T19:00:01.268645-05:00",
+  "fetched_at": "2026-11-16T19:15:01.258744-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -18,7 +18,7 @@
       "description": "PCA across 2024->2026 shifts in U.S. Senate, U.S. House, Governor, and State Attorney General",
       "n_counties": 1346,
       "variance_explained_pct": {
-        "PC1": 81.93,
+        "PC1": 81.94,
         "PC2": 8.43,
         "PC3": 6.88,
         "PC4": 2.75
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.51,
-        "residual_overperformance_pts": -1.9,
+        "expected_demographic_state_shift_pts": 15.5,
+        "residual_overperformance_pts": -1.89,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -518,16 +518,16 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 135,
-          "mean": 17.73,
+          "mean": 17.74,
           "median": 17.77,
-          "stdev": 6.29,
+          "stdev": 6.3,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
           "n": 106,
-          "mean": 18.49,
+          "mean": 18.5,
           "median": 17.98,
-          "stdev": 6.0,
+          "stdev": 6.01,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
@@ -546,9 +546,9 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
-          "mean": 14.09,
+          "mean": 14.1,
           "median": 13.68,
-          "stdev": 5.89,
+          "stdev": 5.9,
           "pct_shifting_dem": 100.0
         }
       }
@@ -575,16 +575,16 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 364,
-          "mean": 11.98,
+          "mean": 11.99,
           "median": 13.07,
           "stdev": 7.95,
           "pct_shifting_dem": 90.1
         },
         "us_senate_2024_to_2026": {
           "n": 169,
-          "mean": 17.32,
+          "mean": 17.33,
           "median": 16.69,
-          "stdev": 5.03,
+          "stdev": 5.05,
           "pct_shifting_dem": 100.0
         },
         "us_house_2024_to_2026": {
@@ -803,7 +803,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1626,
-          "mean": 13.83,
+          "mean": 13.84,
           "median": 14.43,
           "stdev": 6.9,
           "pct_shifting_dem": 96.2
