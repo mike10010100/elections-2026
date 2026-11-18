@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-17T18:45:01.948848-05:00",
+  "fetched_at": "2026-11-17T19:15:01.974222-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -198,19 +198,6 @@
         }
       },
       {
-        "fips": "51107",
-        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
-        "state": "VA",
-        "actual_top26_shift_pts": 21.92,
-        "expected_demographic_state_shift_pts": 16.85,
-        "residual_overperformance_pts": 5.07,
-        "demographics": {
-          "hisp_pct": 13.9,
-          "blk_pct": 8.1,
-          "ba_pct": 61.3
-        }
-      },
-      {
         "fips": "13097",
         "county_label": "Douglas, GA (Atlanta West DC cluster)",
         "state": "GA",
@@ -224,12 +211,25 @@
         }
       },
       {
+        "fips": "51107",
+        "county_label": "Loudoun, VA (World #1 Data Center Hub)",
+        "state": "VA",
+        "actual_top26_shift_pts": 21.92,
+        "expected_demographic_state_shift_pts": 16.86,
+        "residual_overperformance_pts": 5.06,
+        "demographics": {
+          "hisp_pct": 13.9,
+          "blk_pct": 8.1,
+          "ba_pct": 61.3
+        }
+      },
+      {
         "fips": "51153",
         "county_label": "Prince William, VA (PW Digital Gateway controversy)",
         "state": "VA",
         "actual_top26_shift_pts": 25.34,
-        "expected_demographic_state_shift_pts": 21.62,
-        "residual_overperformance_pts": 3.72,
+        "expected_demographic_state_shift_pts": 21.63,
+        "residual_overperformance_pts": 3.71,
         "demographics": {
           "hisp_pct": 24.5,
           "blk_pct": 22.2,
