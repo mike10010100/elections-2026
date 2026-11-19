@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-19T12:15:01.589095-05:00",
+  "fetched_at": "2026-11-19T12:30:01.751504-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -189,8 +189,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.8,
-        "residual_overperformance_pts": 6.9,
+        "expected_demographic_state_shift_pts": 28.79,
+        "residual_overperformance_pts": 6.91,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -404,7 +404,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.28,
+          "mean": 13.29,
           "median": 14.06,
           "stdev": 8.87,
           "pct_shifting_dem": 94.8
@@ -426,7 +426,7 @@
         "governor_2024_to_2026": {
           "n": 2150,
           "mean": 12.16,
-          "median": 11.47,
+          "median": 11.48,
           "stdev": 10.56,
           "pct_shifting_dem": 90.8
         },
@@ -639,7 +639,7 @@
         },
         "us_senate_2024_to_2026": {
           "n": 697,
-          "mean": 12.89,
+          "mean": 12.9,
           "median": 14.05,
           "stdev": 6.86,
           "pct_shifting_dem": 97.3
@@ -804,7 +804,7 @@
         "top_of_ticket_2024_to_2026": {
           "n": 1626,
           "mean": 13.84,
-          "median": 14.43,
+          "median": 14.45,
           "stdev": 6.9,
           "pct_shifting_dem": 96.2
         },
@@ -825,7 +825,7 @@
         "governor_2024_to_2026": {
           "n": 1102,
           "mean": 13.67,
-          "median": 12.82,
+          "median": 12.84,
           "stdev": 9.47,
           "pct_shifting_dem": 92.4
         },
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.6987
+        "pearson_r": 0.6986
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -885,7 +885,7 @@
       },
       "Supreme Court": {
         "n": 10,
-        "mean": 15.66,
+        "mean": 15.65,
         "median": 18.39,
         "stdev": 19.04,
         "pct_shifting_dem": 90.0
