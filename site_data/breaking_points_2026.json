@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-19T07:45:01.137679-05:00",
+  "fetched_at": "2026-11-19T08:00:01.656154-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -306,8 +306,8 @@
         "county_label": "Madison, OH (West Jefferson DC corridor)",
         "state": "OH",
         "actual_top26_shift_pts": 15.95,
-        "expected_demographic_state_shift_pts": 16.13,
-        "residual_overperformance_pts": -0.18,
+        "expected_demographic_state_shift_pts": 16.14,
+        "residual_overperformance_pts": -0.19,
         "demographics": {
           "hisp_pct": 2.3,
           "blk_pct": 6.5,
@@ -885,7 +885,7 @@
       },
       "Supreme Court": {
         "n": 10,
-        "mean": 15.65,
+        "mean": 15.66,
         "median": 18.39,
         "stdev": 19.04,
         "pct_shifting_dem": 90.0
