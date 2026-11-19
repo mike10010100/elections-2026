@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-19T11:30:01.518690-05:00",
+  "fetched_at": "2026-11-19T11:45:01.448911-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -161,7 +161,7 @@
     "description": "OLS regression across all contested U.S. counties controlling for state fixed effects and Census demographics (Hispanic %, Black %, BA+ %, median income, log population density, and 2024 margin). Tests whether prominent data-center controversy counties shifted significantly beyond their demographic baseline.",
     "n_hotspot_counties": 16,
     "mean_residual_pts": 1.72,
-    "median_residual_pts": 1.57,
+    "median_residual_pts": 1.56,
     "local_referendum_benchmark": {
       "race": "Sabattus, Maine Data Center Moratorium Referendum (#178255)",
       "yes_pct": 66.43,
@@ -280,8 +280,8 @@
         "county_label": "Licking, OH (New Albany hyperscale hub)",
         "state": "OH",
         "actual_top26_shift_pts": 17.85,
-        "expected_demographic_state_shift_pts": 16.48,
-        "residual_overperformance_pts": 1.37,
+        "expected_demographic_state_shift_pts": 16.49,
+        "residual_overperformance_pts": 1.36,
         "demographics": {
           "hisp_pct": 2.1,
           "blk_pct": 4.2,
@@ -760,10 +760,10 @@
         },
         "us_house_2024_to_2026": {
           "n": 325,
-          "mean": 12.37,
+          "mean": 12.38,
           "median": 11.86,
-          "stdev": 5.16,
-          "pct_shifting_dem": 99.1
+          "stdev": 5.14,
+          "pct_shifting_dem": 99.4
         },
         "governor_2024_to_2026": {
           "n": 168,
