@@ -258,7 +258,7 @@
       "mean_overperf_all": 4.24,
       "median_overperf_all": 3.75,
       "ci95_overperf_all": [
-        1.54,
+        1.53,
         6.94
       ],
       "mean_overperf_statewide_vs_house": 3.39,
@@ -365,7 +365,7 @@
           "ci95_low": 1.179,
           "ci95_high": 4.449,
           "t_stat": 3.46,
-          "p_value": 0.0011
+          "p_value": 0.0012
         },
         {
           "term": "Past Record (+ = Moderate)",
@@ -388,7 +388,7 @@
           "beta": 2.265,
           "se_hc1": 0.822,
           "ci95_low": 0.611,
-          "ci95_high": 3.919,
+          "ci95_high": 3.918,
           "t_stat": 2.75,
           "p_value": 0.0083
         },
@@ -398,7 +398,7 @@
           "se_hc1": 1.293,
           "ci95_low": 1.698,
           "ci95_high": 6.9,
-          "t_stat": 3.33,
+          "t_stat": 3.32,
           "p_value": 0.0017
         }
       ]
@@ -453,30 +453,30 @@
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -0.099,
+          "beta": -0.098,
           "se_hc1": 2.24,
           "ci95_low": -4.618,
           "ci95_high": 4.421,
           "t_stat": -0.04,
-          "p_value": 0.965
+          "p_value": 0.9652
         },
         {
           "term": "Democratic Incumbent",
           "beta": -0.563,
           "se_hc1": 1.296,
           "ci95_low": -3.178,
-          "ci95_high": 2.052,
+          "ci95_high": 2.053,
           "t_stat": -0.43,
           "p_value": 0.6663
         },
         {
           "term": "Republican Incumbent",
-          "beta": 1.842,
+          "beta": 1.841,
           "se_hc1": 2.371,
-          "ci95_low": -2.942,
+          "ci95_low": -2.943,
           "ci95_high": 6.626,
           "t_stat": 0.78,
-          "p_value": 0.4416
+          "p_value": 0.4418
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
