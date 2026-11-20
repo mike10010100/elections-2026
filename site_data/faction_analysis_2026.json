@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-20T10:00:01.856653-05:00",
+  "fetched_at": "2026-11-20T10:15:01.524398-05:00",
   "house_caucus_comparison_morris_benchmark": {
     "party_average_swing_vs_harris_2024": 14.3,
     "groups": [
@@ -132,7 +132,7 @@
       "senate_shift_vs_2024": 16.03,
       "state_house_mean_shift": 13.6,
       "senate_minus_house_shift": 2.43,
-      "eevp": 98.38
+      "eevp": 98.39
     },
     "KS": {
       "senate_margin": 5.39,
