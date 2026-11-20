@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-20T13:15:01.938427-05:00",
+  "fetched_at": "2026-11-20T13:30:02.005080-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.85,
-        "expected_demographic_state_shift_pts": 17.22,
-        "residual_overperformance_pts": -0.37,
+        "expected_demographic_state_shift_pts": 17.21,
+        "residual_overperformance_pts": -0.36,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -703,21 +703,21 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.6,
+          "mean": 12.59,
           "median": 11.75,
           "stdev": 7.72,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 7.99,
+          "mean": 7.98,
           "median": 8.28,
           "stdev": 12.99,
           "pct_shifting_dem": 85.5
         },
         "attorney_general_2024_to_2026": {
           "n": 108,
-          "mean": 7.98,
+          "mean": 7.97,
           "median": 7.02,
           "stdev": 5.73,
           "pct_shifting_dem": 95.4
