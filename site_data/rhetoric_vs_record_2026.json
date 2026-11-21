@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-20T19:15:01.644903-05:00",
+  "fetched_at": "2026-11-20T20:15:01.626502-05:00",
   "llm_coder_model": "opencode/deepseek-v4.1-flash-free",
   "methodology": {
     "description": "Tests the 'Rhetorical Pivot / Are Moderate Voters Rubes?' hypothesis and decomposes Economic Moderation vs. Cultural/Identity Moderation as independent variables across 49 major 2026 U.S. Senate, Gubernatorial, Attorney General, and competitive/PAC-targeted U.S. House candidates. Separates (1) Objective Past Record & Institutional Alignment (Voteview DW-NOMINATE roll-call votes, House caucus membership, pre-2026 M4A/GND/ICE positions, and FEC Independent Expenditures by progressive vs. moderate PACs) from (2) Blinded 2026 General-Election Rhetoric & Media Appearances (scraped pre-election news, TV/podcast/debate interviews, YouTube appearances, and Bluesky posts with candidate names and states redacted as [CANDIDATE] and [STATE] before scoring via opencode/deepseek-v4.1-flash-free).",
@@ -91,21 +91,21 @@
       "mean_record_score": -1.43,
       "mean_rhetoric_score": -1.17,
       "mean_moderation_pivot": 0.27,
-      "mean_shift_vs_2024": 11.26,
-      "mean_overperf_all": -2.55,
+      "mean_shift_vs_2024": 11.37,
+      "mean_overperf_all": -2.5,
       "median_overperf_all": -2.08,
       "ci95_overperf_all": [
-        -4.51,
-        -0.6
+        -4.38,
+        -0.63
       ],
-      "mean_overperf_statewide_vs_house": -3.15,
+      "mean_overperf_statewide_vs_house": -3.08,
       "median_overperf_statewide_vs_house": -2.08,
       "pct_beating_benchmark_statewide": 0.0,
       "notable_examples": [
         "Peggy Flanagan (MN Senate: -1.52 pts)",
         "Angie Nixon (FL Senate: -2.13 pts)",
         "Marquita Bradshaw (TN Senate: -2.02 pts)",
-        "Edward Markey (MA Senate: -6.93 pts)",
+        "Edward Markey (MA Senate: -6.64 pts)",
         "Bob Brooks (PA-07 House: +0.43 pts)",
         "Summer Lee (PA-12 House: -3.15 pts)"
       ]
@@ -172,17 +172,17 @@
       "archetype": "Left-Culture + Left-Economics (Movement Left on Both Axes)",
       "n_non_redistricted": 7,
       "n_statewide": 6,
-      "mean_overperf_non_redistricted": -2.74,
+      "mean_overperf_non_redistricted": -2.7,
       "median_overperf_non_redistricted": -2.13,
       "pct_beating_benchmark_non_redistricted": 0.0,
-      "mean_overperf_statewide": -2.67,
+      "mean_overperf_statewide": -2.62,
       "median_overperf_statewide": -1.88,
       "pct_beating_benchmark_statewide": 0.0,
       "notable_examples": [
         "Abdul El-Sayed (MI Senate: -1.62 pts)",
         "Peggy Flanagan (MN Senate: -1.52 pts)",
         "Angie Nixon (FL Senate: -2.13 pts)",
-        "Edward Markey (MA Senate: -6.93 pts)",
+        "Edward Markey (MA Senate: -6.64 pts)",
         "Eli Savit (MI Attorney General: -0.89 pts)",
         "Keith Ellison (MN Attorney General: -2.94 pts)"
       ]
@@ -473,11 +473,11 @@
       "office_type": "senate_races",
       "caucus_or_faction": "Progressive (Green New Deal Co-Author / Sunrise)",
       "dw_nominate": -0.512,
-      "margin_2026": 31.27,
-      "shift_vs_2024_baseline": 5.92,
-      "state_house_mean_shift": 12.85,
-      "overperf_vs_benchmark": -6.93,
-      "benchmark_label": "MA House Mean (+12.85)",
+      "margin_2026": 31.96,
+      "shift_vs_2024_baseline": 6.61,
+      "state_house_mean_shift": 13.25,
+      "overperf_vs_benchmark": -6.64,
+      "benchmark_label": "MA House Mean (+13.25)",
       "record_ideology_score": -1.4,
       "rhetoric_ideology_score": -1.0,
       "rhetorical_moderation_pivot": 0.4,
