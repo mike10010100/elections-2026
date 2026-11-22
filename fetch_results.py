@@ -134,6 +134,7 @@ if __name__ == "__main__":
                 "build_texas_housing_edpol.py",
                 "build_talarico_record_verification.py",
                 "build_bonica_grumbach_panel_test.py",
+                "build_morris_nov4_vs_nov22_comparison.py",
             ]:
                 try:
                     subprocess.run(
@@ -164,6 +165,7 @@ if __name__ == "__main__":
                     "site_data/texas_housing_edpol_2026.json",
                     "site_data/texas_legislative_ideology_2019_2025.json",
                     "site_data/bonica_grumbach_methodology_test_2026.json",
+                    "site_data/morris_nov4_vs_nov22_comparison.json",
                     "assets/chart1_house_carveout.png",
                     "assets/chart2_senate_0for6.png",
                     "assets/chart3_same_ballot_natural_experiment.png",
@@ -177,6 +179,8 @@ if __name__ == "__main__":
                     "assets/chart11_talarico_baker_rollcall_record_2026.png",
                     "assets/chart12_bonica_grumbach_panel_test_2026.png",
                     "assets/chart13_economic_vs_cultural_moderation_2026.png",
+                    "assets/chart14_house_caucus_nov5_vs_nov22.png",
+                    "assets/chart15_senate_statewide_nov4_vs_nov22.png",
                 ],
                 check=False,
             )

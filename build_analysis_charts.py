@@ -270,11 +270,8 @@ def generate_chart1():
 
 def generate_chart2(metrics):
     svh = metrics["senate_vs_state_house_live"]
-    mi_live = svh.get("MI", {}).get("senate_minus_house_shift", -3.1)
-    fl_live = svh.get("FL", {}).get("senate_minus_house_shift", -2.3)
-    mn_live = svh.get("MN", {}).get("senate_minus_house_shift", -2.5)
-    tn_live = svh.get("TN", {}).get("senate_minus_house_shift", -2.3)
-    me_live = svh.get("ME", {}).get("senate_minus_house_shift", -9.0)
+    def live_v(st):
+        return svh.get(st, {}).get("senate_minus_house_shift")
 
     fig = plt.figure(figsize=(15.8, 8.6), dpi=200, facecolor=BG_COLOR)
     gs = fig.add_gridspec(1, 2, width_ratios=[1.12, 1.08], left=0.165, right=0.97, top=0.77, bottom=0.14, wspace=0.22)
@@ -291,57 +288,68 @@ def generate_chart2(metrics):
                   fontsize=11.4, fontweight="bold", color=DARK_TEXT, loc="left", pad=12)
 
     cands = [
-        "SC: Annie Andrews",
-        "TX: James Talarico",
-        "MS: Scott Colom",
-        "NC: Roy Cooper",
-        "GA: Jon Ossoff",
-        "NM: Ben Ray Luján",
-        "IA: Josh Turek",
-        "OH: Sherrod Brown",
-        "MI: Abdul El-Sayed (Prog)",
-        "FL: Angie Nixon (Prog)",
-        "MN: Peggy Flanagan (Prog)",
-        "TN: Marquita Bradshaw (Prog)",
-        "MA: Ed Markey (Prog)",
-        "ME: Troy Jackson (Prog)"
+        ("SC", "SC: Annie Andrews", 7.8, False),
+        ("TX", "TX: James Talarico", 7.4, False),
+        ("MS", "MS: Scott Colom", 5.9, False),
+        ("NC", "NC: Roy Cooper", 5.9, False),
+        ("GA", "GA: Jon Ossoff", 5.8, False),
+        ("NM", "NM: Ben Ray Luján", 3.4, False),
+        ("IA", "IA: Josh Turek", 3.2, False),
+        ("OH", "OH: Sherrod Brown", 2.8, False),
+        ("MI", "MI: Abdul El-Sayed (Prog)", -1.4, True),
+        ("FL", "FL: Angie Nixon (Prog)", -1.7, True),
+        ("MN", "MN: Peggy Flanagan (Prog)", -1.8, True),
+        ("TN", "TN: Marquita Bradshaw (Prog)", -1.9, True),
+        ("MA", "MA: Ed Markey (Prog)", -5.0, True),
+        ("ME", "ME: Troy Jackson (Prog)", -9.8, True),
     ]
-    morris_vals = [7.8, 7.4, 5.9, 5.9, 5.8, 3.4, 3.2, 2.8, -1.4, -1.7, -1.8, -1.9, -5.0, -9.8]
-    nov5_prog_vals = [None]*8 + [mi_live, fl_live, mn_live, tn_live, None, me_live]
-    is_prog = [False]*8 + [True]*6
+    labels = [c[1] for c in cands]
+    morris_vals = [c[2] for c in cands]
+    live_vals = [live_v(c[0]) for c in cands]
+    is_prog = [c[3] for c in cands]
 
     y_pos = np.arange(len(cands))[::-1]
     ax1.axvline(0.0, color="#222222", linestyle="-", linewidth=1.5, zorder=2)
     ax1.axhspan(-0.5, 5.5, xmin=0, xmax=0.54, color="#fdedec", alpha=0.55, zorder=1)
 
-    for y, name, m_val, n5_val, prog in zip(y_pos, cands, morris_vals, nov5_prog_vals, is_prog):
+    for y, (st, name, m_val, prog), l_val in zip(y_pos, cands, live_vals):
         col = PROG_ORANGE if prog else BLUE_DOG
+        d_col = "#7e2c00" if prog else "#0b2e47"
         ax1.barh(y, m_val, height=0.58, color=col, alpha=0.88, zorder=3)
+        changed = l_val is not None and abs(l_val - m_val) >= 0.25
         if prog:
             if m_val <= -8.0:
-                ax1.text(m_val / 2.0, y, f"{m_val:+.1f} pts (Live: {n5_val:+.1f})",
-                         fontsize=8.8, fontweight="bold", color="white", ha="center", va="center", zorder=6)
-            elif n5_val is not None and n5_val < m_val:
-                ax1.scatter([n5_val], [y], color="#7e2c00", marker="D", s=45, zorder=5)
-                ax1.plot([m_val, n5_val], [y, y], color="#7e2c00", lw=1.8, ls=":", zorder=4)
-                ax1.text(n5_val - 0.3, y, f"{m_val:+.1f} (Live: {n5_val:+.1f})",
-                         fontsize=8.6, fontweight="bold", color="#7e2c00", ha="right", va="center")
+                txt = f"{m_val:+.1f} pts" + (f" (Live: {l_val:+.1f})" if l_val is not None else "")
+                ax1.text(m_val / 2.0, y, txt, fontsize=8.7, fontweight="bold", color="white", ha="center", va="center", zorder=6)
+            elif changed:
+                ax1.scatter([l_val], [y], color=d_col, marker="D", s=45, zorder=5)
+                ax1.plot([m_val, l_val], [y, y], color=d_col, lw=1.8, ls=":", zorder=4)
+                x_anchor = min(m_val, l_val) - 0.3
+                ax1.text(x_anchor, y, f"{m_val:+.1f} (Live: {l_val:+.1f})",
+                         fontsize=8.5, fontweight="bold", color=d_col, ha="right", va="center")
             else:
                 ax1.text(m_val - 0.3, y, f"{m_val:+.1f} pts",
-                         fontsize=8.8, fontweight="bold", color=col, ha="right", va="center")
+                         fontsize=8.7, fontweight="bold", color=col, ha="right", va="center")
         else:
-            ax1.text(m_val + 0.25, y, f"{m_val:+.1f} pts",
-                     fontsize=8.8, fontweight="bold", color=col, ha="left", va="center")
+            if changed:
+                ax1.scatter([l_val], [y], color=d_col, marker="D", s=45, zorder=5)
+                ax1.plot([m_val, l_val], [y, y], color=d_col, lw=1.8, ls=":", zorder=4)
+                x_anchor = max(m_val, l_val) + 0.28
+                ax1.text(x_anchor, y, f"{m_val:+.1f} (Live: {l_val:+.1f})",
+                         fontsize=8.5, fontweight="bold", color=d_col, ha="left", va="center")
+            else:
+                ax1.text(m_val + 0.25, y, f"{m_val:+.1f} pts",
+                         fontsize=8.7, fontweight="bold", color=col, ha="left", va="center")
 
-    ax1.annotate("0-FOR-6: Every progressive-endorsed\nSenate nominee sits below 0 (and fell\neven further behind in live returns)",
+    ax1.annotate("0-FOR-6: Every progressive-endorsed\nSenate nominee sits below 0\n(diamonds show live returns)",
                  xy=(-3.2, 5.2), xytext=(-10.9, 8.2),
                  arrowprops=dict(arrowstyle="->", color=PROG_ORANGE, lw=1.8),
                  fontsize=9.0, fontweight="bold", color=PROG_ORANGE,
                  bbox=dict(boxstyle="round,pad=0.35", facecolor="#fdf2e9", edgecolor=PROG_ORANGE, lw=1.2))
 
     ax1.set_yticks(y_pos)
-    ax1.set_yticklabels(cands, fontsize=9.6, fontweight="bold", color=DARK_TEXT)
-    ax1.set_xlim(-11.4, 10.5)
+    ax1.set_yticklabels(labels, fontsize=9.6, fontweight="bold", color=DARK_TEXT)
+    ax1.set_xlim(-11.4, 11.4)
     ax1.set_ylim(-0.7, len(cands) - 0.3)
     ax1.xaxis.grid(True, color=GRID_COLOR, linewidth=0.8)
     ax1.spines["top"].set_visible(False)
@@ -399,7 +407,7 @@ def generate_chart2(metrics):
     ax2.set_ylabel("Senate Dem Swing vs. Average (margin pts)", fontsize=10, color=SUB_TEXT)
     ax2.legend(loc="upper right", fontsize=8.1, framealpha=0.92, facecolor="white")
 
-    fig.text(0.03, 0.028, f"Source: G. Elliott Morris (@gelliottmorris.com, Nov. 4, 2026 Senate plots, N=34 races) & live NYT election returns (updated {metrics['fetched_at']}).\nDiamonds in Panel A show live Senate-minus-House margins in MI ({mi_live:+.1f}), MN ({mn_live:+.1f}), TN ({tn_live:+.1f}), FL ({fl_live:+.1f}), and ME ({me_live:+.1f}).",
+    fig.text(0.03, 0.028, f"Source: G. Elliott Morris (@gelliottmorris.com, Nov. 4, 2026 Senate plots, N=34 races) & live NYT election returns (updated {metrics['fetched_at']}).\nDiamonds in Panel A mark every race moving >=0.25 pts vs. Morris's Nov. 4 snapshot (GA {live_v('GA'):+.1f}, TX {live_v('TX'):+.1f}, MS {live_v('MS'):+.1f}, MA {live_v('MA'):+.1f}, FL {live_v('FL'):+.1f}, MN {live_v('MN'):+.1f}, ME {live_v('ME'):+.1f}).",
              fontsize=9, color=MUTED_TEXT)
 
     plt.savefig(ASSETS_DIR / "chart2_senate_0for6.png", dpi=200)

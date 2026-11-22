@@ -1,0 +1,525 @@
+{
+  "fetched_at": "2026-11-22T13:00:02.019298-05:00",
+  "morris_house_nov4": {
+    "source_date": "2026-11-04",
+    "n": 404,
+    "party_mean_shift": 14.3,
+    "groups": [
+      {
+        "key": "blue_dogs",
+        "label": "Blue Dogs",
+        "n": 30,
+        "raw_mean": 18.4,
+        "adj_mean": 16.8,
+        "edge": 2.5,
+        "ci95_edge": [
+          1.2,
+          3.8
+        ]
+      },
+      {
+        "key": "blue_dogs_ex_tx",
+        "label": "Blue Dogs\nex-TX-15/28",
+        "n": 28,
+        "raw_mean": 16.5,
+        "adj_mean": 15.7,
+        "edge": 1.4,
+        "ci95_edge": [
+          0.2,
+          2.6
+        ]
+      },
+      {
+        "key": "dsa_carveout",
+        "label": "DSA carveout",
+        "n": 7,
+        "raw_mean": 17.5,
+        "adj_mean": 15.2,
+        "edge": 0.9,
+        "ci95_edge": [
+          -1.0,
+          2.8
+        ]
+      },
+      {
+        "key": "new_dems",
+        "label": "New Dems",
+        "n": 129,
+        "raw_mean": 14.2,
+        "adj_mean": 14.5,
+        "edge": 0.2,
+        "ci95_edge": [
+          -0.4,
+          0.8
+        ]
+      },
+      {
+        "key": "no_caucus",
+        "label": "No caucus",
+        "n": 182,
+        "raw_mean": 14.3,
+        "adj_mean": 14.2,
+        "edge": -0.1,
+        "ci95_edge": [
+          -0.5,
+          0.3
+        ]
+      },
+      {
+        "key": "cpc",
+        "label": "CPC /\nprogressives",
+        "n": 84,
+        "raw_mean": 13.0,
+        "adj_mean": 13.6,
+        "edge": -0.7,
+        "ci95_edge": [
+          -1.4,
+          -0.05
+        ]
+      }
+    ]
+  },
+  "house_replicated_nov5": {
+    "n": 418,
+    "party_mean": 14.31,
+    "party_median": 14.05,
+    "groups": [
+      {
+        "key": "blue_dogs",
+        "label": "Blue Dogs",
+        "n": 31,
+        "raw_mean": 18.57,
+        "raw_median": 15.6,
+        "adj_edge": 1.6,
+        "adj_mean": 15.91,
+        "ci95_edge": [
+          -0.15,
+          4.11
+        ],
+        "ci95_mean": [
+          14.16,
+          18.42
+        ]
+      },
+      {
+        "key": "blue_dogs_ex_tx",
+        "label": "Blue Dogs\nex-TX-15/28",
+        "n": 29,
+        "raw_mean": 16.78,
+        "raw_median": 15.38,
+        "adj_edge": 1.11,
+        "adj_mean": 15.42,
+        "ci95_edge": [
+          -0.61,
+          3.38
+        ],
+        "ci95_mean": [
+          13.7,
+          17.69
+        ]
+      },
+      {
+        "key": "dsa_carveout",
+        "label": "DSA carveout\n(+Casar)",
+        "n": 7,
+        "raw_mean": 16.12,
+        "raw_median": 15.89,
+        "adj_edge": 1.81,
+        "adj_mean": 16.12,
+        "ci95_edge": [
+          -1.55,
+          5.0
+        ],
+        "ci95_mean": [
+          12.76,
+          19.31
+        ]
+      },
+      {
+        "key": "new_dems",
+        "label": "New Dems",
+        "n": 149,
+        "raw_mean": 15.52,
+        "raw_median": 14.46,
+        "adj_edge": 0.68,
+        "adj_mean": 14.99,
+        "ci95_edge": [
+          -0.11,
+          1.57
+        ],
+        "ci95_mean": [
+          14.2,
+          15.88
+        ]
+      },
+      {
+        "key": "no_caucus",
+        "label": "No caucus",
+        "n": 212,
+        "raw_mean": 13.45,
+        "raw_median": 13.76,
+        "adj_edge": -0.48,
+        "adj_mean": 13.83,
+        "ci95_edge": [
+          -1.29,
+          0.22
+        ],
+        "ci95_mean": [
+          13.02,
+          14.53
+        ]
+      },
+      {
+        "key": "cpc",
+        "label": "CPC /\nprogressives",
+        "n": 74,
+        "raw_mean": 14.41,
+        "raw_median": 13.0,
+        "adj_edge": -0.46,
+        "adj_mean": 13.85,
+        "ci95_edge": [
+          -2.16,
+          1.12
+        ],
+        "ci95_mean": [
+          12.15,
+          15.43
+        ]
+      },
+      {
+        "key": "cpc_only",
+        "label": "CPC-only\n(ex-New Dem)",
+        "n": 45,
+        "raw_mean": 14.14,
+        "raw_median": 12.6,
+        "adj_edge": -1.0,
+        "adj_mean": 13.31,
+        "ci95_edge": [
+          -2.94,
+          1.0
+        ],
+        "ci95_mean": [
+          11.37,
+          15.31
+        ]
+      }
+    ]
+  },
+  "house_replicated_live": {
+    "n": 418,
+    "party_mean": 14.86,
+    "party_median": 14.26,
+    "groups": [
+      {
+        "key": "blue_dogs",
+        "label": "Blue Dogs",
+        "n": 31,
+        "raw_mean": 19.1,
+        "raw_median": 15.87,
+        "adj_edge": 1.72,
+        "adj_mean": 16.58,
+        "ci95_edge": [
+          -0.21,
+          4.22
+        ],
+        "ci95_mean": [
+          14.65,
+          19.09
+        ]
+      },
+      {
+        "key": "blue_dogs_ex_tx",
+        "label": "Blue Dogs\nex-TX-15/28",
+        "n": 29,
+        "raw_mean": 17.35,
+        "raw_median": 15.76,
+        "adj_edge": 1.18,
+        "adj_mean": 16.04,
+        "ci95_edge": [
+          -0.54,
+          3.58
+        ],
+        "ci95_mean": [
+          14.32,
+          18.44
+        ]
+      },
+      {
+        "key": "dsa_carveout",
+        "label": "DSA carveout\n(+Casar)",
+        "n": 7,
+        "raw_mean": 16.11,
+        "raw_median": 15.89,
+        "adj_edge": 1.31,
+        "adj_mean": 16.17,
+        "ci95_edge": [
+          -2.02,
+          4.48
+        ],
+        "ci95_mean": [
+          12.84,
+          19.34
+        ]
+      },
+      {
+        "key": "new_dems",
+        "label": "New Dems",
+        "n": 149,
+        "raw_mean": 16.3,
+        "raw_median": 14.99,
+        "adj_edge": 0.68,
+        "adj_mean": 15.55,
+        "ci95_edge": [
+          -0.09,
+          1.5
+        ],
+        "ci95_mean": [
+          14.77,
+          16.36
+        ]
+      },
+      {
+        "key": "no_caucus",
+        "label": "No caucus",
+        "n": 212,
+        "raw_mean": 13.66,
+        "raw_median": 13.8,
+        "adj_edge": -0.56,
+        "adj_mean": 14.31,
+        "ci95_edge": [
+          -1.38,
+          0.13
+        ],
+        "ci95_mean": [
+          13.49,
+          14.99
+        ]
+      },
+      {
+        "key": "cpc",
+        "label": "CPC /\nprogressives",
+        "n": 74,
+        "raw_mean": 15.68,
+        "raw_median": 14.03,
+        "adj_edge": -0.34,
+        "adj_mean": 14.53,
+        "ci95_edge": [
+          -1.89,
+          1.13
+        ],
+        "ci95_mean": [
+          12.97,
+          15.99
+        ]
+      },
+      {
+        "key": "cpc_only",
+        "label": "CPC-only\n(ex-New Dem)",
+        "n": 45,
+        "raw_mean": 15.64,
+        "raw_median": 13.83,
+        "adj_edge": -0.67,
+        "adj_mean": 14.19,
+        "ci95_edge": [
+          -2.5,
+          1.36
+        ],
+        "ci95_mean": [
+          12.37,
+          16.22
+        ]
+      }
+    ]
+  },
+  "dsa_2026_endorsed_only_live": {
+    "key": "dsa_2026_6",
+    "label": "DSA 2026 Endorsed (n=6)",
+    "n": 6,
+    "raw_mean": 16.98,
+    "raw_median": 16.35,
+    "adj_edge": 1.8,
+    "adj_mean": 16.66,
+    "ci95_edge": [
+      -1.91,
+      5.37
+    ],
+    "ci95_mean": [
+      12.95,
+      20.24
+    ]
+  },
+  "senate_nov4_vs_live": [
+    {
+      "state": "SC",
+      "candidate": "Annie Andrews",
+      "early": 7.8,
+      "live": 7.47,
+      "delta": -0.33,
+      "is_prog": false
+    },
+    {
+      "state": "TX",
+      "candidate": "James Talarico",
+      "early": 7.4,
+      "live": 6.13,
+      "delta": -1.27,
+      "is_prog": false
+    },
+    {
+      "state": "MS",
+      "candidate": "Scott Colom",
+      "early": 5.9,
+      "live": 6.51,
+      "delta": 0.61,
+      "is_prog": false
+    },
+    {
+      "state": "NC",
+      "candidate": "Roy Cooper",
+      "early": 5.9,
+      "live": 5.59,
+      "delta": -0.31,
+      "is_prog": false
+    },
+    {
+      "state": "GA",
+      "candidate": "Jon Ossoff",
+      "early": 5.8,
+      "live": 7.36,
+      "delta": 1.56,
+      "is_prog": false
+    },
+    {
+      "state": "NM",
+      "candidate": "Ben Ray Luj\u00e1n",
+      "early": 3.4,
+      "live": 3.16,
+      "delta": -0.24,
+      "is_prog": false
+    },
+    {
+      "state": "IA",
+      "candidate": "Josh Turek",
+      "early": 3.2,
+      "live": 3.19,
+      "delta": -0.01,
+      "is_prog": false
+    },
+    {
+      "state": "OH",
+      "candidate": "Sherrod Brown",
+      "early": 2.8,
+      "live": 2.54,
+      "delta": -0.26,
+      "is_prog": false
+    },
+    {
+      "state": "AK",
+      "candidate": "Mary Peltola*",
+      "early": -3.66,
+      "live": 0.49,
+      "delta": 4.15,
+      "is_prog": false
+    },
+    {
+      "state": "MI",
+      "candidate": "Abdul El-Sayed",
+      "early": -1.4,
+      "live": -1.62,
+      "delta": -0.22,
+      "is_prog": true
+    },
+    {
+      "state": "FL",
+      "candidate": "Angie Nixon",
+      "early": -1.7,
+      "live": -2.13,
+      "delta": -0.43,
+      "is_prog": true
+    },
+    {
+      "state": "MN",
+      "candidate": "Peggy Flanagan",
+      "early": -1.8,
+      "live": -1.52,
+      "delta": 0.28,
+      "is_prog": true
+    },
+    {
+      "state": "TN",
+      "candidate": "Marquita Bradshaw",
+      "early": -1.9,
+      "live": -2.02,
+      "delta": -0.12,
+      "is_prog": true
+    },
+    {
+      "state": "MA",
+      "candidate": "Ed Markey",
+      "early": -5.0,
+      "live": -6.64,
+      "delta": -1.64,
+      "is_prog": true
+    },
+    {
+      "state": "ME",
+      "candidate": "Troy Jackson",
+      "early": -9.8,
+      "live": -9.66,
+      "delta": 0.14,
+      "is_prog": true
+    }
+  ],
+  "statewide36_quadrant_nov7_vs_live": [
+    {
+      "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
+      "n_statewide": 10,
+      "nov7_mean": 2.48,
+      "live_mean": 3.39,
+      "nov7_beat_pct": 70.0,
+      "live_beat_pct": 90.0
+    },
+    {
+      "quadrant": "Mainstream / Cross-Partisan Populist",
+      "n_statewide": 15,
+      "nov7_mean": 3.53,
+      "live_mean": 4.1,
+      "nov7_beat_pct": 86.7,
+      "live_beat_pct": 93.3
+    },
+    {
+      "quadrant": "Rhetorical Pivoter (Prog Record -> Mod/Affordability Rhetoric)",
+      "n_statewide": 7,
+      "nov7_mean": -3.93,
+      "live_mean": -3.26,
+      "nov7_beat_pct": 0.0,
+      "live_beat_pct": 14.3
+    },
+    {
+      "quadrant": "Movement Progressive (Prog Record + Prog Rhetoric)",
+      "n_statewide": 4,
+      "nov7_mean": -2.03,
+      "live_mean": -3.08,
+      "nov7_beat_pct": 0.0,
+      "live_beat_pct": 0.0
+    }
+  ],
+  "statewide36_regression_nov7_vs_live": {
+    "nov7": {
+      "n": 36,
+      "r2": 0.342,
+      "record_beta": 2.397,
+      "record_p": 0.0385,
+      "pivot_beta": -1.556,
+      "pivot_p": 0.4376
+    },
+    "live": {
+      "n": 36,
+      "r2": 0.447,
+      "record_beta": 2.935,
+      "record_p": 0.0048,
+      "pivot_beta": -1.315,
+      "pivot_p": 0.5316
+    }
+  }
+}
