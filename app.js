@@ -455,7 +455,7 @@
         });
 
     document.getElementById("last-updated-text").textContent =
-      `Snapshot: ${timeStr} · Auto-updating every 15 min · ${fmtInt(sc.civic_called_races)} called / ${fmtInt(sc.civic_uncalled_races)} uncalled · 2004–2026 normalized archive`;
+      `Snapshot: ${timeStr} · Auto-updating hourly · ${fmtInt(sc.civic_called_races)} called / ${fmtInt(sc.civic_uncalled_races)} uncalled · 2004–2026 normalized archive`;
     document.getElementById("global-races-pill").textContent =
       `${fmtInt(sc.civic_total_races)} Races · ${fmtInt(sc.counties_tracked)} Counties · 2004–2026`;
 
@@ -2743,10 +2743,10 @@
       <div class="analysis-block">
         <div class="analysis-block-header">
           <div>
-            <h2>1. Late-Count Statewide Legal &amp; Ballot-Math Tracker: Mississippi Plurality Call vs. Alaska RCV</h2>
-            <p class="section-sub">Statutory election rules, late-arriving absentee/affidavit ballot splits, and RCV second-choice transfer thresholds.</p>
+            <h2>1. Statewide Legal &amp; Ballot-Math Case Studies: Mississippi Plurality Call vs. Alaska RCV</h2>
+            <p class="section-sub">Statutory election rules, late-arriving absentee/affidavit ballot splits, and Round 1 outright majority outcomes.</p>
           </div>
-          <span class="stat-pill">Live Updated · 15-Min Feed</span>
+          <span class="stat-pill">Live Updated · Hourly Feed</span>
         </div>
 
         <div class="analysis-grid-2">
@@ -2803,8 +2803,8 @@
               <span class="rc-badge ${akBadgeCls}">${akBadgeTxt}</span>
             </h3>
             <div class="analysis-law-callout">
-              <strong>Alaska Top-Four RCV Dynamics &amp; Same-Name Spoiler Effect:</strong>
-              In Round 1 (${fmtPct(akEevp)} reporting, ~${akRemK}K late mail/rural bush ballots remaining), <strong>Mary Peltola (DEM, ${Number(akPeltola.percent).toFixed(2)}%)</strong> leads <strong>Sen. Dan Sullivan (GOP, ${Number(akSullivan.percent).toFixed(2)}%)</strong> by <strong>+${fmtInt(akLead)} votes</strong>. Remaining rural bush and late-mail ballots heavily favor Peltola ahead of RCV transfers. Crucially, the ${akThirdPct.toFixed(2)}% third-party pool is split between Republican <strong>Gerald Heikes (${Number(akHeikes.percent).toFixed(2)}%, ${fmtInt(akHeikes.votes)}v)</strong> and Undeclared candidate <strong>Daniel Sullivan (${Number(akUdcSullivan.percent).toFixed(2)}%, ${fmtInt(akUdcSullivan.votes)}v)</strong>—whose shared name with incumbent Dan Sullivan created a ${fmtInt(akUdcSullivan.votes)}-vote ballot confusion pool.
+              <strong>Alaska Top-Four RCV Dynamics &amp; Outright Round 1 Wins:</strong>
+              After rural bush and late-mail ballots were tallied (${fmtPct(akEevp)} reporting), <strong>Mary Peltola (DEM, ${Number(akPeltola.percent).toFixed(2)}%)</strong> defeated <strong>Sen. Dan Sullivan (GOP, ${Number(akSullivan.percent).toFixed(2)}%)</strong> by <strong>+${fmtInt(akLead)} votes</strong>—clearing 50% outright in Round 1 (just as Democrat <strong>Jonathan Kreiss-Tomkins</strong> did in the gubernatorial race at <strong>${Number(akJkt.percent).toFixed(2)}%</strong>) without needing RCV second-choice transfers. Meanwhile, the ${akThirdPct.toFixed(2)}% third-party Senate pool split between Republican <strong>Gerald Heikes (${Number(akHeikes.percent).toFixed(2)}%, ${fmtInt(akHeikes.votes)}v)</strong> and Undeclared candidate <strong>Daniel Sullivan (${Number(akUdcSullivan.percent).toFixed(2)}%, ${fmtInt(akUdcSullivan.votes)}v)</strong>—whose shared name with incumbent Dan Sullivan drew ${fmtInt(akUdcSullivan.votes)} votes.
             </div>
             <div class="analysis-table-wrap">
               <table class="analysis-table">
@@ -2813,7 +2813,7 @@
                     <th>Alaska / Close Race</th>
                     <th class="num">Round 1 Votes</th>
                     <th class="num">Round 1 %</th>
-                    <th>RCV / Late-Ballot Outlook</th>
+                    <th>RCV / Final Outcome</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2821,13 +2821,13 @@
                     <td><strong class="dem-text">Sen: Mary Peltola (DEM)</strong></td>
                     <td class="num"><strong>${fmtInt(akPeltola.votes)}</strong></td>
                     <td class="num"><strong>${Number(akPeltola.percent).toFixed(2)}%</strong></td>
-                    <td>Leads Round 1 by +${fmtInt(akLead)}v (${(Number(akPeltola.percent) - Number(akSullivan.percent)).toFixed(2)} pts) pre-RCV</td>
+                    <td>${akSen.called ? "Called winner · Won Round 1 outright" : "Leads Round 1"} by +${fmtInt(akLead)}v (${(Number(akPeltola.percent) - Number(akSullivan.percent)).toFixed(2)} pts)</td>
                   </tr>
                   <tr>
                     <td><strong class="gop-text">Sen: Dan Sullivan (GOP)</strong></td>
                     <td class="num">${fmtInt(akSullivan.votes)}</td>
                     <td class="num">${Number(akSullivan.percent).toFixed(2)}%</td>
-                    <td>Needs >75% of net RCV transfers if trailing by 5K+</td>
+                    <td>${Number(akPeltola.percent) >= 50 ? "Eliminated in Round 1 (Peltola >50% outright)" : "Needs >75% of net RCV transfers if trailing by 5K+"}</td>
                   </tr>
                   <tr>
                     <td>Sen: Gerald Heikes (GOP) &amp; Daniel Sullivan (UDC)</td>
@@ -2839,7 +2839,7 @@
                     <td><strong class="dem-text">Gov: Jonathan Kreiss-Tomkins (DEM)</strong></td>
                     <td class="num"><strong>${fmtInt(akJkt.votes)}</strong></td>
                     <td class="num"><strong>${Number(akJkt.percent).toFixed(2)}%</strong></td>
-                    <td>${Number(akJkt.percent) >= 50 ? "Above 50% Round 1 majority threshold!" : `${(50 - Number(akJkt.percent)).toFixed(2)}% shy of Round 1 win`} vs. ${akGopSplitStr}</td>
+                    <td>${akGov.called ? "Called winner · " : ""}${Number(akJkt.percent) >= 50 ? "Won Round 1 outright (>50%)" : `${(50 - Number(akJkt.percent)).toFixed(2)}% shy of Round 1 win`} vs. ${akGopSplitStr}</td>
                   </tr>
                   <tr>
                     <td><strong class="dem-text">KS Gov: Cindy Holscher (DEM)</strong></td>

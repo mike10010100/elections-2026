@@ -2,7 +2,7 @@
 
 > ### **[Launch Live Interactive Dashboard → `https://mike10010100.github.io/elections-2026/`](https://mike10010100.github.io/elections-2026/)**
 
-Live interactive election results explorer, county-by-county **2004 → 2026** shift arrow map, **U.S. Census ACS county demographic coalition analyzer**, **FEC Campaign Finance ("Moneyball")** dataset, and **Democratic faction / breaking-points comparative analysis**, powered by **15-minute automated cron pulls (`*/15 * * * *`)** from **civicAPI** (39,578 federal, state, and local races), **NYT 2024/2026 county-level & per-district returns** (3,152 counties/equivalents + all 435 U.S. House district county feeds), **MIT/Heideman & FiveThirtyEight 2004–2024 historical archives**, and **FEC 2026 bulk campaign finance + independent expenditure disclosures**.
+Live interactive election results explorer, county-by-county **2004 → 2026** shift arrow map, **U.S. Census ACS county demographic coalition analyzer**, **FEC Campaign Finance ("Moneyball")** dataset, and **Democratic faction / breaking-points comparative analysis**, powered by **hourly automated cron pulls (`0 * * * *`)** from **civicAPI** (39,578 federal, state, and local races), **NYT 2024/2026 county-level & per-district returns** (3,152 counties/equivalents + all 435 U.S. House district county feeds), **MIT/Heideman & FiveThirtyEight 2004–2024 historical archives**, and **FEC 2026 bulk campaign finance + independent expenditure disclosures**.
 
 ---
 
@@ -26,7 +26,7 @@ Live interactive election results explorer, county-by-county **2004 → 2026** s
 
 ## Live-Updating Comparative Faction, Breaking-Points & Moneyball Charts (`assets/`)
 
-Every 15 minutes, when new election returns arrive, [`fetch_results.py`](fetch_results.py) rebuilds the site datasets and invokes [`build_fec_moneyball.py`](build_fec_moneyball.py), [`build_breaking_points.py`](build_breaking_points.py), [`build_analysis_charts.py`](build_analysis_charts.py), [`build_rhetoric_vs_record.py`](build_rhetoric_vs_record.py), [`build_texas_split_ticket.py`](build_texas_split_ticket.py), [`build_texas_housing_edpol.py`](build_texas_housing_edpol.py), [`build_talarico_record_verification.py`](build_talarico_record_verification.py), and [`build_bonica_grumbach_panel_test.py`](build_bonica_grumbach_panel_test.py) to regenerate the open-source datasets and all 13 charts below:
+Every hour, when new election returns arrive, [`fetch_results.py`](fetch_results.py) rebuilds the site datasets and invokes [`build_fec_moneyball.py`](build_fec_moneyball.py), [`build_breaking_points.py`](build_breaking_points.py), [`build_analysis_charts.py`](build_analysis_charts.py), [`build_rhetoric_vs_record.py`](build_rhetoric_vs_record.py), [`build_texas_split_ticket.py`](build_texas_split_ticket.py), [`build_texas_housing_edpol.py`](build_texas_housing_edpol.py), [`build_talarico_record_verification.py`](build_talarico_record_verification.py), and [`build_bonica_grumbach_panel_test.py`](build_bonica_grumbach_panel_test.py) to regenerate the open-source datasets and all 13 charts below:
 
 ### 1. U.S. House Caucus Performance & The `DSA (n=7)` Carveout
 ![How DSA Beat the Average Was Manufactured in the U.S. House](assets/chart1_house_carveout.png)
@@ -89,7 +89,7 @@ All processed JSON and CSV datasets are committed directly to [`site_data/`](sit
 
 ## Pipeline Scripts
 
-* [`fetch_results.py`](fetch_results.py): Runs every 15 minutes via cron (`*/15 * * * *`), pulls the latest 39,578-race dataset from `civicapi.org` and NYT 2026 county & per-district feeds, deduplicates unchanged snapshots, rebuilds `site_data/` and `assets/chart1..chart13.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
+* [`fetch_results.py`](fetch_results.py): Runs hourly via cron (`0 * * * *`), pulls the latest 39,578-race dataset from `civicapi.org` and NYT 2026 county & per-district feeds, deduplicates unchanged snapshots, rebuilds `site_data/` and `assets/chart1..chart13.png`, and auto-commits/pushes to GitHub only when actual vote counts or race calls change.
 * [`fetch_2024_and_2026_nyt.py`](fetch_2024_and_2026_nyt.py): Atomically downloads 2024-11-05 and 2026-11-03 national, 50-state+DC, and all 435 per-district U.S. House county JSON feeds (caching per-district responses by `updated_at`).
 * [`build_site_data.py`](build_site_data.py): Compiles and normalizes `site_data/overview.json`, `site_data/county_shifts.json`, and `site_data/states/*.json`.
 * [`build_fec_moneyball.py`](build_fec_moneyball.py): Joins FEC `weball26.txt`, `cn.txt`, and `independent_expenditure_2026.csv` with 2026 election returns, outputs `site_data/fec_moneyball_2026.json` + CSVs, and renders `assets/chart7_senate_moneyball_counterspend.png`.
