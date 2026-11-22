@@ -1,0 +1,282 @@
+{
+  "abdul_allaccess_20261020|130.25|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking first-person ('I want a world, I want a Michigan, where every kid growing up gets to look forward...'); loc=0.9515 >= tau=0.915."
+  },
+  "abdul_allin_20260806|380.32|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking first-person ('I've been an Abdul in Michigan my whole life'); loc=0.931 >= tau=0.915."
+  },
+  "abdul_allin_20261006|1481.07|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking ('Donald, come to Michigan. Please...'); loc=0.953 >= tau=0.915."
+  },
+  "abdul_allin_20261006|1501.63|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking ('Donald, welcome to Michigan. I dare you to come.'); loc=0.938 >= tau=0.915."
+  },
+  "abdul_breakfastclub_20260831|623.90|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview response; loc=0.937 >= tau=0.915."
+  },
+  "abdul_breakfastclub_20260831|1202.80|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview response; loc=0.941 >= tau=0.915."
+  },
+  "abdul_breakfastclub_20260831|4638.18|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview response; loc=0.917 >= tau=0.915."
+  },
+  "abdul_collins_20260806|402.68|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed finishing answer ('...challenges that people in Michigan are facing') before Kaitlan Collins next question; loc=0.959 >= tau=0.915."
+  },
+  "abdul_facethenation_20260913|994.46|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.947 >= tau=0.915."
+  },
+  "abdul_hasanminhaj_20261028|3432.63|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.944 >= tau=0.915."
+  },
+  "abdul_jimacosta_20260807|3306.17|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.920 >= tau=0.915."
+  },
+  "abdul_jonstewart_20261021|2969.05|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.919 >= tau=0.915."
+  },
+  "abdul_metro_20260811|930.41|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking first-person ('what the people of Michigan had just chosen. Because if I win this race...'); loc=0.936 >= tau=0.915."
+  },
+  "abdul_morningjoe_20261105|274.43|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking ('embrace a big Michigan. That's who we've always been in Michigan.'); loc=0.922 >= tau=0.915."
+  },
+  "abdul_mtp_20261011|2170.19|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed closing remark ('I hope Michigan will take a bet on me') right before Kristen Welker sign-off; loc=0.950 >= tau=0.915."
+  },
+  "abdul_newsmakers_20261112|2296.95|michiganders": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking ('Michiganders are particularly good.') right before host question; loc=0.935 >= tau=0.915."
+  },
+  "abdul_psa_20260913|4493.18|michigan": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking ('Michigan in the fall, unbeatable. All right, Jon, that's it for Michigan.'); loc=0.947 >= tau=0.915."
+  },
+  "abdul_sotu_20260719|960.80|michiganders": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.918 >= tau=0.915."
+  },
+  "abdul_weekend_20260802|1531.22|michiganders": {
+    "decision": "flip_to_candidate",
+    "reason": "El-Sayed speaking in interview answer; loc=0.954 >= tau=0.915."
+  },
+  "colom_breakfastclub_20261102|1385.83|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.969 >= tau=0.945."
+  },
+  "colom_canweplease_20260407|787.90|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.985 >= tau=0.945."
+  },
+  "colom_canweplease_20260407|1909.53|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.977 >= tau=0.945."
+  },
+  "colom_collins_20261014|2134.58|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('I'm worried about the people of Mississippi'); loc=0.951 >= tau=0.945."
+  },
+  "colom_giveadamn_20260723|203.15|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.983 >= tau=0.945."
+  },
+  "colom_giveadamn_20260723|454.93|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.951 >= tau=0.945."
+  },
+  "colom_giveadamn_20260723|502.19|mississippi's": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.953 >= tau=0.945."
+  },
+  "colom_giveadamn_20260723|771.31|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.955 >= tau=0.945."
+  },
+  "colom_giveadamn_20260723|808.41|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom beginning response ('Yeah, yeah. Well, I was in Clarksdale, Mississippi...'); loc=0.965 >= tau=0.945."
+  },
+  "colom_insidepol_20260729|2221.15|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.982 >= tau=0.945."
+  },
+  "colom_insidepol_20260729|2236.77|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.964 >= tau=0.945."
+  },
+  "colom_insidepol_20260729|2453.59|mississippians": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.951 >= tau=0.945."
+  },
+  "colom_lastword_20261110|1487.85|mississippian": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom voiceover in campaign clip aired on The Last Word ('Every Mississippian ought to walk through once'); loc=0.959 >= tau=0.945."
+  },
+  "colom_lastword_20261110|1556.90|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.946 >= tau=0.945."
+  },
+  "colom_lastword_20261110|1724.29|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.960 >= tau=0.945."
+  },
+  "colom_lastword_20261110|1772.27|mississippians": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.978 >= tau=0.945."
+  },
+  "colom_lastword_20261110|1819.19|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking in interview response; loc=0.963 >= tau=0.945."
+  },
+  "colom_macfarlane_20260929|354.40|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom beginning answer ('Well, I would say, one, you have to understand the math of Mississippi.'); loc=0.981 >= tau=0.945."
+  },
+  "colom_macfarlane_20260929|516.32|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('And that's what it's going to take to win in Mississippi.'); loc=0.959 >= tau=0.945."
+  },
+  "colom_mshappenings_20261005|1340.16|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('Democratic Party has gave up on Mississippi for a long time.'); loc=0.974 >= tau=0.945."
+  },
+  "colom_mstoday_20260505|146.47|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom beginning answer ('Well, you know, what I would say is it's really an important opportunity for Mississippi.'); loc=0.980 >= tau=0.945."
+  },
+  "colom_mstoday_20260505|393.29|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking about Fannie Lou Hamer ('She could have left Mississippi.'); loc=0.982 >= tau=0.945."
+  },
+  "colom_mstoday_20260505|632.49|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('we know it's not good for Mississippi.'); loc=0.960 >= tau=0.945."
+  },
+  "colom_mstoday_20260505|2294.75|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('people in Mississippi, they can surprise you.'); loc=0.958 >= tau=0.945."
+  },
+  "colom_mtp_20261115|1002.55|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('campaign money spent to win Mississippi'); loc=0.956 >= tau=0.945."
+  },
+  "colom_mtp_20261115|1006.65|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('we did it the Mississippi way.'); loc=0.964 >= tau=0.945."
+  },
+  "colom_outfront_20261022|1924.24|mississippians": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('Aaron, I know Mississippians... Mississippians don't have healthcare.'); loc=0.964 >= tau=0.945."
+  },
+  "colom_outfront_20261022|1926.36|mississippians": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('400,000 Mississippians don't have health insurance.'); loc=0.969 >= tau=0.945."
+  },
+  "colom_psaki_20261107|759.66|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('I know how elections work in Mississippi.'); loc=0.951 >= tau=0.945."
+  },
+  "colom_psaki_20261107|876.96|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('people of Mississippi and accept reality.'); loc=0.950 >= tau=0.945."
+  },
+  "colom_realpatriotism_20260305|409.53|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('And Mississippi had-') right before host interjection 'How so?'; loc=0.984 >= tau=0.945."
+  },
+  "colom_realpatriotism_20260305|519.45|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('she's truly betrayed the voters of Mississippi.'); loc=0.967 >= tau=0.945."
+  },
+  "colom_ripdaniels_20260115|7353.80|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking about his wife moving back ('She moved back to Mississippi'); loc=0.945 >= tau=0.945."
+  },
+  "colom_ripdaniels_20260831|4118.57|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('she didn't care enough about mississippi on the gulf coast'); loc=0.946 >= tau=0.945."
+  },
+  "colom_ripdaniels_20261027|2733.79|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('In Mississippi, we know... Up in Columbus, my hometown.'); loc=0.950 >= tau=0.945."
+  },
+  "colom_stateofplay_20261005|2152.84|mississippians": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('Well, the concept is 400,000 Mississippians don't have health insurance.'); loc=0.963 >= tau=0.945."
+  },
+  "colom_tavissmiley_20261028|383.12|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('we'll promise America first. We'll get Mississippi last.'); loc=0.974 >= tau=0.945."
+  },
+  "colom_watch_20261029|630.48|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom finishing answer ('My faith in the people of Mississippi was rewarded. We won.') right before Radley Balko question at 632.0s; loc=0.956 >= tau=0.945."
+  },
+  "colom_weeknight_20261024|2237.71|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('That's my commitment to the people of Mississippi.'); loc=0.963 >= tau=0.945."
+  },
+  "colom_weeknight_20261113|771.92|mississippi": {
+    "decision": "flip_to_candidate",
+    "reason": "Colom speaking ('potential of not just Mississippi, but Louisiana, Alabama...'); loc=0.963 >= tau=0.945."
+  },
+  "abdul_beat_20261001|406.27|michigan": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Ari Melber) speaking ('Gas prices are up nationally... and in Michigan, they're about four and a half bucks, as you and voters there know.')."
+  },
+  "abdul_weekend_20260802|1007.80|michigan": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host intro ('We are just two days away from another key primary election day, including one in Michigan.')."
+  },
+  "colom_giveadamn_20260723|764.27|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host question ('Absolutely. And Scott, can you speak to some of the concerns that formers [farmers] are dealing with across the state of Mississippi?')."
+  },
+  "colom_giveadamn_20260723|1367.69|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host transition ('And Scott, there is a beautiful thing that's happening in Mississippi that a lot of people in national news is not talking about.')."
+  },
+  "colom_goodforbiz_20261001|1487.15|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Colin Krieger) question/banter ('what do you think about Mississippi State football? You know, here's the thing. I'm a very successful realtor...')."
+  },
+  "colom_ripdaniels_20260115|7394.82|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Rip Daniels) question ('...even here inside Mississippi, there is a purge, literally of voters. So how will you combat that?')."
+  },
+  "colom_ripdaniels_20260115|7785.86|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Rip Daniels) closing outro ('...hopefully, Scott Colom, you will be the third African American senator from the great state of Mississippi... thank you so much for having me.')."
+  },
+  "colom_ripdaniels_20260831|3159.53|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Rip Daniels) question ('...can you just give me that list of how you will put Mississippi first and how she is not')."
+  },
+  "colom_ripdaniels_20260831|4815.64|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host (Rip Daniels) question ('...if it is a very hot day on the mississippi gulf coast outside you're going to be standing in line for that as well i'm sure right')."
+  },
+  "colom_roland_20260903|2181.33|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host/panelist talking about 'Brother Colom' ('Mississippi Freedom Democrats were using the parties as delivery systems, as you often say... What Benny Thompson told Brother Colom...')."
+  },
+  "colom_urbanview_20261022|510.54|mississippi": {
+    "decision": "flip_to_non_candidate",
+    "reason": "Host framing candidate biography ('your mother... your father... Ronald Reagan who of course we know launched his presidential campaign in Philadelphia Mississippi of all places')."
+  }
+}

@@ -1,0 +1,745 @@
+{
+  "model": "microsoft/wavlm-base-plus-sv",
+  "cross_candidate_similarity": 0.626,
+  "reference_diagnostics": {
+    "scott_colom": {
+      "slices": [
+        [
+          "colom_mstoday_20260505",
+          142.0,
+          261.0
+        ],
+        [
+          "colom_mstoday_20260505",
+          291.5,
+          308.5
+        ],
+        [
+          "colom_breakfastclub_20261102",
+          193.0,
+          260.0
+        ]
+      ],
+      "total_ref_sec": 203.0,
+      "window_count": 100,
+      "intra_ref_min": 0.9612,
+      "intra_ref_p10": 0.9725,
+      "intra_ref_med": 0.9844,
+      "intra_ref_max": 0.9944
+    },
+    "abdul_el_sayed": {
+      "slices": [
+        [
+          "abdul_60min_20261102",
+          137.0,
+          173.5
+        ],
+        [
+          "abdul_60min_20261102",
+          182.5,
+          238.0
+        ],
+        [
+          "abdul_60min_20261102",
+          247.0,
+          281.5
+        ],
+        [
+          "abdul_newsmakers_20261112",
+          110.0,
+          262.0
+        ]
+      ],
+      "total_ref_sec": 278.5,
+      "window_count": 135,
+      "intra_ref_min": 0.8673,
+      "intra_ref_p10": 0.9432,
+      "intra_ref_med": 0.9636,
+      "intra_ref_max": 0.9863
+    }
+  },
+  "validation": {
+    "scott_colom": {
+      "histogram_edges": [
+        0.5,
+        0.52,
+        0.54,
+        0.56,
+        0.58,
+        0.6,
+        0.62,
+        0.64,
+        0.66,
+        0.68,
+        0.7,
+        0.72,
+        0.74,
+        0.76,
+        0.78,
+        0.8,
+        0.82,
+        0.84,
+        0.86,
+        0.88,
+        0.9,
+        0.92,
+        0.94,
+        0.96,
+        0.98,
+        1.0
+      ],
+      "histogram_counts": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        4,
+        8,
+        15,
+        26,
+        23,
+        29,
+        22,
+        19,
+        11,
+        11,
+        14,
+        24,
+        31,
+        29,
+        32,
+        80,
+        65
+      ],
+      "band_085_095": [
+        {
+          "start": 830.26,
+          "end": 833.12,
+          "text": "They were like, all right, we're going to rally, but we're also going to organize.",
+          "dur": 2.86,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.95
+        },
+        {
+          "start": 784.68,
+          "end": 788.1,
+          "text": "Listen, Tavis, you know, in Mississippi, we're not new to this. We're true to this.",
+          "dur": 3.42,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9467
+        },
+        {
+          "start": 577.92,
+          "end": 580.94,
+          "text": "But I'm also I'm just as proud that I've exonerated people.",
+          "dur": 3.02,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9463
+        },
+        {
+          "start": 1081.8,
+          "end": 1085.4,
+          "text": "They are begging the choice to show up for the campaign.",
+          "dur": 3.6,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9461
+        },
+        {
+          "start": 1174.86,
+          "end": 1178.2,
+          "text": "And I just had the courage to fight for the people and talk about the issues that matter.",
+          "dur": 3.34,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9435
+        },
+        {
+          "start": 704.24,
+          "end": 709.72,
+          "text": "All of them got on the stage and they talked about how they've been canvassing for me, how they've got up at 5 a.m.",
+          "dur": 5.48,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9413
+        },
+        {
+          "start": 84.46,
+          "end": 87.24,
+          "text": "our prayers have often changed the course of history.",
+          "dur": 2.78,
+          "eid": "colom_mtp_20261115",
+          "sim": 0.9401
+        },
+        {
+          "start": 720.14,
+          "end": 723.48,
+          "text": "If we do that, we can win everywhere because it's more working people.",
+          "dur": 3.34,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9396
+        },
+        {
+          "start": 439.96,
+          "end": 443.32,
+          "text": "None of that's got anything to do with black or white. That's all about Mississippi.",
+          "dur": 3.36,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9392
+        },
+        {
+          "start": 197.12,
+          "end": 209.74,
+          "text": "But we commence today's show in conversation with, and I've been waiting on this one, Mississippi State DA and Democratic nominee, Scott Colombe, who could be the state's first black senator since Reconstruction.",
+          "dur": 12.62,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9361
+        },
+        {
+          "start": 1522.89,
+          "end": 1527.91,
+          "text": "And it gives influence to people like myself in Mississippi and rural states,",
+          "dur": 5.02,
+          "eid": "colom_mtp_20261115",
+          "sim": 0.9347
+        },
+        {
+          "start": 788.3,
+          "end": 791.42,
+          "text": "Since the founding of our state, African-Americans have been fighting to protect the right to vote.",
+          "dur": 3.12,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9341
+        },
+        {
+          "start": 643.04,
+          "end": 651.68,
+          "text": "Anybody that knows anything about our state knows that there's a significant number of working class people, many of them working for minimum wage or less.",
+          "dur": 8.64,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9337
+        },
+        {
+          "start": 430.32,
+          "end": 433.36,
+          "text": "We're going to have half a million people that are not going to have health insurance next year.",
+          "dur": 3.04,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9333
+        },
+        {
+          "start": 1114.04,
+          "end": 1119.08,
+          "text": "And because it is Mississippi, I know that you've had to navigate some white supremacy.",
+          "dur": 5.04,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.93
+        },
+        {
+          "start": 128.38,
+          "end": 136.3,
+          "text": "Up first, former U.S. Ambassador to Israel on the global impact of this week's Israeli election where there is still no clear winner.",
+          "dur": 7.92,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9291
+        },
+        {
+          "start": 940.68,
+          "end": 950.14,
+          "text": "So when Benny Thompson and Raphael Warnock raises publicly, I just want to ask you about how you are feeling about the support, about the resources you've gotten or are getting from the Democratic Party.",
+          "dur": 9.46,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9286
+        },
+        {
+          "start": 227.48,
+          "end": 232.76,
+          "text": "Man, it's a blessing to have you on the program. Tell me about this race and how this thing is one of the races.",
+          "dur": 5.28,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9282
+        },
+        {
+          "start": 876.72,
+          "end": 881.16,
+          "text": "And so, you know, if you want to protect your own rights, you got to protect our rights.",
+          "dur": 4.44,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9274
+        },
+        {
+          "start": 791.7,
+          "end": 794.7,
+          "text": "And we understand why that's so important.",
+          "dur": 3.0,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.927
+        },
+        {
+          "start": 163.28,
+          "end": 167.1,
+          "text": "She's the blocker and pivot for the all-black women's roller derby team,",
+          "dur": 3.82,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9263
+        },
+        {
+          "start": 427.08,
+          "end": 429.92,
+          "text": "Then next year, at least another 100,000 are going to lose health insurance.",
+          "dur": 2.84,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9253
+        },
+        {
+          "start": 150.54,
+          "end": 158.08,
+          "text": "We talked a bit about that yesterday with Abdul El-Sayed, the Democratic nominee for Senate in Michigan who joined us yesterday on this program.",
+          "dur": 7.54,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9248
+        },
+        {
+          "start": 456.46,
+          "end": 465.36,
+          "text": "He is, I mentioned, a Mississippi State DA. He's in charge of four counties along the border of Mississippi and Alabama.",
+          "dur": 8.9,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9246
+        },
+        {
+          "start": 904.46,
+          "end": 907.98,
+          "text": "Raphael Warnock, he ain't no blazing progressive or liberal.",
+          "dur": 3.52,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9245
+        },
+        {
+          "start": 108.54,
+          "end": 115.54,
+          "text": "By the way, should you miss any part of today's program or want to catch up on previous shows, you can always visit TheTavisSmileyShow.com.",
+          "dur": 7.0,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9218
+        },
+        {
+          "start": 1228.96,
+          "end": 1234.2,
+          "text": "I believe, the next senator from the state of Mississippi, which would make him again the first black U.S.",
+          "dur": 5.24,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9198
+        },
+        {
+          "start": 319.1,
+          "end": 327.92,
+          "text": "So you got two, you got two icons there, Raphael and Benny, both challenging the Democratic Party establishment to do more in the South, more in Georgia, more in Mississippi.",
+          "dur": 8.82,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9196
+        },
+        {
+          "start": 1560.83,
+          "end": 1563.35,
+          "text": "I don't support that, and there's been times in the past that happened,",
+          "dur": 2.52,
+          "eid": "colom_mtp_20261115",
+          "sim": 0.9196
+        },
+        {
+          "start": 731.44,
+          "end": 734.4,
+          "text": "It seems like a simple message that, frankly, this is me talking, not you.",
+          "dur": 2.96,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9192
+        },
+        {
+          "start": 0.0,
+          "end": 3.9,
+          "text": "Nothing sounds better than spending less on fresh groceries on Amazon.",
+          "dur": 3.9,
+          "eid": "colom_mtp_20261115",
+          "sim": 0.9155
+        },
+        {
+          "start": 335.3,
+          "end": 341.1,
+          "text": "But what does it say about the way the state of my birth is changing, that a black man could be in this position?",
+          "dur": 5.8,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9154
+        },
+        {
+          "start": 888.2,
+          "end": 893.56,
+          "text": "I know this is a tricky question for you because I know what it's like to be a candidate and you need to stay focused on the race.",
+          "dur": 5.36,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9145
+        },
+        {
+          "start": 1184.3,
+          "end": 1190.28,
+          "text": "What would it mean if you can pull this off next week that you'd become the first black U.S.",
+          "dur": 5.98,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.914
+        },
+        {
+          "start": 515.6,
+          "end": 522.16,
+          "text": "I am grateful. And your name pops up in more conversations of people making reference to you and what could happen in Mississippi.",
+          "dur": 6.56,
+          "eid": "colom_tavissmiley_20261028",
+          "sim": 0.9127
+        }
+      ]
+    },
+    "abdul_el_sayed": {
+      "histogram_edges": [
+        0.5,
+        0.52,
+        0.54,
+        0.56,
+        0.58,
+        0.6,
+        0.62,
+        0.64,
+        0.66,
+        0.68,
+        0.7,
+        0.72,
+        0.74,
+        0.76,
+        0.78,
+        0.8,
+        0.82,
+        0.84,
+        0.86,
+        0.88,
+        0.9,
+        0.92,
+        0.94,
+        0.96,
+        0.98,
+        1.0
+      ],
+      "histogram_counts": [
+        3,
+        4,
+        4,
+        7,
+        10,
+        12,
+        16,
+        14,
+        19,
+        37,
+        31,
+        47,
+        33,
+        39,
+        50,
+        57,
+        86,
+        65,
+        55,
+        56,
+        65,
+        126,
+        169,
+        81,
+        2
+      ],
+      "band_085_095": [
+        {
+          "start": 589.56,
+          "end": 594.6,
+          "text": "It's almost like you get to do a certain kind of like civic chiropractic healing. Yeah. Yeah",
+          "dur": 5.04,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.95
+        },
+        {
+          "start": 827.66,
+          "end": 833.14,
+          "text": "Crumbles, it's like there are like like a set of like Wario doctors out there namely MAGA",
+          "dur": 5.48,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.95
+        },
+        {
+          "start": 542.4,
+          "end": 547.26,
+          "text": "people come they bring their questions and they ask them in front of their neighbors and",
+          "dur": 4.86,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9498
+        },
+        {
+          "start": 641.26,
+          "end": 646.26,
+          "text": "It's three things. The first one is anything having to do with care health care child care senior care",
+          "dur": 5.0,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9497
+        },
+        {
+          "start": 1734.7,
+          "end": 1741.1,
+          "text": "The poverty that we have in America that afflicts predominantly black folk in this country and rural folk in this country is",
+          "dur": 6.4,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9497
+        },
+        {
+          "start": 1782.6,
+          "end": 1788.86,
+          "text": "Then anybody out there to make their first hundred thousand, right? This is what happens first ten thousand first five thousand",
+          "dur": 6.26,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9497
+        },
+        {
+          "start": 538.94,
+          "end": 541.7,
+          "text": "because you know town halls are as old as democracy and",
+          "dur": 2.76,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9496
+        },
+        {
+          "start": 679.16,
+          "end": 685.18,
+          "text": "then the third one where this often comes up is just this dread about AI and it shows up in they're gonna put",
+          "dur": 6.02,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9496
+        },
+        {
+          "start": 665.84,
+          "end": 671.26,
+          "text": "They're getting older and they're needing care and I can't offer it and I'm I'm losing hours at work",
+          "dur": 5.42,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9492
+        },
+        {
+          "start": 1151.1,
+          "end": 1154.42,
+          "text": "Made sure that after Flint kids weren't drinking lead in their schools",
+          "dur": 3.32,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9492
+        },
+        {
+          "start": 1154.86,
+          "end": 1159.72,
+          "text": "That's the kind of work that my career has been about. I wrote the book on Medicare for all so in some respects",
+          "dur": 4.86,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9492
+        },
+        {
+          "start": 792.72,
+          "end": 800.42,
+          "text": "Urgent care needed exactly and then the policy prescription though is like how do you you know, how do you treat appendicitis?",
+          "dur": 7.7,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9491
+        },
+        {
+          "start": 1287.94,
+          "end": 1290.8,
+          "text": "I want to understand exactly what led into the war in Iran.",
+          "dur": 2.86,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9484
+        },
+        {
+          "start": 367.34,
+          "end": 370.22,
+          "text": "I kept talking about the same things in the same ways, going everywhere,",
+          "dur": 2.88,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9482
+        },
+        {
+          "start": 455.4,
+          "end": 459.3,
+          "text": "And I think people have always seen Donald Trump as this big monster that's unbeatable.",
+          "dur": 3.9,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.948
+        },
+        {
+          "start": 1821.38,
+          "end": 1824.04,
+          "text": "And what a joy to be able to serve others,",
+          "dur": 2.66,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.948
+        },
+        {
+          "start": 887.92,
+          "end": 892.16,
+          "text": "But the thing is like I just say the same thing because I'm not I don't take money from corporations",
+          "dur": 4.24,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9478
+        },
+        {
+          "start": 405.32,
+          "end": 409.34,
+          "text": "But the thing about democracy is like we focus on the competition of the thing, but it's not a competition",
+          "dur": 4.02,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9474
+        },
+        {
+          "start": 923.08,
+          "end": 928.88,
+          "text": "You know god-willing people support me and if they don't that's okay, but I'd rather not be in the United States Senate out here",
+          "dur": 5.8,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9473
+        },
+        {
+          "start": 1890.42,
+          "end": 1893.84,
+          "text": "And in fact, I got to speak to the former president",
+          "dur": 3.42,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.947
+        },
+        {
+          "start": 1661.14,
+          "end": 1664.0,
+          "text": "when it's the most expensive going to the emergency room.",
+          "dur": 2.86,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9469
+        },
+        {
+          "start": 1655.06,
+          "end": 1659.08,
+          "text": "Everybody thinks you actually have some power only to be hamstrung to do the thing with power",
+          "dur": 4.02,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9466
+        },
+        {
+          "start": 824.26,
+          "end": 827.22,
+          "text": "And as much as people like J.D. Vance",
+          "dur": 2.96,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9465
+        },
+        {
+          "start": 305.78,
+          "end": 309.6,
+          "text": "what they are part of and I'll be honest with you my",
+          "dur": 3.82,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9464
+        },
+        {
+          "start": 811.86,
+          "end": 817.52,
+          "text": "Here is the solution set based on an understanding of public policy that we think can address it now",
+          "dur": 5.66,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9464
+        },
+        {
+          "start": 1817.46,
+          "end": 1821.24,
+          "text": "When we should be spending on schools and health care for our own kids, it doesn't make any sense",
+          "dur": 3.78,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9464
+        },
+        {
+          "start": 830.24,
+          "end": 833.54,
+          "text": "And in J.D.'s case, it's kind of confusing because it's confusing.",
+          "dur": 3.3,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9462
+        },
+        {
+          "start": 1102.14,
+          "end": 1104.76,
+          "text": "we have to differentiate between our foreign policy.",
+          "dur": 2.62,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.946
+        },
+        {
+          "start": 310.16,
+          "end": 315.86,
+          "text": "My family immigrated from a place where there is no democracy there's no chance to run for office. Did you come came from Egypt?",
+          "dur": 5.7,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.946
+        },
+        {
+          "start": 373.52,
+          "end": 377.36,
+          "text": "For the ability to do it because I don't take it for granted it action and of history",
+          "dur": 3.84,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9458
+        },
+        {
+          "start": 1571.86,
+          "end": 1576.02,
+          "text": "The next one that one taller and better-looking that one is nicer than you that one",
+          "dur": 4.16,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9458
+        },
+        {
+          "start": 860.58,
+          "end": 865.16,
+          "text": "So you hear it and then you sort of map it to the policy and then from there you're talking about the policy",
+          "dur": 4.58,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9456
+        },
+        {
+          "start": 223.38,
+          "end": 226.22,
+          "text": "So they talk amongst each other and they get louder and louder and louder.",
+          "dur": 2.84,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.9455
+        },
+        {
+          "start": 409.34,
+          "end": 412.7,
+          "text": "It really is about trying to reach to people and talk about",
+          "dur": 3.36,
+          "eid": "abdul_jonstewart_20261021",
+          "sim": 0.9452
+        },
+        {
+          "start": 1383.2,
+          "end": 1386.5,
+          "text": "it came to any of these issues back when we had INS.",
+          "dur": 3.3,
+          "eid": "abdul_morningjoe_20261105",
+          "sim": 0.945
+        }
+      ]
+    }
+  },
+  "recommended_tau": {
+    "scott_colom": 0.94,
+    "abdul_el_sayed": 0.915
+  }
+}

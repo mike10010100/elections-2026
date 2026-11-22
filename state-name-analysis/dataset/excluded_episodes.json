@@ -1,0 +1,263 @@
+{
+  "colom_freshair_20261119": {
+    "episode_id": "colom_freshair_20261119",
+    "candidate": "scott_colom",
+    "show": "Fresh Air",
+    "title": "'Mississippi is a reflection of the nation': Scott Colom's historic win",
+    "pub_date": "2026-11-19",
+    "duration_sec": 2714,
+    "category": "national_longform",
+    "period": "post_election",
+    "is_full_broadcast": false,
+    "matched_venue": "npr",
+    "audio_url": "https://prfx.byspotify.com/e/play.podtrac.com/npr-381444908/npr.simplecastaudio.com/49850946-31c1-4953-8129-0d718420c400/episodes/18c7a8cf-3232-45dd-876b-d1bfa4cbbd49/audio/128/default.mp3?awCollectionId=49850946-31c1-4953-8129-0d718420c400&awEpisodeId=18c7a8cf-3232-45dd-876b-d1bfa4cbbd49&feed=jBsBZBHh&t=podcast&e=nx-s1-6047463&p=381444908&d=2714&size=43434385",
+    "description": "Scott Colom's Senate victory in Mississippi surprised much of the country. A Democrat, he defeated the Republican incumbent in a deeply Republican state, becoming Mississippi's first Black U.S. senator in nearly 150 years. But for scholars Eddie Glaude and Kiese Laymon, who both grew up in Mississippi, the significance of this moment goes far beyond politics. Glaude says, \u201cTo me, this is bigger th",
+    "note": "Fresh Air 1-on-1",
+    "http_check": 206,
+    "reason": "no_candidate_interview_guest_panel_only"
+  },
+  "colom_morningjoe_20261113_6": {
+    "episode_id": "colom_morningjoe_20261113_6",
+    "candidate": "scott_colom",
+    "show": "Morning Joe",
+    "title": "GOP Midterm Fallout, Social Media Bubbles, and the NVIDIA AI Scandal",
+    "pub_date": "2026-11-13",
+    "reason": "pundit_only_no_interview",
+    "cluster_meta": [
+      {
+        "raw_start": 1738.5,
+        "raw_end": 1741.5,
+        "hit_windows": 1,
+        "approx_hit_sec": 1.5,
+        "max_sim": 0.9183,
+        "mean_sim": 0.9183,
+        "kept": false
+      },
+      {
+        "raw_start": 2104.5,
+        "raw_end": 2109.0,
+        "hit_windows": 2,
+        "approx_hit_sec": 3.0,
+        "max_sim": 0.9453,
+        "mean_sim": 0.9364,
+        "kept": false
+      }
+    ]
+  },
+  "colom_morningjoe_20261113_7": {
+    "episode_id": "colom_morningjoe_20261113_7",
+    "candidate": "scott_colom",
+    "show": "Morning Joe",
+    "title": "The big challenges facing Democrats in the majority",
+    "pub_date": "2026-11-13",
+    "reason": "pundit_only_no_interview",
+    "cluster_meta": [
+      {
+        "raw_start": 1770.0,
+        "raw_end": 1785.0,
+        "hit_windows": 2,
+        "approx_hit_sec": 3.0,
+        "max_sim": 0.9558,
+        "mean_sim": 0.9425,
+        "kept": false
+      },
+      {
+        "raw_start": 2367.0,
+        "raw_end": 2370.0,
+        "hit_windows": 1,
+        "approx_hit_sec": 1.5,
+        "max_sim": 0.9361,
+        "mean_sim": 0.9361,
+        "kept": false
+      }
+    ]
+  },
+  "colom_weekend_20261010_7": {
+    "episode_id": "colom_weekend_20261010_7",
+    "candidate": "scott_colom",
+    "show": "The Weekend",
+    "title": "GOP in \u2018Triage\u2019 Mode",
+    "pub_date": "2026-10-10",
+    "reason": "pundit_only_no_interview",
+    "cluster_meta": [
+      {
+        "raw_start": 832.5,
+        "raw_end": 835.5,
+        "hit_windows": 1,
+        "approx_hit_sec": 1.5,
+        "max_sim": 0.9174,
+        "mean_sim": 0.9174,
+        "kept": false
+      },
+      {
+        "raw_start": 1207.5,
+        "raw_end": 1318.5,
+        "hit_windows": 3,
+        "approx_hit_sec": 4.5,
+        "max_sim": 0.9225,
+        "mean_sim": 0.9182,
+        "kept": false
+      },
+      {
+        "raw_start": 2028.0,
+        "raw_end": 2031.0,
+        "hit_windows": 1,
+        "approx_hit_sec": 1.5,
+        "max_sim": 0.9148,
+        "mean_sim": 0.9148,
+        "kept": false
+      }
+    ]
+  },
+  "colom_weekend_20261010_9": {
+    "episode_id": "colom_weekend_20261010_9",
+    "candidate": "scott_colom",
+    "show": "The Weekend",
+    "title": "Trump Refuses Election Monitors",
+    "pub_date": "2026-10-10",
+    "reason": "pundit_only_no_interview",
+    "cluster_meta": [
+      {
+        "raw_start": 817.5,
+        "raw_end": 822.0,
+        "hit_windows": 2,
+        "approx_hit_sec": 3.0,
+        "max_sim": 0.9286,
+        "mean_sim": 0.9216,
+        "kept": false
+      },
+      {
+        "raw_start": 2085.0,
+        "raw_end": 2088.0,
+        "hit_windows": 1,
+        "approx_hit_sec": 1.5,
+        "max_sim": 0.9216,
+        "mean_sim": 0.9216,
+        "kept": false
+      }
+    ]
+  },
+  "colom_mtpnow_20261105": {
+    "episode_id": "colom_mtpnow_20261105",
+    "candidate": "scott_colom",
+    "show": "Meet the Press",
+    "title": "Meet the Press NOW \u2014 November 5",
+    "pub_date": "2026-11-05",
+    "duration_sec": 2991,
+    "category": "national_tv",
+    "period": "post_election",
+    "is_full_broadcast": true,
+    "matched_venue": "nbc_news",
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/pdst.fm/e/tracking.swap.fm/track/WyZndMW35x3t79tHlknd/nbcnews.simplecastaudio.com/acc0d0ed-fc97-4807-aaea-60b44af42bbf/episodes/daa6b8ac-1655-4225-9185-ec7dca2905b2/audio/128/default.mp3?aid=rss_feed&awCollectionId=acc0d0ed-fc97-4807-aaea-60b44af42bbf&awEpisodeId=daa6b8ac-1655-4225-9185-ec7dca2905b2&feed=yf3E6y7x",
+    "description": "Scott Colom (D) speaks with NBC News as his Mississippi Senate race remains too close to call. Rep.-elect Elaine Luria (D-Va.) says impeaching Trump a third time \"is not a priority,\" after previously serving on the January 6th committee. Stocks plummet amid concerns that Democratic control of Congress could hinder the AI boom. Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for infor",
+    "note": "MTP NOW Nov 5",
+    "http_check": 206,
+    "reason": "verified_candidate_speech_under_60s",
+    "verified_cand_speech_sec": 0,
+    "max_utt_sim": 0.9882
+  },
+  "abdul_playbook_20261016": {
+    "episode_id": "abdul_playbook_20261016",
+    "candidate": "abdul_el_sayed",
+    "show": "The Playbook Podcast",
+    "title": "Abdul El-Sayed's \u2018new coalition\u2019",
+    "pub_date": "2026-10-16",
+    "duration_sec": 1342,
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_url": "https://traffic.megaphone.fm/POLL2623210523.mp3",
+    "description": "In the final weeks toward the midterms, can Michigan\u2019s Abdul El-Sayed earn favor from some Black and Jewish voters who have felt skeptical of his campaign? Then the other stories animating Washington: Democratic Leader Hakeem Jeffries faces a potential revolt from new progressive candidates preparing for Washington, a new poll reveals the top concern of voters (hint: it's not the economy), and Kat",
+    "note": "POLITICO Playbook",
+    "http_check": 206,
+    "reason": "verified_candidate_speech_under_60s",
+    "verified_cand_speech_sec": 0,
+    "max_utt_sim": 0.9783
+  },
+  "colom_beat_20261121": {
+    "episode_id": "colom_beat_20261121",
+    "candidate": "scott_colom",
+    "show": "The Beat with Ari Melber",
+    "title": "Exclusive: Colom Twins On \u201cThe Beat\u201d After Mississippi Stunner; Trump Faces Blue Wave Reality, Says \u201cThey Won\u201d",
+    "pub_date": "2026-11-21",
+    "duration_sec": 2499,
+    "category": "national_tv",
+    "period": "post_election",
+    "is_full_broadcast": true,
+    "matched_venue": "ms_now_beat",
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/pdst.fm/e/injector.simplecastaudio.com/d41147e2-9082-47cd-909a-165d88b1e209/episodes/58edac08-e2ac-430d-b12f-a2e6cd4671b4/audio/128/default.mp3?aid=rss_feed&awCollectionId=d41147e2-9082-47cd-909a-165d88b1e209&awEpisodeId=58edac08-e2ac-430d-b12f-a2e6cd4671b4&feed=TA5rXVG0",
+    "description": "November 20, 2026; MS NOW's Ari Melber breaks down Trump and MAGA allies reacting to a Democratic blue wave, then interviews Mississippi Senator-elect Scott Colom with his twin brother Andrew about their historic campaign. The episode also features Rod Wave on music, emotion, and his new album \"Don\u2019t Look Down\". To listen to this show and other MS podcasts without ads, sign up for MS NOW Premium o",
+    "note": "Ari Melber interview w/ Colom twins",
+    "http_check": 206,
+    "reason": "joint_identical_twin_interview_andrew_colom"
+  },
+  "abdul_morningjoe_20260810": {
+    "episode_id": "abdul_morningjoe_20260810",
+    "candidate": "abdul_el_sayed",
+    "show": "Morning Joe",
+    "title": "El-Sayed dodges question on campaigning with Hasan Piker",
+    "pub_date": "2026-08-10",
+    "duration_sec": 2751,
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "morning_joe",
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/pdst.fm/e/injector.simplecastaudio.com/7619179a-b130-4a44-b441-20380e04af35/episodes/feca783b-7268-4bf9-b401-c3ccec9880d6/audio/128/default.mp3?aid=rss_feed&awCollectionId=7619179a-b130-4a44-b441-20380e04af35&awEpisodeId=feca783b-7268-4bf9-b401-c3ccec9880d6&feed=5EFCkAYb",
+    "description": "Aug. 10, 2026: 7 am \u2014 El-Sayed dodges question on campaigning with Hasan Piker To listen to this show and other MS podcasts without ads, sign up for MS NOW Premium on Apple Podcasts. Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information about our collection and use of personal data for advertising.",
+    "note": "Morning Joe Aug 10",
+    "http_check": 206,
+    "reason": "no_candidate_interview_mike_rogers_and_panel"
+  },
+  "abdul_macfarlane_20261019": {
+    "episode_id": "abdul_macfarlane_20261019",
+    "candidate": "abdul_el_sayed",
+    "show": "Scott MacFarlane Reports",
+    "title": "Abdul El-Sayed is Closing Strong in Michigan",
+    "pub_date": "2026-10-19",
+    "duration_sec": 644,
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "scott_macfarlane",
+    "audio_url": "https://pscrb.fm/rss/p/clrtpod.com/m/serve.castfire.com/audio/8630286/8630286_2026-08-31-185126.192.mp3?rssID=6771",
+    "description": "Scott MacFarlane covers the battleground race for U.S. Senate between Abdul El-Sayed and Mike Rogers in Michigan.",
+    "note": "Scott MacFarlane Reports",
+    "http_check": 206,
+    "reason": "no_candidate_interview_commentary_and_clips_only"
+  },
+  "colom_allin_20261112": {
+    "episode_id": "colom_allin_20261112",
+    "candidate": "scott_colom",
+    "show": "All In with Chris Hayes",
+    "title": "Scott Colom\u2019s Historic Mississippi Senate Win Reshapes the South",
+    "pub_date": "2026-11-12",
+    "duration_sec": 2943,
+    "category": "national_tv",
+    "period": "post_election",
+    "is_full_broadcast": true,
+    "matched_venue": "all_in",
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/pdst.fm/e/injector.simplecastaudio.com/24c4a3b6-ddfb-4d0f-8ec1-c3b138ade05b/episodes/cbd5c6b7-97c7-4b9f-8a81-02c51aac7e01/audio/128/default.mp3?aid=rss_feed&awCollectionId=24c4a3b6-ddfb-4d0f-8ec1-c3b138ade05b&awEpisodeId=cbd5c6b7-97c7-4b9f-8a81-02c51aac7e01&feed=K5Wu8vub",
+    "description": "November 11, 2026; 8pm: Chris Hayes covers the AP call in Mississippi\u2019s Senate race.",
+    "note": "All In with Chris Hayes Nov 12",
+    "http_check": 206,
+    "reason": "no_candidate_interview_victory_clip_and_rally_panel"
+  },
+  "colom_psaki_20261112": {
+    "episode_id": "colom_psaki_20261112",
+    "candidate": "scott_colom",
+    "show": "The Briefing with Jen Psaki",
+    "title": "Scott Colom\u2019s Mississippi Senate upset changes the political playbook in the South",
+    "pub_date": "2026-11-12",
+    "duration_sec": 2508,
+    "category": "national_tv",
+    "period": "post_election",
+    "is_full_broadcast": true,
+    "matched_venue": "jen_psaki",
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/injector.simplecastaudio.com/baa4ace2-8807-480d-a25a-3d9f92a5abf1/episodes/8b65fb79-12fe-4798-ae94-0e775152be82/audio/128/default.mp3?aid=rss_feed&awCollectionId=baa4ace2-8807-480d-a25a-3d9f92a5abf1&awEpisodeId=8b65fb79-12fe-4798-ae94-0e775152be82&feed=vA1gc2kQ",
+    "description": "November 11, 2026; 9pm: Jen Psaki breaks down Democrat Scott Colom\u2019s stunning Mississippi Senate victory.",
+    "note": "Briefing with Jen Psaki Nov 12",
+    "http_check": 206,
+    "reason": "no_candidate_interview_warnock_and_reporter_panel"
+  }
+}

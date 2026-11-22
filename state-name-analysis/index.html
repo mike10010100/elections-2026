@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scott Colom ("Mississippi") vs. Abdul El-Sayed ("Michigan") — State-Name Evaluation Dataset</title>
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --card: #FFFFFF;
+      --border: #E2DCD2;
+      --text: #1A1D21;
+      --muted: #5A626D;
+      --colom: #1D5B79;
+      --colom-bg: #EAF3F7;
+      --abdul: #C8553D;
+      --abdul-bg: #FCECE8;
+      --rogers: #4A5568;
+      --accent-soft: #F3EFE6;
+      --warn-bg: #FFF7E6;
+      --warn-text: #8A5A00;
+      --ok-bg: #E6F4EA;
+      --ok-text: #137333;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--colom); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1320px; margin: 0 auto; padding: 24px 20px 60px; }
+
+    /* Header */
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .topbar-links { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    header.hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.7rem; line-height: 1.25; letter-spacing: -0.015em; }
+    .dek { margin: 0 0 14px; color: var(--muted); font-size: 0.98rem; max-width: 980px; }
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .downloads span.lbl { font-weight: 600; color: var(--text); margin-right: 4px; }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .dl-btn:hover { background: #EAE4D8; text-decoration: none; }
+
+    /* KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      border-top: 4px solid var(--border);
+    }
+    .kpi-card.colom { border-top-color: var(--colom); }
+    .kpi-card.abdul { border-top-color: var(--abdul); }
+    .kpi-card.neutral { border-top-color: #6B7280; }
+    .kpi-title { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+    .kpi-val { font-size: 1.85rem; font-weight: 800; margin: 4px 0 4px; }
+    .kpi-card.colom .kpi-val { color: var(--colom); }
+    .kpi-card.abdul .kpi-val { color: var(--abdul); }
+    .kpi-sub { font-size: 0.85rem; color: var(--muted); }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-btn:hover { background: var(--accent-soft); }
+    .tab-btn.active {
+      background: var(--text);
+      color: #FFFFFF;
+      border-color: var(--text);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Cards & Grids */
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+    .section-card h2 { margin: 0 0 8px; font-size: 1.2rem; }
+    .section-card p.lead { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; }
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 600px) {
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+    .chart-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .chart-box h3 { margin: 0; font-size: 0.98rem; }
+    .chart-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      cursor: zoom-in;
+      border: 1px solid #EFECE6;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 16px;
+    }
+
+    /* Controls / Filters */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .controls label {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .controls select, .controls input[type="search"] {
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: var(--text);
+      font-size: 0.88rem;
+      min-width: 150px;
+    }
+    .controls input[type="search"] { min-width: 240px; }
+    .check-pill {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center;
+      gap: 6px !important;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-top: 18px;
+      cursor: pointer;
+      color: var(--text) !important;
+    }
+    .count-note { font-size: 0.86rem; color: var(--muted); margin-bottom: 10px; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #EFECE6; vertical-align: top; }
+    th {
+      background: #F6F3EC;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    th.sortable { cursor: pointer; user-select: none; }
+    th.sortable:hover { color: var(--text); background: #EDE8DC; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    tr:hover td { background: #FCFBF8; }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge.colom { background: var(--colom-bg); color: var(--colom); }
+    .badge.abdul { background: var(--abdul-bg); color: var(--abdul); }
+    .badge.adj-add { background: var(--ok-bg); color: var(--ok-text); }
+    .badge.adj-rem { background: var(--warn-bg); color: var(--warn-text); }
+    .badge.muted { background: #F1EFEA; color: var(--muted); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.79rem; }
+    mark.term { background: #FDE68A; color: #1A1D21; padding: 0 3px; border-radius: 3px; font-weight: 700; }
+
+    /* Pagination */
+    .pager {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+      font-size: 0.86rem;
+    }
+    .pager button {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .pager button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    /* Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 22, 27, 0.85);
+      z-index: 999;
+      padding: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.open { display: flex; }
+    .modal img {
+      max-width: 96vw;
+      max-height: 92vh;
+      border-radius: 8px;
+      background: var(--bg);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    }
+    .modal-close {
+      position: fixed;
+      top: 16px;
+      right: 22px;
+      background: #FFFFFF;
+      border: none;
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .err-box {
+      background: #FEE2E2;
+      color: #991B1B;
+      border: 1px solid #FCA5A5;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-links">
+        <a href="../">&larr; Elections 2026 Explorer</a>
+        <span>|</span>
+        <a href="https://github.com/mike10010100/elections-2026/tree/main/state-name-analysis" target="_blank" rel="noopener">GitHub Folder &amp; Scripts</a>
+        <span>|</span>
+        <a href="https://bsky.app/profile/danahoule.bsky.social/post/3n2uo3feyf22w" target="_blank" rel="noopener">Original Question (@danahoule.bsky.social)</a>
+      </div>
+      <div id="buildMeta" class="mono">Loading dataset...</div>
+    </div>
+
+    <header class="hero">
+      <h1>Scott Colom ("Mississippi") vs. Abdul El-Sayed ("Michigan"): Evaluation Dataset</h1>
+      <p class="dek">
+        Speaker-verified empirical audit of 84 public 2026 broadcast TV, public radio, and podcast interviews (16.78 verified candidate speaking hours; 231,982 spoken words), plus 5 official Rev.com verbatim speaker transcripts and a complete manual audit of all 165 acoustically borderline turns.
+      </p>
+      <div class="downloads">
+        <span class="lbl">Direct Downloads:</span>
+        <a class="dl-btn" href="./dataset/appearances_summary.csv" download>appearances_summary.csv</a>
+        <a class="dl-btn" href="./dataset/mentions_audit.csv" download>mentions_audit.csv</a>
+        <a class="dl-btn" href="./dataset/summary_stats.json" download>summary_stats.json</a>
+        <a class="dl-btn" href="./dataset/mention_adjudications.json" download>mention_adjudications.json</a>
+        <a class="dl-btn" href="./dataset/excluded_episodes.json" download>excluded_episodes.json</a>
+        <a class="dl-btn" href="./dataset/rss_corpus_manifest.json" download>rss_corpus_manifest.json</a>
+      </div>
+    </header>
+
+    <div id="errBox" class="err-box"></div>
+
+    <section class="kpi-grid" id="kpiGrid">
+      <div class="kpi-card colom"><div class="kpi-title">Scott Colom (D-MS)</div><div class="kpi-val">—</div><div class="kpi-sub">Loading...</div></div>
+      <div class="kpi-card abdul"><div class="kpi-title">Abdul El-Sayed (D-MI)</div><div class="kpi-val">—</div><div class="kpi-sub">Loading...</div></div>
+      <div class="kpi-card neutral"><div class="kpi-title">Rate Ratio (Cluster Bootstrap)</div><div class="kpi-val">—</div><div class="kpi-sub">Loading...</div></div>
+      <div class="kpi-card neutral"><div class="kpi-title">Sub-State Geography Check</div><div class="kpi-val">—</div><div class="kpi-sub">Loading...</div></div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="overview">Charts &amp; Summary</button>
+      <button class="tab-btn" data-tab="interviews">84 Interviews Explorer</button>
+      <button class="tab-btn" data-tab="mentions">1,137 Mentions Audit</button>
+      <button class="tab-btn" data-tab="adjudications">70 Adjudications &amp; 12 Exclusions</button>
+    </nav>
+
+    <!-- Tab 1: Charts & Summary -->
+    <section id="tab-overview" class="tab-panel active">
+      <div class="charts-grid">
+        <div class="chart-box">
+          <h3>Chart 1 · Headline Rates, Venue Category &amp; Period Breakdown</h3>
+          <img src="./charts/chart_1_headline_comparison.png" alt="Headline comparison chart" data-zoom />
+        </div>
+        <div class="chart-box">
+          <h3>Chart 2 · Every Appearance Ranked (All 84 Interviews)</h3>
+          <img src="./charts/chart_2_appearance_distribution.png" alt="Every appearance ranked chart" data-zoom />
+        </div>
+        <div class="chart-box">
+          <h3>Chart 3 · 9 Matched Shared Shows &amp; Rhetorical Vocabulary</h3>
+          <img src="./charts/chart_3_matched_venues_and_context.png" alt="Matched shows and vocabulary chart" data-zoom />
+        </div>
+        <div class="chart-box">
+          <h3>Chart 4 · Sub-State Place Names &amp; Official Rev.com Events</h3>
+          <img src="./charts/chart_4_substate_and_rev_forums.png" alt="Sub-state places and Rev.com verbatim events chart" data-zoom />
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Head-to-Head Across All 9 Matched Shared Venues</h2>
+        <p class="lead">Restricting strictly to shows where both candidates sat for verified interviews.</p>
+        <div class="table-wrap">
+          <table id="tblMatched">
+            <thead>
+              <tr>
+                <th>Shared Show / Format</th>
+                <th class="num">Colom n</th>
+                <th class="num">Colom / 1k Words</th>
+                <th class="num">Colom / Speaking Hr</th>
+                <th class="num">El-Sayed n</th>
+                <th class="num">El-Sayed / 1k Words</th>
+                <th class="num">El-Sayed / Speaking Hr</th>
+                <th class="num">Per-1k Ratio</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="section-card">
+          <h2>5 Official Rev.com Verbatim Events</h2>
+          <p class="lead">Unedited verbatim speaker transcripts, including GOP opponent Mike Rogers on the same Oct. 21 Detroit Economic Club Q&amp;A stage.</p>
+          <div class="table-wrap">
+            <table id="tblRev">
+              <thead>
+                <tr>
+                  <th>Event (Official Transcript Link)</th>
+                  <th>Speaker</th>
+                  <th class="num">Words</th>
+                  <th class="num">State / 1k</th>
+                  <th class="num">Sub-State / 1k</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <h2>Top Unambiguous In-State Places (RSS Corpus)</h2>
+          <p class="lead">Strictly excludes phrases containing the state name itself (e.g., "University of Michigan", "Mississippi Gulf Coast") plus person names like "Jesse Jackson".</p>
+          <div class="table-wrap">
+            <table id="tblSubGeo">
+              <thead>
+                <tr>
+                  <th class="num">#</th>
+                  <th>Colom — Top MS Places</th>
+                  <th class="num">Count</th>
+                  <th>El-Sayed — Top MI Places</th>
+                  <th class="num">Count</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: 84 Interviews Explorer -->
+    <section id="tab-interviews" class="tab-panel">
+      <div class="section-card">
+        <h2>Speaker-Verified Broadcast &amp; Podcast Interviews</h2>
+        <p class="lead">Click column headers to sort. Audio links open the underlying RSS MP3 feed directly from <code>rss_corpus_manifest.json</code>.</p>
+        <div class="controls">
+          <label>Candidate
+            <select id="fIntCand">
+              <option value="all">All Candidates (84)</option>
+              <option value="scott_colom">Scott Colom (39)</option>
+              <option value="abdul_el_sayed">Abdul El-Sayed (45)</option>
+            </select>
+          </label>
+          <label>Venue Category
+            <select id="fIntCat">
+              <option value="all">All Categories</option>
+              <option value="national_tv">National TV</option>
+              <option value="national_longform">National Long-Form</option>
+              <option value="local_in_state">Local / In-State</option>
+            </select>
+          </label>
+          <label>Period
+            <select id="fIntPer">
+              <option value="all">All Periods</option>
+              <option value="campaign">Campaign (Jan – Nov 3)</option>
+              <option value="post_election">Post-Election (Nov 4 – 21)</option>
+            </select>
+          </label>
+          <label>Search Show, Title or Episode ID
+            <input type="search" id="fIntSearch" placeholder="e.g. Meet the Press, Breakfast Club, 11-11..." />
+          </label>
+        </div>
+        <div id="intCount" class="count-note"></div>
+        <div class="table-wrap">
+          <table id="tblInterviews">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="pub_date">Date</th>
+                <th>Candidate</th>
+                <th class="sortable" data-sort="show">Show &amp; Episode</th>
+                <th>Category</th>
+                <th class="sortable num" data-sort="cand_speaking_sec">Speak Min</th>
+                <th class="sortable num" data-sort="cand_words">Words</th>
+                <th class="sortable num" data-sort="raw_acoustic_strict_mentions">Raw Strict</th>
+                <th class="sortable num" data-sort="strict_mentions">Adj Strict</th>
+                <th class="sortable num" data-sort="broad_mentions">Broad</th>
+                <th class="sortable num" data-sort="substate_geo_mentions">Sub-Geo</th>
+                <th class="sortable num" data-sort="rate_per_speaking_hr_strict">Strict / Hr</th>
+                <th class="sortable num" data-sort="rate_per_1k_words_strict">Strict / 1k</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: 1,137 Mentions Audit -->
+    <section id="tab-mentions" class="tab-panel">
+      <div class="section-card">
+        <h2>Timestamped Candidate State-Name Mentions (Full 1,137-Row Audit)</h2>
+        <p class="lead">Every attributed candidate mention of "Mississippi/Mississippians" (783) or "Michigan/Michiganders" (354), with WavLM cosine scores and verbatim Whisper context.</p>
+        <div class="controls">
+          <label>Candidate
+            <select id="fMentCand">
+              <option value="all">All Candidates</option>
+              <option value="scott_colom">Scott Colom</option>
+              <option value="abdul_el_sayed">Abdul El-Sayed</option>
+            </select>
+          </label>
+          <label>Term Scope
+            <select id="fMentStrict">
+              <option value="all">All (Strict + Demonyms)</option>
+              <option value="strict">Strict State Name Only</option>
+              <option value="demonym">Demonyms Only (Mississippian/Michigander)</option>
+            </select>
+          </label>
+          <label>Search Context or Show
+            <input type="search" id="fMentSearch" placeholder="Filter transcript quote, show, or episode_id..." />
+          </label>
+          <label class="check-pill">
+            <input type="checkbox" id="fMentAdjOnly" /> Restored via Adjudication Only
+          </label>
+          <label class="check-pill">
+            <input type="checkbox" id="fMentBorderOnly" /> Acoustically Borderline Only
+          </label>
+        </div>
+        <div id="mentCount" class="count-note"></div>
+        <div class="table-wrap">
+          <table id="tblMentions">
+            <thead>
+              <tr>
+                <th>Date &amp; Show</th>
+                <th>Candidate</th>
+                <th class="num">Time</th>
+                <th>Term</th>
+                <th class="num">Utt Sim</th>
+                <th class="num">Loc Sim</th>
+                <th>Status</th>
+                <th>Transcript Context</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="pager">
+          <div>
+            <button id="mentPrev">&larr; Prev</button>
+            <button id="mentNext">Next &rarr;</button>
+          </div>
+          <div id="mentPageInfo"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: 70 Adjudications & 12 Exclusions -->
+    <section id="tab-adjudications" class="tab-panel">
+      <div class="two-col">
+        <div class="section-card">
+          <h2>Raw Acoustic vs. Manually Adjudicated Sensitivity</h2>
+          <p class="lead">All 165 acoustically borderline/disagreeing mentions were reviewed against ±18s transcript context. Headline ratio stays virtually identical.</p>
+          <div id="adjStatsBox" class="table-wrap"></div>
+        </div>
+        <div class="section-card">
+          <h2>Excluded Manifest Entries (12 Non-Candidate / Ambiguous Shows)</h2>
+          <p class="lead">Panel commentary without candidate interviews, sub-60s clips, and identical-twin joint appearance.</p>
+          <div class="table-wrap">
+            <table id="tblExcluded">
+              <thead>
+                <tr>
+                  <th>Date &amp; Show</th>
+                  <th>Candidate</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>All 70 Context-Verified Borderline Adjudications</h2>
+        <p class="lead">59 missed candidate turns restored (40 Colom, 19 El-Sayed) and 11 leaked host/panelist lines removed (9 Colom, 2 El-Sayed).</p>
+        <div class="controls">
+          <label>Decision Type
+            <select id="fAdjType">
+              <option value="all">All Flips (70)</option>
+              <option value="flip_to_candidate">Restored to Candidate (59)</option>
+              <option value="flip_to_non_candidate">Removed as Host/Panelist Leak (11)</option>
+            </select>
+          </label>
+          <label>Search Key or Reason
+            <input type="search" id="fAdjSearch" placeholder="Filter episode, host, quote..." />
+          </label>
+        </div>
+        <div id="adjCount" class="count-note"></div>
+        <div class="table-wrap">
+          <table id="tblAdj">
+            <thead>
+              <tr>
+                <th>Mention Key (Episode | Sec | Term)</th>
+                <th>Decision</th>
+                <th>Verified Context Evidence</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="imgModal" class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close zoomed image">&times;</button>
+    <img id="modalImg" src="" alt="Zoomed chart preview" />
+  </div>
+
+  <script>
+    const CAT_LABELS = {
+      national_tv: "National TV",
+      national_longform: "National Long-Form",
+      local_in_state: "Local / In-State",
+    };
+
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => (
+      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+    ));
+
+    const candBadge = (c) => c === "scott_colom"
+      ? '<span class="badge colom">Scott Colom</span>'
+      : '<span class="badge abdul">Abdul El-Sayed</span>';
+
+    const state = {
+      summary: null,
+      apps: [],
+      mentions: [],
+      adj: {},
+      excluded: {},
+      manifestMap: {},
+      intSortCol: "pub_date",
+      intSortDir: -1,
+      mentPage: 0,
+      mentPageSize: 50,
+    };
+
+    // Tabs
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    // Zoom modal
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    document.querySelectorAll("img[data-zoom]").forEach((img) => {
+      img.addEventListener("click", () => {
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        modal.classList.add("open");
+      });
+    });
+    const closeModal = () => modal.classList.remove("open");
+    document.getElementById("modalClose").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    function highlightContext(ctx, term) {
+      const safe = esc(ctx);
+      const t = esc(term).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      if (!t) return safe;
+      return safe.replace(new RegExp(`(${t})`, "ig"), '<mark class="term">$1</mark>');
+    }
+
+    function renderOverview() {
+      const s = state.summary;
+      const ovc = s.overall.scott_colom;
+      const ova = s.overall.abdul_el_sayed;
+      const cmp = s.comparison_speaking_hr;
+      const sg = s.substate_geography;
+
+      document.getElementById("buildMeta").textContent =
+        `N=${ovc.n + ova.n} interviews · 1,137 mentions · ${s.adjudications_applied} adjudications`;
+
+      document.getElementById("kpiGrid").innerHTML = `
+        <div class="kpi-card colom">
+          <div class="kpi-title">Scott Colom (D-MS) · "Mississippi"</div>
+          <div class="kpi-val">${ovc.rate_speaking_hr.toFixed(1)}/hr</div>
+          <div class="kpi-sub">95% CI [${ovc.rate_speaking_hr_ci95[0].toFixed(1)}, ${ovc.rate_speaking_hr_ci95[1].toFixed(1)}] · <strong>${ovc.strict_mentions}</strong> strict (${ovc.broad_mentions} broad) across ${ovc.n} shows (${ovc.speaking_hours.toFixed(2)} speak hrs) · ${ovc.rate_per_1k_words.toFixed(2)}/1k words</div>
+        </div>
+        <div class="kpi-card abdul">
+          <div class="kpi-title">Abdul El-Sayed (D-MI) · "Michigan"</div>
+          <div class="kpi-val">${ova.rate_speaking_hr.toFixed(1)}/hr</div>
+          <div class="kpi-sub">95% CI [${ova.rate_speaking_hr_ci95[0].toFixed(1)}, ${ova.rate_speaking_hr_ci95[1].toFixed(1)}] · <strong>${ova.strict_mentions}</strong> strict (${ova.broad_mentions} broad) across ${ova.n} shows (${ova.speaking_hours.toFixed(2)} speak hrs) · ${ova.rate_per_1k_words.toFixed(2)}/1k words</div>
+        </div>
+        <div class="kpi-card neutral">
+          <div class="kpi-title">Colom / El-Sayed Rate Ratio</div>
+          <div class="kpi-val">${cmp.ratio_obs.toFixed(2)}&times;</div>
+          <div class="kpi-sub">95% CI [${cmp.ratio_ci95[0].toFixed(2)}&times;, ${cmp.ratio_ci95[1].toFixed(2)}&times;] · perm. p = ${cmp.perm_p_value_speaking_hr.toFixed(4)} · Raw pre-adjudication ratio: ${s.raw_vs_adjudicated.comparison.raw_ratio_speaking_hr.toFixed(2)}&times; (${s.raw_vs_adjudicated.scott_colom.raw_rate_speaking_hr_strict.toFixed(1)} vs ${s.raw_vs_adjudicated.abdul_el_sayed.raw_rate_speaking_hr_strict.toFixed(1)}/hr)</div>
+        </div>
+        <div class="kpi-card neutral">
+          <div class="kpi-title">Sub-State Cities &amp; Regions</div>
+          <div class="kpi-val">${sg.scott_colom.rate_substate_speaking_hr.toFixed(1)} vs ${sg.abdul_el_sayed.rate_substate_speaking_hr.toFixed(1)}/hr</div>
+          <div class="kpi-sub">Colom cites MS places ${sg.comparison_substate_hr.ratio_obs.toFixed(2)}&times; more often (${sg.scott_colom.substate_mentions} vs ${sg.abdul_el_sayed.substate_mentions}) · Combined state+place localism: <strong>${sg.scott_colom.rate_combined_speaking_hr.toFixed(1)} vs ${sg.abdul_el_sayed.rate_combined_speaking_hr.toFixed(1)}/hr</strong> (${sg.comparison_combined_hr.ratio_obs.toFixed(2)}&times;)</div>
+        </div>
+      `;
+
+      // Matched venues
+      const mvRows = Object.entries(s.matched_venues).sort((a, b) =>
+        b[1].scott_colom.rate_per_1k_words - a[1].scott_colom.rate_per_1k_words
+      );
+      document.querySelector("#tblMatched tbody").innerHTML = mvRows.map(([v, d]) => {
+        const c = d.scott_colom, a = d.abdul_el_sayed;
+        const ratio = a.rate_per_1k_words > 0 ? `${(c.rate_per_1k_words / a.rate_per_1k_words).toFixed(2)}&times;` : "&infin; (0)";
+        return `<tr>
+          <td><strong>${esc(v)}</strong></td>
+          <td class="num">${c.n}</td>
+          <td class="num"><strong>${c.rate_per_1k_words.toFixed(2)}</strong></td>
+          <td class="num">${c.rate_speaking_hr.toFixed(1)}/hr</td>
+          <td class="num">${a.n}</td>
+          <td class="num"><strong>${a.rate_per_1k_words.toFixed(2)}</strong></td>
+          <td class="num">${a.rate_speaking_hr.toFixed(1)}/hr</td>
+          <td class="num"><strong>${ratio}</strong></td>
+        </tr>`;
+      }).join("");
+
+      // Rev.com 5 events
+      const revOrder = ["colom_victory", "abdul_victory", "rogers_detroit_forum", "abdul_detroit_forum", "abdul_primary_presser"];
+      document.querySelector("#tblRev tbody").innerHTML = revOrder.filter((k) => s.rev_all_transcripts[k]).map((k) => {
+        const r = s.rev_all_transcripts[k];
+        return `<tr>
+          <td><a href="${esc(r.url)}" target="_blank" rel="noopener"><strong>${esc(r.label)}</strong></a></td>
+          <td>${esc(r.speaker)}</td>
+          <td class="num">${r.word_count.toLocaleString()}</td>
+          <td class="num"><strong>${r.per_1k_words_strict.toFixed(2)}</strong> (${r.strict_mentions})</td>
+          <td class="num">${r.per_1k_words_substate_geo.toFixed(2)} (${r.substate_geo_mentions})</td>
+        </tr>`;
+      }).join("");
+
+      // Sub-state top 15
+      const cp = sg.scott_colom.top_places;
+      const ap = sg.abdul_el_sayed.top_places;
+      const nRows = Math.max(cp.length, ap.length);
+      let subHtml = "";
+      for (let i = 0; i < nRows; i++) {
+        const cItem = cp[i] || { place: "—", count: 0 };
+        const aItem = ap[i] || { place: "—", count: 0 };
+        subHtml += `<tr>
+          <td class="num">${i + 1}</td>
+          <td style="text-transform:capitalize">${esc(cItem.place)}</td>
+          <td class="num"><strong>${cItem.count}</strong></td>
+          <td style="text-transform:capitalize">${esc(aItem.place)}</td>
+          <td class="num"><strong>${aItem.count}</strong></td>
+        </tr>`;
+      }
+      document.querySelector("#tblSubGeo tbody").innerHTML = subHtml;
+    }
+
+    function renderInterviews() {
+      const cand = document.getElementById("fIntCand").value;
+      const cat = document.getElementById("fIntCat").value;
+      const per = document.getElementById("fIntPer").value;
+      const q = document.getElementById("fIntSearch").value.trim().toLowerCase();
+
+      const filtered = state.apps.filter((r) => {
+        if (cand !== "all" && r.candidate !== cand) return false;
+        if (cat !== "all" && r.category !== cat) return false;
+        if (per !== "all" && r.period !== per) return false;
+        if (q && !(r.show + " " + r.title + " " + r.episode_id).toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      const col = state.intSortCol;
+      const dir = state.intSortDir;
+      filtered.sort((a, b) => {
+        const va = a[col], vb = b[col];
+        if (typeof va === "number" && typeof vb === "number") return (va - vb) * dir;
+        return String(va).localeCompare(String(vb)) * dir;
+      });
+
+      const totSpeakMin = filtered.reduce((acc, r) => acc + r.cand_speaking_sec / 60, 0);
+      const totStrict = filtered.reduce((acc, r) => acc + r.strict_mentions, 0);
+      document.getElementById("intCount").textContent =
+        `Showing ${filtered.length} of ${state.apps.length} interviews · ${(totSpeakMin / 60).toFixed(2)} verified speaking hrs · ${totStrict} strict state mentions`;
+
+      document.querySelector("#tblInterviews tbody").innerHTML = filtered.map((r) => {
+        const mItem = state.manifestMap[r.episode_id];
+        const link = mItem && mItem.audio_url
+          ? `<a href="${esc(mItem.audio_url)}" target="_blank" rel="noopener">RSS Audio</a>`
+          : "—";
+        return `<tr>
+          <td class="mono">${esc(r.pub_date)}</td>
+          <td>${candBadge(r.candidate)}</td>
+          <td><strong>${esc(r.show)}</strong><div style="font-size:0.78rem;color:var(--muted)">${esc(r.title)} <span class="mono">(${esc(r.episode_id)})</span></div></td>
+          <td><span class="badge muted">${esc(CAT_LABELS[r.category] || r.category)}</span></td>
+          <td class="num">${(r.cand_speaking_sec / 60).toFixed(1)}</td>
+          <td class="num">${r.cand_words.toLocaleString()}</td>
+          <td class="num">${r.raw_acoustic_strict_mentions}</td>
+          <td class="num"><strong>${r.strict_mentions}</strong></td>
+          <td class="num">${r.broad_mentions}</td>
+          <td class="num">${r.substate_geo_mentions}</td>
+          <td class="num"><strong>${r.rate_per_speaking_hr_strict.toFixed(1)}</strong></td>
+          <td class="num">${r.rate_per_1k_words_strict.toFixed(2)}</td>
+          <td>${link}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    function renderMentions() {
+      const cand = document.getElementById("fMentCand").value;
+      const strictFilter = document.getElementById("fMentStrict").value;
+      const adjOnly = document.getElementById("fMentAdjOnly").checked;
+      const borderOnly = document.getElementById("fMentBorderOnly").checked;
+      const q = document.getElementById("fMentSearch").value.trim().toLowerCase();
+
+      const filtered = state.mentions.filter((m) => {
+        if (cand !== "all" && m.candidate !== cand) return false;
+        if (strictFilter === "strict" && !m.is_strict) return false;
+        if (strictFilter === "demonym" && m.is_strict) return false;
+        if (adjOnly && !m.adjudicated) return false;
+        if (borderOnly && !m.borderline_or_disagree) return false;
+        if (q && !(m.context + " " + m.show + " " + m.episode_id + " " + m.matched_term).toLowerCase().includes(q)) return false;
+        return true;
+      });
+
+      const totalPages = Math.max(1, Math.ceil(filtered.length / state.mentPageSize));
+      if (state.mentPage >= totalPages) state.mentPage = totalPages - 1;
+      const start = state.mentPage * state.mentPageSize;
+      const slice = filtered.slice(start, start + state.mentPageSize);
+
+      document.getElementById("mentCount").textContent =
+        `Showing ${filtered.length === 0 ? 0 : start + 1}–${Math.min(start + state.mentPageSize, filtered.length)} of ${filtered.length} matching mentions (1,137 total candidate mentions)`;
+      document.getElementById("mentPageInfo").textContent = `Page ${state.mentPage + 1} of ${totalPages}`;
+      document.getElementById("mentPrev").disabled = state.mentPage <= 0;
+      document.getElementById("mentNext").disabled = state.mentPage >= totalPages - 1;
+
+      document.querySelector("#tblMentions tbody").innerHTML = slice.map((m) => {
+        const badges = [];
+        if (m.adjudicated) {
+          badges.push(`<span class="badge adj-add" title="${esc(m.adjudication_reason)}">Adjudicated +</span>`);
+        } else if (m.borderline_or_disagree) {
+          badges.push('<span class="badge muted">Borderline OK</span>');
+        } else {
+          badges.push('<span class="badge muted">Acoustic</span>');
+        }
+        return `<tr>
+          <td><div class="mono">${esc(m.pub_date)}</div><strong>${esc(m.show)}</strong><div class="mono" style="color:var(--muted)">${esc(m.episode_id)}</div></td>
+          <td>${candBadge(m.candidate)}</td>
+          <td class="num mono">${esc(m.timestamp_mmss)}</td>
+          <td><strong>${esc(m.matched_term)}</strong><div style="font-size:0.74rem;color:var(--muted)">${m.is_strict ? "strict" : "demonym"}</div></td>
+          <td class="num mono">${m.sim_utterance.toFixed(3)}</td>
+          <td class="num mono">${m.sim_local.toFixed(3)}</td>
+          <td>${badges.join(" ")}</td>
+          <td>${highlightContext(m.context, m.matched_term)}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    function renderAdjudications() {
+      const rva = state.summary.raw_vs_adjudicated;
+      const c = rva.scott_colom, a = rva.abdul_el_sayed;
+      document.getElementById("adjStatsBox").innerHTML = `
+        <table>
+          <thead><tr><th>Candidate</th><th class="num">Raw Strict (/hr)</th><th class="num">+Restored</th><th class="num">-Leaks</th><th class="num">Adjudicated Strict (/hr)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>${candBadge("scott_colom")}</td>
+              <td class="num">${c.raw_strict_mentions} (${c.raw_rate_speaking_hr_strict.toFixed(2)}/hr)</td>
+              <td class="num">+${c.flipped_to_candidate_strict} (${c.flipped_to_candidate_broad} broad)</td>
+              <td class="num">-${c.flipped_to_non_candidate_strict}</td>
+              <td class="num"><strong>${c.adj_strict_mentions} (${c.adj_rate_speaking_hr_strict.toFixed(2)}/hr)</strong></td>
+            </tr>
+            <tr>
+              <td>${candBadge("abdul_el_sayed")}</td>
+              <td class="num">${a.raw_strict_mentions} (${a.raw_rate_speaking_hr_strict.toFixed(2)}/hr)</td>
+              <td class="num">+${a.flipped_to_candidate_strict} (${a.flipped_to_candidate_broad} broad)</td>
+              <td class="num">-${a.flipped_to_non_candidate_strict}</td>
+              <td class="num"><strong>${a.adj_strict_mentions} (${a.adj_rate_speaking_hr_strict.toFixed(2)}/hr)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+
+      document.querySelector("#tblExcluded tbody").innerHTML = Object.values(state.excluded).map((ev) => `
+        <tr>
+          <td><div class="mono">${esc(ev.pub_date)}</div><strong>${esc(ev.show)}</strong><div class="mono" style="color:var(--muted)">${esc(ev.episode_id)}</div></td>
+          <td>${candBadge(ev.candidate)}</td>
+          <td><span class="mono">${esc(ev.reason)}</span></td>
+        </tr>
+      `).join("");
+
+      const typeF = document.getElementById("fAdjType").value;
+      const q = document.getElementById("fAdjSearch").value.trim().toLowerCase();
+      const entries = Object.entries(state.adj).filter(([k, v]) => {
+        if (typeF !== "all" && v.decision !== typeF) return false;
+        if (q && !(k + " " + v.reason).toLowerCase().includes(q)) return false;
+        return true;
+      });
+      document.getElementById("adjCount").textContent = `Showing ${entries.length} of ${Object.keys(state.adj).length} manual adjudications`;
+      document.querySelector("#tblAdj tbody").innerHTML = entries.map(([k, v]) => {
+        const b = v.decision === "flip_to_candidate"
+          ? '<span class="badge adj-add">Restored to Candidate</span>'
+          : '<span class="badge adj-rem">Removed Host/Panel Leak</span>';
+        return `<tr>
+          <td class="mono">${esc(k)}</td>
+          <td>${b}</td>
+          <td>${esc(v.reason)}</td>
+        </tr>`;
+      }).join("");
+    }
+
+    // Bind sorting & filters
+    document.querySelectorAll("#tblInterviews th.sortable").forEach((th) => {
+      th.addEventListener("click", () => {
+        const col = th.dataset.sort;
+        if (state.intSortCol === col) state.intSortDir *= -1;
+        else { state.intSortCol = col; state.intSortDir = -1; }
+        renderInterviews();
+      });
+    });
+    ["fIntCand", "fIntCat", "fIntPer"].forEach((id) =>
+      document.getElementById(id).addEventListener("change", renderInterviews)
+    );
+    document.getElementById("fIntSearch").addEventListener("input", renderInterviews);
+
+    ["fMentCand", "fMentStrict", "fMentAdjOnly", "fMentBorderOnly"].forEach((id) =>
+      document.getElementById(id).addEventListener("change", () => { state.mentPage = 0; renderMentions(); })
+    );
+    document.getElementById("fMentSearch").addEventListener("input", () => { state.mentPage = 0; renderMentions(); });
+    document.getElementById("mentPrev").addEventListener("click", () => { state.mentPage--; renderMentions(); });
+    document.getElementById("mentNext").addEventListener("click", () => { state.mentPage++; renderMentions(); });
+
+    document.getElementById("fAdjType").addEventListener("change", renderAdjudications);
+    document.getElementById("fAdjSearch").addEventListener("input", renderAdjudications);
+
+    async function boot() {
+      try {
+        const urls = [
+          "./dataset/summary_stats.json",
+          "./dataset/appearances_summary.json",
+          "./dataset/mentions_audit.json",
+          "./dataset/mention_adjudications.json",
+          "./dataset/excluded_episodes.json",
+          "./dataset/rss_corpus_manifest.json",
+        ];
+        const res = await Promise.all(urls.map(async (u) => {
+          const r = await fetch(u);
+          if (!r.ok) throw new Error(`Failed loading ${u}: HTTP ${r.status}`);
+          return r.json();
+        }));
+        const [summary, apps, mentions, adj, excluded, manifest] = res;
+        state.summary = summary;
+        state.apps = apps;
+        state.mentions = mentions;
+        state.adj = adj;
+        state.excluded = excluded;
+        manifest.forEach((m) => { state.manifestMap[m.episode_id] = m; });
+
+        renderOverview();
+        renderInterviews();
+        renderMentions();
+        renderAdjudications();
+      } catch (err) {
+        const eb = document.getElementById("errBox");
+        eb.style.display = "block";
+        eb.textContent = "Dataset load error: " + err.message;
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>

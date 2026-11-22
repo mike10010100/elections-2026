@@ -1,0 +1,1766 @@
+{
+  "taus": {
+    "scott_colom": 0.945,
+    "abdul_el_sayed": 0.915
+  },
+  "adjudications_applied": 70,
+  "overall": {
+    "scott_colom": {
+      "n": 39,
+      "speaking_hours": 5.497,
+      "active_hours": 10.057,
+      "cand_words": 73156,
+      "strict_mentions": 675,
+      "broad_mentions": 783,
+      "noncand_strict_mentions": 560,
+      "rate_speaking_hr": 122.784,
+      "rate_speaking_hr_ci95": [
+        108.04,
+        140.128
+      ],
+      "rate_active_hr": 67.115,
+      "rate_active_hr_ci95": [
+        58.57,
+        76.507
+      ],
+      "rate_per_1k_words": 9.227,
+      "rate_per_1k_words_ci95": [
+        8.142,
+        10.475
+      ],
+      "rate_broad_speaking_hr": 142.429,
+      "rate_broad_speaking_hr_ci95": [
+        125.534,
+        162.514
+      ],
+      "median_ep_rate_hr": 129.35,
+      "iqr_ep_rate_hr": [
+        101.29,
+        174.82
+      ],
+      "median_ep_per_1k": 9.49,
+      "iqr_ep_per_1k": [
+        8.07,
+        13.36
+      ]
+    },
+    "abdul_el_sayed": {
+      "n": 45,
+      "speaking_hours": 11.286,
+      "active_hours": 19.153,
+      "cand_words": 158826,
+      "strict_mentions": 247,
+      "broad_mentions": 354,
+      "noncand_strict_mentions": 410,
+      "rate_speaking_hr": 21.885,
+      "rate_speaking_hr_ci95": [
+        17.796,
+        26.262
+      ],
+      "rate_active_hr": 12.896,
+      "rate_active_hr_ci95": [
+        10.439,
+        15.597
+      ],
+      "rate_per_1k_words": 1.555,
+      "rate_per_1k_words_ci95": [
+        1.27,
+        1.874
+      ],
+      "rate_broad_speaking_hr": 31.366,
+      "rate_broad_speaking_hr_ci95": [
+        25.208,
+        38.322
+      ],
+      "median_ep_rate_hr": 20.73,
+      "iqr_ep_rate_hr": [
+        12.3,
+        33.01
+      ],
+      "median_ep_per_1k": 1.48,
+      "iqr_ep_per_1k": [
+        0.86,
+        2.43
+      ]
+    }
+  },
+  "raw_vs_adjudicated": {
+    "scott_colom": {
+      "speaking_hours": 5.497,
+      "raw_strict_mentions": 650,
+      "raw_broad_mentions": 752,
+      "raw_rate_speaking_hr_strict": 118.24,
+      "raw_rate_speaking_hr_broad": 136.79,
+      "raw_rate_per_1k_words_strict": 8.89,
+      "adj_strict_mentions": 675,
+      "adj_broad_mentions": 783,
+      "adj_rate_speaking_hr_strict": 122.78,
+      "adj_rate_speaking_hr_broad": 142.43,
+      "adj_rate_per_1k_words_strict": 9.23,
+      "flipped_to_candidate_strict": 34,
+      "flipped_to_candidate_broad": 40,
+      "flipped_to_non_candidate_strict": 9,
+      "flipped_to_non_candidate_broad": 9,
+      "borderline_in_cluster_noncand_ge_tau": 48,
+      "borderline_cand_loc_lt_tau": 55
+    },
+    "abdul_el_sayed": {
+      "speaking_hours": 11.286,
+      "raw_strict_mentions": 233,
+      "raw_broad_mentions": 337,
+      "raw_rate_speaking_hr_strict": 20.64,
+      "raw_rate_speaking_hr_broad": 29.86,
+      "raw_rate_per_1k_words_strict": 1.47,
+      "adj_strict_mentions": 247,
+      "adj_broad_mentions": 354,
+      "adj_rate_speaking_hr_strict": 21.89,
+      "adj_rate_speaking_hr_broad": 31.37,
+      "adj_rate_per_1k_words_strict": 1.56,
+      "flipped_to_candidate_strict": 16,
+      "flipped_to_candidate_broad": 19,
+      "flipped_to_non_candidate_strict": 2,
+      "flipped_to_non_candidate_broad": 2,
+      "borderline_in_cluster_noncand_ge_tau": 24,
+      "borderline_cand_loc_lt_tau": 38
+    },
+    "comparison": {
+      "raw_ratio_speaking_hr": 5.729,
+      "adj_ratio_speaking_hr": 5.61
+    }
+  },
+  "comparison_speaking_hr": {
+    "diff_obs": 100.898,
+    "diff_ci95": [
+      85.681,
+      118.786
+    ],
+    "ratio_obs": 5.61,
+    "ratio_ci95": [
+      4.477,
+      7.164
+    ],
+    "perm_p_value_speaking_hr": 0.0001
+  },
+  "comparison_per_1k_words": {
+    "diff_obs": 7.672,
+    "diff_ci95": [
+      6.542,
+      8.977
+    ],
+    "ratio_obs": 5.933,
+    "ratio_ci95": [
+      4.728,
+      7.596
+    ],
+    "perm_p_value_1k_words": 0.0001
+  },
+  "substate_geography": {
+    "scott_colom": {
+      "substate_mentions": 128,
+      "rate_substate_speaking_hr": 23.283,
+      "rate_substate_speaking_hr_ci95": [
+        18.536,
+        28.485
+      ],
+      "rate_substate_per_1k_words": 1.75,
+      "rate_substate_per_1k_words_ci95": [
+        1.384,
+        2.138
+      ],
+      "combined_local_mentions": 803,
+      "rate_combined_speaking_hr": 146.067,
+      "rate_combined_speaking_hr_ci95": [
+        129.709,
+        165.069
+      ],
+      "rate_combined_per_1k_words": 10.977,
+      "rate_combined_per_1k_words_ci95": [
+        9.745,
+        12.374
+      ],
+      "top_places": [
+        {
+          "place": "jackson",
+          "count": 25
+        },
+        {
+          "place": "gulf coast",
+          "count": 22
+        },
+        {
+          "place": "the delta",
+          "count": 12
+        },
+        {
+          "place": "columbus",
+          "count": 11
+        },
+        {
+          "place": "hinds county",
+          "count": 8
+        },
+        {
+          "place": "george county",
+          "count": 6
+        },
+        {
+          "place": "jackson state",
+          "count": 6
+        },
+        {
+          "place": "lowndes county",
+          "count": 5
+        },
+        {
+          "place": "desoto county",
+          "count": 4
+        },
+        {
+          "place": "golden triangle",
+          "count": 4
+        },
+        {
+          "place": "tupelo",
+          "count": 4
+        },
+        {
+          "place": "greenwood",
+          "count": 3
+        },
+        {
+          "place": "clarksdale",
+          "count": 2
+        },
+        {
+          "place": "hancock county",
+          "count": 2
+        },
+        {
+          "place": "mound bayou",
+          "count": 2
+        }
+      ]
+    },
+    "abdul_el_sayed": {
+      "substate_mentions": 177,
+      "rate_substate_speaking_hr": 15.683,
+      "rate_substate_speaking_hr_ci95": [
+        10.451,
+        21.262
+      ],
+      "rate_substate_per_1k_words": 1.114,
+      "rate_substate_per_1k_words_ci95": [
+        0.739,
+        1.506
+      ],
+      "combined_local_mentions": 424,
+      "rate_combined_speaking_hr": 37.568,
+      "rate_combined_speaking_hr_ci95": [
+        30.79,
+        44.893
+      ],
+      "rate_combined_per_1k_words": 2.67,
+      "rate_combined_per_1k_words_ci95": [
+        2.188,
+        3.163
+      ],
+      "top_places": [
+        {
+          "place": "detroit",
+          "count": 96
+        },
+        {
+          "place": "wayne county",
+          "count": 21
+        },
+        {
+          "place": "flint",
+          "count": 8
+        },
+        {
+          "place": "escanaba",
+          "count": 7
+        },
+        {
+          "place": "dearborn",
+          "count": 6
+        },
+        {
+          "place": "grand rapids",
+          "count": 6
+        },
+        {
+          "place": "up north",
+          "count": 6
+        },
+        {
+          "place": "lansing",
+          "count": 4
+        },
+        {
+          "place": "macomb county",
+          "count": 3
+        },
+        {
+          "place": "pontiac",
+          "count": 3
+        },
+        {
+          "place": "upper peninsula",
+          "count": 3
+        },
+        {
+          "place": "wolverine",
+          "count": 3
+        },
+        {
+          "place": "montcalm county",
+          "count": 2
+        },
+        {
+          "place": "oakland county",
+          "count": 2
+        },
+        {
+          "place": "houghton",
+          "count": 1
+        }
+      ]
+    },
+    "comparison_substate_hr": {
+      "diff_obs": 7.6,
+      "diff_ci95": [
+        0.294,
+        14.917
+      ],
+      "ratio_obs": 1.485,
+      "ratio_ci95": [
+        1.015,
+        2.309
+      ],
+      "perm_p_value_speaking_hr": 0.0673
+    },
+    "comparison_combined_hr": {
+      "diff_obs": 108.499,
+      "diff_ci95": [
+        90.784,
+        128.718
+      ],
+      "ratio_obs": 3.888,
+      "ratio_ci95": [
+        3.157,
+        4.909
+      ],
+      "perm_p_value_speaking_hr": 0.0001
+    }
+  },
+  "by_category": {
+    "national_tv": {
+      "scott_colom": {
+        "n": 18,
+        "speaking_hours": 1.275,
+        "active_hours": 2.536,
+        "cand_words": 17323,
+        "strict_mentions": 187,
+        "broad_mentions": 236,
+        "noncand_strict_mentions": 172,
+        "rate_speaking_hr": 146.615,
+        "rate_speaking_hr_ci95": [
+          116.759,
+          184.398
+        ],
+        "rate_active_hr": 73.726,
+        "rate_active_hr_ci95": [
+          56.907,
+          97.188
+        ],
+        "rate_per_1k_words": 10.795,
+        "rate_per_1k_words_ci95": [
+          8.54,
+          13.603
+        ],
+        "rate_broad_speaking_hr": 185.032,
+        "rate_broad_speaking_hr_ci95": [
+          146.733,
+          233.704
+        ],
+        "median_ep_rate_hr": 156.17,
+        "iqr_ep_rate_hr": [
+          117.22,
+          230.14
+        ],
+        "median_ep_per_1k": 11.55,
+        "iqr_ep_per_1k": [
+          8.83,
+          16.37
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 20,
+        "speaking_hours": 3.014,
+        "active_hours": 5.254,
+        "cand_words": 43131,
+        "strict_mentions": 100,
+        "broad_mentions": 152,
+        "noncand_strict_mentions": 189,
+        "rate_speaking_hr": 33.177,
+        "rate_speaking_hr_ci95": [
+          26.497,
+          39.646
+        ],
+        "rate_active_hr": 19.033,
+        "rate_active_hr_ci95": [
+          14.818,
+          23.647
+        ],
+        "rate_per_1k_words": 2.319,
+        "rate_per_1k_words_ci95": [
+          1.864,
+          2.795
+        ],
+        "rate_broad_speaking_hr": 50.428,
+        "rate_broad_speaking_hr_ci95": [
+          41.086,
+          60.423
+        ],
+        "median_ep_rate_hr": 27.07,
+        "iqr_ep_rate_hr": [
+          22.42,
+          47.16
+        ],
+        "median_ep_per_1k": 1.83,
+        "iqr_ep_per_1k": [
+          1.48,
+          3.24
+        ]
+      }
+    },
+    "national_longform": {
+      "scott_colom": {
+        "n": 11,
+        "speaking_hours": 2.073,
+        "active_hours": 3.684,
+        "cand_words": 28258,
+        "strict_mentions": 247,
+        "broad_mentions": 273,
+        "noncand_strict_mentions": 187,
+        "rate_speaking_hr": 119.133,
+        "rate_speaking_hr_ci95": [
+          93.941,
+          149.249
+        ],
+        "rate_active_hr": 67.048,
+        "rate_active_hr_ci95": [
+          54.476,
+          79.142
+        ],
+        "rate_per_1k_words": 8.741,
+        "rate_per_1k_words_ci95": [
+          6.777,
+          11.05
+        ],
+        "rate_broad_speaking_hr": 131.673,
+        "rate_broad_speaking_hr_ci95": [
+          103.185,
+          163.841
+        ],
+        "median_ep_rate_hr": 127.46,
+        "iqr_ep_rate_hr": [
+          100.84,
+          169.68
+        ],
+        "median_ep_per_1k": 9.11,
+        "iqr_ep_per_1k": [
+          7.67,
+          12.5
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 16,
+        "speaking_hours": 6.029,
+        "active_hours": 10.355,
+        "cand_words": 84210,
+        "strict_mentions": 111,
+        "broad_mentions": 139,
+        "noncand_strict_mentions": 130,
+        "rate_speaking_hr": 18.412,
+        "rate_speaking_hr_ci95": [
+          13.511,
+          23.494
+        ],
+        "rate_active_hr": 10.719,
+        "rate_active_hr_ci95": [
+          7.683,
+          13.724
+        ],
+        "rate_per_1k_words": 1.318,
+        "rate_per_1k_words_ci95": [
+          0.957,
+          1.69
+        ],
+        "rate_broad_speaking_hr": 23.056,
+        "rate_broad_speaking_hr_ci95": [
+          16.658,
+          29.517
+        ],
+        "median_ep_rate_hr": 14.77,
+        "iqr_ep_rate_hr": [
+          10.06,
+          23.02
+        ],
+        "median_ep_per_1k": 1.08,
+        "iqr_ep_per_1k": [
+          0.79,
+          1.62
+        ]
+      }
+    },
+    "local_in_state": {
+      "scott_colom": {
+        "n": 10,
+        "speaking_hours": 2.149,
+        "active_hours": 3.837,
+        "cand_words": 27575,
+        "strict_mentions": 241,
+        "broad_mentions": 274,
+        "noncand_strict_mentions": 201,
+        "rate_speaking_hr": 112.161,
+        "rate_speaking_hr_ci95": [
+          91.015,
+          134.175
+        ],
+        "rate_active_hr": 62.809,
+        "rate_active_hr_ci95": [
+          47.325,
+          78.722
+        ],
+        "rate_per_1k_words": 8.74,
+        "rate_per_1k_words_ci95": [
+          7.37,
+          10.199
+        ],
+        "rate_broad_speaking_hr": 127.519,
+        "rate_broad_speaking_hr_ci95": [
+          106.792,
+          150.874
+        ],
+        "median_ep_rate_hr": 119.66,
+        "iqr_ep_rate_hr": [
+          90.08,
+          137.1
+        ],
+        "median_ep_per_1k": 8.75,
+        "iqr_ep_per_1k": [
+          7.03,
+          10.43
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 9,
+        "speaking_hours": 2.243,
+        "active_hours": 3.544,
+        "cand_words": 31485,
+        "strict_mentions": 36,
+        "broad_mentions": 63,
+        "noncand_strict_mentions": 91,
+        "rate_speaking_hr": 16.049,
+        "rate_speaking_hr_ci95": [
+          9.448,
+          24.25
+        ],
+        "rate_active_hr": 10.158,
+        "rate_active_hr_ci95": [
+          5.864,
+          15.958
+        ],
+        "rate_per_1k_words": 1.143,
+        "rate_per_1k_words_ci95": [
+          0.66,
+          1.764
+        ],
+        "rate_broad_speaking_hr": 28.086,
+        "rate_broad_speaking_hr_ci95": [
+          13.009,
+          45.462
+        ],
+        "median_ep_rate_hr": 13.02,
+        "iqr_ep_rate_hr": [
+          8.4,
+          25.04
+        ],
+        "median_ep_per_1k": 1.01,
+        "iqr_ep_per_1k": [
+          0.6,
+          1.81
+        ]
+      }
+    }
+  },
+  "by_period": {
+    "campaign": {
+      "scott_colom": {
+        "n": 32,
+        "speaking_hours": 4.843,
+        "active_hours": 8.763,
+        "cand_words": 64277,
+        "strict_mentions": 593,
+        "broad_mentions": 691,
+        "noncand_strict_mentions": 473,
+        "rate_speaking_hr": 122.452,
+        "rate_speaking_hr_ci95": [
+          106.979,
+          140.266
+        ],
+        "rate_active_hr": 67.669,
+        "rate_active_hr_ci95": [
+          58.228,
+          77.37
+        ],
+        "rate_per_1k_words": 9.226,
+        "rate_per_1k_words_ci95": [
+          8.056,
+          10.531
+        ],
+        "rate_broad_speaking_hr": 142.688,
+        "rate_broad_speaking_hr_ci95": [
+          125.175,
+          163.814
+        ],
+        "median_ep_rate_hr": 129.12,
+        "iqr_ep_rate_hr": [
+          102.35,
+          166.25
+        ],
+        "median_ep_per_1k": 9.46,
+        "iqr_ep_per_1k": [
+          8.16,
+          12.96
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 33,
+        "speaking_hours": 9.058,
+        "active_hours": 15.204,
+        "cand_words": 128131,
+        "strict_mentions": 194,
+        "broad_mentions": 288,
+        "noncand_strict_mentions": 345,
+        "rate_speaking_hr": 21.419,
+        "rate_speaking_hr_ci95": [
+          16.938,
+          26.659
+        ],
+        "rate_active_hr": 12.76,
+        "rate_active_hr_ci95": [
+          10.011,
+          15.912
+        ],
+        "rate_per_1k_words": 1.514,
+        "rate_per_1k_words_ci95": [
+          1.198,
+          1.893
+        ],
+        "rate_broad_speaking_hr": 31.797,
+        "rate_broad_speaking_hr_ci95": [
+          24.559,
+          40.496
+        ],
+        "median_ep_rate_hr": 20.73,
+        "iqr_ep_rate_hr": [
+          12.3,
+          31.36
+        ],
+        "median_ep_per_1k": 1.41,
+        "iqr_ep_per_1k": [
+          0.86,
+          2.25
+        ]
+      }
+    },
+    "post_election": {
+      "scott_colom": {
+        "n": 7,
+        "speaking_hours": 0.655,
+        "active_hours": 1.294,
+        "cand_words": 8879,
+        "strict_mentions": 82,
+        "broad_mentions": 92,
+        "noncand_strict_mentions": 87,
+        "rate_speaking_hr": 125.24,
+        "rate_speaking_hr_ci95": [
+          91.355,
+          181.961
+        ],
+        "rate_active_hr": 63.362,
+        "rate_active_hr_ci95": [
+          44.763,
+          93.991
+        ],
+        "rate_per_1k_words": 9.235,
+        "rate_per_1k_words_ci95": [
+          6.665,
+          13.677
+        ],
+        "rate_broad_speaking_hr": 140.513,
+        "rate_broad_speaking_hr_ci95": [
+          100.59,
+          208.446
+        ],
+        "median_ep_rate_hr": 168.22,
+        "iqr_ep_rate_hr": [
+          102.99,
+          197.89
+        ],
+        "median_ep_per_1k": 12.43,
+        "iqr_ep_per_1k": [
+          7.35,
+          15.03
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 12,
+        "speaking_hours": 2.229,
+        "active_hours": 3.949,
+        "cand_words": 30695,
+        "strict_mentions": 53,
+        "broad_mentions": 66,
+        "noncand_strict_mentions": 65,
+        "rate_speaking_hr": 23.782,
+        "rate_speaking_hr_ci95": [
+          16.269,
+          31.364
+        ],
+        "rate_active_hr": 13.42,
+        "rate_active_hr_ci95": [
+          9.131,
+          17.897
+        ],
+        "rate_per_1k_words": 1.727,
+        "rate_per_1k_words_ci95": [
+          1.201,
+          2.263
+        ],
+        "rate_broad_speaking_hr": 29.616,
+        "rate_broad_speaking_hr_ci95": [
+          21.129,
+          39.084
+        ],
+        "median_ep_rate_hr": 21.75,
+        "iqr_ep_rate_hr": [
+          12.3,
+          34.48
+        ],
+        "median_ep_per_1k": 1.48,
+        "iqr_ep_per_1k": [
+          0.95,
+          2.53
+        ]
+      }
+    }
+  },
+  "matched_venues": {
+    "Meet the Press / NBC": {
+      "scott_colom": {
+        "n": 3,
+        "speaking_hours": 0.219,
+        "active_hours": 0.385,
+        "cand_words": 3110,
+        "strict_mentions": 36,
+        "broad_mentions": 45,
+        "noncand_strict_mentions": 14,
+        "rate_speaking_hr": 164.638,
+        "rate_speaking_hr_ci95": [
+          125.06,
+          232.629
+        ],
+        "rate_active_hr": 93.546,
+        "rate_active_hr_ci95": [
+          71.468,
+          122.699
+        ],
+        "rate_per_1k_words": 11.576,
+        "rate_per_1k_words_ci95": [
+          8.826,
+          15.814
+        ],
+        "rate_broad_speaking_hr": 205.798,
+        "rate_broad_speaking_hr_ci95": [
+          134.68,
+          312.25
+        ],
+        "median_ep_rate_hr": 144.12,
+        "iqr_ep_rate_hr": [
+          134.59,
+          188.38
+        ],
+        "median_ep_per_1k": 10.68,
+        "iqr_ep_per_1k": [
+          9.75,
+          13.25
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.528,
+        "active_hours": 0.851,
+        "cand_words": 7588,
+        "strict_mentions": 26,
+        "broad_mentions": 33,
+        "noncand_strict_mentions": 30,
+        "rate_speaking_hr": 49.2,
+        "rate_speaking_hr_ci95": [
+          46.254,
+          54.783
+        ],
+        "rate_active_hr": 30.551,
+        "rate_active_hr_ci95": [
+          27.635,
+          36.755
+        ],
+        "rate_per_1k_words": 3.426,
+        "rate_per_1k_words_ci95": [
+          3.12,
+          4.067
+        ],
+        "rate_broad_speaking_hr": 62.446,
+        "rate_broad_speaking_hr_ci95": [
+          60.709,
+          65.739
+        ],
+        "median_ep_rate_hr": 50.52,
+        "iqr_ep_rate_hr": [
+          48.38,
+          52.65
+        ],
+        "median_ep_per_1k": 3.6,
+        "iqr_ep_per_1k": [
+          3.36,
+          3.83
+        ]
+      }
+    },
+    "Morning Joe (MS NOW)": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.107,
+        "active_hours": 0.23,
+        "cand_words": 1439,
+        "strict_mentions": 6,
+        "broad_mentions": 8,
+        "noncand_strict_mentions": 8,
+        "rate_speaking_hr": 56.246,
+        "rate_speaking_hr_ci95": [
+          56.246,
+          56.246
+        ],
+        "rate_active_hr": 26.065,
+        "rate_active_hr_ci95": [
+          26.065,
+          26.065
+        ],
+        "rate_per_1k_words": 4.17,
+        "rate_per_1k_words_ci95": [
+          4.17,
+          4.17
+        ],
+        "rate_broad_speaking_hr": 74.994,
+        "rate_broad_speaking_hr_ci95": [
+          74.994,
+          74.994
+        ],
+        "median_ep_rate_hr": 56.25,
+        "iqr_ep_rate_hr": [
+          56.25,
+          56.25
+        ],
+        "median_ep_per_1k": 4.17,
+        "iqr_ep_per_1k": [
+          4.17,
+          4.17
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.391,
+        "active_hours": 0.711,
+        "cand_words": 5886,
+        "strict_mentions": 9,
+        "broad_mentions": 11,
+        "noncand_strict_mentions": 28,
+        "rate_speaking_hr": 22.999,
+        "rate_speaking_hr_ci95": [
+          22.992,
+          23.003
+        ],
+        "rate_active_hr": 12.652,
+        "rate_active_hr_ci95": [
+          12.204,
+          13.657
+        ],
+        "rate_per_1k_words": 1.529,
+        "rate_per_1k_words_ci95": [
+          1.48,
+          1.637
+        ],
+        "rate_broad_speaking_hr": 28.11,
+        "rate_broad_speaking_hr_ci95": [
+          22.992,
+          30.67
+        ],
+        "median_ep_rate_hr": 22.99,
+        "iqr_ep_rate_hr": [
+          22.99,
+          23.0
+        ],
+        "median_ep_per_1k": 1.56,
+        "iqr_ep_per_1k": [
+          1.52,
+          1.6
+        ]
+      }
+    },
+    "The Briefing (MS NOW)": {
+      "scott_colom": {
+        "n": 2,
+        "speaking_hours": 0.132,
+        "active_hours": 0.238,
+        "cand_words": 1867,
+        "strict_mentions": 26,
+        "broad_mentions": 28,
+        "noncand_strict_mentions": 19,
+        "rate_speaking_hr": 196.507,
+        "rate_speaking_hr_ci95": [
+          168.224,
+          268.817
+        ],
+        "rate_active_hr": 109.074,
+        "rate_active_hr_ci95": [
+          91.674,
+          156.644
+        ],
+        "rate_per_1k_words": 13.926,
+        "rate_per_1k_words_ci95": [
+          12.432,
+          17.241
+        ],
+        "rate_broad_speaking_hr": 211.622,
+        "rate_broad_speaking_hr_ci95": [
+          178.738,
+          295.699
+        ],
+        "median_ep_rate_hr": 218.52,
+        "iqr_ep_rate_hr": [
+          193.37,
+          243.67
+        ],
+        "median_ep_per_1k": 14.83,
+        "iqr_ep_per_1k": [
+          13.63,
+          16.04
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.175,
+        "active_hours": 0.358,
+        "cand_words": 2349,
+        "strict_mentions": 3,
+        "broad_mentions": 4,
+        "noncand_strict_mentions": 3,
+        "rate_speaking_hr": 17.101,
+        "rate_speaking_hr_ci95": [
+          17.101,
+          17.101
+        ],
+        "rate_active_hr": 8.373,
+        "rate_active_hr_ci95": [
+          8.373,
+          8.373
+        ],
+        "rate_per_1k_words": 1.277,
+        "rate_per_1k_words_ci95": [
+          1.277,
+          1.277
+        ],
+        "rate_broad_speaking_hr": 22.801,
+        "rate_broad_speaking_hr_ci95": [
+          22.801,
+          22.801
+        ],
+        "median_ep_rate_hr": 17.1,
+        "iqr_ep_rate_hr": [
+          17.1,
+          17.1
+        ],
+        "median_ep_per_1k": 1.28,
+        "iqr_ep_per_1k": [
+          1.28,
+          1.28
+        ]
+      }
+    },
+    "The Source (CNN)": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.044,
+        "active_hours": 0.089,
+        "cand_words": 593,
+        "strict_mentions": 12,
+        "broad_mentions": 16,
+        "noncand_strict_mentions": 8,
+        "rate_speaking_hr": 273.522,
+        "rate_speaking_hr_ci95": [
+          273.522,
+          273.522
+        ],
+        "rate_active_hr": 135.076,
+        "rate_active_hr_ci95": [
+          135.076,
+          135.076
+        ],
+        "rate_per_1k_words": 20.236,
+        "rate_per_1k_words_ci95": [
+          20.236,
+          20.236
+        ],
+        "rate_broad_speaking_hr": 364.695,
+        "rate_broad_speaking_hr_ci95": [
+          364.695,
+          364.695
+        ],
+        "median_ep_rate_hr": 273.52,
+        "iqr_ep_rate_hr": [
+          273.52,
+          273.52
+        ],
+        "median_ep_per_1k": 20.24,
+        "iqr_ep_per_1k": [
+          20.24,
+          20.24
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 3,
+        "speaking_hours": 0.503,
+        "active_hours": 0.758,
+        "cand_words": 6918,
+        "strict_mentions": 19,
+        "broad_mentions": 28,
+        "noncand_strict_mentions": 19,
+        "rate_speaking_hr": 37.792,
+        "rate_speaking_hr_ci95": [
+          20.502,
+          49.875
+        ],
+        "rate_active_hr": 25.079,
+        "rate_active_hr_ci95": [
+          15.713,
+          31.567
+        ],
+        "rate_per_1k_words": 2.746,
+        "rate_per_1k_words_ci95": [
+          1.476,
+          3.607
+        ],
+        "rate_broad_speaking_hr": 55.694,
+        "rate_broad_speaking_hr_ci95": [
+          20.502,
+          72.546
+        ],
+        "median_ep_rate_hr": 36.8,
+        "iqr_ep_rate_hr": [
+          28.65,
+          43.34
+        ],
+        "median_ep_per_1k": 2.72,
+        "iqr_ep_per_1k": [
+          2.1,
+          3.17
+        ]
+      }
+    },
+    "The Weekend (MS NOW)": {
+      "scott_colom": {
+        "n": 2,
+        "speaking_hours": 0.169,
+        "active_hours": 0.414,
+        "cand_words": 2167,
+        "strict_mentions": 19,
+        "broad_mentions": 31,
+        "noncand_strict_mentions": 22,
+        "rate_speaking_hr": 112.319,
+        "rate_speaking_hr_ci95": [
+          99.168,
+          131.729
+        ],
+        "rate_active_hr": 45.948,
+        "rate_active_hr_ci95": [
+          35.312,
+          69.061
+        ],
+        "rate_per_1k_words": 8.768,
+        "rate_per_1k_words_ci95": [
+          8.237,
+          9.444
+        ],
+        "rate_broad_speaking_hr": 183.257,
+        "rate_broad_speaking_hr_ci95": [
+          138.835,
+          248.821
+        ],
+        "median_ep_rate_hr": 115.45,
+        "iqr_ep_rate_hr": [
+          107.31,
+          123.59
+        ],
+        "median_ep_per_1k": 8.84,
+        "iqr_ep_per_1k": [
+          8.54,
+          9.14
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.095,
+        "active_hours": 0.23,
+        "cand_words": 1328,
+        "strict_mentions": 1,
+        "broad_mentions": 5,
+        "noncand_strict_mentions": 11,
+        "rate_speaking_hr": 10.544,
+        "rate_speaking_hr_ci95": [
+          10.544,
+          10.544
+        ],
+        "rate_active_hr": 4.356,
+        "rate_active_hr_ci95": [
+          4.356,
+          4.356
+        ],
+        "rate_per_1k_words": 0.753,
+        "rate_per_1k_words_ci95": [
+          0.753,
+          0.753
+        ],
+        "rate_broad_speaking_hr": 52.718,
+        "rate_broad_speaking_hr_ci95": [
+          52.718,
+          52.718
+        ],
+        "median_ep_rate_hr": 10.54,
+        "iqr_ep_rate_hr": [
+          10.54,
+          10.54
+        ],
+        "median_ep_per_1k": 0.75,
+        "iqr_ep_per_1k": [
+          0.75,
+          0.75
+        ]
+      }
+    },
+    "The Breakfast Club": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.331,
+        "active_hours": 0.519,
+        "cand_words": 4944,
+        "strict_mentions": 31,
+        "broad_mentions": 35,
+        "noncand_strict_mentions": 13,
+        "rate_speaking_hr": 93.755,
+        "rate_speaking_hr_ci95": [
+          93.755,
+          93.755
+        ],
+        "rate_active_hr": 59.703,
+        "rate_active_hr_ci95": [
+          59.703,
+          59.703
+        ],
+        "rate_per_1k_words": 6.27,
+        "rate_per_1k_words_ci95": [
+          6.27,
+          6.27
+        ],
+        "rate_broad_speaking_hr": 105.852,
+        "rate_broad_speaking_hr_ci95": [
+          105.852,
+          105.852
+        ],
+        "median_ep_rate_hr": 93.75,
+        "iqr_ep_rate_hr": [
+          93.75,
+          93.75
+        ],
+        "median_ep_per_1k": 6.27,
+        "iqr_ep_per_1k": [
+          6.27,
+          6.27
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.968,
+        "active_hours": 1.526,
+        "cand_words": 14408,
+        "strict_mentions": 19,
+        "broad_mentions": 21,
+        "noncand_strict_mentions": 10,
+        "rate_speaking_hr": 19.632,
+        "rate_speaking_hr_ci95": [
+          19.632,
+          19.632
+        ],
+        "rate_active_hr": 12.453,
+        "rate_active_hr_ci95": [
+          12.453,
+          12.453
+        ],
+        "rate_per_1k_words": 1.319,
+        "rate_per_1k_words_ci95": [
+          1.319,
+          1.319
+        ],
+        "rate_broad_speaking_hr": 21.699,
+        "rate_broad_speaking_hr_ci95": [
+          21.699,
+          21.699
+        ],
+        "median_ep_rate_hr": 19.63,
+        "iqr_ep_rate_hr": [
+          19.63,
+          19.63
+        ],
+        "median_ep_per_1k": 1.32,
+        "iqr_ep_per_1k": [
+          1.32,
+          1.32
+        ]
+      }
+    },
+    "Tavis Smiley": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.149,
+        "active_hours": 0.316,
+        "cand_words": 2085,
+        "strict_mentions": 19,
+        "broad_mentions": 22,
+        "noncand_strict_mentions": 14,
+        "rate_speaking_hr": 127.46,
+        "rate_speaking_hr_ci95": [
+          127.46,
+          127.46
+        ],
+        "rate_active_hr": 60.093,
+        "rate_active_hr_ci95": [
+          60.093,
+          60.093
+        ],
+        "rate_per_1k_words": 9.113,
+        "rate_per_1k_words_ci95": [
+          9.113,
+          9.113
+        ],
+        "rate_broad_speaking_hr": 147.585,
+        "rate_broad_speaking_hr_ci95": [
+          147.585,
+          147.585
+        ],
+        "median_ep_rate_hr": 127.46,
+        "iqr_ep_rate_hr": [
+          127.46,
+          127.46
+        ],
+        "median_ep_per_1k": 9.11,
+        "iqr_ep_per_1k": [
+          9.11,
+          9.11
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.163,
+        "active_hours": 0.261,
+        "cand_words": 2324,
+        "strict_mentions": 2,
+        "broad_mentions": 2,
+        "noncand_strict_mentions": 5,
+        "rate_speaking_hr": 12.297,
+        "rate_speaking_hr_ci95": [
+          12.297,
+          12.297
+        ],
+        "rate_active_hr": 7.65,
+        "rate_active_hr_ci95": [
+          7.65,
+          7.65
+        ],
+        "rate_per_1k_words": 0.861,
+        "rate_per_1k_words_ci95": [
+          0.861,
+          0.861
+        ],
+        "rate_broad_speaking_hr": 12.297,
+        "rate_broad_speaking_hr_ci95": [
+          12.297,
+          12.297
+        ],
+        "median_ep_rate_hr": 12.3,
+        "iqr_ep_rate_hr": [
+          12.3,
+          12.3
+        ],
+        "median_ep_per_1k": 0.86,
+        "iqr_ep_per_1k": [
+          0.86,
+          0.86
+        ]
+      }
+    },
+    "Clay Cane Extended": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.064,
+        "active_hours": 0.124,
+        "cand_words": 862,
+        "strict_mentions": 12,
+        "broad_mentions": 13,
+        "noncand_strict_mentions": 9,
+        "rate_speaking_hr": 186.674,
+        "rate_speaking_hr_ci95": [
+          186.674,
+          186.674
+        ],
+        "rate_active_hr": 96.874,
+        "rate_active_hr_ci95": [
+          96.874,
+          96.874
+        ],
+        "rate_per_1k_words": 13.921,
+        "rate_per_1k_words_ci95": [
+          13.921,
+          13.921
+        ],
+        "rate_broad_speaking_hr": 202.23,
+        "rate_broad_speaking_hr_ci95": [
+          202.23,
+          202.23
+        ],
+        "median_ep_rate_hr": 186.67,
+        "iqr_ep_rate_hr": [
+          186.67,
+          186.67
+        ],
+        "median_ep_per_1k": 13.92,
+        "iqr_ep_per_1k": [
+          13.92,
+          13.92
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.101,
+        "active_hours": 0.168,
+        "cand_words": 1328,
+        "strict_mentions": 0,
+        "broad_mentions": 2,
+        "noncand_strict_mentions": 0,
+        "rate_speaking_hr": 0.0,
+        "rate_speaking_hr_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_active_hr": 0.0,
+        "rate_active_hr_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_per_1k_words": 0.0,
+        "rate_per_1k_words_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_broad_speaking_hr": 19.872,
+        "rate_broad_speaking_hr_ci95": [
+          19.872,
+          19.872
+        ],
+        "median_ep_rate_hr": 0.0,
+        "iqr_ep_rate_hr": [
+          0.0,
+          0.0
+        ],
+        "median_ep_per_1k": 0.0,
+        "iqr_ep_per_1k": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "All In w/ Chris Hayes": {
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.069,
+        "active_hours": 0.127,
+        "cand_words": 888,
+        "strict_mentions": 12,
+        "broad_mentions": 16,
+        "noncand_strict_mentions": 10,
+        "rate_speaking_hr": 173.105,
+        "rate_speaking_hr_ci95": [
+          173.105,
+          173.105
+        ],
+        "rate_active_hr": 94.284,
+        "rate_active_hr_ci95": [
+          94.284,
+          94.284
+        ],
+        "rate_per_1k_words": 13.514,
+        "rate_per_1k_words_ci95": [
+          13.514,
+          13.514
+        ],
+        "rate_broad_speaking_hr": 230.806,
+        "rate_broad_speaking_hr_ci95": [
+          230.806,
+          230.806
+        ],
+        "median_ep_rate_hr": 173.1,
+        "iqr_ep_rate_hr": [
+          173.1,
+          173.1
+        ],
+        "median_ep_per_1k": 13.51,
+        "iqr_ep_per_1k": [
+          13.51,
+          13.51
+        ]
+      },
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.233,
+        "active_hours": 0.424,
+        "cand_words": 3473,
+        "strict_mentions": 10,
+        "broad_mentions": 16,
+        "noncand_strict_mentions": 27,
+        "rate_speaking_hr": 42.9,
+        "rate_speaking_hr_ci95": [
+          29.874,
+          60.48
+        ],
+        "rate_active_hr": 23.59,
+        "rate_active_hr_ci95": [
+          17.874,
+          29.983
+        ],
+        "rate_per_1k_words": 2.879,
+        "rate_per_1k_words_ci95": [
+          1.993,
+          4.093
+        ],
+        "rate_broad_speaking_hr": 68.64,
+        "rate_broad_speaking_hr_ci95": [
+          44.811,
+          100.801
+        ],
+        "median_ep_rate_hr": 45.17,
+        "iqr_ep_rate_hr": [
+          37.52,
+          52.83
+        ],
+        "median_ep_per_1k": 3.04,
+        "iqr_ep_per_1k": [
+          2.51,
+          3.56
+        ]
+      }
+    }
+  },
+  "rev_victory_speeches": {
+    "scott_colom": {
+      "label": "Scott Colom Victory Speech (Nov 2026)",
+      "speaker": "Scott Colom",
+      "url": "https://www.rev.com/blog/transcripts/scott-colom-victory-speech",
+      "paragraph_count": 15,
+      "word_count": 1993,
+      "strict_mentions": 22,
+      "broad_mentions": 27,
+      "per_1k_words_strict": 11.04,
+      "per_1k_words_broad": 13.55,
+      "substate_geo_mentions": 5,
+      "per_1k_words_substate_geo": 2.51,
+      "substate_geo_breakdown": {
+        "natchez": 1,
+        "jackson": 1,
+        "oktibbeha county": 1,
+        "george county": 1,
+        "hattiesburg": 1
+      },
+      "america_mentions": 2,
+      "trump_mentions": 0,
+      "healthcare_medicare_mentions": 1,
+      "senate_senator_mentions": 4,
+      "approx_video_duration_sec": 970.0,
+      "approx_per_hour_strict": 81.65
+    },
+    "abdul_el_sayed": {
+      "label": "Abdul El-Sayed Victory Speech (Nov 2026)",
+      "speaker": "Abdul El-Sayed",
+      "url": "https://www.rev.com/blog/transcripts/abdul-el-sayed-victory-speech",
+      "paragraph_count": 36,
+      "word_count": 2687,
+      "strict_mentions": 17,
+      "broad_mentions": 21,
+      "per_1k_words_strict": 6.33,
+      "per_1k_words_broad": 7.82,
+      "substate_geo_mentions": 4,
+      "per_1k_words_substate_geo": 1.49,
+      "substate_geo_breakdown": {
+        "east jordan": 1,
+        "wolverine": 1,
+        "detroit": 1,
+        "pontiac": 1
+      },
+      "america_mentions": 32,
+      "trump_mentions": 1,
+      "healthcare_medicare_mentions": 6,
+      "senate_senator_mentions": 8,
+      "approx_video_duration_sec": 1210.0,
+      "approx_per_hour_strict": 50.58
+    }
+  },
+  "rev_all_transcripts": {
+    "colom_victory": {
+      "label": "Scott Colom Victory Speech (Nov 2026)",
+      "speaker": "Scott Colom",
+      "url": "https://www.rev.com/blog/transcripts/scott-colom-victory-speech",
+      "paragraph_count": 15,
+      "word_count": 1993,
+      "strict_mentions": 22,
+      "broad_mentions": 27,
+      "per_1k_words_strict": 11.04,
+      "per_1k_words_broad": 13.55,
+      "substate_geo_mentions": 5,
+      "per_1k_words_substate_geo": 2.51,
+      "substate_geo_breakdown": {
+        "natchez": 1,
+        "jackson": 1,
+        "oktibbeha county": 1,
+        "george county": 1,
+        "hattiesburg": 1
+      },
+      "america_mentions": 2,
+      "trump_mentions": 0,
+      "healthcare_medicare_mentions": 1,
+      "senate_senator_mentions": 4,
+      "approx_video_duration_sec": 970.0,
+      "approx_per_hour_strict": 81.65
+    },
+    "abdul_victory": {
+      "label": "Abdul El-Sayed Victory Speech (Nov 2026)",
+      "speaker": "Abdul El-Sayed",
+      "url": "https://www.rev.com/blog/transcripts/abdul-el-sayed-victory-speech",
+      "paragraph_count": 36,
+      "word_count": 2687,
+      "strict_mentions": 17,
+      "broad_mentions": 21,
+      "per_1k_words_strict": 6.33,
+      "per_1k_words_broad": 7.82,
+      "substate_geo_mentions": 4,
+      "per_1k_words_substate_geo": 1.49,
+      "substate_geo_breakdown": {
+        "east jordan": 1,
+        "wolverine": 1,
+        "detroit": 1,
+        "pontiac": 1
+      },
+      "america_mentions": 32,
+      "trump_mentions": 1,
+      "healthcare_medicare_mentions": 6,
+      "senate_senator_mentions": 8,
+      "approx_video_duration_sec": 1210.0,
+      "approx_per_hour_strict": 50.58
+    },
+    "abdul_detroit_forum": {
+      "label": "Detroit Economic Club Q&A \u2014 Abdul El-Sayed (Oct 21)",
+      "speaker": "Abdul El-Sayed",
+      "url": "https://www.rev.com/blog/transcripts/el-sayed-and-rogers-take-questions",
+      "paragraph_count": 41,
+      "word_count": 4478,
+      "strict_mentions": 6,
+      "broad_mentions": 6,
+      "per_1k_words_strict": 1.34,
+      "per_1k_words_broad": 1.34,
+      "substate_geo_mentions": 4,
+      "per_1k_words_substate_geo": 0.89,
+      "substate_geo_breakdown": {
+        "detroit": 2,
+        "wayne county": 2
+      },
+      "america_mentions": 7,
+      "trump_mentions": 2,
+      "healthcare_medicare_mentions": 15,
+      "senate_senator_mentions": 0
+    },
+    "rogers_detroit_forum": {
+      "label": "Detroit Economic Club Q&A \u2014 Mike Rogers (Oct 21)",
+      "speaker": "Mike Rogers",
+      "url": "https://www.rev.com/blog/transcripts/el-sayed-and-rogers-take-questions",
+      "paragraph_count": 38,
+      "word_count": 3891,
+      "strict_mentions": 11,
+      "broad_mentions": 13,
+      "per_1k_words_strict": 2.83,
+      "per_1k_words_broad": 3.34,
+      "substate_geo_mentions": 21,
+      "per_1k_words_substate_geo": 5.4,
+      "substate_geo_breakdown": {
+        "detroit": 15,
+        "bay city": 1,
+        "flint": 2,
+        "saginaw": 1,
+        "grand rapids": 1,
+        "pontiac": 1
+      },
+      "america_mentions": 3,
+      "trump_mentions": 0,
+      "healthcare_medicare_mentions": 5,
+      "senate_senator_mentions": 1
+    },
+    "abdul_primary_presser": {
+      "label": "MI Primary Victory Press Conf \u2014 Abdul El-Sayed (Aug 6)",
+      "speaker": "Abdul El-Sayed",
+      "url": "https://www.rev.com/blog/transcripts/abdul-el-sayed-wins-michigan-senate-primary",
+      "paragraph_count": 34,
+      "word_count": 4142,
+      "strict_mentions": 4,
+      "broad_mentions": 8,
+      "per_1k_words_strict": 0.97,
+      "per_1k_words_broad": 1.93,
+      "substate_geo_mentions": 5,
+      "per_1k_words_substate_geo": 1.21,
+      "substate_geo_breakdown": {
+        "lansing": 1,
+        "escanaba": 1,
+        "grand rapids": 1,
+        "detroit": 2
+      },
+      "america_mentions": 11,
+      "trump_mentions": 9,
+      "healthcare_medicare_mentions": 11,
+      "senate_senator_mentions": 7
+    }
+  },
+  "sensitivity": {
+    "threshold_lo": {
+      "scott_colom": {
+        "speaking_hours": 7.112,
+        "strict_mentions": 758,
+        "broad_mentions": 867,
+        "rate_speaking_hr_strict": 106.58,
+        "rate_per_1k_words_strict": 8.28,
+        "rate_speaking_hr_broad": 121.91
+      },
+      "abdul_el_sayed": {
+        "speaking_hours": 13.01,
+        "strict_mentions": 276,
+        "broad_mentions": 382,
+        "rate_speaking_hr_strict": 21.21,
+        "rate_per_1k_words_strict": 1.52,
+        "rate_speaking_hr_broad": 29.36
+      }
+    },
+    "threshold_mid": {
+      "scott_colom": {
+        "speaking_hours": 5.497,
+        "strict_mentions": 650,
+        "broad_mentions": 752,
+        "rate_speaking_hr_strict": 118.24,
+        "rate_per_1k_words_strict": 8.89,
+        "rate_speaking_hr_broad": 136.79
+      },
+      "abdul_el_sayed": {
+        "speaking_hours": 11.286,
+        "strict_mentions": 233,
+        "broad_mentions": 337,
+        "rate_speaking_hr_strict": 20.64,
+        "rate_per_1k_words_strict": 1.47,
+        "rate_speaking_hr_broad": 29.86
+      }
+    },
+    "threshold_hi": {
+      "scott_colom": {
+        "speaking_hours": 3.002,
+        "strict_mentions": 329,
+        "broad_mentions": 393,
+        "rate_speaking_hr_strict": 109.58,
+        "rate_per_1k_words_strict": 8.33,
+        "rate_speaking_hr_broad": 130.9
+      },
+      "abdul_el_sayed": {
+        "speaking_hours": 8.266,
+        "strict_mentions": 163,
+        "broad_mentions": 236,
+        "rate_speaking_hr_strict": 19.72,
+        "rate_per_1k_words_strict": 1.42,
+        "rate_speaking_hr_broad": 28.55
+      }
+    }
+  },
+  "naive_vs_attributed": {
+    "scott_colom": {
+      "total_window_hours": 26.04,
+      "total_window_words": 260673,
+      "unattributed_strict_mentions": 1235,
+      "candidate_only_strict_mentions": 675,
+      "non_candidate_filtered_mentions": 560,
+      "non_candidate_share_pct": 45.3,
+      "naive_rate_per_window_hr": 47.43,
+      "naive_rate_per_1k_words": 4.74
+    },
+    "abdul_el_sayed": {
+      "total_window_hours": 31.43,
+      "total_window_words": 357675,
+      "unattributed_strict_mentions": 657,
+      "candidate_only_strict_mentions": 247,
+      "non_candidate_filtered_mentions": 410,
+      "non_candidate_share_pct": 62.4,
+      "naive_rate_per_window_hr": 20.9,
+      "naive_rate_per_1k_words": 1.84
+    }
+  },
+  "benchmarks": {
+    "scott_colom": {
+      "state_strict_hr": 122.78,
+      "substate_geo_hr": 23.28,
+      "america_hr": 14.73,
+      "trump_hr": 4.73,
+      "healthcare_medicare_hr": 25.28,
+      "senate_senator_hr": 34.02,
+      "state_strict_1k": 9.23,
+      "substate_geo_1k": 1.75,
+      "america_1k": 1.11,
+      "trump_1k": 0.36,
+      "healthcare_medicare_1k": 1.9,
+      "senate_senator_1k": 2.56
+    },
+    "abdul_el_sayed": {
+      "state_strict_hr": 21.89,
+      "substate_geo_hr": 15.68,
+      "america_hr": 29.95,
+      "trump_hr": 25.61,
+      "healthcare_medicare_hr": 41.29,
+      "senate_senator_hr": 19.58,
+      "state_strict_1k": 1.56,
+      "substate_geo_1k": 1.11,
+      "america_1k": 2.13,
+      "trump_1k": 1.82,
+      "healthcare_medicare_1k": 2.93,
+      "senate_senator_1k": 1.39
+    }
+  }
+}
