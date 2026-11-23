@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-23T09:00:01.910797-05:00",
+  "fetched_at": "2026-11-23T10:00:01.730253-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -207,23 +207,23 @@
   },
   "house_replicated_live": {
     "n": 418,
-    "party_mean": 14.86,
-    "party_median": 14.26,
+    "party_mean": 14.87,
+    "party_median": 14.3,
     "groups": [
       {
         "key": "blue_dogs",
         "label": "Blue Dogs",
         "n": 31,
-        "raw_mean": 19.1,
+        "raw_mean": 19.11,
         "raw_median": 15.87,
         "adj_edge": 1.72,
-        "adj_mean": 16.58,
+        "adj_mean": 16.59,
         "ci95_edge": [
           -0.21,
           4.22
         ],
         "ci95_mean": [
-          14.65,
+          14.66,
           19.09
         ]
       },
@@ -231,13 +231,13 @@
         "key": "blue_dogs_ex_tx",
         "label": "Blue Dogs\nex-TX-15/28",
         "n": 29,
-        "raw_mean": 17.35,
+        "raw_mean": 17.36,
         "raw_median": 15.76,
         "adj_edge": 1.18,
-        "adj_mean": 16.04,
+        "adj_mean": 16.05,
         "ci95_edge": [
-          -0.54,
-          3.58
+          -0.55,
+          3.57
         ],
         "ci95_mean": [
           14.32,
@@ -251,13 +251,13 @@
         "raw_mean": 16.11,
         "raw_median": 15.89,
         "adj_edge": 1.31,
-        "adj_mean": 16.17,
+        "adj_mean": 16.18,
         "ci95_edge": [
           -2.02,
-          4.48
+          4.47
         ],
         "ci95_mean": [
-          12.84,
+          12.85,
           19.34
         ]
       },
@@ -265,17 +265,17 @@
         "key": "new_dems",
         "label": "New Dems",
         "n": 149,
-        "raw_mean": 16.3,
+        "raw_mean": 16.31,
         "raw_median": 14.99,
-        "adj_edge": 0.68,
-        "adj_mean": 15.55,
+        "adj_edge": 0.69,
+        "adj_mean": 15.56,
         "ci95_edge": [
           -0.09,
-          1.5
+          1.51
         ],
         "ci95_mean": [
-          14.77,
-          16.36
+          14.78,
+          16.38
         ]
       },
       {
@@ -292,41 +292,41 @@
         ],
         "ci95_mean": [
           13.49,
-          14.99
+          15.0
         ]
       },
       {
         "key": "cpc",
         "label": "CPC /\nprogressives",
         "n": 74,
-        "raw_mean": 15.68,
-        "raw_median": 14.03,
-        "adj_edge": -0.34,
-        "adj_mean": 14.53,
+        "raw_mean": 15.7,
+        "raw_median": 14.12,
+        "adj_edge": -0.33,
+        "adj_mean": 14.54,
         "ci95_edge": [
-          -1.89,
+          -1.9,
           1.13
         ],
         "ci95_mean": [
           12.97,
-          15.99
+          16.0
         ]
       },
       {
         "key": "cpc_only",
         "label": "CPC-only\n(ex-New Dem)",
         "n": 45,
-        "raw_mean": 15.64,
+        "raw_mean": 15.65,
         "raw_median": 13.83,
         "adj_edge": -0.67,
-        "adj_mean": 14.19,
+        "adj_mean": 14.2,
         "ci95_edge": [
-          -2.5,
+          -2.48,
           1.36
         ],
         "ci95_mean": [
-          12.37,
-          16.22
+          12.39,
+          16.23
         ]
       }
     ]
@@ -338,13 +338,13 @@
     "raw_mean": 16.98,
     "raw_median": 16.35,
     "adj_edge": 1.8,
-    "adj_mean": 16.66,
+    "adj_mean": 16.67,
     "ci95_edge": [
-      -1.91,
+      -1.9,
       5.37
     ],
     "ci95_mean": [
-      12.95,
+      12.97,
       20.24
     ]
   },
@@ -417,8 +417,8 @@
       "state": "AK",
       "candidate": "Mary Peltola*",
       "early": -3.66,
-      "live": 0.49,
-      "delta": 4.15,
+      "live": 0.48,
+      "delta": 4.14,
       "is_prog": false
     },
     {
@@ -518,8 +518,8 @@
       "r2": 0.447,
       "record_beta": 2.935,
       "record_p": 0.0048,
-      "pivot_beta": -1.315,
-      "pivot_p": 0.5316
+      "pivot_beta": -1.314,
+      "pivot_p": 0.532
     }
   }
 }
