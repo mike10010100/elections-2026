@@ -1,0 +1,3621 @@
+[
+  {
+    "episode_id": "jf_make_it_make_sense_20260807",
+    "candidate": "john_fetterman",
+    "show": "Make It Make Sense",
+    "title": "John Fetterman\u2019s warning to the Democratic Party",
+    "pub_date": "2026-08-07",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 2372.389,
+    "transcribed_duration_sec": 2372.389,
+    "active_appearance_sec": 2174.93,
+    "cand_speaking_sec": 1166.77,
+    "cand_words": 3021,
+    "total_window_words": 5981,
+    "raw_acoustic_strict_mentions": 3,
+    "raw_acoustic_broad_mentions": 3,
+    "strict_mentions": 3,
+    "broad_mentions": 3,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 3,
+    "noncand_broad_mentions": 3,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "pittsburgh": 1
+    },
+    "rate_per_speaking_hr_strict": 9.26,
+    "rate_per_speaking_hr_broad": 9.26,
+    "rate_per_active_hr_strict": 4.97,
+    "rate_per_1k_words_strict": 0.99,
+    "rate_per_speaking_hr_substate_geo": 3.09,
+    "rate_per_speaking_hr_combined_local": 12.34,
+    "bench_america": 6,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 6,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1238.18,
+        "words": 3190,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "mid": {
+        "speech_sec": 1166.77,
+        "words": 3021,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "hi": {
+        "speech_sec": 1007.07,
+        "words": 2580,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 88.43,
+        "end": 2263.36,
+        "span_sec": 2174.93,
+        "cand_speech_sec": 1166.77,
+        "density": 0.536,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_weekly_show_stewart_20260805",
+    "candidate": "john_fetterman",
+    "show": "The Weekly Show with Jon Stewart",
+    "title": "Sen. John Fetterman on the Democratic Divide",
+    "pub_date": "2026-08-05",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "weekly_show",
+    "audio_duration_sec": 5200.248,
+    "transcribed_duration_sec": 5200.248,
+    "active_appearance_sec": 4416.43,
+    "cand_speaking_sec": 2019.69,
+    "cand_words": 6062,
+    "total_window_words": 14135,
+    "raw_acoustic_strict_mentions": 9,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 9,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 16.04,
+    "rate_per_speaking_hr_broad": 16.04,
+    "rate_per_active_hr_strict": 7.34,
+    "rate_per_1k_words_strict": 1.48,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 16.04,
+    "bench_america": 12,
+    "bench_trump": 7,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2150.63,
+        "words": 6465,
+        "strict_mentions": 10,
+        "broad_mentions": 10
+      },
+      "mid": {
+        "speech_sec": 2019.69,
+        "words": 6062,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 1853.43,
+        "words": 5554,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 36.72,
+        "end": 4453.15,
+        "span_sec": 4416.43,
+        "cand_speech_sec": 2019.69,
+        "density": 0.457,
+        "kept": true
+      },
+      {
+        "start": 4697.44,
+        "end": 4862.73,
+        "span_sec": 165.29,
+        "cand_speech_sec": 3.76,
+        "density": 0.023,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_meet_the_press_20260729",
+    "candidate": "john_fetterman",
+    "show": "Meet the Press",
+    "title": "Meet the Press NOW \u2014 July 29",
+    "pub_date": "2026-07-29",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "meet_the_press",
+    "audio_duration_sec": 3264.758,
+    "transcribed_duration_sec": 576.0,
+    "active_appearance_sec": 482.7,
+    "cand_speaking_sec": 359.84,
+    "cand_words": 1051,
+    "total_window_words": 1504,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 5,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 361.54,
+        "words": 1057,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 359.84,
+        "words": 1051,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 348.72,
+        "words": 1018,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 1625.04,
+        "end": 2107.74,
+        "span_sec": 482.7,
+        "cand_speech_sec": 359.84,
+        "density": 0.745,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_squawk_pod_20260728",
+    "candidate": "john_fetterman",
+    "show": "Squawk Pod",
+    "title": "Fed Meeting Kickoff & Sen. John Fetterman (D-PA) 7/28/26",
+    "pub_date": "2026-07-28",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 2645.812,
+    "transcribed_duration_sec": 604.5,
+    "active_appearance_sec": 513.26,
+    "cand_speaking_sec": 338.5,
+    "cand_words": 983,
+    "total_window_words": 1629,
+    "raw_acoustic_strict_mentions": 1,
+    "raw_acoustic_broad_mentions": 1,
+    "strict_mentions": 1,
+    "broad_mentions": 1,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 10.64,
+    "rate_per_speaking_hr_broad": 10.64,
+    "rate_per_active_hr_strict": 7.01,
+    "rate_per_1k_words_strict": 1.02,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 10.64,
+    "bench_america": 0,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 5,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 343.74,
+        "words": 1003,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "mid": {
+        "speech_sec": 338.5,
+        "words": 983,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "hi": {
+        "speech_sec": 321.7,
+        "words": 928,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 2039.25,
+        "end": 2552.51,
+        "span_sec": 513.26,
+        "cand_speech_sec": 338.5,
+        "density": 0.66,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_takeout_garrett_20260707",
+    "candidate": "john_fetterman",
+    "show": "The Takeout with Major Garrett",
+    "title": "The Takeout with Major Garrett, 7/7/26",
+    "pub_date": "2026-07-07",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "cbs_takeout",
+    "audio_duration_sec": 2708.245,
+    "transcribed_duration_sec": 471.0,
+    "active_appearance_sec": 376.45,
+    "cand_speaking_sec": 286.46,
+    "cand_words": 812,
+    "total_window_words": 1230,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 2,
+    "noncand_broad_mentions": 2,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 2,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 290.92,
+        "words": 830,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 286.46,
+        "words": 812,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 276.66,
+        "words": 788,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 464.0,
+        "end": 840.45,
+        "span_sec": 376.45,
+        "cand_speech_sec": 286.46,
+        "density": 0.761,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_smerconish_20260702",
+    "candidate": "john_fetterman",
+    "show": "The Smerconish Podcast",
+    "title": "Can Democrats and Republicans Still Be Friends? Fetterman & McCormick Say Yes",
+    "pub_date": "2026-07-02",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "smerconish",
+    "audio_duration_sec": 2327.171,
+    "transcribed_duration_sec": 1008.0,
+    "active_appearance_sec": 899.36,
+    "cand_speaking_sec": 357.68,
+    "cand_words": 1020,
+    "total_window_words": 2847,
+    "raw_acoustic_strict_mentions": 8,
+    "raw_acoustic_broad_mentions": 8,
+    "strict_mentions": 8,
+    "broad_mentions": 8,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 9,
+    "noncand_broad_mentions": 10,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 80.52,
+    "rate_per_speaking_hr_broad": 80.52,
+    "rate_per_active_hr_strict": 32.02,
+    "rate_per_1k_words_strict": 7.84,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 80.52,
+    "bench_america": 8,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 0,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 369.1,
+        "words": 1058,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      },
+      "mid": {
+        "speech_sec": 357.68,
+        "words": 1020,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      },
+      "hi": {
+        "speech_sec": 318.3,
+        "words": 912,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 333.58,
+        "end": 1232.94,
+        "span_sec": 899.36,
+        "cand_speech_sec": 357.68,
+        "density": 0.398,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_meet_the_press_20260612",
+    "candidate": "john_fetterman",
+    "show": "Meet the Press",
+    "title": "Meet the Press NOW \u2014 June 12",
+    "pub_date": "2026-06-12",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "meet_the_press",
+    "audio_duration_sec": 3295.295,
+    "transcribed_duration_sec": 950.795,
+    "active_appearance_sec": 554.26,
+    "cand_speaking_sec": 331.16,
+    "cand_words": 1048,
+    "total_window_words": 2589,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 1,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 350.4,
+        "words": 1104,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 331.16,
+        "words": 1048,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 314.56,
+        "words": 996,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 1923.72,
+        "end": 2477.98,
+        "span_sec": 554.26,
+        "cand_speech_sec": 331.16,
+        "density": 0.597,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_all_in_pod_20260610",
+    "candidate": "john_fetterman",
+    "show": "All-In with Chamath, Jason, Sacks & Friedberg",
+    "title": "Senators John Fetterman and Dave McCormick: Bipartisanship, Money in DC, Datacenters, Graham Platner",
+    "pub_date": "2026-06-10",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "all_in_pod",
+    "audio_duration_sec": 2602.656,
+    "transcribed_duration_sec": 2602.656,
+    "active_appearance_sec": 1373.77,
+    "cand_speaking_sec": 679.0,
+    "cand_words": 1942,
+    "total_window_words": 7129,
+    "raw_acoustic_strict_mentions": 6,
+    "raw_acoustic_broad_mentions": 6,
+    "strict_mentions": 9,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 25,
+    "noncand_broad_mentions": 25,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 47.72,
+    "rate_per_speaking_hr_broad": 47.72,
+    "rate_per_active_hr_strict": 23.58,
+    "rate_per_1k_words_strict": 4.63,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 47.72,
+    "bench_america": 4,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 765.8,
+        "words": 2200,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      },
+      "mid": {
+        "speech_sec": 679.0,
+        "words": 1942,
+        "strict_mentions": 6,
+        "broad_mentions": 6
+      },
+      "hi": {
+        "speech_sec": 501.9,
+        "words": 1435,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 13.15,
+        "end": 236.82,
+        "span_sec": 223.67,
+        "cand_speech_sec": 68.8,
+        "density": 0.308,
+        "kept": true
+      },
+      {
+        "start": 454.93,
+        "end": 698.89,
+        "span_sec": 243.96,
+        "cand_speech_sec": 151.44,
+        "density": 0.621,
+        "kept": true
+      },
+      {
+        "start": 1028.95,
+        "end": 1688.35,
+        "span_sec": 659.4,
+        "cand_speech_sec": 339.38,
+        "density": 0.515,
+        "kept": true
+      },
+      {
+        "start": 1919.15,
+        "end": 2165.89,
+        "span_sec": 246.74,
+        "cand_speech_sec": 119.38,
+        "density": 0.484,
+        "kept": true
+      },
+      {
+        "start": 2520.39,
+        "end": 2571.89,
+        "span_sec": 51.5,
+        "cand_speech_sec": 36.32,
+        "density": 0.705,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_reason_interview_20260513",
+    "candidate": "john_fetterman",
+    "show": "The Reason Interview With Nick Gillespie",
+    "title": "John Fetterman: 'I'm a Very Pro-Capitalist Democrat'",
+    "pub_date": "2026-05-13",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 2911.591,
+    "transcribed_duration_sec": 2911.591,
+    "active_appearance_sec": 2894.29,
+    "cand_speaking_sec": 1589.74,
+    "cand_words": 4792,
+    "total_window_words": 7957,
+    "raw_acoustic_strict_mentions": 5,
+    "raw_acoustic_broad_mentions": 5,
+    "strict_mentions": 5,
+    "broad_mentions": 5,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 5,
+    "noncand_broad_mentions": 5,
+    "substate_geo_mentions": 3,
+    "substate_geo_breakdown": {
+      "pittsburgh": 1,
+      "lehigh valley": 1,
+      "braddock": 1
+    },
+    "rate_per_speaking_hr_strict": 11.32,
+    "rate_per_speaking_hr_broad": 11.32,
+    "rate_per_active_hr_strict": 6.22,
+    "rate_per_1k_words_strict": 1.04,
+    "rate_per_speaking_hr_substate_geo": 6.79,
+    "rate_per_speaking_hr_combined_local": 18.12,
+    "bench_america": 16,
+    "bench_trump": 7,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1701.02,
+        "words": 5158,
+        "strict_mentions": 6,
+        "broad_mentions": 6
+      },
+      "mid": {
+        "speech_sec": 1589.74,
+        "words": 4792,
+        "strict_mentions": 5,
+        "broad_mentions": 5
+      },
+      "hi": {
+        "speech_sec": 1373.2,
+        "words": 4143,
+        "strict_mentions": 4,
+        "broad_mentions": 4
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 13.47,
+        "end": 2907.76,
+        "span_sec": 2894.29,
+        "cand_speech_sec": 1589.74,
+        "density": 0.549,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_club_random_maher_20260511",
+    "candidate": "john_fetterman",
+    "show": "Club Random with Bill Maher",
+    "title": "Senator John Fetterman | Club Random with Bill Maher",
+    "pub_date": "2026-05-11",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 4313.757,
+    "transcribed_duration_sec": 4313.757,
+    "active_appearance_sec": 4077.57,
+    "cand_speaking_sec": 1723.25,
+    "cand_words": 4921,
+    "total_window_words": 11337,
+    "raw_acoustic_strict_mentions": 1,
+    "raw_acoustic_broad_mentions": 1,
+    "strict_mentions": 1,
+    "broad_mentions": 1,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 0,
+    "noncand_broad_mentions": 0,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "pittsburgh": 1
+    },
+    "rate_per_speaking_hr_strict": 2.09,
+    "rate_per_speaking_hr_broad": 2.09,
+    "rate_per_active_hr_strict": 0.88,
+    "rate_per_1k_words_strict": 0.2,
+    "rate_per_speaking_hr_substate_geo": 2.09,
+    "rate_per_speaking_hr_combined_local": 4.18,
+    "bench_america": 3,
+    "bench_trump": 12,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2273.82,
+        "words": 6558,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "mid": {
+        "speech_sec": 1723.25,
+        "words": 4921,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "hi": {
+        "speech_sec": 1293.68,
+        "words": 3643,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 119.54,
+        "end": 4197.11,
+        "span_sec": 4077.57,
+        "cand_speech_sec": 1723.25,
+        "density": 0.423,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_real_time_maher_20260509",
+    "candidate": "john_fetterman",
+    "show": "Real Time with Bill Maher",
+    "title": "Ep. #729: John Fetterman, Dan Crenshaw, Donna Brazile",
+    "pub_date": "2026-05-09",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "real_time",
+    "audio_duration_sec": 3653.015,
+    "transcribed_duration_sec": 3574.5,
+    "active_appearance_sec": 1313.32,
+    "cand_speaking_sec": 548.96,
+    "cand_words": 1765,
+    "total_window_words": 9081,
+    "raw_acoustic_strict_mentions": 1,
+    "raw_acoustic_broad_mentions": 1,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 2,
+    "bench_trump": 5,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1090.88,
+        "words": 3568,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "mid": {
+        "speech_sec": 548.96,
+        "words": 1765,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "hi": {
+        "speech_sec": 301.3,
+        "words": 932,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 113.39,
+        "end": 1142.01,
+        "span_sec": 1028.62,
+        "cand_speech_sec": 451.54,
+        "density": 0.439,
+        "kept": true
+      },
+      {
+        "start": 1431.87,
+        "end": 1577.97,
+        "span_sec": 146.1,
+        "cand_speech_sec": 44.86,
+        "density": 0.307,
+        "kept": false
+      },
+      {
+        "start": 1811.07,
+        "end": 1845.91,
+        "span_sec": 34.84,
+        "cand_speech_sec": 13.4,
+        "density": 0.385,
+        "kept": false
+      },
+      {
+        "start": 2043.22,
+        "end": 2327.92,
+        "span_sec": 284.7,
+        "cand_speech_sec": 97.42,
+        "density": 0.342,
+        "kept": true
+      },
+      {
+        "start": 2651.59,
+        "end": 3533.95,
+        "span_sec": 882.36,
+        "cand_speech_sec": 100.08,
+        "density": 0.113,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_citizen_mccain_20260423",
+    "candidate": "john_fetterman",
+    "show": "Citizen McCain with Meghan McCain",
+    "title": "From Chaos To Honest: Meghan Rants, Fetterman Opens Up",
+    "pub_date": "2026-04-23",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 4311.171,
+    "transcribed_duration_sec": 2383.5,
+    "active_appearance_sec": 2273.69,
+    "cand_speaking_sec": 1260.96,
+    "cand_words": 3479,
+    "total_window_words": 6601,
+    "raw_acoustic_strict_mentions": 7,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 7,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 3,
+    "noncand_broad_mentions": 3,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "philadelphia": 1
+    },
+    "rate_per_speaking_hr_strict": 19.98,
+    "rate_per_speaking_hr_broad": 25.69,
+    "rate_per_active_hr_strict": 11.08,
+    "rate_per_1k_words_strict": 2.01,
+    "rate_per_speaking_hr_substate_geo": 2.85,
+    "rate_per_speaking_hr_combined_local": 22.84,
+    "bench_america": 6,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1302.36,
+        "words": 3605,
+        "strict_mentions": 7,
+        "broad_mentions": 9
+      },
+      "mid": {
+        "speech_sec": 1260.96,
+        "words": 3479,
+        "strict_mentions": 7,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 1180.08,
+        "words": 3234,
+        "strict_mentions": 6,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 1045.52,
+        "end": 3319.21,
+        "span_sec": 2273.69,
+        "cand_speech_sec": 1260.96,
+        "density": 0.555,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_smerconish_20260420",
+    "candidate": "john_fetterman",
+    "show": "The Smerconish Podcast",
+    "title": "Fetterman Breaks With Democrats on Iran War \u2014 \u2018We Must Finish This\u2019",
+    "pub_date": "2026-04-20",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "smerconish",
+    "audio_duration_sec": 2229.447,
+    "transcribed_duration_sec": 1294.5,
+    "active_appearance_sec": 1108.09,
+    "cand_speaking_sec": 798.47,
+    "cand_words": 2224,
+    "total_window_words": 3497,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 0,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 814.03,
+        "words": 2270,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 798.47,
+        "words": 2224,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 759.97,
+        "words": 2104,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 277.64,
+        "end": 651.24,
+        "span_sec": 373.6,
+        "cand_speech_sec": 301.95,
+        "density": 0.808,
+        "kept": true
+      },
+      {
+        "start": 976.92,
+        "end": 1711.41,
+        "span_sec": 734.49,
+        "cand_speech_sec": 496.52,
+        "density": 0.676,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_all_in_pod_20260318",
+    "candidate": "john_fetterman",
+    "show": "All-In with Chamath, Jason, Sacks & Friedberg",
+    "title": "John Fetterman: The Rogue Democrat Who Broke Party Ranks",
+    "pub_date": "2026-03-18",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "all_in_pod",
+    "audio_duration_sec": 2726.976,
+    "transcribed_duration_sec": 2726.976,
+    "active_appearance_sec": 2696.88,
+    "cand_speaking_sec": 1771.41,
+    "cand_words": 4913,
+    "total_window_words": 7100,
+    "raw_acoustic_strict_mentions": 6,
+    "raw_acoustic_broad_mentions": 7,
+    "strict_mentions": 6,
+    "broad_mentions": 7,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 2,
+    "noncand_broad_mentions": 2,
+    "substate_geo_mentions": 2,
+    "substate_geo_breakdown": {
+      "pittsburgh": 2
+    },
+    "rate_per_speaking_hr_strict": 12.19,
+    "rate_per_speaking_hr_broad": 14.23,
+    "rate_per_active_hr_strict": 8.01,
+    "rate_per_1k_words_strict": 1.22,
+    "rate_per_speaking_hr_substate_geo": 4.06,
+    "rate_per_speaking_hr_combined_local": 16.26,
+    "bench_america": 20,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1802.75,
+        "words": 5008,
+        "strict_mentions": 6,
+        "broad_mentions": 7
+      },
+      "mid": {
+        "speech_sec": 1771.41,
+        "words": 4913,
+        "strict_mentions": 6,
+        "broad_mentions": 7
+      },
+      "hi": {
+        "speech_sec": 1661.63,
+        "words": 4595,
+        "strict_mentions": 6,
+        "broad_mentions": 7
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 14.34,
+        "end": 2711.22,
+        "span_sec": 2696.88,
+        "cand_speech_sec": 1771.41,
+        "density": 0.657,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_takeout_garrett_20260312",
+    "candidate": "john_fetterman",
+    "show": "The Takeout with Major Garrett",
+    "title": "Sen. John Fetterman (D-PA) [Extended Interview]",
+    "pub_date": "2026-03-12",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "cbs_takeout",
+    "audio_duration_sec": 2661.015,
+    "transcribed_duration_sec": 2661.015,
+    "active_appearance_sec": 2619.33,
+    "cand_speaking_sec": 1948.62,
+    "cand_words": 5363,
+    "total_window_words": 6794,
+    "raw_acoustic_strict_mentions": 9,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 9,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 0,
+    "noncand_broad_mentions": 0,
+    "substate_geo_mentions": 2,
+    "substate_geo_breakdown": {
+      "pittsburgh": 1,
+      "braddock": 1
+    },
+    "rate_per_speaking_hr_strict": 16.63,
+    "rate_per_speaking_hr_broad": 16.63,
+    "rate_per_active_hr_strict": 12.37,
+    "rate_per_1k_words_strict": 1.68,
+    "rate_per_speaking_hr_substate_geo": 3.69,
+    "rate_per_speaking_hr_combined_local": 20.32,
+    "bench_america": 14,
+    "bench_trump": 9,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 5,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2058.76,
+        "words": 5661,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "mid": {
+        "speech_sec": 1948.62,
+        "words": 5363,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 1752.24,
+        "words": 4842,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 8.58,
+        "end": 2627.91,
+        "span_sec": 2619.33,
+        "cand_speech_sec": 1948.62,
+        "density": 0.744,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_conversation_burns_20260213",
+    "candidate": "john_fetterman",
+    "show": "The Conversation with Dasha Burns",
+    "title": "A Democrat at odds with his own party (with Sen. John Fetterman)",
+    "pub_date": "2026-02-13",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 2931.148,
+    "transcribed_duration_sec": 2931.148,
+    "active_appearance_sec": 2843.77,
+    "cand_speaking_sec": 1906.14,
+    "cand_words": 5711,
+    "total_window_words": 8094,
+    "raw_acoustic_strict_mentions": 6,
+    "raw_acoustic_broad_mentions": 7,
+    "strict_mentions": 6,
+    "broad_mentions": 7,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 4,
+    "noncand_broad_mentions": 6,
+    "substate_geo_mentions": 2,
+    "substate_geo_breakdown": {
+      "pittsburgh": 2
+    },
+    "rate_per_speaking_hr_strict": 11.33,
+    "rate_per_speaking_hr_broad": 13.22,
+    "rate_per_active_hr_strict": 7.6,
+    "rate_per_1k_words_strict": 1.05,
+    "rate_per_speaking_hr_substate_geo": 3.78,
+    "rate_per_speaking_hr_combined_local": 15.11,
+    "bench_america": 12,
+    "bench_trump": 9,
+    "bench_healthcare_medicare": 7,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1956.52,
+        "words": 5878,
+        "strict_mentions": 6,
+        "broad_mentions": 7
+      },
+      "mid": {
+        "speech_sec": 1906.14,
+        "words": 5711,
+        "strict_mentions": 6,
+        "broad_mentions": 7
+      },
+      "hi": {
+        "speech_sec": 1786.76,
+        "words": 5331,
+        "strict_mentions": 5,
+        "broad_mentions": 6
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 15.54,
+        "end": 2859.31,
+        "span_sec": 2843.77,
+        "cand_speech_sec": 1906.14,
+        "density": 0.67,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_meet_the_press_20251212",
+    "candidate": "john_fetterman",
+    "show": "Meet the Press",
+    "title": "Meet the Press NOW \u2014 December 12",
+    "pub_date": "2025-12-12",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "meet_the_press",
+    "audio_duration_sec": 3210.789,
+    "transcribed_duration_sec": 619.5,
+    "active_appearance_sec": 528.14,
+    "cand_speaking_sec": 385.72,
+    "cand_words": 1194,
+    "total_window_words": 1601,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 1,
+    "strict_mentions": 0,
+    "broad_mentions": 1,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 2,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 9.33,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 6,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 401.74,
+        "words": 1225,
+        "strict_mentions": 0,
+        "broad_mentions": 1
+      },
+      "mid": {
+        "speech_sec": 385.72,
+        "words": 1194,
+        "strict_mentions": 0,
+        "broad_mentions": 1
+      },
+      "hi": {
+        "speech_sec": 364.58,
+        "words": 1120,
+        "strict_mentions": 0,
+        "broad_mentions": 1
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 1373.54,
+        "end": 1901.68,
+        "span_sec": 528.14,
+        "cand_speech_sec": 385.72,
+        "density": 0.73,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_next_question_couric_20251113",
+    "candidate": "john_fetterman",
+    "show": "Next Question with Katie Couric",
+    "title": "Senator John Fetterman\u2019s Long Road Back",
+    "pub_date": "2025-11-13",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 4967.131,
+    "transcribed_duration_sec": 4967.131,
+    "active_appearance_sec": 4128.96,
+    "cand_speaking_sec": 2518.09,
+    "cand_words": 7475,
+    "total_window_words": 13227,
+    "raw_acoustic_strict_mentions": 10,
+    "raw_acoustic_broad_mentions": 12,
+    "strict_mentions": 9,
+    "broad_mentions": 10,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 0,
+    "noncand_broad_mentions": 0,
+    "substate_geo_mentions": 3,
+    "substate_geo_breakdown": {
+      "philadelphia": 1,
+      "pittsburgh": 1,
+      "lancaster": 1
+    },
+    "rate_per_speaking_hr_strict": 12.87,
+    "rate_per_speaking_hr_broad": 14.3,
+    "rate_per_active_hr_strict": 7.85,
+    "rate_per_1k_words_strict": 1.2,
+    "rate_per_speaking_hr_substate_geo": 4.29,
+    "rate_per_speaking_hr_combined_local": 17.16,
+    "bench_america": 12,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 5,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2649.55,
+        "words": 7855,
+        "strict_mentions": 10,
+        "broad_mentions": 12
+      },
+      "mid": {
+        "speech_sec": 2518.09,
+        "words": 7475,
+        "strict_mentions": 10,
+        "broad_mentions": 12
+      },
+      "hi": {
+        "speech_sec": 2181.9,
+        "words": 6450,
+        "strict_mentions": 8,
+        "broad_mentions": 10
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 138.96,
+        "end": 1534.86,
+        "span_sec": 1395.9,
+        "cand_speech_sec": 702.63,
+        "density": 0.503,
+        "kept": true
+      },
+      {
+        "start": 1846.06,
+        "end": 3256.44,
+        "span_sec": 1410.38,
+        "cand_speech_sec": 836.35,
+        "density": 0.593,
+        "kept": true
+      },
+      {
+        "start": 3440.94,
+        "end": 4763.62,
+        "span_sec": 1322.68,
+        "cand_speech_sec": 979.11,
+        "density": 0.74,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_honestly_weiss_20251111",
+    "candidate": "john_fetterman",
+    "show": "Honestly with Bari Weiss",
+    "title": "Democratic Dissident John Fetterman",
+    "pub_date": "2025-11-11",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 5045.081,
+    "transcribed_duration_sec": 5045.081,
+    "active_appearance_sec": 4290.77,
+    "cand_speaking_sec": 2445.53,
+    "cand_words": 7123,
+    "total_window_words": 13057,
+    "raw_acoustic_strict_mentions": 12,
+    "raw_acoustic_broad_mentions": 15,
+    "strict_mentions": 12,
+    "broad_mentions": 15,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 7,
+    "noncand_broad_mentions": 7,
+    "substate_geo_mentions": 2,
+    "substate_geo_breakdown": {
+      "philadelphia": 1,
+      "pittsburgh": 1
+    },
+    "rate_per_speaking_hr_strict": 17.66,
+    "rate_per_speaking_hr_broad": 22.08,
+    "rate_per_active_hr_strict": 10.07,
+    "rate_per_1k_words_strict": 1.68,
+    "rate_per_speaking_hr_substate_geo": 2.94,
+    "rate_per_speaking_hr_combined_local": 20.61,
+    "bench_america": 22,
+    "bench_trump": 7,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 8,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2514.91,
+        "words": 7335,
+        "strict_mentions": 12,
+        "broad_mentions": 15
+      },
+      "mid": {
+        "speech_sec": 2445.53,
+        "words": 7123,
+        "strict_mentions": 12,
+        "broad_mentions": 15
+      },
+      "hi": {
+        "speech_sec": 2272.15,
+        "words": 6612,
+        "strict_mentions": 12,
+        "broad_mentions": 15
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 429.53,
+        "end": 3807.93,
+        "span_sec": 3378.4,
+        "cand_speech_sec": 1865.64,
+        "density": 0.552,
+        "kept": true
+      },
+      {
+        "start": 4023.1,
+        "end": 4935.47,
+        "span_sec": 912.37,
+        "cand_speech_sec": 579.89,
+        "density": 0.636,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_meet_the_press_20251110",
+    "candidate": "john_fetterman",
+    "show": "Meet the Press",
+    "title": "Meet the Press NOW \u2014 November 10",
+    "pub_date": "2025-11-10",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "meet_the_press",
+    "audio_duration_sec": 3122.782,
+    "transcribed_duration_sec": 798.0,
+    "active_appearance_sec": 708.68,
+    "cand_speaking_sec": 313.52,
+    "cand_words": 963,
+    "total_window_words": 2436,
+    "raw_acoustic_strict_mentions": 1,
+    "raw_acoustic_broad_mentions": 2,
+    "strict_mentions": 2,
+    "broad_mentions": 3,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 2,
+    "noncand_broad_mentions": 3,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 22.97,
+    "rate_per_speaking_hr_broad": 34.45,
+    "rate_per_active_hr_strict": 10.16,
+    "rate_per_1k_words_strict": 2.08,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 22.97,
+    "bench_america": 3,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 1,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 351.8,
+        "words": 1077,
+        "strict_mentions": 2,
+        "broad_mentions": 3
+      },
+      "mid": {
+        "speech_sec": 313.52,
+        "words": 963,
+        "strict_mentions": 1,
+        "broad_mentions": 2
+      },
+      "hi": {
+        "speech_sec": 260.18,
+        "words": 789,
+        "strict_mentions": 1,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 658.24,
+        "end": 1366.92,
+        "span_sec": 708.68,
+        "cand_speech_sec": 313.52,
+        "density": 0.442,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_state_of_the_union_20251102",
+    "candidate": "john_fetterman",
+    "show": "State of the Union",
+    "title": "Interviews with Treasury Secretary Scott Bessent; House Democratic Leader Rep. Hakeem Jeffries; Democratic Sen. John Fetterman",
+    "pub_date": "2025-11-02",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "cnn_sotu",
+    "audio_duration_sec": 2589.623,
+    "transcribed_duration_sec": 1869.0,
+    "active_appearance_sec": 309.16,
+    "cand_speaking_sec": 197.5,
+    "cand_words": 631,
+    "total_window_words": 4977,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 4,
+    "noncand_broad_mentions": 6,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 2,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 0,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 330.68,
+        "words": 991,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 197.5,
+        "words": 631,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 176.34,
+        "words": 556,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 415.22,
+        "end": 778.1,
+        "span_sec": 362.88,
+        "cand_speech_sec": 36.58,
+        "density": 0.101,
+        "kept": false
+      },
+      {
+        "start": 1013.22,
+        "end": 1299.76,
+        "span_sec": 286.54,
+        "cand_speech_sec": 12.36,
+        "density": 0.043,
+        "kept": false
+      },
+      {
+        "start": 1610.26,
+        "end": 1919.42,
+        "span_sec": 309.16,
+        "cand_speech_sec": 197.5,
+        "density": 0.639,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_state_of_the_union_20250921",
+    "candidate": "john_fetterman",
+    "show": "State of the Union",
+    "title": "Interviews with Senate Minority Leader Chuck Schumer, SenatorJohn Fetterman, Senator Markwayne Mullin, Representative Jasmine Crockett",
+    "pub_date": "2025-09-21",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "cnn_sotu",
+    "audio_duration_sec": 2686.433,
+    "transcribed_duration_sec": 385.5,
+    "active_appearance_sec": 291.47,
+    "cand_speaking_sec": 206.48,
+    "cand_words": 684,
+    "total_window_words": 1130,
+    "raw_acoustic_strict_mentions": 0,
+    "raw_acoustic_broad_mentions": 0,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 4,
+    "bench_senate_senator": 0,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 212.66,
+        "words": 700,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "mid": {
+        "speech_sec": 206.48,
+        "words": 684,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      },
+      "hi": {
+        "speech_sec": 190.64,
+        "words": 628,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 970.77,
+        "end": 1262.24,
+        "span_sec": 291.47,
+        "cand_speech_sec": 206.48,
+        "density": 0.708,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_real_time_maher_20250614",
+    "candidate": "john_fetterman",
+    "show": "Real Time with Bill Maher",
+    "title": "Ep. #699: Sen. John Fetterman, Ian Bremmer & Rutger Bregman",
+    "pub_date": "2025-06-14",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "real_time",
+    "audio_duration_sec": 3634.286,
+    "transcribed_duration_sec": 3495.0,
+    "active_appearance_sec": 1208.47,
+    "cand_speaking_sec": 523.22,
+    "cand_words": 1838,
+    "total_window_words": 9463,
+    "raw_acoustic_strict_mentions": 1,
+    "raw_acoustic_broad_mentions": 1,
+    "strict_mentions": 0,
+    "broad_mentions": 0,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 1,
+    "noncand_broad_mentions": 1,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 0.0,
+    "rate_per_speaking_hr_broad": 0.0,
+    "rate_per_active_hr_strict": 0.0,
+    "rate_per_1k_words_strict": 0.0,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 0.0,
+    "bench_america": 1,
+    "bench_trump": 5,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 2,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 977.92,
+        "words": 3505,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "mid": {
+        "speech_sec": 523.22,
+        "words": 1838,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      },
+      "hi": {
+        "speech_sec": 336.96,
+        "words": 1203,
+        "strict_mentions": 0,
+        "broad_mentions": 0
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 127.43,
+        "end": 1335.9,
+        "span_sec": 1208.47,
+        "cand_speech_sec": 523.22,
+        "density": 0.433,
+        "kept": true
+      },
+      {
+        "start": 1528.76,
+        "end": 2277.12,
+        "span_sec": 748.36,
+        "cand_speech_sec": 96.82,
+        "density": 0.129,
+        "kept": false
+      },
+      {
+        "start": 2481.17,
+        "end": 3373.61,
+        "span_sec": 892.44,
+        "cand_speech_sec": 73.18,
+        "density": 0.082,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_call_me_back_20250227",
+    "candidate": "john_fetterman",
+    "show": "Call Me Back - with Dan Senor",
+    "title": "John Fetterman's Israel",
+    "pub_date": "2025-02-27",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 3123.552,
+    "transcribed_duration_sec": 3123.552,
+    "active_appearance_sec": 3059.66,
+    "cand_speaking_sec": 2142.96,
+    "cand_words": 6370,
+    "total_window_words": 8836,
+    "raw_acoustic_strict_mentions": 9,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 9,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 7,
+    "noncand_broad_mentions": 7,
+    "substate_geo_mentions": 4,
+    "substate_geo_breakdown": {
+      "berks county": 1,
+      "york county": 1,
+      "pittsburgh": 1,
+      "lancaster": 1
+    },
+    "rate_per_speaking_hr_strict": 15.12,
+    "rate_per_speaking_hr_broad": 15.12,
+    "rate_per_active_hr_strict": 10.59,
+    "rate_per_1k_words_strict": 1.41,
+    "rate_per_speaking_hr_substate_geo": 6.72,
+    "rate_per_speaking_hr_combined_local": 21.84,
+    "bench_america": 1,
+    "bench_trump": 4,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2170.04,
+        "words": 6458,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "mid": {
+        "speech_sec": 2142.96,
+        "words": 6370,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 2002.01,
+        "words": 5973,
+        "strict_mentions": 6,
+        "broad_mentions": 6
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 0.0,
+        "end": 3059.66,
+        "span_sec": 3059.66,
+        "cand_speech_sec": 2142.96,
+        "density": 0.7,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "jf_new_yorker_20250221",
+    "candidate": "john_fetterman",
+    "show": "The New Yorker Radio Hour",
+    "title": "John Fetterman on Trump\u2019s \u201cRaw Sewage,\u201d and What the Democrats Get Wrong",
+    "pub_date": "2025-02-21",
+    "category": "national_longform",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "new_yorker",
+    "audio_duration_sec": 2475.285,
+    "transcribed_duration_sec": 1965.0,
+    "active_appearance_sec": 1778.25,
+    "cand_speaking_sec": 1257.83,
+    "cand_words": 3780,
+    "total_window_words": 5271,
+    "raw_acoustic_strict_mentions": 3,
+    "raw_acoustic_broad_mentions": 3,
+    "strict_mentions": 6,
+    "broad_mentions": 6,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 4,
+    "noncand_broad_mentions": 4,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 17.17,
+    "rate_per_speaking_hr_broad": 17.17,
+    "rate_per_active_hr_strict": 12.15,
+    "rate_per_1k_words_strict": 1.59,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 17.17,
+    "bench_america": 4,
+    "bench_trump": 8,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 9,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1302.19,
+        "words": 3930,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "mid": {
+        "speech_sec": 1257.83,
+        "words": 3780,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "hi": {
+        "speech_sec": 1169.0,
+        "words": 3528,
+        "strict_mentions": 1,
+        "broad_mentions": 1
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 201.57,
+        "end": 1053.75,
+        "span_sec": 852.18,
+        "cand_speech_sec": 599.03,
+        "density": 0.703,
+        "kept": true
+      },
+      {
+        "start": 1431.37,
+        "end": 2357.44,
+        "span_sec": 926.07,
+        "cand_speech_sec": 658.8,
+        "density": 0.711,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_morning_joe_20260610",
+    "candidate": "graham_platner",
+    "show": "Morning Joe",
+    "title": "Graham Platner joins Morning joe after primary win for wide-ranging interview",
+    "pub_date": "2026-06-10",
+    "category": "national_tv",
+    "period": "post_primary",
+    "is_full_broadcast": true,
+    "matched_venue": "morning_joe",
+    "audio_duration_sec": 2003.226,
+    "transcribed_duration_sec": 1230.0,
+    "active_appearance_sec": 1089.89,
+    "cand_speaking_sec": 595.68,
+    "cand_words": 1898,
+    "total_window_words": 3300,
+    "raw_acoustic_strict_mentions": 6,
+    "raw_acoustic_broad_mentions": 8,
+    "strict_mentions": 6,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 8,
+    "noncand_broad_mentions": 11,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 36.26,
+    "rate_per_speaking_hr_broad": 54.39,
+    "rate_per_active_hr_strict": 19.82,
+    "rate_per_1k_words_strict": 3.16,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 36.26,
+    "bench_america": 2,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 614.23,
+        "words": 1959,
+        "strict_mentions": 6,
+        "broad_mentions": 8
+      },
+      "mid": {
+        "speech_sec": 595.68,
+        "words": 1898,
+        "strict_mentions": 6,
+        "broad_mentions": 8
+      },
+      "hi": {
+        "speech_sec": 570.14,
+        "words": 1807,
+        "strict_mentions": 6,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 136.24,
+        "end": 1226.13,
+        "span_sec": 1089.89,
+        "cand_speech_sec": 595.68,
+        "density": 0.547,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_all_in_hayes_20260605",
+    "candidate": "graham_platner",
+    "show": "All In with Chris Hayes",
+    "title": "Graham Platner responds to NYT report: \u2018Anything alleging physicality\u2019 not true",
+    "pub_date": "2026-06-05",
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "all_in",
+    "audio_duration_sec": 3329.411,
+    "transcribed_duration_sec": 1653.0,
+    "active_appearance_sec": 1449.14,
+    "cand_speaking_sec": 743.16,
+    "cand_words": 2452,
+    "total_window_words": 4974,
+    "raw_acoustic_strict_mentions": 7,
+    "raw_acoustic_broad_mentions": 8,
+    "strict_mentions": 7,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 9,
+    "noncand_broad_mentions": 9,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 33.91,
+    "rate_per_speaking_hr_broad": 43.6,
+    "rate_per_active_hr_strict": 17.39,
+    "rate_per_1k_words_strict": 2.85,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 33.91,
+    "bench_america": 1,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 2,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 755.72,
+        "words": 2497,
+        "strict_mentions": 7,
+        "broad_mentions": 8
+      },
+      "mid": {
+        "speech_sec": 743.16,
+        "words": 2452,
+        "strict_mentions": 7,
+        "broad_mentions": 8
+      },
+      "hi": {
+        "speech_sec": 723.86,
+        "words": 2387,
+        "strict_mentions": 7,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 373.82,
+        "end": 1822.96,
+        "span_sec": 1449.14,
+        "cand_speech_sec": 743.16,
+        "density": 0.513,
+        "kept": true
+      },
+      {
+        "start": 2566.12,
+        "end": 2582.8,
+        "span_sec": 16.68,
+        "cand_speech_sec": 14.18,
+        "density": 0.85,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_beacon_townhall_20260605",
+    "candidate": "graham_platner",
+    "show": "Beacon Podcast",
+    "title": "Who holds politicians accountable? Bellows and Platner point to grassroots organizing",
+    "pub_date": "2026-06-05",
+    "category": "local_in_state",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 3233.214,
+    "transcribed_duration_sec": 2418.0,
+    "active_appearance_sec": 1408.96,
+    "cand_speaking_sec": 665.9,
+    "cand_words": 2144,
+    "total_window_words": 5315,
+    "raw_acoustic_strict_mentions": 5,
+    "raw_acoustic_broad_mentions": 7,
+    "strict_mentions": 6,
+    "broad_mentions": 8,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 14,
+    "noncand_broad_mentions": 18,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "sullivan": 1
+    },
+    "rate_per_speaking_hr_strict": 32.44,
+    "rate_per_speaking_hr_broad": 43.25,
+    "rate_per_active_hr_strict": 15.33,
+    "rate_per_1k_words_strict": 2.8,
+    "rate_per_speaking_hr_substate_geo": 5.41,
+    "rate_per_speaking_hr_combined_local": 37.84,
+    "bench_america": 4,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 3,
+    "bench_senate_senator": 3,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 854.68,
+        "words": 2770,
+        "strict_mentions": 5,
+        "broad_mentions": 7
+      },
+      "mid": {
+        "speech_sec": 665.9,
+        "words": 2144,
+        "strict_mentions": 5,
+        "broad_mentions": 7
+      },
+      "hi": {
+        "speech_sec": 573.12,
+        "words": 1834,
+        "strict_mentions": 4,
+        "broad_mentions": 6
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 597.97,
+        "end": 1358.1,
+        "span_sec": 760.13,
+        "cand_speech_sec": 436.16,
+        "density": 0.574,
+        "kept": true
+      },
+      {
+        "start": 1544.5,
+        "end": 2085.2,
+        "span_sec": 540.7,
+        "cand_speech_sec": 129.78,
+        "density": 0.24,
+        "kept": false
+      },
+      {
+        "start": 2266.38,
+        "end": 2915.21,
+        "span_sec": 648.83,
+        "cand_speech_sec": 229.74,
+        "density": 0.354,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_all_in_hayes_20260526",
+    "candidate": "graham_platner",
+    "show": "All In with Chris Hayes",
+    "title": "'Abject nonsense': Sanders, Platner rip Bezos' defense against billionaire tax hikes",
+    "pub_date": "2026-05-26",
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "all_in",
+    "audio_duration_sec": 2786.821,
+    "transcribed_duration_sec": 1368.0,
+    "active_appearance_sec": 759.68,
+    "cand_speaking_sec": 275.06,
+    "cand_words": 907,
+    "total_window_words": 4075,
+    "raw_acoustic_strict_mentions": 2,
+    "raw_acoustic_broad_mentions": 2,
+    "strict_mentions": 2,
+    "broad_mentions": 2,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 6,
+    "noncand_broad_mentions": 6,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "sullivan": 1
+    },
+    "rate_per_speaking_hr_strict": 26.18,
+    "rate_per_speaking_hr_broad": 26.18,
+    "rate_per_active_hr_strict": 9.48,
+    "rate_per_1k_words_strict": 2.21,
+    "rate_per_speaking_hr_substate_geo": 13.09,
+    "rate_per_speaking_hr_combined_local": 39.26,
+    "bench_america": 3,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 2,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 408.64,
+        "words": 1294,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "mid": {
+        "speech_sec": 275.06,
+        "words": 907,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "hi": {
+        "speech_sec": 206.8,
+        "words": 700,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 309.28,
+        "end": 1068.96,
+        "span_sec": 759.68,
+        "cand_speech_sec": 275.06,
+        "density": 0.362,
+        "kept": true
+      },
+      {
+        "start": 2367.0,
+        "end": 2606.46,
+        "span_sec": 239.46,
+        "cand_speech_sec": 54.66,
+        "density": 0.228,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_wgan_20260526",
+    "candidate": "graham_platner",
+    "show": "Newsradio WGAN",
+    "title": "Graham Platner",
+    "pub_date": "2026-05-26",
+    "category": "local_in_state",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 2712.252,
+    "transcribed_duration_sec": 2650.752,
+    "active_appearance_sec": 2389.54,
+    "cand_speaking_sec": 1587.78,
+    "cand_words": 5409,
+    "total_window_words": 7826,
+    "raw_acoustic_strict_mentions": 27,
+    "raw_acoustic_broad_mentions": 28,
+    "strict_mentions": 30,
+    "broad_mentions": 31,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 23,
+    "noncand_broad_mentions": 23,
+    "substate_geo_mentions": 7,
+    "substate_geo_breakdown": {
+      "sullivan": 5,
+      "downeast": 1,
+      "ellsworth": 1
+    },
+    "rate_per_speaking_hr_strict": 68.02,
+    "rate_per_speaking_hr_broad": 70.29,
+    "rate_per_active_hr_strict": 45.2,
+    "rate_per_1k_words_strict": 5.55,
+    "rate_per_speaking_hr_substate_geo": 15.87,
+    "rate_per_speaking_hr_combined_local": 83.89,
+    "bench_america": 14,
+    "bench_trump": 4,
+    "bench_healthcare_medicare": 15,
+    "bench_senate_senator": 15,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1646.12,
+        "words": 5627,
+        "strict_mentions": 29,
+        "broad_mentions": 30
+      },
+      "mid": {
+        "speech_sec": 1587.78,
+        "words": 5409,
+        "strict_mentions": 27,
+        "broad_mentions": 28
+      },
+      "hi": {
+        "speech_sec": 1495.82,
+        "words": 5069,
+        "strict_mentions": 24,
+        "broad_mentions": 25
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 106.54,
+        "end": 1298.18,
+        "span_sec": 1191.64,
+        "cand_speech_sec": 772.1,
+        "density": 0.648,
+        "kept": true
+      },
+      {
+        "start": 1483.4,
+        "end": 2681.3,
+        "span_sec": 1197.9,
+        "cand_speech_sec": 815.68,
+        "density": 0.681,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_lever_time_20260508",
+    "candidate": "graham_platner",
+    "show": "Lever Time",
+    "title": "Graham Platner\u2019s Revolution Hits The Road",
+    "pub_date": "2026-05-08",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "lever_time",
+    "audio_duration_sec": 4916.95,
+    "transcribed_duration_sec": 4916.95,
+    "active_appearance_sec": 4224.65,
+    "cand_speaking_sec": 1811.35,
+    "cand_words": 6003,
+    "total_window_words": 14134,
+    "raw_acoustic_strict_mentions": 13,
+    "raw_acoustic_broad_mentions": 13,
+    "strict_mentions": 15,
+    "broad_mentions": 15,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 11,
+    "noncand_broad_mentions": 11,
+    "substate_geo_mentions": 4,
+    "substate_geo_breakdown": {
+      "sullivan": 2,
+      "hancock county": 1,
+      "portland": 1
+    },
+    "rate_per_speaking_hr_strict": 29.81,
+    "rate_per_speaking_hr_broad": 29.81,
+    "rate_per_active_hr_strict": 12.78,
+    "rate_per_1k_words_strict": 2.5,
+    "rate_per_speaking_hr_substate_geo": 7.95,
+    "rate_per_speaking_hr_combined_local": 37.76,
+    "bench_america": 5,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 2,
+    "bench_senate_senator": 6,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2168.41,
+        "words": 7290,
+        "strict_mentions": 15,
+        "broad_mentions": 15
+      },
+      "mid": {
+        "speech_sec": 1811.35,
+        "words": 6003,
+        "strict_mentions": 13,
+        "broad_mentions": 13
+      },
+      "hi": {
+        "speech_sec": 1315.83,
+        "words": 4307,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 248.3,
+        "end": 257.92,
+        "span_sec": 9.62,
+        "cand_speech_sec": 8.98,
+        "density": 0.933,
+        "kept": false
+      },
+      {
+        "start": 535.33,
+        "end": 4759.98,
+        "span_sec": 4224.65,
+        "cand_speech_sec": 1811.35,
+        "density": 0.429,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_psaki_briefing_20260501",
+    "candidate": "graham_platner",
+    "show": "The Briefing with Jen Psaki",
+    "title": "'Shut this White House down': Platner talks strategy to stop Trump",
+    "pub_date": "2026-05-01",
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "jen_psaki",
+    "audio_duration_sec": 2779.089,
+    "transcribed_duration_sec": 1407.0,
+    "active_appearance_sec": 1138.85,
+    "cand_speaking_sec": 666.08,
+    "cand_words": 2336,
+    "total_window_words": 4279,
+    "raw_acoustic_strict_mentions": 12,
+    "raw_acoustic_broad_mentions": 15,
+    "strict_mentions": 12,
+    "broad_mentions": 15,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 7,
+    "noncand_broad_mentions": 7,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 64.86,
+    "rate_per_speaking_hr_broad": 81.07,
+    "rate_per_active_hr_strict": 37.93,
+    "rate_per_1k_words_strict": 5.14,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 64.86,
+    "bench_america": 7,
+    "bench_trump": 18,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 677.6,
+        "words": 2375,
+        "strict_mentions": 12,
+        "broad_mentions": 15
+      },
+      "mid": {
+        "speech_sec": 666.08,
+        "words": 2336,
+        "strict_mentions": 12,
+        "broad_mentions": 15
+      },
+      "hi": {
+        "speech_sec": 625.34,
+        "words": 2179,
+        "strict_mentions": 11,
+        "broad_mentions": 14
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 296.84,
+        "end": 303.2,
+        "span_sec": 6.36,
+        "cand_speech_sec": 5.94,
+        "density": 0.934,
+        "kept": false
+      },
+      {
+        "start": 741.55,
+        "end": 1880.4,
+        "span_sec": 1138.85,
+        "cand_speech_sec": 666.08,
+        "density": 0.585,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_weekly_show_stewart_20260429",
+    "candidate": "graham_platner",
+    "show": "The Weekly Show with Jon Stewart",
+    "title": "Politics for ME (and You) with Graham Platner",
+    "pub_date": "2026-04-29",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "weekly_show",
+    "audio_duration_sec": 5556.245,
+    "transcribed_duration_sec": 5556.245,
+    "active_appearance_sec": 4253.34,
+    "cand_speaking_sec": 2401.03,
+    "cand_words": 7517,
+    "total_window_words": 15423,
+    "raw_acoustic_strict_mentions": 12,
+    "raw_acoustic_broad_mentions": 14,
+    "strict_mentions": 13,
+    "broad_mentions": 15,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 9,
+    "noncand_broad_mentions": 9,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "sullivan": 1
+    },
+    "rate_per_speaking_hr_strict": 19.49,
+    "rate_per_speaking_hr_broad": 22.49,
+    "rate_per_active_hr_strict": 11.0,
+    "rate_per_1k_words_strict": 1.73,
+    "rate_per_speaking_hr_substate_geo": 1.5,
+    "rate_per_speaking_hr_combined_local": 20.99,
+    "bench_america": 9,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 6,
+    "bench_senate_senator": 12,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2452.32,
+        "words": 7674,
+        "strict_mentions": 12,
+        "broad_mentions": 14
+      },
+      "mid": {
+        "speech_sec": 2401.03,
+        "words": 7517,
+        "strict_mentions": 12,
+        "broad_mentions": 14
+      },
+      "hi": {
+        "speech_sec": 2264.15,
+        "words": 7091,
+        "strict_mentions": 10,
+        "broad_mentions": 12
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 146.98,
+        "end": 965.03,
+        "span_sec": 818.05,
+        "cand_speech_sec": 502.14,
+        "density": 0.614,
+        "kept": true
+      },
+      {
+        "start": 1208.67,
+        "end": 2228.04,
+        "span_sec": 1019.37,
+        "cand_speech_sec": 660.33,
+        "density": 0.648,
+        "kept": true
+      },
+      {
+        "start": 2421.71,
+        "end": 4837.63,
+        "span_sec": 2415.92,
+        "cand_speech_sec": 1238.56,
+        "density": 0.513,
+        "kept": true
+      },
+      {
+        "start": 5253.93,
+        "end": 5425.67,
+        "span_sec": 171.74,
+        "cand_speech_sec": 7.34,
+        "density": 0.043,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_choose_hard_way_20260421",
+    "candidate": "graham_platner",
+    "show": "Choose the Hard Way",
+    "title": "Veteran & Maine US Senate Candidate Graham Platner: Combat Fitness, True Strength, & The Defense Insecurity Complex of Hegseth, RFK Jr., and Elon Musk",
+    "pub_date": "2026-04-21",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 2558.417,
+    "transcribed_duration_sec": 2558.417,
+    "active_appearance_sec": 2500.6,
+    "cand_speaking_sec": 1462.51,
+    "cand_words": 5092,
+    "total_window_words": 7619,
+    "raw_acoustic_strict_mentions": 3,
+    "raw_acoustic_broad_mentions": 3,
+    "strict_mentions": 4,
+    "broad_mentions": 4,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 9,
+    "noncand_broad_mentions": 9,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 9.85,
+    "rate_per_speaking_hr_broad": 9.85,
+    "rate_per_active_hr_strict": 5.76,
+    "rate_per_1k_words_strict": 0.79,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 9.85,
+    "bench_america": 0,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 0,
+    "bench_senate_senator": 0,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1576.39,
+        "words": 5480,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "mid": {
+        "speech_sec": 1462.51,
+        "words": 5092,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      },
+      "hi": {
+        "speech_sec": 1309.77,
+        "words": 4518,
+        "strict_mentions": 3,
+        "broad_mentions": 3
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 0.0,
+        "end": 2500.6,
+        "span_sec": 2500.6,
+        "cand_speech_sec": 1462.51,
+        "density": 0.585,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_mehdi_unfiltered_20260416",
+    "candidate": "graham_platner",
+    "show": "Mehdi Unfiltered",
+    "title": "EXCLUSIVE: Graham Platner on 'Political Revolution,' Fighting Genocide, and Why He's Not John Fetterman",
+    "pub_date": "2026-04-16",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "mehdi_unfiltered",
+    "audio_duration_sec": 2004.336,
+    "transcribed_duration_sec": 2004.336,
+    "active_appearance_sec": 1764.29,
+    "cand_speaking_sec": 1002.76,
+    "cand_words": 3346,
+    "total_window_words": 5992,
+    "raw_acoustic_strict_mentions": 8,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 8,
+    "broad_mentions": 9,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 5,
+    "noncand_broad_mentions": 5,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 28.72,
+    "rate_per_speaking_hr_broad": 32.31,
+    "rate_per_active_hr_strict": 16.32,
+    "rate_per_1k_words_strict": 2.39,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 28.72,
+    "bench_america": 9,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 2,
+    "bench_senate_senator": 10,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1009.46,
+        "words": 3368,
+        "strict_mentions": 8,
+        "broad_mentions": 9
+      },
+      "mid": {
+        "speech_sec": 1002.76,
+        "words": 3346,
+        "strict_mentions": 8,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 964.78,
+        "words": 3209,
+        "strict_mentions": 8,
+        "broad_mentions": 9
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 118.0,
+        "end": 1882.29,
+        "span_sec": 1764.29,
+        "cand_speech_sec": 1002.76,
+        "density": 0.568,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_death_sex_money_20260303",
+    "candidate": "graham_platner",
+    "show": "Death, Sex & Money",
+    "title": "After Two Wars and PTSD, He Became an Oyster Farmer. Why is He Running for Senate?",
+    "pub_date": "2026-03-03",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 5779.749,
+    "transcribed_duration_sec": 5779.749,
+    "active_appearance_sec": 5039.26,
+    "cand_speaking_sec": 3022.32,
+    "cand_words": 9972,
+    "total_window_words": 16698,
+    "raw_acoustic_strict_mentions": 31,
+    "raw_acoustic_broad_mentions": 32,
+    "strict_mentions": 33,
+    "broad_mentions": 34,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 20,
+    "noncand_broad_mentions": 20,
+    "substate_geo_mentions": 6,
+    "substate_geo_breakdown": {
+      "sullivan": 1,
+      "hancock": 2,
+      "bangor": 2,
+      "portland": 1
+    },
+    "rate_per_speaking_hr_strict": 39.31,
+    "rate_per_speaking_hr_broad": 40.5,
+    "rate_per_active_hr_strict": 23.57,
+    "rate_per_1k_words_strict": 3.31,
+    "rate_per_speaking_hr_substate_geo": 7.15,
+    "rate_per_speaking_hr_combined_local": 46.45,
+    "bench_america": 2,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 13,
+    "bench_senate_senator": 13,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 3148.06,
+        "words": 10418,
+        "strict_mentions": 32,
+        "broad_mentions": 33
+      },
+      "mid": {
+        "speech_sec": 3022.32,
+        "words": 9972,
+        "strict_mentions": 31,
+        "broad_mentions": 32
+      },
+      "hi": {
+        "speech_sec": 2846.88,
+        "words": 9374,
+        "strict_mentions": 30,
+        "broad_mentions": 31
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 199.16,
+        "end": 1884.18,
+        "span_sec": 1685.02,
+        "cand_speech_sec": 987.58,
+        "density": 0.586,
+        "kept": true
+      },
+      {
+        "start": 2127.17,
+        "end": 3857.89,
+        "span_sec": 1730.72,
+        "cand_speech_sec": 1135.3,
+        "density": 0.656,
+        "kept": true
+      },
+      {
+        "start": 4076.87,
+        "end": 5700.39,
+        "span_sec": 1623.52,
+        "cand_speech_sec": 899.44,
+        "density": 0.554,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_pod_save_america_20260301",
+    "candidate": "graham_platner",
+    "show": "Pod Save America",
+    "title": "Graham Platner Isn't Backing Down",
+    "pub_date": "2026-03-01",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "pod_save_america",
+    "audio_duration_sec": 4991.28,
+    "transcribed_duration_sec": 4060.5,
+    "active_appearance_sec": 3679.39,
+    "cand_speaking_sec": 2332.68,
+    "cand_words": 7814,
+    "total_window_words": 11909,
+    "raw_acoustic_strict_mentions": 20,
+    "raw_acoustic_broad_mentions": 21,
+    "strict_mentions": 25,
+    "broad_mentions": 27,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 3,
+    "noncand_broad_mentions": 3,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "penobscot": 1
+    },
+    "rate_per_speaking_hr_strict": 38.58,
+    "rate_per_speaking_hr_broad": 41.67,
+    "rate_per_active_hr_strict": 24.46,
+    "rate_per_1k_words_strict": 3.2,
+    "rate_per_speaking_hr_substate_geo": 1.54,
+    "rate_per_speaking_hr_combined_local": 40.13,
+    "bench_america": 12,
+    "bench_trump": 9,
+    "bench_healthcare_medicare": 15,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2484.93,
+        "words": 8381,
+        "strict_mentions": 21,
+        "broad_mentions": 23
+      },
+      "mid": {
+        "speech_sec": 2332.68,
+        "words": 7814,
+        "strict_mentions": 20,
+        "broad_mentions": 21
+      },
+      "hi": {
+        "speech_sec": 2085.68,
+        "words": 6939,
+        "strict_mentions": 18,
+        "broad_mentions": 19
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 317.96,
+        "end": 1221.1,
+        "span_sec": 903.14,
+        "cand_speech_sec": 562.7,
+        "density": 0.623,
+        "kept": true
+      },
+      {
+        "start": 1520.43,
+        "end": 2373.65,
+        "span_sec": 853.22,
+        "cand_speech_sec": 564.24,
+        "density": 0.661,
+        "kept": true
+      },
+      {
+        "start": 2623.4,
+        "end": 3531.96,
+        "span_sec": 908.56,
+        "cand_speech_sec": 556.02,
+        "density": 0.612,
+        "kept": true
+      },
+      {
+        "start": 3757.62,
+        "end": 4772.09,
+        "span_sec": 1014.47,
+        "cand_speech_sec": 649.72,
+        "density": 0.64,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_office_hours_20260226",
+    "candidate": "graham_platner",
+    "show": "Office Hours Live with Tim Heidecker",
+    "title": "376. Controversy Created Conversation with Graham Platner, Tyler Ballgame",
+    "pub_date": "2026-02-26",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 3954.678,
+    "transcribed_duration_sec": 3682.5,
+    "active_appearance_sec": 2977.94,
+    "cand_speaking_sec": 1925.3,
+    "cand_words": 6117,
+    "total_window_words": 10742,
+    "raw_acoustic_strict_mentions": 9,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 10,
+    "broad_mentions": 10,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 3,
+    "noncand_broad_mentions": 4,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "sullivan": 1
+    },
+    "rate_per_speaking_hr_strict": 18.7,
+    "rate_per_speaking_hr_broad": 18.7,
+    "rate_per_active_hr_strict": 12.09,
+    "rate_per_1k_words_strict": 1.63,
+    "rate_per_speaking_hr_substate_geo": 1.87,
+    "rate_per_speaking_hr_combined_local": 20.57,
+    "bench_america": 5,
+    "bench_trump": 4,
+    "bench_healthcare_medicare": 9,
+    "bench_senate_senator": 16,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2037.42,
+        "words": 6484,
+        "strict_mentions": 10,
+        "broad_mentions": 10
+      },
+      "mid": {
+        "speech_sec": 1925.3,
+        "words": 6117,
+        "strict_mentions": 9,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 1735.32,
+        "words": 5496,
+        "strict_mentions": 8,
+        "broad_mentions": 8
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 97.78,
+        "end": 103.18,
+        "span_sec": 5.4,
+        "cand_speech_sec": 5.4,
+        "density": 1.0,
+        "kept": false
+      },
+      {
+        "start": 364.01,
+        "end": 3341.95,
+        "span_sec": 2977.94,
+        "cand_speech_sec": 1925.3,
+        "density": 0.647,
+        "kept": true
+      },
+      {
+        "start": 3561.95,
+        "end": 3645.31,
+        "span_sec": 83.36,
+        "cand_speech_sec": 8.36,
+        "density": 0.1,
+        "kept": false
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_meidas_20260221",
+    "candidate": "graham_platner",
+    "show": "The MeidasTouch Podcast",
+    "title": "Trump Panics as Epstein Class is Finally Exposed!!!",
+    "pub_date": "2026-02-21",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 1277.623,
+    "transcribed_duration_sec": 1051.5,
+    "active_appearance_sec": 959.96,
+    "cand_speaking_sec": 572.9,
+    "cand_words": 1813,
+    "total_window_words": 2968,
+    "raw_acoustic_strict_mentions": 2,
+    "raw_acoustic_broad_mentions": 2,
+    "strict_mentions": 2,
+    "broad_mentions": 2,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 2,
+    "noncand_broad_mentions": 2,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 12.57,
+    "rate_per_speaking_hr_broad": 12.57,
+    "rate_per_active_hr_strict": 7.5,
+    "rate_per_1k_words_strict": 1.1,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 12.57,
+    "bench_america": 4,
+    "bench_trump": 5,
+    "bench_healthcare_medicare": 5,
+    "bench_senate_senator": 0,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 584.08,
+        "words": 1848,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "mid": {
+        "speech_sec": 572.9,
+        "words": 1813,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "hi": {
+        "speech_sec": 562.7,
+        "words": 1773,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 267.57,
+        "end": 1227.53,
+        "span_sec": 959.96,
+        "cand_speech_sec": 572.9,
+        "density": 0.597,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_zero_hour_20260207",
+    "candidate": "graham_platner",
+    "show": "The Zero Hour with RJ Eskow",
+    "title": "Graham Platner, Senate Challenger",
+    "pub_date": "2026-02-07",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 2474.302,
+    "transcribed_duration_sec": 2082.0,
+    "active_appearance_sec": 1882.03,
+    "cand_speaking_sec": 1019.66,
+    "cand_words": 3272,
+    "total_window_words": 5629,
+    "raw_acoustic_strict_mentions": 6,
+    "raw_acoustic_broad_mentions": 6,
+    "strict_mentions": 7,
+    "broad_mentions": 7,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 4,
+    "noncand_broad_mentions": 4,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 24.71,
+    "rate_per_speaking_hr_broad": 24.71,
+    "rate_per_active_hr_strict": 13.39,
+    "rate_per_1k_words_strict": 2.14,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 24.71,
+    "bench_america": 5,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1052.72,
+        "words": 3384,
+        "strict_mentions": 7,
+        "broad_mentions": 7
+      },
+      "mid": {
+        "speech_sec": 1019.66,
+        "words": 3272,
+        "strict_mentions": 6,
+        "broad_mentions": 6
+      },
+      "hi": {
+        "speech_sec": 924.88,
+        "words": 2971,
+        "strict_mentions": 6,
+        "broad_mentions": 6
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 235.7,
+        "end": 2117.73,
+        "span_sec": 1882.03,
+        "cand_speech_sec": 1019.66,
+        "density": 0.542,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_david_pakman_20260129",
+    "candidate": "graham_platner",
+    "show": "The David Pakman Show",
+    "title": "ICE agents in trouble as under the bus goes Bovino",
+    "pub_date": "2026-01-29",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 4473.417,
+    "transcribed_duration_sec": 2053.5,
+    "active_appearance_sec": 1471.54,
+    "cand_speaking_sec": 885.55,
+    "cand_words": 2853,
+    "total_window_words": 5790,
+    "raw_acoustic_strict_mentions": 2,
+    "raw_acoustic_broad_mentions": 2,
+    "strict_mentions": 2,
+    "broad_mentions": 2,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 6,
+    "noncand_broad_mentions": 6,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 8.13,
+    "rate_per_speaking_hr_broad": 8.13,
+    "rate_per_active_hr_strict": 4.89,
+    "rate_per_1k_words_strict": 0.7,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 8.13,
+    "bench_america": 7,
+    "bench_trump": 2,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1013.39,
+        "words": 3272,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "mid": {
+        "speech_sec": 885.55,
+        "words": 2853,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      },
+      "hi": {
+        "speech_sec": 821.09,
+        "words": 2627,
+        "strict_mentions": 2,
+        "broad_mentions": 2
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 589.0,
+        "end": 850.71,
+        "span_sec": 261.71,
+        "cand_speech_sec": 47.12,
+        "density": 0.18,
+        "kept": false
+      },
+      {
+        "start": 2322.24,
+        "end": 3793.78,
+        "span_sec": 1471.54,
+        "cand_speech_sec": 885.55,
+        "density": 0.602,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_daily_beast_20260120",
+    "candidate": "graham_platner",
+    "show": "The Daily Beast Podcast",
+    "title": "Why Trump's Crimes Require Punishment: Candidate",
+    "pub_date": "2026-01-20",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 3674.854,
+    "transcribed_duration_sec": 3315.0,
+    "active_appearance_sec": 3218.35,
+    "cand_speaking_sec": 1897.53,
+    "cand_words": 5901,
+    "total_window_words": 9192,
+    "raw_acoustic_strict_mentions": 20,
+    "raw_acoustic_broad_mentions": 23,
+    "strict_mentions": 22,
+    "broad_mentions": 25,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 11,
+    "noncand_broad_mentions": 11,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 41.74,
+    "rate_per_speaking_hr_broad": 47.43,
+    "rate_per_active_hr_strict": 24.61,
+    "rate_per_1k_words_strict": 3.73,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 41.74,
+    "bench_america": 16,
+    "bench_trump": 13,
+    "bench_healthcare_medicare": 11,
+    "bench_senate_senator": 8,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1969.27,
+        "words": 6109,
+        "strict_mentions": 20,
+        "broad_mentions": 23
+      },
+      "mid": {
+        "speech_sec": 1897.53,
+        "words": 5901,
+        "strict_mentions": 20,
+        "broad_mentions": 23
+      },
+      "hi": {
+        "speech_sec": 1795.51,
+        "words": 5591,
+        "strict_mentions": 17,
+        "broad_mentions": 20
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 199.68,
+        "end": 3418.03,
+        "span_sec": 3218.35,
+        "cand_speech_sec": 1897.53,
+        "density": 0.59,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_new_yorker_20251219",
+    "candidate": "graham_platner",
+    "show": "The New Yorker Radio Hour",
+    "title": "Graham Platner Is Staying in the Race",
+    "pub_date": "2025-12-19",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "new_yorker",
+    "audio_duration_sec": 3640.999,
+    "transcribed_duration_sec": 2620.5,
+    "active_appearance_sec": 2395.57,
+    "cand_speaking_sec": 1515.38,
+    "cand_words": 4905,
+    "total_window_words": 7256,
+    "raw_acoustic_strict_mentions": 8,
+    "raw_acoustic_broad_mentions": 9,
+    "strict_mentions": 10,
+    "broad_mentions": 11,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 6,
+    "noncand_broad_mentions": 6,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 23.76,
+    "rate_per_speaking_hr_broad": 26.13,
+    "rate_per_active_hr_strict": 15.03,
+    "rate_per_1k_words_strict": 2.04,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 23.76,
+    "bench_america": 3,
+    "bench_trump": 4,
+    "bench_healthcare_medicare": 7,
+    "bench_senate_senator": 6,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1567.78,
+        "words": 5078,
+        "strict_mentions": 9,
+        "broad_mentions": 10
+      },
+      "mid": {
+        "speech_sec": 1515.38,
+        "words": 4905,
+        "strict_mentions": 8,
+        "broad_mentions": 9
+      },
+      "hi": {
+        "speech_sec": 1408.32,
+        "words": 4532,
+        "strict_mentions": 8,
+        "broad_mentions": 9
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 213.14,
+        "end": 1036.61,
+        "span_sec": 823.47,
+        "cand_speech_sec": 549.78,
+        "density": 0.668,
+        "kept": true
+      },
+      {
+        "start": 1383.62,
+        "end": 2955.72,
+        "span_sec": 1572.1,
+        "cand_speech_sec": 965.6,
+        "density": 0.614,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_left_reckoning_20251218",
+    "candidate": "graham_platner",
+    "show": "Left Reckoning",
+    "title": "250 - Graham Platner joins Left Reckoning",
+    "pub_date": "2025-12-18",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 4477.945,
+    "transcribed_duration_sec": 4308.0,
+    "active_appearance_sec": 2656.88,
+    "cand_speaking_sec": 1556.25,
+    "cand_words": 5006,
+    "total_window_words": 12190,
+    "raw_acoustic_strict_mentions": 13,
+    "raw_acoustic_broad_mentions": 15,
+    "strict_mentions": 15,
+    "broad_mentions": 17,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 5,
+    "noncand_broad_mentions": 8,
+    "substate_geo_mentions": 3,
+    "substate_geo_breakdown": {
+      "lewiston": 3
+    },
+    "rate_per_speaking_hr_strict": 34.7,
+    "rate_per_speaking_hr_broad": 39.33,
+    "rate_per_active_hr_strict": 20.32,
+    "rate_per_1k_words_strict": 3.0,
+    "rate_per_speaking_hr_substate_geo": 6.94,
+    "rate_per_speaking_hr_combined_local": 41.64,
+    "bench_america": 1,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 12,
+    "bench_senate_senator": 6,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1660.61,
+        "words": 5347,
+        "strict_mentions": 15,
+        "broad_mentions": 17
+      },
+      "mid": {
+        "speech_sec": 1556.25,
+        "words": 5006,
+        "strict_mentions": 13,
+        "broad_mentions": 15
+      },
+      "hi": {
+        "speech_sec": 1394.13,
+        "words": 4497,
+        "strict_mentions": 12,
+        "broad_mentions": 14
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 672.15,
+        "end": 852.29,
+        "span_sec": 180.14,
+        "cand_speech_sec": 7.6,
+        "density": 0.042,
+        "kept": false
+      },
+      {
+        "start": 1311.69,
+        "end": 1327.25,
+        "span_sec": 15.56,
+        "cand_speech_sec": 1.34,
+        "density": 0.086,
+        "kept": false
+      },
+      {
+        "start": 1725.85,
+        "end": 4382.73,
+        "span_sec": 2656.88,
+        "cand_speech_sec": 1556.25,
+        "density": 0.586,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_find_out_pod_20251114",
+    "candidate": "graham_platner",
+    "show": "The Find Out Podcast",
+    "title": "Graham Platner Joins the Find Out Pod",
+    "pub_date": "2025-11-14",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 4231.471,
+    "transcribed_duration_sec": 4231.471,
+    "active_appearance_sec": 3795.56,
+    "cand_speaking_sec": 2333.66,
+    "cand_words": 7714,
+    "total_window_words": 12163,
+    "raw_acoustic_strict_mentions": 18,
+    "raw_acoustic_broad_mentions": 19,
+    "strict_mentions": 18,
+    "broad_mentions": 19,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 7,
+    "noncand_broad_mentions": 10,
+    "substate_geo_mentions": 3,
+    "substate_geo_breakdown": {
+      "ellsworth": 1,
+      "portland": 2
+    },
+    "rate_per_speaking_hr_strict": 27.77,
+    "rate_per_speaking_hr_broad": 29.31,
+    "rate_per_active_hr_strict": 17.07,
+    "rate_per_1k_words_strict": 2.33,
+    "rate_per_speaking_hr_substate_geo": 4.63,
+    "rate_per_speaking_hr_combined_local": 32.4,
+    "bench_america": 10,
+    "bench_trump": 3,
+    "bench_healthcare_medicare": 12,
+    "bench_senate_senator": 10,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2363.56,
+        "words": 7820,
+        "strict_mentions": 18,
+        "broad_mentions": 19
+      },
+      "mid": {
+        "speech_sec": 2333.66,
+        "words": 7714,
+        "strict_mentions": 18,
+        "broad_mentions": 19
+      },
+      "hi": {
+        "speech_sec": 2268.44,
+        "words": 7489,
+        "strict_mentions": 17,
+        "broad_mentions": 18
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 97.74,
+        "end": 1102.28,
+        "span_sec": 1004.54,
+        "cand_speech_sec": 729.1,
+        "density": 0.726,
+        "kept": true
+      },
+      {
+        "start": 1315.48,
+        "end": 4106.5,
+        "span_sec": 2791.02,
+        "cand_speech_sec": 1604.56,
+        "density": 0.575,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_lever_time_20251101",
+    "candidate": "graham_platner",
+    "show": "Lever Time",
+    "title": "BONUS: An Exclusive Interview With Graham Platner",
+    "pub_date": "2025-11-01",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "lever_time",
+    "audio_duration_sec": 3182.785,
+    "transcribed_duration_sec": 3182.785,
+    "active_appearance_sec": 2742.09,
+    "cand_speaking_sec": 1594.52,
+    "cand_words": 4925,
+    "total_window_words": 8442,
+    "raw_acoustic_strict_mentions": 7,
+    "raw_acoustic_broad_mentions": 13,
+    "strict_mentions": 8,
+    "broad_mentions": 15,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 7,
+    "noncand_broad_mentions": 8,
+    "substate_geo_mentions": 1,
+    "substate_geo_breakdown": {
+      "sullivan": 1
+    },
+    "rate_per_speaking_hr_strict": 18.06,
+    "rate_per_speaking_hr_broad": 33.87,
+    "rate_per_active_hr_strict": 10.5,
+    "rate_per_1k_words_strict": 1.62,
+    "rate_per_speaking_hr_substate_geo": 2.26,
+    "rate_per_speaking_hr_combined_local": 20.32,
+    "bench_america": 11,
+    "bench_trump": 1,
+    "bench_healthcare_medicare": 3,
+    "bench_senate_senator": 4,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 1613.26,
+        "words": 4992,
+        "strict_mentions": 7,
+        "broad_mentions": 13
+      },
+      "mid": {
+        "speech_sec": 1594.52,
+        "words": 4925,
+        "strict_mentions": 7,
+        "broad_mentions": 13
+      },
+      "hi": {
+        "speech_sec": 1570.0,
+        "words": 4829,
+        "strict_mentions": 7,
+        "broad_mentions": 13
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 293.8,
+        "end": 3035.89,
+        "span_sec": 2742.09,
+        "cand_speech_sec": 1594.52,
+        "density": 0.581,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_breaking_points_20251031",
+    "candidate": "graham_platner",
+    "show": "Breaking Points with Krystal and Saagar",
+    "title": "10/31/25: Epstein Israeli Agent Confirmed?, Nick Fuentes GOP Takeover, Graham Platner TELLS ALL",
+    "pub_date": "2025-10-31",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "",
+    "audio_duration_sec": 8180.454,
+    "transcribed_duration_sec": 3253.5,
+    "active_appearance_sec": 3162.69,
+    "cand_speaking_sec": 1980.43,
+    "cand_words": 6463,
+    "total_window_words": 9446,
+    "raw_acoustic_strict_mentions": 13,
+    "raw_acoustic_broad_mentions": 16,
+    "strict_mentions": 14,
+    "broad_mentions": 17,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 12,
+    "noncand_broad_mentions": 13,
+    "substate_geo_mentions": 6,
+    "substate_geo_breakdown": {
+      "sullivan": 3,
+      "bar harbor": 1,
+      "bangor": 2
+    },
+    "rate_per_speaking_hr_strict": 25.45,
+    "rate_per_speaking_hr_broad": 30.9,
+    "rate_per_active_hr_strict": 15.94,
+    "rate_per_1k_words_strict": 2.17,
+    "rate_per_speaking_hr_substate_geo": 10.91,
+    "rate_per_speaking_hr_combined_local": 36.36,
+    "bench_america": 1,
+    "bench_trump": 4,
+    "bench_healthcare_medicare": 2,
+    "bench_senate_senator": 14,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2020.49,
+        "words": 6604,
+        "strict_mentions": 14,
+        "broad_mentions": 17
+      },
+      "mid": {
+        "speech_sec": 1980.43,
+        "words": 6463,
+        "strict_mentions": 13,
+        "broad_mentions": 16
+      },
+      "hi": {
+        "speech_sec": 1857.45,
+        "words": 6074,
+        "strict_mentions": 13,
+        "broad_mentions": 16
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 3967.14,
+        "end": 7129.83,
+        "span_sec": 3162.69,
+        "cand_speech_sec": 1980.43,
+        "density": 0.626,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_psaki_briefing_20251029",
+    "candidate": "graham_platner",
+    "show": "The Briefing with Jen Psaki",
+    "title": "Psaki delves into the heart of the scandal that rocked the Maine Senate race",
+    "pub_date": "2025-10-29",
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "jen_psaki",
+    "audio_duration_sec": 2646.883,
+    "transcribed_duration_sec": 1126.5,
+    "active_appearance_sec": 1031.13,
+    "cand_speaking_sec": 567.26,
+    "cand_words": 1859,
+    "total_window_words": 3240,
+    "raw_acoustic_strict_mentions": 2,
+    "raw_acoustic_broad_mentions": 4,
+    "strict_mentions": 2,
+    "broad_mentions": 4,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 4,
+    "noncand_broad_mentions": 4,
+    "substate_geo_mentions": 0,
+    "substate_geo_breakdown": {},
+    "rate_per_speaking_hr_strict": 12.69,
+    "rate_per_speaking_hr_broad": 25.39,
+    "rate_per_active_hr_strict": 6.98,
+    "rate_per_1k_words_strict": 1.08,
+    "rate_per_speaking_hr_substate_geo": 0.0,
+    "rate_per_speaking_hr_combined_local": 12.69,
+    "bench_america": 4,
+    "bench_trump": 0,
+    "bench_healthcare_medicare": 1,
+    "bench_senate_senator": 1,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 576.32,
+        "words": 1880,
+        "strict_mentions": 2,
+        "broad_mentions": 4
+      },
+      "mid": {
+        "speech_sec": 567.26,
+        "words": 1859,
+        "strict_mentions": 2,
+        "broad_mentions": 4
+      },
+      "hi": {
+        "speech_sec": 556.96,
+        "words": 1826,
+        "strict_mentions": 2,
+        "broad_mentions": 4
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 1516.02,
+        "end": 2547.15,
+        "span_sec": 1031.13,
+        "cand_speech_sec": 567.26,
+        "density": 0.55,
+        "kept": true
+      }
+    ]
+  },
+  {
+    "episode_id": "gp_why_is_this_happening_20250909",
+    "candidate": "graham_platner",
+    "show": "Why Is This Happening? The Chris Hayes Podcast",
+    "title": "From Oyster Farming to Running for Senate with Graham Platner",
+    "pub_date": "2025-09-09",
+    "category": "national_longform",
+    "period": "campaign",
+    "is_full_broadcast": false,
+    "matched_venue": "",
+    "audio_duration_sec": 3384.764,
+    "transcribed_duration_sec": 3384.764,
+    "active_appearance_sec": 3317.26,
+    "cand_speaking_sec": 2072.75,
+    "cand_words": 7077,
+    "total_window_words": 10231,
+    "raw_acoustic_strict_mentions": 17,
+    "raw_acoustic_broad_mentions": 18,
+    "strict_mentions": 17,
+    "broad_mentions": 18,
+    "pa_abbr_mentions": 0,
+    "noncand_strict_mentions": 6,
+    "noncand_broad_mentions": 8,
+    "substate_geo_mentions": 3,
+    "substate_geo_breakdown": {
+      "hancock county": 3
+    },
+    "rate_per_speaking_hr_strict": 29.53,
+    "rate_per_speaking_hr_broad": 31.26,
+    "rate_per_active_hr_strict": 18.45,
+    "rate_per_1k_words_strict": 2.4,
+    "rate_per_speaking_hr_substate_geo": 5.21,
+    "rate_per_speaking_hr_combined_local": 34.74,
+    "bench_america": 5,
+    "bench_trump": 10,
+    "bench_healthcare_medicare": 15,
+    "bench_senate_senator": 7,
+    "sensitivity": {
+      "lo": {
+        "speech_sec": 2088.65,
+        "words": 7136,
+        "strict_mentions": 17,
+        "broad_mentions": 18
+      },
+      "mid": {
+        "speech_sec": 2072.75,
+        "words": 7077,
+        "strict_mentions": 17,
+        "broad_mentions": 18
+      },
+      "hi": {
+        "speech_sec": 2022.33,
+        "words": 6901,
+        "strict_mentions": 17,
+        "broad_mentions": 18
+      }
+    },
+    "cluster_info": [
+      {
+        "start": 67.14,
+        "end": 3384.4,
+        "span_sec": 3317.26,
+        "cand_speech_sec": 2072.75,
+        "density": 0.625,
+        "kept": true
+      }
+    ]
+  }
+]

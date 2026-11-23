@@ -1,0 +1,50 @@
+{
+  "gp_beacon_20251212": {
+    "episode_id": "gp_beacon_20251212",
+    "candidate": "graham_platner",
+    "show": "Beacon Podcast",
+    "title": "Podcast: Graham Platner on building a movement larger than his U.S. Senate campaign",
+    "pub_date": "2025-12-12",
+    "reason": "download_error: 520 Server Error: <none> for url: https://mainebeacon.com/wp-content/uploads/2025/12/121225POD.mp3"
+  },
+  "gp_11th_hour_velshi_20260605": {
+    "episode_id": "gp_11th_hour_velshi_20260605",
+    "candidate": "graham_platner",
+    "show": "The 11th Hour with Ali Velshi",
+    "title": "Exclusive interview with Maine Democratic Candidate Graham Platner after new explosive allegations",
+    "pub_date": "2026-06-05",
+    "category": "national_tv",
+    "period": "campaign",
+    "is_full_broadcast": true,
+    "matched_venue": "ms_now_11th",
+    "duration_sec": 2576,
+    "audio_url": "https://dts.podtrac.com/redirect.mp3/pdst.fm/e/injector.simplecastaudio.com/818c79ea-ecbd-49ef-9118-fb6e70249747/episodes/b0c98210-e08a-435b-91af-4dcb2d39258f/audio/128/default.mp3?aid=rss_feed&awCollectionId=818c79ea-ecbd-49ef-9118-fb6e70249747&awEpisodeId=b0c98210-e08a-435b-91af-4dcb2d39258f&feed=0j_7K9RB",
+    "description": "MS NOW's full exclusive interview with Graham Platner, Democratic Candidate for Senate in Maine, after new explosive allegations. Plus, the President's former personal lawyer moves closer to a permanent role leading the Justice Department. Peter Baker, David Drucker, Anthony Fisher, Joyce White Vance, and Ken Atshulter join The 11th Hour this Thursday night. To listen to this show and other MS pod",
+    "http_status": 206,
+    "http_len": "bytes 0-1023/46241192",
+    "http_type": "audio/mpeg",
+    "http_ok": true,
+    "reason": "duplicate_replay_of_gp_all_in_hayes_20260605_jaccard_0.652"
+  },
+  "jf_collins_20250930": {
+    "episode_id": "jf_collins_20250930",
+    "candidate": "john_fetterman",
+    "show": "The Source with Kaitlan Collins",
+    "title": "Fetterman: Shutdown Risks \u201cPlunging Our Nation Into Chaos\u201d",
+    "pub_date": "2025-09-30",
+    "category": "national_tv",
+    "period": "senator",
+    "is_full_broadcast": true,
+    "matched_venue": "kaitlan_collins",
+    "duration_sec": 2710,
+    "audio_url": "https://www.podtrac.com/pts/redirect.mp3/pdst.fm/e/swap.fm/track/2nzGkisFXQswLYT5s325/traffic.megaphone.fm/WMHY5850738095.mp3?updated=1759199399",
+    "description": "We are one day away from a government shutdown and Kaitlan shares what Vice President JD Vance told her after the Trump administration met with Democrats at the White House today. Learn more about your ad choices. Visit podcastchoices.com/adchoices",
+    "http_status": 206,
+    "http_len": "bytes 0-1023/65778064",
+    "http_type": "audio/mpeg",
+    "http_ok": true,
+    "reason": "verified_candidate_speech_under_60s",
+    "verified_cand_speech_sec": 0,
+    "max_utt_sim": 0.8823
+  }
+}

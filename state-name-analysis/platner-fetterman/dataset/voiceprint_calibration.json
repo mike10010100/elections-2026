@@ -1,0 +1,1086 @@
+{
+  "model": "microsoft/wavlm-base-plus-sv (8-speaker cohort-centered) + resemblyzer GE2E",
+  "bg_cohort_speakers": [
+    "scott_colom",
+    "abdul_el_sayed",
+    "chris_hayes",
+    "david_sirota",
+    "jon_stewart",
+    "nick_gillespie",
+    "david_friedberg",
+    "indeed_ad"
+  ],
+  "cross_candidate_similarity_raw": 0.9647,
+  "cross_candidate_similarity_cen": 0.791,
+  "cross_candidate_similarity_res": 0.8515,
+  "reference_diagnostics": {
+    "graham_platner": {
+      "slices": [
+        [
+          "gp_why_is_this_happening_20250909",
+          253.0,
+          346.0
+        ],
+        [
+          "gp_why_is_this_happening_20250909",
+          460.0,
+          488.5
+        ],
+        [
+          "gp_why_is_this_happening_20250909",
+          549.0,
+          614.5
+        ],
+        [
+          "gp_lever_time_20251101",
+          292.0,
+          421.5
+        ],
+        [
+          "gp_lever_time_20251101",
+          503.5,
+          569.0
+        ]
+      ],
+      "total_ref_sec": 382.0,
+      "window_count": 187,
+      "intra_cen_min": 0.5043,
+      "intra_cen_p10": 0.7612,
+      "intra_cen_med": 0.8785,
+      "intra_cen_max": 0.9583,
+      "intra_res_min": 0.8102,
+      "intra_res_p10": 0.8588,
+      "intra_res_med": 0.8913
+    },
+    "john_fetterman": {
+      "slices": [
+        [
+          "jf_all_in_pod_20260318",
+          98.0,
+          263.0
+        ],
+        [
+          "jf_all_in_pod_20260318",
+          433.0,
+          537.0
+        ],
+        [
+          "jf_reason_interview_20260513",
+          160.5,
+          271.5
+        ]
+      ],
+      "total_ref_sec": 380.0,
+      "window_count": 188,
+      "intra_cen_min": 0.506,
+      "intra_cen_p10": 0.7483,
+      "intra_cen_med": 0.8535,
+      "intra_cen_max": 0.957,
+      "intra_res_min": 0.8383,
+      "intra_res_p10": 0.8761,
+      "intra_res_med": 0.9227
+    }
+  },
+  "validation": {
+    "graham_platner": {
+      "histogram_edges": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95,
+        1.0
+      ],
+      "histogram_counts": [
+        6,
+        5,
+        10,
+        15,
+        18,
+        16,
+        30,
+        25,
+        34,
+        18,
+        26,
+        31,
+        28,
+        35,
+        55,
+        84,
+        137,
+        146,
+        74,
+        4
+      ],
+      "below_zero_count": 288,
+      "band_050_078": [
+        {
+          "start": 398.66,
+          "end": 404.26,
+          "text": "I currently just read a book called Invisible Doctrine.",
+          "dur": 5.6,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7797,
+          "sim_res": 0.8682
+        },
+        {
+          "start": 1360.25,
+          "end": 1363.71,
+          "text": "I made mistakes and Amy held me accountable",
+          "dur": 3.46,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7785,
+          "sim_res": 0.8184
+        },
+        {
+          "start": 738.93,
+          "end": 741.63,
+          "text": "wake up at 5.30, six o'clock, go PT.",
+          "dur": 2.7,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7776,
+          "sim_res": 0.7616
+        },
+        {
+          "start": 1841.54,
+          "end": 1844.54,
+          "text": "Um, but to me, it's the people of Maine who I'm going out to",
+          "dur": 3.0,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7758,
+          "sim_res": 0.8076
+        },
+        {
+          "start": 878.45,
+          "end": 884.93,
+          "text": "With a lot of politicians. So what what kind of took off? I think it's honestly I think it's two things",
+          "dur": 6.48,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7757,
+          "sim_res": 0.8287
+        },
+        {
+          "start": 195.88,
+          "end": 198.4,
+          "text": "the day starts around 7.30 or 8 a.m.",
+          "dur": 2.52,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7715,
+          "sim_res": 0.8009
+        },
+        {
+          "start": 29.42,
+          "end": 32.62,
+          "text": "with no water, to the point where I'm getting wonky",
+          "dur": 3.2,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7714,
+          "sim_res": 0.8482
+        },
+        {
+          "start": 1780.82,
+          "end": 1783.32,
+          "text": "I mean, the response is that I agree.",
+          "dur": 2.5,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7701,
+          "sim_res": 0.7231
+        },
+        {
+          "start": 1458.04,
+          "end": 1465.16,
+          "text": "People like it's it's a politics of humanity and it's a real policy. It's not a politics of like",
+          "dur": 7.12,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7686,
+          "sim_res": 0.8378
+        },
+        {
+          "start": 409.9,
+          "end": 412.42,
+          "text": "That was, sorry, that's my version of a day off.",
+          "dur": 2.52,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7663,
+          "sim_res": 0.7986
+        },
+        {
+          "start": 1396.55,
+          "end": 1399.07,
+          "text": "And I was with the National Guard Company from Iowa.",
+          "dur": 2.52,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7654,
+          "sim_res": 0.8023
+        },
+        {
+          "start": 1272.99,
+          "end": 1276.63,
+          "text": "Like it like because I actually do believe these things and that's right",
+          "dur": 3.64,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7649,
+          "sim_res": 0.7961
+        },
+        {
+          "start": 1114.86,
+          "end": 1117.5,
+          "text": "But those serious allegations are just not true.",
+          "dur": 2.64,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7644,
+          "sim_res": 0.7744
+        },
+        {
+          "start": 437.27,
+          "end": 440.45,
+          "text": "like America and Americans to",
+          "dur": 3.18,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7641,
+          "sim_res": 0.7941
+        },
+        {
+          "start": 967.67,
+          "end": 971.41,
+          "text": "while also being able to go hands-on with somebody",
+          "dur": 3.74,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7635,
+          "sim_res": 0.8498
+        },
+        {
+          "start": 1783.57,
+          "end": 1786.53,
+          "text": "but being able to like be vulnerable",
+          "dur": 2.96,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7616,
+          "sim_res": 0.7649
+        },
+        {
+          "start": 1392.27,
+          "end": 1396.55,
+          "text": "so that was one of the first real fights that happened.",
+          "dur": 4.28,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7608,
+          "sim_res": 0.8016
+        },
+        {
+          "start": 214.82,
+          "end": 217.56,
+          "text": "to really kind of still focus on for the most part",
+          "dur": 2.74,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7604,
+          "sim_res": 0.7997
+        },
+        {
+          "start": 1321.85,
+          "end": 1324.73,
+          "text": "to the position of the rest of the company.",
+          "dur": 2.88,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7592,
+          "sim_res": 0.8301
+        },
+        {
+          "start": 943.29,
+          "end": 948.55,
+          "text": "so I was also trying to show a level of commitment",
+          "dur": 5.26,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7568,
+          "sim_res": 0.8598
+        },
+        {
+          "start": 1693.05,
+          "end": 1696.29,
+          "text": "intense amounts of self-isolation, alienation,",
+          "dur": 3.24,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7563,
+          "sim_res": 0.8119
+        },
+        {
+          "start": 1740.54,
+          "end": 1744.02,
+          "text": "Roosevelt we had to Roosevelt in 1928",
+          "dur": 3.48,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7561,
+          "sim_res": 0.6711
+        },
+        {
+          "start": 280.31,
+          "end": 283.01,
+          "text": "Everything's real mellow having a real mellow mellow",
+          "dur": 2.7,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7548,
+          "sim_res": 0.8027
+        },
+        {
+          "start": 1766.37,
+          "end": 1769.13,
+          "text": "is what saved my life, hands down, end of story.",
+          "dur": 2.76,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7545,
+          "sim_res": 0.7846
+        },
+        {
+          "start": 1453.88,
+          "end": 1458.04,
+          "text": "Foundational politics, which is like we care about we care about",
+          "dur": 4.16,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7539,
+          "sim_res": 0.7922
+        },
+        {
+          "start": 1529.84,
+          "end": 1537.3,
+          "text": "through my life through a number of years, struggling and not exactly acting under with the",
+          "dur": 7.46,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7528,
+          "sim_res": 0.863
+        },
+        {
+          "start": 997.55,
+          "end": 1000.05,
+          "text": "Thanks, Chris. I really appreciate it. Thanks for having me on.",
+          "dur": 2.5,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7525,
+          "sim_res": 0.7401
+        },
+        {
+          "start": 1177.67,
+          "end": 1180.57,
+          "text": "I grabbed my squad and I kind of,",
+          "dur": 2.9,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7506,
+          "sim_res": 0.8165
+        },
+        {
+          "start": 1416.19,
+          "end": 1420.15,
+          "text": "but it's our marriage and it's a good marriage. And we're",
+          "dur": 3.96,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7502,
+          "sim_res": 0.8522
+        },
+        {
+          "start": 1339.47,
+          "end": 1342.41,
+          "text": "and we were dehydrated and we were banged up.",
+          "dur": 2.94,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7493,
+          "sim_res": 0.8408
+        },
+        {
+          "start": 1187.1,
+          "end": 1190.72,
+          "text": "I had that tattoo for 17 years. It's a skull and crossbones.",
+          "dur": 3.62,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7488,
+          "sim_res": 0.7938
+        },
+        {
+          "start": 821.69,
+          "end": 824.45,
+          "text": "and then after I got back from that,",
+          "dur": 2.76,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7486,
+          "sim_res": 0.7622
+        },
+        {
+          "start": 1480.17,
+          "end": 1483.51,
+          "text": "And I felt very kind of like, not prepared,",
+          "dur": 3.34,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7467,
+          "sim_res": 0.781
+        },
+        {
+          "start": 1569.89,
+          "end": 1573.15,
+          "text": "you're gonna be able to act quicker and faster",
+          "dur": 3.26,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.745,
+          "sim_res": 0.8357
+        },
+        {
+          "start": 1486.23,
+          "end": 1488.75,
+          "text": "And so that's, that's when it stopped.",
+          "dur": 2.52,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7448,
+          "sim_res": 0.7798
+        },
+        {
+          "start": 718.05,
+          "end": 722.23,
+          "text": "I had really got into this kind of more functional fitness",
+          "dur": 4.18,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7441,
+          "sim_res": 0.8439
+        },
+        {
+          "start": 1594.08,
+          "end": 1598.06,
+          "text": "believe that if you believe in a transformational politics, you got to believe in the ability for",
+          "dur": 3.98,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.7414,
+          "sim_res": 0.8081
+        },
+        {
+          "start": 1861.15,
+          "end": 1864.19,
+          "text": "who has still got the wrong kind of armor on.",
+          "dur": 3.04,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7395,
+          "sim_res": 0.7996
+        },
+        {
+          "start": 1133.93,
+          "end": 1138.21,
+          "text": "a member of the Afghan government",
+          "dur": 4.28,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7385,
+          "sim_res": 0.838
+        },
+        {
+          "start": 1579.0,
+          "end": 1582.14,
+          "text": "I go all over the state. I've held over 80 town halls,",
+          "dur": 3.14,
+          "eid": "gp_11th_hour_velshi_20260605",
+          "sim_cen": 0.738,
+          "sim_res": 0.8696
+        },
+        {
+          "start": 1326.57,
+          "end": 1329.83,
+          "text": "And I'm very grateful that everybody in my squad",
+          "dur": 3.26,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7378,
+          "sim_res": 0.8262
+        },
+        {
+          "start": 1548.82,
+          "end": 1552.28,
+          "text": "But like the New Deal wasn't picking around the edges",
+          "dur": 3.46,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7367,
+          "sim_res": 0.7724
+        },
+        {
+          "start": 841.35,
+          "end": 844.27,
+          "text": "to like keep my joints strong.",
+          "dur": 2.92,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7312,
+          "sim_res": 0.8196
+        },
+        {
+          "start": 424.81,
+          "end": 429.35,
+          "text": "Got into oyster farming became the harbor master got really involved in my local community",
+          "dur": 4.54,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7289,
+          "sim_res": 0.8351
+        },
+        {
+          "start": 961.53,
+          "end": 965.03,
+          "text": "Mmm, what a wild concept in this modern era,",
+          "dur": 3.5,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7289,
+          "sim_res": 0.8299
+        },
+        {
+          "start": 1587.95,
+          "end": 1591.31,
+          "text": "And so I then focused more on certain elements of fitness",
+          "dur": 3.36,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7263,
+          "sim_res": 0.8377
+        },
+        {
+          "start": 869.61,
+          "end": 872.77,
+          "text": "like I ran five, cycled five, three, one for years.",
+          "dur": 3.16,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7258,
+          "sim_res": 0.8424
+        },
+        {
+          "start": 1492.9,
+          "end": 1496.0,
+          "text": "Cuz I got I'm gonna I'm not really a reform candidate",
+          "dur": 3.1,
+          "eid": "gp_weekly_show_stewart_20260429",
+          "sim_cen": 0.7244,
+          "sim_res": 0.7842
+        },
+        {
+          "start": 26.7,
+          "end": 29.42,
+          "text": "So we do this whole multi-hour gunfight thing",
+          "dur": 2.72,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7237,
+          "sim_res": 0.8172
+        },
+        {
+          "start": 342.4,
+          "end": 345.0,
+          "text": "like doing some old fashioned,",
+          "dur": 2.6,
+          "eid": "gp_choose_hard_way_20260421",
+          "sim_cen": 0.7211,
+          "sim_res": 0.7777
+        }
+      ]
+    },
+    "john_fetterman": {
+      "histogram_edges": [
+        0.0,
+        0.05,
+        0.1,
+        0.15,
+        0.2,
+        0.25,
+        0.3,
+        0.35,
+        0.4,
+        0.45,
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95,
+        1.0
+      ],
+      "histogram_counts": [
+        8,
+        15,
+        5,
+        15,
+        11,
+        12,
+        18,
+        20,
+        24,
+        16,
+        28,
+        23,
+        14,
+        26,
+        29,
+        51,
+        92,
+        159,
+        144,
+        7
+      ],
+      "below_zero_count": 390,
+      "band_050_078": [
+        {
+          "start": 711.86,
+          "end": 714.6,
+          "text": "And if the senate was working on",
+          "dur": 2.74,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7789,
+          "sim_res": 0.8841
+        },
+        {
+          "start": 1630.13,
+          "end": 1637.73,
+          "text": "It's you know, that that's not an economic model that has never worked in in the history, but that's aren't you just",
+          "dur": 7.6,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7788,
+          "sim_res": 0.8874
+        },
+        {
+          "start": 354.03,
+          "end": 359.41,
+          "text": "It's not about trying to get clipped and end up on cable. I understand what you're saying",
+          "dur": 5.38,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7784,
+          "sim_res": 0.8612
+        },
+        {
+          "start": 1097.36,
+          "end": 1102.16,
+          "text": "Even though every single democrat in my caucus knew that it would have no direct",
+          "dur": 4.8,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7782,
+          "sim_res": 0.8863
+        },
+        {
+          "start": 1380.49,
+          "end": 1383.95,
+          "text": "In that kind of way, so it is it is a significant issue, right?",
+          "dur": 3.46,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7781,
+          "sim_res": 0.858
+        },
+        {
+          "start": 703.52,
+          "end": 706.62,
+          "text": "Our society because they would have had the trifecta",
+          "dur": 3.1,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7774,
+          "sim_res": 0.8446
+        },
+        {
+          "start": 1553.77,
+          "end": 1556.45,
+          "text": "position like we are currently in and have been since",
+          "dur": 2.68,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7767,
+          "sim_res": 0.8426
+        },
+        {
+          "start": 748.38,
+          "end": 752.38,
+          "text": "Whacked when I said well, what is a real constitutional crisis?",
+          "dur": 4.0,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7749,
+          "sim_res": 0.8711
+        },
+        {
+          "start": 1371.89,
+          "end": 1380.49,
+          "text": "And now I just seen the the recent poll over a third of democrats identify themselves as socialists or or have sympathies towards",
+          "dur": 8.6,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7745,
+          "sim_res": 0.9006
+        },
+        {
+          "start": 308.26,
+          "end": 311.84,
+          "text": "Really important thing that will impact a lot of millions and millions of american",
+          "dur": 3.58,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7722,
+          "sim_res": 0.8367
+        },
+        {
+          "start": 1893.6,
+          "end": 1896.14,
+          "text": "that has our kinds of values",
+          "dur": 2.54,
+          "eid": "jf_meet_the_press_20260729",
+          "sim_cen": 0.7713,
+          "sim_res": 0.8275
+        },
+        {
+          "start": 280.34,
+          "end": 285.42,
+          "text": "So overall, but I think I've said this people would be surprised",
+          "dur": 5.08,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7686,
+          "sim_res": 0.8673
+        },
+        {
+          "start": 449.78,
+          "end": 452.8,
+          "text": "Uh now here we have at the iranian war now",
+          "dur": 3.02,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7684,
+          "sim_res": 0.8362
+        },
+        {
+          "start": 844.89,
+          "end": 851.19,
+          "text": "matter more where calling, you know, every single thing on Twitter, it's just in terms of,",
+          "dur": 6.3,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7649,
+          "sim_res": 0.8321
+        },
+        {
+          "start": 1226.23,
+          "end": 1229.31,
+          "text": "I would trust Israel's judgment on that.",
+          "dur": 3.08,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7643,
+          "sim_res": 0.8168
+        },
+        {
+          "start": 1532.65,
+          "end": 1536.41,
+          "text": "Of positions that were absolutely toxic back in 2020",
+          "dur": 3.76,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7624,
+          "sim_res": 0.8531
+        },
+        {
+          "start": 1423.43,
+          "end": 1427.69,
+          "text": "everything and now the dsa is is",
+          "dur": 4.26,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.761,
+          "sim_res": 0.8439
+        },
+        {
+          "start": 1705.21,
+          "end": 1709.83,
+          "text": "You know like you know, you've been you've been here and you've been very effective for do that",
+          "dur": 4.62,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7607,
+          "sim_res": 0.825
+        },
+        {
+          "start": 752.9,
+          "end": 756.3,
+          "text": "That's when that's when the president is going to defy",
+          "dur": 3.4,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7599,
+          "sim_res": 0.8522
+        },
+        {
+          "start": 538.8,
+          "end": 545.12,
+          "text": "and and now I mean there's a lot of stories of how I've become, you know, increasingly more",
+          "dur": 6.32,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7511,
+          "sim_res": 0.877
+        },
+        {
+          "start": 1433.11,
+          "end": 1437.05,
+          "text": "I'm, just describing what i'm witnessing that's coming as a regular democrat",
+          "dur": 3.94,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7507,
+          "sim_res": 0.8757
+        },
+        {
+          "start": 1756.47,
+          "end": 1761.03,
+          "text": "Bill marr does not describe hamas is a thousand percent better than israel",
+          "dur": 4.56,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7494,
+          "sim_res": 0.8821
+        },
+        {
+          "start": 1543.39,
+          "end": 1547.25,
+          "text": "And now don't we want to win do we want to be the people?",
+          "dur": 3.86,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7482,
+          "sim_res": 0.8743
+        },
+        {
+          "start": 1709.83,
+          "end": 1713.21,
+          "text": "You know for an individual it says that america we deserve that",
+          "dur": 3.38,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7437,
+          "sim_res": 0.8527
+        },
+        {
+          "start": 1580.15,
+          "end": 1584.93,
+          "text": "Don't vote for these people and and now like some things that i've never done, you know",
+          "dur": 4.78,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7421,
+          "sim_res": 0.8742
+        },
+        {
+          "start": 1125.21,
+          "end": 1129.35,
+          "text": "nuclear facilities like less than a year ago. I mean, the president, I don't care who the",
+          "dur": 4.14,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7403,
+          "sim_res": 0.8127
+        },
+        {
+          "start": 1447.93,
+          "end": 1451.51,
+          "text": "um, why do you think it is that",
+          "dur": 3.58,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.739,
+          "sim_res": 0.6992
+        },
+        {
+          "start": 969.52,
+          "end": 972.2,
+          "text": "positions to trying to find the right balance of",
+          "dur": 2.68,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7373,
+          "sim_res": 0.9025
+        },
+        {
+          "start": 714.01,
+          "end": 718.97,
+          "text": "is happening? Yeah, well, that's part of it. I mean, it's almost becoming some kind of",
+          "dur": 4.96,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7368,
+          "sim_res": 0.8341
+        },
+        {
+          "start": 660.63,
+          "end": 663.81,
+          "text": "You know, we really should humble ourselves and just say, yeah, hey,",
+          "dur": 3.18,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7335,
+          "sim_res": 0.8312
+        },
+        {
+          "start": 153.24,
+          "end": 158.14,
+          "text": "We don't and that we're ignoring it, but we're not ignoring it people. I'm not a time traveler",
+          "dur": 4.9,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7315,
+          "sim_res": 0.688
+        },
+        {
+          "start": 380.24,
+          "end": 383.24,
+          "text": "Now everyone here in the in congress are paid",
+          "dur": 3.0,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7292,
+          "sim_res": 0.849
+        },
+        {
+          "start": 687.48,
+          "end": 691.6,
+          "text": "you know, they would have been able to run the table a hundred percent run the table",
+          "dur": 4.12,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7253,
+          "sim_res": 0.9031
+        },
+        {
+          "start": 1084.19,
+          "end": 1087.45,
+          "text": "strike it again. And they want to bring up the",
+          "dur": 3.26,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7251,
+          "sim_res": 0.803
+        },
+        {
+          "start": 1153.3,
+          "end": 1156.44,
+          "text": "So that's it's it's a reasonable kinds of concerns",
+          "dur": 3.14,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7228,
+          "sim_res": 0.8355
+        },
+        {
+          "start": 1401.79,
+          "end": 1404.47,
+          "text": "We have to win actual",
+          "dur": 2.68,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7222,
+          "sim_res": 0.825
+        },
+        {
+          "start": 1065.7,
+          "end": 1069.9,
+          "text": "I mean that that's a fact and shut the government down on that",
+          "dur": 4.2,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7203,
+          "sim_res": 0.8818
+        },
+        {
+          "start": 1812.05,
+          "end": 1816.05,
+          "text": "politics in the last 30 years to emerge up plus 15,",
+          "dur": 4.0,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7195,
+          "sim_res": 0.8626
+        },
+        {
+          "start": 223.63,
+          "end": 226.29,
+          "text": "But yeah, normally I you have a job interview today",
+          "dur": 2.66,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7172,
+          "sim_res": 0.8043
+        },
+        {
+          "start": 1432.71,
+          "end": 1439.45,
+          "text": "it's like I don't and I'm not I refuse to call it as Jim Crow 2.0. A lot of majority",
+          "dur": 6.74,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7153,
+          "sim_res": 0.865
+        },
+        {
+          "start": 859.99,
+          "end": 866.23,
+          "text": "to this when if you secure our border and refocus only on deporting all of the criminals,",
+          "dur": 6.24,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.7143,
+          "sim_res": 0.8369
+        },
+        {
+          "start": 229.51,
+          "end": 233.47,
+          "text": "well, I mean but it just I thought wait I'm already in it",
+          "dur": 3.96,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7124,
+          "sim_res": 0.8403
+        },
+        {
+          "start": 1653.79,
+          "end": 1661.31,
+          "text": "That feels like that feels like a caricature. I I never said that I call real communists that that are cheering for communism",
+          "dur": 7.52,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7077,
+          "sim_res": 0.8933
+        },
+        {
+          "start": 1292.47,
+          "end": 1295.67,
+          "text": "Abolish the border and say these kinds of extreme things",
+          "dur": 3.2,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.7036,
+          "sim_res": 0.8676
+        },
+        {
+          "start": 216.99,
+          "end": 223.63,
+          "text": "It's not AI if I could AI impose a suit I would but but now yeah, I'm in I'm in a suit",
+          "dur": 6.64,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.699,
+          "sim_res": 0.8486
+        },
+        {
+          "start": 1598.93,
+          "end": 1603.25,
+          "text": "That they've been positioned as people that are not in touch with people",
+          "dur": 4.32,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.6982,
+          "sim_res": 0.87
+        },
+        {
+          "start": 1676.19,
+          "end": 1681.61,
+          "text": "And if you put out things like three year extension of the ACA tax credits,",
+          "dur": 5.42,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.6934,
+          "sim_res": 0.8277
+        },
+        {
+          "start": 594.91,
+          "end": 599.11,
+          "text": "So, you know, people are not leverage and it's just",
+          "dur": 4.2,
+          "eid": "jf_conversation_burns_20260213",
+          "sim_cen": 0.6932,
+          "sim_res": 0.8126
+        },
+        {
+          "start": 253.49,
+          "end": 258.55,
+          "text": "Or is it just you sit around just fighting with everybody. What's what's the vibe down there?",
+          "dur": 5.06,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.6881,
+          "sim_res": 0.6912
+        },
+        {
+          "start": 488.84,
+          "end": 491.44,
+          "text": "Are firmly rooted in",
+          "dur": 2.6,
+          "eid": "jf_weekly_show_stewart_20260805",
+          "sim_cen": 0.6877,
+          "sim_res": 0.8595
+        }
+      ]
+    }
+  }
+}

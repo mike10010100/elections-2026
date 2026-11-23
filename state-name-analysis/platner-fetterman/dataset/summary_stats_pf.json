@@ -1,0 +1,1709 @@
+{
+  "taus_cen": {
+    "graham_platner": 0.68,
+    "john_fetterman": 0.72
+  },
+  "taus_res": {
+    "graham_platner": 0.77,
+    "john_fetterman": 0.79
+  },
+  "adjudications_applied": 46,
+  "overall": {
+    "graham_platner": {
+      "n": 24,
+      "speaking_hours": 9.58,
+      "active_hours": 16.475,
+      "cand_words": 112795,
+      "strict_mentions": 288,
+      "broad_mentions": 325,
+      "noncand_strict_mentions": 197,
+      "rate_speaking_hr": 30.063,
+      "rate_speaking_hr_ci95": [
+        24.786,
+        35.636
+      ],
+      "rate_active_hr": 17.481,
+      "rate_active_hr_ci95": [
+        14.261,
+        21.01
+      ],
+      "rate_per_1k_words": 2.553,
+      "rate_per_1k_words_ci95": [
+        2.117,
+        3.016
+      ],
+      "rate_broad_speaking_hr": 33.925,
+      "rate_broad_speaking_hr_ci95": [
+        28.332,
+        39.884
+      ],
+      "median_ep_rate_hr": 28.24,
+      "iqr_ep_rate_hr": [
+        19.29,
+        35.09
+      ],
+      "median_ep_per_1k": 2.36,
+      "iqr_ep_per_1k": [
+        1.71,
+        3.04
+      ]
+    },
+    "john_fetterman": {
+      "n": 25,
+      "speaking_hours": 7.522,
+      "active_hours": 13.034,
+      "cand_words": 79165,
+      "strict_mentions": 102,
+      "broad_mentions": 112,
+      "noncand_strict_mentions": 85,
+      "rate_speaking_hr": 13.561,
+      "rate_speaking_hr_ci95": [
+        10.06,
+        17.197
+      ],
+      "rate_active_hr": 7.826,
+      "rate_active_hr_ci95": [
+        5.673,
+        9.996
+      ],
+      "rate_per_1k_words": 1.288,
+      "rate_per_1k_words_ci95": [
+        0.962,
+        1.65
+      ],
+      "rate_broad_speaking_hr": 14.891,
+      "rate_broad_speaking_hr_ci95": [
+        11.166,
+        18.762
+      ],
+      "median_ep_rate_hr": 11.32,
+      "iqr_ep_rate_hr": [
+        0.0,
+        16.63
+      ],
+      "median_ep_per_1k": 1.04,
+      "iqr_ep_per_1k": [
+        0.0,
+        1.59
+      ]
+    }
+  },
+  "comparison_speaking_hr": {
+    "diff_obs": 16.502,
+    "diff_ci95": [
+      10.024,
+      22.93
+    ],
+    "ratio_obs": 2.217,
+    "ratio_ci95": [
+      1.628,
+      3.061
+    ],
+    "perm_p_value_speaking_hr": 0.0001
+  },
+  "comparison_per_1k_words": {
+    "diff_obs": 1.265,
+    "diff_ci95": [
+      0.7,
+      1.838
+    ],
+    "ratio_obs": 1.982,
+    "ratio_ci95": [
+      1.454,
+      2.781
+    ],
+    "perm_p_value_1k_words": 0.0001
+  },
+  "comparison_broad_speaking_hr": {
+    "diff_obs": 19.035,
+    "diff_ci95": [
+      12.213,
+      26.022
+    ],
+    "ratio_obs": 2.278,
+    "ratio_ci95": [
+      1.692,
+      3.139
+    ],
+    "perm_p_value_broad_hr": 0.0001
+  },
+  "pa_abbr_sensitivity": {
+    "john_fetterman_pa_abbr_mentions": 0,
+    "john_fetterman_strict_plus_pa_mentions": 102,
+    "john_fetterman_rate_strict_plus_pa_hr": 13.561,
+    "john_fetterman_rate_strict_plus_pa_ci95": [
+      10.171,
+      17.216
+    ]
+  },
+  "raw_vs_adjudicated": {
+    "graham_platner": {
+      "speaking_hours": 9.58,
+      "raw_strict_mentions": 263,
+      "raw_broad_mentions": 296,
+      "raw_rate_speaking_hr_strict": 27.45,
+      "raw_rate_speaking_hr_broad": 30.9,
+      "raw_rate_per_1k_words_strict": 2.33,
+      "adj_strict_mentions": 288,
+      "adj_broad_mentions": 325,
+      "adj_rate_speaking_hr_strict": 30.06,
+      "adj_rate_speaking_hr_broad": 33.93,
+      "adj_rate_per_1k_words_strict": 2.55,
+      "flipped_to_candidate_strict": 27,
+      "flipped_to_candidate_broad": 31,
+      "flipped_to_non_candidate_strict": 2,
+      "homophone_promoted_strict": 4,
+      "homophone_promoted_broad_only": 3
+    },
+    "john_fetterman": {
+      "speaking_hours": 7.522,
+      "raw_strict_mentions": 98,
+      "raw_broad_mentions": 109,
+      "raw_rate_speaking_hr_strict": 13.03,
+      "raw_rate_speaking_hr_broad": 14.49,
+      "raw_rate_per_1k_words_strict": 1.24,
+      "adj_strict_mentions": 102,
+      "adj_broad_mentions": 112,
+      "adj_rate_speaking_hr_strict": 13.56,
+      "adj_rate_speaking_hr_broad": 14.89,
+      "adj_rate_per_1k_words_strict": 1.29,
+      "flipped_to_candidate_strict": 8,
+      "flipped_to_candidate_broad": 8,
+      "flipped_to_non_candidate_strict": 2,
+      "homophone_promoted_strict": 0,
+      "homophone_promoted_broad_only": 0
+    }
+  },
+  "substate_geography": {
+    "graham_platner": {
+      "substate_mentions": 38,
+      "rate_substate_speaking_hr": 3.967,
+      "rate_substate_speaking_hr_ci95": [
+        2.212,
+        5.802
+      ],
+      "rate_substate_per_1k_words": 0.337,
+      "rate_substate_per_1k_words_ci95": [
+        0.183,
+        0.489
+      ],
+      "combined_local_mentions": 326,
+      "rate_combined_speaking_hr": 34.03,
+      "rate_combined_speaking_hr_ci95": [
+        27.797,
+        40.823
+      ],
+      "rate_combined_per_1k_words": 2.89,
+      "rate_combined_per_1k_words_ci95": [
+        2.356,
+        3.46
+      ],
+      "top_places": [
+        {
+          "place": "sullivan",
+          "count": 16
+        },
+        {
+          "place": "bangor",
+          "count": 4
+        },
+        {
+          "place": "hancock county",
+          "count": 4
+        },
+        {
+          "place": "portland",
+          "count": 4
+        },
+        {
+          "place": "lewiston",
+          "count": 3
+        },
+        {
+          "place": "ellsworth",
+          "count": 2
+        },
+        {
+          "place": "hancock",
+          "count": 2
+        },
+        {
+          "place": "bar harbor",
+          "count": 1
+        },
+        {
+          "place": "downeast",
+          "count": 1
+        },
+        {
+          "place": "penobscot",
+          "count": 1
+        }
+      ]
+    },
+    "john_fetterman": {
+      "substate_mentions": 21,
+      "rate_substate_speaking_hr": 2.792,
+      "rate_substate_speaking_hr_ci95": [
+        1.653,
+        3.752
+      ],
+      "rate_substate_per_1k_words": 0.265,
+      "rate_substate_per_1k_words_ci95": [
+        0.16,
+        0.358
+      ],
+      "combined_local_mentions": 123,
+      "rate_combined_speaking_hr": 16.353,
+      "rate_combined_speaking_hr_ci95": [
+        12.62,
+        19.871
+      ],
+      "rate_combined_per_1k_words": 1.554,
+      "rate_combined_per_1k_words_ci95": [
+        1.187,
+        1.907
+      ],
+      "top_places": [
+        {
+          "place": "pittsburgh",
+          "count": 11
+        },
+        {
+          "place": "philadelphia",
+          "count": 3
+        },
+        {
+          "place": "braddock",
+          "count": 2
+        },
+        {
+          "place": "lancaster",
+          "count": 2
+        },
+        {
+          "place": "berks county",
+          "count": 1
+        },
+        {
+          "place": "lehigh valley",
+          "count": 1
+        },
+        {
+          "place": "york county",
+          "count": 1
+        }
+      ]
+    },
+    "comparison_substate_hr": {
+      "diff_obs": 1.175,
+      "diff_ci95": [
+        -0.848,
+        3.325
+      ],
+      "ratio_obs": 1.421,
+      "ratio_ci95": [
+        0.733,
+        2.687
+      ],
+      "perm_p_value_speaking_hr": 0.3338
+    },
+    "comparison_combined_hr": {
+      "diff_obs": 17.677,
+      "diff_ci95": [
+        10.395,
+        25.299
+      ],
+      "ratio_obs": 2.081,
+      "ratio_ci95": [
+        1.562,
+        2.828
+      ],
+      "perm_p_value_speaking_hr": 0.0002
+    }
+  },
+  "by_category": {
+    "national_tv": {
+      "graham_platner": {
+        "n": 5,
+        "speaking_hours": 0.791,
+        "active_hours": 1.519,
+        "cand_words": 9452,
+        "strict_mentions": 29,
+        "broad_mentions": 39,
+        "noncand_strict_mentions": 34,
+        "rate_speaking_hr": 36.667,
+        "rate_speaking_hr_ci95": [
+          21.589,
+          53.705
+        ],
+        "rate_active_hr": 19.09,
+        "rate_active_hr_ci95": [
+          10.196,
+          28.798
+        ],
+        "rate_per_1k_words": 3.068,
+        "rate_per_1k_words_ci95": [
+          1.679,
+          4.341
+        ],
+        "rate_broad_speaking_hr": 49.311,
+        "rate_broad_speaking_hr_ci95": [
+          31.139,
+          67.964
+        ],
+        "median_ep_rate_hr": 33.91,
+        "iqr_ep_rate_hr": [
+          26.18,
+          36.26
+        ],
+        "median_ep_per_1k": 2.85,
+        "iqr_ep_per_1k": [
+          2.21,
+          3.16
+        ]
+      },
+      "john_fetterman": {
+        "n": 11,
+        "speaking_hours": 1.511,
+        "active_hours": 2.474,
+        "cand_words": 16332,
+        "strict_mentions": 12,
+        "broad_mentions": 14,
+        "noncand_strict_mentions": 15,
+        "rate_speaking_hr": 7.941,
+        "rate_speaking_hr_ci95": [
+          0.0,
+          13.105
+        ],
+        "rate_active_hr": 4.851,
+        "rate_active_hr_ci95": [
+          0.0,
+          8.94
+        ],
+        "rate_per_1k_words": 0.735,
+        "rate_per_1k_words_ci95": [
+          0.0,
+          1.261
+        ],
+        "rate_broad_speaking_hr": 9.265,
+        "rate_broad_speaking_hr_ci95": [
+          1.183,
+          14.598
+        ],
+        "median_ep_rate_hr": 0.0,
+        "iqr_ep_rate_hr": [
+          0.0,
+          5.32
+        ],
+        "median_ep_per_1k": 0.0,
+        "iqr_ep_per_1k": [
+          0.0,
+          0.51
+        ]
+      }
+    },
+    "national_longform": {
+      "graham_platner": {
+        "n": 17,
+        "speaking_hours": 8.163,
+        "active_hours": 13.9,
+        "cand_words": 95790,
+        "strict_mentions": 223,
+        "broad_mentions": 247,
+        "noncand_strict_mentions": 126,
+        "rate_speaking_hr": 27.319,
+        "rate_speaking_hr_ci95": [
+          22.486,
+          31.705
+        ],
+        "rate_active_hr": 16.043,
+        "rate_active_hr_ci95": [
+          13.104,
+          18.791
+        ],
+        "rate_per_1k_words": 2.328,
+        "rate_per_1k_words_ci95": [
+          1.916,
+          2.692
+        ],
+        "rate_broad_speaking_hr": 30.259,
+        "rate_broad_speaking_hr_ci95": [
+          25.094,
+          34.833
+        ],
+        "median_ep_rate_hr": 25.45,
+        "iqr_ep_rate_hr": [
+          18.7,
+          29.81
+        ],
+        "median_ep_per_1k": 2.17,
+        "iqr_ep_per_1k": [
+          1.63,
+          2.5
+        ]
+      },
+      "john_fetterman": {
+        "n": 14,
+        "speaking_hours": 6.01,
+        "active_hours": 10.56,
+        "cand_words": 62833,
+        "strict_mentions": 90,
+        "broad_mentions": 98,
+        "noncand_strict_mentions": 70,
+        "rate_speaking_hr": 14.974,
+        "rate_speaking_hr_ci95": [
+          11.25,
+          19.805
+        ],
+        "rate_active_hr": 8.523,
+        "rate_active_hr_ci95": [
+          6.199,
+          11.28
+        ],
+        "rate_per_1k_words": 1.432,
+        "rate_per_1k_words_ci95": [
+          1.083,
+          1.878
+        ],
+        "rate_broad_speaking_hr": 16.305,
+        "rate_broad_speaking_hr_ci95": [
+          12.254,
+          21.257
+        ],
+        "median_ep_rate_hr": 13.99,
+        "iqr_ep_rate_hr": [
+          11.32,
+          17.54
+        ],
+        "median_ep_per_1k": 1.31,
+        "iqr_ep_per_1k": [
+          1.04,
+          1.66
+        ]
+      }
+    },
+    "local_in_state": {
+      "graham_platner": {
+        "n": 2,
+        "speaking_hours": 0.626,
+        "active_hours": 1.055,
+        "cand_words": 7553,
+        "strict_mentions": 36,
+        "broad_mentions": 39,
+        "noncand_strict_mentions": 37,
+        "rate_speaking_hr": 57.506,
+        "rate_speaking_hr_ci95": [
+          32.437,
+          68.019
+        ],
+        "rate_active_hr": 34.119,
+        "rate_active_hr_ci95": [
+          15.33,
+          45.197
+        ],
+        "rate_per_1k_words": 4.766,
+        "rate_per_1k_words_ci95": [
+          2.799,
+          5.546
+        ],
+        "rate_broad_speaking_hr": 62.298,
+        "rate_broad_speaking_hr_ci95": [
+          43.25,
+          70.287
+        ],
+        "median_ep_rate_hr": 50.23,
+        "iqr_ep_rate_hr": [
+          41.33,
+          59.12
+        ],
+        "median_ep_per_1k": 4.17,
+        "iqr_ep_per_1k": [
+          3.49,
+          4.86
+        ]
+      },
+      "john_fetterman": {
+        "n": 0
+      }
+    }
+  },
+  "matched_venues": {
+    "The New Yorker Radio Hour": {
+      "graham_platner": {
+        "n": 1,
+        "speaking_hours": 0.421,
+        "active_hours": 0.665,
+        "cand_words": 4905,
+        "strict_mentions": 10,
+        "broad_mentions": 11,
+        "noncand_strict_mentions": 6,
+        "rate_speaking_hr": 23.756,
+        "rate_speaking_hr_ci95": [
+          23.756,
+          23.756
+        ],
+        "rate_active_hr": 15.028,
+        "rate_active_hr_ci95": [
+          15.028,
+          15.028
+        ],
+        "rate_per_1k_words": 2.039,
+        "rate_per_1k_words_ci95": [
+          2.039,
+          2.039
+        ],
+        "rate_broad_speaking_hr": 26.132,
+        "rate_broad_speaking_hr_ci95": [
+          26.132,
+          26.132
+        ],
+        "median_ep_rate_hr": 23.76,
+        "iqr_ep_rate_hr": [
+          23.76,
+          23.76
+        ],
+        "median_ep_per_1k": 2.04,
+        "iqr_ep_per_1k": [
+          2.04,
+          2.04
+        ]
+      },
+      "john_fetterman": {
+        "n": 1,
+        "speaking_hours": 0.349,
+        "active_hours": 0.494,
+        "cand_words": 3780,
+        "strict_mentions": 6,
+        "broad_mentions": 6,
+        "noncand_strict_mentions": 4,
+        "rate_speaking_hr": 17.172,
+        "rate_speaking_hr_ci95": [
+          17.172,
+          17.172
+        ],
+        "rate_active_hr": 12.147,
+        "rate_active_hr_ci95": [
+          12.147,
+          12.147
+        ],
+        "rate_per_1k_words": 1.587,
+        "rate_per_1k_words_ci95": [
+          1.587,
+          1.587
+        ],
+        "rate_broad_speaking_hr": 17.172,
+        "rate_broad_speaking_hr_ci95": [
+          17.172,
+          17.172
+        ],
+        "median_ep_rate_hr": 17.17,
+        "iqr_ep_rate_hr": [
+          17.17,
+          17.17
+        ],
+        "median_ep_per_1k": 1.59,
+        "iqr_ep_per_1k": [
+          1.59,
+          1.59
+        ]
+      }
+    },
+    "The Weekly Show w/ Jon Stewart": {
+      "graham_platner": {
+        "n": 1,
+        "speaking_hours": 0.667,
+        "active_hours": 1.181,
+        "cand_words": 7517,
+        "strict_mentions": 13,
+        "broad_mentions": 15,
+        "noncand_strict_mentions": 9,
+        "rate_speaking_hr": 19.492,
+        "rate_speaking_hr_ci95": [
+          19.492,
+          19.492
+        ],
+        "rate_active_hr": 11.003,
+        "rate_active_hr_ci95": [
+          11.003,
+          11.003
+        ],
+        "rate_per_1k_words": 1.729,
+        "rate_per_1k_words_ci95": [
+          1.729,
+          1.729
+        ],
+        "rate_broad_speaking_hr": 22.49,
+        "rate_broad_speaking_hr_ci95": [
+          22.49,
+          22.49
+        ],
+        "median_ep_rate_hr": 19.49,
+        "iqr_ep_rate_hr": [
+          19.49,
+          19.49
+        ],
+        "median_ep_per_1k": 1.73,
+        "iqr_ep_per_1k": [
+          1.73,
+          1.73
+        ]
+      },
+      "john_fetterman": {
+        "n": 1,
+        "speaking_hours": 0.561,
+        "active_hours": 1.227,
+        "cand_words": 6062,
+        "strict_mentions": 9,
+        "broad_mentions": 9,
+        "noncand_strict_mentions": 1,
+        "rate_speaking_hr": 16.042,
+        "rate_speaking_hr_ci95": [
+          16.042,
+          16.042
+        ],
+        "rate_active_hr": 7.336,
+        "rate_active_hr_ci95": [
+          7.336,
+          7.336
+        ],
+        "rate_per_1k_words": 1.485,
+        "rate_per_1k_words_ci95": [
+          1.485,
+          1.485
+        ],
+        "rate_broad_speaking_hr": 16.042,
+        "rate_broad_speaking_hr_ci95": [
+          16.042,
+          16.042
+        ],
+        "median_ep_rate_hr": 16.04,
+        "iqr_ep_rate_hr": [
+          16.04,
+          16.04
+        ],
+        "median_ep_per_1k": 1.48,
+        "iqr_ep_per_1k": [
+          1.48,
+          1.48
+        ]
+      }
+    }
+  },
+  "sensitivity": {
+    "threshold_lo": {
+      "graham_platner": {
+        "speaking_hours": 10.096,
+        "strict_mentions": 275,
+        "broad_mentions": 309,
+        "rate_speaking_hr_strict": 27.24,
+        "rate_per_1k_words_strict": 2.31,
+        "rate_speaking_hr_broad": 30.61
+      },
+      "john_fetterman": {
+        "speaking_hours": 8.273,
+        "strict_mentions": 103,
+        "broad_mentions": 114,
+        "rate_speaking_hr_strict": 12.45,
+        "rate_per_1k_words_strict": 1.17,
+        "rate_speaking_hr_broad": 13.78
+      }
+    },
+    "threshold_mid": {
+      "graham_platner": {
+        "speaking_hours": 9.58,
+        "strict_mentions": 263,
+        "broad_mentions": 296,
+        "rate_speaking_hr_strict": 27.45,
+        "rate_per_1k_words_strict": 2.33,
+        "rate_speaking_hr_broad": 30.9
+      },
+      "john_fetterman": {
+        "speaking_hours": 7.522,
+        "strict_mentions": 98,
+        "broad_mentions": 109,
+        "rate_speaking_hr_strict": 13.03,
+        "rate_per_1k_words_strict": 1.24,
+        "rate_speaking_hr_broad": 14.49
+      }
+    },
+    "threshold_hi": {
+      "graham_platner": {
+        "speaking_hours": 8.861,
+        "strict_mentions": 243,
+        "broad_mentions": 276,
+        "rate_speaking_hr_strict": 27.42,
+        "rate_per_1k_words_strict": 2.34,
+        "rate_speaking_hr_broad": 31.15
+      },
+      "john_fetterman": {
+        "speaking_hours": 6.668,
+        "strict_mentions": 81,
+        "broad_mentions": 92,
+        "rate_speaking_hr_strict": 12.15,
+        "rate_per_1k_words_strict": 1.16,
+        "rate_speaking_hr_broad": 13.8
+      }
+    }
+  },
+  "naive_vs_attributed": {
+    "graham_platner": {
+      "total_window_hours": 19.42,
+      "total_window_words": 198833,
+      "unattributed_strict_mentions": 485,
+      "candidate_only_strict_mentions": 288,
+      "non_candidate_filtered_mentions": 197,
+      "non_candidate_share_pct": 40.6,
+      "naive_rate_per_window_hr": 24.98,
+      "naive_rate_per_1k_words": 2.44
+    },
+    "john_fetterman": {
+      "total_window_hours": 16.35,
+      "total_window_words": 157503,
+      "unattributed_strict_mentions": 187,
+      "candidate_only_strict_mentions": 102,
+      "non_candidate_filtered_mentions": 85,
+      "non_candidate_share_pct": 45.5,
+      "naive_rate_per_window_hr": 11.44,
+      "naive_rate_per_1k_words": 1.19
+    }
+  },
+  "benchmarks": {
+    "graham_platner": {
+      "state_strict_hr": 30.06,
+      "state_broad_hr": 33.93,
+      "substate_geo_hr": 3.97,
+      "america_hr": 14.61,
+      "trump_hr": 9.92,
+      "healthcare_medicare_hr": 14.51,
+      "senate_senator_hr": 16.39,
+      "state_strict_1k": 2.55,
+      "america_1k": 1.24,
+      "trump_1k": 0.84,
+      "healthcare_medicare_1k": 1.23,
+      "senate_senator_1k": 1.39
+    },
+    "john_fetterman": {
+      "state_strict_hr": 13.56,
+      "state_broad_hr": 14.89,
+      "substate_geo_hr": 2.79,
+      "america_hr": 20.47,
+      "trump_hr": 12.23,
+      "healthcare_medicare_hr": 3.46,
+      "senate_senator_hr": 11.3,
+      "state_strict_1k": 1.29,
+      "america_1k": 1.95,
+      "trump_1k": 1.16,
+      "healthcare_medicare_1k": 0.33,
+      "senate_senator_1k": 1.07
+    }
+  },
+  "four_way_comparison": {
+    "scott_colom": {
+      "n": 39,
+      "speaking_hours": 5.497,
+      "active_hours": 10.057,
+      "cand_words": 73156,
+      "strict_mentions": 675,
+      "broad_mentions": 783,
+      "noncand_strict_mentions": 560,
+      "rate_speaking_hr": 122.784,
+      "rate_speaking_hr_ci95": [
+        108.04,
+        140.128
+      ],
+      "rate_active_hr": 67.115,
+      "rate_active_hr_ci95": [
+        58.57,
+        76.507
+      ],
+      "rate_per_1k_words": 9.227,
+      "rate_per_1k_words_ci95": [
+        8.142,
+        10.475
+      ],
+      "rate_broad_speaking_hr": 142.429,
+      "rate_broad_speaking_hr_ci95": [
+        125.534,
+        162.514
+      ],
+      "median_ep_rate_hr": 129.35,
+      "iqr_ep_rate_hr": [
+        101.29,
+        174.82
+      ],
+      "median_ep_per_1k": 9.49,
+      "iqr_ep_per_1k": [
+        8.07,
+        13.36
+      ],
+      "substate_geo_hr": 23.28,
+      "combined_local_hr": 146.067,
+      "america_hr": 14.73,
+      "trump_hr": 4.73,
+      "healthcare_medicare_hr": 25.28,
+      "senate_senator_hr": 34.02,
+      "role": "2026 Senate Candidate",
+      "state": "Mississippi"
+    },
+    "abdul_el_sayed": {
+      "n": 45,
+      "speaking_hours": 11.286,
+      "active_hours": 19.153,
+      "cand_words": 158826,
+      "strict_mentions": 247,
+      "broad_mentions": 354,
+      "noncand_strict_mentions": 410,
+      "rate_speaking_hr": 21.885,
+      "rate_speaking_hr_ci95": [
+        17.796,
+        26.262
+      ],
+      "rate_active_hr": 12.896,
+      "rate_active_hr_ci95": [
+        10.439,
+        15.597
+      ],
+      "rate_per_1k_words": 1.555,
+      "rate_per_1k_words_ci95": [
+        1.27,
+        1.874
+      ],
+      "rate_broad_speaking_hr": 31.366,
+      "rate_broad_speaking_hr_ci95": [
+        25.208,
+        38.322
+      ],
+      "median_ep_rate_hr": 20.73,
+      "iqr_ep_rate_hr": [
+        12.3,
+        33.01
+      ],
+      "median_ep_per_1k": 1.48,
+      "iqr_ep_per_1k": [
+        0.86,
+        2.43
+      ],
+      "substate_geo_hr": 15.68,
+      "combined_local_hr": 37.568,
+      "america_hr": 29.95,
+      "trump_hr": 25.61,
+      "healthcare_medicare_hr": 41.29,
+      "senate_senator_hr": 19.58,
+      "role": "2026 Senate Candidate",
+      "state": "Michigan"
+    },
+    "graham_platner": {
+      "n": 24,
+      "speaking_hours": 9.58,
+      "active_hours": 16.475,
+      "cand_words": 112795,
+      "strict_mentions": 288,
+      "broad_mentions": 325,
+      "noncand_strict_mentions": 197,
+      "rate_speaking_hr": 30.063,
+      "rate_speaking_hr_ci95": [
+        24.786,
+        35.636
+      ],
+      "rate_active_hr": 17.481,
+      "rate_active_hr_ci95": [
+        14.261,
+        21.01
+      ],
+      "rate_per_1k_words": 2.553,
+      "rate_per_1k_words_ci95": [
+        2.117,
+        3.016
+      ],
+      "rate_broad_speaking_hr": 33.925,
+      "rate_broad_speaking_hr_ci95": [
+        28.332,
+        39.884
+      ],
+      "median_ep_rate_hr": 28.24,
+      "iqr_ep_rate_hr": [
+        19.29,
+        35.09
+      ],
+      "median_ep_per_1k": 2.36,
+      "iqr_ep_per_1k": [
+        1.71,
+        3.04
+      ],
+      "substate_geo_hr": 3.97,
+      "combined_local_hr": 34.03,
+      "america_hr": 14.61,
+      "trump_hr": 9.92,
+      "healthcare_medicare_hr": 14.51,
+      "senate_senator_hr": 16.39,
+      "role": "2026 Senate Candidate (withdrew Jul 2026)",
+      "state": "Maine"
+    },
+    "john_fetterman": {
+      "n": 25,
+      "speaking_hours": 7.522,
+      "active_hours": 13.034,
+      "cand_words": 79165,
+      "strict_mentions": 102,
+      "broad_mentions": 112,
+      "noncand_strict_mentions": 85,
+      "rate_speaking_hr": 13.561,
+      "rate_speaking_hr_ci95": [
+        10.06,
+        17.197
+      ],
+      "rate_active_hr": 7.826,
+      "rate_active_hr_ci95": [
+        5.673,
+        9.996
+      ],
+      "rate_per_1k_words": 1.288,
+      "rate_per_1k_words_ci95": [
+        0.962,
+        1.65
+      ],
+      "rate_broad_speaking_hr": 14.891,
+      "rate_broad_speaking_hr_ci95": [
+        11.166,
+        18.762
+      ],
+      "median_ep_rate_hr": 11.32,
+      "iqr_ep_rate_hr": [
+        0.0,
+        16.63
+      ],
+      "median_ep_per_1k": 1.04,
+      "iqr_ep_per_1k": [
+        0.0,
+        1.59
+      ],
+      "substate_geo_hr": 2.79,
+      "combined_local_hr": 16.353,
+      "america_hr": 20.47,
+      "trump_hr": 12.23,
+      "healthcare_medicare_hr": 3.46,
+      "senate_senator_hr": 11.3,
+      "role": "Incumbent U.S. Senator",
+      "state": "Pennsylvania"
+    }
+  },
+  "four_way_matched_venues": {
+    "The Briefing (MS NOW)": {
+      "abdul_el_sayed": {
+        "n": 1,
+        "speaking_hours": 0.175,
+        "active_hours": 0.358,
+        "cand_words": 2349,
+        "strict_mentions": 3,
+        "broad_mentions": 4,
+        "noncand_strict_mentions": 3,
+        "rate_speaking_hr": 17.101,
+        "rate_speaking_hr_ci95": [
+          17.101,
+          17.101
+        ],
+        "rate_active_hr": 8.373,
+        "rate_active_hr_ci95": [
+          8.373,
+          8.373
+        ],
+        "rate_per_1k_words": 1.277,
+        "rate_per_1k_words_ci95": [
+          1.277,
+          1.277
+        ],
+        "rate_broad_speaking_hr": 22.801,
+        "rate_broad_speaking_hr_ci95": [
+          22.801,
+          22.801
+        ],
+        "median_ep_rate_hr": 17.1,
+        "iqr_ep_rate_hr": [
+          17.1,
+          17.1
+        ],
+        "median_ep_per_1k": 1.28,
+        "iqr_ep_per_1k": [
+          1.28,
+          1.28
+        ]
+      },
+      "graham_platner": {
+        "n": 2,
+        "speaking_hours": 0.343,
+        "active_hours": 0.603,
+        "cand_words": 4195,
+        "strict_mentions": 14,
+        "broad_mentions": 19,
+        "noncand_strict_mentions": 11,
+        "rate_speaking_hr": 40.865,
+        "rate_speaking_hr_ci95": [
+          12.693,
+          64.857
+        ],
+        "rate_active_hr": 23.226,
+        "rate_active_hr_ci95": [
+          6.983,
+          37.933
+        ],
+        "rate_per_1k_words": 3.337,
+        "rate_per_1k_words_ci95": [
+          1.076,
+          5.137
+        ],
+        "rate_broad_speaking_hr": 55.459,
+        "rate_broad_speaking_hr_ci95": [
+          25.385,
+          81.071
+        ],
+        "median_ep_rate_hr": 38.77,
+        "iqr_ep_rate_hr": [
+          25.73,
+          51.82
+        ],
+        "median_ep_per_1k": 3.11,
+        "iqr_ep_per_1k": [
+          2.09,
+          4.12
+        ]
+      },
+      "scott_colom": {
+        "n": 2,
+        "speaking_hours": 0.132,
+        "active_hours": 0.238,
+        "cand_words": 1867,
+        "strict_mentions": 26,
+        "broad_mentions": 28,
+        "noncand_strict_mentions": 19,
+        "rate_speaking_hr": 196.507,
+        "rate_speaking_hr_ci95": [
+          168.224,
+          268.817
+        ],
+        "rate_active_hr": 109.074,
+        "rate_active_hr_ci95": [
+          91.674,
+          156.644
+        ],
+        "rate_per_1k_words": 13.926,
+        "rate_per_1k_words_ci95": [
+          12.432,
+          17.241
+        ],
+        "rate_broad_speaking_hr": 211.622,
+        "rate_broad_speaking_hr_ci95": [
+          178.738,
+          295.699
+        ],
+        "median_ep_rate_hr": 218.52,
+        "iqr_ep_rate_hr": [
+          193.37,
+          243.67
+        ],
+        "median_ep_per_1k": 14.83,
+        "iqr_ep_per_1k": [
+          13.63,
+          16.04
+        ]
+      }
+    },
+    "The New Yorker Radio Hour": {
+      "graham_platner": {
+        "n": 1,
+        "speaking_hours": 0.421,
+        "active_hours": 0.665,
+        "cand_words": 4905,
+        "strict_mentions": 10,
+        "broad_mentions": 11,
+        "noncand_strict_mentions": 6,
+        "rate_speaking_hr": 23.756,
+        "rate_speaking_hr_ci95": [
+          23.756,
+          23.756
+        ],
+        "rate_active_hr": 15.028,
+        "rate_active_hr_ci95": [
+          15.028,
+          15.028
+        ],
+        "rate_per_1k_words": 2.039,
+        "rate_per_1k_words_ci95": [
+          2.039,
+          2.039
+        ],
+        "rate_broad_speaking_hr": 26.132,
+        "rate_broad_speaking_hr_ci95": [
+          26.132,
+          26.132
+        ],
+        "median_ep_rate_hr": 23.76,
+        "iqr_ep_rate_hr": [
+          23.76,
+          23.76
+        ],
+        "median_ep_per_1k": 2.04,
+        "iqr_ep_per_1k": [
+          2.04,
+          2.04
+        ]
+      },
+      "john_fetterman": {
+        "n": 1,
+        "speaking_hours": 0.349,
+        "active_hours": 0.494,
+        "cand_words": 3780,
+        "strict_mentions": 6,
+        "broad_mentions": 6,
+        "noncand_strict_mentions": 4,
+        "rate_speaking_hr": 17.172,
+        "rate_speaking_hr_ci95": [
+          17.172,
+          17.172
+        ],
+        "rate_active_hr": 12.147,
+        "rate_active_hr_ci95": [
+          12.147,
+          12.147
+        ],
+        "rate_per_1k_words": 1.587,
+        "rate_per_1k_words_ci95": [
+          1.587,
+          1.587
+        ],
+        "rate_broad_speaking_hr": 17.172,
+        "rate_broad_speaking_hr_ci95": [
+          17.172,
+          17.172
+        ],
+        "median_ep_rate_hr": 17.17,
+        "iqr_ep_rate_hr": [
+          17.17,
+          17.17
+        ],
+        "median_ep_per_1k": 1.59,
+        "iqr_ep_per_1k": [
+          1.59,
+          1.59
+        ]
+      }
+    },
+    "The Weekly Show w/ Jon Stewart": {
+      "graham_platner": {
+        "n": 1,
+        "speaking_hours": 0.667,
+        "active_hours": 1.181,
+        "cand_words": 7517,
+        "strict_mentions": 13,
+        "broad_mentions": 15,
+        "noncand_strict_mentions": 9,
+        "rate_speaking_hr": 19.492,
+        "rate_speaking_hr_ci95": [
+          19.492,
+          19.492
+        ],
+        "rate_active_hr": 11.003,
+        "rate_active_hr_ci95": [
+          11.003,
+          11.003
+        ],
+        "rate_per_1k_words": 1.729,
+        "rate_per_1k_words_ci95": [
+          1.729,
+          1.729
+        ],
+        "rate_broad_speaking_hr": 22.49,
+        "rate_broad_speaking_hr_ci95": [
+          22.49,
+          22.49
+        ],
+        "median_ep_rate_hr": 19.49,
+        "iqr_ep_rate_hr": [
+          19.49,
+          19.49
+        ],
+        "median_ep_per_1k": 1.73,
+        "iqr_ep_per_1k": [
+          1.73,
+          1.73
+        ]
+      },
+      "john_fetterman": {
+        "n": 1,
+        "speaking_hours": 0.561,
+        "active_hours": 1.227,
+        "cand_words": 6062,
+        "strict_mentions": 9,
+        "broad_mentions": 9,
+        "noncand_strict_mentions": 1,
+        "rate_speaking_hr": 16.042,
+        "rate_speaking_hr_ci95": [
+          16.042,
+          16.042
+        ],
+        "rate_active_hr": 7.336,
+        "rate_active_hr_ci95": [
+          7.336,
+          7.336
+        ],
+        "rate_per_1k_words": 1.485,
+        "rate_per_1k_words_ci95": [
+          1.485,
+          1.485
+        ],
+        "rate_broad_speaking_hr": 16.042,
+        "rate_broad_speaking_hr_ci95": [
+          16.042,
+          16.042
+        ],
+        "median_ep_rate_hr": 16.04,
+        "iqr_ep_rate_hr": [
+          16.04,
+          16.04
+        ],
+        "median_ep_per_1k": 1.48,
+        "iqr_ep_per_1k": [
+          1.48,
+          1.48
+        ]
+      }
+    },
+    "All In w/ Chris Hayes": {
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.233,
+        "active_hours": 0.424,
+        "cand_words": 3473,
+        "strict_mentions": 10,
+        "broad_mentions": 16,
+        "noncand_strict_mentions": 27,
+        "rate_speaking_hr": 42.9,
+        "rate_speaking_hr_ci95": [
+          29.874,
+          60.48
+        ],
+        "rate_active_hr": 23.59,
+        "rate_active_hr_ci95": [
+          17.874,
+          29.983
+        ],
+        "rate_per_1k_words": 2.879,
+        "rate_per_1k_words_ci95": [
+          1.993,
+          4.093
+        ],
+        "rate_broad_speaking_hr": 68.64,
+        "rate_broad_speaking_hr_ci95": [
+          44.811,
+          100.801
+        ],
+        "median_ep_rate_hr": 45.17,
+        "iqr_ep_rate_hr": [
+          37.52,
+          52.83
+        ],
+        "median_ep_per_1k": 3.04,
+        "iqr_ep_per_1k": [
+          2.51,
+          3.56
+        ]
+      },
+      "graham_platner": {
+        "n": 2,
+        "speaking_hours": 0.283,
+        "active_hours": 0.614,
+        "cand_words": 3359,
+        "strict_mentions": 9,
+        "broad_mentions": 11,
+        "noncand_strict_mentions": 15,
+        "rate_speaking_hr": 31.82,
+        "rate_speaking_hr_ci95": [
+          26.176,
+          33.909
+        ],
+        "rate_active_hr": 14.668,
+        "rate_active_hr_ci95": [
+          9.478,
+          17.39
+        ],
+        "rate_per_1k_words": 2.679,
+        "rate_per_1k_words_ci95": [
+          2.205,
+          2.855
+        ],
+        "rate_broad_speaking_hr": 38.891,
+        "rate_broad_speaking_hr_ci95": [
+          26.176,
+          43.598
+        ],
+        "median_ep_rate_hr": 30.04,
+        "iqr_ep_rate_hr": [
+          28.11,
+          31.98
+        ],
+        "median_ep_per_1k": 2.53,
+        "iqr_ep_per_1k": [
+          2.37,
+          2.69
+        ]
+      },
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.069,
+        "active_hours": 0.127,
+        "cand_words": 888,
+        "strict_mentions": 12,
+        "broad_mentions": 16,
+        "noncand_strict_mentions": 10,
+        "rate_speaking_hr": 173.105,
+        "rate_speaking_hr_ci95": [
+          173.105,
+          173.105
+        ],
+        "rate_active_hr": 94.284,
+        "rate_active_hr_ci95": [
+          94.284,
+          94.284
+        ],
+        "rate_per_1k_words": 13.514,
+        "rate_per_1k_words_ci95": [
+          13.514,
+          13.514
+        ],
+        "rate_broad_speaking_hr": 230.806,
+        "rate_broad_speaking_hr_ci95": [
+          230.806,
+          230.806
+        ],
+        "median_ep_rate_hr": 173.1,
+        "iqr_ep_rate_hr": [
+          173.1,
+          173.1
+        ],
+        "median_ep_per_1k": 13.51,
+        "iqr_ep_per_1k": [
+          13.51,
+          13.51
+        ]
+      }
+    },
+    "Morning Joe (MS NOW)": {
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.391,
+        "active_hours": 0.711,
+        "cand_words": 5886,
+        "strict_mentions": 9,
+        "broad_mentions": 11,
+        "noncand_strict_mentions": 28,
+        "rate_speaking_hr": 22.999,
+        "rate_speaking_hr_ci95": [
+          22.992,
+          23.003
+        ],
+        "rate_active_hr": 12.652,
+        "rate_active_hr_ci95": [
+          12.204,
+          13.657
+        ],
+        "rate_per_1k_words": 1.529,
+        "rate_per_1k_words_ci95": [
+          1.48,
+          1.637
+        ],
+        "rate_broad_speaking_hr": 28.11,
+        "rate_broad_speaking_hr_ci95": [
+          22.992,
+          30.67
+        ],
+        "median_ep_rate_hr": 22.99,
+        "iqr_ep_rate_hr": [
+          22.99,
+          23.0
+        ],
+        "median_ep_per_1k": 1.56,
+        "iqr_ep_per_1k": [
+          1.52,
+          1.6
+        ]
+      },
+      "graham_platner": {
+        "n": 1,
+        "speaking_hours": 0.165,
+        "active_hours": 0.303,
+        "cand_words": 1898,
+        "strict_mentions": 6,
+        "broad_mentions": 9,
+        "noncand_strict_mentions": 8,
+        "rate_speaking_hr": 36.261,
+        "rate_speaking_hr_ci95": [
+          36.261,
+          36.261
+        ],
+        "rate_active_hr": 19.819,
+        "rate_active_hr_ci95": [
+          19.819,
+          19.819
+        ],
+        "rate_per_1k_words": 3.161,
+        "rate_per_1k_words_ci95": [
+          3.161,
+          3.161
+        ],
+        "rate_broad_speaking_hr": 54.392,
+        "rate_broad_speaking_hr_ci95": [
+          54.392,
+          54.392
+        ],
+        "median_ep_rate_hr": 36.26,
+        "iqr_ep_rate_hr": [
+          36.26,
+          36.26
+        ],
+        "median_ep_per_1k": 3.16,
+        "iqr_ep_per_1k": [
+          3.16,
+          3.16
+        ]
+      },
+      "scott_colom": {
+        "n": 1,
+        "speaking_hours": 0.107,
+        "active_hours": 0.23,
+        "cand_words": 1439,
+        "strict_mentions": 6,
+        "broad_mentions": 8,
+        "noncand_strict_mentions": 8,
+        "rate_speaking_hr": 56.246,
+        "rate_speaking_hr_ci95": [
+          56.246,
+          56.246
+        ],
+        "rate_active_hr": 26.065,
+        "rate_active_hr_ci95": [
+          26.065,
+          26.065
+        ],
+        "rate_per_1k_words": 4.17,
+        "rate_per_1k_words_ci95": [
+          4.17,
+          4.17
+        ],
+        "rate_broad_speaking_hr": 74.994,
+        "rate_broad_speaking_hr_ci95": [
+          74.994,
+          74.994
+        ],
+        "median_ep_rate_hr": 56.25,
+        "iqr_ep_rate_hr": [
+          56.25,
+          56.25
+        ],
+        "median_ep_per_1k": 4.17,
+        "iqr_ep_per_1k": [
+          4.17,
+          4.17
+        ]
+      }
+    },
+    "State of the Union (CNN)": {
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.191,
+        "active_hours": 0.332,
+        "cand_words": 2736,
+        "strict_mentions": 7,
+        "broad_mentions": 12,
+        "noncand_strict_mentions": 23,
+        "rate_speaking_hr": 36.705,
+        "rate_speaking_hr_ci95": [
+          23.535,
+          63.255
+        ],
+        "rate_active_hr": 21.061,
+        "rate_active_hr_ci95": [
+          17.114,
+          25.466
+        ],
+        "rate_per_1k_words": 2.558,
+        "rate_per_1k_words_ci95": [
+          1.667,
+          4.274
+        ],
+        "rate_broad_speaking_hr": 62.923,
+        "rate_broad_speaking_hr_ci95": [
+          31.379,
+          126.51
+        ],
+        "median_ep_rate_hr": 43.39,
+        "iqr_ep_rate_hr": [
+          33.46,
+          53.32
+        ],
+        "median_ep_per_1k": 2.97,
+        "iqr_ep_per_1k": [
+          2.32,
+          3.62
+        ]
+      },
+      "john_fetterman": {
+        "n": 2,
+        "speaking_hours": 0.112,
+        "active_hours": 0.167,
+        "cand_words": 1315,
+        "strict_mentions": 0,
+        "broad_mentions": 0,
+        "noncand_strict_mentions": 5,
+        "rate_speaking_hr": 0.0,
+        "rate_speaking_hr_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_active_hr": 0.0,
+        "rate_active_hr_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_per_1k_words": 0.0,
+        "rate_per_1k_words_ci95": [
+          0.0,
+          0.0
+        ],
+        "rate_broad_speaking_hr": 0.0,
+        "rate_broad_speaking_hr_ci95": [
+          0.0,
+          0.0
+        ],
+        "median_ep_rate_hr": 0.0,
+        "iqr_ep_rate_hr": [
+          0.0,
+          0.0
+        ],
+        "median_ep_per_1k": 0.0,
+        "iqr_ep_per_1k": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Meet the Press / NBC": {
+      "abdul_el_sayed": {
+        "n": 2,
+        "speaking_hours": 0.528,
+        "active_hours": 0.851,
+        "cand_words": 7588,
+        "strict_mentions": 26,
+        "broad_mentions": 33,
+        "noncand_strict_mentions": 30,
+        "rate_speaking_hr": 49.2,
+        "rate_speaking_hr_ci95": [
+          46.254,
+          54.783
+        ],
+        "rate_active_hr": 30.551,
+        "rate_active_hr_ci95": [
+          27.635,
+          36.755
+        ],
+        "rate_per_1k_words": 3.426,
+        "rate_per_1k_words_ci95": [
+          3.12,
+          4.067
+        ],
+        "rate_broad_speaking_hr": 62.446,
+        "rate_broad_speaking_hr_ci95": [
+          60.709,
+          65.739
+        ],
+        "median_ep_rate_hr": 50.52,
+        "iqr_ep_rate_hr": [
+          48.38,
+          52.65
+        ],
+        "median_ep_per_1k": 3.6,
+        "iqr_ep_per_1k": [
+          3.36,
+          3.83
+        ]
+      },
+      "john_fetterman": {
+        "n": 4,
+        "speaking_hours": 0.386,
+        "active_hours": 0.632,
+        "cand_words": 4256,
+        "strict_mentions": 2,
+        "broad_mentions": 4,
+        "noncand_strict_mentions": 5,
+        "rate_speaking_hr": 5.179,
+        "rate_speaking_hr_ci95": [
+          0.0,
+          16.61
+        ],
+        "rate_active_hr": 3.167,
+        "rate_active_hr_ci95": [
+          0.0,
+          8.138
+        ],
+        "rate_per_1k_words": 0.47,
+        "rate_per_1k_words_ci95": [
+          0.0,
+          1.523
+        ],
+        "rate_broad_speaking_hr": 10.358,
+        "rate_broad_speaking_hr_ci95": [
+          0.0,
+          25.477
+        ],
+        "median_ep_rate_hr": 0.0,
+        "iqr_ep_rate_hr": [
+          0.0,
+          5.74
+        ],
+        "median_ep_per_1k": 0.0,
+        "iqr_ep_per_1k": [
+          0.0,
+          0.52
+        ]
+      },
+      "scott_colom": {
+        "n": 3,
+        "speaking_hours": 0.219,
+        "active_hours": 0.385,
+        "cand_words": 3110,
+        "strict_mentions": 36,
+        "broad_mentions": 45,
+        "noncand_strict_mentions": 14,
+        "rate_speaking_hr": 164.638,
+        "rate_speaking_hr_ci95": [
+          125.06,
+          232.629
+        ],
+        "rate_active_hr": 93.546,
+        "rate_active_hr_ci95": [
+          71.468,
+          122.699
+        ],
+        "rate_per_1k_words": 11.576,
+        "rate_per_1k_words_ci95": [
+          8.826,
+          15.814
+        ],
+        "rate_broad_speaking_hr": 205.798,
+        "rate_broad_speaking_hr_ci95": [
+          134.68,
+          312.25
+        ],
+        "median_ep_rate_hr": 144.12,
+        "iqr_ep_rate_hr": [
+          134.59,
+          188.38
+        ],
+        "median_ep_per_1k": 10.68,
+        "iqr_ep_per_1k": [
+          9.75,
+          13.25
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "jf_real_time_maher_20250614|505.12|pennsylvania": {
+    "decision": "flip_to_non_candidate",
+    "reason": "host_bill_maher_intro_res_0.641"
+  },
+  "jf_real_time_maher_20260509|392.52|pennsylvania": {
+    "decision": "flip_to_non_candidate",
+    "reason": "host_bill_maher_intro_res_0.624"
+  },
+  "gp_death_sex_money_20260303|2742.21|maine": {
+    "decision": "flip_to_non_candidate",
+    "reason": "host_anna_sale_interjection_cen_loc_-0.459_res_0.698"
+  },
+  "gp_office_hours_20260226|390.63|maine": {
+    "decision": "flip_to_non_candidate",
+    "reason": "host_tim_heidecker_question_of_the_state_of_maine"
+  },
+  "jf_next_question_couric_20251113|150.36|pennsylvania": {
+    "decision": "exclude_homophone",
+    "reason": "cold_open_teaser_clip_replaying_640.46s"
+  },
+  "jf_next_question_couric_20251113|158.00|pennsylvania": {
+    "decision": "exclude_homophone",
+    "reason": "cold_open_teaser_clip_replaying_648.06s"
+  },
+  "jf_next_question_couric_20251113|164.94|pennsylvanians": {
+    "decision": "exclude_homophone",
+    "reason": "cold_open_teaser_clip_replaying_654.94s"
+  },
+  "gp_breaking_points_20251031|4081.24|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_left_reckoning_20251218|2447.53|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_left_reckoning_20251218|3512.96|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_new_yorker_20251219|2364.66|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_new_yorker_20251219|2857.95|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_daily_beast_20260120|1323.43|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_daily_beast_20260120|1325.63|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_zero_hour_20260207|520.08|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|771.16|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|869.74|mainers": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|940.80|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|942.60|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|1592.13|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_pod_save_america_20260301|4643.87|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_death_sex_money_20260303|3019.39|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_death_sex_money_20260303|3523.37|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_choose_hard_way_20260421|576.69|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_weekly_show_stewart_20260429|521.11|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_lever_time_20260508|1044.60|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_lever_time_20260508|4545.04|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_wgan_20260526|1669.82|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_wgan_20260526|2139.04|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_wgan_20260526|2424.78|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_beacon_townhall_20260605|1161.10|maine": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_new_yorker_20250221|820.39|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_new_yorker_20250221|832.81|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_new_yorker_20250221|2102.86|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_meet_the_press_20251110|1138.44|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_next_question_couric_20251113|2974.26|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_all_in_pod_20260610|170.08|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_all_in_pod_20260610|194.92|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "jf_all_in_pod_20260610|2563.99|pennsylvania": {
+    "decision": "flip_to_candidate",
+    "reason": "verified_candidate_turn_context_and_dual_model_support"
+  },
+  "gp_lever_time_20251101|2177.53|main": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_sullivan_maine"
+  },
+  "gp_office_hours_20260226|554.27|main": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_maine_is_tiny"
+  },
+  "gp_office_hours_20260226|616.19|main": {
+    "decision": "include_homophone",
+    "force_candidate": true,
+    "reason": "asr_homophone_our_maine_oysters"
+  },
+  "gp_death_sex_money_20260303|4470.85|main": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_the_maine_wire"
+  },
+  "gp_lever_time_20251101|319.16|manner": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_working_mainer"
+  },
+  "gp_all_in_hayes_20260605|1165.36|manor": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_average_mainer"
+  },
+  "gp_morning_joe_20260610|947.99|manors": {
+    "decision": "include_homophone",
+    "reason": "asr_homophone_working_mainers"
+  }
+}
