@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T12:00:01.258730-05:00",
+  "fetched_at": "2026-11-24T13:00:01.916157-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -189,8 +189,8 @@
         "county_label": "Pecos, TX (West TX data center/water battle)",
         "state": "TX",
         "actual_top26_shift_pts": 35.7,
-        "expected_demographic_state_shift_pts": 28.8,
-        "residual_overperformance_pts": 6.9,
+        "expected_demographic_state_shift_pts": 28.81,
+        "residual_overperformance_pts": 6.89,
         "demographics": {
           "hisp_pct": 69.0,
           "blk_pct": 4.5,
@@ -332,8 +332,8 @@
         "county_label": "Culpeper, VA (Culpeper Tech Zone)",
         "state": "VA",
         "actual_top26_shift_pts": 16.85,
-        "expected_demographic_state_shift_pts": 17.21,
-        "residual_overperformance_pts": -0.36,
+        "expected_demographic_state_shift_pts": 17.22,
+        "residual_overperformance_pts": -0.37,
         "demographics": {
           "hisp_pct": 11.6,
           "blk_pct": 14.6,
@@ -345,8 +345,8 @@
         "county_label": "Hood, TX (Granbury Marathon/DC noise battle)",
         "state": "TX",
         "actual_top26_shift_pts": 13.61,
-        "expected_demographic_state_shift_pts": 15.49,
-        "residual_overperformance_pts": -1.88,
+        "expected_demographic_state_shift_pts": 15.48,
+        "residual_overperformance_pts": -1.87,
         "demographics": {
           "hisp_pct": 12.8,
           "blk_pct": 1.2,
@@ -461,9 +461,9 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 104,
-          "mean": 27.86,
+          "mean": 27.88,
           "median": 25.58,
-          "stdev": 11.0,
+          "stdev": 10.99,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {
@@ -475,7 +475,7 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.29,
+          "mean": 23.31,
           "median": 20.54,
           "stdev": 12.19,
           "pct_shifting_dem": 100.0
@@ -520,7 +520,7 @@
           "n": 135,
           "mean": 17.79,
           "median": 17.87,
-          "stdev": 6.25,
+          "stdev": 6.24,
           "pct_shifting_dem": 100.0
         },
         "us_senate_2024_to_2026": {

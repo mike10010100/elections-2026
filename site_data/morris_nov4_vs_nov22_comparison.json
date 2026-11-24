@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T12:00:01.258730-05:00",
+  "fetched_at": "2026-11-24T13:00:01.916157-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -224,7 +224,7 @@
         ],
         "ci95_mean": [
           14.65,
-          19.09
+          19.1
         ]
       },
       {
@@ -302,7 +302,7 @@
         "raw_mean": 15.7,
         "raw_median": 14.12,
         "adj_edge": -0.34,
-        "adj_mean": 14.53,
+        "adj_mean": 14.54,
         "ci95_edge": [
           -1.9,
           1.14
@@ -417,8 +417,8 @@
       "state": "AK",
       "candidate": "Mary Peltola*",
       "early": -3.66,
-      "live": 0.48,
-      "delta": 4.14,
+      "live": 0.5,
+      "delta": 4.16,
       "is_prog": false
     },
     {
@@ -518,8 +518,8 @@
       "r2": 0.447,
       "record_beta": 2.935,
       "record_p": 0.0048,
-      "pivot_beta": -1.314,
-      "pivot_p": 0.532
+      "pivot_beta": -1.316,
+      "pivot_p": 0.5313
     }
   }
 }
