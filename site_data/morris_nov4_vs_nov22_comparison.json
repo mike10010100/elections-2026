@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T14:00:01.925140-05:00",
+  "fetched_at": "2026-11-24T15:00:01.970390-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -207,8 +207,8 @@
   },
   "house_replicated_live": {
     "n": 418,
-    "party_mean": 14.87,
-    "party_median": 14.3,
+    "party_mean": 14.88,
+    "party_median": 14.35,
     "groups": [
       {
         "key": "blue_dogs",
@@ -223,7 +223,7 @@
           4.22
         ],
         "ci95_mean": [
-          14.66,
+          14.65,
           19.1
         ]
       },
@@ -233,7 +233,7 @@
         "n": 29,
         "raw_mean": 17.36,
         "raw_median": 15.76,
-        "adj_edge": 1.18,
+        "adj_edge": 1.17,
         "adj_mean": 16.05,
         "ci95_edge": [
           -0.55,
@@ -250,14 +250,14 @@
         "n": 7,
         "raw_mean": 16.11,
         "raw_median": 15.89,
-        "adj_edge": 1.31,
+        "adj_edge": 1.3,
         "adj_mean": 16.18,
         "ci95_edge": [
-          -2.01,
+          -2.03,
           4.47
         ],
         "ci95_mean": [
-          12.86,
+          12.84,
           19.34
         ]
       },
@@ -267,15 +267,15 @@
         "n": 149,
         "raw_mean": 16.32,
         "raw_median": 14.99,
-        "adj_edge": 0.69,
-        "adj_mean": 15.56,
+        "adj_edge": 0.7,
+        "adj_mean": 15.58,
         "ci95_edge": [
-          -0.09,
+          -0.07,
           1.51
         ],
         "ci95_mean": [
-          14.78,
-          16.38
+          14.8,
+          16.39
         ]
       },
       {
@@ -284,15 +284,15 @@
         "n": 212,
         "raw_mean": 13.67,
         "raw_median": 13.8,
-        "adj_edge": -0.56,
+        "adj_edge": -0.57,
         "adj_mean": 14.31,
         "ci95_edge": [
-          -1.38,
-          0.13
+          -1.39,
+          0.11
         ],
         "ci95_mean": [
-          13.49,
-          15.0
+          13.48,
+          14.99
         ]
       },
       {
@@ -301,15 +301,15 @@
         "n": 74,
         "raw_mean": 15.7,
         "raw_median": 14.12,
-        "adj_edge": -0.34,
-        "adj_mean": 14.54,
+        "adj_edge": -0.35,
+        "adj_mean": 14.53,
         "ci95_edge": [
-          -1.9,
-          1.14
+          -1.92,
+          1.13
         ],
         "ci95_mean": [
-          12.97,
-          16.01
+          12.96,
+          16.0
         ]
       },
       {
@@ -318,15 +318,15 @@
         "n": 45,
         "raw_mean": 15.66,
         "raw_median": 13.83,
-        "adj_edge": -0.68,
-        "adj_mean": 14.2,
+        "adj_edge": -0.69,
+        "adj_mean": 14.19,
         "ci95_edge": [
-          -2.47,
-          1.36
+          -2.49,
+          1.35
         ],
         "ci95_mean": [
-          12.4,
-          16.24
+          12.39,
+          16.23
         ]
       }
     ]
@@ -337,15 +337,15 @@
     "n": 6,
     "raw_mean": 16.98,
     "raw_median": 16.35,
-    "adj_edge": 1.8,
+    "adj_edge": 1.79,
     "adj_mean": 16.67,
     "ci95_edge": [
       -1.91,
-      5.37
+      5.36
     ],
     "ci95_mean": [
       12.97,
-      20.25
+      20.24
     ]
   },
   "senate_nov4_vs_live": [
@@ -401,8 +401,8 @@
       "state": "IA",
       "candidate": "Josh Turek",
       "early": 3.2,
-      "live": 3.2,
-      "delta": 0.0,
+      "live": 3.19,
+      "delta": -0.01,
       "is_prog": false
     },
     {
@@ -417,8 +417,8 @@
       "state": "AK",
       "candidate": "Mary Peltola*",
       "early": -3.66,
-      "live": 0.5,
-      "delta": 4.16,
+      "live": 0.49,
+      "delta": 4.15,
       "is_prog": false
     },
     {
@@ -475,7 +475,7 @@
       "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
       "n_statewide": 10,
       "nov7_mean": 2.48,
-      "live_mean": 3.39,
+      "live_mean": 3.38,
       "nov7_beat_pct": 70.0,
       "live_beat_pct": 90.0
     },
@@ -516,10 +516,10 @@
     "live": {
       "n": 36,
       "r2": 0.447,
-      "record_beta": 2.935,
+      "record_beta": 2.934,
       "record_p": 0.0048,
-      "pivot_beta": -1.315,
-      "pivot_p": 0.5314
+      "pivot_beta": -1.314,
+      "pivot_p": 0.5317
     }
   }
 }
