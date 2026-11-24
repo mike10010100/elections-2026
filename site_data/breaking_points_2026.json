@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T10:00:01.181671-05:00",
+  "fetched_at": "2026-11-24T11:00:02.016904-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -404,7 +404,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 3112,
-          "mean": 13.29,
+          "mean": 13.3,
           "median": 14.07,
           "stdev": 8.87,
           "pct_shifting_dem": 94.8
@@ -432,7 +432,7 @@
         },
         "attorney_general_2024_to_2026": {
           "n": 1813,
-          "mean": 10.3,
+          "mean": 10.31,
           "median": 9.4,
           "stdev": 7.19,
           "pct_shifting_dem": 96.9
@@ -632,7 +632,7 @@
         },
         "top_of_ticket_2024_to_2026": {
           "n": 1051,
-          "mean": 12.67,
+          "mean": 12.68,
           "median": 13.66,
           "stdev": 7.32,
           "pct_shifting_dem": 96.2

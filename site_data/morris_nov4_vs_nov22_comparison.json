@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T10:00:01.181671-05:00",
+  "fetched_at": "2026-11-24T11:00:02.016904-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -282,7 +282,7 @@
         "key": "no_caucus",
         "label": "No caucus",
         "n": 212,
-        "raw_mean": 13.66,
+        "raw_mean": 13.67,
         "raw_median": 13.8,
         "adj_edge": -0.56,
         "adj_mean": 14.31,
@@ -316,13 +316,13 @@
         "key": "cpc_only",
         "label": "CPC-only\n(ex-New Dem)",
         "n": 45,
-        "raw_mean": 15.65,
+        "raw_mean": 15.66,
         "raw_median": 13.83,
-        "adj_edge": -0.67,
+        "adj_edge": -0.68,
         "adj_mean": 14.2,
         "ci95_edge": [
           -2.48,
-          1.36
+          1.35
         ],
         "ci95_mean": [
           12.39,
@@ -345,7 +345,7 @@
     ],
     "ci95_mean": [
       12.96,
-      20.24
+      20.25
     ]
   },
   "senate_nov4_vs_live": [
