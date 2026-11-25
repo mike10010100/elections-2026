@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-25T00:00:01.598271-05:00",
+  "fetched_at": "2026-11-25T01:00:01.222201-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -309,7 +309,7 @@
         ],
         "ci95_mean": [
           12.96,
-          16.0
+          16.01
         ]
       },
       {
@@ -318,8 +318,8 @@
         "n": 45,
         "raw_mean": 15.66,
         "raw_median": 13.83,
-        "adj_edge": -0.69,
-        "adj_mean": 14.19,
+        "adj_edge": -0.68,
+        "adj_mean": 14.2,
         "ci95_edge": [
           -2.48,
           1.35
@@ -475,7 +475,7 @@
       "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
       "n_statewide": 10,
       "nov7_mean": 2.48,
-      "live_mean": 3.39,
+      "live_mean": 3.38,
       "nov7_beat_pct": 70.0,
       "live_beat_pct": 90.0
     },
@@ -516,10 +516,10 @@
     "live": {
       "n": 36,
       "r2": 0.447,
-      "record_beta": 2.935,
-      "record_p": 0.0048,
-      "pivot_beta": -1.315,
-      "pivot_p": 0.5317
+      "record_beta": 2.932,
+      "record_p": 0.0049,
+      "pivot_beta": -1.32,
+      "pivot_p": 0.5306
     }
   }
 }

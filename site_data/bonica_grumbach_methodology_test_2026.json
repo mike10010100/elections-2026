@@ -261,8 +261,8 @@
         1.52,
         6.93
       ],
-      "mean_overperf_statewide_vs_house": 3.39,
-      "median_overperf_statewide_vs_house": 2.23,
+      "mean_overperf_statewide_vs_house": 3.38,
+      "median_overperf_statewide_vs_house": 2.21,
       "pct_beating_benchmark_statewide": 90.0,
       "notable_examples": [
         "Scott Colom (MS Senate: +6.51 pts)",
@@ -310,7 +310,7 @@
       "mean_overperf_all": -0.7,
       "median_overperf_all": -1.62,
       "ci95_overperf_all": [
-        -6.78,
+        -6.79,
         5.39
       ],
       "mean_overperf_statewide_vs_house": -3.26,
@@ -321,7 +321,7 @@
         "Troy Jackson (ME Senate: -9.66 pts)",
         "Charles Booker (KY Senate: -0.23 pts)",
         "Gina Hinojosa (TX Governor: +1.16 pts)",
-        "Deb Haaland (NM Governor: -8.64 pts)",
+        "Deb Haaland (NM Governor: -8.66 pts)",
         "Eli Savit (MI Attorney General: -0.89 pts)"
       ]
     },
@@ -360,16 +360,16 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.814,
+          "beta": 2.813,
           "se_hc1": 0.812,
-          "ci95_low": 1.18,
+          "ci95_low": 1.179,
           "ci95_high": 4.448,
           "t_stat": 3.46,
           "p_value": 0.0011
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.13,
+          "beta": 3.131,
           "se_hc1": 1.034,
           "ci95_low": 1.05,
           "ci95_high": 5.211,
@@ -385,10 +385,10 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.268,
+          "beta": 2.267,
           "se_hc1": 0.821,
-          "ci95_low": 0.616,
-          "ci95_high": 3.92,
+          "ci95_low": 0.615,
+          "ci95_high": 3.919,
           "t_stat": 2.76,
           "p_value": 0.0082
         },
@@ -396,8 +396,8 @@
           "term": "2026 Rhetoric (+ = Moderate)",
           "beta": 4.275,
           "se_hc1": 1.288,
-          "ci95_low": 1.685,
-          "ci95_high": 6.866,
+          "ci95_low": 1.684,
+          "ci95_high": 6.865,
           "t_stat": 3.32,
           "p_value": 0.0017
         }
@@ -410,12 +410,12 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.46,
+          "beta": 2.459,
           "se_hc1": 0.811,
-          "ci95_low": 0.828,
+          "ci95_low": 0.827,
           "ci95_high": 4.091,
           "t_stat": 3.03,
-          "p_value": 0.0039
+          "p_value": 0.004
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
@@ -435,7 +435,7 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.231,
+          "beta": 2.23,
           "se_hc1": 0.996,
           "ci95_low": 0.22,
           "ci95_high": 4.241,
@@ -444,39 +444,39 @@
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 3.11,
+          "beta": 3.108,
           "se_hc1": 1.13,
-          "ci95_low": 0.83,
-          "ci95_high": 5.39,
+          "ci95_low": 0.828,
+          "ci95_high": 5.389,
           "t_stat": 2.75,
           "p_value": 0.0087
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -0.121,
-          "se_hc1": 2.238,
-          "ci95_low": -4.638,
-          "ci95_high": 4.395,
-          "t_stat": -0.05,
-          "p_value": 0.957
+          "beta": -0.126,
+          "se_hc1": 2.24,
+          "ci95_low": -4.647,
+          "ci95_high": 4.396,
+          "t_stat": -0.06,
+          "p_value": 0.9555
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -0.561,
+          "beta": -0.563,
           "se_hc1": 1.288,
-          "ci95_low": -3.159,
-          "ci95_high": 2.037,
+          "ci95_low": -3.162,
+          "ci95_high": 2.036,
           "t_stat": -0.44,
-          "p_value": 0.6653
+          "p_value": 0.6642
         },
         {
           "term": "Republican Incumbent",
-          "beta": 1.839,
+          "beta": 1.84,
           "se_hc1": 2.371,
-          "ci95_low": -2.946,
-          "ci95_high": 6.624,
+          "ci95_low": -2.945,
+          "ci95_high": 6.626,
           "t_stat": 0.78,
-          "p_value": 0.4423
+          "p_value": 0.4421
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
@@ -485,15 +485,15 @@
           "ci95_low": -0.612,
           "ci95_high": 1.098,
           "t_stat": 0.57,
-          "p_value": 0.5699
+          "p_value": 0.5691
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
-          "beta": 3.982,
+          "beta": 3.983,
           "se_hc1": 0.987,
           "ci95_low": 1.991,
-          "ci95_high": 5.973,
-          "t_stat": 4.04,
+          "ci95_high": 5.976,
+          "t_stat": 4.03,
           "p_value": 0.0002
         }
       ]
@@ -505,20 +505,20 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 2.363,
+          "beta": 2.362,
           "se_hc1": 0.65,
-          "ci95_low": 1.043,
-          "ci95_high": 3.684,
-          "t_stat": 3.64,
+          "ci95_low": 1.041,
+          "ci95_high": 3.683,
+          "t_stat": 3.63,
           "p_value": 0.0009
         },
         {
           "term": "Past Record (+ = Moderate)",
           "beta": 3.575,
           "se_hc1": 0.741,
-          "ci95_low": 2.07,
-          "ci95_high": 5.081,
-          "t_stat": 4.83,
+          "ci95_low": 2.069,
+          "ci95_high": 5.082,
+          "t_stat": 4.82,
           "p_value": 0.0
         }
       ]
@@ -530,19 +530,19 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 1.597,
+          "beta": 1.596,
           "se_hc1": 0.675,
-          "ci95_low": 0.226,
+          "ci95_low": 0.224,
           "ci95_high": 2.969,
-          "t_stat": 2.37,
-          "p_value": 0.0238
+          "t_stat": 2.36,
+          "p_value": 0.0239
         },
         {
           "term": "2026 Rhetoric (+ = Moderate)",
-          "beta": 4.544,
+          "beta": 4.543,
           "se_hc1": 1.051,
           "ci95_low": 2.407,
-          "ci95_high": 6.681,
+          "ci95_high": 6.68,
           "t_stat": 4.32,
           "p_value": 0.0001
         }
@@ -555,20 +555,20 @@
       "coefficients": [
         {
           "term": "Intercept",
-          "beta": 1.673,
-          "se_hc1": 0.635,
-          "ci95_low": 0.382,
+          "beta": 1.672,
+          "se_hc1": 0.636,
+          "ci95_low": 0.38,
           "ci95_high": 2.964,
           "t_stat": 2.63,
-          "p_value": 0.0126
+          "p_value": 0.0127
         },
         {
           "term": "1D Composite PCA (+1 SD Mod)",
           "beta": 2.777,
           "se_hc1": 0.588,
-          "ci95_low": 1.583,
+          "ci95_low": 1.582,
           "ci95_high": 3.972,
-          "t_stat": 4.73,
+          "t_stat": 4.72,
           "p_value": 0.0
         }
       ]
@@ -589,55 +589,55 @@
         },
         {
           "term": "Past Record (+ = Moderate)",
-          "beta": 2.935,
-          "se_hc1": 0.961,
-          "ci95_low": 0.968,
-          "ci95_high": 4.901,
+          "beta": 2.932,
+          "se_hc1": 0.962,
+          "ci95_low": 0.965,
+          "ci95_high": 4.899,
           "t_stat": 3.05,
-          "p_value": 0.0048
+          "p_value": 0.0049
         },
         {
           "term": "Rhetorical Moderation Pivot",
-          "beta": -1.315,
-          "se_hc1": 2.077,
-          "ci95_low": -5.562,
-          "ci95_high": 2.933,
+          "beta": -1.32,
+          "se_hc1": 2.08,
+          "ci95_low": -5.574,
+          "ci95_high": 2.934,
           "t_stat": -0.63,
-          "p_value": 0.5317
+          "p_value": 0.5306
         },
         {
           "term": "Democratic Incumbent",
-          "beta": -1.417,
-          "se_hc1": 1.657,
-          "ci95_low": -4.806,
-          "ci95_high": 1.973,
-          "t_stat": -0.85,
-          "p_value": 0.3997
+          "beta": -1.421,
+          "se_hc1": 1.658,
+          "ci95_low": -4.811,
+          "ci95_high": 1.969,
+          "t_stat": -0.86,
+          "p_value": 0.3984
         },
         {
           "term": "Republican Incumbent",
-          "beta": 1.14,
-          "se_hc1": 1.643,
+          "beta": 1.141,
+          "se_hc1": 1.644,
           "ci95_low": -2.221,
-          "ci95_high": 4.5,
+          "ci95_high": 4.502,
           "t_stat": 0.69,
-          "p_value": 0.4934
+          "p_value": 0.4931
         },
         {
           "term": "Log(Dem/GOP Total Spend)",
-          "beta": 0.315,
+          "beta": 0.316,
           "se_hc1": 0.449,
-          "ci95_low": -0.604,
-          "ci95_high": 1.233,
+          "ci95_low": -0.603,
+          "ci95_high": 1.234,
           "t_stat": 0.7,
-          "p_value": 0.4891
+          "p_value": 0.4876
         },
         {
           "term": "GOP Scandal (Ken Paxton)",
-          "beta": 4.241,
+          "beta": 4.243,
           "se_hc1": 1.061,
-          "ci95_low": 2.072,
-          "ci95_high": 6.41,
+          "ci95_low": 2.073,
+          "ci95_high": 6.413,
           "t_stat": 4.0,
           "p_value": 0.0004
         }
@@ -691,9 +691,9 @@
         "blue_counties": 8,
         "mod_candidate": "Ben Luján (Mod)",
         "prog_candidate": "Deb Haaland (Prog)",
-        "mod_dem_votes": 281723,
-        "prog_dem_votes": 257257,
-        "mod_minus_prog_votes": 24466,
+        "mod_dem_votes": 281882,
+        "prog_dem_votes": 257414,
+        "mod_minus_prog_votes": 24468,
         "mod_minus_prog_pct": 9.51
       },
       {
@@ -711,9 +711,9 @@
       {
         "bucket": "Blue Base (Harris >= 55%)",
         "counties": 30,
-        "mod_dem_votes": 4212982,
-        "prog_dem_votes": 4107531,
-        "mod_minus_prog_votes": 105451,
+        "mod_dem_votes": 4213141,
+        "prog_dem_votes": 4107688,
+        "mod_minus_prog_votes": 105453,
         "mod_minus_prog_pct": 2.57,
         "mod_share_pct": 70.41,
         "prog_share_pct": 68.55
@@ -721,9 +721,9 @@
       {
         "bucket": "Swing (Harris 45–55%)",
         "counties": 57,
-        "mod_dem_votes": 5320430,
-        "prog_dem_votes": 5147574,
-        "mod_minus_prog_votes": 172856,
+        "mod_dem_votes": 5320500,
+        "prog_dem_votes": 5147629,
+        "mod_minus_prog_votes": 172871,
         "mod_minus_prog_pct": 3.36,
         "mod_share_pct": 59.3,
         "prog_share_pct": 57.34
@@ -731,9 +731,9 @@
       {
         "bucket": "Red (Harris < 45%)",
         "counties": 453,
-        "mod_dem_votes": 4971684,
-        "prog_dem_votes": 4783815,
-        "mod_minus_prog_votes": 187869,
+        "mod_dem_votes": 4971747,
+        "prog_dem_votes": 4783872,
+        "mod_minus_prog_votes": 187875,
         "mod_minus_prog_pct": 3.93,
         "mod_share_pct": 40.55,
         "prog_share_pct": 38.95
