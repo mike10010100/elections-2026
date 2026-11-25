@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-25T01:00:01.222201-05:00",
+  "fetched_at": "2026-11-25T10:00:02.082737-05:00",
   "description": "Empirical test of the 'Disjoint Breaking Points & Jump Discontinuity (Bitch Eating Crackers)' hypothesis in the 2026 U.S. Midterm Elections, combining national exit/issue polling with 3,143-county cross-ballot shift data.",
   "pca_decomposition": {
     "high_swing_counties_demographic_pca": {
@@ -475,14 +475,14 @@
         },
         "us_house_2024_to_2026": {
           "n": 103,
-          "mean": 23.31,
+          "mean": 23.32,
           "median": 20.54,
           "stdev": 12.18,
           "pct_shifting_dem": 100.0
         },
         "governor_2024_to_2026": {
           "n": 101,
-          "mean": 23.28,
+          "mean": 23.29,
           "median": 22.34,
           "stdev": 10.76,
           "pct_shifting_dem": 100.0
@@ -539,16 +539,16 @@
         },
         "governor_2024_to_2026": {
           "n": 127,
-          "mean": 14.7,
+          "mean": 14.71,
           "median": 14.84,
-          "stdev": 7.06,
+          "stdev": 7.05,
           "pct_shifting_dem": 96.9
         },
         "attorney_general_2024_to_2026": {
           "n": 123,
           "mean": 14.14,
           "median": 13.68,
-          "stdev": 5.88,
+          "stdev": 5.87,
           "pct_shifting_dem": 100.0
         }
       }
@@ -703,14 +703,14 @@
         },
         "us_house_2024_to_2026": {
           "n": 179,
-          "mean": 12.53,
+          "mean": 12.54,
           "median": 11.74,
           "stdev": 7.7,
           "pct_shifting_dem": 97.2
         },
         "governor_2024_to_2026": {
           "n": 124,
-          "mean": 8.01,
+          "mean": 8.02,
           "median": 8.28,
           "stdev": 12.98,
           "pct_shifting_dem": 85.5
@@ -847,7 +847,7 @@
       },
       "us_house_vs_state_ag_shift": {
         "n_counties": 1801,
-        "pearson_r": 0.7001
+        "pearson_r": 0.7003
       },
       "us_senate_vs_us_house_shift": {
         "n_counties": 2235,
@@ -872,7 +872,7 @@
       "Treasurer": {
         "n": 21,
         "mean": 10.53,
-        "median": 11.3,
+        "median": 11.32,
         "stdev": 5.25,
         "pct_shifting_dem": 95.2
       },
@@ -899,9 +899,9 @@
       },
       "Controller": {
         "n": 3,
-        "mean": 9.76,
-        "median": 11.0,
-        "stdev": 5.07,
+        "mean": 9.77,
+        "median": 11.02,
+        "stdev": 5.08,
         "pct_shifting_dem": 100.0
       },
       "ALL_CONTESTED_STATEWIDE_EXEC": {
