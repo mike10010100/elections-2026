@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T20:00:01.363964-05:00",
+  "fetched_at": "2026-11-24T21:00:01.623387-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -475,7 +475,7 @@
       "quadrant": "Committed Moderate (Mod Record + Mod Rhetoric)",
       "n_statewide": 10,
       "nov7_mean": 2.48,
-      "live_mean": 3.38,
+      "live_mean": 3.39,
       "nov7_beat_pct": 70.0,
       "live_beat_pct": 90.0
     },
@@ -516,9 +516,9 @@
     "live": {
       "n": 36,
       "r2": 0.447,
-      "record_beta": 2.934,
+      "record_beta": 2.935,
       "record_p": 0.0048,
-      "pivot_beta": -1.314,
+      "pivot_beta": -1.315,
       "pivot_p": 0.5317
     }
   }
