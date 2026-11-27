@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-26T00:00:01.429653-05:00",
+  "fetched_at": "2026-11-27T13:00:01.945621-05:00",
   "morris_house_nov4": {
     "source_date": "2026-11-04",
     "n": 404,
@@ -217,10 +217,10 @@
         "raw_mean": 19.11,
         "raw_median": 15.87,
         "adj_edge": 1.71,
-        "adj_mean": 16.59,
+        "adj_mean": 16.6,
         "ci95_edge": [
           -0.24,
-          4.21
+          4.22
         ],
         "ci95_mean": [
           14.64,
@@ -282,9 +282,9 @@
         "key": "no_caucus",
         "label": "No caucus",
         "n": 212,
-        "raw_mean": 13.67,
+        "raw_mean": 13.68,
         "raw_median": 13.8,
-        "adj_edge": -0.56,
+        "adj_edge": -0.57,
         "adj_mean": 14.32,
         "ci95_edge": [
           -1.39,
@@ -299,7 +299,7 @@
         "key": "cpc",
         "label": "CPC /\nprogressives",
         "n": 74,
-        "raw_mean": 15.7,
+        "raw_mean": 15.71,
         "raw_median": 14.12,
         "adj_edge": -0.35,
         "adj_mean": 14.54,
@@ -309,14 +309,14 @@
         ],
         "ci95_mean": [
           12.96,
-          16.01
+          16.02
         ]
       },
       {
         "key": "cpc_only",
         "label": "CPC-only\n(ex-New Dem)",
         "n": 45,
-        "raw_mean": 15.66,
+        "raw_mean": 15.67,
         "raw_median": 13.83,
         "adj_edge": -0.69,
         "adj_mean": 14.2,
@@ -337,14 +337,14 @@
     "n": 6,
     "raw_mean": 16.98,
     "raw_median": 16.35,
-    "adj_edge": 1.79,
+    "adj_edge": 1.8,
     "adj_mean": 16.68,
     "ci95_edge": [
       -1.91,
       5.37
     ],
     "ci95_mean": [
-      12.97,
+      12.98,
       20.25
     ]
   },
